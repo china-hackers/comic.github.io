@@ -1,9 +1,21 @@
-/*
-function do_login_action(url){
-		url+="?nextUrl="+window.location.href;
-		window.location.href=url;
+
+function checkLanguage(url,lang){
+  var urlList = url.split('/');
+  switch(urlList[3]){
+    case '': urlList[3] = lang; break;
+    case 'en': urlList[3] = lang; break;
+    case 'fr': urlList[3] = lang; break;
+    case 'es': urlList[3] = lang; break;
+    case 'ru': urlList[3] = lang; break;
+    case 'id': urlList[3] = lang; break;
+    case 'ar': urlList[3] = lang; break;
+    case 'bn': urlList[3] = lang; break;
+    case 'pt': urlList[3] = lang; break;
+    case 'hi': urlList[3] = lang; break;
+    default: urlList.splice(3,0,lang);
+  }
+  return urlList.join('/');
 }
-*/
 $(document).ready(function() {
   // 点击当前国旗，显示/隐藏国旗列表
   $('.language-switcher .current-flag').click(function() {
@@ -16,17 +28,12 @@ $(document).ready(function() {
     var url = window.location.href;
 
     // 这里假设你的 URL 结构中语言是通过查询参数传递，例如：?lang=en
-    var newUrl = updateQueryStringParameter(url, 'lang', selectedLang);
+    var newUrl = checkLanguage(url, selectedLang);
     window.location.href = newUrl;
   }
 );
 
-  // 函数：更新URL中的查询参数
-  function updateQueryStringParameter(url, key, value) {
-  var newUrl = new URL(url);
-  newUrl.searchParams.set(key, value);
-  return newUrl.toString();
-}
+
 
   // 点击页面其他地方时，隐藏国旗列表
   $(document).click(function(e) {
