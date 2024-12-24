@@ -1,3 +1,6549 @@
+/*! jQuery v1.12.2 | (c) jQuery Foundation | jquery.org/license */
+!function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=a.document,e=c.slice,f=c.concat,g=c.push,h=c.indexOf,i={},j=i.toString,k=i.hasOwnProperty,l={},m="1.12.2",n=function(a,b){return new n.fn.init(a,b)},o=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,p=/^-ms-/,q=/-([\da-z])/gi,r=function(a,b){return b.toUpperCase()};n.fn=n.prototype={jquery:m,constructor:n,selector:"",length:0,toArray:function(){return e.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:e.call(this)},pushStack:function(a){var b=n.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a){return n.each(this,a)},map:function(a){return this.pushStack(n.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(e.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor()},push:g,sort:c.sort,splice:c.splice},n.extend=n.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||n.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(n.isPlainObject(c)||(b=n.isArray(c)))?(b?(b=!1,f=a&&n.isArray(a)?a:[]):f=a&&n.isPlainObject(a)?a:{},g[d]=n.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},n.extend({expando:"jQuery"+(m+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===n.type(a)},isArray:Array.isArray||function(a){return"array"===n.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){var b=a&&a.toString();return!n.isArray(a)&&b-parseFloat(b)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==n.type(a)||a.nodeType||n.isWindow(a))return!1;try{if(a.constructor&&!k.call(a,"constructor")&&!k.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(!l.ownFirst)for(b in a)return k.call(a,b);for(b in a);return void 0===b||k.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?i[j.call(a)]||"object":typeof a},globalEval:function(b){b&&n.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(p,"ms-").replace(q,r)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b){var c,d=0;if(s(a)){for(c=a.length;c>d;d++)if(b.call(a[d],d,a[d])===!1)break}else for(d in a)if(b.call(a[d],d,a[d])===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(o,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(s(Object(a))?n.merge(c,"string"==typeof a?[a]:a):g.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(h)return h.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,e,g=0,h=[];if(s(a))for(d=a.length;d>g;g++)e=b(a[g],g,c),null!=e&&h.push(e);else for(g in a)e=b(a[g],g,c),null!=e&&h.push(e);return f.apply([],h)},guid:1,proxy:function(a,b){var c,d,f;return"string"==typeof b&&(f=a[b],b=a,a=f),n.isFunction(a)?(c=e.call(arguments,2),d=function(){return a.apply(b||this,c.concat(e.call(arguments)))},d.guid=a.guid=a.guid||n.guid++,d):void 0},now:function(){return+new Date},support:l}),"function"==typeof Symbol&&(n.fn[Symbol.iterator]=c[Symbol.iterator]),n.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),function(a,b){i["[object "+b+"]"]=b.toLowerCase()});function s(a){var b=!!a&&"length"in a&&a.length,c=n.type(a);return"function"===c||n.isWindow(a)?!1:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var t=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ga(),z=ga(),A=ga(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+M+"))|)"+L+"*\\]",O=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+N+")*)|.*)\\)|)",P=new RegExp(L+"+","g"),Q=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),R=new RegExp("^"+L+"*,"+L+"*"),S=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),T=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),U=new RegExp(O),V=new RegExp("^"+M+"$"),W={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M+"|[*])"),ATTR:new RegExp("^"+N),PSEUDO:new RegExp("^"+O),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},X=/^(?:input|select|textarea|button)$/i,Y=/^h\d$/i,Z=/^[^{]+\{\s*\[native \w/,$=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,_=/[+~]/,aa=/'|\\/g,ba=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),ca=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},da=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(ea){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function fa(a,b,d,e){var f,h,j,k,l,o,r,s,w=b&&b.ownerDocument,x=b?b.nodeType:9;if(d=d||[],"string"!=typeof a||!a||1!==x&&9!==x&&11!==x)return d;if(!e&&((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,p)){if(11!==x&&(o=$.exec(a)))if(f=o[1]){if(9===x){if(!(j=b.getElementById(f)))return d;if(j.id===f)return d.push(j),d}else if(w&&(j=w.getElementById(f))&&t(b,j)&&j.id===f)return d.push(j),d}else{if(o[2])return H.apply(d,b.getElementsByTagName(a)),d;if((f=o[3])&&c.getElementsByClassName&&b.getElementsByClassName)return H.apply(d,b.getElementsByClassName(f)),d}if(c.qsa&&!A[a+" "]&&(!q||!q.test(a))){if(1!==x)w=b,s=a;else if("object"!==b.nodeName.toLowerCase()){(k=b.getAttribute("id"))?k=k.replace(aa,"\\$&"):b.setAttribute("id",k=u),r=g(a),h=r.length,l=V.test(k)?"#"+k:"[id='"+k+"']";while(h--)r[h]=l+" "+qa(r[h]);s=r.join(","),w=_.test(a)&&oa(b.parentNode)||b}if(s)try{return H.apply(d,w.querySelectorAll(s)),d}catch(y){}finally{k===u&&b.removeAttribute("id")}}}return i(a.replace(Q,"$1"),b,d,e)}function ga(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ha(a){return a[u]=!0,a}function ia(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ja(a,b){var c=a.split("|"),e=c.length;while(e--)d.attrHandle[c[e]]=b}function ka(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function la(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function na(a){return ha(function(b){return b=+b,ha(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function oa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=fa.support={},f=fa.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=fa.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=n.documentElement,p=!f(n),(e=n.defaultView)&&e.top!==e&&(e.addEventListener?e.addEventListener("unload",da,!1):e.attachEvent&&e.attachEvent("onunload",da)),c.attributes=ia(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ia(function(a){return a.appendChild(n.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=Z.test(n.getElementsByClassName),c.getById=ia(function(a){return o.appendChild(a).id=u,!n.getElementsByName||!n.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ba,ca);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ba,ca);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return"undefined"!=typeof b.getElementsByClassName&&p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=Z.test(n.querySelectorAll))&&(ia(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\r\\' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ia(function(a){var b=n.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=Z.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ia(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",O)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=Z.test(o.compareDocumentPosition),t=b||Z.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===n||a.ownerDocument===v&&t(v,a)?-1:b===n||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,g=[a],h=[b];if(!e||!f)return a===n?-1:b===n?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return ka(a,b);c=a;while(c=c.parentNode)g.unshift(c);c=b;while(c=c.parentNode)h.unshift(c);while(g[d]===h[d])d++;return d?ka(g[d],h[d]):g[d]===v?-1:h[d]===v?1:0},n):n},fa.matches=function(a,b){return fa(a,null,null,b)},fa.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(T,"='$1']"),c.matchesSelector&&p&&!A[b+" "]&&(!r||!r.test(b))&&(!q||!q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return fa(b,n,null,[a]).length>0},fa.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},fa.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},fa.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},fa.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=fa.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=fa.selectors={cacheLength:50,createPseudo:ha,match:W,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ba,ca),a[3]=(a[3]||a[4]||a[5]||"").replace(ba,ca),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||fa.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&fa.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return W.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&U.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ba,ca).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=fa.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(P," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h,t=!1;if(q){if(f){while(p){m=b;while(m=m[p])if(h?m.nodeName.toLowerCase()===r:1===m.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){m=q,l=m[u]||(m[u]={}),k=l[m.uniqueID]||(l[m.uniqueID]={}),j=k[a]||[],n=j[0]===w&&j[1],t=n&&j[2],m=n&&q.childNodes[n];while(m=++n&&m&&m[p]||(t=n=0)||o.pop())if(1===m.nodeType&&++t&&m===b){k[a]=[w,n,t];break}}else if(s&&(m=b,l=m[u]||(m[u]={}),k=l[m.uniqueID]||(l[m.uniqueID]={}),j=k[a]||[],n=j[0]===w&&j[1],t=n),t===!1)while(m=++n&&m&&m[p]||(t=n=0)||o.pop())if((h?m.nodeName.toLowerCase()===r:1===m.nodeType)&&++t&&(s&&(l=m[u]||(m[u]={}),k=l[m.uniqueID]||(l[m.uniqueID]={}),k[a]=[w,t]),m===b))break;return t-=e,t===d||t%d===0&&t/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||fa.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ha(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ha(function(a){var b=[],c=[],d=h(a.replace(Q,"$1"));return d[u]?ha(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ha(function(a){return function(b){return fa(a,b).length>0}}),contains:ha(function(a){return a=a.replace(ba,ca),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ha(function(a){return V.test(a||"")||fa.error("unsupported lang: "+a),a=a.replace(ba,ca).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Y.test(a.nodeName)},input:function(a){return X.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:na(function(){return[0]}),last:na(function(a,b){return[b-1]}),eq:na(function(a,b,c){return[0>c?c+b:c]}),even:na(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:na(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:na(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:na(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=la(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=ma(b);function pa(){}pa.prototype=d.filters=d.pseudos,d.setFilters=new pa,g=fa.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){c&&!(e=R.exec(h))||(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=S.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(Q," ")}),h=h.slice(c.length));for(g in d.filter)!(e=W[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?fa.error(a):z(a,i).slice(0)};function qa(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function ra(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j,k=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(j=b[u]||(b[u]={}),i=j[b.uniqueID]||(j[b.uniqueID]={}),(h=i[d])&&h[0]===w&&h[1]===f)return k[2]=h[2];if(i[d]=k,k[2]=a(b,c,g))return!0}}}function sa(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ta(a,b,c){for(var d=0,e=b.length;e>d;d++)fa(a,b[d],c);return c}function ua(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(c&&!c(f,d,e)||(g.push(f),j&&b.push(h)));return g}function va(a,b,c,d,e,f){return d&&!d[u]&&(d=va(d)),e&&!e[u]&&(e=va(e,f)),ha(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ta(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:ua(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=ua(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=ua(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function wa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=ra(function(a){return a===b},h,!0),l=ra(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[ra(sa(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return va(i>1&&sa(m),i>1&&qa(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(Q,"$1"),c,e>i&&wa(a.slice(i,e)),f>e&&wa(a=a.slice(e)),f>e&&qa(a))}m.push(c)}return sa(m)}function xa(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,o,q,r=0,s="0",t=f&&[],u=[],v=j,x=f||e&&d.find.TAG("*",k),y=w+=null==v?1:Math.random()||.1,z=x.length;for(k&&(j=g===n||g||k);s!==z&&null!=(l=x[s]);s++){if(e&&l){o=0,g||l.ownerDocument===n||(m(l),h=!p);while(q=a[o++])if(q(l,g||n,h)){i.push(l);break}k&&(w=y)}c&&((l=!q&&l)&&r--,f&&t.push(l))}if(r+=s,c&&s!==r){o=0;while(q=b[o++])q(t,u,g,h);if(f){if(r>0)while(s--)t[s]||u[s]||(u[s]=F.call(i));u=ua(u)}H.apply(i,u),k&&!f&&u.length>0&&r+b.length>1&&fa.uniqueSort(i)}return k&&(w=y,j=v),t};return c?ha(f):f}return h=fa.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=wa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,xa(e,d)),f.selector=a}return f},i=fa.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ba,ca),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=W.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ba,ca),_.test(j[0].type)&&oa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&qa(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,!b||_.test(a)&&oa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ia(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ia(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ja("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ia(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ja("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ia(function(a){return null==a.getAttribute("disabled")})||ja(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),fa}(a);n.find=t,n.expr=t.selectors,n.expr[":"]=n.expr.pseudos,n.uniqueSort=n.unique=t.uniqueSort,n.text=t.getText,n.isXMLDoc=t.isXML,n.contains=t.contains;var u=function(a,b,c){var d=[],e=void 0!==c;while((a=a[b])&&9!==a.nodeType)if(1===a.nodeType){if(e&&n(a).is(c))break;d.push(a)}return d},v=function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c},w=n.expr.match.needsContext,x=/^<([\w-]+)\s*\/?>(?:<\/\1>|)$/,y=/^.[^:#\[\.,]*$/;function z(a,b,c){if(n.isFunction(b))return n.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return n.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(y.test(b))return n.filter(b,a,c);b=n.filter(b,a)}return n.grep(a,function(a){return n.inArray(a,b)>-1!==c})}n.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?n.find.matchesSelector(d,a)?[d]:[]:n.find.matches(a,n.grep(b,function(a){return 1===a.nodeType}))},n.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(n(a).filter(function(){for(b=0;e>b;b++)if(n.contains(d[b],this))return!0}));for(b=0;e>b;b++)n.find(a,d[b],c);return c=this.pushStack(e>1?n.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(z(this,a||[],!1))},not:function(a){return this.pushStack(z(this,a||[],!0))},is:function(a){return!!z(this,"string"==typeof a&&w.test(a)?n(a):a||[],!1).length}});var A,B=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,C=n.fn.init=function(a,b,c){var e,f;if(!a)return this;if(c=c||A,"string"==typeof a){if(e="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:B.exec(a),!e||!e[1]&&b)return!b||b.jquery?(b||c).find(a):this.constructor(b).find(a);if(e[1]){if(b=b instanceof n?b[0]:b,n.merge(this,n.parseHTML(e[1],b&&b.nodeType?b.ownerDocument||b:d,!0)),x.test(e[1])&&n.isPlainObject(b))for(e in b)n.isFunction(this[e])?this[e](b[e]):this.attr(e,b[e]);return this}if(f=d.getElementById(e[2]),f&&f.parentNode){if(f.id!==e[2])return A.find(a);this.length=1,this[0]=f}return this.context=d,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):n.isFunction(a)?"undefined"!=typeof c.ready?c.ready(a):a(n):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),n.makeArray(a,this))};C.prototype=n.fn,A=n(d);var D=/^(?:parents|prev(?:Until|All))/,E={children:!0,contents:!0,next:!0,prev:!0};n.fn.extend({has:function(a){var b,c=n(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(n.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=w.test(a)||"string"!=typeof a?n(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&n.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?n.uniqueSort(f):f)},index:function(a){return a?"string"==typeof a?n.inArray(this[0],n(a)):n.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(n.uniqueSort(n.merge(this.get(),n(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function F(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}n.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return u(a,"parentNode")},parentsUntil:function(a,b,c){return u(a,"parentNode",c)},next:function(a){return F(a,"nextSibling")},prev:function(a){return F(a,"previousSibling")},nextAll:function(a){return u(a,"nextSibling")},prevAll:function(a){return u(a,"previousSibling")},nextUntil:function(a,b,c){return u(a,"nextSibling",c)},prevUntil:function(a,b,c){return u(a,"previousSibling",c)},siblings:function(a){return v((a.parentNode||{}).firstChild,a)},children:function(a){return v(a.firstChild)},contents:function(a){return n.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:n.merge([],a.childNodes)}},function(a,b){n.fn[a]=function(c,d){var e=n.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=n.filter(d,e)),this.length>1&&(E[a]||(e=n.uniqueSort(e)),D.test(a)&&(e=e.reverse())),this.pushStack(e)}});var G=/\S+/g;function H(a){var b={};return n.each(a.match(G)||[],function(a,c){b[c]=!0}),b}n.Callbacks=function(a){a="string"==typeof a?H(a):n.extend({},a);var b,c,d,e,f=[],g=[],h=-1,i=function(){for(e=a.once,d=b=!0;g.length;h=-1){c=g.shift();while(++h<f.length)f[h].apply(c[0],c[1])===!1&&a.stopOnFalse&&(h=f.length,c=!1)}a.memory||(c=!1),b=!1,e&&(f=c?[]:"")},j={add:function(){return f&&(c&&!b&&(h=f.length-1,g.push(c)),function d(b){n.each(b,function(b,c){n.isFunction(c)?a.unique&&j.has(c)||f.push(c):c&&c.length&&"string"!==n.type(c)&&d(c)})}(arguments),c&&!b&&i()),this},remove:function(){return n.each(arguments,function(a,b){var c;while((c=n.inArray(b,f,c))>-1)f.splice(c,1),h>=c&&h--}),this},has:function(a){return a?n.inArray(a,f)>-1:f.length>0},empty:function(){return f&&(f=[]),this},disable:function(){return e=g=[],f=c="",this},disabled:function(){return!f},lock:function(){return e=!0,c||j.disable(),this},locked:function(){return!!e},fireWith:function(a,c){return e||(c=c||[],c=[a,c.slice?c.slice():c],g.push(c),b||i()),this},fire:function(){return j.fireWith(this,arguments),this},fired:function(){return!!d}};return j},n.extend({Deferred:function(a){var b=[["resolve","done",n.Callbacks("once memory"),"resolved"],["reject","fail",n.Callbacks("once memory"),"rejected"],["notify","progress",n.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return n.Deferred(function(c){n.each(b,function(b,f){var g=n.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&n.isFunction(a.promise)?a.promise().progress(c.notify).done(c.resolve).fail(c.reject):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?n.extend(a,d):d}},e={};return d.pipe=d.then,n.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=e.call(arguments),d=c.length,f=1!==d||a&&n.isFunction(a.promise)?d:0,g=1===f?a:n.Deferred(),h=function(a,b,c){return function(d){b[a]=this,c[a]=arguments.length>1?e.call(arguments):d,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(d>1)for(i=new Array(d),j=new Array(d),k=new Array(d);d>b;b++)c[b]&&n.isFunction(c[b].promise)?c[b].promise().progress(h(b,j,i)).done(h(b,k,c)).fail(g.reject):--f;return f||g.resolveWith(k,c),g.promise()}});var I;n.fn.ready=function(a){return n.ready.promise().done(a),this},n.extend({isReady:!1,readyWait:1,holdReady:function(a){a?n.readyWait++:n.ready(!0)},ready:function(a){(a===!0?--n.readyWait:n.isReady)||(n.isReady=!0,a!==!0&&--n.readyWait>0||(I.resolveWith(d,[n]),n.fn.triggerHandler&&(n(d).triggerHandler("ready"),n(d).off("ready"))))}});function J(){d.addEventListener?(d.removeEventListener("DOMContentLoaded",K),a.removeEventListener("load",K)):(d.detachEvent("onreadystatechange",K),a.detachEvent("onload",K))}function K(){(d.addEventListener||"load"===a.event.type||"complete"===d.readyState)&&(J(),n.ready())}n.ready.promise=function(b){if(!I)if(I=n.Deferred(),"complete"===d.readyState||"loading"!==d.readyState&&!d.documentElement.doScroll)a.setTimeout(n.ready);else if(d.addEventListener)d.addEventListener("DOMContentLoaded",K),a.addEventListener("load",K);else{d.attachEvent("onreadystatechange",K),a.attachEvent("onload",K);var c=!1;try{c=null==a.frameElement&&d.documentElement}catch(e){}c&&c.doScroll&&!function f(){if(!n.isReady){try{c.doScroll("left")}catch(b){return a.setTimeout(f,50)}J(),n.ready()}}()}return I.promise(b)},n.ready.promise();var L;for(L in n(l))break;l.ownFirst="0"===L,l.inlineBlockNeedsLayout=!1,n(function(){var a,b,c,e;c=d.getElementsByTagName("body")[0],c&&c.style&&(b=d.createElement("div"),e=d.createElement("div"),e.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(e).appendChild(b),"undefined"!=typeof b.style.zoom&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",l.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(e))}),function(){var a=d.createElement("div");l.deleteExpando=!0;try{delete a.test}catch(b){l.deleteExpando=!1}a=null}();var M=function(a){var b=n.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b},N=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,O=/([A-Z])/g;function P(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(O,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:N.test(c)?n.parseJSON(c):c}catch(e){}n.data(a,b,c)}else c=void 0;
+}return c}function Q(a){var b;for(b in a)if(("data"!==b||!n.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;return!0}function R(a,b,d,e){if(M(a)){var f,g,h=n.expando,i=a.nodeType,j=i?n.cache:a,k=i?a[h]:a[h]&&h;if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c.pop()||n.guid++:h),j[k]||(j[k]=i?{}:{toJSON:n.noop}),"object"!=typeof b&&"function"!=typeof b||(e?j[k]=n.extend(j[k],b):j[k].data=n.extend(j[k].data,b)),g=j[k],e||(g.data||(g.data={}),g=g.data),void 0!==d&&(g[n.camelCase(b)]=d),"string"==typeof b?(f=g[b],null==f&&(f=g[n.camelCase(b)])):f=g,f}}function S(a,b,c){if(M(a)){var d,e,f=a.nodeType,g=f?n.cache:a,h=f?a[n.expando]:n.expando;if(g[h]){if(b&&(d=c?g[h]:g[h].data)){n.isArray(b)?b=b.concat(n.map(b,n.camelCase)):b in d?b=[b]:(b=n.camelCase(b),b=b in d?[b]:b.split(" ")),e=b.length;while(e--)delete d[b[e]];if(c?!Q(d):!n.isEmptyObject(d))return}(c||(delete g[h].data,Q(g[h])))&&(f?n.cleanData([a],!0):l.deleteExpando||g!=g.window?delete g[h]:g[h]=void 0)}}}n.extend({cache:{},noData:{"applet ":!0,"embed ":!0,"object ":"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"},hasData:function(a){return a=a.nodeType?n.cache[a[n.expando]]:a[n.expando],!!a&&!Q(a)},data:function(a,b,c){return R(a,b,c)},removeData:function(a,b){return S(a,b)},_data:function(a,b,c){return R(a,b,c,!0)},_removeData:function(a,b){return S(a,b,!0)}}),n.fn.extend({data:function(a,b){var c,d,e,f=this[0],g=f&&f.attributes;if(void 0===a){if(this.length&&(e=n.data(f),1===f.nodeType&&!n._data(f,"parsedAttrs"))){c=g.length;while(c--)g[c]&&(d=g[c].name,0===d.indexOf("data-")&&(d=n.camelCase(d.slice(5)),P(f,d,e[d])));n._data(f,"parsedAttrs",!0)}return e}return"object"==typeof a?this.each(function(){n.data(this,a)}):arguments.length>1?this.each(function(){n.data(this,a,b)}):f?P(f,a,n.data(f,a)):void 0},removeData:function(a){return this.each(function(){n.removeData(this,a)})}}),n.extend({queue:function(a,b,c){var d;return a?(b=(b||"fx")+"queue",d=n._data(a,b),c&&(!d||n.isArray(c)?d=n._data(a,b,n.makeArray(c)):d.push(c)),d||[]):void 0},dequeue:function(a,b){b=b||"fx";var c=n.queue(a,b),d=c.length,e=c.shift(),f=n._queueHooks(a,b),g=function(){n.dequeue(a,b)};"inprogress"===e&&(e=c.shift(),d--),e&&("fx"===b&&c.unshift("inprogress"),delete f.stop,e.call(a,g,f)),!d&&f&&f.empty.fire()},_queueHooks:function(a,b){var c=b+"queueHooks";return n._data(a,c)||n._data(a,c,{empty:n.Callbacks("once memory").add(function(){n._removeData(a,b+"queue"),n._removeData(a,c)})})}}),n.fn.extend({queue:function(a,b){var c=2;return"string"!=typeof a&&(b=a,a="fx",c--),arguments.length<c?n.queue(this[0],a):void 0===b?this:this.each(function(){var c=n.queue(this,a,b);n._queueHooks(this,a),"fx"===a&&"inprogress"!==c[0]&&n.dequeue(this,a)})},dequeue:function(a){return this.each(function(){n.dequeue(this,a)})},clearQueue:function(a){return this.queue(a||"fx",[])},promise:function(a,b){var c,d=1,e=n.Deferred(),f=this,g=this.length,h=function(){--d||e.resolveWith(f,[f])};"string"!=typeof a&&(b=a,a=void 0),a=a||"fx";while(g--)c=n._data(f[g],a+"queueHooks"),c&&c.empty&&(d++,c.empty.add(h));return h(),e.promise(b)}}),function(){var a;l.shrinkWrapBlocks=function(){if(null!=a)return a;a=!1;var b,c,e;return c=d.getElementsByTagName("body")[0],c&&c.style?(b=d.createElement("div"),e=d.createElement("div"),e.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(e).appendChild(b),"undefined"!=typeof b.style.zoom&&(b.style.cssText="-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;display:block;margin:0;border:0;padding:1px;width:1px;zoom:1",b.appendChild(d.createElement("div")).style.width="5px",a=3!==b.offsetWidth),c.removeChild(e),a):void 0}}();var T=/[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/.source,U=new RegExp("^(?:([+-])=|)("+T+")([a-z%]*)$","i"),V=["Top","Right","Bottom","Left"],W=function(a,b){return a=b||a,"none"===n.css(a,"display")||!n.contains(a.ownerDocument,a)};function X(a,b,c,d){var e,f=1,g=20,h=d?function(){return d.cur()}:function(){return n.css(a,b,"")},i=h(),j=c&&c[3]||(n.cssNumber[b]?"":"px"),k=(n.cssNumber[b]||"px"!==j&&+i)&&U.exec(n.css(a,b));if(k&&k[3]!==j){j=j||k[3],c=c||[],k=+i||1;do f=f||".5",k/=f,n.style(a,b,k+j);while(f!==(f=h()/i)&&1!==f&&--g)}return c&&(k=+k||+i||0,e=c[1]?k+(c[1]+1)*c[2]:+c[2],d&&(d.unit=j,d.start=k,d.end=e)),e}var Y=function(a,b,c,d,e,f,g){var h=0,i=a.length,j=null==c;if("object"===n.type(c)){e=!0;for(h in c)Y(a,b,h,c[h],!0,f,g)}else if(void 0!==d&&(e=!0,n.isFunction(d)||(g=!0),j&&(g?(b.call(a,d),b=null):(j=b,b=function(a,b,c){return j.call(n(a),c)})),b))for(;i>h;h++)b(a[h],c,g?d:d.call(a[h],h,b(a[h],c)));return e?a:j?b.call(a):i?b(a[0],c):f},Z=/^(?:checkbox|radio)$/i,$=/<([\w:-]+)/,_=/^$|\/(?:java|ecma)script/i,aa=/^\s+/,ba="abbr|article|aside|audio|bdi|canvas|data|datalist|details|dialog|figcaption|figure|footer|header|hgroup|main|mark|meter|nav|output|picture|progress|section|summary|template|time|video";function ca(a){var b=ba.split("|"),c=a.createDocumentFragment();if(c.createElement)while(b.length)c.createElement(b.pop());return c}!function(){var a=d.createElement("div"),b=d.createDocumentFragment(),c=d.createElement("input");a.innerHTML="  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>",l.leadingWhitespace=3===a.firstChild.nodeType,l.tbody=!a.getElementsByTagName("tbody").length,l.htmlSerialize=!!a.getElementsByTagName("link").length,l.html5Clone="<:nav></:nav>"!==d.createElement("nav").cloneNode(!0).outerHTML,c.type="checkbox",c.checked=!0,b.appendChild(c),l.appendChecked=c.checked,a.innerHTML="<textarea>x</textarea>",l.noCloneChecked=!!a.cloneNode(!0).lastChild.defaultValue,b.appendChild(a),c=d.createElement("input"),c.setAttribute("type","radio"),c.setAttribute("checked","checked"),c.setAttribute("name","t"),a.appendChild(c),l.checkClone=a.cloneNode(!0).cloneNode(!0).lastChild.checked,l.noCloneEvent=!!a.addEventListener,a[n.expando]=1,l.attributes=!a.getAttribute(n.expando)}();var da={option:[1,"<select multiple='multiple'>","</select>"],legend:[1,"<fieldset>","</fieldset>"],area:[1,"<map>","</map>"],param:[1,"<object>","</object>"],thead:[1,"<table>","</table>"],tr:[2,"<table><tbody>","</tbody></table>"],col:[2,"<table><tbody></tbody><colgroup>","</colgroup></table>"],td:[3,"<table><tbody><tr>","</tr></tbody></table>"],_default:l.htmlSerialize?[0,"",""]:[1,"X<div>","</div>"]};da.optgroup=da.option,da.tbody=da.tfoot=da.colgroup=da.caption=da.thead,da.th=da.td;function ea(a,b){var c,d,e=0,f="undefined"!=typeof a.getElementsByTagName?a.getElementsByTagName(b||"*"):"undefined"!=typeof a.querySelectorAll?a.querySelectorAll(b||"*"):void 0;if(!f)for(f=[],c=a.childNodes||a;null!=(d=c[e]);e++)!b||n.nodeName(d,b)?f.push(d):n.merge(f,ea(d,b));return void 0===b||b&&n.nodeName(a,b)?n.merge([a],f):f}function fa(a,b){for(var c,d=0;null!=(c=a[d]);d++)n._data(c,"globalEval",!b||n._data(b[d],"globalEval"))}var ga=/<|&#?\w+;/,ha=/<tbody/i;function ia(a){Z.test(a.type)&&(a.defaultChecked=a.checked)}function ja(a,b,c,d,e){for(var f,g,h,i,j,k,m,o=a.length,p=ca(b),q=[],r=0;o>r;r++)if(g=a[r],g||0===g)if("object"===n.type(g))n.merge(q,g.nodeType?[g]:g);else if(ga.test(g)){i=i||p.appendChild(b.createElement("div")),j=($.exec(g)||["",""])[1].toLowerCase(),m=da[j]||da._default,i.innerHTML=m[1]+n.htmlPrefilter(g)+m[2],f=m[0];while(f--)i=i.lastChild;if(!l.leadingWhitespace&&aa.test(g)&&q.push(b.createTextNode(aa.exec(g)[0])),!l.tbody){g="table"!==j||ha.test(g)?"<table>"!==m[1]||ha.test(g)?0:i:i.firstChild,f=g&&g.childNodes.length;while(f--)n.nodeName(k=g.childNodes[f],"tbody")&&!k.childNodes.length&&g.removeChild(k)}n.merge(q,i.childNodes),i.textContent="";while(i.firstChild)i.removeChild(i.firstChild);i=p.lastChild}else q.push(b.createTextNode(g));i&&p.removeChild(i),l.appendChecked||n.grep(ea(q,"input"),ia),r=0;while(g=q[r++])if(d&&n.inArray(g,d)>-1)e&&e.push(g);else if(h=n.contains(g.ownerDocument,g),i=ea(p.appendChild(g),"script"),h&&fa(i),c){f=0;while(g=i[f++])_.test(g.type||"")&&c.push(g)}return i=null,p}!function(){var b,c,e=d.createElement("div");for(b in{submit:!0,change:!0,focusin:!0})c="on"+b,(l[b]=c in a)||(e.setAttribute(c,"t"),l[b]=e.attributes[c].expando===!1);e=null}();var ka=/^(?:input|select|textarea)$/i,la=/^key/,ma=/^(?:mouse|pointer|contextmenu|drag|drop)|click/,na=/^(?:focusinfocus|focusoutblur)$/,oa=/^([^.]*)(?:\.(.+)|)/;function pa(){return!0}function qa(){return!1}function ra(){try{return d.activeElement}catch(a){}}function sa(a,b,c,d,e,f){var g,h;if("object"==typeof b){"string"!=typeof c&&(d=d||c,c=void 0);for(h in b)sa(a,h,c,d,b[h],f);return a}if(null==d&&null==e?(e=c,d=c=void 0):null==e&&("string"==typeof c?(e=d,d=void 0):(e=d,d=c,c=void 0)),e===!1)e=qa;else if(!e)return a;return 1===f&&(g=e,e=function(a){return n().off(a),g.apply(this,arguments)},e.guid=g.guid||(g.guid=n.guid++)),a.each(function(){n.event.add(this,b,e,d,c)})}n.event={global:{},add:function(a,b,c,d,e){var f,g,h,i,j,k,l,m,o,p,q,r=n._data(a);if(r){c.handler&&(i=c,c=i.handler,e=i.selector),c.guid||(c.guid=n.guid++),(g=r.events)||(g=r.events={}),(k=r.handle)||(k=r.handle=function(a){return"undefined"==typeof n||a&&n.event.triggered===a.type?void 0:n.event.dispatch.apply(k.elem,arguments)},k.elem=a),b=(b||"").match(G)||[""],h=b.length;while(h--)f=oa.exec(b[h])||[],o=q=f[1],p=(f[2]||"").split(".").sort(),o&&(j=n.event.special[o]||{},o=(e?j.delegateType:j.bindType)||o,j=n.event.special[o]||{},l=n.extend({type:o,origType:q,data:d,handler:c,guid:c.guid,selector:e,needsContext:e&&n.expr.match.needsContext.test(e),namespace:p.join(".")},i),(m=g[o])||(m=g[o]=[],m.delegateCount=0,j.setup&&j.setup.call(a,d,p,k)!==!1||(a.addEventListener?a.addEventListener(o,k,!1):a.attachEvent&&a.attachEvent("on"+o,k))),j.add&&(j.add.call(a,l),l.handler.guid||(l.handler.guid=c.guid)),e?m.splice(m.delegateCount++,0,l):m.push(l),n.event.global[o]=!0);a=null}},remove:function(a,b,c,d,e){var f,g,h,i,j,k,l,m,o,p,q,r=n.hasData(a)&&n._data(a);if(r&&(k=r.events)){b=(b||"").match(G)||[""],j=b.length;while(j--)if(h=oa.exec(b[j])||[],o=q=h[1],p=(h[2]||"").split(".").sort(),o){l=n.event.special[o]||{},o=(d?l.delegateType:l.bindType)||o,m=k[o]||[],h=h[2]&&new RegExp("(^|\\.)"+p.join("\\.(?:.*\\.|)")+"(\\.|$)"),i=f=m.length;while(f--)g=m[f],!e&&q!==g.origType||c&&c.guid!==g.guid||h&&!h.test(g.namespace)||d&&d!==g.selector&&("**"!==d||!g.selector)||(m.splice(f,1),g.selector&&m.delegateCount--,l.remove&&l.remove.call(a,g));i&&!m.length&&(l.teardown&&l.teardown.call(a,p,r.handle)!==!1||n.removeEvent(a,o,r.handle),delete k[o])}else for(o in k)n.event.remove(a,o+b[j],c,d,!0);n.isEmptyObject(k)&&(delete r.handle,n._removeData(a,"events"))}},trigger:function(b,c,e,f){var g,h,i,j,l,m,o,p=[e||d],q=k.call(b,"type")?b.type:b,r=k.call(b,"namespace")?b.namespace.split("."):[];if(i=m=e=e||d,3!==e.nodeType&&8!==e.nodeType&&!na.test(q+n.event.triggered)&&(q.indexOf(".")>-1&&(r=q.split("."),q=r.shift(),r.sort()),h=q.indexOf(":")<0&&"on"+q,b=b[n.expando]?b:new n.Event(q,"object"==typeof b&&b),b.isTrigger=f?2:3,b.namespace=r.join("."),b.rnamespace=b.namespace?new RegExp("(^|\\.)"+r.join("\\.(?:.*\\.|)")+"(\\.|$)"):null,b.result=void 0,b.target||(b.target=e),c=null==c?[b]:n.makeArray(c,[b]),l=n.event.special[q]||{},f||!l.trigger||l.trigger.apply(e,c)!==!1)){if(!f&&!l.noBubble&&!n.isWindow(e)){for(j=l.delegateType||q,na.test(j+q)||(i=i.parentNode);i;i=i.parentNode)p.push(i),m=i;m===(e.ownerDocument||d)&&p.push(m.defaultView||m.parentWindow||a)}o=0;while((i=p[o++])&&!b.isPropagationStopped())b.type=o>1?j:l.bindType||q,g=(n._data(i,"events")||{})[b.type]&&n._data(i,"handle"),g&&g.apply(i,c),g=h&&i[h],g&&g.apply&&M(i)&&(b.result=g.apply(i,c),b.result===!1&&b.preventDefault());if(b.type=q,!f&&!b.isDefaultPrevented()&&(!l._default||l._default.apply(p.pop(),c)===!1)&&M(e)&&h&&e[q]&&!n.isWindow(e)){m=e[h],m&&(e[h]=null),n.event.triggered=q;try{e[q]()}catch(s){}n.event.triggered=void 0,m&&(e[h]=m)}return b.result}},dispatch:function(a){a=n.event.fix(a);var b,c,d,f,g,h=[],i=e.call(arguments),j=(n._data(this,"events")||{})[a.type]||[],k=n.event.special[a.type]||{};if(i[0]=a,a.delegateTarget=this,!k.preDispatch||k.preDispatch.call(this,a)!==!1){h=n.event.handlers.call(this,a,j),b=0;while((f=h[b++])&&!a.isPropagationStopped()){a.currentTarget=f.elem,c=0;while((g=f.handlers[c++])&&!a.isImmediatePropagationStopped())a.rnamespace&&!a.rnamespace.test(g.namespace)||(a.handleObj=g,a.data=g.data,d=((n.event.special[g.origType]||{}).handle||g.handler).apply(f.elem,i),void 0!==d&&(a.result=d)===!1&&(a.preventDefault(),a.stopPropagation()))}return k.postDispatch&&k.postDispatch.call(this,a),a.result}},handlers:function(a,b){var c,d,e,f,g=[],h=b.delegateCount,i=a.target;if(h&&i.nodeType&&("click"!==a.type||isNaN(a.button)||a.button<1))for(;i!=this;i=i.parentNode||this)if(1===i.nodeType&&(i.disabled!==!0||"click"!==a.type)){for(d=[],c=0;h>c;c++)f=b[c],e=f.selector+" ",void 0===d[e]&&(d[e]=f.needsContext?n(e,this).index(i)>-1:n.find(e,this,null,[i]).length),d[e]&&d.push(f);d.length&&g.push({elem:i,handlers:d})}return h<b.length&&g.push({elem:this,handlers:b.slice(h)}),g},fix:function(a){if(a[n.expando])return a;var b,c,e,f=a.type,g=a,h=this.fixHooks[f];h||(this.fixHooks[f]=h=ma.test(f)?this.mouseHooks:la.test(f)?this.keyHooks:{}),e=h.props?this.props.concat(h.props):this.props,a=new n.Event(g),b=e.length;while(b--)c=e[b],a[c]=g[c];return a.target||(a.target=g.srcElement||d),3===a.target.nodeType&&(a.target=a.target.parentNode),a.metaKey=!!a.metaKey,h.filter?h.filter(a,g):a},props:"altKey bubbles cancelable ctrlKey currentTarget detail eventPhase metaKey relatedTarget shiftKey target timeStamp view which".split(" "),fixHooks:{},keyHooks:{props:"char charCode key keyCode".split(" "),filter:function(a,b){return null==a.which&&(a.which=null!=b.charCode?b.charCode:b.keyCode),a}},mouseHooks:{props:"button buttons clientX clientY fromElement offsetX offsetY pageX pageY screenX screenY toElement".split(" "),filter:function(a,b){var c,e,f,g=b.button,h=b.fromElement;return null==a.pageX&&null!=b.clientX&&(e=a.target.ownerDocument||d,f=e.documentElement,c=e.body,a.pageX=b.clientX+(f&&f.scrollLeft||c&&c.scrollLeft||0)-(f&&f.clientLeft||c&&c.clientLeft||0),a.pageY=b.clientY+(f&&f.scrollTop||c&&c.scrollTop||0)-(f&&f.clientTop||c&&c.clientTop||0)),!a.relatedTarget&&h&&(a.relatedTarget=h===a.target?b.toElement:h),a.which||void 0===g||(a.which=1&g?1:2&g?3:4&g?2:0),a}},special:{load:{noBubble:!0},focus:{trigger:function(){if(this!==ra()&&this.focus)try{return this.focus(),!1}catch(a){}},delegateType:"focusin"},blur:{trigger:function(){return this===ra()&&this.blur?(this.blur(),!1):void 0},delegateType:"focusout"},click:{trigger:function(){return n.nodeName(this,"input")&&"checkbox"===this.type&&this.click?(this.click(),!1):void 0},_default:function(a){return n.nodeName(a.target,"a")}},beforeunload:{postDispatch:function(a){void 0!==a.result&&a.originalEvent&&(a.originalEvent.returnValue=a.result)}}},simulate:function(a,b,c){var d=n.extend(new n.Event,c,{type:a,isSimulated:!0});n.event.trigger(d,null,b),d.isDefaultPrevented()&&c.preventDefault()}},n.removeEvent=d.removeEventListener?function(a,b,c){a.removeEventListener&&a.removeEventListener(b,c)}:function(a,b,c){var d="on"+b;a.detachEvent&&("undefined"==typeof a[d]&&(a[d]=null),a.detachEvent(d,c))},n.Event=function(a,b){return this instanceof n.Event?(a&&a.type?(this.originalEvent=a,this.type=a.type,this.isDefaultPrevented=a.defaultPrevented||void 0===a.defaultPrevented&&a.returnValue===!1?pa:qa):this.type=a,b&&n.extend(this,b),this.timeStamp=a&&a.timeStamp||n.now(),void(this[n.expando]=!0)):new n.Event(a,b)},n.Event.prototype={constructor:n.Event,isDefaultPrevented:qa,isPropagationStopped:qa,isImmediatePropagationStopped:qa,preventDefault:function(){var a=this.originalEvent;this.isDefaultPrevented=pa,a&&(a.preventDefault?a.preventDefault():a.returnValue=!1)},stopPropagation:function(){var a=this.originalEvent;this.isPropagationStopped=pa,a&&!this.isSimulated&&(a.stopPropagation&&a.stopPropagation(),a.cancelBubble=!0)},stopImmediatePropagation:function(){var a=this.originalEvent;this.isImmediatePropagationStopped=pa,a&&a.stopImmediatePropagation&&a.stopImmediatePropagation(),this.stopPropagation()}},n.each({mouseenter:"mouseover",mouseleave:"mouseout",pointerenter:"pointerover",pointerleave:"pointerout"},function(a,b){n.event.special[a]={delegateType:b,bindType:b,handle:function(a){var c,d=this,e=a.relatedTarget,f=a.handleObj;return e&&(e===d||n.contains(d,e))||(a.type=f.origType,c=f.handler.apply(this,arguments),a.type=b),c}}}),l.submit||(n.event.special.submit={setup:function(){return n.nodeName(this,"form")?!1:void n.event.add(this,"click._submit keypress._submit",function(a){var b=a.target,c=n.nodeName(b,"input")||n.nodeName(b,"button")?n.prop(b,"form"):void 0;c&&!n._data(c,"submit")&&(n.event.add(c,"submit._submit",function(a){a._submitBubble=!0}),n._data(c,"submit",!0))})},postDispatch:function(a){a._submitBubble&&(delete a._submitBubble,this.parentNode&&!a.isTrigger&&n.event.simulate("submit",this.parentNode,a))},teardown:function(){return n.nodeName(this,"form")?!1:void n.event.remove(this,"._submit")}}),l.change||(n.event.special.change={setup:function(){return ka.test(this.nodeName)?("checkbox"!==this.type&&"radio"!==this.type||(n.event.add(this,"propertychange._change",function(a){"checked"===a.originalEvent.propertyName&&(this._justChanged=!0)}),n.event.add(this,"click._change",function(a){this._justChanged&&!a.isTrigger&&(this._justChanged=!1),n.event.simulate("change",this,a)})),!1):void n.event.add(this,"beforeactivate._change",function(a){var b=a.target;ka.test(b.nodeName)&&!n._data(b,"change")&&(n.event.add(b,"change._change",function(a){!this.parentNode||a.isSimulated||a.isTrigger||n.event.simulate("change",this.parentNode,a)}),n._data(b,"change",!0))})},handle:function(a){var b=a.target;return this!==b||a.isSimulated||a.isTrigger||"radio"!==b.type&&"checkbox"!==b.type?a.handleObj.handler.apply(this,arguments):void 0},teardown:function(){return n.event.remove(this,"._change"),!ka.test(this.nodeName)}}),l.focusin||n.each({focus:"focusin",blur:"focusout"},function(a,b){var c=function(a){n.event.simulate(b,a.target,n.event.fix(a))};n.event.special[b]={setup:function(){var d=this.ownerDocument||this,e=n._data(d,b);e||d.addEventListener(a,c,!0),n._data(d,b,(e||0)+1)},teardown:function(){var d=this.ownerDocument||this,e=n._data(d,b)-1;e?n._data(d,b,e):(d.removeEventListener(a,c,!0),n._removeData(d,b))}}}),n.fn.extend({on:function(a,b,c,d){return sa(this,a,b,c,d)},one:function(a,b,c,d){return sa(this,a,b,c,d,1)},off:function(a,b,c){var d,e;if(a&&a.preventDefault&&a.handleObj)return d=a.handleObj,n(a.delegateTarget).off(d.namespace?d.origType+"."+d.namespace:d.origType,d.selector,d.handler),this;if("object"==typeof a){for(e in a)this.off(e,b,a[e]);return this}return b!==!1&&"function"!=typeof b||(c=b,b=void 0),c===!1&&(c=qa),this.each(function(){n.event.remove(this,a,c,b)})},trigger:function(a,b){return this.each(function(){n.event.trigger(a,b,this)})},triggerHandler:function(a,b){var c=this[0];return c?n.event.trigger(a,b,c,!0):void 0}});var ta=/ jQuery\d+="(?:null|\d+)"/g,ua=new RegExp("<(?:"+ba+")[\\s/>]","i"),va=/<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:-]+)[^>]*)\/>/gi,wa=/<script|<style|<link/i,xa=/checked\s*(?:[^=]|=\s*.checked.)/i,ya=/^true\/(.*)/,za=/^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g,Aa=ca(d),Ba=Aa.appendChild(d.createElement("div"));function Ca(a,b){return n.nodeName(a,"table")&&n.nodeName(11!==b.nodeType?b:b.firstChild,"tr")?a.getElementsByTagName("tbody")[0]||a.appendChild(a.ownerDocument.createElement("tbody")):a}function Da(a){return a.type=(null!==n.find.attr(a,"type"))+"/"+a.type,a}function Ea(a){var b=ya.exec(a.type);return b?a.type=b[1]:a.removeAttribute("type"),a}function Fa(a,b){if(1===b.nodeType&&n.hasData(a)){var c,d,e,f=n._data(a),g=n._data(b,f),h=f.events;if(h){delete g.handle,g.events={};for(c in h)for(d=0,e=h[c].length;e>d;d++)n.event.add(b,c,h[c][d])}g.data&&(g.data=n.extend({},g.data))}}function Ga(a,b){var c,d,e;if(1===b.nodeType){if(c=b.nodeName.toLowerCase(),!l.noCloneEvent&&b[n.expando]){e=n._data(b);for(d in e.events)n.removeEvent(b,d,e.handle);b.removeAttribute(n.expando)}"script"===c&&b.text!==a.text?(Da(b).text=a.text,Ea(b)):"object"===c?(b.parentNode&&(b.outerHTML=a.outerHTML),l.html5Clone&&a.innerHTML&&!n.trim(b.innerHTML)&&(b.innerHTML=a.innerHTML)):"input"===c&&Z.test(a.type)?(b.defaultChecked=b.checked=a.checked,b.value!==a.value&&(b.value=a.value)):"option"===c?b.defaultSelected=b.selected=a.defaultSelected:"input"!==c&&"textarea"!==c||(b.defaultValue=a.defaultValue)}}function Ha(a,b,c,d){b=f.apply([],b);var e,g,h,i,j,k,m=0,o=a.length,p=o-1,q=b[0],r=n.isFunction(q);if(r||o>1&&"string"==typeof q&&!l.checkClone&&xa.test(q))return a.each(function(e){var f=a.eq(e);r&&(b[0]=q.call(this,e,f.html())),Ha(f,b,c,d)});if(o&&(k=ja(b,a[0].ownerDocument,!1,a,d),e=k.firstChild,1===k.childNodes.length&&(k=e),e||d)){for(i=n.map(ea(k,"script"),Da),h=i.length;o>m;m++)g=k,m!==p&&(g=n.clone(g,!0,!0),h&&n.merge(i,ea(g,"script"))),c.call(a[m],g,m);if(h)for(j=i[i.length-1].ownerDocument,n.map(i,Ea),m=0;h>m;m++)g=i[m],_.test(g.type||"")&&!n._data(g,"globalEval")&&n.contains(j,g)&&(g.src?n._evalUrl&&n._evalUrl(g.src):n.globalEval((g.text||g.textContent||g.innerHTML||"").replace(za,"")));k=e=null}return a}function Ia(a,b,c){for(var d,e=b?n.filter(b,a):a,f=0;null!=(d=e[f]);f++)c||1!==d.nodeType||n.cleanData(ea(d)),d.parentNode&&(c&&n.contains(d.ownerDocument,d)&&fa(ea(d,"script")),d.parentNode.removeChild(d));return a}n.extend({htmlPrefilter:function(a){return a.replace(va,"<$1></$2>")},clone:function(a,b,c){var d,e,f,g,h,i=n.contains(a.ownerDocument,a);if(l.html5Clone||n.isXMLDoc(a)||!ua.test("<"+a.nodeName+">")?f=a.cloneNode(!0):(Ba.innerHTML=a.outerHTML,Ba.removeChild(f=Ba.firstChild)),!(l.noCloneEvent&&l.noCloneChecked||1!==a.nodeType&&11!==a.nodeType||n.isXMLDoc(a)))for(d=ea(f),h=ea(a),g=0;null!=(e=h[g]);++g)d[g]&&Ga(e,d[g]);if(b)if(c)for(h=h||ea(a),d=d||ea(f),g=0;null!=(e=h[g]);g++)Fa(e,d[g]);else Fa(a,f);return d=ea(f,"script"),d.length>0&&fa(d,!i&&ea(a,"script")),d=h=e=null,f},cleanData:function(a,b){for(var d,e,f,g,h=0,i=n.expando,j=n.cache,k=l.attributes,m=n.event.special;null!=(d=a[h]);h++)if((b||M(d))&&(f=d[i],g=f&&j[f])){if(g.events)for(e in g.events)m[e]?n.event.remove(d,e):n.removeEvent(d,e,g.handle);j[f]&&(delete j[f],k||"undefined"==typeof d.removeAttribute?d[i]=void 0:d.removeAttribute(i),c.push(f))}}}),n.fn.extend({domManip:Ha,detach:function(a){return Ia(this,a,!0)},remove:function(a){return Ia(this,a)},text:function(a){return Y(this,function(a){return void 0===a?n.text(this):this.empty().append((this[0]&&this[0].ownerDocument||d).createTextNode(a))},null,a,arguments.length)},append:function(){return Ha(this,arguments,function(a){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var b=Ca(this,a);b.appendChild(a)}})},prepend:function(){return Ha(this,arguments,function(a){if(1===this.nodeType||11===this.nodeType||9===this.nodeType){var b=Ca(this,a);b.insertBefore(a,b.firstChild)}})},before:function(){return Ha(this,arguments,function(a){this.parentNode&&this.parentNode.insertBefore(a,this)})},after:function(){return Ha(this,arguments,function(a){this.parentNode&&this.parentNode.insertBefore(a,this.nextSibling)})},empty:function(){for(var a,b=0;null!=(a=this[b]);b++){1===a.nodeType&&n.cleanData(ea(a,!1));while(a.firstChild)a.removeChild(a.firstChild);a.options&&n.nodeName(a,"select")&&(a.options.length=0)}return this},clone:function(a,b){return a=null==a?!1:a,b=null==b?a:b,this.map(function(){return n.clone(this,a,b)})},html:function(a){return Y(this,function(a){var b=this[0]||{},c=0,d=this.length;if(void 0===a)return 1===b.nodeType?b.innerHTML.replace(ta,""):void 0;if("string"==typeof a&&!wa.test(a)&&(l.htmlSerialize||!ua.test(a))&&(l.leadingWhitespace||!aa.test(a))&&!da[($.exec(a)||["",""])[1].toLowerCase()]){a=n.htmlPrefilter(a);try{for(;d>c;c++)b=this[c]||{},1===b.nodeType&&(n.cleanData(ea(b,!1)),b.innerHTML=a);b=0}catch(e){}}b&&this.empty().append(a)},null,a,arguments.length)},replaceWith:function(){var a=[];return Ha(this,arguments,function(b){var c=this.parentNode;n.inArray(this,a)<0&&(n.cleanData(ea(this)),c&&c.replaceChild(b,this))},a)}}),n.each({appendTo:"append",prependTo:"prepend",insertBefore:"before",insertAfter:"after",replaceAll:"replaceWith"},function(a,b){n.fn[a]=function(a){for(var c,d=0,e=[],f=n(a),h=f.length-1;h>=d;d++)c=d===h?this:this.clone(!0),n(f[d])[b](c),g.apply(e,c.get());return this.pushStack(e)}});var Ja,Ka={HTML:"block",BODY:"block"};function La(a,b){var c=n(b.createElement(a)).appendTo(b.body),d=n.css(c[0],"display");return c.detach(),d}function Ma(a){var b=d,c=Ka[a];return c||(c=La(a,b),"none"!==c&&c||(Ja=(Ja||n("<iframe frameborder='0' width='0' height='0'/>")).appendTo(b.documentElement),b=(Ja[0].contentWindow||Ja[0].contentDocument).document,b.write(),b.close(),c=La(a,b),Ja.detach()),Ka[a]=c),c}var Na=/^margin/,Oa=new RegExp("^("+T+")(?!px)[a-z%]+$","i"),Pa=function(a,b,c,d){var e,f,g={};for(f in b)g[f]=a.style[f],a.style[f]=b[f];e=c.apply(a,d||[]);for(f in b)a.style[f]=g[f];return e},Qa=d.documentElement;!function(){var b,c,e,f,g,h,i=d.createElement("div"),j=d.createElement("div");if(j.style){j.style.cssText="float:left;opacity:.5",l.opacity="0.5"===j.style.opacity,l.cssFloat=!!j.style.cssFloat,j.style.backgroundClip="content-box",j.cloneNode(!0).style.backgroundClip="",l.clearCloneStyle="content-box"===j.style.backgroundClip,i=d.createElement("div"),i.style.cssText="border:0;width:8px;height:0;top:0;left:-9999px;padding:0;margin-top:1px;position:absolute",j.innerHTML="",i.appendChild(j),l.boxSizing=""===j.style.boxSizing||""===j.style.MozBoxSizing||""===j.style.WebkitBoxSizing,n.extend(l,{reliableHiddenOffsets:function(){return null==b&&k(),f},boxSizingReliable:function(){return null==b&&k(),e},pixelMarginRight:function(){return null==b&&k(),c},pixelPosition:function(){return null==b&&k(),b},reliableMarginRight:function(){return null==b&&k(),g},reliableMarginLeft:function(){return null==b&&k(),h}});function k(){var k,l,m=d.documentElement;m.appendChild(i),j.style.cssText="-webkit-box-sizing:border-box;box-sizing:border-box;position:relative;display:block;margin:auto;border:1px;padding:1px;top:1%;width:50%",b=e=h=!1,c=g=!0,a.getComputedStyle&&(l=a.getComputedStyle(j),b="1%"!==(l||{}).top,h="2px"===(l||{}).marginLeft,e="4px"===(l||{width:"4px"}).width,j.style.marginRight="50%",c="4px"===(l||{marginRight:"4px"}).marginRight,k=j.appendChild(d.createElement("div")),k.style.cssText=j.style.cssText="-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;display:block;margin:0;border:0;padding:0",k.style.marginRight=k.style.width="0",j.style.width="1px",g=!parseFloat((a.getComputedStyle(k)||{}).marginRight),j.removeChild(k)),j.style.display="none",f=0===j.getClientRects().length,f&&(j.style.display="",j.innerHTML="<table><tr><td></td><td>t</td></tr></table>",k=j.getElementsByTagName("td"),k[0].style.cssText="margin:0;border:0;padding:0;display:none",f=0===k[0].offsetHeight,f&&(k[0].style.display="",k[1].style.display="none",f=0===k[0].offsetHeight)),m.removeChild(i)}}}();var Ra,Sa,Ta=/^(top|right|bottom|left)$/;a.getComputedStyle?(Ra=function(b){var c=b.ownerDocument.defaultView;return c&&c.opener||(c=a),c.getComputedStyle(b)},Sa=function(a,b,c){var d,e,f,g,h=a.style;return c=c||Ra(a),g=c?c.getPropertyValue(b)||c[b]:void 0,""!==g&&void 0!==g||n.contains(a.ownerDocument,a)||(g=n.style(a,b)),c&&!l.pixelMarginRight()&&Oa.test(g)&&Na.test(b)&&(d=h.width,e=h.minWidth,f=h.maxWidth,h.minWidth=h.maxWidth=h.width=g,g=c.width,h.width=d,h.minWidth=e,h.maxWidth=f),void 0===g?g:g+""}):Qa.currentStyle&&(Ra=function(a){return a.currentStyle},Sa=function(a,b,c){var d,e,f,g,h=a.style;return c=c||Ra(a),g=c?c[b]:void 0,null==g&&h&&h[b]&&(g=h[b]),Oa.test(g)&&!Ta.test(b)&&(d=h.left,e=a.runtimeStyle,f=e&&e.left,f&&(e.left=a.currentStyle.left),h.left="fontSize"===b?"1em":g,g=h.pixelLeft+"px",h.left=d,f&&(e.left=f)),void 0===g?g:g+""||"auto"});function Ua(a,b){return{get:function(){return a()?void delete this.get:(this.get=b).apply(this,arguments)}}}var Va=/alpha\([^)]*\)/i,Wa=/opacity\s*=\s*([^)]*)/i,Xa=/^(none|table(?!-c[ea]).+)/,Ya=new RegExp("^("+T+")(.*)$","i"),Za={position:"absolute",visibility:"hidden",display:"block"},$a={letterSpacing:"0",fontWeight:"400"},_a=["Webkit","O","Moz","ms"],ab=d.createElement("div").style;function bb(a){if(a in ab)return a;var b=a.charAt(0).toUpperCase()+a.slice(1),c=_a.length;while(c--)if(a=_a[c]+b,a in ab)return a}function cb(a,b){for(var c,d,e,f=[],g=0,h=a.length;h>g;g++)d=a[g],d.style&&(f[g]=n._data(d,"olddisplay"),c=d.style.display,b?(f[g]||"none"!==c||(d.style.display=""),""===d.style.display&&W(d)&&(f[g]=n._data(d,"olddisplay",Ma(d.nodeName)))):(e=W(d),(c&&"none"!==c||!e)&&n._data(d,"olddisplay",e?c:n.css(d,"display"))));for(g=0;h>g;g++)d=a[g],d.style&&(b&&"none"!==d.style.display&&""!==d.style.display||(d.style.display=b?f[g]||"":"none"));return a}function db(a,b,c){var d=Ya.exec(b);return d?Math.max(0,d[1]-(c||0))+(d[2]||"px"):b}function eb(a,b,c,d,e){for(var f=c===(d?"border":"content")?4:"width"===b?1:0,g=0;4>f;f+=2)"margin"===c&&(g+=n.css(a,c+V[f],!0,e)),d?("content"===c&&(g-=n.css(a,"padding"+V[f],!0,e)),"margin"!==c&&(g-=n.css(a,"border"+V[f]+"Width",!0,e))):(g+=n.css(a,"padding"+V[f],!0,e),"padding"!==c&&(g+=n.css(a,"border"+V[f]+"Width",!0,e)));return g}function fb(b,c,e){var f=!0,g="width"===c?b.offsetWidth:b.offsetHeight,h=Ra(b),i=l.boxSizing&&"border-box"===n.css(b,"boxSizing",!1,h);if(d.msFullscreenElement&&a.top!==a&&b.getClientRects().length&&(g=Math.round(100*b.getBoundingClientRect()[c])),0>=g||null==g){if(g=Sa(b,c,h),(0>g||null==g)&&(g=b.style[c]),Oa.test(g))return g;f=i&&(l.boxSizingReliable()||g===b.style[c]),g=parseFloat(g)||0}return g+eb(b,c,e||(i?"border":"content"),f,h)+"px"}n.extend({cssHooks:{opacity:{get:function(a,b){if(b){var c=Sa(a,"opacity");return""===c?"1":c}}}},cssNumber:{animationIterationCount:!0,columnCount:!0,fillOpacity:!0,flexGrow:!0,flexShrink:!0,fontWeight:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,widows:!0,zIndex:!0,zoom:!0},cssProps:{"float":l.cssFloat?"cssFloat":"styleFloat"},style:function(a,b,c,d){if(a&&3!==a.nodeType&&8!==a.nodeType&&a.style){var e,f,g,h=n.camelCase(b),i=a.style;if(b=n.cssProps[h]||(n.cssProps[h]=bb(h)||h),g=n.cssHooks[b]||n.cssHooks[h],void 0===c)return g&&"get"in g&&void 0!==(e=g.get(a,!1,d))?e:i[b];if(f=typeof c,"string"===f&&(e=U.exec(c))&&e[1]&&(c=X(a,b,e),f="number"),null!=c&&c===c&&("number"===f&&(c+=e&&e[3]||(n.cssNumber[h]?"":"px")),l.clearCloneStyle||""!==c||0!==b.indexOf("background")||(i[b]="inherit"),!(g&&"set"in g&&void 0===(c=g.set(a,c,d)))))try{i[b]=c}catch(j){}}},css:function(a,b,c,d){var e,f,g,h=n.camelCase(b);return b=n.cssProps[h]||(n.cssProps[h]=bb(h)||h),g=n.cssHooks[b]||n.cssHooks[h],g&&"get"in g&&(f=g.get(a,!0,c)),void 0===f&&(f=Sa(a,b,d)),"normal"===f&&b in $a&&(f=$a[b]),""===c||c?(e=parseFloat(f),c===!0||isFinite(e)?e||0:f):f}}),n.each(["height","width"],function(a,b){n.cssHooks[b]={get:function(a,c,d){return c?Xa.test(n.css(a,"display"))&&0===a.offsetWidth?Pa(a,Za,function(){return fb(a,b,d)}):fb(a,b,d):void 0},set:function(a,c,d){var e=d&&Ra(a);return db(a,c,d?eb(a,b,d,l.boxSizing&&"border-box"===n.css(a,"boxSizing",!1,e),e):0)}}}),l.opacity||(n.cssHooks.opacity={get:function(a,b){return Wa.test((b&&a.currentStyle?a.currentStyle.filter:a.style.filter)||"")?.01*parseFloat(RegExp.$1)+"":b?"1":""},set:function(a,b){var c=a.style,d=a.currentStyle,e=n.isNumeric(b)?"alpha(opacity="+100*b+")":"",f=d&&d.filter||c.filter||"";c.zoom=1,(b>=1||""===b)&&""===n.trim(f.replace(Va,""))&&c.removeAttribute&&(c.removeAttribute("filter"),""===b||d&&!d.filter)||(c.filter=Va.test(f)?f.replace(Va,e):f+" "+e)}}),n.cssHooks.marginRight=Ua(l.reliableMarginRight,function(a,b){return b?Pa(a,{display:"inline-block"},Sa,[a,"marginRight"]):void 0}),n.cssHooks.marginLeft=Ua(l.reliableMarginLeft,function(a,b){
+return b?(parseFloat(Sa(a,"marginLeft"))||(n.contains(a.ownerDocument,a)?a.getBoundingClientRect().left-Pa(a,{marginLeft:0},function(){return a.getBoundingClientRect().left}):0))+"px":void 0}),n.each({margin:"",padding:"",border:"Width"},function(a,b){n.cssHooks[a+b]={expand:function(c){for(var d=0,e={},f="string"==typeof c?c.split(" "):[c];4>d;d++)e[a+V[d]+b]=f[d]||f[d-2]||f[0];return e}},Na.test(a)||(n.cssHooks[a+b].set=db)}),n.fn.extend({css:function(a,b){return Y(this,function(a,b,c){var d,e,f={},g=0;if(n.isArray(b)){for(d=Ra(a),e=b.length;e>g;g++)f[b[g]]=n.css(a,b[g],!1,d);return f}return void 0!==c?n.style(a,b,c):n.css(a,b)},a,b,arguments.length>1)},show:function(){return cb(this,!0)},hide:function(){return cb(this)},toggle:function(a){return"boolean"==typeof a?a?this.show():this.hide():this.each(function(){W(this)?n(this).show():n(this).hide()})}});function gb(a,b,c,d,e){return new gb.prototype.init(a,b,c,d,e)}n.Tween=gb,gb.prototype={constructor:gb,init:function(a,b,c,d,e,f){this.elem=a,this.prop=c,this.easing=e||n.easing._default,this.options=b,this.start=this.now=this.cur(),this.end=d,this.unit=f||(n.cssNumber[c]?"":"px")},cur:function(){var a=gb.propHooks[this.prop];return a&&a.get?a.get(this):gb.propHooks._default.get(this)},run:function(a){var b,c=gb.propHooks[this.prop];return this.options.duration?this.pos=b=n.easing[this.easing](a,this.options.duration*a,0,1,this.options.duration):this.pos=b=a,this.now=(this.end-this.start)*b+this.start,this.options.step&&this.options.step.call(this.elem,this.now,this),c&&c.set?c.set(this):gb.propHooks._default.set(this),this}},gb.prototype.init.prototype=gb.prototype,gb.propHooks={_default:{get:function(a){var b;return 1!==a.elem.nodeType||null!=a.elem[a.prop]&&null==a.elem.style[a.prop]?a.elem[a.prop]:(b=n.css(a.elem,a.prop,""),b&&"auto"!==b?b:0)},set:function(a){n.fx.step[a.prop]?n.fx.step[a.prop](a):1!==a.elem.nodeType||null==a.elem.style[n.cssProps[a.prop]]&&!n.cssHooks[a.prop]?a.elem[a.prop]=a.now:n.style(a.elem,a.prop,a.now+a.unit)}}},gb.propHooks.scrollTop=gb.propHooks.scrollLeft={set:function(a){a.elem.nodeType&&a.elem.parentNode&&(a.elem[a.prop]=a.now)}},n.easing={linear:function(a){return a},swing:function(a){return.5-Math.cos(a*Math.PI)/2},_default:"swing"},n.fx=gb.prototype.init,n.fx.step={};var hb,ib,jb=/^(?:toggle|show|hide)$/,kb=/queueHooks$/;function lb(){return a.setTimeout(function(){hb=void 0}),hb=n.now()}function mb(a,b){var c,d={height:a},e=0;for(b=b?1:0;4>e;e+=2-b)c=V[e],d["margin"+c]=d["padding"+c]=a;return b&&(d.opacity=d.width=a),d}function nb(a,b,c){for(var d,e=(qb.tweeners[b]||[]).concat(qb.tweeners["*"]),f=0,g=e.length;g>f;f++)if(d=e[f].call(c,b,a))return d}function ob(a,b,c){var d,e,f,g,h,i,j,k,m=this,o={},p=a.style,q=a.nodeType&&W(a),r=n._data(a,"fxshow");c.queue||(h=n._queueHooks(a,"fx"),null==h.unqueued&&(h.unqueued=0,i=h.empty.fire,h.empty.fire=function(){h.unqueued||i()}),h.unqueued++,m.always(function(){m.always(function(){h.unqueued--,n.queue(a,"fx").length||h.empty.fire()})})),1===a.nodeType&&("height"in b||"width"in b)&&(c.overflow=[p.overflow,p.overflowX,p.overflowY],j=n.css(a,"display"),k="none"===j?n._data(a,"olddisplay")||Ma(a.nodeName):j,"inline"===k&&"none"===n.css(a,"float")&&(l.inlineBlockNeedsLayout&&"inline"!==Ma(a.nodeName)?p.zoom=1:p.display="inline-block")),c.overflow&&(p.overflow="hidden",l.shrinkWrapBlocks()||m.always(function(){p.overflow=c.overflow[0],p.overflowX=c.overflow[1],p.overflowY=c.overflow[2]}));for(d in b)if(e=b[d],jb.exec(e)){if(delete b[d],f=f||"toggle"===e,e===(q?"hide":"show")){if("show"!==e||!r||void 0===r[d])continue;q=!0}o[d]=r&&r[d]||n.style(a,d)}else j=void 0;if(n.isEmptyObject(o))"inline"===("none"===j?Ma(a.nodeName):j)&&(p.display=j);else{r?"hidden"in r&&(q=r.hidden):r=n._data(a,"fxshow",{}),f&&(r.hidden=!q),q?n(a).show():m.done(function(){n(a).hide()}),m.done(function(){var b;n._removeData(a,"fxshow");for(b in o)n.style(a,b,o[b])});for(d in o)g=nb(q?r[d]:0,d,m),d in r||(r[d]=g.start,q&&(g.end=g.start,g.start="width"===d||"height"===d?1:0))}}function pb(a,b){var c,d,e,f,g;for(c in a)if(d=n.camelCase(c),e=b[d],f=a[c],n.isArray(f)&&(e=f[1],f=a[c]=f[0]),c!==d&&(a[d]=f,delete a[c]),g=n.cssHooks[d],g&&"expand"in g){f=g.expand(f),delete a[d];for(c in f)c in a||(a[c]=f[c],b[c]=e)}else b[d]=e}function qb(a,b,c){var d,e,f=0,g=qb.prefilters.length,h=n.Deferred().always(function(){delete i.elem}),i=function(){if(e)return!1;for(var b=hb||lb(),c=Math.max(0,j.startTime+j.duration-b),d=c/j.duration||0,f=1-d,g=0,i=j.tweens.length;i>g;g++)j.tweens[g].run(f);return h.notifyWith(a,[j,f,c]),1>f&&i?c:(h.resolveWith(a,[j]),!1)},j=h.promise({elem:a,props:n.extend({},b),opts:n.extend(!0,{specialEasing:{},easing:n.easing._default},c),originalProperties:b,originalOptions:c,startTime:hb||lb(),duration:c.duration,tweens:[],createTween:function(b,c){var d=n.Tween(a,j.opts,b,c,j.opts.specialEasing[b]||j.opts.easing);return j.tweens.push(d),d},stop:function(b){var c=0,d=b?j.tweens.length:0;if(e)return this;for(e=!0;d>c;c++)j.tweens[c].run(1);return b?(h.notifyWith(a,[j,1,0]),h.resolveWith(a,[j,b])):h.rejectWith(a,[j,b]),this}}),k=j.props;for(pb(k,j.opts.specialEasing);g>f;f++)if(d=qb.prefilters[f].call(j,a,k,j.opts))return n.isFunction(d.stop)&&(n._queueHooks(j.elem,j.opts.queue).stop=n.proxy(d.stop,d)),d;return n.map(k,nb,j),n.isFunction(j.opts.start)&&j.opts.start.call(a,j),n.fx.timer(n.extend(i,{elem:a,anim:j,queue:j.opts.queue})),j.progress(j.opts.progress).done(j.opts.done,j.opts.complete).fail(j.opts.fail).always(j.opts.always)}n.Animation=n.extend(qb,{tweeners:{"*":[function(a,b){var c=this.createTween(a,b);return X(c.elem,a,U.exec(b),c),c}]},tweener:function(a,b){n.isFunction(a)?(b=a,a=["*"]):a=a.match(G);for(var c,d=0,e=a.length;e>d;d++)c=a[d],qb.tweeners[c]=qb.tweeners[c]||[],qb.tweeners[c].unshift(b)},prefilters:[ob],prefilter:function(a,b){b?qb.prefilters.unshift(a):qb.prefilters.push(a)}}),n.speed=function(a,b,c){var d=a&&"object"==typeof a?n.extend({},a):{complete:c||!c&&b||n.isFunction(a)&&a,duration:a,easing:c&&b||b&&!n.isFunction(b)&&b};return d.duration=n.fx.off?0:"number"==typeof d.duration?d.duration:d.duration in n.fx.speeds?n.fx.speeds[d.duration]:n.fx.speeds._default,null!=d.queue&&d.queue!==!0||(d.queue="fx"),d.old=d.complete,d.complete=function(){n.isFunction(d.old)&&d.old.call(this),d.queue&&n.dequeue(this,d.queue)},d},n.fn.extend({fadeTo:function(a,b,c,d){return this.filter(W).css("opacity",0).show().end().animate({opacity:b},a,c,d)},animate:function(a,b,c,d){var e=n.isEmptyObject(a),f=n.speed(b,c,d),g=function(){var b=qb(this,n.extend({},a),f);(e||n._data(this,"finish"))&&b.stop(!0)};return g.finish=g,e||f.queue===!1?this.each(g):this.queue(f.queue,g)},stop:function(a,b,c){var d=function(a){var b=a.stop;delete a.stop,b(c)};return"string"!=typeof a&&(c=b,b=a,a=void 0),b&&a!==!1&&this.queue(a||"fx",[]),this.each(function(){var b=!0,e=null!=a&&a+"queueHooks",f=n.timers,g=n._data(this);if(e)g[e]&&g[e].stop&&d(g[e]);else for(e in g)g[e]&&g[e].stop&&kb.test(e)&&d(g[e]);for(e=f.length;e--;)f[e].elem!==this||null!=a&&f[e].queue!==a||(f[e].anim.stop(c),b=!1,f.splice(e,1));!b&&c||n.dequeue(this,a)})},finish:function(a){return a!==!1&&(a=a||"fx"),this.each(function(){var b,c=n._data(this),d=c[a+"queue"],e=c[a+"queueHooks"],f=n.timers,g=d?d.length:0;for(c.finish=!0,n.queue(this,a,[]),e&&e.stop&&e.stop.call(this,!0),b=f.length;b--;)f[b].elem===this&&f[b].queue===a&&(f[b].anim.stop(!0),f.splice(b,1));for(b=0;g>b;b++)d[b]&&d[b].finish&&d[b].finish.call(this);delete c.finish})}}),n.each(["toggle","show","hide"],function(a,b){var c=n.fn[b];n.fn[b]=function(a,d,e){return null==a||"boolean"==typeof a?c.apply(this,arguments):this.animate(mb(b,!0),a,d,e)}}),n.each({slideDown:mb("show"),slideUp:mb("hide"),slideToggle:mb("toggle"),fadeIn:{opacity:"show"},fadeOut:{opacity:"hide"},fadeToggle:{opacity:"toggle"}},function(a,b){n.fn[a]=function(a,c,d){return this.animate(b,a,c,d)}}),n.timers=[],n.fx.tick=function(){var a,b=n.timers,c=0;for(hb=n.now();c<b.length;c++)a=b[c],a()||b[c]!==a||b.splice(c--,1);b.length||n.fx.stop(),hb=void 0},n.fx.timer=function(a){n.timers.push(a),a()?n.fx.start():n.timers.pop()},n.fx.interval=13,n.fx.start=function(){ib||(ib=a.setInterval(n.fx.tick,n.fx.interval))},n.fx.stop=function(){a.clearInterval(ib),ib=null},n.fx.speeds={slow:600,fast:200,_default:400},n.fn.delay=function(b,c){return b=n.fx?n.fx.speeds[b]||b:b,c=c||"fx",this.queue(c,function(c,d){var e=a.setTimeout(c,b);d.stop=function(){a.clearTimeout(e)}})},function(){var a,b=d.createElement("input"),c=d.createElement("div"),e=d.createElement("select"),f=e.appendChild(d.createElement("option"));c=d.createElement("div"),c.setAttribute("className","t"),c.innerHTML="  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>",a=c.getElementsByTagName("a")[0],b.setAttribute("type","checkbox"),c.appendChild(b),a=c.getElementsByTagName("a")[0],a.style.cssText="top:1px",l.getSetAttribute="t"!==c.className,l.style=/top/.test(a.getAttribute("style")),l.hrefNormalized="/a"===a.getAttribute("href"),l.checkOn=!!b.value,l.optSelected=f.selected,l.enctype=!!d.createElement("form").enctype,e.disabled=!0,l.optDisabled=!f.disabled,b=d.createElement("input"),b.setAttribute("value",""),l.input=""===b.getAttribute("value"),b.value="t",b.setAttribute("type","radio"),l.radioValue="t"===b.value}();var rb=/\r/g,sb=/[\x20\t\r\n\f]+/g;n.fn.extend({val:function(a){var b,c,d,e=this[0];{if(arguments.length)return d=n.isFunction(a),this.each(function(c){var e;1===this.nodeType&&(e=d?a.call(this,c,n(this).val()):a,null==e?e="":"number"==typeof e?e+="":n.isArray(e)&&(e=n.map(e,function(a){return null==a?"":a+""})),b=n.valHooks[this.type]||n.valHooks[this.nodeName.toLowerCase()],b&&"set"in b&&void 0!==b.set(this,e,"value")||(this.value=e))});if(e)return b=n.valHooks[e.type]||n.valHooks[e.nodeName.toLowerCase()],b&&"get"in b&&void 0!==(c=b.get(e,"value"))?c:(c=e.value,"string"==typeof c?c.replace(rb,""):null==c?"":c)}}}),n.extend({valHooks:{option:{get:function(a){var b=n.find.attr(a,"value");return null!=b?b:n.trim(n.text(a)).replace(sb," ")}},select:{get:function(a){for(var b,c,d=a.options,e=a.selectedIndex,f="select-one"===a.type||0>e,g=f?null:[],h=f?e+1:d.length,i=0>e?h:f?e:0;h>i;i++)if(c=d[i],(c.selected||i===e)&&(l.optDisabled?!c.disabled:null===c.getAttribute("disabled"))&&(!c.parentNode.disabled||!n.nodeName(c.parentNode,"optgroup"))){if(b=n(c).val(),f)return b;g.push(b)}return g},set:function(a,b){var c,d,e=a.options,f=n.makeArray(b),g=e.length;while(g--)if(d=e[g],n.inArray(n.valHooks.option.get(d),f)>-1)try{d.selected=c=!0}catch(h){d.scrollHeight}else d.selected=!1;return c||(a.selectedIndex=-1),e}}}}),n.each(["radio","checkbox"],function(){n.valHooks[this]={set:function(a,b){return n.isArray(b)?a.checked=n.inArray(n(a).val(),b)>-1:void 0}},l.checkOn||(n.valHooks[this].get=function(a){return null===a.getAttribute("value")?"on":a.value})});var tb,ub,vb=n.expr.attrHandle,wb=/^(?:checked|selected)$/i,xb=l.getSetAttribute,yb=l.input;n.fn.extend({attr:function(a,b){return Y(this,n.attr,a,b,arguments.length>1)},removeAttr:function(a){return this.each(function(){n.removeAttr(this,a)})}}),n.extend({attr:function(a,b,c){var d,e,f=a.nodeType;if(3!==f&&8!==f&&2!==f)return"undefined"==typeof a.getAttribute?n.prop(a,b,c):(1===f&&n.isXMLDoc(a)||(b=b.toLowerCase(),e=n.attrHooks[b]||(n.expr.match.bool.test(b)?ub:tb)),void 0!==c?null===c?void n.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:(a.setAttribute(b,c+""),c):e&&"get"in e&&null!==(d=e.get(a,b))?d:(d=n.find.attr(a,b),null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!l.radioValue&&"radio"===b&&n.nodeName(a,"input")){var c=a.value;return a.setAttribute("type",b),c&&(a.value=c),b}}}},removeAttr:function(a,b){var c,d,e=0,f=b&&b.match(G);if(f&&1===a.nodeType)while(c=f[e++])d=n.propFix[c]||c,n.expr.match.bool.test(c)?yb&&xb||!wb.test(c)?a[d]=!1:a[n.camelCase("default-"+c)]=a[d]=!1:n.attr(a,c,""),a.removeAttribute(xb?c:d)}}),ub={set:function(a,b,c){return b===!1?n.removeAttr(a,c):yb&&xb||!wb.test(c)?a.setAttribute(!xb&&n.propFix[c]||c,c):a[n.camelCase("default-"+c)]=a[c]=!0,c}},n.each(n.expr.match.bool.source.match(/\w+/g),function(a,b){var c=vb[b]||n.find.attr;yb&&xb||!wb.test(b)?vb[b]=function(a,b,d){var e,f;return d||(f=vb[b],vb[b]=e,e=null!=c(a,b,d)?b.toLowerCase():null,vb[b]=f),e}:vb[b]=function(a,b,c){return c?void 0:a[n.camelCase("default-"+b)]?b.toLowerCase():null}}),yb&&xb||(n.attrHooks.value={set:function(a,b,c){return n.nodeName(a,"input")?void(a.defaultValue=b):tb&&tb.set(a,b,c)}}),xb||(tb={set:function(a,b,c){var d=a.getAttributeNode(c);return d||a.setAttributeNode(d=a.ownerDocument.createAttribute(c)),d.value=b+="","value"===c||b===a.getAttribute(c)?b:void 0}},vb.id=vb.name=vb.coords=function(a,b,c){var d;return c?void 0:(d=a.getAttributeNode(b))&&""!==d.value?d.value:null},n.valHooks.button={get:function(a,b){var c=a.getAttributeNode(b);return c&&c.specified?c.value:void 0},set:tb.set},n.attrHooks.contenteditable={set:function(a,b,c){tb.set(a,""===b?!1:b,c)}},n.each(["width","height"],function(a,b){n.attrHooks[b]={set:function(a,c){return""===c?(a.setAttribute(b,"auto"),c):void 0}}})),l.style||(n.attrHooks.style={get:function(a){return a.style.cssText||void 0},set:function(a,b){return a.style.cssText=b+""}});var zb=/^(?:input|select|textarea|button|object)$/i,Ab=/^(?:a|area)$/i;n.fn.extend({prop:function(a,b){return Y(this,n.prop,a,b,arguments.length>1)},removeProp:function(a){return a=n.propFix[a]||a,this.each(function(){try{this[a]=void 0,delete this[a]}catch(b){}})}}),n.extend({prop:function(a,b,c){var d,e,f=a.nodeType;if(3!==f&&8!==f&&2!==f)return 1===f&&n.isXMLDoc(a)||(b=n.propFix[b]||b,e=n.propHooks[b]),void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&&"get"in e&&null!==(d=e.get(a,b))?d:a[b]},propHooks:{tabIndex:{get:function(a){var b=n.find.attr(a,"tabindex");return b?parseInt(b,10):zb.test(a.nodeName)||Ab.test(a.nodeName)&&a.href?0:-1}}},propFix:{"for":"htmlFor","class":"className"}}),l.hrefNormalized||n.each(["href","src"],function(a,b){n.propHooks[b]={get:function(a){return a.getAttribute(b,4)}}}),l.optSelected||(n.propHooks.selected={get:function(a){var b=a.parentNode;return b&&(b.selectedIndex,b.parentNode&&b.parentNode.selectedIndex),null},set:function(a){var b=a.parentNode;b&&(b.selectedIndex,b.parentNode&&b.parentNode.selectedIndex)}}),n.each(["tabIndex","readOnly","maxLength","cellSpacing","cellPadding","rowSpan","colSpan","useMap","frameBorder","contentEditable"],function(){n.propFix[this.toLowerCase()]=this}),l.enctype||(n.propFix.enctype="encoding");var Bb=/[\t\r\n\f]/g;function Cb(a){return n.attr(a,"class")||""}n.fn.extend({addClass:function(a){var b,c,d,e,f,g,h,i=0;if(n.isFunction(a))return this.each(function(b){n(this).addClass(a.call(this,b,Cb(this)))});if("string"==typeof a&&a){b=a.match(G)||[];while(c=this[i++])if(e=Cb(c),d=1===c.nodeType&&(" "+e+" ").replace(Bb," ")){g=0;while(f=b[g++])d.indexOf(" "+f+" ")<0&&(d+=f+" ");h=n.trim(d),e!==h&&n.attr(c,"class",h)}}return this},removeClass:function(a){var b,c,d,e,f,g,h,i=0;if(n.isFunction(a))return this.each(function(b){n(this).removeClass(a.call(this,b,Cb(this)))});if(!arguments.length)return this.attr("class","");if("string"==typeof a&&a){b=a.match(G)||[];while(c=this[i++])if(e=Cb(c),d=1===c.nodeType&&(" "+e+" ").replace(Bb," ")){g=0;while(f=b[g++])while(d.indexOf(" "+f+" ")>-1)d=d.replace(" "+f+" "," ");h=n.trim(d),e!==h&&n.attr(c,"class",h)}}return this},toggleClass:function(a,b){var c=typeof a;return"boolean"==typeof b&&"string"===c?b?this.addClass(a):this.removeClass(a):n.isFunction(a)?this.each(function(c){n(this).toggleClass(a.call(this,c,Cb(this),b),b)}):this.each(function(){var b,d,e,f;if("string"===c){d=0,e=n(this),f=a.match(G)||[];while(b=f[d++])e.hasClass(b)?e.removeClass(b):e.addClass(b)}else void 0!==a&&"boolean"!==c||(b=Cb(this),b&&n._data(this,"__className__",b),n.attr(this,"class",b||a===!1?"":n._data(this,"__className__")||""))})},hasClass:function(a){var b,c,d=0;b=" "+a+" ";while(c=this[d++])if(1===c.nodeType&&(" "+Cb(c)+" ").replace(Bb," ").indexOf(b)>-1)return!0;return!1}}),n.each("blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu".split(" "),function(a,b){n.fn[b]=function(a,c){return arguments.length>0?this.on(b,null,a,c):this.trigger(b)}}),n.fn.extend({hover:function(a,b){return this.mouseenter(a).mouseleave(b||a)}});var Db=a.location,Eb=n.now(),Fb=/\?/,Gb=/(,)|(\[|{)|(}|])|"(?:[^"\\\r\n]|\\["\\\/bfnrt]|\\u[\da-fA-F]{4})*"\s*:?|true|false|null|-?(?!0\d)\d+(?:\.\d+|)(?:[eE][+-]?\d+|)/g;n.parseJSON=function(b){if(a.JSON&&a.JSON.parse)return a.JSON.parse(b+"");var c,d=null,e=n.trim(b+"");return e&&!n.trim(e.replace(Gb,function(a,b,e,f){return c&&b&&(d=0),0===d?a:(c=e||b,d+=!f-!e,"")}))?Function("return "+e)():n.error("Invalid JSON: "+b)},n.parseXML=function(b){var c,d;if(!b||"string"!=typeof b)return null;try{a.DOMParser?(d=new a.DOMParser,c=d.parseFromString(b,"text/xml")):(c=new a.ActiveXObject("Microsoft.XMLDOM"),c.async="false",c.loadXML(b))}catch(e){c=void 0}return c&&c.documentElement&&!c.getElementsByTagName("parsererror").length||n.error("Invalid XML: "+b),c};var Hb=/#.*$/,Ib=/([?&])_=[^&]*/,Jb=/^(.*?):[ \t]*([^\r\n]*)\r?$/gm,Kb=/^(?:about|app|app-storage|.+-extension|file|res|widget):$/,Lb=/^(?:GET|HEAD)$/,Mb=/^\/\//,Nb=/^([\w.+-]+:)(?:\/\/(?:[^\/?#]*@|)([^\/?#:]*)(?::(\d+)|)|)/,Ob={},Pb={},Qb="*/".concat("*"),Rb=Db.href,Sb=Nb.exec(Rb.toLowerCase())||[];function Tb(a){return function(b,c){"string"!=typeof b&&(c=b,b="*");var d,e=0,f=b.toLowerCase().match(G)||[];if(n.isFunction(c))while(d=f[e++])"+"===d.charAt(0)?(d=d.slice(1)||"*",(a[d]=a[d]||[]).unshift(c)):(a[d]=a[d]||[]).push(c)}}function Ub(a,b,c,d){var e={},f=a===Pb;function g(h){var i;return e[h]=!0,n.each(a[h]||[],function(a,h){var j=h(b,c,d);return"string"!=typeof j||f||e[j]?f?!(i=j):void 0:(b.dataTypes.unshift(j),g(j),!1)}),i}return g(b.dataTypes[0])||!e["*"]&&g("*")}function Vb(a,b){var c,d,e=n.ajaxSettings.flatOptions||{};for(d in b)void 0!==b[d]&&((e[d]?a:c||(c={}))[d]=b[d]);return c&&n.extend(!0,a,c),a}function Wb(a,b,c){var d,e,f,g,h=a.contents,i=a.dataTypes;while("*"===i[0])i.shift(),void 0===e&&(e=a.mimeType||b.getResponseHeader("Content-Type"));if(e)for(g in h)if(h[g]&&h[g].test(e)){i.unshift(g);break}if(i[0]in c)f=i[0];else{for(g in c){if(!i[0]||a.converters[g+" "+i[0]]){f=g;break}d||(d=g)}f=f||d}return f?(f!==i[0]&&i.unshift(f),c[f]):void 0}function Xb(a,b,c,d){var e,f,g,h,i,j={},k=a.dataTypes.slice();if(k[1])for(g in a.converters)j[g.toLowerCase()]=a.converters[g];f=k.shift();while(f)if(a.responseFields[f]&&(c[a.responseFields[f]]=b),!i&&d&&a.dataFilter&&(b=a.dataFilter(b,a.dataType)),i=f,f=k.shift())if("*"===f)f=i;else if("*"!==i&&i!==f){if(g=j[i+" "+f]||j["* "+f],!g)for(e in j)if(h=e.split(" "),h[1]===f&&(g=j[i+" "+h[0]]||j["* "+h[0]])){g===!0?g=j[e]:j[e]!==!0&&(f=h[0],k.unshift(h[1]));break}if(g!==!0)if(g&&a["throws"])b=g(b);else try{b=g(b)}catch(l){return{state:"parsererror",error:g?l:"No conversion from "+i+" to "+f}}}return{state:"success",data:b}}n.extend({active:0,lastModified:{},etag:{},ajaxSettings:{url:Rb,type:"GET",isLocal:Kb.test(Sb[1]),global:!0,processData:!0,async:!0,contentType:"application/x-www-form-urlencoded; charset=UTF-8",accepts:{"*":Qb,text:"text/plain",html:"text/html",xml:"application/xml, text/xml",json:"application/json, text/javascript"},contents:{xml:/\bxml\b/,html:/\bhtml/,json:/\bjson\b/},responseFields:{xml:"responseXML",text:"responseText",json:"responseJSON"},converters:{"* text":String,"text html":!0,"text json":n.parseJSON,"text xml":n.parseXML},flatOptions:{url:!0,context:!0}},ajaxSetup:function(a,b){return b?Vb(Vb(a,n.ajaxSettings),b):Vb(n.ajaxSettings,a)},ajaxPrefilter:Tb(Ob),ajaxTransport:Tb(Pb),ajax:function(b,c){"object"==typeof b&&(c=b,b=void 0),c=c||{};var d,e,f,g,h,i,j,k,l=n.ajaxSetup({},c),m=l.context||l,o=l.context&&(m.nodeType||m.jquery)?n(m):n.event,p=n.Deferred(),q=n.Callbacks("once memory"),r=l.statusCode||{},s={},t={},u=0,v="canceled",w={readyState:0,getResponseHeader:function(a){var b;if(2===u){if(!k){k={};while(b=Jb.exec(g))k[b[1].toLowerCase()]=b[2]}b=k[a.toLowerCase()]}return null==b?null:b},getAllResponseHeaders:function(){return 2===u?g:null},setRequestHeader:function(a,b){var c=a.toLowerCase();return u||(a=t[c]=t[c]||a,s[a]=b),this},overrideMimeType:function(a){return u||(l.mimeType=a),this},statusCode:function(a){var b;if(a)if(2>u)for(b in a)r[b]=[r[b],a[b]];else w.always(a[w.status]);return this},abort:function(a){var b=a||v;return j&&j.abort(b),y(0,b),this}};if(p.promise(w).complete=q.add,w.success=w.done,w.error=w.fail,l.url=((b||l.url||Rb)+"").replace(Hb,"").replace(Mb,Sb[1]+"//"),l.type=c.method||c.type||l.method||l.type,l.dataTypes=n.trim(l.dataType||"*").toLowerCase().match(G)||[""],null==l.crossDomain&&(d=Nb.exec(l.url.toLowerCase()),l.crossDomain=!(!d||d[1]===Sb[1]&&d[2]===Sb[2]&&(d[3]||("http:"===d[1]?"80":"443"))===(Sb[3]||("http:"===Sb[1]?"80":"443")))),l.data&&l.processData&&"string"!=typeof l.data&&(l.data=n.param(l.data,l.traditional)),Ub(Ob,l,c,w),2===u)return w;i=n.event&&l.global,i&&0===n.active++&&n.event.trigger("ajaxStart"),l.type=l.type.toUpperCase(),l.hasContent=!Lb.test(l.type),f=l.url,l.hasContent||(l.data&&(f=l.url+=(Fb.test(f)?"&":"?")+l.data,delete l.data),l.cache===!1&&(l.url=Ib.test(f)?f.replace(Ib,"$1_="+Eb++):f+(Fb.test(f)?"&":"?")+"_="+Eb++)),l.ifModified&&(n.lastModified[f]&&w.setRequestHeader("If-Modified-Since",n.lastModified[f]),n.etag[f]&&w.setRequestHeader("If-None-Match",n.etag[f])),(l.data&&l.hasContent&&l.contentType!==!1||c.contentType)&&w.setRequestHeader("Content-Type",l.contentType),w.setRequestHeader("Accept",l.dataTypes[0]&&l.accepts[l.dataTypes[0]]?l.accepts[l.dataTypes[0]]+("*"!==l.dataTypes[0]?", "+Qb+"; q=0.01":""):l.accepts["*"]);for(e in l.headers)w.setRequestHeader(e,l.headers[e]);if(l.beforeSend&&(l.beforeSend.call(m,w,l)===!1||2===u))return w.abort();v="abort";for(e in{success:1,error:1,complete:1})w[e](l[e]);if(j=Ub(Pb,l,c,w)){if(w.readyState=1,i&&o.trigger("ajaxSend",[w,l]),2===u)return w;l.async&&l.timeout>0&&(h=a.setTimeout(function(){w.abort("timeout")},l.timeout));try{u=1,j.send(s,y)}catch(x){if(!(2>u))throw x;y(-1,x)}}else y(-1,"No Transport");function y(b,c,d,e){var k,s,t,v,x,y=c;2!==u&&(u=2,h&&a.clearTimeout(h),j=void 0,g=e||"",w.readyState=b>0?4:0,k=b>=200&&300>b||304===b,d&&(v=Wb(l,w,d)),v=Xb(l,v,w,k),k?(l.ifModified&&(x=w.getResponseHeader("Last-Modified"),x&&(n.lastModified[f]=x),x=w.getResponseHeader("etag"),x&&(n.etag[f]=x)),204===b||"HEAD"===l.type?y="nocontent":304===b?y="notmodified":(y=v.state,s=v.data,t=v.error,k=!t)):(t=y,!b&&y||(y="error",0>b&&(b=0))),w.status=b,w.statusText=(c||y)+"",k?p.resolveWith(m,[s,y,w]):p.rejectWith(m,[w,y,t]),w.statusCode(r),r=void 0,i&&o.trigger(k?"ajaxSuccess":"ajaxError",[w,l,k?s:t]),q.fireWith(m,[w,y]),i&&(o.trigger("ajaxComplete",[w,l]),--n.active||n.event.trigger("ajaxStop")))}return w},getJSON:function(a,b,c){return n.get(a,b,c,"json")},getScript:function(a,b){return n.get(a,void 0,b,"script")}}),n.each(["get","post"],function(a,b){n[b]=function(a,c,d,e){return n.isFunction(c)&&(e=e||d,d=c,c=void 0),n.ajax(n.extend({url:a,type:b,dataType:e,data:c,success:d},n.isPlainObject(a)&&a))}}),n._evalUrl=function(a){return n.ajax({url:a,type:"GET",dataType:"script",cache:!0,async:!1,global:!1,"throws":!0})},n.fn.extend({wrapAll:function(a){if(n.isFunction(a))return this.each(function(b){n(this).wrapAll(a.call(this,b))});if(this[0]){var b=n(a,this[0].ownerDocument).eq(0).clone(!0);this[0].parentNode&&b.insertBefore(this[0]),b.map(function(){var a=this;while(a.firstChild&&1===a.firstChild.nodeType)a=a.firstChild;return a}).append(this)}return this},wrapInner:function(a){return n.isFunction(a)?this.each(function(b){n(this).wrapInner(a.call(this,b))}):this.each(function(){var b=n(this),c=b.contents();c.length?c.wrapAll(a):b.append(a)})},wrap:function(a){var b=n.isFunction(a);return this.each(function(c){n(this).wrapAll(b?a.call(this,c):a)})},unwrap:function(){return this.parent().each(function(){n.nodeName(this,"body")||n(this).replaceWith(this.childNodes)}).end()}});function Yb(a){return a.style&&a.style.display||n.css(a,"display")}function Zb(a){while(a&&1===a.nodeType){if("none"===Yb(a)||"hidden"===a.type)return!0;a=a.parentNode}return!1}n.expr.filters.hidden=function(a){return l.reliableHiddenOffsets()?a.offsetWidth<=0&&a.offsetHeight<=0&&!a.getClientRects().length:Zb(a)},n.expr.filters.visible=function(a){return!n.expr.filters.hidden(a)};var $b=/%20/g,_b=/\[\]$/,ac=/\r?\n/g,bc=/^(?:submit|button|image|reset|file)$/i,cc=/^(?:input|select|textarea|keygen)/i;function dc(a,b,c,d){var e;if(n.isArray(b))n.each(b,function(b,e){c||_b.test(a)?d(a,e):dc(a+"["+("object"==typeof e&&null!=e?b:"")+"]",e,c,d)});else if(c||"object"!==n.type(b))d(a,b);else for(e in b)dc(a+"["+e+"]",b[e],c,d)}n.param=function(a,b){var c,d=[],e=function(a,b){b=n.isFunction(b)?b():null==b?"":b,d[d.length]=encodeURIComponent(a)+"="+encodeURIComponent(b)};if(void 0===b&&(b=n.ajaxSettings&&n.ajaxSettings.traditional),n.isArray(a)||a.jquery&&!n.isPlainObject(a))n.each(a,function(){e(this.name,this.value)});else for(c in a)dc(c,a[c],b,e);return d.join("&").replace($b,"+")},n.fn.extend({serialize:function(){return n.param(this.serializeArray())},serializeArray:function(){return this.map(function(){var a=n.prop(this,"elements");return a?n.makeArray(a):this}).filter(function(){var a=this.type;return this.name&&!n(this).is(":disabled")&&cc.test(this.nodeName)&&!bc.test(a)&&(this.checked||!Z.test(a))}).map(function(a,b){var c=n(this).val();return null==c?null:n.isArray(c)?n.map(c,function(a){return{name:b.name,value:a.replace(ac,"\r\n")}}):{name:b.name,value:c.replace(ac,"\r\n")}}).get()}}),n.ajaxSettings.xhr=void 0!==a.ActiveXObject?function(){return this.isLocal?ic():d.documentMode>8?hc():/^(get|post|head|put|delete|options)$/i.test(this.type)&&hc()||ic()}:hc;var ec=0,fc={},gc=n.ajaxSettings.xhr();a.attachEvent&&a.attachEvent("onunload",function(){for(var a in fc)fc[a](void 0,!0)}),l.cors=!!gc&&"withCredentials"in gc,gc=l.ajax=!!gc,gc&&n.ajaxTransport(function(b){if(!b.crossDomain||l.cors){var c;return{send:function(d,e){var f,g=b.xhr(),h=++ec;if(g.open(b.type,b.url,b.async,b.username,b.password),b.xhrFields)for(f in b.xhrFields)g[f]=b.xhrFields[f];b.mimeType&&g.overrideMimeType&&g.overrideMimeType(b.mimeType),b.crossDomain||d["X-Requested-With"]||(d["X-Requested-With"]="XMLHttpRequest");for(f in d)void 0!==d[f]&&g.setRequestHeader(f,d[f]+"");g.send(b.hasContent&&b.data||null),c=function(a,d){var f,i,j;if(c&&(d||4===g.readyState))if(delete fc[h],c=void 0,g.onreadystatechange=n.noop,d)4!==g.readyState&&g.abort();else{j={},f=g.status,"string"==typeof g.responseText&&(j.text=g.responseText);try{i=g.statusText}catch(k){i=""}f||!b.isLocal||b.crossDomain?1223===f&&(f=204):f=j.text?200:404}j&&e(f,i,j,g.getAllResponseHeaders())},b.async?4===g.readyState?a.setTimeout(c):g.onreadystatechange=fc[h]=c:c()},abort:function(){c&&c(void 0,!0)}}}});function hc(){try{return new a.XMLHttpRequest}catch(b){}}function ic(){try{return new a.ActiveXObject("Microsoft.XMLHTTP")}catch(b){}}n.ajaxPrefilter(function(a){a.crossDomain&&(a.contents.script=!1)}),n.ajaxSetup({accepts:{script:"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"},contents:{script:/\b(?:java|ecma)script\b/},converters:{"text script":function(a){return n.globalEval(a),a}}}),n.ajaxPrefilter("script",function(a){void 0===a.cache&&(a.cache=!1),a.crossDomain&&(a.type="GET",a.global=!1)}),n.ajaxTransport("script",function(a){if(a.crossDomain){var b,c=d.head||n("head")[0]||d.documentElement;return{send:function(e,f){b=d.createElement("script"),b.async=!0,a.scriptCharset&&(b.charset=a.scriptCharset),b.src=a.url,b.onload=b.onreadystatechange=function(a,c){(c||!b.readyState||/loaded|complete/.test(b.readyState))&&(b.onload=b.onreadystatechange=null,b.parentNode&&b.parentNode.removeChild(b),b=null,c||f(200,"success"))},c.insertBefore(b,c.firstChild)},abort:function(){b&&b.onload(void 0,!0)}}}});var jc=[],kc=/(=)\?(?=&|$)|\?\?/;n.ajaxSetup({jsonp:"callback",jsonpCallback:function(){var a=jc.pop()||n.expando+"_"+Eb++;return this[a]=!0,a}}),n.ajaxPrefilter("json jsonp",function(b,c,d){var e,f,g,h=b.jsonp!==!1&&(kc.test(b.url)?"url":"string"==typeof b.data&&0===(b.contentType||"").indexOf("application/x-www-form-urlencoded")&&kc.test(b.data)&&"data");return h||"jsonp"===b.dataTypes[0]?(e=b.jsonpCallback=n.isFunction(b.jsonpCallback)?b.jsonpCallback():b.jsonpCallback,h?b[h]=b[h].replace(kc,"$1"+e):b.jsonp!==!1&&(b.url+=(Fb.test(b.url)?"&":"?")+b.jsonp+"="+e),b.converters["script json"]=function(){return g||n.error(e+" was not called"),g[0]},b.dataTypes[0]="json",f=a[e],a[e]=function(){g=arguments},d.always(function(){void 0===f?n(a).removeProp(e):a[e]=f,b[e]&&(b.jsonpCallback=c.jsonpCallback,jc.push(e)),g&&n.isFunction(f)&&f(g[0]),g=f=void 0}),"script"):void 0}),n.parseHTML=function(a,b,c){if(!a||"string"!=typeof a)return null;"boolean"==typeof b&&(c=b,b=!1),b=b||d;var e=x.exec(a),f=!c&&[];return e?[b.createElement(e[1])]:(e=ja([a],b,f),f&&f.length&&n(f).remove(),n.merge([],e.childNodes))};var lc=n.fn.load;n.fn.load=function(a,b,c){if("string"!=typeof a&&lc)return lc.apply(this,arguments);var d,e,f,g=this,h=a.indexOf(" ");return h>-1&&(d=n.trim(a.slice(h,a.length)),a=a.slice(0,h)),n.isFunction(b)?(c=b,b=void 0):b&&"object"==typeof b&&(e="POST"),g.length>0&&n.ajax({url:a,type:e||"GET",dataType:"html",data:b}).done(function(a){f=arguments,g.html(d?n("<div>").append(n.parseHTML(a)).find(d):a)}).always(c&&function(a,b){g.each(function(){c.apply(g,f||[a.responseText,b,a])})}),this},n.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],function(a,b){n.fn[b]=function(a){return this.on(b,a)}}),n.expr.filters.animated=function(a){return n.grep(n.timers,function(b){return a===b.elem}).length};function mc(a){return n.isWindow(a)?a:9===a.nodeType?a.defaultView||a.parentWindow:!1}n.offset={setOffset:function(a,b,c){var d,e,f,g,h,i,j,k=n.css(a,"position"),l=n(a),m={};"static"===k&&(a.style.position="relative"),h=l.offset(),f=n.css(a,"top"),i=n.css(a,"left"),j=("absolute"===k||"fixed"===k)&&n.inArray("auto",[f,i])>-1,j?(d=l.position(),g=d.top,e=d.left):(g=parseFloat(f)||0,e=parseFloat(i)||0),n.isFunction(b)&&(b=b.call(a,c,n.extend({},h))),null!=b.top&&(m.top=b.top-h.top+g),null!=b.left&&(m.left=b.left-h.left+e),"using"in b?b.using.call(a,m):l.css(m)}},n.fn.extend({offset:function(a){if(arguments.length)return void 0===a?this:this.each(function(b){n.offset.setOffset(this,a,b)});var b,c,d={top:0,left:0},e=this[0],f=e&&e.ownerDocument;if(f)return b=f.documentElement,n.contains(b,e)?("undefined"!=typeof e.getBoundingClientRect&&(d=e.getBoundingClientRect()),c=mc(f),{top:d.top+(c.pageYOffset||b.scrollTop)-(b.clientTop||0),left:d.left+(c.pageXOffset||b.scrollLeft)-(b.clientLeft||0)}):d},position:function(){if(this[0]){var a,b,c={top:0,left:0},d=this[0];return"fixed"===n.css(d,"position")?b=d.getBoundingClientRect():(a=this.offsetParent(),b=this.offset(),n.nodeName(a[0],"html")||(c=a.offset()),c.top+=n.css(a[0],"borderTopWidth",!0),c.left+=n.css(a[0],"borderLeftWidth",!0)),{top:b.top-c.top-n.css(d,"marginTop",!0),left:b.left-c.left-n.css(d,"marginLeft",!0)}}},offsetParent:function(){return this.map(function(){var a=this.offsetParent;while(a&&!n.nodeName(a,"html")&&"static"===n.css(a,"position"))a=a.offsetParent;return a||Qa})}}),n.each({scrollLeft:"pageXOffset",scrollTop:"pageYOffset"},function(a,b){var c=/Y/.test(b);n.fn[a]=function(d){return Y(this,function(a,d,e){var f=mc(a);return void 0===e?f?b in f?f[b]:f.document.documentElement[d]:a[d]:void(f?f.scrollTo(c?n(f).scrollLeft():e,c?e:n(f).scrollTop()):a[d]=e)},a,d,arguments.length,null)}}),n.each(["top","left"],function(a,b){n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){
+return c?(c=Sa(a,b),Oa.test(c)?n(a).position()[b]+"px":c):void 0})}),n.each({Height:"height",Width:"width"},function(a,b){n.each({padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){var f=arguments.length&&(c||"boolean"!=typeof d),g=c||(d===!0||e===!0?"margin":"border");return Y(this,function(b,c,d){var e;return n.isWindow(b)?b.document.documentElement["client"+a]:9===b.nodeType?(e=b.documentElement,Math.max(b.body["scroll"+a],e["scroll"+a],b.body["offset"+a],e["offset"+a],e["client"+a])):void 0===d?n.css(b,c,g):n.style(b,c,d,g)},b,f?d:void 0,f,null)}})}),n.fn.extend({bind:function(a,b,c){return this.on(a,null,b,c)},unbind:function(a,b){return this.off(a,null,b)},delegate:function(a,b,c,d){return this.on(b,a,c,d)},undelegate:function(a,b,c){return 1===arguments.length?this.off(a,"**"):this.off(b,a||"**",c)}}),n.fn.size=function(){return this.length},n.fn.andSelf=n.fn.addBack,"function"==typeof define&&define.amd&&define("jquery",[],function(){return n});var nc=a.jQuery,oc=a.$;return n.noConflict=function(b){return a.$===n&&(a.$=oc),b&&a.jQuery===n&&(a.jQuery=nc),n},b||(a.jQuery=a.$=n),n});
+'use strict';
+/*!
+ * jquery-confirm v1.5.1 (http://craftpip.github.io/jquery-confirm/)
+ * Author: Boniface Pereira
+ * Website: www.craftpip.com
+ * Contact: hey@craftpip.com
+ *
+ * Copyright 2013-2015 jquery-confirm
+ * Licensed under MIT (https://github.com/craftpip/jquery-confirm/blob/master/LICENSE)
+ */
+
+if (typeof jQuery === 'undefined') {
+    throw new Error('jquery-confirm requires jQuery');
+}
+
+var jconfirm, Jconfirm;
+(function ($) {
+    $.confirm = function (options) {
+        /*
+         *  Alias of jconfirm 
+         */
+        return jconfirm(options);
+    };
+    $.alert = function (options) {
+        /*
+         *  Alias of jconfirm 
+         */
+        options.cancelButton = false;
+        return jconfirm(options);
+    };
+    $.dialog = function (options) {
+        /*
+         *  Alias of jconfirm 
+         */
+        options.cancelButton = false;
+        options.confirmButton = false;
+        return jconfirm(options);
+    };
+    jconfirm = function (options) {
+        /*
+         * initial function for calling.
+         */
+        if (jconfirm.defaults) {
+            /*
+             * Merge global defaults with plugin defaults
+             */
+            $.extend(jconfirm.pluginDefaults, jconfirm.defaults);
+        }
+        /*
+         * merge options with plugin defaults.
+         */
+        var options = $.extend({}, jconfirm.pluginDefaults, options);
+        return new Jconfirm(options);
+    };
+    Jconfirm = function (options) {
+        /*
+         * constructor function Jconfirm,
+         * options = user options.
+         */
+        $.extend(this, options);
+        this._init();
+    };
+    Jconfirm.prototype = {
+        _init: function () {
+            var that = this;
+            this._rand = Math.round(Math.random() * 99999);
+            this._buildHTML();
+            this._bindEvents();
+            setTimeout(function () {
+                that.open();
+            }, 0);
+        },
+        animations: ['anim-scale', 'anim-top', 'anim-bottom', 'anim-left', 'anim-right', 'anim-zoom', 'anim-opacity', 'anim-none', 'anim-rotate', 'anim-rotatex', 'anim-rotatey', 'anim-scalex', 'anim-scaley'],
+        _buildHTML: function () {
+            var that = this;
+            /*
+             * Cleaning animations.
+             */
+            this.animation = 'anim-' + this.animation.toLowerCase();
+            if (this.animation === 'none')
+                this.animationSpeed = 0;
+            /*
+             * Append html to body.
+             */
+            this.$el = $(this.template).appendTo(this.container).addClass(this.theme);
+            this.$b = this.$el.find('.jconfirm-box').css({
+                '-webkit-transition-duration': this.animationSpeed / 1000 + 's',
+                'transition-duration': this.animationSpeed / 1000 + 's'
+            });
+            this.$b = this.$el.find('.jconfirm-box');
+            this.$b.addClass(this.animation);
+            /*
+             * setup html contents
+             */
+            this.$el.find('div.title').html('<i class="' + this.icon + '"></i> ' + this.title);
+            var contentDiv = this.$el.find('div.content');
+
+            /*
+             * Settings up buttons
+             */
+            var $btnc = this.$el.find('.buttons');
+            if (this.confirmButton && this.confirmButton.trim() !== '') {
+                this.$confirmButton = $('<button class="btn">' + this.confirmButton + '</button>').appendTo($btnc);
+                this.$confirmButton.addClass(this.confirmButtonClass);
+            }
+            if (this.cancelButton && this.cancelButton.trim() !== '') {
+                this.$cancelButton = $('<button class="btn">' + this.cancelButton + '</button>').appendTo($btnc);
+                this.$cancelButton.addClass(this.cancelButtonClass);
+            }
+            if (!this.confirmButton && !this.cancelButton) {
+                $btnc.remove();
+                if (this.closeIcon)
+                    this.$closeButton = this.$b.find('.closeIcon').show();
+				if (!this.closeIcon&&!this.title){
+					this.$b.find('.title').hide();
+					//this.$b.find('.content').css("padding","0");
+				}
+            }
+
+            /*
+             * If user provides a Url to load the content from.
+             * Check if it has HTTP protocol.
+             */
+            if (this.content.substr(0, 4).toLowerCase() === 'url:') {
+                contentDiv.html('');
+                $btnc.find('button').attr('disabled', 'disabled');
+                var url = this.content.substring(4, this.content.length);
+                setTimeout(function () {
+                    $.get(url, function (html) {
+                        contentDiv.html(html);
+                        $btnc.find('button').removeAttr('disabled');
+                        that.setDialogCenter();
+                    });
+                }, 1);
+            } else {
+                contentDiv.html(this.content);
+            }
+            if (this.autoClose)
+                this._startCountDown();
+        },
+        _startCountDown: function () {
+            var opt = this.autoClose.split('|');
+            if (/cancel/.test(opt[0]) && this.type === 'alert')
+                return false;
+            if (/confirm|cancel/.test(opt[0])) {
+                this.$cd = $(' <span class="countdown"></span>').appendTo(this['$' + opt[0] + 'Button']);
+                var that = this;
+                that.$cd.parent().click();
+                var time = opt[1] / 1000;
+                this.interval = setInterval(function () {
+                    that.$cd.html(' [' + (time -= 1) + ']');
+                    if (time === 0) {
+                        that.$cd.parent().trigger('click');
+                        clearInterval(that.interval);
+                    }
+                }, 1000);
+            }
+        },
+        _bindEvents: function () {
+            var that = this;
+            this.$el.find('.jconfirm-bg').click(function (e) {
+                if (that.backgroundDismiss) {
+                    that.cancel();
+                    that.close();
+                } else {
+                    that.$b.addClass('hilight');
+                    setTimeout(function () {
+                        that.$b.removeClass('hilight');
+                    }, 400);
+                }
+            });
+            if (this.$confirmButton) {
+                this.$confirmButton.click(function (e) {
+                    e.preventDefault();
+                    var r = that.confirm(that.$b);
+                    if (typeof r === 'undefined' || r)
+                        that.close();
+                });
+            }
+            if (this.$cancelButton) {
+                this.$cancelButton.click(function (e) {
+                    e.preventDefault();
+                    var r = that.cancel(that.$b);
+                    if (typeof r === 'undefined' || r)
+                        that.close();
+                });
+            }
+            if (this.$closeButton) {
+                this.$closeButton.click(function (e) {
+                    e.preventDefault();
+                    that.cancel();
+                    that.close();
+                });
+            }
+            if (this.keyboardEnabled) {
+                setTimeout(function () {
+                    $(window).on('keyup.' + this._rand, function (e) {
+                        that.reactOnKey(e);
+                    });
+                }, 500);
+            }
+
+            $(window).on('resize.' + this._rand, function () {
+                that.setDialogCenter();
+            });
+			
+			that.setDialogCenter();
+        },
+        reactOnKey: function key(e) {
+            /*
+             * prevent keyup event if the dialog is not last! 
+             */
+            var a = $('.jconfirm');
+            if (a.eq(a.length - 1)[0] !== this.$el[0])
+                return false;
+
+            var key = e.which;
+            //console.log(e);
+            if (key === 27) {
+                /*
+                 * if ESC key
+                 */
+                if (!this.backgroundDismiss) {
+                    /*
+                     * If background dismiss is false, Glow the modal.
+                     */
+                    this.$el.find('.jconfirm-bg').click();
+                    return false;
+                }
+
+                if (this.$cancelButton) {
+                    this.$cancelButton.click();
+                } else {
+					this.cancel();
+                    this.close();
+                }
+            }
+            if (key === 13) {
+                /*
+                 * if ENTER key
+                 */
+                if (this.$confirmButton) {
+                    this.$confirmButton.click();
+                } else {
+
+                }
+            }
+        },
+        setDialogCenter: function () {
+            var h = $(window).height();
+			var w = $(window).width();
+			var grab=200;
+			if(w<800)
+				grab=90;
+			this.$b.find('.content').css({
+				'max-height': h - grab + 'px'
+			});
+			var h2 = this.$b.height(),
+					mar = (h - h2) / 2;
+			this.$b.css({
+				'top': mar
+			});
+        },
+        close: function () {
+            var that = this;
+            /*
+             unbind the window resize & keyup event.
+             */
+            $(window).unbind('resize.' + this._rand);
+            if (this.keyboardEnabled)
+                $(window).unbind('keyup.' + this._rand);
+
+            this.$b.addClass(this.animation);
+            $('body').removeClass('jconfirm-noscroll');
+            setTimeout(function () {
+                that.$el.remove();
+            }, this.animationSpeed);
+        },
+        open: function () {
+            var that = this;
+            $('body').addClass('jconfirm-noscroll');
+            this.$b.removeClass(this.animations.join(' '));
+            /**
+             * Blur the focused elements, prevents re-execution with button press.
+             */
+            $('body :focus').trigger('blur');
+        }
+    };
+
+    jconfirm.pluginDefaults = {
+        template: '<div class="jconfirm"><div class="jconfirm-bg"></div><div class="jconfirm-box"><div class="closeIcon"><span class="glyphicon glyphicon-remove"></span></div><div class="title"></div><div class="content"></div><div class="buttons pull-right"></div><div class="jquery-clear"></div></div></div>',
+        title: 'Hello',
+        content: 'Are you sure to continue?',
+        icon: '',
+        confirmButton: '确认',
+        cancelButton: '取消',
+        confirmButtonClass: 'btn-default',
+        cancelButtonClass: 'btn-default',
+        theme: 'white',
+        animation: 'none',
+        animationSpeed: 0,
+        keyboardEnabled: true,
+        container: 'body',
+        confirm: function () {
+        },
+        cancel: function () {
+        },
+        backgroundDismiss: true,
+        autoClose: false,
+        closeIcon: true
+    };
+})(jQuery);
+/**
+ * @license jCanvas v21.0.1
+ * Copyright 2017 Caleb Evans
+ * Released under the MIT license
+ */
+(function (jQuery, global, factory) {
+	'use strict';
+
+	if (typeof module === 'object' && typeof module.exports === 'object') {
+		module.exports = function (jQuery, w) {
+			return factory(jQuery, w);
+		};
+	} else {
+		factory(jQuery, global);
+	}
+
+// Pass this if window is not defined yet
+}(typeof window !== 'undefined' ? window.jQuery : {}, typeof window !== 'undefined' ? window : this, function ($, window) {
+'use strict';
+
+var document = window.document,
+	Image = window.Image,
+	Array = window.Array,
+	getComputedStyle = window.getComputedStyle,
+	Math = window.Math,
+	Number = window.Number,
+	parseFloat = window.parseFloat;
+
+// Define local aliases to frequently used properties
+var defaults,
+	// Aliases to jQuery methods
+	extendObject = $.extend,
+	inArray = $.inArray,
+	typeOf = function (operand) {
+		return Object.prototype.toString.call(operand)
+			.slice(8, -1).toLowerCase();
+	},
+	isPlainObject = $.isPlainObject,
+	// Math constants and functions
+	PI = Math.PI,
+	round = Math.round,
+	abs = Math.abs,
+	sin = Math.sin,
+	cos = Math.cos,
+	atan2 = Math.atan2,
+	// The Array slice() method
+	arraySlice = Array.prototype.slice,
+	// jQuery's internal event normalization function
+	jQueryEventFix = $.event.fix,
+	// Object for storing a number of internal property maps
+	maps = {},
+	// jQuery internal caches
+	caches = {
+		dataCache: {},
+		propCache: {},
+		imageCache: {}
+	},
+	// Base transformations
+	baseTransforms = {
+		rotate: 0,
+		scaleX: 1,
+		scaleY: 1,
+		translateX: 0,
+		translateY: 0,
+		// Store all previous masks
+		masks: []
+	},
+	// Object for storing CSS-related properties
+	css = {},
+	tangibleEvents = [
+		'mousedown',
+		'mousemove',
+		'mouseup',
+		'mouseover',
+		'mouseout',
+		'touchstart',
+		'touchmove',
+		'touchend'
+	];
+
+// Constructor for creating objects that inherit from jCanvas preferences and defaults
+function jCanvasObject(args) {
+	var params = this,
+		propName;
+	// Copy the given parameters into new object
+	for (propName in args) {
+		// Do not merge defaults into parameters
+		if (Object.prototype.hasOwnProperty.call(args, propName)) {
+			params[propName] = args[propName];
+		}
+	}
+	return params;
+}
+
+// jCanvas object in which global settings are other data are stored
+var jCanvas = {
+	// Events object for storing jCanvas event initiation functions
+	events: {},
+	// Object containing all jCanvas event hooks
+	eventHooks: {},
+	// Settings for enabling future jCanvas features
+	future: {}
+};
+
+// jCanvas default property values
+function jCanvasDefaults() {
+	extendObject(this, jCanvasDefaults.baseDefaults);
+}
+jCanvasDefaults.baseDefaults = {
+	align: 'center',
+	arrowAngle: 90,
+	arrowRadius: 0,
+	autosave: true,
+	baseline: 'middle',
+	bringToFront: false,
+	ccw: false,
+	closed: false,
+	compositing: 'source-over',
+	concavity: 0,
+	cornerRadius: 0,
+	count: 1,
+	cropFromCenter: true,
+	crossOrigin: null,
+	cursors: null,
+	disableEvents: false,
+	draggable: false,
+	dragGroups: null,
+	groups: null,
+	data: null,
+	dx: null,
+	dy: null,
+	end: 360,
+	eventX: null,
+	eventY: null,
+	fillStyle: 'transparent',
+	fontStyle: 'normal',
+	fontSize: '12pt',
+	fontFamily: 'sans-serif',
+	fromCenter: true,
+	height: null,
+	imageSmoothing: true,
+	inDegrees: true,
+	intangible: false,
+	index: null,
+	letterSpacing: null,
+	lineHeight: 1,
+	layer: false,
+	mask: false,
+	maxWidth: null,
+	miterLimit: 10,
+	name: null,
+	opacity: 1,
+	r1: null,
+	r2: null,
+	radius: 0,
+	repeat: 'repeat',
+	respectAlign: false,
+	restrictDragToAxis: null,
+	rotate: 0,
+	rounded: false,
+	scale: 1,
+	scaleX: 1,
+	scaleY: 1,
+	shadowBlur: 0,
+	shadowColor: 'transparent',
+	shadowStroke: false,
+	shadowX: 0,
+	shadowY: 0,
+	sHeight: null,
+	sides: 0,
+	source: '',
+	spread: 0,
+	start: 0,
+	strokeCap: 'butt',
+	strokeDash: null,
+	strokeDashOffset: 0,
+	strokeJoin: 'miter',
+	strokeStyle: 'transparent',
+	strokeWidth: 1,
+	sWidth: null,
+	sx: null,
+	sy: null,
+	text: '',
+	translate: 0,
+	translateX: 0,
+	translateY: 0,
+	type: null,
+	visible: true,
+	width: null,
+	x: 0,
+	y: 0
+};
+defaults = new jCanvasDefaults();
+jCanvasObject.prototype = defaults;
+
+/* Internal helper methods */
+
+// Determines if the given operand is a string
+function isString(operand) {
+	return (typeOf(operand) === 'string');
+}
+
+// Determines if the given operand is a function
+function isFunction(operand) {
+	return (typeOf(operand) === 'function');
+}
+
+// Determines if the given operand is numeric
+function isNumeric(operand) {
+	return !isNaN(Number(operand)) && !isNaN(parseFloat(operand));
+}
+
+// Get 2D context for the given canvas
+function _getContext(canvas) {
+	return (canvas && canvas.getContext ? canvas.getContext('2d') : null);
+}
+
+// Coerce designated number properties from strings to numbers
+function _coerceNumericProps(props) {
+	var propName, propType, propValue;
+	// Loop through all properties in given property map
+	for (propName in props) {
+		if (Object.prototype.hasOwnProperty.call(props, propName)) {
+			propValue = props[propName];
+			propType = typeOf(propValue);
+			// If property is non-empty string and value is numeric
+			if (propType === 'string' && isNumeric(propValue) && propName !== 'text') {
+				// Convert value to number
+				props[propName] = parseFloat(propValue);
+			}
+		}
+	}
+	// Ensure value of text property is always a string
+	if (props.text !== undefined) {
+		props.text = String(props.text);
+	}
+}
+
+// Clone the given transformations object
+function _cloneTransforms(transforms) {
+	// Clone the object itself
+	transforms = extendObject({}, transforms);
+	// Clone the object's masks array
+	transforms.masks = transforms.masks.slice(0);
+	return transforms;
+}
+
+// Save canvas context and update transformation stack
+function _saveCanvas(ctx, data) {
+	var transforms;
+	ctx.save();
+	transforms = _cloneTransforms(data.transforms);
+	data.savedTransforms.push(transforms);
+}
+
+// Restore canvas context update transformation stack
+function _restoreCanvas(ctx, data) {
+	if (data.savedTransforms.length === 0) {
+		// Reset transformation state if it can't be restored any more
+		data.transforms = _cloneTransforms(baseTransforms);
+	} else {
+		// Restore canvas context
+		ctx.restore();
+		// Restore current transform state to the last saved state
+		data.transforms = data.savedTransforms.pop();
+	}
+}
+
+// Set the style with the given name
+function _setStyle(canvas, ctx, params, styleName) {
+	if (params[styleName]) {
+		if (isFunction(params[styleName])) {
+			// Handle functions
+			ctx[styleName] = params[styleName].call(canvas, params);
+		} else {
+			// Handle string values
+			ctx[styleName] = params[styleName];
+		}
+	}
+}
+
+// Set canvas context properties
+function _setGlobalProps(canvas, ctx, params) {
+	_setStyle(canvas, ctx, params, 'fillStyle');
+	_setStyle(canvas, ctx, params, 'strokeStyle');
+	ctx.lineWidth = params.strokeWidth;
+	// Optionally round corners for paths
+	if (params.rounded) {
+		ctx.lineCap = ctx.lineJoin = 'round';
+	} else {
+		ctx.lineCap = params.strokeCap;
+		ctx.lineJoin = params.strokeJoin;
+		ctx.miterLimit = params.miterLimit;
+	}
+	// Reset strokeDash if null
+	if (!params.strokeDash) {
+		params.strokeDash = [];
+	}
+	// Dashed lines
+	if (ctx.setLineDash) {
+		ctx.setLineDash(params.strokeDash);
+	}
+	ctx.webkitLineDash = params.strokeDash;
+	ctx.lineDashOffset = ctx.webkitLineDashOffset = ctx.mozDashOffset = params.strokeDashOffset;
+	// Drop shadow
+	ctx.shadowOffsetX = params.shadowX;
+	ctx.shadowOffsetY = params.shadowY;
+	ctx.shadowBlur = params.shadowBlur;
+	ctx.shadowColor = params.shadowColor;
+	// Opacity and composite operation
+	ctx.globalAlpha = params.opacity;
+	ctx.globalCompositeOperation = params.compositing;
+	// Support cross-browser toggling of image smoothing
+	if (params.imageSmoothing) {
+		ctx.imageSmoothingEnabled = params.imageSmoothing;
+	}
+}
+
+// Optionally enable masking support for this path
+function _enableMasking(ctx, data, params) {
+	if (params.mask) {
+		// If jCanvas autosave is enabled
+		if (params.autosave) {
+			// Automatically save transformation state by default
+			_saveCanvas(ctx, data);
+		}
+		// Clip the current path
+		ctx.clip();
+		// Keep track of current masks
+		data.transforms.masks.push(params._args);
+	}
+}
+
+// Restore individual shape transformation
+function _restoreTransform(ctx, params) {
+	// If shape has been transformed by jCanvas
+	if (params._transformed) {
+		// Restore canvas context
+		ctx.restore();
+	}
+}
+
+// Close current canvas path
+function _closePath(canvas, ctx, params) {
+	var data;
+
+	// Optionally close path
+	if (params.closed) {
+		ctx.closePath();
+	}
+
+	if (params.shadowStroke && params.strokeWidth !== 0) {
+		// Extend the shadow to include the stroke of a drawing
+
+		// Add a stroke shadow by stroking before filling
+		ctx.stroke();
+		ctx.fill();
+		// Ensure the below stroking does not inherit a shadow
+		ctx.shadowColor = 'transparent';
+		ctx.shadowBlur = 0;
+		// Stroke over fill as usual
+		ctx.stroke();
+
+	} else {
+		// If shadowStroke is not enabled, stroke & fill as usual
+
+		ctx.fill();
+		// Prevent extra shadow created by stroke (but only when fill is present)
+		if (params.fillStyle !== 'transparent') {
+			ctx.shadowColor = 'transparent';
+		}
+		if (params.strokeWidth !== 0) {
+			// Only stroke if the stroke is not 0
+			ctx.stroke();
+		}
+
+	}
+
+	// Optionally close path
+	if (!params.closed) {
+		ctx.closePath();
+	}
+
+	// Restore individual shape transformation
+	_restoreTransform(ctx, params);
+
+	// Mask shape if chosen
+	if (params.mask) {
+		// Retrieve canvas data
+		data = _getCanvasData(canvas);
+		_enableMasking(ctx, data, params);
+	}
+
+}
+
+// Transform (translate, scale, or rotate) shape
+function _transformShape(canvas, ctx, params, width, height) {
+
+	// Get conversion factor for radians
+	params._toRad = (params.inDegrees ? (PI / 180) : 1);
+
+	params._transformed = true;
+	ctx.save();
+
+	// Optionally measure (x, y) position from top-left corner
+	if (!params.fromCenter && !params._centered && width !== undefined) {
+		// Always draw from center unless otherwise specified
+		if (height === undefined) {
+			height = width;
+		}
+		params.x += width / 2;
+		params.y += height / 2;
+		params._centered = true;
+	}
+	// Optionally rotate shape
+	if (params.rotate) {
+		_rotateCanvas(ctx, params, null);
+	}
+	// Optionally scale shape
+	if (params.scale !== 1 || params.scaleX !== 1 || params.scaleY !== 1) {
+		_scaleCanvas(ctx, params, null);
+	}
+	// Optionally translate shape
+	if (params.translate || params.translateX || params.translateY) {
+		_translateCanvas(ctx, params, null);
+	}
+
+}
+
+/* Plugin API */
+
+// Extend jCanvas with a user-defined method
+jCanvas.extend = function extend(plugin) {
+
+	// Create plugin
+	if (plugin.name) {
+		// Merge properties with defaults
+		if (plugin.props) {
+			extendObject(defaults, plugin.props);
+		}
+		// Define plugin method
+		$.fn[plugin.name] = function self(args) {
+			var $canvases = this, canvas, e, ctx,
+				params;
+
+			for (e = 0; e < $canvases.length; e += 1) {
+				canvas = $canvases[e];
+				ctx = _getContext(canvas);
+				if (ctx) {
+
+					params = new jCanvasObject(args);
+					_addLayer(canvas, params, args, self);
+
+					_setGlobalProps(canvas, ctx, params);
+					plugin.fn.call(canvas, ctx, params);
+
+				}
+			}
+			return $canvases;
+		};
+		// Add drawing type to drawing map
+		if (plugin.type) {
+			maps.drawings[plugin.type] = plugin.name;
+		}
+	}
+	return $.fn[plugin.name];
+};
+
+/* Layer API */
+
+// Retrieved the stored jCanvas data for a canvas element
+function _getCanvasData(canvas) {
+	var dataCache = caches.dataCache, data;
+	if (dataCache._canvas === canvas && dataCache._data) {
+
+		// Retrieve canvas data from cache if possible
+		data = dataCache._data;
+
+	} else {
+
+		// Retrieve canvas data from jQuery's internal data storage
+		data = $.data(canvas, 'jCanvas');
+		if (!data) {
+
+			// Create canvas data object if it does not already exist
+			data = {
+				// The associated canvas element
+				canvas: canvas,
+				// Layers array
+				layers: [],
+				// Layer maps
+				layer: {
+					names: {},
+					groups: {}
+				},
+				eventHooks: {},
+				// All layers that intersect with the event coordinates (regardless of visibility)
+				intersecting: [],
+				// The topmost layer whose area contains the event coordinates
+				lastIntersected: null,
+				cursor: $(canvas).css('cursor'),
+				// Properties for the current drag event
+				drag: {
+					layer: null,
+					dragging: false
+				},
+				// Data for the current event
+				event: {
+					type: null,
+					x: null,
+					y: null
+				},
+				// Events which already have been bound to the canvas
+				events: {},
+				// The canvas's current transformation state
+				transforms: _cloneTransforms(baseTransforms),
+				savedTransforms: [],
+				// Whether a layer is being animated or not
+				animating: false,
+				// The layer currently being animated
+				animated: null,
+				// The device pixel ratio
+				pixelRatio: 1,
+				// Whether pixel ratio transformations have been applied
+				scaled: false,
+				// Whether the canvas should be redrawn when a layer mousemove
+				// event triggers (either directly, or indirectly via dragging)
+				redrawOnMousemove: false
+			};
+			// Use jQuery to store canvas data
+			$.data(canvas, 'jCanvas', data);
+
+		}
+		// Cache canvas data for faster retrieval
+		dataCache._canvas = canvas;
+		dataCache._data = data;
+
+	}
+	return data;
+}
+
+// Initialize all of a layer's associated jCanvas events
+function _addLayerEvents($canvas, data, layer) {
+	var eventName;
+	// Determine which jCanvas events need to be bound to this layer
+	for (eventName in jCanvas.events) {
+		if (Object.prototype.hasOwnProperty.call(jCanvas.events, eventName)) {
+			// If layer has callback function to complement it
+			if (layer[eventName] || (layer.cursors && layer.cursors[eventName])) {
+				// Bind event to layer
+				_addExplicitLayerEvent($canvas, data, layer, eventName);
+			}
+		}
+	}
+	if (!data.events.mouseout) {
+		$canvas.bind('mouseout.jCanvas', function () {
+			// Retrieve the layer whose drag event was canceled
+			var layer = data.drag.layer, l;
+			// If cursor mouses out of canvas while dragging
+			if (layer) {
+				// Cancel drag
+				data.drag = {};
+				_triggerLayerEvent($canvas, data, layer, 'dragcancel');
+			}
+			// Loop through all layers
+			for (l = 0; l < data.layers.length; l += 1) {
+				layer = data.layers[l];
+				// If layer thinks it's still being moused over
+				if (layer._hovered) {
+					// Trigger mouseout on layer
+					$canvas.triggerLayerEvent(data.layers[l], 'mouseout');
+				}
+			}
+			// Redraw layers
+			$canvas.drawLayers();
+		});
+		// Indicate that an event handler has been bound
+		data.events.mouseout = true;
+	}
+}
+
+// Initialize the given event on the given layer
+function _addLayerEvent($canvas, data, layer, eventName) {
+	// Use touch events if appropriate
+	// eventName = _getMouseEventName(eventName);
+	// Bind event to layer
+	jCanvas.events[eventName]($canvas, data);
+	layer._event = true;
+}
+
+// Add a layer event that was explicitly declared in the layer's parameter map,
+// excluding events added implicitly (e.g. mousemove event required by draggable
+// layers)
+function _addExplicitLayerEvent($canvas, data, layer, eventName) {
+	_addLayerEvent($canvas, data, layer, eventName);
+	if (eventName === 'mouseover' || eventName === 'mouseout' || eventName === 'mousemove') {
+		data.redrawOnMousemove = true;
+	}
+}
+
+// Enable drag support for this layer
+function _enableDrag($canvas, data, layer) {
+	var dragHelperEvents, eventName, i;
+	// Only make layer draggable if necessary
+	if (layer.draggable || layer.cursors) {
+
+		// Organize helper events which enable drag support
+		dragHelperEvents = ['mousedown', 'mousemove', 'mouseup'];
+
+		// Bind each helper event to the canvas
+		for (i = 0; i < dragHelperEvents.length; i += 1) {
+			// Use touch events if appropriate
+			eventName = dragHelperEvents[i];
+			// Bind event
+			_addLayerEvent($canvas, data, layer, eventName);
+		}
+		// Indicate that this layer has events bound to it
+		layer._event = true;
+
+	}
+}
+
+// Update a layer property map if property is changed
+function _updateLayerName($canvas, data, layer, props) {
+	var nameMap = data.layer.names;
+
+	// If layer name is being added, not changed
+	if (!props) {
+
+		props = layer;
+
+	} else {
+
+		// Remove old layer name entry because layer name has changed
+		if (props.name !== undefined && isString(layer.name) && layer.name !== props.name) {
+			delete nameMap[layer.name];
+		}
+
+	}
+
+	// Add new entry to layer name map with new name
+	if (isString(props.name)) {
+		nameMap[props.name] = layer;
+	}
+}
+
+// Create or update the data map for the given layer and group type
+function _updateLayerGroups($canvas, data, layer, props) {
+	var groupMap = data.layer.groups,
+		group, groupName, g,
+		index, l;
+
+	// If group name is not changing
+	if (!props) {
+
+		props = layer;
+
+	} else {
+
+		// Remove layer from all of its associated groups
+		if (props.groups !== undefined && layer.groups !== null) {
+			for (g = 0; g < layer.groups.length; g += 1) {
+				groupName = layer.groups[g];
+				group = groupMap[groupName];
+				if (group) {
+					// Remove layer from its old layer group entry
+					for (l = 0; l < group.length; l += 1) {
+						if (group[l] === layer) {
+							// Keep track of the layer's initial index
+							index = l;
+							// Remove layer once found
+							group.splice(l, 1);
+							break;
+						}
+					}
+					// Remove layer group entry if group is empty
+					if (group.length === 0) {
+						delete groupMap[groupName];
+					}
+				}
+			}
+		}
+
+	}
+
+	// Add layer to new group if a new group name is given
+	if (props.groups !== undefined && props.groups !== null) {
+
+		for (g = 0; g < props.groups.length; g += 1) {
+
+			groupName = props.groups[g];
+
+			group = groupMap[groupName];
+			if (!group) {
+				// Create new group entry if it doesn't exist
+				group = groupMap[groupName] = [];
+				group.name = groupName;
+			}
+			if (index === undefined) {
+				// Add layer to end of group unless otherwise stated
+				index = group.length;
+			}
+			// Add layer to its new layer group
+			group.splice(index, 0, layer);
+
+		}
+
+	}
+}
+
+// Get event hooks object for the first selected canvas
+$.fn.getEventHooks = function getEventHooks() {
+	var $canvases = this, canvas, data,
+		eventHooks = {};
+
+	if ($canvases.length !== 0) {
+		canvas = $canvases[0];
+		data = _getCanvasData(canvas);
+		eventHooks = data.eventHooks;
+	}
+	return eventHooks;
+};
+
+// Set event hooks for the selected canvases
+$.fn.setEventHooks = function setEventHooks(eventHooks) {
+	var $canvases = this, e,
+		data;
+	for (e = 0; e < $canvases.length; e += 1) {
+		data = _getCanvasData($canvases[e]);
+		extendObject(data.eventHooks, eventHooks);
+	}
+	return $canvases;
+};
+
+// Get jCanvas layers array
+$.fn.getLayers = function getLayers(callback) {
+	var $canvases = this, canvas, data,
+		layers, layer, l,
+		matching = [];
+
+	if ($canvases.length !== 0) {
+
+		canvas = $canvases[0];
+		data = _getCanvasData(canvas);
+		// Retrieve layers array for this canvas
+		layers = data.layers;
+
+		// If a callback function is given
+		if (isFunction(callback)) {
+
+			// Filter the layers array using the callback
+			for (l = 0; l < layers.length; l += 1) {
+				layer = layers[l];
+				if (callback.call(canvas, layer)) {
+					// Add layer to array of matching layers if test passes
+					matching.push(layer);
+				}
+			}
+
+		} else {
+			// Otherwise, get all layers
+
+			matching = layers;
+
+		}
+
+	}
+	return matching;
+};
+
+// Get a single jCanvas layer object
+$.fn.getLayer = function getLayer(layerId) {
+	var $canvases = this, canvas,
+		data, layers, layer, l,
+		idType;
+
+	if ($canvases.length !== 0) {
+
+		canvas = $canvases[0];
+		data = _getCanvasData(canvas);
+		layers = data.layers;
+		idType = typeOf(layerId);
+
+		if (layerId && layerId.layer) {
+
+			// Return the actual layer object if given
+			layer = layerId;
+
+		} else if (idType === 'number') {
+
+			// Retrieve the layer using the given index
+
+			// Allow for negative indices
+			if (layerId < 0) {
+				layerId = layers.length + layerId;
+			}
+			// Get layer with the given index
+			layer = layers[layerId];
+
+		} else if (idType === 'regexp') {
+
+			// Get layer with the name that matches the given regex
+			for (l = 0; l < layers.length; l += 1) {
+				// Check if layer matches name
+				if (isString(layers[l].name) && layers[l].name.match(layerId)) {
+					layer = layers[l];
+					break;
+				}
+			}
+
+		} else {
+
+			// Get layer with the given name
+			layer = data.layer.names[layerId];
+
+		}
+
+	}
+	return layer;
+};
+
+// Get all layers in the given group
+$.fn.getLayerGroup = function getLayerGroup(groupId) {
+	var $canvases = this, canvas, data,
+		groups, groupName, group,
+		idType = typeOf(groupId);
+
+	if ($canvases.length !== 0) {
+
+		canvas = $canvases[0];
+
+		if (idType === 'array') {
+
+			// Return layer group if given
+			group = groupId;
+
+		} else if (idType === 'regexp') {
+
+			// Get canvas data
+			data = _getCanvasData(canvas);
+			groups = data.layer.groups;
+			// Loop through all layers groups for this canvas
+			for (groupName in groups) {
+				// Find a group whose name matches the given regex
+				if (groupName.match(groupId)) {
+					group = groups[groupName];
+					// Stop after finding the first matching group
+					break;
+				}
+			}
+
+		} else {
+
+			// Find layer group with the given group name
+			data = _getCanvasData(canvas);
+			group = data.layer.groups[groupId];
+		}
+
+	}
+	return group;
+};
+
+// Get index of layer in layers array
+$.fn.getLayerIndex = function getLayerIndex(layerId) {
+	var $canvases = this,
+		layers = $canvases.getLayers(),
+		layer = $canvases.getLayer(layerId);
+
+	return inArray(layer, layers);
+};
+
+// Set properties of a layer
+$.fn.setLayer = function setLayer(layerId, props) {
+	var $canvases = this, $canvas, e,
+		data, layer,
+		propName, propValue, propType;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+
+		layer = $($canvases[e]).getLayer(layerId);
+		if (layer) {
+
+			// Update layer property maps
+			_updateLayerName($canvas, data, layer, props);
+			_updateLayerGroups($canvas, data, layer, props);
+
+			_coerceNumericProps(props);
+
+			// Merge properties with layer
+			for (propName in props) {
+				if (Object.prototype.hasOwnProperty.call(props, propName)) {
+					propValue = props[propName];
+					propType = typeOf(propValue);
+					if (propType === 'object' && isPlainObject(propValue)) {
+						// Clone objects
+						layer[propName] = extendObject({}, propValue);
+						_coerceNumericProps(layer[propName]);
+					} else if (propType === 'array') {
+						// Clone arrays
+						layer[propName] = propValue.slice(0);
+					} else if (propType === 'string') {
+						if (propValue.indexOf('+=') === 0) {
+							// Increment numbers prefixed with +=
+							layer[propName] += parseFloat(propValue.substr(2));
+						} else if (propValue.indexOf('-=') === 0) {
+							// Decrement numbers prefixed with -=
+							layer[propName] -= parseFloat(propValue.substr(2));
+						} else if (!isNaN(propValue) && isNumeric(propValue) && propName !== 'text') {
+							// Convert numeric values as strings to numbers
+							layer[propName] = parseFloat(propValue);
+						} else {
+							// Otherwise, set given string value
+							layer[propName] = propValue;
+						}
+					} else {
+						// Otherwise, set given value
+						layer[propName] = propValue;
+					}
+				}
+			}
+
+			// Update layer events
+			_addLayerEvents($canvas, data, layer);
+			_enableDrag($canvas, data, layer);
+
+			// If layer's properties were changed
+			if ($.isEmptyObject(props) === false) {
+				_triggerLayerEvent($canvas, data, layer, 'change', props);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Set properties of all layers (optionally filtered by a callback)
+$.fn.setLayers = function setLayers(props, callback) {
+	var $canvases = this, $canvas, e,
+		layers, l;
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+
+		layers = $canvas.getLayers(callback);
+		// Loop through all layers
+		for (l = 0; l < layers.length; l += 1) {
+			// Set properties of each layer
+			$canvas.setLayer(layers[l], props);
+		}
+	}
+	return $canvases;
+};
+
+// Set properties of all layers in the given group
+$.fn.setLayerGroup = function setLayerGroup(groupId, props) {
+	var $canvases = this, $canvas, e,
+		group, l;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		// Get layer group
+		$canvas = $($canvases[e]);
+
+		group = $canvas.getLayerGroup(groupId);
+		// If group exists
+		if (group) {
+
+			// Loop through layers in group
+			for (l = 0; l < group.length; l += 1) {
+				// Merge given properties with layer
+				$canvas.setLayer(group[l], props);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Move a layer to the given index in the layers array
+$.fn.moveLayer = function moveLayer(layerId, index) {
+	var $canvases = this, $canvas, e,
+		data, layers, layer;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+
+		// Retrieve layers array and desired layer
+		layers = data.layers;
+		layer = $canvas.getLayer(layerId);
+		if (layer) {
+
+			// Ensure layer index is accurate
+			layer.index = inArray(layer, layers);
+
+			// Remove layer from its current placement
+			layers.splice(layer.index, 1);
+			// Add layer in its new placement
+			layers.splice(index, 0, layer);
+
+			// Handle negative indices
+			if (index < 0) {
+				index = layers.length + index;
+			}
+			// Update layer's stored index
+			layer.index = index;
+
+			_triggerLayerEvent($canvas, data, layer, 'move');
+
+		}
+	}
+	return $canvases;
+};
+
+// Remove a jCanvas layer
+$.fn.removeLayer = function removeLayer(layerId) {
+	var $canvases = this, $canvas, e, data,
+		layers, layer;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+
+		// Retrieve layers array and desired layer
+		layers = $canvas.getLayers();
+		layer = $canvas.getLayer(layerId);
+		// Remove layer if found
+		if (layer) {
+
+			// Ensure layer index is accurate
+			layer.index = inArray(layer, layers);
+			// Remove layer and allow it to be re-added later
+			layers.splice(layer.index, 1);
+			delete layer._layer;
+
+			// Update layer name map
+			_updateLayerName($canvas, data, layer, {
+				name: null
+			});
+			// Update layer group map
+			_updateLayerGroups($canvas, data, layer, {
+				groups: null
+			});
+
+			// Trigger 'remove' event
+			_triggerLayerEvent($canvas, data, layer, 'remove');
+
+		}
+	}
+	return $canvases;
+};
+
+// Remove all layers
+$.fn.removeLayers = function removeLayers(callback) {
+	var $canvases = this, $canvas, e,
+		data, layers, layer, l;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+		layers = $canvas.getLayers(callback).slice(0);
+		// Remove all layers individually
+		for (l = 0; l < layers.length; l += 1) {
+			layer = layers[l];
+			$canvas.removeLayer(layer);
+		}
+		// Update layer maps
+		data.layer.names = {};
+		data.layer.groups = {};
+	}
+	return $canvases;
+};
+
+// Remove all layers in the group with the given ID
+$.fn.removeLayerGroup = function removeLayerGroup(groupId) {
+	var $canvases = this, $canvas, e, group, l;
+
+	if (groupId !== undefined) {
+		for (e = 0; e < $canvases.length; e += 1) {
+			$canvas = $($canvases[e]);
+
+			group = $canvas.getLayerGroup(groupId);
+			// Remove layer group using given group name
+			if (group) {
+
+				// Clone groups array
+				group = group.slice(0);
+
+				// Loop through layers in group
+				for (l = 0; l < group.length; l += 1) {
+					$canvas.removeLayer(group[l]);
+				}
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Add an existing layer to a layer group
+$.fn.addLayerToGroup = function addLayerToGroup(layerId, groupName) {
+	var $canvases = this, $canvas, e,
+		layer, groups = [groupName];
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		layer = $canvas.getLayer(layerId);
+
+		// If layer is not already in group
+		if (layer.groups) {
+			// Clone groups list
+			groups = layer.groups.slice(0);
+			// If layer is not already in group
+			if (inArray(groupName, layer.groups) === -1) {
+				// Add layer to group
+				groups.push(groupName);
+			}
+		}
+		// Update layer group maps
+		$canvas.setLayer(layer, {
+			groups: groups
+		});
+
+	}
+	return $canvases;
+};
+
+// Remove an existing layer from a layer group
+$.fn.removeLayerFromGroup = function removeLayerFromGroup(layerId, groupName) {
+	var $canvases = this, $canvas, e,
+		layer, groups = [],
+		index;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		layer = $canvas.getLayer(layerId);
+
+		if (layer.groups) {
+
+			// Find index of layer in group
+			index = inArray(groupName, layer.groups);
+
+			// If layer is in group
+			if (index !== -1) {
+
+				// Clone groups list
+				groups = layer.groups.slice(0);
+
+				// Remove layer from group
+				groups.splice(index, 1);
+
+				// Update layer group maps
+				$canvas.setLayer(layer, {
+					groups: groups
+				});
+
+			}
+
+		}
+
+	}
+	return $canvases;
+};
+
+// Get topmost layer that intersects with event coordinates
+function _getIntersectingLayer(data) {
+	var layer, i,
+		mask, m;
+
+	// Store the topmost layer
+	layer = null;
+
+	// Get the topmost layer whose visible area intersects event coordinates
+	for (i = data.intersecting.length - 1; i >= 0; i -= 1) {
+
+		// Get current layer
+		layer = data.intersecting[i];
+
+		// If layer has previous masks
+		if (layer._masks) {
+
+			// Search previous masks to ensure
+			// layer is visible at event coordinates
+			for (m = layer._masks.length - 1; m >= 0; m -= 1) {
+				mask = layer._masks[m];
+				// If mask does not intersect event coordinates
+				if (!mask.intersects) {
+					// Indicate that the mask does not
+					// intersect event coordinates
+					layer.intersects = false;
+					// Stop searching previous masks
+					break;
+				}
+
+			}
+
+			// If event coordinates intersect all previous masks
+			// and layer is not intangible
+			if (layer.intersects && !layer.intangible) {
+				// Stop searching for topmost layer
+				break;
+			}
+
+		}
+
+	}
+	// If resulting layer is intangible
+	if (layer && layer.intangible) {
+		// Cursor does not intersect this layer
+		layer = null;
+	}
+	return layer;
+}
+
+// Draw individual layer (internal)
+function _drawLayer($canvas, ctx, layer, nextLayerIndex) {
+	if (layer && layer.visible && layer._method) {
+		if (nextLayerIndex) {
+			layer._next = nextLayerIndex;
+		} else {
+			layer._next = null;
+		}
+		// If layer is an object, call its respective method
+		if (layer._method) {
+			layer._method.call($canvas, layer);
+		}
+	}
+}
+
+// Handle dragging of the currently-dragged layer
+function _handleLayerDrag($canvas, data, eventType) {
+	var layers, layer, l,
+		drag, dragGroups,
+		group, groupName, g,
+		newX, newY;
+
+	drag = data.drag;
+	layer = drag.layer;
+	dragGroups = (layer && layer.dragGroups) || [];
+	layers = data.layers;
+
+	if (eventType === 'mousemove' || eventType === 'touchmove') {
+		// Detect when user is currently dragging layer
+
+		if (!drag.dragging) {
+			// Detect when user starts dragging layer
+
+			// Signify that a layer on the canvas is being dragged
+			drag.dragging = true;
+			layer.dragging = true;
+
+			// Optionally bring layer to front when drag starts
+			if (layer.bringToFront) {
+				// Remove layer from its original position
+				layers.splice(layer.index, 1);
+				// Bring layer to front
+				// push() returns the new array length
+				layer.index = layers.push(layer);
+			}
+
+			// Set drag properties for this layer
+			layer._startX = layer.x;
+			layer._startY = layer.y;
+			layer._endX = layer._eventX;
+			layer._endY = layer._eventY;
+
+			// Trigger dragstart event
+			_triggerLayerEvent($canvas, data, layer, 'dragstart');
+
+		}
+
+		if (drag.dragging) {
+
+			// Calculate position after drag
+			newX = layer._eventX - (layer._endX - layer._startX);
+			newY = layer._eventY - (layer._endY - layer._startY);
+			if (layer.updateDragX) {
+				newX = layer.updateDragX.call($canvas[0], layer, newX);
+			}
+			if (layer.updateDragY) {
+				newY = layer.updateDragY.call($canvas[0], layer, newY);
+			}
+			layer.dx = newX - layer.x;
+			layer.dy = newY - layer.y;
+			if (layer.restrictDragToAxis !== 'y') {
+				layer.x = newX;
+			}
+			if (layer.restrictDragToAxis !== 'x') {
+				layer.y = newY;
+			}
+
+			// Trigger drag event
+			_triggerLayerEvent($canvas, data, layer, 'drag');
+
+			// Move groups with layer on drag
+			for (g = 0; g < dragGroups.length; g += 1) {
+
+				groupName = dragGroups[g];
+				group = data.layer.groups[groupName];
+				if (layer.groups && group) {
+
+					for (l = 0; l < group.length; l += 1) {
+						if (group[l] !== layer) {
+							if (layer.restrictDragToAxis !== 'y' && group[l].restrictDragToAxis !== 'y') {
+								group[l].x += layer.dx;
+							}
+							if (layer.restrictDragToAxis !== 'x' && group[l].restrictDragToAxis !== 'x') {
+								group[l].y += layer.dy;
+							}
+						}
+					}
+
+				}
+
+			}
+
+		}
+
+	} else if (eventType === 'mouseup' || eventType === 'touchend') {
+		// Detect when user stops dragging layer
+
+		if (drag.dragging) {
+			layer.dragging = false;
+			drag.dragging = false;
+			data.redrawOnMousemove = data.originalRedrawOnMousemove;
+			// Trigger dragstop event
+			_triggerLayerEvent($canvas, data, layer, 'dragstop');
+		}
+
+		// Cancel dragging
+		data.drag = {};
+
+	}
+}
+
+
+// List of CSS3 cursors that need to be prefixed
+css.cursors = ['grab', 'grabbing', 'zoom-in', 'zoom-out'];
+
+// Function to detect vendor prefix
+// Modified version of David Walsh's implementation
+// https://davidwalsh.name/vendor-prefix
+css.prefix = (function () {
+	var styles = getComputedStyle(document.documentElement, ''),
+		pre = (arraySlice
+			.call(styles)
+			.join('')
+			.match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
+		)[1];
+	return '-' + pre + '-';
+})();
+
+// Set cursor on canvas
+function _setCursor($canvas, layer, eventType) {
+	var cursor;
+	if (layer.cursors) {
+		// Retrieve cursor from cursors object if it exists
+		cursor = layer.cursors[eventType];
+	}
+	// Prefix any CSS3 cursor
+	if ($.inArray(cursor, css.cursors) !== -1) {
+		cursor = css.prefix + cursor;
+	}
+	// If cursor is defined
+	if (cursor) {
+		// Set canvas cursor
+		$canvas.css({
+			cursor: cursor
+		});
+	}
+}
+
+// Reset cursor on canvas
+function _resetCursor($canvas, data) {
+	$canvas.css({
+		cursor: data.cursor
+	});
+}
+
+// Run the given event callback with the given arguments
+function _runEventCallback($canvas, layer, eventType, callbacks, arg) {
+	// Prevent callback from firing recursively
+	if (callbacks[eventType] && layer._running && !layer._running[eventType]) {
+		// Signify the start of callback execution for this event
+		layer._running[eventType] = true;
+		// Run event callback with the given arguments
+		callbacks[eventType].call($canvas[0], layer, arg);
+		// Signify the end of callback execution for this event
+		layer._running[eventType] = false;
+	}
+}
+
+// Determine if the given layer can "legally" fire the given event
+function _layerCanFireEvent(layer, eventType) {
+	// If events are disable and if
+	// layer is tangible or event is not tangible
+	return (!layer.disableEvents &&
+		(!layer.intangible || $.inArray(eventType, tangibleEvents) === -1));
+}
+
+// Trigger the given event on the given layer
+function _triggerLayerEvent($canvas, data, layer, eventType, arg) {
+	// If layer can legally fire this event type
+	if (_layerCanFireEvent(layer, eventType)) {
+
+		// Do not set a custom cursor on layer mouseout
+		if (eventType !== 'mouseout') {
+			// Update cursor if one is defined for this event
+			_setCursor($canvas, layer, eventType);
+		}
+
+		// Trigger the user-defined event callback
+		_runEventCallback($canvas, layer, eventType, layer, arg);
+		// Trigger the canvas-bound event hook
+		_runEventCallback($canvas, layer, eventType, data.eventHooks, arg);
+		// Trigger the global event hook
+		_runEventCallback($canvas, layer, eventType, jCanvas.eventHooks, arg);
+
+	}
+}
+
+// Manually trigger a layer event
+$.fn.triggerLayerEvent = function (layer, eventType) {
+	var $canvases = this, $canvas, e,
+		data;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+		layer = $canvas.getLayer(layer);
+		if (layer) {
+			_triggerLayerEvent($canvas, data, layer, eventType);
+		}
+	}
+	return $canvases;
+};
+
+// Draw layer with the given ID
+$.fn.drawLayer = function drawLayer(layerId) {
+	var $canvases = this, e, ctx,
+		$canvas, layer;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+			layer = $canvas.getLayer(layerId);
+			_drawLayer($canvas, ctx, layer);
+		}
+	}
+	return $canvases;
+};
+
+// Draw all layers (or, if given, only layers starting at an index)
+$.fn.drawLayers = function drawLayers(args) {
+	var $canvases = this, $canvas, e, ctx,
+		// Internal parameters for redrawing the canvas
+		params = args || {},
+		// Other variables
+		layers, layer, lastLayer, l, index, lastIndex,
+		data, eventCache, eventType, isImageLayer;
+
+	// The layer index from which to start redrawing the canvas
+	index = params.index;
+	if (!index) {
+		index = 0;
+	}
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			// Clear canvas first unless otherwise directed
+			if (params.clear !== false) {
+				$canvas.clearCanvas();
+			}
+
+			// If a completion callback was provided, save it to the canvas data
+			// store so that the function can be passed to drawLayers() again
+			// after any image layers have loaded
+			if (params.complete) {
+				data.drawLayersComplete = params.complete;
+			}
+
+			// Cache the layers array
+			layers = data.layers;
+
+			// Draw layers from first to last (bottom to top)
+			for (l = index; l < layers.length; l += 1) {
+				layer = layers[l];
+
+				// Ensure layer index is up-to-date
+				layer.index = l;
+
+				// Prevent any one event from firing excessively
+				if (params.resetFire) {
+					layer._fired = false;
+				}
+				// Draw layer
+				_drawLayer($canvas, ctx, layer, l + 1);
+				// Store list of previous masks for each layer
+				layer._masks = data.transforms.masks.slice(0);
+
+				// Allow image layers to load before drawing successive layers
+				if (layer._method === $.fn.drawImage && layer.visible) {
+					isImageLayer = true;
+					break;
+				}
+
+			}
+
+			// If layer is an image layer
+			if (isImageLayer) {
+				// Stop and wait for drawImage() to resume drawLayers()
+				continue;
+			}
+
+			// Store the latest
+			lastIndex = l;
+
+			// Run completion callback (if provided) once all layers have drawn
+			if (params.complete) {
+				params.complete.call($canvases[e]);
+				delete data.drawLayersComplete;
+			}
+
+			// Get first layer that intersects with event coordinates
+			layer = _getIntersectingLayer(data);
+
+			eventCache = data.event;
+			eventType = eventCache.type;
+
+			// If jCanvas has detected a dragstart
+			if (data.drag.layer) {
+				// Handle dragging of layer
+				_handleLayerDrag($canvas, data, eventType);
+			}
+
+			// Manage mouseout event
+			lastLayer = data.lastIntersected;
+			if (lastLayer !== null && layer !== lastLayer && lastLayer._hovered && !lastLayer._fired && !data.drag.dragging) {
+
+				data.lastIntersected = null;
+				lastLayer._fired = true;
+				lastLayer._hovered = false;
+				_triggerLayerEvent($canvas, data, lastLayer, 'mouseout');
+				_resetCursor($canvas, data);
+
+			}
+
+			if (layer) {
+
+				// Use mouse event callbacks if no touch event callbacks are given
+				if (!layer[eventType]) {
+					eventType = _getMouseEventName(eventType);
+				}
+
+				// Check events for intersecting layer
+				if (layer._event && layer.intersects) {
+
+					data.lastIntersected = layer;
+
+					// Detect mouseover events
+					if ((layer.mouseover || layer.mouseout || layer.cursors) && !data.drag.dragging) {
+
+						if (!layer._hovered && !layer._fired) {
+
+							// Prevent events from firing excessively
+							layer._fired = true;
+							layer._hovered = true;
+							_triggerLayerEvent($canvas, data, layer, 'mouseover');
+
+						}
+
+					}
+
+					// Detect any other mouse event
+					if (!layer._fired) {
+
+						// Prevent event from firing twice unintentionally
+						layer._fired = true;
+						eventCache.type = null;
+
+						_triggerLayerEvent($canvas, data, layer, eventType);
+
+					}
+
+					// Use the mousedown event to start drag
+					if (layer.draggable && !layer.disableEvents && (eventType === 'mousedown' || eventType === 'touchstart')) {
+
+						// Keep track of drag state
+						data.drag.layer = layer;
+						data.originalRedrawOnMousemove = data.redrawOnMousemove;
+						data.redrawOnMousemove = true;
+
+					}
+
+				}
+
+			}
+
+			// If cursor is not intersecting with any layer
+			if (layer === null && !data.drag.dragging) {
+				// Reset cursor to previous state
+				_resetCursor($canvas, data);
+			}
+
+			// If the last layer has been drawn
+			if (lastIndex === layers.length) {
+
+				// Reset list of intersecting layers
+				data.intersecting.length = 0;
+				// Reset transformation stack
+				data.transforms = _cloneTransforms(baseTransforms);
+				data.savedTransforms.length = 0;
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Add a jCanvas layer (internal)
+function _addLayer(canvas, params, args, method) {
+	var $canvas, data,
+		layers, layer = (params._layer ? args : params);
+
+	// Store arguments object for later use
+	params._args = args;
+
+	// Convert all draggable drawings into jCanvas layers
+	if (params.draggable || params.dragGroups) {
+		params.layer = true;
+		params.draggable = true;
+	}
+
+	// Determine the layer's type using the available information
+	if (!params._method) {
+		if (method) {
+			params._method = method;
+		} else if (params.method) {
+			params._method = $.fn[params.method];
+		} else if (params.type) {
+			params._method = $.fn[maps.drawings[params.type]];
+		}
+	}
+
+	// If layer hasn't been added yet
+	if (params.layer && !params._layer) {
+		// Add layer to canvas
+
+		$canvas = $(canvas);
+
+		data = _getCanvasData(canvas);
+		layers = data.layers;
+
+		// Do not add duplicate layers of same name
+		if (layer.name === null || (isString(layer.name) && data.layer.names[layer.name] === undefined)) {
+
+			// Convert number properties to numbers
+			_coerceNumericProps(params);
+
+			// Ensure layers are unique across canvases by cloning them
+			layer = new jCanvasObject(params);
+			layer.canvas = canvas;
+			// Indicate that this is a layer for future checks
+			layer.layer = true;
+			layer._layer = true;
+			layer._running = {};
+			// If layer stores user-defined data
+			if (layer.data !== null) {
+				// Clone object
+				layer.data = extendObject({}, layer.data);
+			} else {
+				// Otherwise, create data object
+				layer.data = {};
+			}
+			// If layer stores a list of associated groups
+			if (layer.groups !== null) {
+				// Clone list
+				layer.groups = layer.groups.slice(0);
+			} else {
+				// Otherwise, create empty list
+				layer.groups = [];
+			}
+
+			// Update layer group maps
+			_updateLayerName($canvas, data, layer);
+			_updateLayerGroups($canvas, data, layer);
+
+			// Check for any associated jCanvas events and enable them
+			_addLayerEvents($canvas, data, layer);
+
+			// Optionally enable drag-and-drop support and cursor support
+			_enableDrag($canvas, data, layer);
+
+			// Copy _event property to parameters object
+			params._event = layer._event;
+
+			// Calculate width/height for text layers
+			if (layer._method === $.fn.drawText) {
+				$canvas.measureText(layer);
+			}
+
+			// Add layer to end of array if no index is specified
+			if (layer.index === null) {
+				layer.index = layers.length;
+			}
+
+			// Add layer to layers array at specified index
+			layers.splice(layer.index, 0, layer);
+
+			// Store layer on parameters object
+			params._args = layer;
+
+			// Trigger an 'add' event
+			_triggerLayerEvent($canvas, data, layer, 'add');
+
+		}
+
+	} else if (!params.layer) {
+		_coerceNumericProps(params);
+	}
+
+	return layer;
+}
+
+// Add a jCanvas layer
+$.fn.addLayer = function addLayer(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			params.layer = true;
+			_addLayer($canvases[e], params, args);
+
+		}
+	}
+	return $canvases;
+};
+
+/* Animation API */
+
+// Define properties used in both CSS and jCanvas
+css.props = [
+	'width',
+	'height',
+	'opacity',
+	'lineHeight'
+];
+css.propsObj = {};
+
+// Hide/show jCanvas/CSS properties so they can be animated using jQuery
+function _showProps(obj) {
+	var cssProp, p;
+	for (p = 0; p < css.props.length; p += 1) {
+		cssProp = css.props[p];
+		obj[cssProp] = obj['_' + cssProp];
+	}
+}
+function _hideProps(obj, reset) {
+	var cssProp, p;
+	for (p = 0; p < css.props.length; p += 1) {
+		cssProp = css.props[p];
+		// Hide property using same name with leading underscore
+		if (obj[cssProp] !== undefined) {
+			obj['_' + cssProp] = obj[cssProp];
+			css.propsObj[cssProp] = true;
+			if (reset) {
+				delete obj[cssProp];
+			}
+		}
+	}
+}
+
+// Evaluate property values that are functions
+function _parseEndValues(canvas, layer, endValues) {
+	var propName, propValue,
+		subPropName, subPropValue;
+	// Loop through all properties in map of end values
+	for (propName in endValues) {
+		if (Object.prototype.hasOwnProperty.call(endValues, propName)) {
+			propValue = endValues[propName];
+			// If end value is function
+			if (isFunction(propValue)) {
+				// Call function and use its value as the end value
+				endValues[propName] = propValue.call(canvas, layer, propName);
+			}
+			// If end value is an object
+			if (typeOf(propValue) === 'object' && isPlainObject(propValue)) {
+				// Prepare to animate properties in object
+				for (subPropName in propValue) {
+					if (Object.prototype.hasOwnProperty.call(propValue, subPropName)) {
+						subPropValue = propValue[subPropName];
+						// Store property's start value at top-level of layer
+						if (layer[propName] !== undefined) {
+							layer[propName + '.' + subPropName] = layer[propName][subPropName];
+							// Store property's end value at top-level of end values map
+							endValues[propName + '.' + subPropName] = subPropValue;
+						}
+					}
+				}
+				// Delete sub-property of object as it's no longer needed
+				delete endValues[propName];
+			}
+		}
+	}
+	return endValues;
+}
+
+// Remove sub-property aliases from layer object
+function _removeSubPropAliases(layer) {
+	var propName;
+	for (propName in layer) {
+		if (Object.prototype.hasOwnProperty.call(layer, propName)) {
+			if (propName.indexOf('.') !== -1) {
+				delete layer[propName];
+			}
+		}
+	}
+}
+
+// Convert a color value to an array of RGB values
+function _colorToRgbArray(color) {
+	var originalColor, elem,
+		rgb = [],
+		multiple = 1;
+
+	// Deal with complete transparency
+	if (color === 'transparent') {
+		color = 'rgba(0, 0, 0, 0)';
+	} else if (color.match(/^([a-z]+|#[0-9a-f]+)$/gi)) {
+		// Deal with hexadecimal colors and color names
+		elem = document.head;
+		originalColor = elem.style.color;
+		elem.style.color = color;
+		color = $.css(elem, 'color');
+		elem.style.color = originalColor;
+	}
+	// Parse RGB string
+	if (color.match(/^rgb/gi)) {
+		rgb = color.match(/(\d+(\.\d+)?)/gi);
+		// Deal with RGB percentages
+		if (color.match(/%/gi)) {
+			multiple = 2.55;
+		}
+		rgb[0] *= multiple;
+		rgb[1] *= multiple;
+		rgb[2] *= multiple;
+		// Ad alpha channel if given
+		if (rgb[3] !== undefined) {
+			rgb[3] = parseFloat(rgb[3]);
+		} else {
+			rgb[3] = 1;
+		}
+	}
+	return rgb;
+}
+
+// Animate a hex or RGB color
+function _animateColor(fx) {
+	var n = 3,
+		i;
+	// Only parse start and end colors once
+	if (typeOf(fx.start) !== 'array') {
+		fx.start = _colorToRgbArray(fx.start);
+		fx.end = _colorToRgbArray(fx.end);
+	}
+	fx.now = [];
+
+	// If colors are RGBA, animate transparency
+	if (fx.start[3] !== 1 || fx.end[3] !== 1) {
+		n = 4;
+	}
+
+	// Calculate current frame for red, green, blue, and alpha
+	for (i = 0; i < n; i += 1) {
+		fx.now[i] = fx.start[i] + ((fx.end[i] - fx.start[i]) * fx.pos);
+		// Only the red, green, and blue values must be integers
+		if (i < 3) {
+			fx.now[i] = round(fx.now[i]);
+		}
+	}
+	if (fx.start[3] !== 1 || fx.end[3] !== 1) {
+		// Only use RGBA if RGBA colors are given
+		fx.now = 'rgba(' + fx.now.join(',') + ')';
+	} else {
+		// Otherwise, animate as solid colors
+		fx.now.slice(0, 3);
+		fx.now = 'rgb(' + fx.now.join(',') + ')';
+	}
+	// Animate colors for both canvas layers and DOM elements
+	if (fx.elem.nodeName) {
+		fx.elem.style[fx.prop] = fx.now;
+	} else {
+		fx.elem[fx.prop] = fx.now;
+	}
+}
+
+// Animate jCanvas layer
+$.fn.animateLayer = function animateLayer() {
+	var $canvases = this, $canvas, e, ctx,
+		args = arraySlice.call(arguments, 0),
+		data, layer, props;
+
+	// Deal with all cases of argument placement
+	/*
+		0. layer name/index
+		1. properties
+		2. duration/options
+		3. easing
+		4. complete function
+		5. step function
+	*/
+
+	if (typeOf(args[2]) === 'object') {
+
+		// Accept an options object for animation
+		args.splice(2, 0, args[2].duration || null);
+		args.splice(3, 0, args[3].easing || null);
+		args.splice(4, 0, args[4].complete || null);
+		args.splice(5, 0, args[5].step || null);
+
+	} else {
+
+		if (args[2] === undefined) {
+			// If object is the last argument
+			args.splice(2, 0, null);
+			args.splice(3, 0, null);
+			args.splice(4, 0, null);
+		} else if (isFunction(args[2])) {
+			// If callback comes after object
+			args.splice(2, 0, null);
+			args.splice(3, 0, null);
+		}
+		if (args[3] === undefined) {
+			// If duration is the last argument
+			args[3] = null;
+			args.splice(4, 0, null);
+		} else if (isFunction(args[3])) {
+			// If callback comes after duration
+			args.splice(3, 0, null);
+		}
+
+	}
+
+	// Run callback function when animation completes
+	function complete($canvas, data, layer) {
+
+		return function () {
+
+			_showProps(layer);
+			_removeSubPropAliases(layer);
+
+			// Prevent multiple redraw loops
+			if (!data.animating || data.animated === layer) {
+				// Redraw layers on last frame
+				$canvas.drawLayers();
+			}
+
+			// Signify the end of an animation loop
+			layer._animating = false;
+			data.animating = false;
+			data.animated = null;
+
+			// If callback is defined
+			if (args[4]) {
+				// Run callback at the end of the animation
+				args[4].call($canvas[0], layer);
+			}
+
+			_triggerLayerEvent($canvas, data, layer, 'animateend');
+
+		};
+
+	}
+
+	// Redraw layers on every frame of the animation
+	function step($canvas, data, layer) {
+
+		return function (now, fx) {
+			var parts, propName, subPropName,
+				hidden = false;
+
+			// If animated property has been hidden
+			if (fx.prop[0] === '_') {
+				hidden = true;
+				// Unhide property temporarily
+				fx.prop = fx.prop.replace('_', '');
+				layer[fx.prop] = layer['_' + fx.prop];
+			}
+
+			// If animating property of sub-object
+			if (fx.prop.indexOf('.') !== -1) {
+				parts = fx.prop.split('.');
+				propName = parts[0];
+				subPropName = parts[1];
+				if (layer[propName]) {
+					layer[propName][subPropName] = fx.now;
+				}
+			}
+
+			// Throttle animation to improve efficiency
+			if (layer._pos !== fx.pos) {
+
+				layer._pos = fx.pos;
+
+				// Signify the start of an animation loop
+				if (!layer._animating && !data.animating) {
+					layer._animating = true;
+					data.animating = true;
+					data.animated = layer;
+				}
+
+				// Prevent multiple redraw loops
+				if (!data.animating || data.animated === layer) {
+					// Redraw layers for every frame
+					$canvas.drawLayers();
+				}
+
+			}
+
+			// If callback is defined
+			if (args[5]) {
+				// Run callback for each step of animation
+				args[5].call($canvas[0], now, fx, layer);
+			}
+
+			_triggerLayerEvent($canvas, data, layer, 'animate', fx);
+
+			// If property should be hidden during animation
+			if (hidden) {
+				// Hide property again
+				fx.prop = '_' + fx.prop;
+			}
+
+		};
+
+	}
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			// If a layer object was passed, use it the layer to be animated
+			layer = $canvas.getLayer(args[0]);
+
+			// Ignore layers that are functions
+			if (layer && layer._method !== $.fn.draw) {
+
+				// Do not modify original object
+				props = extendObject({}, args[1]);
+
+				props = _parseEndValues($canvases[e], layer, props);
+
+				// Bypass jQuery CSS Hooks for CSS properties (width, opacity, etc.)
+				_hideProps(props, true);
+				_hideProps(layer);
+
+				// Fix for jQuery's vendor prefixing support, which affects how width/height/opacity are animated
+				layer.style = css.propsObj;
+
+				// Animate layer
+				$(layer).animate(props, {
+					duration: args[2],
+					easing: ($.easing[args[3]] ? args[3] : null),
+					// When animation completes
+					complete: complete($canvas, data, layer),
+					// Redraw canvas for every animation frame
+					step: step($canvas, data, layer)
+				});
+				_triggerLayerEvent($canvas, data, layer, 'animatestart');
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Animate all layers in a layer group
+$.fn.animateLayerGroup = function animateLayerGroup(groupId) {
+	var $canvases = this, $canvas, e,
+		args = arraySlice.call(arguments, 0),
+		group, l;
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		group = $canvas.getLayerGroup(groupId);
+		if (group) {
+
+			// Animate all layers in the group
+			for (l = 0; l < group.length; l += 1) {
+
+				// Replace first argument with layer
+				args[0] = group[l];
+				$canvas.animateLayer.apply($canvas, args);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Delay layer animation by a given number of milliseconds
+$.fn.delayLayer = function delayLayer(layerId, duration) {
+	var $canvases = this, $canvas, e,
+		data, layer;
+	duration = duration || 0;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+		layer = $canvas.getLayer(layerId);
+		// If layer exists
+		if (layer) {
+			// Delay animation
+			$(layer).delay(duration);
+			_triggerLayerEvent($canvas, data, layer, 'delay');
+		}
+	}
+	return $canvases;
+};
+
+// Delay animation all layers in a layer group
+$.fn.delayLayerGroup = function delayLayerGroup(groupId, duration) {
+	var $canvases = this, $canvas, e,
+		group, layer, l;
+	duration = duration || 0;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+
+		group = $canvas.getLayerGroup(groupId);
+		// Delay all layers in the group
+		if (group) {
+
+			for (l = 0; l < group.length; l += 1) {
+				// Delay each layer in the group
+				layer = group[l];
+				$canvas.delayLayer(layer, duration);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Stop layer animation
+$.fn.stopLayer = function stopLayer(layerId, clearQueue) {
+	var $canvases = this, $canvas, e,
+		data, layer;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+		data = _getCanvasData($canvases[e]);
+		layer = $canvas.getLayer(layerId);
+		// If layer exists
+		if (layer) {
+			// Stop animation
+			$(layer).stop(clearQueue);
+			_triggerLayerEvent($canvas, data, layer, 'stop');
+		}
+	}
+	return $canvases;
+};
+
+// Stop animation of all layers in a layer group
+$.fn.stopLayerGroup = function stopLayerGroup(groupId, clearQueue) {
+	var $canvases = this, $canvas, e,
+		group, layer, l;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		$canvas = $($canvases[e]);
+
+		group = $canvas.getLayerGroup(groupId);
+		// Stop all layers in the group
+		if (group) {
+
+			for (l = 0; l < group.length; l += 1) {
+				// Stop each layer in the group
+				layer = group[l];
+				$canvas.stopLayer(layer, clearQueue);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Enable animation for color properties
+function _supportColorProps(props) {
+	var p;
+	for (p = 0; p < props.length; p += 1) {
+		$.fx.step[props[p]] = _animateColor;
+	}
+}
+
+// Enable animation for color properties
+_supportColorProps([
+	'color',
+	'backgroundColor',
+	'borderColor',
+	'borderTopColor',
+	'borderRightColor',
+	'borderBottomColor',
+	'borderLeftColor',
+	'fillStyle',
+	'outlineColor',
+	'strokeStyle',
+	'shadowColor'
+]);
+
+/* Event API */
+
+// Map standard mouse events to touch events
+maps.touchEvents = {
+	'mousedown': 'touchstart',
+	'mouseup': 'touchend',
+	'mousemove': 'touchmove'
+};
+// Map standard touch events to mouse events
+maps.mouseEvents = {
+	'touchstart': 'mousedown',
+	'touchend': 'mouseup',
+	'touchmove': 'mousemove'
+};
+
+// Convert mouse event name to a corresponding touch event name (if possible)
+function _getTouchEventName(eventName) {
+	// Detect touch event support
+	if (maps.touchEvents[eventName]) {
+		eventName = maps.touchEvents[eventName];
+	}
+	return eventName;
+}
+// Convert touch event name to a corresponding mouse event name
+function _getMouseEventName(eventName) {
+	if (maps.mouseEvents[eventName]) {
+		eventName = maps.mouseEvents[eventName];
+	}
+	return eventName;
+}
+
+// Bind event to jCanvas layer using standard jQuery events
+function _createEvent(eventName) {
+
+	jCanvas.events[eventName] = function ($canvas, data) {
+		var helperEventName, touchEventName, eventCache;
+
+		// Retrieve canvas's event cache
+		eventCache = data.event;
+
+		// Both mouseover/mouseout events will be managed by a single mousemove event
+		helperEventName = (eventName === 'mouseover' || eventName === 'mouseout') ? 'mousemove' : eventName;
+		touchEventName = _getTouchEventName(helperEventName);
+
+		function eventCallback(event) {
+			// Cache current mouse position and redraw layers
+			eventCache.x = event.offsetX;
+			eventCache.y = event.offsetY;
+			eventCache.type = helperEventName;
+			eventCache.event = event;
+			// Redraw layers on every trigger of the event; don't redraw if at
+			// least one layer is draggable and there are no layers with
+			// explicit mouseover/mouseout/mousemove events
+			if (event.type !== 'mousemove' || data.redrawOnMousemove || data.drag.dragging) {
+				$canvas.drawLayers({
+					resetFire: true
+				});
+			}
+			// Prevent default event behavior
+			event.preventDefault();
+		}
+
+		// Ensure the event is not bound more than once
+		if (!data.events[helperEventName]) {
+			// Bind one canvas event which handles all layer events of that type
+			if (touchEventName !== helperEventName) {
+				$canvas.bind(helperEventName + '.jCanvas ' + touchEventName + '.jCanvas', eventCallback);
+			} else {
+				$canvas.bind(helperEventName + '.jCanvas', eventCallback);
+			}
+			// Prevent this event from being bound twice
+			data.events[helperEventName] = true;
+		}
+	};
+}
+function _createEvents(eventNames) {
+	var n;
+	for (n = 0; n < eventNames.length; n += 1) {
+		_createEvent(eventNames[n]);
+	}
+}
+// Populate jCanvas events object with some standard events
+_createEvents([
+	'click',
+	'dblclick',
+	'mousedown',
+	'mouseup',
+	'mousemove',
+	'mouseover',
+	'mouseout',
+	'touchstart',
+	'touchmove',
+	'touchend',
+	'pointerdown',
+	'pointermove',
+	'pointerup',
+	'contextmenu'
+]);
+
+// Check if event fires when a drawing is drawn
+function _detectEvents(canvas, ctx, params) {
+	var layer, data, eventCache, intersects,
+		transforms, x, y, angle;
+
+	// Use the layer object stored by the given parameters object
+	layer = params._args;
+	// Canvas must have event bindings
+	if (layer) {
+
+		data = _getCanvasData(canvas);
+		eventCache = data.event;
+		if (eventCache.x !== null && eventCache.y !== null) {
+			// Respect user-defined pixel ratio
+			x = eventCache.x * data.pixelRatio;
+			y = eventCache.y * data.pixelRatio;
+			// Determine if the given coordinates are in the current path
+			intersects = ctx.isPointInPath(x, y) || (ctx.isPointInStroke && ctx.isPointInStroke(x, y));
+		}
+		transforms = data.transforms;
+
+		// Allow callback functions to retrieve the mouse coordinates
+		layer.eventX = eventCache.x;
+		layer.eventY = eventCache.y;
+		layer.event = eventCache.event;
+
+		// Adjust coordinates to match current canvas transformation
+
+		// Keep track of some transformation values
+		angle = data.transforms.rotate;
+		x = layer.eventX;
+		y = layer.eventY;
+
+		if (angle !== 0) {
+			// Rotate coordinates if coordinate space has been rotated
+			layer._eventX = (x * cos(-angle)) - (y * sin(-angle));
+			layer._eventY = (y * cos(-angle)) + (x * sin(-angle));
+		} else {
+			// Otherwise, no calculations need to be made
+			layer._eventX = x;
+			layer._eventY = y;
+		}
+
+		// Scale coordinates
+		layer._eventX /= transforms.scaleX;
+		layer._eventY /= transforms.scaleY;
+
+		// If layer intersects with cursor
+		if (intersects) {
+			// Add it to a list of layers that intersect with cursor
+			data.intersecting.push(layer);
+		}
+		layer.intersects = Boolean(intersects);
+	}
+}
+
+// Normalize offsetX and offsetY for all browsers
+$.event.fix = function (event) {
+	var offset, originalEvent, touches;
+
+	event = jQueryEventFix.call($.event, event);
+	originalEvent = event.originalEvent;
+
+	// originalEvent does not exist for manually-triggered events
+	if (originalEvent) {
+
+		touches = originalEvent.changedTouches;
+
+		// If offsetX and offsetY are not supported, define them
+		if (event.pageX !== undefined && event.offsetX === undefined) {
+			try {
+				offset = $(event.currentTarget).offset();
+				if (offset) {
+					event.offsetX = event.pageX - offset.left;
+					event.offsetY = event.pageY - offset.top;
+				}
+			} catch (error) {
+				// Fail silently
+			}
+		} else if (touches) {
+			try {
+				// Enable offsetX and offsetY for mobile devices
+				offset = $(event.currentTarget).offset();
+				if (offset) {
+					event.offsetX = touches[0].pageX - offset.left;
+					event.offsetY = touches[0].pageY - offset.top;
+				}
+			} catch (error) {
+				// Fail silently
+			}
+		}
+
+	}
+	return event;
+};
+
+/* Drawing API */
+
+// Map drawing names with their respective method names
+maps.drawings = {
+	'arc': 'drawArc',
+	'bezier': 'drawBezier',
+	'ellipse': 'drawEllipse',
+	'function': 'draw',
+	'image': 'drawImage',
+	'line': 'drawLine',
+	'path': 'drawPath',
+	'polygon': 'drawPolygon',
+	'slice': 'drawSlice',
+	'quadratic': 'drawQuadratic',
+	'rectangle': 'drawRect',
+	'text': 'drawText',
+	'vector': 'drawVector',
+	'save': 'saveCanvas',
+	'restore': 'restoreCanvas',
+	'rotate': 'rotateCanvas',
+	'scale': 'scaleCanvas',
+	'translate': 'translateCanvas'
+};
+
+// Draws on canvas using a function
+$.fn.draw = function draw(args) {
+	var $canvases = this, e, ctx,
+		params = new jCanvasObject(args);
+
+	// Draw using any other method
+	if (maps.drawings[params.type] && params.type !== 'function') {
+
+		$canvases[maps.drawings[params.type]](args);
+
+	} else {
+
+		for (e = 0; e < $canvases.length; e += 1) {
+			ctx = _getContext($canvases[e]);
+			if (ctx) {
+
+				params = new jCanvasObject(args);
+				_addLayer($canvases[e], params, args, draw);
+				if (params.visible) {
+
+					if (params.fn) {
+						// Call the given user-defined function
+						params.fn.call($canvases[e], ctx, params);
+					}
+
+				}
+
+			}
+		}
+
+	}
+	return $canvases;
+};
+
+// Clears canvas
+$.fn.clearCanvas = function clearCanvas(args) {
+	var $canvases = this, e, ctx,
+		params = new jCanvasObject(args);
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			if (params.width === null || params.height === null) {
+				// Clear entire canvas if width/height is not given
+
+				// Reset current transformation temporarily to ensure that the entire canvas is cleared
+				ctx.save();
+				ctx.setTransform(1, 0, 0, 1, 0, 0);
+				ctx.clearRect(0, 0, $canvases[e].width, $canvases[e].height);
+				ctx.restore();
+
+			} else {
+				// Otherwise, clear the defined section of the canvas
+
+				// Transform clear rectangle
+				_addLayer($canvases[e], params, args, clearCanvas);
+				_transformShape($canvases[e], ctx, params, params.width, params.height);
+				ctx.clearRect(params.x - (params.width / 2), params.y - (params.height / 2), params.width, params.height);
+				// Restore previous transformation
+				_restoreTransform(ctx, params);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+/* Transformation API */
+
+// Restores canvas
+$.fn.saveCanvas = function saveCanvas(args) {
+	var $canvases = this, e, ctx,
+		params, data, i;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, saveCanvas);
+
+			// Restore a number of times using the given count
+			for (i = 0; i < params.count; i += 1) {
+				_saveCanvas(ctx, data);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Restores canvas
+$.fn.restoreCanvas = function restoreCanvas(args) {
+	var $canvases = this, e, ctx,
+		params, data, i;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, restoreCanvas);
+
+			// Restore a number of times using the given count
+			for (i = 0; i < params.count; i += 1) {
+				_restoreCanvas(ctx, data);
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Rotates canvas (internal)
+function _rotateCanvas(ctx, params, transforms) {
+
+	// Get conversion factor for radians
+	params._toRad = (params.inDegrees ? (PI / 180) : 1);
+
+	// Rotate canvas using shape as center of rotation
+	ctx.translate(params.x, params.y);
+	ctx.rotate(params.rotate * params._toRad);
+	ctx.translate(-params.x, -params.y);
+
+	// If transformation data was given
+	if (transforms) {
+		// Update transformation data
+		transforms.rotate += (params.rotate * params._toRad);
+	}
+}
+
+// Scales canvas (internal)
+function _scaleCanvas(ctx, params, transforms) {
+
+	// Scale both the x- and y- axis using the 'scale' property
+	if (params.scale !== 1) {
+		params.scaleX = params.scaleY = params.scale;
+	}
+
+	// Scale canvas using shape as center of rotation
+	ctx.translate(params.x, params.y);
+	ctx.scale(params.scaleX, params.scaleY);
+	ctx.translate(-params.x, -params.y);
+
+	// If transformation data was given
+	if (transforms) {
+		// Update transformation data
+		transforms.scaleX *= params.scaleX;
+		transforms.scaleY *= params.scaleY;
+	}
+}
+
+// Translates canvas (internal)
+function _translateCanvas(ctx, params, transforms) {
+
+	// Translate both the x- and y-axis using the 'translate' property
+	if (params.translate) {
+		params.translateX = params.translateY = params.translate;
+	}
+
+	// Translate canvas
+	ctx.translate(params.translateX, params.translateY);
+
+	// If transformation data was given
+	if (transforms) {
+		// Update transformation data
+		transforms.translateX += params.translateX;
+		transforms.translateY += params.translateY;
+	}
+}
+
+// Rotates canvas
+$.fn.rotateCanvas = function rotateCanvas(args) {
+	var $canvases = this, e, ctx,
+		params, data;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, rotateCanvas);
+
+			// Autosave transformation state by default
+			if (params.autosave) {
+				// Automatically save transformation state by default
+				_saveCanvas(ctx, data);
+			}
+			_rotateCanvas(ctx, params, data.transforms);
+		}
+
+	}
+	return $canvases;
+};
+
+// Scales canvas
+$.fn.scaleCanvas = function scaleCanvas(args) {
+	var $canvases = this, e, ctx,
+		params, data;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, scaleCanvas);
+
+			// Autosave transformation state by default
+			if (params.autosave) {
+				// Automatically save transformation state by default
+				_saveCanvas(ctx, data);
+			}
+			_scaleCanvas(ctx, params, data.transforms);
+
+		}
+	}
+	return $canvases;
+};
+
+// Translates canvas
+$.fn.translateCanvas = function translateCanvas(args) {
+	var $canvases = this, e, ctx,
+		params, data;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, translateCanvas);
+
+			// Autosave transformation state by default
+			if (params.autosave) {
+				// Automatically save transformation state by default
+				_saveCanvas(ctx, data);
+			}
+			_translateCanvas(ctx, params, data.transforms);
+
+		}
+	}
+	return $canvases;
+};
+
+/* Shape API */
+
+// Draws rectangle
+$.fn.drawRect = function drawRect(args) {
+	var $canvases = this, e, ctx,
+		params,
+		x1, y1,
+		x2, y2,
+		r, temp;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawRect);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params, params.width, params.height);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				ctx.beginPath();
+				if (params.width && params.height) {
+					x1 = params.x - (params.width / 2);
+					y1 = params.y - (params.height / 2);
+					r = abs(params.cornerRadius);
+					// If corner radius is defined and is not zero
+					if (r) {
+						// Draw rectangle with rounded corners if cornerRadius is defined
+
+						x2 = params.x + (params.width / 2);
+						y2 = params.y + (params.height / 2);
+
+						// Handle negative width
+						if (params.width < 0) {
+							temp = x1;
+							x1 = x2;
+							x2 = temp;
+						}
+						// Handle negative height
+						if (params.height < 0) {
+							temp = y1;
+							y1 = y2;
+							y2 = temp;
+						}
+
+						// Prevent over-rounded corners
+						if ((x2 - x1) - (2 * r) < 0) {
+							r = (x2 - x1) / 2;
+						}
+						if ((y2 - y1) - (2 * r) < 0) {
+							r = (y2 - y1) / 2;
+						}
+
+						// Draw rectangle
+						ctx.moveTo(x1 + r, y1);
+						ctx.lineTo(x2 - r, y1);
+						ctx.arc(x2 - r, y1 + r, r, 3 * PI / 2, PI * 2, false);
+						ctx.lineTo(x2, y2 - r);
+						ctx.arc(x2 - r, y2 - r, r, 0, PI / 2, false);
+						ctx.lineTo(x1 + r, y2);
+						ctx.arc(x1 + r, y2 - r, r, PI / 2, PI, false);
+						ctx.lineTo(x1, y1 + r);
+						ctx.arc(x1 + r, y1 + r, r, PI, 3 * PI / 2, false);
+						// Always close path
+						params.closed = true;
+
+					} else {
+
+						// Otherwise, draw rectangle with square corners
+						ctx.rect(x1, y1, params.width, params.height);
+
+					}
+				}
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Close rectangle path
+				_closePath($canvases[e], ctx, params);
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Retrieves a coterminal angle between 0 and 2pi for the given angle
+function _getCoterminal(angle) {
+	while (angle < 0) {
+		angle += (2 * PI);
+	}
+	return angle;
+}
+
+// Retrieves the x-coordinate for the given angle in a circle
+function _getArcX(params, angle) {
+	return params.x + (params.radius * cos(angle));
+}
+// Retrieves the y-coordinate for the given angle in a circle
+function _getArcY(params, angle) {
+	return params.y + (params.radius * sin(angle));
+}
+
+// Draws arc (internal)
+function _drawArc(canvas, ctx, params, path) {
+	var x1, y1, x2, y2,
+		x3, y3, x4, y4,
+		offsetX, offsetY,
+		diff;
+
+	// Determine offset from dragging
+	if (params === path) {
+		offsetX = 0;
+		offsetY = 0;
+	} else {
+		offsetX = params.x;
+		offsetY = params.y;
+	}
+
+	// Convert default end angle to radians
+	if (!path.inDegrees && path.end === 360) {
+		path.end = PI * 2;
+	}
+
+	// Convert angles to radians
+	path.start *= params._toRad;
+	path.end *= params._toRad;
+	// Consider 0deg due north of arc
+	path.start -= (PI / 2);
+	path.end -= (PI / 2);
+
+	// Ensure arrows are pointed correctly for CCW arcs
+	diff = PI / 180;
+	if (path.ccw) {
+		diff *= -1;
+	}
+
+	// Calculate coordinates for start arrow
+	x1 = _getArcX(path, path.start + diff);
+	y1 = _getArcY(path, path.start + diff);
+	x2 = _getArcX(path, path.start);
+	y2 = _getArcY(path, path.start);
+
+	_addStartArrow(
+		canvas, ctx,
+		params, path,
+		x1, y1,
+		x2, y2
+	);
+
+	// Draw arc
+	ctx.arc(path.x + offsetX, path.y + offsetY, path.radius, path.start, path.end, path.ccw);
+
+	// Calculate coordinates for end arrow
+	x3 = _getArcX(path, path.end + diff);
+	y3 = _getArcY(path, path.end + diff);
+	x4 = _getArcX(path, path.end);
+	y4 = _getArcY(path, path.end);
+
+	_addEndArrow(
+		canvas, ctx,
+		params, path,
+		x4, y4,
+		x3, y3
+	);
+}
+
+// Draws arc or circle
+$.fn.drawArc = function drawArc(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawArc);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params, params.radius * 2);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				ctx.beginPath();
+				_drawArc($canvases[e], ctx, params, params);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Draws ellipse
+$.fn.drawEllipse = function drawEllipse(args) {
+	var $canvases = this, e, ctx,
+		params,
+		controlW,
+		controlH;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawEllipse);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params, params.width, params.height);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Calculate control width and height
+				controlW = params.width * (4 / 3);
+				controlH = params.height;
+
+				// Create ellipse using curves
+				ctx.beginPath();
+				ctx.moveTo(params.x, params.y - (controlH / 2));
+				// Left side
+				ctx.bezierCurveTo(params.x - (controlW / 2), params.y - (controlH / 2), params.x - (controlW / 2), params.y + (controlH / 2), params.x, params.y + (controlH / 2));
+				// Right side
+				ctx.bezierCurveTo(params.x + (controlW / 2), params.y + (controlH / 2), params.x + (controlW / 2), params.y - (controlH / 2), params.x, params.y - (controlH / 2));
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Always close path
+				params.closed = true;
+				_closePath($canvases[e], ctx, params);
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Draws a regular (equal-angled) polygon
+$.fn.drawPolygon = function drawPolygon(args) {
+	var $canvases = this, e, ctx,
+		params,
+		theta, dtheta, hdtheta,
+		apothem,
+		x, y, i;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawPolygon);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params, params.radius * 2);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Polygon's central angle
+				dtheta = (2 * PI) / params.sides;
+				// Half of dtheta
+				hdtheta = dtheta / 2;
+				// Polygon's starting angle
+				theta = hdtheta + (PI / 2);
+				// Distance from polygon's center to the middle of its side
+				apothem = params.radius * cos(hdtheta);
+
+				// Calculate path and draw
+				ctx.beginPath();
+				for (i = 0; i < params.sides; i += 1) {
+
+					// Draw side of polygon
+					x = params.x + (params.radius * cos(theta));
+					y = params.y + (params.radius * sin(theta));
+
+					// Plot point on polygon
+					ctx.lineTo(x, y);
+
+					// Project side if chosen
+					if (params.concavity) {
+						// Sides are projected from the polygon's apothem
+						x = params.x + ((apothem + (-apothem * params.concavity)) * cos(theta + hdtheta));
+						y = params.y + ((apothem + (-apothem * params.concavity)) * sin(theta + hdtheta));
+						ctx.lineTo(x, y);
+					}
+
+					// Increment theta by delta theta
+					theta += dtheta;
+
+				}
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Always close path
+				params.closed = true;
+				_closePath($canvases[e], ctx, params);
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Draws pie-shaped slice
+$.fn.drawSlice = function drawSlice(args) {
+	var $canvases = this, e, ctx,
+		params,
+		angle, dx, dy;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawSlice);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params, params.radius * 2);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Perform extra calculations
+
+				// Convert angles to radians
+				params.start *= params._toRad;
+				params.end *= params._toRad;
+				// Consider 0deg at north of arc
+				params.start -= (PI / 2);
+				params.end -= (PI / 2);
+
+				// Find positive equivalents of angles
+				params.start = _getCoterminal(params.start);
+				params.end = _getCoterminal(params.end);
+				// Ensure start angle is less than end angle
+				if (params.end < params.start) {
+					params.end += (2 * PI);
+				}
+
+				// Calculate angular position of slice
+				angle = ((params.start + params.end) / 2);
+
+				// Calculate ratios for slice's angle
+				dx = (params.radius * params.spread * cos(angle));
+				dy = (params.radius * params.spread * sin(angle));
+
+				// Adjust position of slice
+				params.x += dx;
+				params.y += dy;
+
+				// Draw slice
+				ctx.beginPath();
+				ctx.arc(params.x, params.y, params.radius, params.start, params.end, params.ccw);
+				ctx.lineTo(params.x, params.y);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Always close path
+				params.closed = true;
+				_closePath($canvases[e], ctx, params);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+/* Path API */
+
+// Adds arrow to path using the given properties
+function _addArrow(canvas, ctx, params, path, x1, y1, x2, y2) {
+	var leftX, leftY,
+		rightX, rightY,
+		offsetX, offsetY,
+		angle;
+
+	// If arrow radius is given and path is not closed
+	if (path.arrowRadius && !params.closed) {
+
+		// Calculate angle
+		angle = atan2((y2 - y1), (x2 - x1));
+		// Adjust angle correctly
+		angle -= PI;
+		// Calculate offset to place arrow at edge of path
+		offsetX = (params.strokeWidth * cos(angle));
+		offsetY = (params.strokeWidth * sin(angle));
+
+		// Calculate coordinates for left half of arrow
+		leftX = x2 + (path.arrowRadius * cos(angle + (path.arrowAngle / 2)));
+		leftY = y2 + (path.arrowRadius * sin(angle + (path.arrowAngle / 2)));
+		// Calculate coordinates for right half of arrow
+		rightX = x2 + (path.arrowRadius * cos(angle - (path.arrowAngle / 2)));
+		rightY = y2 + (path.arrowRadius * sin(angle - (path.arrowAngle / 2)));
+
+		// Draw left half of arrow
+		ctx.moveTo(leftX - offsetX, leftY - offsetY);
+		ctx.lineTo(x2 - offsetX, y2 - offsetY);
+		// Draw right half of arrow
+		ctx.lineTo(rightX - offsetX, rightY - offsetY);
+
+		// Visually connect arrow to path
+		ctx.moveTo(x2 - offsetX, y2 - offsetY);
+		ctx.lineTo(x2 + offsetX, y2 + offsetY);
+		// Move back to end of path
+		ctx.moveTo(x2, y2);
+
+	}
+}
+
+// Optionally adds arrow to start of path
+function _addStartArrow(canvas, ctx, params, path, x1, y1, x2, y2) {
+	if (!path._arrowAngleConverted) {
+		path.arrowAngle *= params._toRad;
+		path._arrowAngleConverted = true;
+	}
+	if (path.startArrow) {
+		_addArrow(canvas, ctx, params, path, x1, y1, x2, y2);
+	}
+}
+
+// Optionally adds arrow to end of path
+function _addEndArrow(canvas, ctx, params, path, x1, y1, x2, y2) {
+	if (!path._arrowAngleConverted) {
+		path.arrowAngle *= params._toRad;
+		path._arrowAngleConverted = true;
+	}
+	if (path.endArrow) {
+		_addArrow(canvas, ctx, params, path, x1, y1, x2, y2);
+	}
+}
+
+// Draws line (internal)
+function _drawLine(canvas, ctx, params, path) {
+	var l,
+		lx, ly;
+	l = 2;
+	_addStartArrow(
+		canvas, ctx,
+		params, path,
+		path.x2 + params.x,
+		path.y2 + params.y,
+		path.x1 + params.x,
+		path.y1 + params.y
+	);
+	if (path.x1 !== undefined && path.y1 !== undefined) {
+		ctx.moveTo(path.x1 + params.x, path.y1 + params.y);
+	}
+	while (true) {
+		// Calculate next coordinates
+		lx = path['x' + l];
+		ly = path['y' + l];
+		// If coordinates are given
+		if (lx !== undefined && ly !== undefined) {
+			// Draw next line
+			ctx.lineTo(lx + params.x, ly + params.y);
+			l += 1;
+		} else {
+			// Otherwise, stop drawing
+			break;
+		}
+	}
+	l -= 1;
+	// Optionally add arrows to path
+	_addEndArrow(
+		canvas, ctx,
+		params,
+		path,
+		path['x' + (l - 1)] + params.x,
+		path['y' + (l - 1)] + params.y,
+		path['x' + l] + params.x,
+		path['y' + l] + params.y
+	);
+}
+
+// Draws line
+$.fn.drawLine = function drawLine(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawLine);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Draw each point
+				ctx.beginPath();
+				_drawLine($canvases[e], ctx, params, params);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Draws quadratic curve (internal)
+function _drawQuadratic(canvas, ctx, params, path) {
+	var l,
+		lx, ly,
+		lcx, lcy;
+
+	l = 2;
+
+	_addStartArrow(
+		canvas,
+		ctx,
+		params,
+		path,
+		path.cx1 + params.x,
+		path.cy1 + params.y,
+		path.x1 + params.x,
+		path.y1 + params.y
+	);
+
+	if (path.x1 !== undefined && path.y1 !== undefined) {
+		ctx.moveTo(path.x1 + params.x, path.y1 + params.y);
+	}
+	while (true) {
+		// Calculate next coordinates
+		lx = path['x' + l];
+		ly = path['y' + l];
+		lcx = path['cx' + (l - 1)];
+		lcy = path['cy' + (l - 1)];
+		// If coordinates are given
+		if (lx !== undefined && ly !== undefined && lcx !== undefined && lcy !== undefined) {
+			// Draw next curve
+			ctx.quadraticCurveTo(lcx + params.x, lcy + params.y, lx + params.x, ly + params.y);
+			l += 1;
+		} else {
+			// Otherwise, stop drawing
+			break;
+		}
+	}
+	l -= 1;
+	_addEndArrow(
+		canvas,
+		ctx,
+		params,
+		path,
+		path['cx' + (l - 1)] + params.x,
+		path['cy' + (l - 1)] + params.y,
+		path['x' + l] + params.x,
+		path['y' + l] + params.y
+	);
+}
+
+// Draws quadratic curve
+$.fn.drawQuadratic = function drawQuadratic(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawQuadratic);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Draw each point
+				ctx.beginPath();
+				_drawQuadratic($canvases[e], ctx, params, params);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Draws Bezier curve (internal)
+function _drawBezier(canvas, ctx, params, path) {
+	var l, lc,
+		lx, ly,
+		lcx1, lcy1,
+		lcx2, lcy2;
+
+	l = 2;
+	lc = 1;
+
+	_addStartArrow(
+		canvas,
+		ctx,
+		params,
+		path,
+		path.cx1 + params.x,
+		path.cy1 + params.y,
+		path.x1 + params.x,
+		path.y1 + params.y
+	);
+
+	if (path.x1 !== undefined && path.y1 !== undefined) {
+		ctx.moveTo(path.x1 + params.x, path.y1 + params.y);
+	}
+	while (true) {
+		// Calculate next coordinates
+		lx = path['x' + l];
+		ly = path['y' + l];
+		lcx1 = path['cx' + lc];
+		lcy1 = path['cy' + lc];
+		lcx2 = path['cx' + (lc + 1)];
+		lcy2 = path['cy' + (lc + 1)];
+		// If next coordinates are given
+		if (lx !== undefined && ly !== undefined && lcx1 !== undefined && lcy1 !== undefined && lcx2 !== undefined && lcy2 !== undefined) {
+			// Draw next curve
+			ctx.bezierCurveTo(lcx1 + params.x, lcy1 + params.y, lcx2 + params.x, lcy2 + params.y, lx + params.x, ly + params.y);
+			l += 1;
+			lc += 2;
+		} else {
+			// Otherwise, stop drawing
+			break;
+		}
+	}
+	l -= 1;
+	lc -= 2;
+	_addEndArrow(
+		canvas,
+		ctx,
+		params,
+		path,
+		path['cx' + (lc + 1)] + params.x,
+		path['cy' + (lc + 1)] + params.y,
+		path['x' + l] + params.x,
+		path['y' + l] + params.y
+	);
+}
+
+// Draws Bezier curve
+$.fn.drawBezier = function drawBezier(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawBezier);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Draw each point
+				ctx.beginPath();
+				_drawBezier($canvases[e], ctx, params, params);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Retrieves the x-coordinate for the given vector angle and length
+function _getVectorX(params, angle, length) {
+	angle *= params._toRad;
+	angle -= (PI / 2);
+	return (length * cos(angle));
+}
+// Retrieves the y-coordinate for the given vector angle and length
+function _getVectorY(params, angle, length) {
+	angle *= params._toRad;
+	angle -= (PI / 2);
+	return (length * sin(angle));
+}
+
+// Draws vector (internal) #2
+function _drawVector(canvas, ctx, params, path) {
+	var l, angle, length,
+		offsetX, offsetY,
+		x, y,
+		x3, y3,
+		x4, y4;
+
+	// Determine offset from dragging
+	if (params === path) {
+		offsetX = 0;
+		offsetY = 0;
+	} else {
+		offsetX = params.x;
+		offsetY = params.y;
+	}
+
+	l = 1;
+	x = x3 = x4 = path.x + offsetX;
+	y = y3 = y4 = path.y + offsetY;
+
+	_addStartArrow(
+		canvas, ctx,
+		params, path,
+		x + _getVectorX(params, path.a1, path.l1),
+		y + _getVectorY(params, path.a1, path.l1),
+		x,
+		y
+	);
+
+	// The vector starts at the given (x, y) coordinates
+	if (path.x !== undefined && path.y !== undefined) {
+		ctx.moveTo(x, y);
+	}
+	while (true) {
+
+		angle = path['a' + l];
+		length = path['l' + l];
+
+		if (angle !== undefined && length !== undefined) {
+			// Convert the angle to radians with 0 degrees starting at north
+			// Keep track of last two coordinates
+			x3 = x4;
+			y3 = y4;
+			// Compute (x, y) coordinates from angle and length
+			x4 += _getVectorX(params, angle, length);
+			y4 += _getVectorY(params, angle, length);
+			ctx.lineTo(x4, y4);
+			l += 1;
+		} else {
+			// Otherwise, stop drawing
+			break;
+		}
+
+	}
+	_addEndArrow(
+		canvas, ctx,
+		params, path,
+		x3, y3,
+		x4, y4
+	);
+}
+
+// Draws vector
+$.fn.drawVector = function drawVector(args) {
+	var $canvases = this, e, ctx,
+		params;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawVector);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Draw each point
+				ctx.beginPath();
+				_drawVector($canvases[e], ctx, params, params);
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Draws a path consisting of one or more subpaths
+$.fn.drawPath = function drawPath(args) {
+	var $canvases = this, e, ctx,
+		params,
+		l, lp;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawPath);
+			if (params.visible) {
+
+				_transformShape($canvases[e], ctx, params);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				ctx.beginPath();
+				l = 1;
+				while (true) {
+					lp = params['p' + l];
+					if (lp !== undefined) {
+						lp = new jCanvasObject(lp);
+						if (lp.type === 'line') {
+							_drawLine($canvases[e], ctx, params, lp);
+						} else if (lp.type === 'quadratic') {
+							_drawQuadratic($canvases[e], ctx, params, lp);
+						} else if (lp.type === 'bezier') {
+							_drawBezier($canvases[e], ctx, params, lp);
+						} else if (lp.type === 'vector') {
+							_drawVector($canvases[e], ctx, params, lp);
+						} else if (lp.type === 'arc') {
+							_drawArc($canvases[e], ctx, params, lp);
+						}
+						l += 1;
+					} else {
+						break;
+					}
+				}
+
+				// Check for jCanvas events
+				_detectEvents($canvases[e], ctx, params);
+				// Optionally close path
+				_closePath($canvases[e], ctx, params);
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+/* Text API */
+
+// Calculates font string and set it as the canvas font
+function _setCanvasFont(canvas, ctx, params) {
+	// Otherwise, use the given font attributes
+	if (!isNaN(Number(params.fontSize))) {
+		// Give font size units if it doesn't have any
+		params.fontSize += 'px';
+	}
+	// Set font using given font properties
+	ctx.font = params.fontStyle + ' ' + params.fontSize + ' ' + params.fontFamily;
+}
+
+// Measures canvas text
+function _measureText(canvas, ctx, params, lines) {
+	var originalSize, curWidth, l,
+		propCache = caches.propCache;
+
+	// Used cached width/height if possible
+	if (propCache.text === params.text && propCache.fontStyle === params.fontStyle && propCache.fontSize === params.fontSize && propCache.fontFamily === params.fontFamily && propCache.maxWidth === params.maxWidth && propCache.lineHeight === params.lineHeight) {
+
+		params.width = propCache.width;
+		params.height = propCache.height;
+
+	} else {
+		// Calculate text dimensions only once
+
+		// Calculate width of first line (for comparison)
+		params.width = ctx.measureText(lines[0]).width;
+
+		// Get width of longest line
+		for (l = 1; l < lines.length; l += 1) {
+
+			curWidth = ctx.measureText(lines[l]).width;
+			// Ensure text's width is the width of its longest line
+			if (curWidth > params.width) {
+				params.width = curWidth;
+			}
+
+		}
+
+		// Save original font size
+		originalSize = canvas.style.fontSize;
+		// Temporarily set canvas font size to retrieve size in pixels
+		canvas.style.fontSize = params.fontSize;
+		// Save text width and height in parameters object
+		params.height = parseFloat($.css(canvas, 'fontSize')) * lines.length * params.lineHeight;
+		// Reset font size to original size
+		canvas.style.fontSize = originalSize;
+	}
+}
+
+// Wraps a string of text within a defined width
+function _wrapText(ctx, params) {
+	var allText = String(params.text),
+		// Maximum line width (optional)
+		maxWidth = params.maxWidth,
+		// Lines created by manual line breaks (\n)
+		manualLines = allText.split('\n'),
+		// All lines created manually and by wrapping
+		allLines = [],
+		// Other variables
+		lines, line, l,
+		text, words, w;
+
+	// Loop through manually-broken lines
+	for (l = 0; l < manualLines.length; l += 1) {
+
+		text = manualLines[l];
+		// Split line into list of words
+		words = text.split(' ');
+		lines = [];
+		line = '';
+
+		// If text is short enough initially
+		// Or, if the text consists of only one word
+		if (words.length === 1 || ctx.measureText(text).width < maxWidth) {
+
+			// No need to wrap text
+			lines = [text];
+
+		} else {
+
+			// Wrap lines
+			for (w = 0; w < words.length; w += 1) {
+
+				// Once line gets too wide, push word to next line
+				if (ctx.measureText(line + words[w]).width > maxWidth) {
+					// This check prevents empty lines from being created
+					if (line !== '') {
+						lines.push(line);
+					}
+					// Start new line and repeat process
+					line = '';
+				}
+				// Add words to line until the line is too wide
+				line += words[w];
+				// Do not add a space after the last word
+				if (w !== (words.length - 1)) {
+					line += ' ';
+				}
+			}
+			// The last word should always be pushed
+			lines.push(line);
+
+		}
+		// Remove extra space at the end of each line
+		allLines = allLines.concat(
+			lines
+			.join('\n')
+			.replace(/((\n))|($)/gi, '$2')
+			.split('\n')
+		);
+
+	}
+
+	return allLines;
+}
+
+// Draws text on canvas
+$.fn.drawText = function drawText(args) {
+	var $canvases = this, e, ctx,
+		params, layer,
+		lines, line, l,
+		fontSize, constantCloseness = 500,
+		nchars, chars, ch, c,
+		x, y;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer($canvases[e], params, args, drawText);
+			if (params.visible) {
+
+				// Set text-specific properties
+				ctx.textBaseline = params.baseline;
+				ctx.textAlign = params.align;
+
+				// Set canvas font using given properties
+				_setCanvasFont($canvases[e], ctx, params);
+
+				if (params.maxWidth !== null) {
+					// Wrap text using an internal function
+					lines = _wrapText(ctx, params);
+				} else {
+					// Convert string of text to list of lines
+					lines = params.text
+					.toString()
+					.split('\n');
+				}
+
+				// Calculate text's width and height
+				_measureText($canvases[e], ctx, params, lines);
+
+				// If text is a layer
+				if (layer) {
+					// Copy calculated width/height to layer object
+					layer.width = params.width;
+					layer.height = params.height;
+				}
+
+				_transformShape($canvases[e], ctx, params, params.width, params.height);
+				_setGlobalProps($canvases[e], ctx, params);
+
+				// Adjust text position to accomodate different horizontal alignments
+				x = params.x;
+				if (params.align === 'left') {
+					if (params.respectAlign) {
+						// Realign text to the left if chosen
+						params.x += params.width / 2;
+					} else {
+						// Center text block by default
+						x -= params.width / 2;
+					}
+				} else if (params.align === 'right') {
+					if (params.respectAlign) {
+						// Realign text to the right if chosen
+						params.x -= params.width / 2;
+					} else {
+						// Center text block by default
+						x += params.width / 2;
+					}
+				}
+
+				if (params.radius) {
+
+					fontSize = parseFloat(params.fontSize);
+
+					// Greater values move clockwise
+					if (params.letterSpacing === null) {
+						params.letterSpacing = fontSize / constantCloseness;
+					}
+
+					// Loop through each line of text
+					for (l = 0; l < lines.length; l += 1) {
+						ctx.save();
+						ctx.translate(params.x, params.y);
+						line = lines[l];
+						if (params.flipArcText) {
+							chars = line.split('');
+							chars.reverse();
+							line = chars.join('');
+						}
+						nchars = line.length;
+						ctx.rotate(-(PI * params.letterSpacing * (nchars - 1)) / 2);
+						// Loop through characters on each line
+						for (c = 0; c < nchars; c += 1) {
+							ch = line[c];
+							// If character is not the first character
+							if (c !== 0) {
+								// Rotate character onto arc
+								ctx.rotate(PI * params.letterSpacing);
+							}
+							ctx.save();
+							ctx.translate(0, -params.radius);
+							if (params.flipArcText) {
+								ctx.scale(-1, -1);
+							}
+							ctx.fillText(ch, 0, 0);
+							// Prevent extra shadow created by stroke (but only when fill is present)
+							if (params.fillStyle !== 'transparent') {
+								ctx.shadowColor = 'transparent';
+							}
+							if (params.strokeWidth !== 0) {
+								// Only stroke if the stroke is not 0
+								ctx.strokeText(ch, 0, 0);
+							}
+							ctx.restore();
+						}
+						params.radius -= fontSize;
+						params.letterSpacing += fontSize / (constantCloseness * 2 * PI);
+						ctx.restore();
+					}
+
+				} else {
+
+					// Draw each line of text separately
+					for (l = 0; l < lines.length; l += 1) {
+						line = lines[l];
+						// Add line offset to center point, but subtract some to center everything
+						y = params.y + (l * params.height / lines.length) - (((lines.length - 1) * params.height / lines.length) / 2);
+
+						ctx.shadowColor = params.shadowColor;
+
+						// Fill & stroke text
+						ctx.fillText(line, x, y);
+						// Prevent extra shadow created by stroke (but only when fill is present)
+						if (params.fillStyle !== 'transparent') {
+							ctx.shadowColor = 'transparent';
+						}
+						if (params.strokeWidth !== 0) {
+							// Only stroke if the stroke is not 0
+							ctx.strokeText(line, x, y);
+						}
+
+					}
+
+				}
+
+				// Adjust bounding box according to text baseline
+				y = 0;
+				if (params.baseline === 'top') {
+					y += params.height / 2;
+				} else if (params.baseline === 'bottom') {
+					y -= params.height / 2;
+				}
+
+				// Detect jCanvas events
+				if (params._event) {
+					ctx.beginPath();
+					ctx.rect(
+						params.x - (params.width / 2),
+						params.y - (params.height / 2) + y,
+						params.width,
+						params.height
+					);
+					_detectEvents($canvases[e], ctx, params);
+					// Close path and configure masking
+					ctx.closePath();
+				}
+				_restoreTransform(ctx, params);
+
+			}
+		}
+	}
+	// Cache jCanvas parameters object for efficiency
+	caches.propCache = params;
+	return $canvases;
+};
+
+// Measures text width/height using the given parameters
+$.fn.measureText = function measureText(args) {
+	var $canvases = this, ctx,
+		params, lines;
+
+	// Attempt to retrieve layer
+	params = $canvases.getLayer(args);
+	// If layer does not exist or if returned object is not a jCanvas layer
+	if (!params || (params && !params._layer)) {
+		params = new jCanvasObject(args);
+	}
+
+	ctx = _getContext($canvases[0]);
+	if (ctx) {
+
+		// Set canvas font using given properties
+		_setCanvasFont($canvases[0], ctx, params);
+		// Calculate width and height of text
+		if (params.maxWidth !== null) {
+			lines = _wrapText(ctx, params);
+		} else {
+			lines = params.text.split('\n');
+		}
+		_measureText($canvases[0], ctx, params, lines);
+
+
+	}
+
+	return params;
+};
+
+/* Image API */
+
+// Draws image on canvas
+$.fn.drawImage = function drawImage(args) {
+	var $canvases = this, canvas, e, ctx, data,
+		params, layer,
+		img, imgCtx, source,
+		imageCache = caches.imageCache;
+
+	// Draw image function
+	function draw(canvas, ctx, data, params, layer) {
+
+		// If width and sWidth are not defined, use image width
+		if (params.width === null && params.sWidth === null) {
+			params.width = params.sWidth = img.width;
+		}
+		// If width and sHeight are not defined, use image height
+		if (params.height === null && params.sHeight === null) {
+			params.height = params.sHeight = img.height;
+		}
+
+		// Ensure image layer's width and height are accurate
+		if (layer) {
+			layer.width = params.width;
+			layer.height = params.height;
+		}
+
+		// Only crop image if all cropping properties are given
+		if (params.sWidth !== null && params.sHeight !== null && params.sx !== null && params.sy !== null) {
+
+			// If width is not defined, use the given sWidth
+			if (params.width === null) {
+				params.width = params.sWidth;
+			}
+			// If height is not defined, use the given sHeight
+			if (params.height === null) {
+				params.height = params.sHeight;
+			}
+
+			// Optionally crop from top-left corner of region
+			if (params.cropFromCenter) {
+				params.sx += params.sWidth / 2;
+				params.sy += params.sHeight / 2;
+			}
+
+			// Ensure cropped region does not escape image boundaries
+
+			// Top
+			if ((params.sy - (params.sHeight / 2)) < 0) {
+				params.sy = (params.sHeight / 2);
+			}
+			// Bottom
+			if ((params.sy + (params.sHeight / 2)) > img.height) {
+				params.sy = img.height - (params.sHeight / 2);
+			}
+			// Left
+			if ((params.sx - (params.sWidth / 2)) < 0) {
+				params.sx = (params.sWidth / 2);
+			}
+			// Right
+			if ((params.sx + (params.sWidth / 2)) > img.width) {
+				params.sx = img.width - (params.sWidth / 2);
+			}
+
+			_transformShape(canvas, ctx, params, params.width, params.height);
+			_setGlobalProps(canvas, ctx, params);
+
+			// Draw image
+			ctx.drawImage(
+				img,
+				params.sx - (params.sWidth / 2),
+				params.sy - (params.sHeight / 2),
+				params.sWidth,
+				params.sHeight,
+				params.x - (params.width / 2),
+				params.y - (params.height / 2),
+				params.width,
+				params.height
+			);
+
+		} else {
+			// Show entire image if no crop region is defined
+
+			_transformShape(canvas, ctx, params, params.width, params.height);
+			_setGlobalProps(canvas, ctx, params);
+
+			// Draw image on canvas
+			ctx.drawImage(
+				img,
+				params.x - (params.width / 2),
+				params.y - (params.height / 2),
+				params.width,
+				params.height
+			);
+
+		}
+
+		// Draw invisible rectangle to allow for events and masking
+		ctx.beginPath();
+		ctx.rect(
+			params.x - (params.width / 2),
+			params.y - (params.height / 2),
+			params.width,
+			params.height
+		);
+		// Check for jCanvas events
+		_detectEvents(canvas, ctx, params);
+		// Close path and configure masking
+		ctx.closePath();
+		_restoreTransform(ctx, params);
+		_enableMasking(ctx, data, params);
+	}
+	// On load function
+	function onload(canvas, ctx, data, params, layer) {
+		return function () {
+			var $canvas = $(canvas);
+			draw(canvas, ctx, data, params, layer);
+			if (params.layer) {
+				// Trigger 'load' event for layers
+				_triggerLayerEvent($canvas, data, layer, 'load');
+			} else if (params.load) {
+				// Run 'load' callback for non-layers
+				params.load.call($canvas[0], layer);
+			}
+			// Continue drawing successive layers after this image layer has loaded
+			if (params.layer) {
+				// Store list of previous masks for each layer
+				layer._masks = data.transforms.masks.slice(0);
+				if (params._next) {
+					// Draw successive layers
+					var complete = data.drawLayersComplete;
+					delete data.drawLayersComplete;
+					$canvas.drawLayers({
+						clear: false,
+						resetFire: true,
+						index: params._next,
+						complete: complete
+					});
+				}
+			}
+		};
+	}
+	for (e = 0; e < $canvases.length; e += 1) {
+		canvas = $canvases[e];
+		ctx = _getContext($canvases[e]);
+		if (ctx) {
+
+			data = _getCanvasData($canvases[e]);
+			params = new jCanvasObject(args);
+			layer = _addLayer($canvases[e], params, args, drawImage);
+			if (params.visible) {
+
+				// Cache the given source
+				source = params.source;
+
+				imgCtx = source.getContext;
+				if (source.src || imgCtx) {
+					// Use image or canvas element if given
+					img = source;
+				} else if (source) {
+					if (imageCache[source] && imageCache[source].complete) {
+						// Get the image element from the cache if possible
+						img = imageCache[source];
+					} else {
+						// Otherwise, get the image from the given source URL
+						img = new Image();
+						// If source URL is not a data URL
+						if (!source.match(/^data:/i)) {
+							// Set crossOrigin for this image
+							img.crossOrigin = params.crossOrigin;
+						}
+						img.src = source;
+						// Save image in cache for improved performance
+						imageCache[source] = img;
+					}
+				}
+
+				if (img) {
+					if (img.complete || imgCtx) {
+						// Draw image if already loaded
+						onload(canvas, ctx, data, params, layer)();
+					} else {
+						// Otherwise, draw image when it loads
+						img.onload = onload(canvas, ctx, data, params, layer);
+						// Fix onload() bug in IE9
+						img.src = img.src;
+					}
+				}
+
+			}
+		}
+	}
+	return $canvases;
+};
+
+// Creates a canvas pattern object
+$.fn.createPattern = function createPattern(args) {
+	var $canvases = this, ctx,
+		params,
+		img, imgCtx,
+		pattern, source;
+
+	// Function to be called when pattern loads
+	function onload() {
+		// Create pattern
+		pattern = ctx.createPattern(img, params.repeat);
+		// Run callback function if defined
+		if (params.load) {
+			params.load.call($canvases[0], pattern);
+		}
+	}
+
+	ctx = _getContext($canvases[0]);
+	if (ctx) {
+
+		params = new jCanvasObject(args);
+
+		// Cache the given source
+		source = params.source;
+
+		// Draw when image is loaded (if load() callback function is defined)
+
+		if (isFunction(source)) {
+			// Draw pattern using function if given
+
+			img = $('<canvas />')[0];
+			img.width = params.width;
+			img.height = params.height;
+			imgCtx = _getContext(img);
+			source.call(img, imgCtx);
+			onload();
+
+		} else {
+			// Otherwise, draw pattern using source image
+
+			imgCtx = source.getContext;
+			if (source.src || imgCtx) {
+				// Use image element if given
+				img = source;
+			} else {
+				// Use URL if given to get the image
+				img = new Image();
+				// If source URL is not a data URL
+				if (!source.match(/^data:/i)) {
+					// Set crossOrigin for this image
+					img.crossOrigin = params.crossOrigin;
+				}
+				img.src = source;
+			}
+
+			// Create pattern if already loaded
+			if (img.complete || imgCtx) {
+				onload();
+			} else {
+				img.onload = onload;
+				// Fix onload() bug in IE9
+				img.src = img.src;
+			}
+
+		}
+
+	} else {
+
+		pattern = null;
+
+	}
+	return pattern;
+};
+
+// Creates a canvas gradient object
+$.fn.createGradient = function createGradient(args) {
+	var $canvases = this, ctx,
+		params,
+		gradient,
+		stops = [], nstops,
+		start, end,
+		i, a, n, p;
+
+	params = new jCanvasObject(args);
+	ctx = _getContext($canvases[0]);
+	if (ctx) {
+
+		// Gradient coordinates must be defined
+		params.x1 = params.x1 || 0;
+		params.y1 = params.y1 || 0;
+		params.x2 = params.x2 || 0;
+		params.y2 = params.y2 || 0;
+
+		if (params.r1 !== null && params.r2 !== null) {
+			// Create radial gradient if chosen
+			gradient = ctx.createRadialGradient(params.x1, params.y1, params.r1, params.x2, params.y2, params.r2);
+		} else {
+			// Otherwise, create a linear gradient by default
+			gradient = ctx.createLinearGradient(params.x1, params.y1, params.x2, params.y2);
+		}
+
+		// Count number of color stops
+		for (i = 1; params['c' + i] !== undefined; i += 1) {
+			if (params['s' + i] !== undefined) {
+				stops.push(params['s' + i]);
+			} else {
+				stops.push(null);
+			}
+		}
+		nstops = stops.length;
+
+		// Define start stop if not already defined
+		if (stops[0] === null) {
+			stops[0] = 0;
+		}
+		// Define end stop if not already defined
+		if (stops[nstops - 1] === null) {
+			stops[nstops - 1] = 1;
+		}
+
+		// Loop through color stops to fill in the blanks
+		for (i = 0; i < nstops; i += 1) {
+			// A progression, in this context, is defined as all of the color stops between and including two known color stops
+
+			if (stops[i] !== null) {
+				// Start a new progression if stop is a number
+
+				// Number of stops in current progression
+				n = 1;
+				// Current iteration in current progression
+				p = 0;
+				start = stops[i];
+
+				// Look ahead to find end stop
+				for (a = (i + 1); a < nstops; a += 1) {
+					if (stops[a] !== null) {
+						// If this future stop is a number, make it the end stop for this progression
+						end = stops[a];
+						break;
+					} else {
+						// Otherwise, keep looking ahead
+						n += 1;
+					}
+				}
+
+				// Ensure start stop is not greater than end stop
+				if (start > end) {
+					stops[a] = stops[i];
+				}
+
+			} else if (stops[i] === null) {
+				// Calculate stop if not initially given
+				p += 1;
+				stops[i] = start + (p * ((end - start) / n));
+			}
+			// Add color stop to gradient object
+			gradient.addColorStop(stops[i], params['c' + (i + 1)]);
+		}
+
+	} else {
+		gradient = null;
+	}
+	return gradient;
+};
+
+// Manipulates pixels on the canvas
+$.fn.setPixels = function setPixels(args) {
+	var $canvases = this,
+		canvas, e, ctx, canvasData,
+		params,
+		px,
+		imgData, pixelData, i, len;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		canvas = $canvases[e];
+		ctx = _getContext(canvas);
+		canvasData = _getCanvasData($canvases[e]);
+		if (ctx) {
+
+			params = new jCanvasObject(args);
+			_addLayer(canvas, params, args, setPixels);
+			_transformShape($canvases[e], ctx, params, params.width, params.height);
+
+			// Use entire canvas of x, y, width, or height is not defined
+			if (params.width === null || params.height === null) {
+				params.width = canvas.width;
+				params.height = canvas.height;
+				params.x = params.width / 2;
+				params.y = params.height / 2;
+			}
+
+			if (params.width !== 0 && params.height !== 0) {
+				// Only set pixels if width and height are not zero
+
+				imgData = ctx.getImageData(
+					(params.x - (params.width / 2)) * canvasData.pixelRatio,
+					(params.y - (params.height / 2)) * canvasData.pixelRatio,
+					params.width * canvasData.pixelRatio,
+					params.height * canvasData.pixelRatio
+				);
+				pixelData = imgData.data;
+				len = pixelData.length;
+
+				// Loop through pixels with the "each" callback function
+				if (params.each) {
+					for (i = 0; i < len; i += 4) {
+						px = {
+							r: pixelData[i],
+							g: pixelData[i + 1],
+							b: pixelData[i + 2],
+							a: pixelData[i + 3]
+						};
+						params.each.call(canvas, px, params);
+						pixelData[i] = px.r;
+						pixelData[i + 1] = px.g;
+						pixelData[i + 2] = px.b;
+						pixelData[i + 3] = px.a;
+					}
+				}
+				// Put pixels on canvas
+				ctx.putImageData(
+					imgData,
+					(params.x - (params.width / 2)) * canvasData.pixelRatio,
+					(params.y - (params.height / 2)) * canvasData.pixelRatio
+				);
+				// Restore transformation
+				ctx.restore();
+
+			}
+
+		}
+	}
+	return $canvases;
+};
+
+// Retrieves canvas image as data URL
+$.fn.getCanvasImage = function getCanvasImage(type, quality) {
+	var $canvases = this, canvas,
+		dataURL = null;
+	if ($canvases.length !== 0) {
+		canvas = $canvases[0];
+		if (canvas.toDataURL) {
+			// JPEG quality defaults to 1
+			if (quality === undefined) {
+				quality = 1;
+			}
+			dataURL = canvas.toDataURL('image/' + type, quality);
+		}
+	}
+	return dataURL;
+};
+
+// Scales canvas based on the device's pixel ratio
+$.fn.detectPixelRatio = function detectPixelRatio(callback) {
+	var $canvases = this,
+		canvas, e, ctx,
+		devicePixelRatio, backingStoreRatio, ratio,
+		oldWidth, oldHeight,
+		data;
+
+	for (e = 0; e < $canvases.length; e += 1) {
+		// Get canvas and its associated data
+		canvas = $canvases[e];
+		ctx = _getContext(canvas);
+		data = _getCanvasData($canvases[e]);
+
+		// If canvas has not already been scaled with this method
+		if (!data.scaled) {
+
+			// Determine device pixel ratios
+			devicePixelRatio = window.devicePixelRatio || 1;
+			backingStoreRatio = ctx.webkitBackingStorePixelRatio ||
+				ctx.mozBackingStorePixelRatio ||
+				ctx.msBackingStorePixelRatio ||
+				ctx.oBackingStorePixelRatio ||
+				ctx.backingStorePixelRatio || 1;
+
+			// Calculate general ratio based on the two given ratios
+			ratio = devicePixelRatio / backingStoreRatio;
+
+			if (ratio !== 1) {
+				// Scale canvas relative to ratio
+
+				// Get the current canvas dimensions for future use
+				oldWidth = canvas.width;
+				oldHeight = canvas.height;
+
+				// Resize canvas relative to the determined ratio
+				canvas.width = oldWidth * ratio;
+				canvas.height = oldHeight * ratio;
+
+				// Scale canvas back to original dimensions via CSS
+				canvas.style.width = oldWidth + 'px';
+				canvas.style.height = oldHeight + 'px';
+
+				// Scale context to counter the manual scaling of canvas
+				ctx.scale(ratio, ratio);
+
+			}
+
+			// Set pixel ratio on canvas data object
+			data.pixelRatio = ratio;
+			// Ensure that this method can only be called once for any given canvas
+			data.scaled = true;
+
+			// Call the given callback function with the ratio as its only argument
+			if (callback) {
+				callback.call(canvas, ratio);
+			}
+
+		}
+
+	}
+	return $canvases;
+};
+
+// Clears the jCanvas cache
+jCanvas.clearCache = function clearCache() {
+	var cacheName;
+	for (cacheName in caches) {
+		if (Object.prototype.hasOwnProperty.call(caches, cacheName)) {
+			caches[cacheName] = {};
+		}
+	}
+};
+
+// Enable canvas feature detection with $.support
+$.support.canvas = ($('<canvas />')[0].getContext !== undefined);
+
+// Export jCanvas functions
+extendObject(jCanvas, {
+	defaults: defaults,
+	setGlobalProps: _setGlobalProps,
+	transformShape: _transformShape,
+	detectEvents: _detectEvents,
+	closePath: _closePath,
+	setCanvasFont: _setCanvasFont,
+	measureText: _measureText
+});
+$.jCanvas = jCanvas;
+$.jCanvasObject = jCanvasObject;
+
+}));
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under the MIT license
+ */
+if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires jQuery");+function(a){"use strict";var b=a.fn.jquery.split(" ")[0].split(".");if(b[0]<2&&b[1]<9||1==b[0]&&9==b[1]&&b[2]<1||b[0]>2)throw new Error("Bootstrap's JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3")}(jQuery),+function(a){"use strict";function b(){var a=document.createElement("bootstrap"),b={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"};for(var c in b)if(void 0!==a.style[c])return{end:b[c]};return!1}a.fn.emulateTransitionEnd=function(b){var c=!1,d=this;a(this).one("bsTransitionEnd",function(){c=!0});var e=function(){c||a(d).trigger(a.support.transition.end)};return setTimeout(e,b),this},a(function(){a.support.transition=b(),a.support.transition&&(a.event.special.bsTransitionEnd={bindType:a.support.transition.end,delegateType:a.support.transition.end,handle:function(b){return a(b.target).is(this)?b.handleObj.handler.apply(this,arguments):void 0}})})}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var c=a(this),e=c.data("bs.alert");e||c.data("bs.alert",e=new d(this)),"string"==typeof b&&e[b].call(c)})}var c='[data-dismiss="alert"]',d=function(b){a(b).on("click",c,this.close)};d.VERSION="3.3.6",d.TRANSITION_DURATION=150,d.prototype.close=function(b){function c(){g.detach().trigger("closed.bs.alert").remove()}var e=a(this),f=e.attr("data-target");f||(f=e.attr("href"),f=f&&f.replace(/.*(?=#[^\s]*$)/,""));var g=a(f);b&&b.preventDefault(),g.length||(g=e.closest(".alert")),g.trigger(b=a.Event("close.bs.alert")),b.isDefaultPrevented()||(g.removeClass("in"),a.support.transition&&g.hasClass("fade")?g.one("bsTransitionEnd",c).emulateTransitionEnd(d.TRANSITION_DURATION):c())};var e=a.fn.alert;a.fn.alert=b,a.fn.alert.Constructor=d,a.fn.alert.noConflict=function(){return a.fn.alert=e,this},a(document).on("click.bs.alert.data-api",c,d.prototype.close)}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.button"),f="object"==typeof b&&b;e||d.data("bs.button",e=new c(this,f)),"toggle"==b?e.toggle():b&&e.setState(b)})}var c=function(b,d){this.$element=a(b),this.options=a.extend({},c.DEFAULTS,d),this.isLoading=!1};c.VERSION="3.3.6",c.DEFAULTS={loadingText:"loading..."},c.prototype.setState=function(b){var c="disabled",d=this.$element,e=d.is("input")?"val":"html",f=d.data();b+="Text",null==f.resetText&&d.data("resetText",d[e]()),setTimeout(a.proxy(function(){d[e](null==f[b]?this.options[b]:f[b]),"loadingText"==b?(this.isLoading=!0,d.addClass(c).attr(c,c)):this.isLoading&&(this.isLoading=!1,d.removeClass(c).removeAttr(c))},this),0)},c.prototype.toggle=function(){var a=!0,b=this.$element.closest('[data-toggle="buttons"]');if(b.length){var c=this.$element.find("input");"radio"==c.prop("type")?(c.prop("checked")&&(a=!1),b.find(".active").removeClass("active"),this.$element.addClass("active")):"checkbox"==c.prop("type")&&(c.prop("checked")!==this.$element.hasClass("active")&&(a=!1),this.$element.toggleClass("active")),c.prop("checked",this.$element.hasClass("active")),a&&c.trigger("change")}else this.$element.attr("aria-pressed",!this.$element.hasClass("active")),this.$element.toggleClass("active")};var d=a.fn.button;a.fn.button=b,a.fn.button.Constructor=c,a.fn.button.noConflict=function(){return a.fn.button=d,this},a(document).on("click.bs.button.data-api",'[data-toggle^="button"]',function(c){var d=a(c.target);d.hasClass("btn")||(d=d.closest(".btn")),b.call(d,"toggle"),a(c.target).is('input[type="radio"]')||a(c.target).is('input[type="checkbox"]')||c.preventDefault()}).on("focus.bs.button.data-api blur.bs.button.data-api",'[data-toggle^="button"]',function(b){a(b.target).closest(".btn").toggleClass("focus",/^focus(in)?$/.test(b.type))})}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.carousel"),f=a.extend({},c.DEFAULTS,d.data(),"object"==typeof b&&b),g="string"==typeof b?b:f.slide;e||d.data("bs.carousel",e=new c(this,f)),"number"==typeof b?e.to(b):g?e[g]():f.interval&&e.pause().cycle()})}var c=function(b,c){this.$element=a(b),this.$indicators=this.$element.find(".carousel-indicators"),this.options=c,this.paused=null,this.sliding=null,this.interval=null,this.$active=null,this.$items=null,this.options.keyboard&&this.$element.on("keydown.bs.carousel",a.proxy(this.keydown,this)),"hover"==this.options.pause&&!("ontouchstart"in document.documentElement)&&this.$element.on("mouseenter.bs.carousel",a.proxy(this.pause,this)).on("mouseleave.bs.carousel",a.proxy(this.cycle,this))};c.VERSION="3.3.6",c.TRANSITION_DURATION=600,c.DEFAULTS={interval:5e3,pause:"hover",wrap:!0,keyboard:!0},c.prototype.keydown=function(a){if(!/input|textarea/i.test(a.target.tagName)){switch(a.which){case 37:this.prev();break;case 39:this.next();break;default:return}a.preventDefault()}},c.prototype.cycle=function(b){return b||(this.paused=!1),this.interval&&clearInterval(this.interval),this.options.interval&&!this.paused&&(this.interval=setInterval(a.proxy(this.next,this),this.options.interval)),this},c.prototype.getItemIndex=function(a){return this.$items=a.parent().children(".item"),this.$items.index(a||this.$active)},c.prototype.getItemForDirection=function(a,b){var c=this.getItemIndex(b),d="prev"==a&&0===c||"next"==a&&c==this.$items.length-1;if(d&&!this.options.wrap)return b;var e="prev"==a?-1:1,f=(c+e)%this.$items.length;return this.$items.eq(f)},c.prototype.to=function(a){var b=this,c=this.getItemIndex(this.$active=this.$element.find(".item.active"));return a>this.$items.length-1||0>a?void 0:this.sliding?this.$element.one("slid.bs.carousel",function(){b.to(a)}):c==a?this.pause().cycle():this.slide(a>c?"next":"prev",this.$items.eq(a))},c.prototype.pause=function(b){return b||(this.paused=!0),this.$element.find(".next, .prev").length&&a.support.transition&&(this.$element.trigger(a.support.transition.end),this.cycle(!0)),this.interval=clearInterval(this.interval),this},c.prototype.next=function(){return this.sliding?void 0:this.slide("next")},c.prototype.prev=function(){return this.sliding?void 0:this.slide("prev")},c.prototype.slide=function(b,d){var e=this.$element.find(".item.active"),f=d||this.getItemForDirection(b,e),g=this.interval,h="next"==b?"left":"right",i=this;if(f.hasClass("active"))return this.sliding=!1;var j=f[0],k=a.Event("slide.bs.carousel",{relatedTarget:j,direction:h});if(this.$element.trigger(k),!k.isDefaultPrevented()){if(this.sliding=!0,g&&this.pause(),this.$indicators.length){this.$indicators.find(".active").removeClass("active");var l=a(this.$indicators.children()[this.getItemIndex(f)]);l&&l.addClass("active")}var m=a.Event("slid.bs.carousel",{relatedTarget:j,direction:h});return a.support.transition&&this.$element.hasClass("slide")?(f.addClass(b),f[0].offsetWidth,e.addClass(h),f.addClass(h),e.one("bsTransitionEnd",function(){f.removeClass([b,h].join(" ")).addClass("active"),e.removeClass(["active",h].join(" ")),i.sliding=!1,setTimeout(function(){i.$element.trigger(m)},0)}).emulateTransitionEnd(c.TRANSITION_DURATION)):(e.removeClass("active"),f.addClass("active"),this.sliding=!1,this.$element.trigger(m)),g&&this.cycle(),this}};var d=a.fn.carousel;a.fn.carousel=b,a.fn.carousel.Constructor=c,a.fn.carousel.noConflict=function(){return a.fn.carousel=d,this};var e=function(c){var d,e=a(this),f=a(e.attr("data-target")||(d=e.attr("href"))&&d.replace(/.*(?=#[^\s]+$)/,""));if(f.hasClass("carousel")){var g=a.extend({},f.data(),e.data()),h=e.attr("data-slide-to");h&&(g.interval=!1),b.call(f,g),h&&f.data("bs.carousel").to(h),c.preventDefault()}};a(document).on("click.bs.carousel.data-api","[data-slide]",e).on("click.bs.carousel.data-api","[data-slide-to]",e),a(window).on("load",function(){a('[data-ride="carousel"]').each(function(){var c=a(this);b.call(c,c.data())})})}(jQuery),+function(a){"use strict";function b(b){var c,d=b.attr("data-target")||(c=b.attr("href"))&&c.replace(/.*(?=#[^\s]+$)/,"");return a(d)}function c(b){return this.each(function(){var c=a(this),e=c.data("bs.collapse"),f=a.extend({},d.DEFAULTS,c.data(),"object"==typeof b&&b);!e&&f.toggle&&/show|hide/.test(b)&&(f.toggle=!1),e||c.data("bs.collapse",e=new d(this,f)),"string"==typeof b&&e[b]()})}var d=function(b,c){this.$element=a(b),this.options=a.extend({},d.DEFAULTS,c),this.$trigger=a('[data-toggle="collapse"][href="#'+b.id+'"],[data-toggle="collapse"][data-target="#'+b.id+'"]'),this.transitioning=null,this.options.parent?this.$parent=this.getParent():this.addAriaAndCollapsedClass(this.$element,this.$trigger),this.options.toggle&&this.toggle()};d.VERSION="3.3.6",d.TRANSITION_DURATION=350,d.DEFAULTS={toggle:!0},d.prototype.dimension=function(){var a=this.$element.hasClass("width");return a?"width":"height"},d.prototype.show=function(){if(!this.transitioning&&!this.$element.hasClass("in")){var b,e=this.$parent&&this.$parent.children(".panel").children(".in, .collapsing");if(!(e&&e.length&&(b=e.data("bs.collapse"),b&&b.transitioning))){var f=a.Event("show.bs.collapse");if(this.$element.trigger(f),!f.isDefaultPrevented()){e&&e.length&&(c.call(e,"hide"),b||e.data("bs.collapse",null));var g=this.dimension();this.$element.removeClass("collapse").addClass("collapsing")[g](0).attr("aria-expanded",!0),this.$trigger.removeClass("collapsed").attr("aria-expanded",!0),this.transitioning=1;var h=function(){this.$element.removeClass("collapsing").addClass("collapse in")[g](""),this.transitioning=0,this.$element.trigger("shown.bs.collapse")};if(!a.support.transition)return h.call(this);var i=a.camelCase(["scroll",g].join("-"));this.$element.one("bsTransitionEnd",a.proxy(h,this)).emulateTransitionEnd(d.TRANSITION_DURATION)[g](this.$element[0][i])}}}},d.prototype.hide=function(){if(!this.transitioning&&this.$element.hasClass("in")){var b=a.Event("hide.bs.collapse");if(this.$element.trigger(b),!b.isDefaultPrevented()){var c=this.dimension();this.$element[c](this.$element[c]())[0].offsetHeight,this.$element.addClass("collapsing").removeClass("collapse in").attr("aria-expanded",!1),this.$trigger.addClass("collapsed").attr("aria-expanded",!1),this.transitioning=1;var e=function(){this.transitioning=0,this.$element.removeClass("collapsing").addClass("collapse").trigger("hidden.bs.collapse")};return a.support.transition?void this.$element[c](0).one("bsTransitionEnd",a.proxy(e,this)).emulateTransitionEnd(d.TRANSITION_DURATION):e.call(this)}}},d.prototype.toggle=function(){this[this.$element.hasClass("in")?"hide":"show"]()},d.prototype.getParent=function(){return a(this.options.parent).find('[data-toggle="collapse"][data-parent="'+this.options.parent+'"]').each(a.proxy(function(c,d){var e=a(d);this.addAriaAndCollapsedClass(b(e),e)},this)).end()},d.prototype.addAriaAndCollapsedClass=function(a,b){var c=a.hasClass("in");a.attr("aria-expanded",c),b.toggleClass("collapsed",!c).attr("aria-expanded",c)};var e=a.fn.collapse;a.fn.collapse=c,a.fn.collapse.Constructor=d,a.fn.collapse.noConflict=function(){return a.fn.collapse=e,this},a(document).on("click.bs.collapse.data-api",'[data-toggle="collapse"]',function(d){var e=a(this);e.attr("data-target")||d.preventDefault();var f=b(e),g=f.data("bs.collapse"),h=g?"toggle":e.data();c.call(f,h)})}(jQuery),+function(a){"use strict";function b(b){var c=b.attr("data-target");c||(c=b.attr("href"),c=c&&/#[A-Za-z]/.test(c)&&c.replace(/.*(?=#[^\s]*$)/,""));var d=c&&a(c);return d&&d.length?d:b.parent()}function c(c){c&&3===c.which||(a(e).remove(),a(f).each(function(){var d=a(this),e=b(d),f={relatedTarget:this};e.hasClass("open")&&(c&&"click"==c.type&&/input|textarea/i.test(c.target.tagName)&&a.contains(e[0],c.target)||(e.trigger(c=a.Event("hide.bs.dropdown",f)),c.isDefaultPrevented()||(d.attr("aria-expanded","false"),e.removeClass("open").trigger(a.Event("hidden.bs.dropdown",f)))))}))}function d(b){return this.each(function(){var c=a(this),d=c.data("bs.dropdown");d||c.data("bs.dropdown",d=new g(this)),"string"==typeof b&&d[b].call(c)})}var e=".dropdown-backdrop",f='[data-toggle="dropdown"]',g=function(b){a(b).on("click.bs.dropdown",this.toggle)};g.VERSION="3.3.6",g.prototype.toggle=function(d){var e=a(this);if(!e.is(".disabled, :disabled")){var f=b(e),g=f.hasClass("open");if(c(),!g){"ontouchstart"in document.documentElement&&!f.closest(".navbar-nav").length&&a(document.createElement("div")).addClass("dropdown-backdrop").insertAfter(a(this)).on("click",c);var h={relatedTarget:this};if(f.trigger(d=a.Event("show.bs.dropdown",h)),d.isDefaultPrevented())return;e.trigger("focus").attr("aria-expanded","true"),f.toggleClass("open").trigger(a.Event("shown.bs.dropdown",h))}return!1}},g.prototype.keydown=function(c){if(/(38|40|27|32)/.test(c.which)&&!/input|textarea/i.test(c.target.tagName)){var d=a(this);if(c.preventDefault(),c.stopPropagation(),!d.is(".disabled, :disabled")){var e=b(d),g=e.hasClass("open");if(!g&&27!=c.which||g&&27==c.which)return 27==c.which&&e.find(f).trigger("focus"),d.trigger("click");var h=" li:not(.disabled):visible a",i=e.find(".dropdown-menu"+h);if(i.length){var j=i.index(c.target);38==c.which&&j>0&&j--,40==c.which&&j<i.length-1&&j++,~j||(j=0),i.eq(j).trigger("focus")}}}};var h=a.fn.dropdown;a.fn.dropdown=d,a.fn.dropdown.Constructor=g,a.fn.dropdown.noConflict=function(){return a.fn.dropdown=h,this},a(document).on("click.bs.dropdown.data-api",c).on("click.bs.dropdown.data-api",".dropdown form",function(a){a.stopPropagation()}).on("click.bs.dropdown.data-api",f,g.prototype.toggle).on("keydown.bs.dropdown.data-api",f,g.prototype.keydown).on("keydown.bs.dropdown.data-api",".dropdown-menu",g.prototype.keydown)}(jQuery),+function(a){"use strict";function b(b,d){return this.each(function(){var e=a(this),f=e.data("bs.modal"),g=a.extend({},c.DEFAULTS,e.data(),"object"==typeof b&&b);f||e.data("bs.modal",f=new c(this,g)),"string"==typeof b?f[b](d):g.show&&f.show(d)})}var c=function(b,c){this.options=c,this.$body=a(document.body),this.$element=a(b),this.$dialog=this.$element.find(".modal-dialog"),this.$backdrop=null,this.isShown=null,this.originalBodyPad=null,this.scrollbarWidth=0,this.ignoreBackdropClick=!1,this.options.remote&&this.$element.find(".modal-content").load(this.options.remote,a.proxy(function(){this.$element.trigger("loaded.bs.modal")},this))};c.VERSION="3.3.6",c.TRANSITION_DURATION=300,c.BACKDROP_TRANSITION_DURATION=150,c.DEFAULTS={backdrop:!0,keyboard:!0,show:!0},c.prototype.toggle=function(a){return this.isShown?this.hide():this.show(a)},c.prototype.show=function(b){var d=this,e=a.Event("show.bs.modal",{relatedTarget:b});this.$element.trigger(e),this.isShown||e.isDefaultPrevented()||(this.isShown=!0,this.checkScrollbar(),this.setScrollbar(),this.$body.addClass("modal-open"),this.escape(),this.resize(),this.$element.on("click.dismiss.bs.modal",'[data-dismiss="modal"]',a.proxy(this.hide,this)),this.$dialog.on("mousedown.dismiss.bs.modal",function(){d.$element.one("mouseup.dismiss.bs.modal",function(b){a(b.target).is(d.$element)&&(d.ignoreBackdropClick=!0)})}),this.backdrop(function(){var e=a.support.transition&&d.$element.hasClass("fade");d.$element.parent().length||d.$element.appendTo(d.$body),d.$element.show().scrollTop(0),d.adjustDialog(),e&&d.$element[0].offsetWidth,d.$element.addClass("in"),d.enforceFocus();var f=a.Event("shown.bs.modal",{relatedTarget:b});e?d.$dialog.one("bsTransitionEnd",function(){d.$element.trigger("focus").trigger(f)}).emulateTransitionEnd(c.TRANSITION_DURATION):d.$element.trigger("focus").trigger(f)}))},c.prototype.hide=function(b){b&&b.preventDefault(),b=a.Event("hide.bs.modal"),this.$element.trigger(b),this.isShown&&!b.isDefaultPrevented()&&(this.isShown=!1,this.escape(),this.resize(),a(document).off("focusin.bs.modal"),this.$element.removeClass("in").off("click.dismiss.bs.modal").off("mouseup.dismiss.bs.modal"),this.$dialog.off("mousedown.dismiss.bs.modal"),a.support.transition&&this.$element.hasClass("fade")?this.$element.one("bsTransitionEnd",a.proxy(this.hideModal,this)).emulateTransitionEnd(c.TRANSITION_DURATION):this.hideModal())},c.prototype.enforceFocus=function(){a(document).off("focusin.bs.modal").on("focusin.bs.modal",a.proxy(function(a){this.$element[0]===a.target||this.$element.has(a.target).length||this.$element.trigger("focus")},this))},c.prototype.escape=function(){this.isShown&&this.options.keyboard?this.$element.on("keydown.dismiss.bs.modal",a.proxy(function(a){27==a.which&&this.hide()},this)):this.isShown||this.$element.off("keydown.dismiss.bs.modal")},c.prototype.resize=function(){this.isShown?a(window).on("resize.bs.modal",a.proxy(this.handleUpdate,this)):a(window).off("resize.bs.modal")},c.prototype.hideModal=function(){var a=this;this.$element.hide(),this.backdrop(function(){a.$body.removeClass("modal-open"),a.resetAdjustments(),a.resetScrollbar(),a.$element.trigger("hidden.bs.modal")})},c.prototype.removeBackdrop=function(){this.$backdrop&&this.$backdrop.remove(),this.$backdrop=null},c.prototype.backdrop=function(b){var d=this,e=this.$element.hasClass("fade")?"fade":"";if(this.isShown&&this.options.backdrop){var f=a.support.transition&&e;if(this.$backdrop=a(document.createElement("div")).addClass("modal-backdrop "+e).appendTo(this.$body),this.$element.on("click.dismiss.bs.modal",a.proxy(function(a){return this.ignoreBackdropClick?void(this.ignoreBackdropClick=!1):void(a.target===a.currentTarget&&("static"==this.options.backdrop?this.$element[0].focus():this.hide()))},this)),f&&this.$backdrop[0].offsetWidth,this.$backdrop.addClass("in"),!b)return;f?this.$backdrop.one("bsTransitionEnd",b).emulateTransitionEnd(c.BACKDROP_TRANSITION_DURATION):b()}else if(!this.isShown&&this.$backdrop){this.$backdrop.removeClass("in");var g=function(){d.removeBackdrop(),b&&b()};a.support.transition&&this.$element.hasClass("fade")?this.$backdrop.one("bsTransitionEnd",g).emulateTransitionEnd(c.BACKDROP_TRANSITION_DURATION):g()}else b&&b()},c.prototype.handleUpdate=function(){this.adjustDialog()},c.prototype.adjustDialog=function(){var a=this.$element[0].scrollHeight>document.documentElement.clientHeight;this.$element.css({paddingLeft:!this.bodyIsOverflowing&&a?this.scrollbarWidth:"",paddingRight:this.bodyIsOverflowing&&!a?this.scrollbarWidth:""})},c.prototype.resetAdjustments=function(){this.$element.css({paddingLeft:"",paddingRight:""})},c.prototype.checkScrollbar=function(){var a=window.innerWidth;if(!a){var b=document.documentElement.getBoundingClientRect();a=b.right-Math.abs(b.left)}this.bodyIsOverflowing=document.body.clientWidth<a,this.scrollbarWidth=this.measureScrollbar()},c.prototype.setScrollbar=function(){var a=parseInt(this.$body.css("padding-right")||0,10);this.originalBodyPad=document.body.style.paddingRight||"",this.bodyIsOverflowing&&this.$body.css("padding-right",a+this.scrollbarWidth)},c.prototype.resetScrollbar=function(){this.$body.css("padding-right",this.originalBodyPad)},c.prototype.measureScrollbar=function(){var a=document.createElement("div");a.className="modal-scrollbar-measure",this.$body.append(a);var b=a.offsetWidth-a.clientWidth;return this.$body[0].removeChild(a),b};var d=a.fn.modal;a.fn.modal=b,a.fn.modal.Constructor=c,a.fn.modal.noConflict=function(){return a.fn.modal=d,this},a(document).on("click.bs.modal.data-api",'[data-toggle="modal"]',function(c){var d=a(this),e=d.attr("href"),f=a(d.attr("data-target")||e&&e.replace(/.*(?=#[^\s]+$)/,"")),g=f.data("bs.modal")?"toggle":a.extend({remote:!/#/.test(e)&&e},f.data(),d.data());d.is("a")&&c.preventDefault(),f.one("show.bs.modal",function(a){a.isDefaultPrevented()||f.one("hidden.bs.modal",function(){d.is(":visible")&&d.trigger("focus")})}),b.call(f,g,this)})}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.tooltip"),f="object"==typeof b&&b;(e||!/destroy|hide/.test(b))&&(e||d.data("bs.tooltip",e=new c(this,f)),"string"==typeof b&&e[b]())})}var c=function(a,b){this.type=null,this.options=null,this.enabled=null,this.timeout=null,this.hoverState=null,this.$element=null,this.inState=null,this.init("tooltip",a,b)};c.VERSION="3.3.6",c.TRANSITION_DURATION=150,c.DEFAULTS={animation:!0,placement:"top",selector:!1,template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',trigger:"hover focus",title:"",delay:0,html:!1,container:!1,viewport:{selector:"body",padding:0}},c.prototype.init=function(b,c,d){if(this.enabled=!0,this.type=b,this.$element=a(c),this.options=this.getOptions(d),this.$viewport=this.options.viewport&&a(a.isFunction(this.options.viewport)?this.options.viewport.call(this,this.$element):this.options.viewport.selector||this.options.viewport),this.inState={click:!1,hover:!1,focus:!1},this.$element[0]instanceof document.constructor&&!this.options.selector)throw new Error("`selector` option must be specified when initializing "+this.type+" on the window.document object!");for(var e=this.options.trigger.split(" "),f=e.length;f--;){var g=e[f];if("click"==g)this.$element.on("click."+this.type,this.options.selector,a.proxy(this.toggle,this));else if("manual"!=g){var h="hover"==g?"mouseenter":"focusin",i="hover"==g?"mouseleave":"focusout";this.$element.on(h+"."+this.type,this.options.selector,a.proxy(this.enter,this)),this.$element.on(i+"."+this.type,this.options.selector,a.proxy(this.leave,this))}}this.options.selector?this._options=a.extend({},this.options,{trigger:"manual",selector:""}):this.fixTitle()},c.prototype.getDefaults=function(){return c.DEFAULTS},c.prototype.getOptions=function(b){return b=a.extend({},this.getDefaults(),this.$element.data(),b),b.delay&&"number"==typeof b.delay&&(b.delay={show:b.delay,hide:b.delay}),b},c.prototype.getDelegateOptions=function(){var b={},c=this.getDefaults();return this._options&&a.each(this._options,function(a,d){c[a]!=d&&(b[a]=d)}),b},c.prototype.enter=function(b){var c=b instanceof this.constructor?b:a(b.currentTarget).data("bs."+this.type);return c||(c=new this.constructor(b.currentTarget,this.getDelegateOptions()),a(b.currentTarget).data("bs."+this.type,c)),b instanceof a.Event&&(c.inState["focusin"==b.type?"focus":"hover"]=!0),c.tip().hasClass("in")||"in"==c.hoverState?void(c.hoverState="in"):(clearTimeout(c.timeout),c.hoverState="in",c.options.delay&&c.options.delay.show?void(c.timeout=setTimeout(function(){"in"==c.hoverState&&c.show()},c.options.delay.show)):c.show())},c.prototype.isInStateTrue=function(){for(var a in this.inState)if(this.inState[a])return!0;return!1},c.prototype.leave=function(b){var c=b instanceof this.constructor?b:a(b.currentTarget).data("bs."+this.type);return c||(c=new this.constructor(b.currentTarget,this.getDelegateOptions()),a(b.currentTarget).data("bs."+this.type,c)),b instanceof a.Event&&(c.inState["focusout"==b.type?"focus":"hover"]=!1),c.isInStateTrue()?void 0:(clearTimeout(c.timeout),c.hoverState="out",c.options.delay&&c.options.delay.hide?void(c.timeout=setTimeout(function(){"out"==c.hoverState&&c.hide()},c.options.delay.hide)):c.hide())},c.prototype.show=function(){var b=a.Event("show.bs."+this.type);if(this.hasContent()&&this.enabled){this.$element.trigger(b);var d=a.contains(this.$element[0].ownerDocument.documentElement,this.$element[0]);if(b.isDefaultPrevented()||!d)return;var e=this,f=this.tip(),g=this.getUID(this.type);this.setContent(),f.attr("id",g),this.$element.attr("aria-describedby",g),this.options.animation&&f.addClass("fade");var h="function"==typeof this.options.placement?this.options.placement.call(this,f[0],this.$element[0]):this.options.placement,i=/\s?auto?\s?/i,j=i.test(h);j&&(h=h.replace(i,"")||"top"),f.detach().css({top:0,left:0,display:"block"}).addClass(h).data("bs."+this.type,this),this.options.container?f.appendTo(this.options.container):f.insertAfter(this.$element),this.$element.trigger("inserted.bs."+this.type);var k=this.getPosition(),l=f[0].offsetWidth,m=f[0].offsetHeight;if(j){var n=h,o=this.getPosition(this.$viewport);h="bottom"==h&&k.bottom+m>o.bottom?"top":"top"==h&&k.top-m<o.top?"bottom":"right"==h&&k.right+l>o.width?"left":"left"==h&&k.left-l<o.left?"right":h,f.removeClass(n).addClass(h)}var p=this.getCalculatedOffset(h,k,l,m);this.applyPlacement(p,h);var q=function(){var a=e.hoverState;e.$element.trigger("shown.bs."+e.type),e.hoverState=null,"out"==a&&e.leave(e)};a.support.transition&&this.$tip.hasClass("fade")?f.one("bsTransitionEnd",q).emulateTransitionEnd(c.TRANSITION_DURATION):q()}},c.prototype.applyPlacement=function(b,c){var d=this.tip(),e=d[0].offsetWidth,f=d[0].offsetHeight,g=parseInt(d.css("margin-top"),10),h=parseInt(d.css("margin-left"),10);isNaN(g)&&(g=0),isNaN(h)&&(h=0),b.top+=g,b.left+=h,a.offset.setOffset(d[0],a.extend({using:function(a){d.css({top:Math.round(a.top),left:Math.round(a.left)})}},b),0),d.addClass("in");var i=d[0].offsetWidth,j=d[0].offsetHeight;"top"==c&&j!=f&&(b.top=b.top+f-j);var k=this.getViewportAdjustedDelta(c,b,i,j);k.left?b.left+=k.left:b.top+=k.top;var l=/top|bottom/.test(c),m=l?2*k.left-e+i:2*k.top-f+j,n=l?"offsetWidth":"offsetHeight";d.offset(b),this.replaceArrow(m,d[0][n],l)},c.prototype.replaceArrow=function(a,b,c){this.arrow().css(c?"left":"top",50*(1-a/b)+"%").css(c?"top":"left","")},c.prototype.setContent=function(){var a=this.tip(),b=this.getTitle();a.find(".tooltip-inner")[this.options.html?"html":"text"](b),a.removeClass("fade in top bottom left right")},c.prototype.hide=function(b){function d(){"in"!=e.hoverState&&f.detach(),e.$element.removeAttr("aria-describedby").trigger("hidden.bs."+e.type),b&&b()}var e=this,f=a(this.$tip),g=a.Event("hide.bs."+this.type);return this.$element.trigger(g),g.isDefaultPrevented()?void 0:(f.removeClass("in"),a.support.transition&&f.hasClass("fade")?f.one("bsTransitionEnd",d).emulateTransitionEnd(c.TRANSITION_DURATION):d(),this.hoverState=null,this)},c.prototype.fixTitle=function(){var a=this.$element;(a.attr("title")||"string"!=typeof a.attr("data-original-title"))&&a.attr("data-original-title",a.attr("title")||"").attr("title","")},c.prototype.hasContent=function(){return this.getTitle()},c.prototype.getPosition=function(b){b=b||this.$element;var c=b[0],d="BODY"==c.tagName,e=c.getBoundingClientRect();null==e.width&&(e=a.extend({},e,{width:e.right-e.left,height:e.bottom-e.top}));var f=d?{top:0,left:0}:b.offset(),g={scroll:d?document.documentElement.scrollTop||document.body.scrollTop:b.scrollTop()},h=d?{width:a(window).width(),height:a(window).height()}:null;return a.extend({},e,g,h,f)},c.prototype.getCalculatedOffset=function(a,b,c,d){return"bottom"==a?{top:b.top+b.height,left:b.left+b.width/2-c/2}:"top"==a?{top:b.top-d,left:b.left+b.width/2-c/2}:"left"==a?{top:b.top+b.height/2-d/2,left:b.left-c}:{top:b.top+b.height/2-d/2,left:b.left+b.width}},c.prototype.getViewportAdjustedDelta=function(a,b,c,d){var e={top:0,left:0};if(!this.$viewport)return e;var f=this.options.viewport&&this.options.viewport.padding||0,g=this.getPosition(this.$viewport);if(/right|left/.test(a)){var h=b.top-f-g.scroll,i=b.top+f-g.scroll+d;h<g.top?e.top=g.top-h:i>g.top+g.height&&(e.top=g.top+g.height-i)}else{var j=b.left-f,k=b.left+f+c;j<g.left?e.left=g.left-j:k>g.right&&(e.left=g.left+g.width-k)}return e},c.prototype.getTitle=function(){var a,b=this.$element,c=this.options;return a=b.attr("data-original-title")||("function"==typeof c.title?c.title.call(b[0]):c.title)},c.prototype.getUID=function(a){do a+=~~(1e6*Math.random());while(document.getElementById(a));return a},c.prototype.tip=function(){if(!this.$tip&&(this.$tip=a(this.options.template),1!=this.$tip.length))throw new Error(this.type+" `template` option must consist of exactly 1 top-level element!");return this.$tip},c.prototype.arrow=function(){return this.$arrow=this.$arrow||this.tip().find(".tooltip-arrow")},c.prototype.enable=function(){this.enabled=!0},c.prototype.disable=function(){this.enabled=!1},c.prototype.toggleEnabled=function(){this.enabled=!this.enabled},c.prototype.toggle=function(b){var c=this;b&&(c=a(b.currentTarget).data("bs."+this.type),c||(c=new this.constructor(b.currentTarget,this.getDelegateOptions()),a(b.currentTarget).data("bs."+this.type,c))),b?(c.inState.click=!c.inState.click,c.isInStateTrue()?c.enter(c):c.leave(c)):c.tip().hasClass("in")?c.leave(c):c.enter(c)},c.prototype.destroy=function(){var a=this;clearTimeout(this.timeout),this.hide(function(){a.$element.off("."+a.type).removeData("bs."+a.type),a.$tip&&a.$tip.detach(),a.$tip=null,a.$arrow=null,a.$viewport=null})};var d=a.fn.tooltip;a.fn.tooltip=b,a.fn.tooltip.Constructor=c,a.fn.tooltip.noConflict=function(){return a.fn.tooltip=d,this}}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.popover"),f="object"==typeof b&&b;(e||!/destroy|hide/.test(b))&&(e||d.data("bs.popover",e=new c(this,f)),"string"==typeof b&&e[b]())})}var c=function(a,b){this.init("popover",a,b)};if(!a.fn.tooltip)throw new Error("Popover requires tooltip.js");c.VERSION="3.3.6",c.DEFAULTS=a.extend({},a.fn.tooltip.Constructor.DEFAULTS,{placement:"right",trigger:"click",content:"",template:'<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'}),c.prototype=a.extend({},a.fn.tooltip.Constructor.prototype),c.prototype.constructor=c,c.prototype.getDefaults=function(){return c.DEFAULTS},c.prototype.setContent=function(){var a=this.tip(),b=this.getTitle(),c=this.getContent();a.find(".popover-title")[this.options.html?"html":"text"](b),a.find(".popover-content").children().detach().end()[this.options.html?"string"==typeof c?"html":"append":"text"](c),a.removeClass("fade top bottom left right in"),a.find(".popover-title").html()||a.find(".popover-title").hide()},c.prototype.hasContent=function(){return this.getTitle()||this.getContent()},c.prototype.getContent=function(){var a=this.$element,b=this.options;return a.attr("data-content")||("function"==typeof b.content?b.content.call(a[0]):b.content)},c.prototype.arrow=function(){return this.$arrow=this.$arrow||this.tip().find(".arrow")};var d=a.fn.popover;a.fn.popover=b,a.fn.popover.Constructor=c,a.fn.popover.noConflict=function(){return a.fn.popover=d,this}}(jQuery),+function(a){"use strict";function b(c,d){this.$body=a(document.body),this.$scrollElement=a(a(c).is(document.body)?window:c),this.options=a.extend({},b.DEFAULTS,d),this.selector=(this.options.target||"")+" .nav li > a",this.offsets=[],this.targets=[],this.activeTarget=null,this.scrollHeight=0,this.$scrollElement.on("scroll.bs.scrollspy",a.proxy(this.process,this)),this.refresh(),this.process()}function c(c){return this.each(function(){var d=a(this),e=d.data("bs.scrollspy"),f="object"==typeof c&&c;e||d.data("bs.scrollspy",e=new b(this,f)),"string"==typeof c&&e[c]()})}b.VERSION="3.3.6",b.DEFAULTS={offset:10},b.prototype.getScrollHeight=function(){return this.$scrollElement[0].scrollHeight||Math.max(this.$body[0].scrollHeight,document.documentElement.scrollHeight)},b.prototype.refresh=function(){var b=this,c="offset",d=0;this.offsets=[],this.targets=[],this.scrollHeight=this.getScrollHeight(),a.isWindow(this.$scrollElement[0])||(c="position",d=this.$scrollElement.scrollTop()),this.$body.find(this.selector).map(function(){var b=a(this),e=b.data("target")||b.attr("href"),f=/^#./.test(e)&&a(e);return f&&f.length&&f.is(":visible")&&[[f[c]().top+d,e]]||null}).sort(function(a,b){return a[0]-b[0]}).each(function(){b.offsets.push(this[0]),b.targets.push(this[1])})},b.prototype.process=function(){var a,b=this.$scrollElement.scrollTop()+this.options.offset,c=this.getScrollHeight(),d=this.options.offset+c-this.$scrollElement.height(),e=this.offsets,f=this.targets,g=this.activeTarget;if(this.scrollHeight!=c&&this.refresh(),b>=d)return g!=(a=f[f.length-1])&&this.activate(a);if(g&&b<e[0])return this.activeTarget=null,this.clear();for(a=e.length;a--;)g!=f[a]&&b>=e[a]&&(void 0===e[a+1]||b<e[a+1])&&this.activate(f[a])},b.prototype.activate=function(b){this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+this.selector+'[href="'+b+'"]',d=a(c).parents("li").addClass("active");
+d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active")),d.trigger("activate.bs.scrollspy")},b.prototype.clear=function(){a(this.selector).parentsUntil(this.options.target,".active").removeClass("active")};var d=a.fn.scrollspy;a.fn.scrollspy=c,a.fn.scrollspy.Constructor=b,a.fn.scrollspy.noConflict=function(){return a.fn.scrollspy=d,this},a(window).on("load.bs.scrollspy.data-api",function(){a('[data-spy="scroll"]').each(function(){var b=a(this);c.call(b,b.data())})})}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.tab");e||d.data("bs.tab",e=new c(this)),"string"==typeof b&&e[b]()})}var c=function(b){this.element=a(b)};c.VERSION="3.3.6",c.TRANSITION_DURATION=150,c.prototype.show=function(){var b=this.element,c=b.closest("ul:not(.dropdown-menu)"),d=b.data("target");if(d||(d=b.attr("href"),d=d&&d.replace(/.*(?=#[^\s]*$)/,"")),!b.parent("li").hasClass("active")){var e=c.find(".active:last a"),f=a.Event("hide.bs.tab",{relatedTarget:b[0]}),g=a.Event("show.bs.tab",{relatedTarget:e[0]});if(e.trigger(f),b.trigger(g),!g.isDefaultPrevented()&&!f.isDefaultPrevented()){var h=a(d);this.activate(b.closest("li"),c),this.activate(h,h.parent(),function(){e.trigger({type:"hidden.bs.tab",relatedTarget:b[0]}),b.trigger({type:"shown.bs.tab",relatedTarget:e[0]})})}}},c.prototype.activate=function(b,d,e){function f(){g.removeClass("active").find("> .dropdown-menu > .active").removeClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded",!1),b.addClass("active").find('[data-toggle="tab"]').attr("aria-expanded",!0),h?(b[0].offsetWidth,b.addClass("in")):b.removeClass("fade"),b.parent(".dropdown-menu").length&&b.closest("li.dropdown").addClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded",!0),e&&e()}var g=d.find("> .active"),h=e&&a.support.transition&&(g.length&&g.hasClass("fade")||!!d.find("> .fade").length);g.length&&h?g.one("bsTransitionEnd",f).emulateTransitionEnd(c.TRANSITION_DURATION):f(),g.removeClass("in")};var d=a.fn.tab;a.fn.tab=b,a.fn.tab.Constructor=c,a.fn.tab.noConflict=function(){return a.fn.tab=d,this};var e=function(c){c.preventDefault(),b.call(a(this),"show")};a(document).on("click.bs.tab.data-api",'[data-toggle="tab"]',e).on("click.bs.tab.data-api",'[data-toggle="pill"]',e)}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.affix"),f="object"==typeof b&&b;e||d.data("bs.affix",e=new c(this,f)),"string"==typeof b&&e[b]()})}var c=function(b,d){this.options=a.extend({},c.DEFAULTS,d),this.$target=a(this.options.target).on("scroll.bs.affix.data-api",a.proxy(this.checkPosition,this)).on("click.bs.affix.data-api",a.proxy(this.checkPositionWithEventLoop,this)),this.$element=a(b),this.affixed=null,this.unpin=null,this.pinnedOffset=null,this.checkPosition()};c.VERSION="3.3.6",c.RESET="affix affix-top affix-bottom",c.DEFAULTS={offset:0,target:window},c.prototype.getState=function(a,b,c,d){var e=this.$target.scrollTop(),f=this.$element.offset(),g=this.$target.height();if(null!=c&&"top"==this.affixed)return c>e?"top":!1;if("bottom"==this.affixed)return null!=c?e+this.unpin<=f.top?!1:"bottom":a-d>=e+g?!1:"bottom";var h=null==this.affixed,i=h?e:f.top,j=h?g:b;return null!=c&&c>=e?"top":null!=d&&i+j>=a-d?"bottom":!1},c.prototype.getPinnedOffset=function(){if(this.pinnedOffset)return this.pinnedOffset;this.$element.removeClass(c.RESET).addClass("affix");var a=this.$target.scrollTop(),b=this.$element.offset();return this.pinnedOffset=b.top-a},c.prototype.checkPositionWithEventLoop=function(){setTimeout(a.proxy(this.checkPosition,this),1)},c.prototype.checkPosition=function(){if(this.$element.is(":visible")){var b=this.$element.height(),d=this.options.offset,e=d.top,f=d.bottom,g=Math.max(a(document).height(),a(document.body).height());"object"!=typeof d&&(f=e=d),"function"==typeof e&&(e=d.top(this.$element)),"function"==typeof f&&(f=d.bottom(this.$element));var h=this.getState(g,b,e,f);if(this.affixed!=h){null!=this.unpin&&this.$element.css("top","");var i="affix"+(h?"-"+h:""),j=a.Event(i+".bs.affix");if(this.$element.trigger(j),j.isDefaultPrevented())return;this.affixed=h,this.unpin="bottom"==h?this.getPinnedOffset():null,this.$element.removeClass(c.RESET).addClass(i).trigger(i.replace("affix","affixed")+".bs.affix")}"bottom"==h&&this.$element.offset({top:g-b-f})}};var d=a.fn.affix;a.fn.affix=b,a.fn.affix.Constructor=c,a.fn.affix.noConflict=function(){return a.fn.affix=d,this},a(window).on("load",function(){a('[data-spy="affix"]').each(function(){var c=a(this),d=c.data();d.offset=d.offset||{},null!=d.offsetBottom&&(d.offset.bottom=d.offsetBottom),null!=d.offsetTop&&(d.offset.top=d.offsetTop),b.call(c,d)})})}(jQuery);
+/**
+ * 基础js源码
+ */
+var Q = {
+  protocol: "https:" == document.location.protocol ? "https:" : "http:",
+  resDir: "//imgcn.ihuaben.com/ihuaben",
+  imgDir: "//piccn.ihuaben.com/",
+  toFullUrl: function (url, width, domain) {
+    if (!url) {
+      return "";
+    }
+    width = width || 100;
+    domain = domain || Q.imgDir;
+    var result = url;
+    if (!url.match(/\/\/[^\.]+\.ihuaben\.com\//i)) {
+      result = Q.protocol + domain + url;
+    }
+    if (!result.match(/(\@\d+w|\?x\-oss\-process\=)/)) {
+      result += "?x-oss-process=image/resize,w_" + width;
+      if (Q.cookie("webp")) {
+        result += "/format,webp";
+      }
+    }
+    return result;
+  },
+  isBlockAdBrowser: function () {
+    var blockAdBrowser = false;
+    if (
+      navigator.userAgent.match(
+        /(baiduboxapp|sogoumobilebrowser|vivobrowser|baidubrowser|liebaofast|mqqbrowser)\/\d+/gi
+      ) &&
+      navigator.userAgent.match(/android \d+/gi)
+    )
+      blockAdBrowser = true;
+    return blockAdBrowser;
+  },
+  /**
+   * 是否是 Webview
+   * @returns {RegExpMatchArray}
+   */
+  isWebview: function () {
+    return navigator.userAgent.match(/HuabenApp/gi);
+  },
+  getImageOrigin: function (url) {
+    var result = url.replace(/(\@\d+w|\?x\-oss\-process\=)[^\&\?]*$/g, "");
+    return result;
+  },
+  loadCss: function (url) {
+    var container = document.getElementsByTagName("head")[0];
+    var addStyle = document.createElement("link");
+    addStyle.rel = "stylesheet";
+    addStyle.type = "text/css";
+    addStyle.media = "screen";
+    var reg = /^http[s]*\:\/\//gi;
+    if (!reg.test(url)) addStyle.href = Q.protocol + Q.resDir + url;
+    else addStyle.href = url;
+    container.appendChild(addStyle);
+  },
+  loadScript: function (url) {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    var container = document.getElementsByTagName("head")[0];
+    s.src = url;
+    container.appendChild(s);
+  },
+  defaultCharacterPic: "pic/character/default.jpg",
+  getNumberStr: function (num) {
+    var max = 10000;
+    var str = "";
+    if (num < max) {
+      str = num;
+    } else {
+      str = parseInt(num / max) + "万";
+    }
+    return str;
+  },
+  //封装localStorage和sessionStorage，以解决浏览器无痕模式出错
+  storage: function (key, val) {
+    if (!localStorage) return null;
+    try {
+      if (val != undefined) {
+        val = val.toString();
+        localStorage.setItem(key, val);
+        return val;
+      } else if (val === null) {
+        localStorage.removeItem(key);
+        return null;
+      } else {
+        return localStorage.getItem(key);
+      }
+    } catch (e) {
+      return null;
+    }
+  },
+  //封装localStorage，以解决浏览器无痕模式出错
+  session: function (key, val) {
+    if (!sessionStorage) return null;
+    try {
+      if (val != undefined) {
+        val = val.toString();
+        sessionStorage.setItem(key, val);
+        return val;
+      } else if (val === null) {
+        sessionStorage.removeItem(key);
+        return null;
+      } else {
+        return sessionStorage.getItem(key);
+      }
+    } catch (e) {
+      return null;
+    }
+  },
+  isLogin: function () {
+    return !!Q.cookie("i_u");
+  },
+  user: function () {
+    var tokenId = Q.cookie("i_u");
+    if (!tokenId) return null;
+    var datas = decodeURI(tokenId).split("&");
+    var code = datas[0].split("l");
+    var nickName = "";
+    for (var i = 0; i < code.length; i++) {
+      nickName += String.fromCharCode(code[i]);
+    }
+    var user = {};
+    user.userId = datas[1];
+    user.nickName = nickName;
+    return user;
+  },
+  cookie: function (name, value, day, domain, path) {
+    domain = domain ? "domain=" + domain + ";" : "";
+    path = "path=" + (path || "/") + ";";
+    var re,
+      date = new Date(),
+      reg = new RegExp(name + "=(.*?)(;|$)", "i");
+    switch (value) {
+      case undefined:
+        re = document.cookie.match(reg);
+        if (re != null) {
+          re = decodeURIComponent(re[1]);
+        }
+        break;
+      case null:
+        document.cookie =
+          name + "=;" + domain + path + "expires=" + new Date(0).toUTCString();
+        re = true;
+        break;
+      default:
+        if (day == 0) {
+          day = "";
+        } else {
+          date.setTime(date.getTime() + (day || 30) * 864e5);
+          day = "expires=" + date.toUTCString();
+        }
+        document.cookie =
+          name + "=" + encodeURIComponent(value) + ";" + domain + path + day;
+        re = true;
+    }
+    return re || "";
+  },
+  /**
+   * 获取查询数据
+   */
+  getQueryString: function () {
+    var result = location.search.match(new RegExp("[?&][^?&]+=[^?&]+", "g"));
+    var params = {};
+    if (result) {
+      for (var i = 0; i < result.length; i++) {
+        result[i] = result[i].substring(1);
+      }
+      if (result && result.length > 0) {
+        for (var i = 0; i < result.length; i++) {
+          if (result[i]) {
+            var kv = result[i].split("=");
+            params[kv[0]] = kv[1];
+          }
+        }
+      }
+    }
+    return params;
+  },
+};
+
+Q.guid = (function () {
+  function a() {
+    return ((65536 * (1 + Math.random())) | 0).toString(16).substring(1);
+  }
+  var c = Q.cookie("guid");
+  c ||
+    ((c =
+      a() + a() + "-" + a() + "-" + a() + "-" + a() + "-" + a() + a() + a()),
+    Q.cookie("guid", c, 365 * 5, ".ihuaben.com", "/"));
+  return c;
+})();
+
+$(document).ready(function () {
+  var ua = navigator.userAgent;
+  var isMobile = !!ua.match(/AppleWebKit.*Mobile.*/);
+  if (isMobile) $("a").removeAttr("target");
+
+  if (ua.match(/MSIE [5-8]\./gi))
+    alert("本网站不支持IE9以下浏览器，请更换浏览器访问！");
+});
+
+if (localStorage) {
+  try {
+    sessionStorage.setItem("localStorage", 1);
+    sessionStorage.removeItem("localStorage");
+    localStorage.setItem("localStorage", 1);
+    localStorage.removeItem("localStorage");
+  } catch (e) {
+    Storage.prototype._setItem = Storage.prototype.setItem;
+    Storage.prototype.setItem = function () {};
+    console.log(
+      'Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some settings may not save or some features may not work properly for you.'
+    );
+  }
+}
+
+if (Q.cookie("PureRead") === "true") {
+  Q.loadCss(Q.protocol + "//staticcn.ihuaben.com/css/pure.css");
+}
+
+Q.ajax = function (params) {
+  if (!params.headers) {
+    var jsonType = "application/json";
+    params.headers = { accepts: jsonType, contentType: jsonType };
+  }
+  $.ajax(params);
+};
+
+// 创建360广告
+/**
+ * @id 容器ID
+ * @adId 广告位ID
+ * @adOptions 广告参数
+ * @otherParams
+ */
+function create360Ad(id, adId, adOptions, otherParams) {
+  otherParams = otherParams || {
+    onClose: () => {},
+    w: undefined,
+    h: undefined,
+  };
+  return new Promise((resolve, reject) => {
+    if (QIHOO_WAP_FEEDAD) {
+      QIHOO_WAP_FEEDAD({
+        w: otherParams.w, // 选填, 广告位区域宽度（不传值则按指定的广告容器宽度适配展示）
+        h: otherParams.h, // 选填，广告位区域高度（不传值则按模板默认高度展示）
+        placeholderId: id, // 异步插入必填! 指定插入位置-广告容器id，同步插入不需要此参数
+        showid: adId, // 必填，广告位id，按产品运营约定传值
+        adOptions,
+        // adOptions: {
+        //   // 广告请求所需透传参数
+        //   queryword: "", // 必填，广告位关键词（广告位关键词为抓取的页面内容的关键词）：可以传多个关键字，以空格分割，示例:queryword=URLencode(男装 女装 袜子)
+        //   title: "", // 必填，title为抓取的页面内容标题，urlencode过的内容标题
+        //   uid: "", // 必填，标识PV的hash值
+        // },
+        // 选填，无广告返回回调
+        onFail: reject,
+        // 选填，有广告返回回调
+        onSuccess: resolve,
+        // 选填，广告点击关闭返回回调
+        onClose: otherParams.onClose,
+      });
+    } else {
+      reject();
+    }
+  });
+}
+(function () {
+  var feedts = document.createElement("script");
+  feedts.src = "//static-ssl.mediav.com/js/qihoo_wap_feedad_sdk.js";
+  feedts.type = "text/javascript";
+  feedts.async = "async";
+  var scriptItem = document.getElementsByTagName("script")[0];
+  scriptItem.parentElement.insertBefore(feedts, scriptItem);
+})();
+/*
+	 * Copyright 2010 Nicholas C. Zakas. All rights reserved.
+	 * BSD Licensed.
+	 * modified by wushufeng 2014-07-01
+	 */
+	$.XDStorage = function(origin, path){
+	    this.origin = origin;
+	    this.path = path;
+	    this._iframe = null;
+	    this._iframeReady = false;
+	    this._queue = [];
+	    this._requests = {};
+	    this._id = 0;
+	}
+	
+	$.XDStorage.prototype = {
+	
+		op:{
+			WRITE: 'W',
+			READ: 'R',
+			DEL: 'D',
+			CLEAR: 'X'
+		},
+	    //restore constructor
+	    constructor: $.XDStorage,
+	
+	    //public interface methods
+	
+	    init: function(){
+	
+	        var that = this;
+	
+	        if (!this._iframe){
+	            if (window.postMessage && window.JSON && window.localStorage){
+	                this._iframe = document.createElement("iframe");
+	                this._iframe.style.cssText = "position:absolute;width:1px;height:1px;left:-9999px;";
+	                document.body.appendChild(this._iframe);
+	
+	                if (window.addEventListener){
+	                    this._iframe.addEventListener("load", function(){ that._iframeLoaded(); }, false);
+	                    window.addEventListener("message", function(event){ that._handleMessage(event); }, false);
+	                } else if (this._iframe.attachEvent){
+	                    this._iframe.attachEvent("onload", function(){ that._iframeLoaded(); }, false);
+	                    window.attachEvent("onmessage", function(event){ that._handleMessage(event); });
+	                }
+	            } else {
+	                throw new Error("Unsupported browser.");
+	            }
+	        }
+	
+	        this._iframe.src = this.origin + this.path;
+	
+	    },
+
+	    getValue: function(key, callback){
+	        this._toSend({
+                key: key
+            },callback);
+	    },
+	
+	    setValue: function(key,value,callback){
+
+	        this._toSend({
+                key: key,
+    			op:  this.op.WRITE,
+    			value: value
+            },callback);	
+	    },
+	    delValue: function(key,callback){
+	        this._toSend({
+                key: key,
+    			op: this.op.DEL
+            },callback);	
+	    },
+	    clearValue: function(callback){
+	        this._toSend({
+    			op: this.op.CLEAR
+            },callback);	
+	    },
+	    //private methods
+	    
+	    _toSend: function(params,callback){
+	    	var data = {
+	                request: {
+	                    key: params.key,
+	                    id: ++this._id,
+	                    op: params.op,
+	                    value: params.value
+	                },
+	                callback: callback
+            };
+	    	if (this._iframeReady){
+	            this._sendRequest(data);
+	        } else {
+	            this._queue.push(data);
+	        }   
+	
+	        if (!this._iframe){
+	            this.init();
+	        }	
+	    },
+	
+	    _sendRequest: function(data){
+	        this._requests[data.request.id] = data;
+	        this._iframe.contentWindow.postMessage(JSON.stringify(data.request), this.origin);
+	    },
+	
+	    _iframeLoaded: function(){
+	        this._iframeReady = true;
+	
+	        if (this._queue.length){
+	            for (var i=0, len=this._queue.length; i < len; i++){
+	                this._sendRequest(this._queue[i]);
+	            }
+	            this._queue = [];
+	        }
+	    },
+	
+	    _handleMessage: function(event){
+	        if (event.origin == this.origin){
+	            var data = JSON.parse(event.data);
+	            if(this._requests[data.id]&&this._requests[data.id].callback)
+					this._requests[data.id].callback(data.value);
+	            delete this._requests[data.id];
+	        }
+	    }
+	
+	};
+
+var tempList=[];
+var searchClass={
+	noShowHistory:false,
+	showHistory:function(){
+		if(searchClass.noShowHistory)
+			return;
+		
+		var remoteStorage = new $.XDStorage(Q.protocol+"//imanga.net", "/search");
+		remoteStorage.getValue("searchhistory",function(data){
+			if(!data)
+				return;
+			var list=JSON.parse(data);
+			if(list.length>0){
+				/*
+				var str="<div class=\"hotsearch\"><ul class=\"list-inline\">";
+				str+="<li><span>热搜</span></li>";
+				for(var i=0;i<hotList.length;i++)
+					str+="<li><a href=\"\" class=\"btn btn-default btn-xs\">"+hotList[i]+"</a></li>";
+				str+="<li><a href==\"\" class=\"btn btn-default btn-xs\">更多</a></li>";
+				str+="</ul></div>";
+				*/
+				var str="<ul class=\"list-group\">";
+				str+="<li class=\"list-group-item list-group-item-success\">搜索历史</li>";
+				for(var i=0;i<list.length;i++){
+					if(i>=10)
+						break;
+					str+="<li class=\"list-group-item\" aria-data=\""+list[i]+"\">";
+					str+="<a class=\"listSpan\" href=\"/search/"+encodeURIComponent(list[i])+"\">"+list[i]+"</a>";
+					str+="<span class=\"pull-right removeButton\"><i class=\"icon-remove\"></i></span></li>";
+				}
+				str+="<li class=\"list-group-item list-group-item-success\">";
+				str+="<a class=\"clearHistory\" href=\"#\">清空搜索历史</a>";
+				str+="<a class=\"pull-right closeHistoryButton\" href=\"#\">Close</a></li>";
+				str+="</ul>";
+				$(".searchhistory").html(str);
+				$(".searchhistory").show();
+				searchClass.moveSearchHistory();
+				$(".removeButton").click(function(e){
+					var obj=$(e.target).parents(".list-group-item");
+					var keyword=obj.attr("aria-data");
+					for(var i=0;i<list.length;i++){
+						if(list[i].toLowerCase()==keyword.toLowerCase()){
+							list.splice(i,1);
+							break;
+						}
+					}
+					remoteStorage.setValue("searchhistory",JSON.stringify(list));				
+					obj.remove();
+				});
+				$(".clearHistory").click(function(){
+					remoteStorage.delValue("searchhistory");
+					$(".searchhistory").hide();
+				});
+				$(".closeHistoryButton").click(function(){
+					$(".searchhistory").hide();
+				});
+			}
+		});
+	},
+
+	showSearchTip:function(){
+		if(tempList.length>0){
+			var str="<ul class=\"list-group\">";
+			for(var i=0;i<tempList.length;i++){
+				if(i>=10)
+					break;
+				str+="<li class=\"list-group-item\">";
+				str+="<a class=\"listSpanFull\" href=\"/search/"+encodeURIComponent(tempList[i])+"\">"+tempList[i]+"</a></li>";
+			}
+			str+="<li class=\"list-group-item list-group-item-success\">";
+			str+="<span>&nbsp;</span><a class=\"pull-right closeHistoryButton\" href=\"#\">Close</a></li>";
+			str+="</ul>";
+			$(".searchhistory").html(str);
+			$(".searchhistory").show();
+			searchClass.moveSearchHistory();
+			
+			$(".closeHistoryButton").click(function(){
+				$(".searchhistory").hide();
+			});
+		}
+	},
+	moveSearchHistory:function(){
+		var obj=$("#newSearchInput").parent();
+		if($(window).width()<768)
+			obj=$("#newSearchInput");
+		$(".searchhistory").width($(obj).outerWidth());
+		$(".searchhistory").offset({
+			left:$(obj).offset().left,
+			top:$(obj).offset().top+52
+		});
+		$(".searchhistory").css("z-index","999");
+	},
+	init:function(){
+		var v=navigator.appVersion;
+		var reg=/like Mac OS X/ig;
+		if(reg.test(v)){
+			reg=/mqq|uc|MicroMessenger|mxios|Chrome/ig;
+			if(reg.test(v)){
+				searchClass.noShowHistory=true;
+				return;
+			}
+		}
+		$(document).ready(function(){
+			var url=document.location.href;
+			if(url.match(/\/search\/\?/ig)){
+				var reg=/\/search\/(.*?)/ig;
+				var group=reg.exec(url);
+				if(group){
+					var keyword=decodeURIComponent(group[2]);
+					$("#newSearchInput").val(keyword);
+				}
+			}
+			if($(".searchhistory").length==0){
+				var div=$("<div class=\"searchhistory\"></div>");
+				div.appendTo(document.body);
+			}
+			$(".navbar-toggle").click(function(){
+				$(".searchhistory").hide();
+			});
+			$("#newSearchInput").click(function(){
+				if(navigator.userAgent.match(/\((iPhone|iPad)\;[^\n]+ (QQ|baidubrowser|baiduhd)\/\d+/ig))
+					return;
+				if($(".searchhistory").is(":visible"))
+					return;
+				var txt=$("#newSearchInput").val();
+				if(!txt&&txt!="")
+					searchClass.showHistory();
+				else{
+					$.get('/api/suggest/'+txt,function(data){
+						tempList=data;
+						searchClass.showSearchTip();
+					},"json");
+				}
+			});
+			$("#newSearchForm").submit(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				var remoteStorage = new $.XDStorage(Q.protocol+"//staticcn.ihuaben.com", "/localdb/proxy.html");
+				var txt=$("#newSearchInput").val();
+				txt=$.trim(txt).replace(/[^\u4e00-\u9fa5\w\d ]/g,"");
+				if(txt){
+					remoteStorage.getValue("searchhistory",function(searchhistory){
+						if(searchhistory){
+							var list=JSON.parse(searchhistory);
+							for(var i=0;i<list.length;i++){
+								if(list[i].toLowerCase()==txt.toLowerCase()){
+									list.splice(i,1);
+									break;
+								}
+							}
+							list.splice(0,0,txt);
+							if(list.length>100)
+								list.length=100;
+							remoteStorage.setValue("searchhistory",JSON.stringify(list),function(){
+								document.location.href="/search/"+encodeURIComponent($("#newSearchInput").val());
+							});
+						}
+						else
+							remoteStorage.setValue("searchhistory",JSON.stringify([txt]),function(){
+								document.location.href="/search/"+encodeURIComponent($("#newSearchInput").val());
+							});						
+					});
+				}
+				else
+					document.location.href="/search";
+			});
+			$("#newSearchInput").on("change input",function(e){
+				var txt=$.trim($(e.target).val());
+				var otxt=$(e.target).attr("aria-data");
+				if(txt!=otxt){
+					$(e.target).attr("aria-data",txt);
+					if(!txt&&txt!="")
+						searchClass.showHistory();
+					else{
+						$.post("/api/search", {
+							word: txt
+						}, function(data) {
+							tempList=data;
+							searchClass.showSearchTip();
+						})
+					}
+				}
+			});
+		});
+	}
+}
+
+$(document).ready(function(){
+	searchClass.init();
+});
+var _isOtherSite=false;
+var _currentWebId;
+
+var waitingObj;
+var dtask;
+var lastTime=new Date();
+function createDownload() {
+	dtask = plus.downloader.createDownload("https://www.ihuaben.com/function/app/load/android/ihuabenpc");
+	dtask.addEventListener( "statechanged", checkDownload, false );
+	dtask.start();
+	waitingObj = plus.nativeUI.showWaiting( "正在下载，请稍候..." );
+	waitingObj.onclose=function(){
+		if(dtask&&dtask.state!=4)
+			dtask.abort();
+	}
+}
+
+function checkDownload(d,status){
+	if ( d.state == 4){
+		waitingObj.close();
+		if(status == 200){
+			if(setStatClick&&_customStat){
+				_customStat.push('lite_download');
+				setStatClick();
+			}
+			plus.runtime.install(d.filename);
+		}
+		else{
+			plus.nativeUI.confirm("下载失败，请重试！",function(e){
+				if(e.index===0){
+					createDownload();
+				}
+			},"提示",["重新下载","取消"]);			
+		}
+	}
+	else{
+		var now=new Date();
+		var ts=now.getTime()-lastTime.getTime();
+		if(ts<1000)
+			return;
+		else
+			lastTime=now;
+		var v=0;
+		if(d.downloadedSize&&d.totalSize)
+			v=d.downloadedSize/d.totalSize;
+		v=Math.floor(v*100);
+		waitingObj.setTitle(v.toString()+"/100%");
+	}
+}
+
+function getOSVersion(){
+	var v=plus.os.version;
+	var group=/(\d+\.\d+)/.exec(v);
+	if(group)
+		return parseFloat(group[1]);
+	else
+		return 0;
+}
+
+/*
+function plusGo(url,wid){
+	if(navigator.userAgent.match(/html5plus/ig)){
+		
+		if(wid=="chapter"&&plus.networkinfo.getCurrentType()===3&&getOSVersion()>=4.1){
+			plus.nativeUI.confirm("当前程序版本过低，请升级后继续使用！",function(e){
+				if(e.index===0){
+					createDownload();
+				}
+			},"提示",["立即下载","取消"]);
+		}
+		else{
+		
+			var host=window.location.host;
+			if(url.match(/^\/[\w\d]+/g)||url=="/")
+				url=window.location.protocol+"//"+host+url;
+			else if(url.match(/^\/\//g))
+				url=window.location.protocol+url;
+			else if(url.match(/^https*\:\/\//ig)){
+				var reg=/^https*\:\/\/([^\/]+?)\//ig;
+				var group=reg.exec(url);
+				if(group)
+					host=group[1];
+			}
+			_currentWebId=wid||host;
+			var ws=plus.webview.currentWebview();
+			var overview = plus.webview.getWebviewById(_currentWebId);
+			if(overview) {
+				overview.loadURL(url);
+				if(ws.id!=_currentWebId)
+					plus.webview.show(_currentWebId);
+			}
+			else {
+				plus.nativeUI.showWaiting();
+				overview = plus.webview.create(url, _currentWebId);
+				overview.addEventListener("titleUpdate",function(){
+					overview.show("slide-in-right");
+					plus.nativeUI.closeWaiting();
+				},false);
+			}
+			overview.addEventListener("loaded",function(){
+					var cUrl=overview.getURL();
+					if(!cUrl.match(/^https*\:\/\/[^\.]+?\.ihuaben\.com\//ig))
+						_isOtherSite=true;
+					else
+						_isOtherSite=false;
+				},false);
+			
+		}
+	}
+	else
+		document.location.href=url;
+}
+
+*/
+
+function plusGo(url,wid){
+	if(navigator.userAgent.match(/html5plus/ig)){
+		var host=window.location.host;
+		if(url.match(/^\/[\w\d]+/g)||url=="/")
+			url=window.location.protocol+"//"+host+url;
+		else if(url.match(/^\/\//g))
+			url=window.location.protocol+url;
+		else if(url.match(/^https*\:\/\//ig)){
+			var reg=/^https*\:\/\/([^\/]+?)\//ig;
+			var group=reg.exec(url);
+			if(group)
+				host=group[1];
+		}
+		_currentWebId=wid||host;
+		var ws=plus.webview.currentWebview();
+		var overview = plus.webview.getWebviewById(_currentWebId);
+		if(overview) {
+			overview.loadURL(url);
+			if(ws.id!=_currentWebId)
+				plus.webview.show(_currentWebId);
+		}
+		else {
+			plus.nativeUI.showWaiting();
+			overview = plus.webview.create(url, _currentWebId);
+			overview.addEventListener("titleUpdate",function(){
+				overview.show("slide-in-right");
+				plus.nativeUI.closeWaiting();
+			},false);
+		}
+		overview.addEventListener("loaded",function(){
+				var cUrl=overview.getURL();
+				if(!cUrl.match(/^https*\:\/\/[^\.]+?\.ihuaben\.com\//ig))
+					_isOtherSite=true;
+				else
+					_isOtherSite=false;
+			},false);	
+	}
+	else
+		document.location.href=url;
+}
+
+function plusBack(){
+		if($(".TopButtonsBG").length==1&&$(".TopButtonsBG").is(":visible")){
+			$(".TopButtonsBG").hide();
+			$(".TopButtons").slideUp();
+		}
+		else if(!_isOtherSite&&location.pathname == "/"&&!location.host.match(/passport\.ihuaben\.com/ig)){//首页，询问是否退出
+			plus.nativeUI.confirm( "你确定要退出?", function(e){
+				if(e.index == 0){
+					plus.runtime.quit();
+				}
+			}, "话本小说", ["退出","取消"] );
+		}
+		else{
+			if(_isOtherSite){
+				var wb = plus.webview.getWebviewById(_currentWebId);
+				if(wb){
+					wb.close();
+					_isOtherSite=false;
+				}
+			}
+			else{
+				var wobj = plus.webview.currentWebview();
+				wobj.canBack(function(e) {
+					if (e.canBack&&!location.href.match(/\/book\/\d+\/\d+\.html/ig)) {
+						window.history.back();
+					}
+					else{ 
+						wobj.close("auto");
+					}
+				});
+			}
+		}	
+}
+
+function plusInit(){
+	window.addEventListener('click', function(event) {
+		var target = event.target;
+		for(; target && target !== document; target = target.parentNode) {
+			if(target.tagName === 'A') {
+				var href = target.getAttribute("href");
+				if(href&&href!="#"&&!href.match(/^javascript\:/ig)){
+					if(href.match(/^\/book\/\d+\.html/ig))
+						plusGo(href,"book");
+					else if(href.match(/^\/book\/\d+\/\d+\.html/ig))
+						plusGo(href,"chapter");
+					else{
+						var host=location.host;
+						var group=/\/\/(\w+\.ihuaben\.com)/ig.exec(href);
+						if(group&&group[1].toLowerCase()!=host.toLowerCase())
+							host=group[1];
+						plusGo(href,host);
+					}
+					event.preventDefault();
+				}
+				return false;
+			}
+		}
+	},true);
+}
+
+(function(w){
+	
+if(!navigator.userAgent.match(/html5plus/ig))
+	return;
+
+// 空函数
+function shield(){
+	return false;
+}
+document.addEventListener('touchstart',shield,false);//取消浏览器的所有事件，使得active的样式在手机上正常生效
+document.oncontextmenu=shield;//屏蔽选择函数
+// H5 plus事件处理
+var ws=null,as='pop-in';
+function plusReady(){
+	ws=plus.webview.currentWebview();
+	plusInit();
+	// Android处理返回键
+	plus.key.addEventListener('backbutton',function(){
+		back();
+	},false);
+	compatibleAdjust();
+}
+if(w.plus){
+	plusReady();
+}else{
+	document.addEventListener('plusready',plusReady,false);
+}
+// DOMContentLoaded事件处理
+var domready=false;
+document.addEventListener('DOMContentLoaded',function(){
+	domready=true;
+	gInit();
+	document.body.onselectstart=shield;
+	compatibleAdjust();
+},false);
+
+//处理back后退按键
+w.back = function(){
+	if(plus&&ws){
+		plusBack();
+	}
+}
+
+// 处理点击事件
+var openw=null,waiting=null;
+/**
+ * 打开新窗口
+ * @param {URIString} id : 要打开页面url
+ * @param {boolean} wa : 是否显示等待框
+ * @param {boolean} ns : 是否不自动显示
+ * @param {JSON} ws : Webview窗口属性
+ */
+w.clicked=function(id,wa,ns,ws){
+	if(openw){//避免多次打开同一个页面
+		return null;
+	}
+	if(w.plus){
+		wa&&(waiting=plus.nativeUI.showWaiting());
+		ws=ws||{};
+		ws.scrollIndicator||(ws.scrollIndicator='none');
+		ws.scalable||(ws.scalable=false);
+		var pre='';//'http://192.168.1.178:8080/h5/';
+		openw=plus.webview.create(pre+id,id,ws);
+		ns||openw.addEventListener('loaded',function(){//页面加载完成后才显示
+//		setTimeout(function(){//延后显示可避免低端机上动画时白屏
+			openw.show(as);
+			closeWaiting();
+//		},200);
+		},false);
+		openw.addEventListener('close',function(){//页面关闭后可再次打开
+			openw=null;
+		},false);
+		return openw;
+	}else{
+		w.open(id);
+	}
+	return null;
+};
+w.openDoc=function(t,c){
+	var d=plus.webview.getWebviewById('document');
+	if(d){
+		d.evalJS('updateDoc("'+t+'","'+c+'")');
+	}else{
+		d=plus.webview.create('/plus/doc.html','document',{zindex:9999,popGesture:'hide'},{preate:true});
+		d.addEventListener('loaded',function(){
+			d.evalJS('updateDoc("'+t+'","'+c+'")');
+		},false);
+	}
+}
+/**
+ * 关闭等待框
+ */
+w.closeWaiting=function(){
+	waiting&&waiting.close();
+	waiting=null;
+}
+// 兼容性样式调整
+var adjust=false;
+function compatibleAdjust(){
+	if(adjust||!w.plus||!domready){
+		return;
+	}	// iOS平台使用滚动的div
+	if('iOS'==plus.os.name){
+		var t=document.getElementById("dcontent");
+		t&&(t.className="sdcontent");
+		t=document.getElementById("content");
+		t&&(t.className="scontent");
+		//iOS8横竖屏切换div不更新滚动问题
+		var lasto=window.orientation;
+		window.addEventListener("orientationchange",function(){
+			var nowo=window.orientation;
+			if(lasto!=nowo&&(90==nowo||-90==nowo)){
+				dcontent&&(0==dcontent.scrollTop)&&(dcontent.scrollTop=1);
+				content&&(0==content.scrollTop)&&(content.scrollTop=1);
+			}
+			lasto=nowo;
+		},false);
+	}
+	adjust=true;
+};
+w.compatibleConfirm=function(){
+	plus.nativeUI.confirm('本OS原生层面不提供该控件，需使用mui框架实现类似效果。请点击“确定”下载Hello mui示例',function(e){
+		if(0==e.index){
+			plus.runtime.openURL("http://www.dcloud.io/hellomui/");
+		}
+	},"",["确定","取消"]);
+}
+// 通用元素对象
+var _dout_=null,_dcontent_=null;
+w.gInit=function(){
+	_dout_=document.getElementById("output");
+	_dcontent_=document.getElementById("dcontent");
+};
+// 清空输出内容
+w.outClean=function(){
+	_dout_.innerText="";
+	_dout_.scrollTop=0;//在iOS8存在不滚动的现象
+};
+// 输出内容
+w.outSet=function(s){
+	_dout_.innerText=s+"\n";
+	(0==_dout_.scrollTop)&&(_dout_.scrollTop=1);//在iOS8存在不滚动的现象
+};
+// 输出行内容
+w.outLine=function(s){
+	_dout_.innerText+=s+"\n";
+	(0==_dout_.scrollTop)&&(_dout_.scrollTop=1);//在iOS8存在不滚动的现象
+};
+// 格式化时长字符串，格式为"HH:MM:SS"
+w.timeToStr=function(ts){
+	if(isNaN(ts)){
+		return "--:--:--";
+	}
+	var h=parseInt(ts/3600);
+	var m=parseInt((ts%3600)/60);
+	var s=parseInt(ts%60);
+	return (ultZeroize(h)+":"+ultZeroize(m)+":"+ultZeroize(s));
+};
+// 格式化日期时间字符串，格式为"YYYY-MM-DD HH:MM:SS"
+w.dateToStr=function(d){
+	return (d.getFullYear()+"-"+ultZeroize(d.getMonth()+1)+"-"+ultZeroize(d.getDate())+" "+ultZeroize(d.getHours())+":"+ultZeroize(d.getMinutes())+":"+ultZeroize(d.getSeconds()));
+};
+/**
+ * zeroize value with length(default is 2).
+ * @param {Object} v
+ * @param {Number} l
+ * @return {String} 
+ */
+w.ultZeroize=function(v,l){
+	var z="";
+	l=l||2;
+	v=String(v);
+	for(var i=0;i<l-v.length;i++){
+		z+="0";
+	}
+	return z+v;
+};
+})(window);
+
+;(function () {
+	'use strict';
+if(!navigator.userAgent.match(/html5plus/ig))
+	return;
+	/**
+	 * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
+	 *
+	 * @codingstandard ftlabs-jsv2
+	 * @copyright The Financial Times Limited [All Rights Reserved]
+	 * @license MIT License (see LICENSE.txt)
+	 */
+
+	/*jslint browser:true, node:true*/
+	/*global define, Event, Node*/
+
+
+	/**
+	 * Instantiate fast-clicking listeners on the specified layer.
+	 *
+	 * @constructor
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	function FastClick(layer, options) {
+		var oldOnClick;
+
+		options = options || {};
+
+		/**
+		 * Whether a click is currently being tracked.
+		 *
+		 * @type boolean
+		 */
+		this.trackingClick = false;
+
+
+		/**
+		 * Timestamp for when click tracking started.
+		 *
+		 * @type number
+		 */
+		this.trackingClickStart = 0;
+
+
+		/**
+		 * The element being tracked for a click.
+		 *
+		 * @type EventTarget
+		 */
+		this.targetElement = null;
+
+
+		/**
+		 * X-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartX = 0;
+
+
+		/**
+		 * Y-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartY = 0;
+
+
+		/**
+		 * ID of the last touch, retrieved from Touch.identifier.
+		 *
+		 * @type number
+		 */
+		this.lastTouchIdentifier = 0;
+
+
+		/**
+		 * Touchmove boundary, beyond which a click will be cancelled.
+		 *
+		 * @type number
+		 */
+		this.touchBoundary = options.touchBoundary || 10;
+
+
+		/**
+		 * The FastClick layer.
+		 *
+		 * @type Element
+		 */
+		this.layer = layer;
+
+		/**
+		 * The minimum time between tap(touchstart and touchend) events
+		 *
+		 * @type number
+		 */
+		this.tapDelay = options.tapDelay || 200;
+
+		/**
+		 * The maximum time for a tap
+		 *
+		 * @type number
+		 */
+		this.tapTimeout = options.tapTimeout || 700;
+
+		if (FastClick.notNeeded(layer)) {
+			return;
+		}
+
+		// Some old versions of Android don't have Function.prototype.bind
+		function bind(method, context) {
+			return function() { return method.apply(context, arguments); };
+		}
+
+
+		var methods = ['onMouse', 'onClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onTouchCancel'];
+		var context = this;
+		for (var i = 0, l = methods.length; i < l; i++) {
+			context[methods[i]] = bind(context[methods[i]], context);
+		}
+
+		// Set up event handlers as required
+		if (deviceIsAndroid) {
+			layer.addEventListener('mouseover', this.onMouse, true);
+			layer.addEventListener('mousedown', this.onMouse, true);
+			layer.addEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.addEventListener('click', this.onClick, true);
+		layer.addEventListener('touchstart', this.onTouchStart, false);
+		layer.addEventListener('touchmove', this.onTouchMove, false);
+		layer.addEventListener('touchend', this.onTouchEnd, false);
+		layer.addEventListener('touchcancel', this.onTouchCancel, false);
+
+		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
+		// layer when they are cancelled.
+		if (!Event.prototype.stopImmediatePropagation) {
+			layer.removeEventListener = function(type, callback, capture) {
+				var rmv = Node.prototype.removeEventListener;
+				if (type === 'click') {
+					rmv.call(layer, type, callback.hijacked || callback, capture);
+				} else {
+					rmv.call(layer, type, callback, capture);
+				}
+			};
+
+			layer.addEventListener = function(type, callback, capture) {
+				var adv = Node.prototype.addEventListener;
+				if (type === 'click') {
+					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
+						if (!event.propagationStopped) {
+							callback(event);
+						}
+					}), capture);
+				} else {
+					adv.call(layer, type, callback, capture);
+				}
+			};
+		}
+
+		// If a handler is already declared in the element's onclick attribute, it will be fired before
+		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
+		// adding it as listener.
+		if (typeof layer.onclick === 'function') {
+
+			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
+			// - the old one won't work if passed to addEventListener directly.
+			oldOnClick = layer.onclick;
+			layer.addEventListener('click', function(event) {
+				oldOnClick(event);
+			}, false);
+			layer.onclick = null;
+		}
+	}
+
+	/**
+	* Windows Phone 8.1 fakes user agent string to look like Android and iPhone.
+	*
+	* @type boolean
+	*/
+	var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
+
+	/**
+	 * Android requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsAndroid = navigator.userAgent.indexOf('Android') > 0 && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS = /iP(ad|hone|od)/.test(navigator.userAgent) && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS 4 requires an exception for select elements.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS4 = deviceIsIOS && (/OS 4_\d(_\d)?/).test(navigator.userAgent);
+
+
+	/**
+	 * iOS 6.0-7.* requires the target element to be manually derived
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOSWithBadTarget = deviceIsIOS && (/OS [6-7]_\d/).test(navigator.userAgent);
+
+	/**
+	 * BlackBerry requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsBlackBerry10 = navigator.userAgent.indexOf('BB10') > 0;
+
+	/**
+	 * Determine whether a given element requires a native click.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element needs a native click
+	 */
+	FastClick.prototype.needsClick = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+
+		// Don't send a synthetic click to disabled inputs (issue #62)
+		case 'button':
+		case 'select':
+		case 'textarea':
+			if (target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'input':
+
+			// File inputs need real clicks on iOS 6 due to a browser bug (issue #68)
+			if ((deviceIsIOS && target.type === 'file') || target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'label':
+		case 'iframe': // iOS8 homescreen apps can prevent events bubbling into frames
+		case 'video':
+			return true;
+		}
+
+		return (/\bneedsclick\b/).test(target.className);
+	};
+
+
+	/**
+	 * Determine whether a given element requires a call to focus to simulate click into element.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
+	 */
+	FastClick.prototype.needsFocus = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+		case 'textarea':
+			return true;
+		case 'select':
+			return !deviceIsAndroid;
+		case 'input':
+			switch (target.type) {
+			case 'button':
+			case 'checkbox':
+			case 'file':
+			case 'image':
+			case 'radio':
+			case 'submit':
+				return false;
+			}
+
+			// No point in attempting to focus disabled inputs
+			return !target.disabled && !target.readOnly;
+		default:
+			return (/\bneedsfocus\b/).test(target.className);
+		}
+	};
+
+
+	/**
+	 * Send a click event to the specified element.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 * @param {Event} event
+	 */
+	FastClick.prototype.sendClick = function(targetElement, event) {
+		var clickEvent, touch;
+
+		// On some Android devices activeElement needs to be blurred otherwise the synthetic click will have no effect (#24)
+		if (document.activeElement && document.activeElement !== targetElement) {
+			document.activeElement.blur();
+		}
+
+		touch = event.changedTouches[0];
+
+		// Synthesise a click event, with an extra attribute so it can be tracked
+		clickEvent = document.createEvent('MouseEvents');
+		clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
+		clickEvent.forwardedTouchEvent = true;
+		targetElement.dispatchEvent(clickEvent);
+	};
+
+	FastClick.prototype.determineEventType = function(targetElement) {
+
+		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
+		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
+			return 'mousedown';
+		}
+
+		return 'click';
+	};
+
+
+	/**
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.focus = function(targetElement) {
+		var length;
+
+		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
+		if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
+			length = targetElement.value.length;
+			targetElement.setSelectionRange(length, length);
+		} else {
+			targetElement.focus();
+		}
+	};
+
+
+	/**
+	 * Check whether the given target element is a child of a scrollable layer and if so, set a flag on it.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.updateScrollParent = function(targetElement) {
+		var scrollParent, parentElement;
+
+		scrollParent = targetElement.fastClickScrollParent;
+
+		// Attempt to discover whether the target element is contained within a scrollable layer. Re-check if the
+		// target element was moved to another parent.
+		if (!scrollParent || !scrollParent.contains(targetElement)) {
+			parentElement = targetElement;
+			do {
+				if (parentElement.scrollHeight > parentElement.offsetHeight) {
+					scrollParent = parentElement;
+					targetElement.fastClickScrollParent = parentElement;
+					break;
+				}
+
+				parentElement = parentElement.parentElement;
+			} while (parentElement);
+		}
+
+		// Always update the scroll top tracker if possible.
+		if (scrollParent) {
+			scrollParent.fastClickLastScrollTop = scrollParent.scrollTop;
+		}
+	};
+
+
+	/**
+	 * @param {EventTarget} targetElement
+	 * @returns {Element|EventTarget}
+	 */
+	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
+
+		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
+		if (eventTarget.nodeType === Node.TEXT_NODE) {
+			return eventTarget.parentNode;
+		}
+
+		return eventTarget;
+	};
+
+
+	/**
+	 * On touch start, record the position and scroll offset.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchStart = function(event) {
+		var targetElement, touch, selection;
+
+		// Ignore multiple touches, otherwise pinch-to-zoom is prevented if both fingers are on the FastClick element (issue #111).
+		if (event.targetTouches.length > 1) {
+			return true;
+		}
+
+		targetElement = this.getTargetElementFromEventTarget(event.target);
+		touch = event.targetTouches[0];
+
+		if (deviceIsIOS) {
+
+			// Only trusted events will deselect text on iOS (issue #49)
+			selection = window.getSelection();
+			if (selection.rangeCount && !selection.isCollapsed) {
+				return true;
+			}
+
+			if (!deviceIsIOS4) {
+
+				// Weird things happen on iOS when an alert or confirm dialog is opened from a click event callback (issue #23):
+				// when the user next taps anywhere else on the page, new touchstart and touchend events are dispatched
+				// with the same identifier as the touch event that previously triggered the click that triggered the alert.
+				// Sadly, there is an issue on iOS 4 that causes some normal touch events to have the same identifier as an
+				// immediately preceeding touch event (issue #52), so this fix is unavailable on that platform.
+				// Issue 120: touch.identifier is 0 when Chrome dev tools 'Emulate touch events' is set with an iOS device UA string,
+				// which causes all touch events to be ignored. As this block only applies to iOS, and iOS identifiers are always long,
+				// random integers, it's safe to to continue if the identifier is 0 here.
+				if (touch.identifier && touch.identifier === this.lastTouchIdentifier) {
+					event.preventDefault();
+					return false;
+				}
+
+				this.lastTouchIdentifier = touch.identifier;
+
+				// If the target element is a child of a scrollable layer (using -webkit-overflow-scrolling: touch) and:
+				// 1) the user does a fling scroll on the scrollable layer
+				// 2) the user stops the fling scroll with another tap
+				// then the event.target of the last 'touchend' event will be the element that was under the user's finger
+				// when the fling scroll was started, causing FastClick to send a click event to that layer - unless a check
+				// is made to ensure that a parent layer was not scrolled before sending a synthetic click (issue #42).
+				this.updateScrollParent(targetElement);
+			}
+		}
+
+		this.trackingClick = true;
+		this.trackingClickStart = event.timeStamp;
+		this.targetElement = targetElement;
+
+		this.touchStartX = touch.pageX;
+		this.touchStartY = touch.pageY;
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			event.preventDefault();
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Based on a touchmove event object, check whether the touch has moved past a boundary since it started.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.touchHasMoved = function(event) {
+		var touch = event.changedTouches[0], boundary = this.touchBoundary;
+
+		if (Math.abs(touch.pageX - this.touchStartX) > boundary || Math.abs(touch.pageY - this.touchStartY) > boundary) {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Update the last position.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchMove = function(event) {
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// If the touch has moved, cancel the click tracking
+		if (this.targetElement !== this.getTargetElementFromEventTarget(event.target) || this.touchHasMoved(event)) {
+			this.trackingClick = false;
+			this.targetElement = null;
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Attempt to find the labelled control for the given label element.
+	 *
+	 * @param {EventTarget|HTMLLabelElement} labelElement
+	 * @returns {Element|null}
+	 */
+	FastClick.prototype.findControl = function(labelElement) {
+
+		// Fast path for newer browsers supporting the HTML5 control attribute
+		if (labelElement.control !== undefined) {
+			return labelElement.control;
+		}
+
+		// All browsers under test that support touch events also support the HTML5 htmlFor attribute
+		if (labelElement.htmlFor) {
+			return document.getElementById(labelElement.htmlFor);
+		}
+
+		// If no for attribute exists, attempt to retrieve the first labellable descendant element
+		// the list of which is defined here: http://www.w3.org/TR/html5/forms.html#category-label
+		return labelElement.querySelector('button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea');
+	};
+
+
+	/**
+	 * On touch end, determine whether to send a click event at once.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchEnd = function(event) {
+		var forElement, trackingClickStart, targetTagName, scrollParent, touch, targetElement = this.targetElement;
+
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			this.cancelNextClick = true;
+			return true;
+		}
+
+		if ((event.timeStamp - this.trackingClickStart) > this.tapTimeout) {
+			return true;
+		}
+
+		// Reset to prevent wrong click cancel on input (issue #156).
+		this.cancelNextClick = false;
+
+		this.lastClickTime = event.timeStamp;
+
+		trackingClickStart = this.trackingClickStart;
+		this.trackingClick = false;
+		this.trackingClickStart = 0;
+
+		// On some iOS devices, the targetElement supplied with the event is invalid if the layer
+		// is performing a transition or scroll, and has to be re-detected manually. Note that
+		// for this to function correctly, it must be called *after* the event target is checked!
+		// See issue #57; also filed as rdar://13048589 .
+		if (deviceIsIOSWithBadTarget) {
+			touch = event.changedTouches[0];
+
+			// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
+			targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
+			targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
+		}
+
+		targetTagName = targetElement.tagName.toLowerCase();
+		if (targetTagName === 'label') {
+			forElement = this.findControl(targetElement);
+			if (forElement) {
+				this.focus(targetElement);
+				if (deviceIsAndroid) {
+					return false;
+				}
+
+				targetElement = forElement;
+			}
+		} else if (this.needsFocus(targetElement)) {
+
+			// Case 1: If the touch started a while ago (best guess is 100ms based on tests for issue #36) then focus will be triggered anyway. Return early and unset the target element reference so that the subsequent click will be allowed through.
+			// Case 2: Without this exception for input elements tapped when the document is contained in an iframe, then any inputted text won't be visible even though the value attribute is updated as the user types (issue #37).
+			if ((event.timeStamp - trackingClickStart) > 100 || (deviceIsIOS && window.top !== window && targetTagName === 'input')) {
+				this.targetElement = null;
+				return false;
+			}
+
+			this.focus(targetElement);
+			this.sendClick(targetElement, event);
+
+			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
+			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
+			if (!deviceIsIOS || targetTagName !== 'select') {
+				this.targetElement = null;
+				event.preventDefault();
+			}
+
+			return false;
+		}
+
+		if (deviceIsIOS && !deviceIsIOS4) {
+
+			// Don't send a synthetic click event if the target element is contained within a parent layer that was scrolled
+			// and this tap is being used to stop the scrolling (usually initiated by a fling - issue #42).
+			scrollParent = targetElement.fastClickScrollParent;
+			if (scrollParent && scrollParent.fastClickLastScrollTop !== scrollParent.scrollTop) {
+				return true;
+			}
+		}
+
+		// Prevent the actual click from going though - unless the target node is marked as requiring
+		// real clicks or if it is in the whitelist in which case only non-programmatic clicks are permitted.
+		if (!this.needsClick(targetElement)) {
+			event.preventDefault();
+			this.sendClick(targetElement, event);
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * On touch cancel, stop tracking the click.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.onTouchCancel = function() {
+		this.trackingClick = false;
+		this.targetElement = null;
+	};
+
+
+	/**
+	 * Determine mouse events which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onMouse = function(event) {
+
+		// If a target element was never set (because a touch event was never fired) allow the event
+		if (!this.targetElement) {
+			return true;
+		}
+
+		if (event.forwardedTouchEvent) {
+			return true;
+		}
+
+		// Programmatically generated events targeting a specific element should be permitted
+		if (!event.cancelable) {
+			return true;
+		}
+
+		// Derive and check the target element to see whether the mouse event needs to be permitted;
+		// unless explicitly enabled, prevent non-touch click events from triggering actions,
+		// to prevent ghost/doubleclicks.
+		if (!this.needsClick(this.targetElement) || this.cancelNextClick) {
+
+			// Prevent any user-added listeners declared on FastClick element from being fired.
+			if (event.stopImmediatePropagation) {
+				event.stopImmediatePropagation();
+			} else {
+
+				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+				event.propagationStopped = true;
+			}
+
+			// Cancel the event
+			event.stopPropagation();
+			event.preventDefault();
+
+			return false;
+		}
+
+		// If the mouse event is permitted, return true for the action to go through.
+		return true;
+	};
+
+
+	/**
+	 * On actual clicks, determine whether this is a touch-generated click, a click action occurring
+	 * naturally after a delay after a touch (which needs to be cancelled to avoid duplication), or
+	 * an actual click which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onClick = function(event) {
+		var permitted;
+
+		// It's possible for another FastClick-like library delivered with third-party code to fire a click event before FastClick does (issue #44). In that case, set the click-tracking flag back to false and return early. This will cause onTouchEnd to return early.
+		if (this.trackingClick) {
+			this.targetElement = null;
+			this.trackingClick = false;
+			return true;
+		}
+
+		// Very odd behaviour on iOS (issue #18): if a submit element is present inside a form and the user hits enter in the iOS simulator or clicks the Go button on the pop-up OS keyboard the a kind of 'fake' click event will be triggered with the submit-type input element as the target.
+		if (event.target.type === 'submit' && event.detail === 0) {
+			return true;
+		}
+
+		permitted = this.onMouse(event);
+
+		// Only unset targetElement if the click is not permitted. This will ensure that the check for !targetElement in onMouse fails and the browser's click doesn't go through.
+		if (!permitted) {
+			this.targetElement = null;
+		}
+
+		// If clicks are permitted, return true for the action to go through.
+		return permitted;
+	};
+
+
+	/**
+	 * Remove all FastClick's event listeners.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.destroy = function() {
+		var layer = this.layer;
+
+		if (deviceIsAndroid) {
+			layer.removeEventListener('mouseover', this.onMouse, true);
+			layer.removeEventListener('mousedown', this.onMouse, true);
+			layer.removeEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.removeEventListener('click', this.onClick, true);
+		layer.removeEventListener('touchstart', this.onTouchStart, false);
+		layer.removeEventListener('touchmove', this.onTouchMove, false);
+		layer.removeEventListener('touchend', this.onTouchEnd, false);
+		layer.removeEventListener('touchcancel', this.onTouchCancel, false);
+	};
+
+
+	/**
+	 * Check whether FastClick is needed.
+	 *
+	 * @param {Element} layer The layer to listen on
+	 */
+	FastClick.notNeeded = function(layer) {
+		var metaViewport;
+		var chromeVersion;
+		var blackberryVersion;
+		var firefoxVersion;
+
+		// Devices that don't support touch don't need FastClick
+		if (typeof window.ontouchstart === 'undefined') {
+			return true;
+		}
+
+		// Chrome version - zero for other browsers
+		chromeVersion = +(/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (chromeVersion) {
+
+			if (deviceIsAndroid) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// Chrome on Android with user-scalable="no" doesn't need FastClick (issue #89)
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// Chrome 32 and above with width=device-width or less don't need FastClick
+					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+
+			// Chrome desktop doesn't need FastClick (issue #15)
+			} else {
+				return true;
+			}
+		}
+
+		if (deviceIsBlackBerry10) {
+			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
+
+			// BlackBerry 10.3+ does not require Fastclick library.
+			// https://github.com/ftlabs/fastclick/issues/251
+			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// user-scalable=no eliminates click delay.
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// width=device-width (or less than device-width) eliminates click delay.
+					if (document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+			}
+		}
+
+		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
+		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		// Firefox version - zero for other browsers
+		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (firefoxVersion >= 27) {
+			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
+
+			metaViewport = document.querySelector('meta[name=viewport]');
+			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
+				return true;
+			}
+		}
+
+		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
+		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
+		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Factory method for creating a FastClick object
+	 *
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	FastClick.attach = function(layer, options) {
+		return new FastClick(layer, options);
+	};
+
+
+	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+
+		// AMD. Register as an anonymous module.
+		define(function() {
+			return FastClick;
+		});
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = FastClick.attach;
+		module.exports.FastClick = FastClick;
+	} else {
+		window.FastClick = FastClick;
+	}
+
+document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body);
+}, false);
+
+}());
 (window.__huaben_webpackJsonp__=window.__huaben_webpackJsonp__||[]).push([[0],[function(f,e,t){"use strict";f.exports=t(105)},,function(f,e,t){"use strict";f.exports=t(69)},function(f,e,t){!function(f){f.emojioneList={":kiss_mm:":{uc_base:"1f468-2764-1f48b-1f468",uc_output:"1f468-200d-2764-fe0f-200d-1f48b-200d-1f468",uc_match:"1f468-2764-fe0f-1f48b-1f468",uc_greedy:"1f468-2764-1f48b-1f468",shortnames:[":couplekiss_mm:"],category:"people"},":kiss_woman_man:":{uc_base:"1f469-2764-1f48b-1f468",uc_output:"1f469-200d-2764-fe0f-200d-1f48b-200d-1f468",uc_match:"1f469-2764-fe0f-1f48b-1f468",uc_greedy:"1f469-2764-1f48b-1f468",shortnames:[],category:"people"},":kiss_ww:":{uc_base:"1f469-2764-1f48b-1f469",uc_output:"1f469-200d-2764-fe0f-200d-1f48b-200d-1f469",uc_match:"1f469-2764-fe0f-1f48b-1f469",uc_greedy:"1f469-2764-1f48b-1f469",shortnames:[":couplekiss_ww:"],category:"people"},":england:":{uc_base:"1f3f4-e0067-e0062-e0065-e006e-e0067-e007f",uc_output:"1f3f4-e0067-e0062-e0065-e006e-e0067-e007f",uc_match:"1f3f4-e0067-e0062-e0065-e006e-e0067-e007f",uc_greedy:"1f3f4-e0067-e0062-e0065-e006e-e0067-e007f",shortnames:[],category:"flags"},":scotland:":{uc_base:"1f3f4-e0067-e0062-e0073-e0063-e0074-e007f",uc_output:"1f3f4-e0067-e0062-e0073-e0063-e0074-e007f",uc_match:"1f3f4-e0067-e0062-e0073-e0063-e0074-e007f",uc_greedy:"1f3f4-e0067-e0062-e0073-e0063-e0074-e007f",shortnames:[],category:"flags"},":wales:":{uc_base:"1f3f4-e0067-e0062-e0077-e006c-e0073-e007f",uc_output:"1f3f4-e0067-e0062-e0077-e006c-e0073-e007f",uc_match:"1f3f4-e0067-e0062-e0077-e006c-e0073-e007f",uc_greedy:"1f3f4-e0067-e0062-e0077-e006c-e0073-e007f",shortnames:[],category:"flags"},":family_mmbb:":{uc_base:"1f468-1f468-1f466-1f466",uc_output:"1f468-200d-1f468-200d-1f466-200d-1f466",uc_match:"1f468-1f468-1f466-1f466",uc_greedy:"1f468-1f468-1f466-1f466",shortnames:[],category:"people"},":family_mmgb:":{uc_base:"1f468-1f468-1f467-1f466",uc_output:"1f468-200d-1f468-200d-1f467-200d-1f466",uc_match:"1f468-1f468-1f467-1f466",uc_greedy:"1f468-1f468-1f467-1f466",shortnames:[],category:"people"},":family_mmgg:":{uc_base:"1f468-1f468-1f467-1f467",uc_output:"1f468-200d-1f468-200d-1f467-200d-1f467",uc_match:"1f468-1f468-1f467-1f467",uc_greedy:"1f468-1f468-1f467-1f467",shortnames:[],category:"people"},":family_mwbb:":{uc_base:"1f468-1f469-1f466-1f466",uc_output:"1f468-200d-1f469-200d-1f466-200d-1f466",uc_match:"1f468-1f469-1f466-1f466",uc_greedy:"1f468-1f469-1f466-1f466",shortnames:[],category:"people"},":family_mwgb:":{uc_base:"1f468-1f469-1f467-1f466",uc_output:"1f468-200d-1f469-200d-1f467-200d-1f466",uc_match:"1f468-1f469-1f467-1f466",uc_greedy:"1f468-1f469-1f467-1f466",shortnames:[],category:"people"},":family_mwgg:":{uc_base:"1f468-1f469-1f467-1f467",uc_output:"1f468-200d-1f469-200d-1f467-200d-1f467",uc_match:"1f468-1f469-1f467-1f467",uc_greedy:"1f468-1f469-1f467-1f467",shortnames:[],category:"people"},":family_wwbb:":{uc_base:"1f469-1f469-1f466-1f466",uc_output:"1f469-200d-1f469-200d-1f466-200d-1f466",uc_match:"1f469-1f469-1f466-1f466",uc_greedy:"1f469-1f469-1f466-1f466",shortnames:[],category:"people"},":family_wwgb:":{uc_base:"1f469-1f469-1f467-1f466",uc_output:"1f469-200d-1f469-200d-1f467-200d-1f466",uc_match:"1f469-1f469-1f467-1f466",uc_greedy:"1f469-1f469-1f467-1f466",shortnames:[],category:"people"},":family_wwgg:":{uc_base:"1f469-1f469-1f467-1f467",uc_output:"1f469-200d-1f469-200d-1f467-200d-1f467",uc_match:"1f469-1f469-1f467-1f467",uc_greedy:"1f469-1f469-1f467-1f467",shortnames:[],category:"people"},":couple_mm:":{uc_base:"1f468-2764-1f468",uc_output:"1f468-200d-2764-fe0f-200d-1f468",uc_match:"1f468-2764-fe0f-1f468",uc_greedy:"1f468-2764-1f468",shortnames:[":couple_with_heart_mm:"],category:"people"},":couple_with_heart_woman_man:":{uc_base:"1f469-2764-1f468",uc_output:"1f469-200d-2764-fe0f-200d-1f468",uc_match:"1f469-2764-fe0f-1f468",uc_greedy:"1f469-2764-1f468",shortnames:[],category:"people"},":couple_ww:":{uc_base:"1f469-2764-1f469",uc_output:"1f469-200d-2764-fe0f-200d-1f469",uc_match:"1f469-2764-fe0f-1f469",uc_greedy:"1f469-2764-1f469",shortnames:[":couple_with_heart_ww:"],category:"people"},":family_man_boy_boy:":{uc_base:"1f468-1f466-1f466",uc_output:"1f468-200d-1f466-200d-1f466",uc_match:"1f468-1f466-1f466",uc_greedy:"1f468-1f466-1f466",shortnames:[],category:"people"},":family_man_girl_boy:":{uc_base:"1f468-1f467-1f466",uc_output:"1f468-200d-1f467-200d-1f466",uc_match:"1f468-1f467-1f466",uc_greedy:"1f468-1f467-1f466",shortnames:[],category:"people"},":family_man_girl_girl:":{uc_base:"1f468-1f467-1f467",uc_output:"1f468-200d-1f467-200d-1f467",uc_match:"1f468-1f467-1f467",uc_greedy:"1f468-1f467-1f467",shortnames:[],category:"people"},":family_man_woman_boy:":{uc_base:"1f468-1f469-1f466",uc_output:"1f468-200d-1f469-200d-1f466",uc_match:"1f468-1f469-1f466",uc_greedy:"1f468-1f469-1f466",shortnames:[],category:"people"},":family_mmb:":{uc_base:"1f468-1f468-1f466",uc_output:"1f468-200d-1f468-200d-1f466",uc_match:"1f468-1f468-1f466",uc_greedy:"1f468-1f468-1f466",shortnames:[],category:"people"},":family_mmg:":{uc_base:"1f468-1f468-1f467",uc_output:"1f468-200d-1f468-200d-1f467",uc_match:"1f468-1f468-1f467",uc_greedy:"1f468-1f468-1f467",shortnames:[],category:"people"},":family_mwg:":{uc_base:"1f468-1f469-1f467",uc_output:"1f468-200d-1f469-200d-1f467",uc_match:"1f468-1f469-1f467",uc_greedy:"1f468-1f469-1f467",shortnames:[],category:"people"},":family_woman_boy_boy:":{uc_base:"1f469-1f466-1f466",uc_output:"1f469-200d-1f466-200d-1f466",uc_match:"1f469-1f466-1f466",uc_greedy:"1f469-1f466-1f466",shortnames:[],category:"people"},":family_woman_girl_boy:":{uc_base:"1f469-1f467-1f466",uc_output:"1f469-200d-1f467-200d-1f466",uc_match:"1f469-1f467-1f466",uc_greedy:"1f469-1f467-1f466",shortnames:[],category:"people"},":family_woman_girl_girl:":{uc_base:"1f469-1f467-1f467",uc_output:"1f469-200d-1f467-200d-1f467",uc_match:"1f469-1f467-1f467",uc_greedy:"1f469-1f467-1f467",shortnames:[],category:"people"},":family_wwb:":{uc_base:"1f469-1f469-1f466",uc_output:"1f469-200d-1f469-200d-1f466",uc_match:"1f469-1f469-1f466",uc_greedy:"1f469-1f469-1f466",shortnames:[],category:"people"},":family_wwg:":{uc_base:"1f469-1f469-1f467",uc_output:"1f469-200d-1f469-200d-1f467",uc_match:"1f469-1f469-1f467",uc_greedy:"1f469-1f469-1f467",shortnames:[],category:"people"},":blond-haired_man_tone1:":{uc_base:"1f471-1f3fb-2642",uc_output:"1f471-1f3fb-200d-2642-fe0f",uc_match:"1f471-1f3fb-2642-fe0f",uc_greedy:"1f471-1f3fb-2642",shortnames:[":blond-haired_man_light_skin_tone:"],category:"people"},":blond-haired_man_tone2:":{uc_base:"1f471-1f3fc-2642",uc_output:"1f471-1f3fc-200d-2642-fe0f",uc_match:"1f471-1f3fc-2642-fe0f",uc_greedy:"1f471-1f3fc-2642",shortnames:[":blond-haired_man_medium_light_skin_tone:"],category:"people"},":blond-haired_man_tone3:":{uc_base:"1f471-1f3fd-2642",uc_output:"1f471-1f3fd-200d-2642-fe0f",uc_match:"1f471-1f3fd-2642-fe0f",uc_greedy:"1f471-1f3fd-2642",shortnames:[":blond-haired_man_medium_skin_tone:"],category:"people"},":blond-haired_man_tone4:":{uc_base:"1f471-1f3fe-2642",uc_output:"1f471-1f3fe-200d-2642-fe0f",uc_match:"1f471-1f3fe-2642-fe0f",uc_greedy:"1f471-1f3fe-2642",shortnames:[":blond-haired_man_medium_dark_skin_tone:"],category:"people"},":blond-haired_man_tone5:":{uc_base:"1f471-1f3ff-2642",uc_output:"1f471-1f3ff-200d-2642-fe0f",uc_match:"1f471-1f3ff-2642-fe0f",uc_greedy:"1f471-1f3ff-2642",shortnames:[":blond-haired_man_dark_skin_tone:"],category:"people"},":blond-haired_woman_tone1:":{uc_base:"1f471-1f3fb-2640",uc_output:"1f471-1f3fb-200d-2640-fe0f",uc_match:"1f471-1f3fb-2640-fe0f",uc_greedy:"1f471-1f3fb-2640",shortnames:[":blond-haired_woman_light_skin_tone:"],category:"people"},":blond-haired_woman_tone2:":{uc_base:"1f471-1f3fc-2640",uc_output:"1f471-1f3fc-200d-2640-fe0f",uc_match:"1f471-1f3fc-2640-fe0f",uc_greedy:"1f471-1f3fc-2640",shortnames:[":blond-haired_woman_medium_light_skin_tone:"],category:"people"},":blond-haired_woman_tone3:":{uc_base:"1f471-1f3fd-2640",uc_output:"1f471-1f3fd-200d-2640-fe0f",uc_match:"1f471-1f3fd-2640-fe0f",uc_greedy:"1f471-1f3fd-2640",shortnames:[":blond-haired_woman_medium_skin_tone:"],category:"people"},":blond-haired_woman_tone4:":{uc_base:"1f471-1f3fe-2640",uc_output:"1f471-1f3fe-200d-2640-fe0f",uc_match:"1f471-1f3fe-2640-fe0f",uc_greedy:"1f471-1f3fe-2640",shortnames:[":blond-haired_woman_medium_dark_skin_tone:"],category:"people"},":blond-haired_woman_tone5:":{uc_base:"1f471-1f3ff-2640",uc_output:"1f471-1f3ff-200d-2640-fe0f",uc_match:"1f471-1f3ff-2640-fe0f",uc_greedy:"1f471-1f3ff-2640",shortnames:[":blond-haired_woman_dark_skin_tone:"],category:"people"},":eye_in_speech_bubble:":{uc_base:"1f441-1f5e8",uc_output:"1f441-fe0f-200d-1f5e8-fe0f",uc_match:"1f441-fe0f-200d-1f5e8",uc_greedy:"1f441-1f5e8",shortnames:[],category:"symbols"},":man_biking_tone1:":{uc_base:"1f6b4-1f3fb-2642",uc_output:"1f6b4-1f3fb-200d-2642-fe0f",uc_match:"1f6b4-1f3fb-2642-fe0f",uc_greedy:"1f6b4-1f3fb-2642",shortnames:[":man_biking_light_skin_tone:"],category:"activity"},":man_biking_tone2:":{uc_base:"1f6b4-1f3fc-2642",uc_output:"1f6b4-1f3fc-200d-2642-fe0f",uc_match:"1f6b4-1f3fc-2642-fe0f",uc_greedy:"1f6b4-1f3fc-2642",shortnames:[":man_biking_medium_light_skin_tone:"],category:"activity"},":man_biking_tone3:":{uc_base:"1f6b4-1f3fd-2642",uc_output:"1f6b4-1f3fd-200d-2642-fe0f",uc_match:"1f6b4-1f3fd-2642-fe0f",uc_greedy:"1f6b4-1f3fd-2642",shortnames:[":man_biking_medium_skin_tone:"],category:"activity"},":man_biking_tone4:":{uc_base:"1f6b4-1f3fe-2642",uc_output:"1f6b4-1f3fe-200d-2642-fe0f",uc_match:"1f6b4-1f3fe-2642-fe0f",uc_greedy:"1f6b4-1f3fe-2642",shortnames:[":man_biking_medium_dark_skin_tone:"],category:"activity"},":man_biking_tone5:":{uc_base:"1f6b4-1f3ff-2642",uc_output:"1f6b4-1f3ff-200d-2642-fe0f",uc_match:"1f6b4-1f3ff-2642-fe0f",uc_greedy:"1f6b4-1f3ff-2642",shortnames:[":man_biking_dark_skin_tone:"],category:"activity"},":man_bowing_tone1:":{uc_base:"1f647-1f3fb-2642",uc_output:"1f647-1f3fb-200d-2642-fe0f",uc_match:"1f647-1f3fb-2642-fe0f",uc_greedy:"1f647-1f3fb-2642",shortnames:[":man_bowing_light_skin_tone:"],category:"people"},":man_bowing_tone2:":{uc_base:"1f647-1f3fc-2642",uc_output:"1f647-1f3fc-200d-2642-fe0f",uc_match:"1f647-1f3fc-2642-fe0f",uc_greedy:"1f647-1f3fc-2642",shortnames:[":man_bowing_medium_light_skin_tone:"],category:"people"},":man_bowing_tone3:":{uc_base:"1f647-1f3fd-2642",uc_output:"1f647-1f3fd-200d-2642-fe0f",uc_match:"1f647-1f3fd-2642-fe0f",uc_greedy:"1f647-1f3fd-2642",shortnames:[":man_bowing_medium_skin_tone:"],category:"people"},":man_bowing_tone4:":{uc_base:"1f647-1f3fe-2642",uc_output:"1f647-1f3fe-200d-2642-fe0f",uc_match:"1f647-1f3fe-2642-fe0f",uc_greedy:"1f647-1f3fe-2642",shortnames:[":man_bowing_medium_dark_skin_tone:"],category:"people"},":man_bowing_tone5:":{uc_base:"1f647-1f3ff-2642",uc_output:"1f647-1f3ff-200d-2642-fe0f",uc_match:"1f647-1f3ff-2642-fe0f",uc_greedy:"1f647-1f3ff-2642",shortnames:[":man_bowing_dark_skin_tone:"],category:"people"},":man_cartwheeling_tone1:":{uc_base:"1f938-1f3fb-2642",uc_output:"1f938-1f3fb-200d-2642-fe0f",uc_match:"1f938-1f3fb-2642-fe0f",uc_greedy:"1f938-1f3fb-2642",shortnames:[":man_cartwheeling_light_skin_tone:"],category:"activity"},":man_cartwheeling_tone2:":{uc_base:"1f938-1f3fc-2642",uc_output:"1f938-1f3fc-200d-2642-fe0f",uc_match:"1f938-1f3fc-2642-fe0f",uc_greedy:"1f938-1f3fc-2642",shortnames:[":man_cartwheeling_medium_light_skin_tone:"],category:"activity"},":man_cartwheeling_tone3:":{uc_base:"1f938-1f3fd-2642",uc_output:"1f938-1f3fd-200d-2642-fe0f",uc_match:"1f938-1f3fd-2642-fe0f",uc_greedy:"1f938-1f3fd-2642",shortnames:[":man_cartwheeling_medium_skin_tone:"],category:"activity"},":man_cartwheeling_tone4:":{uc_base:"1f938-1f3fe-2642",uc_output:"1f938-1f3fe-200d-2642-fe0f",uc_match:"1f938-1f3fe-2642-fe0f",uc_greedy:"1f938-1f3fe-2642",shortnames:[":man_cartwheeling_medium_dark_skin_tone:"],category:"activity"},":man_cartwheeling_tone5:":{uc_base:"1f938-1f3ff-2642",uc_output:"1f938-1f3ff-200d-2642-fe0f",uc_match:"1f938-1f3ff-2642-fe0f",uc_greedy:"1f938-1f3ff-2642",shortnames:[":man_cartwheeling_dark_skin_tone:"],category:"activity"},":man_climbing_tone1:":{uc_base:"1f9d7-1f3fb-2642",uc_output:"1f9d7-1f3fb-200d-2642-fe0f",uc_match:"1f9d7-1f3fb-2642-fe0f",uc_greedy:"1f9d7-1f3fb-2642",shortnames:[":man_climbing_light_skin_tone:"],category:"activity"},":man_climbing_tone2:":{uc_base:"1f9d7-1f3fc-2642",uc_output:"1f9d7-1f3fc-200d-2642-fe0f",uc_match:"1f9d7-1f3fc-2642-fe0f",uc_greedy:"1f9d7-1f3fc-2642",shortnames:[":man_climbing_medium_light_skin_tone:"],category:"activity"},":man_climbing_tone3:":{uc_base:"1f9d7-1f3fd-2642",uc_output:"1f9d7-1f3fd-200d-2642-fe0f",uc_match:"1f9d7-1f3fd-2642-fe0f",uc_greedy:"1f9d7-1f3fd-2642",shortnames:[":man_climbing_medium_skin_tone:"],category:"activity"},":man_climbing_tone4:":{uc_base:"1f9d7-1f3fe-2642",uc_output:"1f9d7-1f3fe-200d-2642-fe0f",uc_match:"1f9d7-1f3fe-2642-fe0f",uc_greedy:"1f9d7-1f3fe-2642",shortnames:[":man_climbing_medium_dark_skin_tone:"],category:"activity"},":man_climbing_tone5:":{uc_base:"1f9d7-1f3ff-2642",uc_output:"1f9d7-1f3ff-200d-2642-fe0f",uc_match:"1f9d7-1f3ff-2642-fe0f",uc_greedy:"1f9d7-1f3ff-2642",shortnames:[":man_climbing_dark_skin_tone:"],category:"activity"},":man_construction_worker_tone1:":{uc_base:"1f477-1f3fb-2642",uc_output:"1f477-1f3fb-200d-2642-fe0f",uc_match:"1f477-1f3fb-2642-fe0f",uc_greedy:"1f477-1f3fb-2642",shortnames:[":man_construction_worker_light_skin_tone:"],category:"people"},":man_construction_worker_tone2:":{uc_base:"1f477-1f3fc-2642",uc_output:"1f477-1f3fc-200d-2642-fe0f",uc_match:"1f477-1f3fc-2642-fe0f",uc_greedy:"1f477-1f3fc-2642",shortnames:[":man_construction_worker_medium_light_skin_tone:"],category:"people"},":man_construction_worker_tone3:":{uc_base:"1f477-1f3fd-2642",uc_output:"1f477-1f3fd-200d-2642-fe0f",uc_match:"1f477-1f3fd-2642-fe0f",uc_greedy:"1f477-1f3fd-2642",shortnames:[":man_construction_worker_medium_skin_tone:"],category:"people"},":man_construction_worker_tone4:":{uc_base:"1f477-1f3fe-2642",uc_output:"1f477-1f3fe-200d-2642-fe0f",uc_match:"1f477-1f3fe-2642-fe0f",uc_greedy:"1f477-1f3fe-2642",shortnames:[":man_construction_worker_medium_dark_skin_tone:"],category:"people"},":man_construction_worker_tone5:":{uc_base:"1f477-1f3ff-2642",uc_output:"1f477-1f3ff-200d-2642-fe0f",uc_match:"1f477-1f3ff-2642-fe0f",uc_greedy:"1f477-1f3ff-2642",shortnames:[":man_construction_worker_dark_skin_tone:"],category:"people"},":man_detective_tone1:":{uc_base:"1f575-1f3fb-2642",uc_output:"1f575-1f3fb-200d-2642-fe0f",uc_match:"1f575-fe0f-1f3fb-2642-fe0f",uc_greedy:"1f575-1f3fb-2642",shortnames:[":man_detective_light_skin_tone:"],category:"people"},":man_detective_tone2:":{uc_base:"1f575-1f3fc-2642",uc_output:"1f575-1f3fc-200d-2642-fe0f",uc_match:"1f575-fe0f-1f3fc-2642-fe0f",uc_greedy:"1f575-1f3fc-2642",shortnames:[":man_detective_medium_light_skin_tone:"],category:"people"},":man_detective_tone3:":{uc_base:"1f575-1f3fd-2642",uc_output:"1f575-1f3fd-200d-2642-fe0f",uc_match:"1f575-fe0f-1f3fd-2642-fe0f",uc_greedy:"1f575-1f3fd-2642",shortnames:[":man_detective_medium_skin_tone:"],category:"people"},":man_detective_tone4:":{uc_base:"1f575-1f3fe-2642",uc_output:"1f575-1f3fe-200d-2642-fe0f",uc_match:"1f575-fe0f-1f3fe-2642-fe0f",uc_greedy:"1f575-1f3fe-2642",shortnames:[":man_detective_medium_dark_skin_tone:"],category:"people"},":man_detective_tone5:":{uc_base:"1f575-1f3ff-2642",uc_output:"1f575-1f3ff-200d-2642-fe0f",uc_match:"1f575-fe0f-1f3ff-2642-fe0f",uc_greedy:"1f575-1f3ff-2642",shortnames:[":man_detective_dark_skin_tone:"],category:"people"},":man_elf_tone1:":{uc_base:"1f9dd-1f3fb-2642",uc_output:"1f9dd-1f3fb-200d-2642-fe0f",uc_match:"1f9dd-1f3fb-2642-fe0f",uc_greedy:"1f9dd-1f3fb-2642",shortnames:[":man_elf_light_skin_tone:"],category:"people"},":man_elf_tone2:":{uc_base:"1f9dd-1f3fc-2642",uc_output:"1f9dd-1f3fc-200d-2642-fe0f",uc_match:"1f9dd-1f3fc-2642-fe0f",uc_greedy:"1f9dd-1f3fc-2642",shortnames:[":man_elf_medium_light_skin_tone:"],category:"people"},":man_elf_tone3:":{uc_base:"1f9dd-1f3fd-2642",uc_output:"1f9dd-1f3fd-200d-2642-fe0f",uc_match:"1f9dd-1f3fd-2642-fe0f",uc_greedy:"1f9dd-1f3fd-2642",shortnames:[":man_elf_medium_skin_tone:"],category:"people"},":man_elf_tone4:":{uc_base:"1f9dd-1f3fe-2642",uc_output:"1f9dd-1f3fe-200d-2642-fe0f",uc_match:"1f9dd-1f3fe-2642-fe0f",uc_greedy:"1f9dd-1f3fe-2642",shortnames:[":man_elf_medium_dark_skin_tone:"],category:"people"},":man_elf_tone5:":{uc_base:"1f9dd-1f3ff-2642",uc_output:"1f9dd-1f3ff-200d-2642-fe0f",uc_match:"1f9dd-1f3ff-2642-fe0f",uc_greedy:"1f9dd-1f3ff-2642",shortnames:[":man_elf_dark_skin_tone:"],category:"people"},":man_facepalming_tone1:":{uc_base:"1f926-1f3fb-2642",uc_output:"1f926-1f3fb-200d-2642-fe0f",uc_match:"1f926-1f3fb-2642-fe0f",uc_greedy:"1f926-1f3fb-2642",shortnames:[":man_facepalming_light_skin_tone:"],category:"people"},":man_facepalming_tone2:":{uc_base:"1f926-1f3fc-2642",uc_output:"1f926-1f3fc-200d-2642-fe0f",uc_match:"1f926-1f3fc-2642-fe0f",uc_greedy:"1f926-1f3fc-2642",shortnames:[":man_facepalming_medium_light_skin_tone:"],category:"people"},":man_facepalming_tone3:":{uc_base:"1f926-1f3fd-2642",uc_output:"1f926-1f3fd-200d-2642-fe0f",uc_match:"1f926-1f3fd-2642-fe0f",uc_greedy:"1f926-1f3fd-2642",shortnames:[":man_facepalming_medium_skin_tone:"],category:"people"},":man_facepalming_tone4:":{uc_base:"1f926-1f3fe-2642",uc_output:"1f926-1f3fe-200d-2642-fe0f",uc_match:"1f926-1f3fe-2642-fe0f",uc_greedy:"1f926-1f3fe-2642",shortnames:[":man_facepalming_medium_dark_skin_tone:"],category:"people"},":man_facepalming_tone5:":{uc_base:"1f926-1f3ff-2642",uc_output:"1f926-1f3ff-200d-2642-fe0f",uc_match:"1f926-1f3ff-2642-fe0f",uc_greedy:"1f926-1f3ff-2642",shortnames:[":man_facepalming_dark_skin_tone:"],category:"people"},":man_fairy_tone1:":{uc_base:"1f9da-1f3fb-2642",uc_output:"1f9da-1f3fb-200d-2642-fe0f",uc_match:"1f9da-1f3fb-2642-fe0f",uc_greedy:"1f9da-1f3fb-2642",shortnames:[":man_fairy_light_skin_tone:"],category:"people"},":man_fairy_tone2:":{uc_base:"1f9da-1f3fc-2642",uc_output:"1f9da-1f3fc-200d-2642-fe0f",uc_match:"1f9da-1f3fc-2642-fe0f",uc_greedy:"1f9da-1f3fc-2642",shortnames:[":man_fairy_medium_light_skin_tone:"],category:"people"},":man_fairy_tone3:":{uc_base:"1f9da-1f3fd-2642",uc_output:"1f9da-1f3fd-200d-2642-fe0f",uc_match:"1f9da-1f3fd-2642-fe0f",uc_greedy:"1f9da-1f3fd-2642",shortnames:[":man_fairy_medium_skin_tone:"],category:"people"},":man_fairy_tone4:":{uc_base:"1f9da-1f3fe-2642",uc_output:"1f9da-1f3fe-200d-2642-fe0f",uc_match:"1f9da-1f3fe-2642-fe0f",uc_greedy:"1f9da-1f3fe-2642",shortnames:[":man_fairy_medium_dark_skin_tone:"],category:"people"},":man_fairy_tone5:":{uc_base:"1f9da-1f3ff-2642",uc_output:"1f9da-1f3ff-200d-2642-fe0f",uc_match:"1f9da-1f3ff-2642-fe0f",uc_greedy:"1f9da-1f3ff-2642",shortnames:[":man_fairy_dark_skin_tone:"],category:"people"},":man_frowning_tone1:":{uc_base:"1f64d-1f3fb-2642",uc_output:"1f64d-1f3fb-200d-2642-fe0f",uc_match:"1f64d-1f3fb-2642-fe0f",uc_greedy:"1f64d-1f3fb-2642",shortnames:[":man_frowning_light_skin_tone:"],category:"people"},":man_frowning_tone2:":{uc_base:"1f64d-1f3fc-2642",uc_output:"1f64d-1f3fc-200d-2642-fe0f",uc_match:"1f64d-1f3fc-2642-fe0f",uc_greedy:"1f64d-1f3fc-2642",shortnames:[":man_frowning_medium_light_skin_tone:"],category:"people"},":man_frowning_tone3:":{uc_base:"1f64d-1f3fd-2642",uc_output:"1f64d-1f3fd-200d-2642-fe0f",uc_match:"1f64d-1f3fd-2642-fe0f",uc_greedy:"1f64d-1f3fd-2642",shortnames:[":man_frowning_medium_skin_tone:"],category:"people"},":man_frowning_tone4:":{uc_base:"1f64d-1f3fe-2642",uc_output:"1f64d-1f3fe-200d-2642-fe0f",uc_match:"1f64d-1f3fe-2642-fe0f",uc_greedy:"1f64d-1f3fe-2642",shortnames:[":man_frowning_medium_dark_skin_tone:"],category:"people"},":man_frowning_tone5:":{uc_base:"1f64d-1f3ff-2642",uc_output:"1f64d-1f3ff-200d-2642-fe0f",uc_match:"1f64d-1f3ff-2642-fe0f",uc_greedy:"1f64d-1f3ff-2642",shortnames:[":man_frowning_dark_skin_tone:"],category:"people"},":man_gesturing_no_tone1:":{uc_base:"1f645-1f3fb-2642",uc_output:"1f645-1f3fb-200d-2642-fe0f",uc_match:"1f645-1f3fb-2642-fe0f",uc_greedy:"1f645-1f3fb-2642",shortnames:[":man_gesturing_no_light_skin_tone:"],category:"people"},":man_gesturing_no_tone2:":{uc_base:"1f645-1f3fc-2642",uc_output:"1f645-1f3fc-200d-2642-fe0f",uc_match:"1f645-1f3fc-2642-fe0f",uc_greedy:"1f645-1f3fc-2642",shortnames:[":man_gesturing_no_medium_light_skin_tone:"],category:"people"},":man_gesturing_no_tone3:":{uc_base:"1f645-1f3fd-2642",uc_output:"1f645-1f3fd-200d-2642-fe0f",uc_match:"1f645-1f3fd-2642-fe0f",uc_greedy:"1f645-1f3fd-2642",shortnames:[":man_gesturing_no_medium_skin_tone:"],category:"people"},":man_gesturing_no_tone4:":{uc_base:"1f645-1f3fe-2642",uc_output:"1f645-1f3fe-200d-2642-fe0f",uc_match:"1f645-1f3fe-2642-fe0f",uc_greedy:"1f645-1f3fe-2642",shortnames:[":man_gesturing_no_medium_dark_skin_tone:"],category:"people"},":man_gesturing_no_tone5:":{uc_base:"1f645-1f3ff-2642",uc_output:"1f645-1f3ff-200d-2642-fe0f",uc_match:"1f645-1f3ff-2642-fe0f",uc_greedy:"1f645-1f3ff-2642",shortnames:[":man_gesturing_no_dark_skin_tone:"],category:"people"},":man_gesturing_ok_tone1:":{uc_base:"1f646-1f3fb-2642",uc_output:"1f646-1f3fb-200d-2642-fe0f",uc_match:"1f646-1f3fb-2642-fe0f",uc_greedy:"1f646-1f3fb-2642",shortnames:[":man_gesturing_ok_light_skin_tone:"],category:"people"},":man_gesturing_ok_tone2:":{uc_base:"1f646-1f3fc-2642",uc_output:"1f646-1f3fc-200d-2642-fe0f",uc_match:"1f646-1f3fc-2642-fe0f",uc_greedy:"1f646-1f3fc-2642",shortnames:[":man_gesturing_ok_medium_light_skin_tone:"],category:"people"},":man_gesturing_ok_tone3:":{uc_base:"1f646-1f3fd-2642",uc_output:"1f646-1f3fd-200d-2642-fe0f",uc_match:"1f646-1f3fd-2642-fe0f",uc_greedy:"1f646-1f3fd-2642",shortnames:[":man_gesturing_ok_medium_skin_tone:"],category:"people"},":man_gesturing_ok_tone4:":{uc_base:"1f646-1f3fe-2642",uc_output:"1f646-1f3fe-200d-2642-fe0f",uc_match:"1f646-1f3fe-2642-fe0f",uc_greedy:"1f646-1f3fe-2642",shortnames:[":man_gesturing_ok_medium_dark_skin_tone:"],category:"people"},":man_gesturing_ok_tone5:":{uc_base:"1f646-1f3ff-2642",uc_output:"1f646-1f3ff-200d-2642-fe0f",uc_match:"1f646-1f3ff-2642-fe0f",uc_greedy:"1f646-1f3ff-2642",shortnames:[":man_gesturing_ok_dark_skin_tone:"],category:"people"},":man_getting_face_massage_tone1:":{uc_base:"1f486-1f3fb-2642",uc_output:"1f486-1f3fb-200d-2642-fe0f",uc_match:"1f486-1f3fb-2642-fe0f",uc_greedy:"1f486-1f3fb-2642",shortnames:[":man_getting_face_massage_light_skin_tone:"],category:"people"},":man_getting_face_massage_tone2:":{uc_base:"1f486-1f3fc-2642",uc_output:"1f486-1f3fc-200d-2642-fe0f",uc_match:"1f486-1f3fc-2642-fe0f",uc_greedy:"1f486-1f3fc-2642",shortnames:[":man_getting_face_massage_medium_light_skin_tone:"],category:"people"},":man_getting_face_massage_tone3:":{uc_base:"1f486-1f3fd-2642",uc_output:"1f486-1f3fd-200d-2642-fe0f",uc_match:"1f486-1f3fd-2642-fe0f",uc_greedy:"1f486-1f3fd-2642",shortnames:[":man_getting_face_massage_medium_skin_tone:"],category:"people"},":man_getting_face_massage_tone4:":{uc_base:"1f486-1f3fe-2642",uc_output:"1f486-1f3fe-200d-2642-fe0f",uc_match:"1f486-1f3fe-2642-fe0f",uc_greedy:"1f486-1f3fe-2642",shortnames:[":man_getting_face_massage_medium_dark_skin_tone:"],category:"people"},":man_getting_face_massage_tone5:":{uc_base:"1f486-1f3ff-2642",uc_output:"1f486-1f3ff-200d-2642-fe0f",uc_match:"1f486-1f3ff-2642-fe0f",uc_greedy:"1f486-1f3ff-2642",shortnames:[":man_getting_face_massage_dark_skin_tone:"],category:"people"},":man_getting_haircut_tone1:":{uc_base:"1f487-1f3fb-2642",uc_output:"1f487-1f3fb-200d-2642-fe0f",uc_match:"1f487-1f3fb-2642-fe0f",uc_greedy:"1f487-1f3fb-2642",shortnames:[":man_getting_haircut_light_skin_tone:"],category:"people"},":man_getting_haircut_tone2:":{uc_base:"1f487-1f3fc-2642",uc_output:"1f487-1f3fc-200d-2642-fe0f",uc_match:"1f487-1f3fc-2642-fe0f",uc_greedy:"1f487-1f3fc-2642",shortnames:[":man_getting_haircut_medium_light_skin_tone:"],category:"people"},":man_getting_haircut_tone3:":{uc_base:"1f487-1f3fd-2642",uc_output:"1f487-1f3fd-200d-2642-fe0f",uc_match:"1f487-1f3fd-2642-fe0f",uc_greedy:"1f487-1f3fd-2642",shortnames:[":man_getting_haircut_medium_skin_tone:"],category:"people"},":man_getting_haircut_tone4:":{uc_base:"1f487-1f3fe-2642",uc_output:"1f487-1f3fe-200d-2642-fe0f",uc_match:"1f487-1f3fe-2642-fe0f",uc_greedy:"1f487-1f3fe-2642",shortnames:[":man_getting_haircut_medium_dark_skin_tone:"],category:"people"},":man_getting_haircut_tone5:":{uc_base:"1f487-1f3ff-2642",uc_output:"1f487-1f3ff-200d-2642-fe0f",uc_match:"1f487-1f3ff-2642-fe0f",uc_greedy:"1f487-1f3ff-2642",shortnames:[":man_getting_haircut_dark_skin_tone:"],category:"people"},":man_golfing_tone1:":{uc_base:"1f3cc-1f3fb-2642",uc_output:"1f3cc-1f3fb-200d-2642-fe0f",uc_match:"1f3cc-fe0f-1f3fb-2642-fe0f",uc_greedy:"1f3cc-1f3fb-2642",shortnames:[":man_golfing_light_skin_tone:"],category:"activity"},":man_golfing_tone2:":{uc_base:"1f3cc-1f3fc-2642",uc_output:"1f3cc-1f3fc-200d-2642-fe0f",uc_match:"1f3cc-fe0f-1f3fc-2642-fe0f",uc_greedy:"1f3cc-1f3fc-2642",shortnames:[":man_golfing_medium_light_skin_tone:"],category:"activity"},":man_golfing_tone3:":{uc_base:"1f3cc-1f3fd-2642",uc_output:"1f3cc-1f3fd-200d-2642-fe0f",uc_match:"1f3cc-fe0f-1f3fd-2642-fe0f",uc_greedy:"1f3cc-1f3fd-2642",shortnames:[":man_golfing_medium_skin_tone:"],category:"activity"},":man_golfing_tone4:":{uc_base:"1f3cc-1f3fe-2642",uc_output:"1f3cc-1f3fe-200d-2642-fe0f",uc_match:"1f3cc-fe0f-1f3fe-2642-fe0f",uc_greedy:"1f3cc-1f3fe-2642",shortnames:[":man_golfing_medium_dark_skin_tone:"],category:"activity"},":man_golfing_tone5:":{uc_base:"1f3cc-1f3ff-2642",uc_output:"1f3cc-1f3ff-200d-2642-fe0f",uc_match:"1f3cc-fe0f-1f3ff-2642-fe0f",uc_greedy:"1f3cc-1f3ff-2642",shortnames:[":man_golfing_dark_skin_tone:"],category:"activity"},":man_guard_tone1:":{uc_base:"1f482-1f3fb-2642",uc_output:"1f482-1f3fb-200d-2642-fe0f",uc_match:"1f482-1f3fb-2642-fe0f",uc_greedy:"1f482-1f3fb-2642",shortnames:[":man_guard_light_skin_tone:"],category:"people"},":man_guard_tone2:":{uc_base:"1f482-1f3fc-2642",uc_output:"1f482-1f3fc-200d-2642-fe0f",uc_match:"1f482-1f3fc-2642-fe0f",uc_greedy:"1f482-1f3fc-2642",shortnames:[":man_guard_medium_light_skin_tone:"],category:"people"},":man_guard_tone3:":{uc_base:"1f482-1f3fd-2642",uc_output:"1f482-1f3fd-200d-2642-fe0f",uc_match:"1f482-1f3fd-2642-fe0f",uc_greedy:"1f482-1f3fd-2642",shortnames:[":man_guard_medium_skin_tone:"],category:"people"},":man_guard_tone4:":{uc_base:"1f482-1f3fe-2642",uc_output:"1f482-1f3fe-200d-2642-fe0f",uc_match:"1f482-1f3fe-2642-fe0f",uc_greedy:"1f482-1f3fe-2642",shortnames:[":man_guard_medium_dark_skin_tone:"],category:"people"},":man_guard_tone5:":{uc_base:"1f482-1f3ff-2642",uc_output:"1f482-1f3ff-200d-2642-fe0f",uc_match:"1f482-1f3ff-2642-fe0f",uc_greedy:"1f482-1f3ff-2642",shortnames:[":man_guard_dark_skin_tone:"],category:"people"},":man_health_worker_tone1:":{uc_base:"1f468-1f3fb-2695",uc_output:"1f468-1f3fb-200d-2695-fe0f",uc_match:"1f468-1f3fb-2695-fe0f",uc_greedy:"1f468-1f3fb-2695",shortnames:[":man_health_worker_light_skin_tone:"],category:"people"},":man_health_worker_tone2:":{uc_base:"1f468-1f3fc-2695",uc_output:"1f468-1f3fc-200d-2695-fe0f",uc_match:"1f468-1f3fc-2695-fe0f",uc_greedy:"1f468-1f3fc-2695",shortnames:[":man_health_worker_medium_light_skin_tone:"],category:"people"},":man_health_worker_tone3:":{uc_base:"1f468-1f3fd-2695",uc_output:"1f468-1f3fd-200d-2695-fe0f",uc_match:"1f468-1f3fd-2695-fe0f",uc_greedy:"1f468-1f3fd-2695",shortnames:[":man_health_worker_medium_skin_tone:"],category:"people"},":man_health_worker_tone4:":{uc_base:"1f468-1f3fe-2695",uc_output:"1f468-1f3fe-200d-2695-fe0f",uc_match:"1f468-1f3fe-2695-fe0f",uc_greedy:"1f468-1f3fe-2695",shortnames:[":man_health_worker_medium_dark_skin_tone:"],category:"people"},":man_health_worker_tone5:":{uc_base:"1f468-1f3ff-2695",uc_output:"1f468-1f3ff-200d-2695-fe0f",uc_match:"1f468-1f3ff-2695-fe0f",uc_greedy:"1f468-1f3ff-2695",shortnames:[":man_health_worker_dark_skin_tone:"],category:"people"},":man_in_lotus_position_tone1:":{uc_base:"1f9d8-1f3fb-2642",uc_output:"1f9d8-1f3fb-200d-2642-fe0f",uc_match:"1f9d8-1f3fb-2642-fe0f",uc_greedy:"1f9d8-1f3fb-2642",shortnames:[":man_in_lotus_position_light_skin_tone:"],category:"activity"},":man_in_lotus_position_tone2:":{uc_base:"1f9d8-1f3fc-2642",uc_output:"1f9d8-1f3fc-200d-2642-fe0f",uc_match:"1f9d8-1f3fc-2642-fe0f",uc_greedy:"1f9d8-1f3fc-2642",shortnames:[":man_in_lotus_position_medium_light_skin_tone:"],category:"activity"},":man_in_lotus_position_tone3:":{uc_base:"1f9d8-1f3fd-2642",uc_output:"1f9d8-1f3fd-200d-2642-fe0f",uc_match:"1f9d8-1f3fd-2642-fe0f",uc_greedy:"1f9d8-1f3fd-2642",shortnames:[":man_in_lotus_position_medium_skin_tone:"],category:"activity"},":man_in_lotus_position_tone4:":{uc_base:"1f9d8-1f3fe-2642",uc_output:"1f9d8-1f3fe-200d-2642-fe0f",uc_match:"1f9d8-1f3fe-2642-fe0f",uc_greedy:"1f9d8-1f3fe-2642",shortnames:[":man_in_lotus_position_medium_dark_skin_tone:"],category:"activity"},":man_in_lotus_position_tone5:":{uc_base:"1f9d8-1f3ff-2642",uc_output:"1f9d8-1f3ff-200d-2642-fe0f",uc_match:"1f9d8-1f3ff-2642-fe0f",uc_greedy:"1f9d8-1f3ff-2642",shortnames:[":man_in_lotus_position_dark_skin_tone:"],category:"activity"},":man_in_steamy_room_tone1:":{uc_base:"1f9d6-1f3fb-2642",uc_output:"1f9d6-1f3fb-200d-2642-fe0f",uc_match:"1f9d6-1f3fb-2642-fe0f",uc_greedy:"1f9d6-1f3fb-2642",shortnames:[":man_in_steamy_room_light_skin_tone:"],category:"people"},":man_in_steamy_room_tone2:":{uc_base:"1f9d6-1f3fc-2642",uc_output:"1f9d6-1f3fc-200d-2642-fe0f",uc_match:"1f9d6-1f3fc-2642-fe0f",uc_greedy:"1f9d6-1f3fc-2642",shortnames:[":man_in_steamy_room_medium_light_skin_tone:"],category:"people"},":man_in_steamy_room_tone3:":{uc_base:"1f9d6-1f3fd-2642",uc_output:"1f9d6-1f3fd-200d-2642-fe0f",uc_match:"1f9d6-1f3fd-2642-fe0f",uc_greedy:"1f9d6-1f3fd-2642",shortnames:[":man_in_steamy_room_medium_skin_tone:"],category:"people"},":man_in_steamy_room_tone4:":{uc_base:"1f9d6-1f3fe-2642",uc_output:"1f9d6-1f3fe-200d-2642-fe0f",uc_match:"1f9d6-1f3fe-2642-fe0f",uc_greedy:"1f9d6-1f3fe-2642",shortnames:[":man_in_steamy_room_medium_dark_skin_tone:"],category:"people"},":man_in_steamy_room_tone5:":{uc_base:"1f9d6-1f3ff-2642",uc_output:"1f9d6-1f3ff-200d-2642-fe0f",uc_match:"1f9d6-1f3ff-2642-fe0f",uc_greedy:"1f9d6-1f3ff-2642",shortnames:[":man_in_steamy_room_dark_skin_tone:"],category:"people"},":man_judge_tone1:":{uc_base:"1f468-1f3fb-2696",uc_output:"1f468-1f3fb-200d-2696-fe0f",uc_match:"1f468-1f3fb-2696-fe0f",uc_greedy:"1f468-1f3fb-2696",shortnames:[":man_judge_light_skin_tone:"],category:"people"},":man_judge_tone2:":{uc_base:"1f468-1f3fc-2696",uc_output:"1f468-1f3fc-200d-2696-fe0f",uc_match:"1f468-1f3fc-2696-fe0f",uc_greedy:"1f468-1f3fc-2696",shortnames:[":man_judge_medium_light_skin_tone:"],category:"people"},":man_judge_tone3:":{uc_base:"1f468-1f3fd-2696",uc_output:"1f468-1f3fd-200d-2696-fe0f",uc_match:"1f468-1f3fd-2696-fe0f",uc_greedy:"1f468-1f3fd-2696",shortnames:[":man_judge_medium_skin_tone:"],category:"people"},":man_judge_tone4:":{uc_base:"1f468-1f3fe-2696",uc_output:"1f468-1f3fe-200d-2696-fe0f",uc_match:"1f468-1f3fe-2696-fe0f",uc_greedy:"1f468-1f3fe-2696",shortnames:[":man_judge_medium_dark_skin_tone:"],category:"people"},":man_judge_tone5:":{uc_base:"1f468-1f3ff-2696",uc_output:"1f468-1f3ff-200d-2696-fe0f",uc_match:"1f468-1f3ff-2696-fe0f",uc_greedy:"1f468-1f3ff-2696",shortnames:[":man_judge_dark_skin_tone:"],category:"people"},":man_juggling_tone1:":{uc_base:"1f939-1f3fb-2642",uc_output:"1f939-1f3fb-200d-2642-fe0f",uc_match:"1f939-1f3fb-2642-fe0f",uc_greedy:"1f939-1f3fb-2642",shortnames:[":man_juggling_light_skin_tone:"],category:"activity"},":man_juggling_tone2:":{uc_base:"1f939-1f3fc-2642",uc_output:"1f939-1f3fc-200d-2642-fe0f",uc_match:"1f939-1f3fc-2642-fe0f",uc_greedy:"1f939-1f3fc-2642",shortnames:[":man_juggling_medium_light_skin_tone:"],category:"activity"},":man_juggling_tone3:":{uc_base:"1f939-1f3fd-2642",uc_output:"1f939-1f3fd-200d-2642-fe0f",uc_match:"1f939-1f3fd-2642-fe0f",uc_greedy:"1f939-1f3fd-2642",shortnames:[":man_juggling_medium_skin_tone:"],category:"activity"},":man_juggling_tone4:":{uc_base:"1f939-1f3fe-2642",uc_output:"1f939-1f3fe-200d-2642-fe0f",uc_match:"1f939-1f3fe-2642-fe0f",uc_greedy:"1f939-1f3fe-2642",shortnames:[":man_juggling_medium_dark_skin_tone:"],category:"activity"},":man_juggling_tone5:":{uc_base:"1f939-1f3ff-2642",uc_output:"1f939-1f3ff-200d-2642-fe0f",uc_match:"1f939-1f3ff-2642-fe0f",uc_greedy:"1f939-1f3ff-2642",shortnames:[":man_juggling_dark_skin_tone:"],category:"activity"},":man_lifting_weights_tone1:":{uc_base:"1f3cb-1f3fb-2642",uc_output:"1f3cb-1f3fb-200d-2642-fe0f",uc_match:"1f3cb-fe0f-1f3fb-2642-fe0f",uc_greedy:"1f3cb-1f3fb-2642",shortnames:[":man_lifting_weights_light_skin_tone:"],category:"activity"},":man_lifting_weights_tone2:":{uc_base:"1f3cb-1f3fc-2642",uc_output:"1f3cb-1f3fc-200d-2642-fe0f",uc_match:"1f3cb-fe0f-1f3fc-2642-fe0f",uc_greedy:"1f3cb-1f3fc-2642",shortnames:[":man_lifting_weights_medium_light_skin_tone:"],category:"activity"},":man_lifting_weights_tone3:":{uc_base:"1f3cb-1f3fd-2642",uc_output:"1f3cb-1f3fd-200d-2642-fe0f",uc_match:"1f3cb-fe0f-1f3fd-2642-fe0f",uc_greedy:"1f3cb-1f3fd-2642",shortnames:[":man_lifting_weights_medium_skin_tone:"],category:"activity"},":man_lifting_weights_tone4:":{uc_base:"1f3cb-1f3fe-2642",uc_output:"1f3cb-1f3fe-200d-2642-fe0f",uc_match:"1f3cb-fe0f-1f3fe-2642-fe0f",uc_greedy:"1f3cb-1f3fe-2642",shortnames:[":man_lifting_weights_medium_dark_skin_tone:"],category:"activity"},":man_lifting_weights_tone5:":{uc_base:"1f3cb-1f3ff-2642",uc_output:"1f3cb-1f3ff-200d-2642-fe0f",uc_match:"1f3cb-fe0f-1f3ff-2642-fe0f",uc_greedy:"1f3cb-1f3ff-2642",shortnames:[":man_lifting_weights_dark_skin_tone:"],category:"activity"},":man_mage_tone1:":{uc_base:"1f9d9-1f3fb-2642",uc_output:"1f9d9-1f3fb-200d-2642-fe0f",uc_match:"1f9d9-1f3fb-2642-fe0f",uc_greedy:"1f9d9-1f3fb-2642",shortnames:[":man_mage_light_skin_tone:"],category:"people"},":man_mage_tone2:":{uc_base:"1f9d9-1f3fc-2642",uc_output:"1f9d9-1f3fc-200d-2642-fe0f",uc_match:"1f9d9-1f3fc-2642-fe0f",uc_greedy:"1f9d9-1f3fc-2642",shortnames:[":man_mage_medium_light_skin_tone:"],category:"people"},":man_mage_tone3:":{uc_base:"1f9d9-1f3fd-2642",uc_output:"1f9d9-1f3fd-200d-2642-fe0f",uc_match:"1f9d9-1f3fd-2642-fe0f",uc_greedy:"1f9d9-1f3fd-2642",shortnames:[":man_mage_medium_skin_tone:"],category:"people"},":man_mage_tone4:":{uc_base:"1f9d9-1f3fe-2642",uc_output:"1f9d9-1f3fe-200d-2642-fe0f",uc_match:"1f9d9-1f3fe-2642-fe0f",uc_greedy:"1f9d9-1f3fe-2642",shortnames:[":man_mage_medium_dark_skin_tone:"],category:"people"},":man_mage_tone5:":{uc_base:"1f9d9-1f3ff-2642",uc_output:"1f9d9-1f3ff-200d-2642-fe0f",uc_match:"1f9d9-1f3ff-2642-fe0f",uc_greedy:"1f9d9-1f3ff-2642",shortnames:[":man_mage_dark_skin_tone:"],category:"people"},":man_mountain_biking_tone1:":{uc_base:"1f6b5-1f3fb-2642",uc_output:"1f6b5-1f3fb-200d-2642-fe0f",uc_match:"1f6b5-1f3fb-2642-fe0f",uc_greedy:"1f6b5-1f3fb-2642",shortnames:[":man_mountain_biking_light_skin_tone:"],category:"activity"},":man_mountain_biking_tone2:":{uc_base:"1f6b5-1f3fc-2642",uc_output:"1f6b5-1f3fc-200d-2642-fe0f",uc_match:"1f6b5-1f3fc-2642-fe0f",uc_greedy:"1f6b5-1f3fc-2642",shortnames:[":man_mountain_biking_medium_light_skin_tone:"],category:"activity"},":man_mountain_biking_tone3:":{uc_base:"1f6b5-1f3fd-2642",uc_output:"1f6b5-1f3fd-200d-2642-fe0f",uc_match:"1f6b5-1f3fd-2642-fe0f",uc_greedy:"1f6b5-1f3fd-2642",shortnames:[":man_mountain_biking_medium_skin_tone:"],category:"activity"},":man_mountain_biking_tone4:":{uc_base:"1f6b5-1f3fe-2642",uc_output:"1f6b5-1f3fe-200d-2642-fe0f",uc_match:"1f6b5-1f3fe-2642-fe0f",uc_greedy:"1f6b5-1f3fe-2642",shortnames:[":man_mountain_biking_medium_dark_skin_tone:"],category:"activity"},":man_mountain_biking_tone5:":{uc_base:"1f6b5-1f3ff-2642",uc_output:"1f6b5-1f3ff-200d-2642-fe0f",uc_match:"1f6b5-1f3ff-2642-fe0f",uc_greedy:"1f6b5-1f3ff-2642",shortnames:[":man_mountain_biking_dark_skin_tone:"],category:"activity"},":man_pilot_tone1:":{uc_base:"1f468-1f3fb-2708",uc_output:"1f468-1f3fb-200d-2708-fe0f",uc_match:"1f468-1f3fb-2708-fe0f",uc_greedy:"1f468-1f3fb-2708",shortnames:[":man_pilot_light_skin_tone:"],category:"people"},":man_pilot_tone2:":{uc_base:"1f468-1f3fc-2708",uc_output:"1f468-1f3fc-200d-2708-fe0f",uc_match:"1f468-1f3fc-2708-fe0f",uc_greedy:"1f468-1f3fc-2708",shortnames:[":man_pilot_medium_light_skin_tone:"],category:"people"},":man_pilot_tone3:":{uc_base:"1f468-1f3fd-2708",uc_output:"1f468-1f3fd-200d-2708-fe0f",uc_match:"1f468-1f3fd-2708-fe0f",uc_greedy:"1f468-1f3fd-2708",shortnames:[":man_pilot_medium_skin_tone:"],category:"people"},":man_pilot_tone4:":{uc_base:"1f468-1f3fe-2708",uc_output:"1f468-1f3fe-200d-2708-fe0f",uc_match:"1f468-1f3fe-2708-fe0f",uc_greedy:"1f468-1f3fe-2708",shortnames:[":man_pilot_medium_dark_skin_tone:"],category:"people"},":man_pilot_tone5:":{uc_base:"1f468-1f3ff-2708",uc_output:"1f468-1f3ff-200d-2708-fe0f",uc_match:"1f468-1f3ff-2708-fe0f",uc_greedy:"1f468-1f3ff-2708",shortnames:[":man_pilot_dark_skin_tone:"],category:"people"},":man_playing_handball_tone1:":{uc_base:"1f93e-1f3fb-2642",uc_output:"1f93e-1f3fb-200d-2642-fe0f",uc_match:"1f93e-1f3fb-2642-fe0f",uc_greedy:"1f93e-1f3fb-2642",shortnames:[":man_playing_handball_light_skin_tone:"],category:"activity"},":man_playing_handball_tone2:":{uc_base:"1f93e-1f3fc-2642",uc_output:"1f93e-1f3fc-200d-2642-fe0f",uc_match:"1f93e-1f3fc-2642-fe0f",uc_greedy:"1f93e-1f3fc-2642",shortnames:[":man_playing_handball_medium_light_skin_tone:"],category:"activity"},":man_playing_handball_tone3:":{uc_base:"1f93e-1f3fd-2642",uc_output:"1f93e-1f3fd-200d-2642-fe0f",uc_match:"1f93e-1f3fd-2642-fe0f",uc_greedy:"1f93e-1f3fd-2642",shortnames:[":man_playing_handball_medium_skin_tone:"],category:"activity"},":man_playing_handball_tone4:":{uc_base:"1f93e-1f3fe-2642",uc_output:"1f93e-1f3fe-200d-2642-fe0f",uc_match:"1f93e-1f3fe-2642-fe0f",uc_greedy:"1f93e-1f3fe-2642",shortnames:[":man_playing_handball_medium_dark_skin_tone:"],category:"activity"},":man_playing_handball_tone5:":{uc_base:"1f93e-1f3ff-2642",uc_output:"1f93e-1f3ff-200d-2642-fe0f",uc_match:"1f93e-1f3ff-2642-fe0f",uc_greedy:"1f93e-1f3ff-2642",shortnames:[":man_playing_handball_dark_skin_tone:"],category:"activity"},":man_playing_water_polo_tone1:":{uc_base:"1f93d-1f3fb-2642",uc_output:"1f93d-1f3fb-200d-2642-fe0f",uc_match:"1f93d-1f3fb-2642-fe0f",uc_greedy:"1f93d-1f3fb-2642",shortnames:[":man_playing_water_polo_light_skin_tone:"],category:"activity"},":man_playing_water_polo_tone2:":{uc_base:"1f93d-1f3fc-2642",uc_output:"1f93d-1f3fc-200d-2642-fe0f",uc_match:"1f93d-1f3fc-2642-fe0f",uc_greedy:"1f93d-1f3fc-2642",shortnames:[":man_playing_water_polo_medium_light_skin_tone:"],category:"activity"},":man_playing_water_polo_tone3:":{uc_base:"1f93d-1f3fd-2642",uc_output:"1f93d-1f3fd-200d-2642-fe0f",uc_match:"1f93d-1f3fd-2642-fe0f",uc_greedy:"1f93d-1f3fd-2642",shortnames:[":man_playing_water_polo_medium_skin_tone:"],category:"activity"},":man_playing_water_polo_tone4:":{uc_base:"1f93d-1f3fe-2642",uc_output:"1f93d-1f3fe-200d-2642-fe0f",uc_match:"1f93d-1f3fe-2642-fe0f",uc_greedy:"1f93d-1f3fe-2642",shortnames:[":man_playing_water_polo_medium_dark_skin_tone:"],category:"activity"},":man_playing_water_polo_tone5:":{uc_base:"1f93d-1f3ff-2642",uc_output:"1f93d-1f3ff-200d-2642-fe0f",uc_match:"1f93d-1f3ff-2642-fe0f",uc_greedy:"1f93d-1f3ff-2642",shortnames:[":man_playing_water_polo_dark_skin_tone:"],category:"activity"},":man_police_officer_tone1:":{uc_base:"1f46e-1f3fb-2642",uc_output:"1f46e-1f3fb-200d-2642-fe0f",uc_match:"1f46e-1f3fb-2642-fe0f",uc_greedy:"1f46e-1f3fb-2642",shortnames:[":man_police_officer_light_skin_tone:"],category:"people"},":man_police_officer_tone2:":{uc_base:"1f46e-1f3fc-2642",uc_output:"1f46e-1f3fc-200d-2642-fe0f",uc_match:"1f46e-1f3fc-2642-fe0f",uc_greedy:"1f46e-1f3fc-2642",shortnames:[":man_police_officer_medium_light_skin_tone:"],category:"people"},":man_police_officer_tone3:":{uc_base:"1f46e-1f3fd-2642",uc_output:"1f46e-1f3fd-200d-2642-fe0f",uc_match:"1f46e-1f3fd-2642-fe0f",uc_greedy:"1f46e-1f3fd-2642",shortnames:[":man_police_officer_medium_skin_tone:"],category:"people"},":man_police_officer_tone4:":{uc_base:"1f46e-1f3fe-2642",uc_output:"1f46e-1f3fe-200d-2642-fe0f",uc_match:"1f46e-1f3fe-2642-fe0f",uc_greedy:"1f46e-1f3fe-2642",shortnames:[":man_police_officer_medium_dark_skin_tone:"],category:"people"},":man_police_officer_tone5:":{uc_base:"1f46e-1f3ff-2642",uc_output:"1f46e-1f3ff-200d-2642-fe0f",uc_match:"1f46e-1f3ff-2642-fe0f",uc_greedy:"1f46e-1f3ff-2642",shortnames:[":man_police_officer_dark_skin_tone:"],category:"people"},":man_pouting_tone1:":{uc_base:"1f64e-1f3fb-2642",uc_output:"1f64e-1f3fb-200d-2642-fe0f",uc_match:"1f64e-1f3fb-2642-fe0f",uc_greedy:"1f64e-1f3fb-2642",shortnames:[":man_pouting_light_skin_tone:"],category:"people"},":man_pouting_tone2:":{uc_base:"1f64e-1f3fc-2642",uc_output:"1f64e-1f3fc-200d-2642-fe0f",uc_match:"1f64e-1f3fc-2642-fe0f",uc_greedy:"1f64e-1f3fc-2642",shortnames:[":man_pouting_medium_light_skin_tone:"],category:"people"},":man_pouting_tone3:":{uc_base:"1f64e-1f3fd-2642",uc_output:"1f64e-1f3fd-200d-2642-fe0f",uc_match:"1f64e-1f3fd-2642-fe0f",uc_greedy:"1f64e-1f3fd-2642",shortnames:[":man_pouting_medium_skin_tone:"],category:"people"},":man_pouting_tone4:":{uc_base:"1f64e-1f3fe-2642",uc_output:"1f64e-1f3fe-200d-2642-fe0f",uc_match:"1f64e-1f3fe-2642-fe0f",uc_greedy:"1f64e-1f3fe-2642",shortnames:[":man_pouting_medium_dark_skin_tone:"],category:"people"},":man_pouting_tone5:":{uc_base:"1f64e-1f3ff-2642",uc_output:"1f64e-1f3ff-200d-2642-fe0f",uc_match:"1f64e-1f3ff-2642-fe0f",uc_greedy:"1f64e-1f3ff-2642",shortnames:[":man_pouting_dark_skin_tone:"],category:"people"},":man_raising_hand_tone1:":{uc_base:"1f64b-1f3fb-2642",uc_output:"1f64b-1f3fb-200d-2642-fe0f",uc_match:"1f64b-1f3fb-2642-fe0f",uc_greedy:"1f64b-1f3fb-2642",shortnames:[":man_raising_hand_light_skin_tone:"],category:"people"},":man_raising_hand_tone2:":{uc_base:"1f64b-1f3fc-2642",uc_output:"1f64b-1f3fc-200d-2642-fe0f",uc_match:"1f64b-1f3fc-2642-fe0f",uc_greedy:"1f64b-1f3fc-2642",shortnames:[":man_raising_hand_medium_light_skin_tone:"],category:"people"},":man_raising_hand_tone3:":{uc_base:"1f64b-1f3fd-2642",uc_output:"1f64b-1f3fd-200d-2642-fe0f",uc_match:"1f64b-1f3fd-2642-fe0f",uc_greedy:"1f64b-1f3fd-2642",shortnames:[":man_raising_hand_medium_skin_tone:"],category:"people"},":man_raising_hand_tone4:":{uc_base:"1f64b-1f3fe-2642",uc_output:"1f64b-1f3fe-200d-2642-fe0f",uc_match:"1f64b-1f3fe-2642-fe0f",uc_greedy:"1f64b-1f3fe-2642",shortnames:[":man_raising_hand_medium_dark_skin_tone:"],category:"people"},":man_raising_hand_tone5:":{uc_base:"1f64b-1f3ff-2642",uc_output:"1f64b-1f3ff-200d-2642-fe0f",uc_match:"1f64b-1f3ff-2642-fe0f",uc_greedy:"1f64b-1f3ff-2642",shortnames:[":man_raising_hand_dark_skin_tone:"],category:"people"},":man_rowing_boat_tone1:":{uc_base:"1f6a3-1f3fb-2642",uc_output:"1f6a3-1f3fb-200d-2642-fe0f",uc_match:"1f6a3-1f3fb-2642-fe0f",uc_greedy:"1f6a3-1f3fb-2642",shortnames:[":man_rowing_boat_light_skin_tone:"],category:"activity"},":man_rowing_boat_tone2:":{uc_base:"1f6a3-1f3fc-2642",uc_output:"1f6a3-1f3fc-200d-2642-fe0f",uc_match:"1f6a3-1f3fc-2642-fe0f",uc_greedy:"1f6a3-1f3fc-2642",shortnames:[":man_rowing_boat_medium_light_skin_tone:"],category:"activity"},":man_rowing_boat_tone3:":{uc_base:"1f6a3-1f3fd-2642",uc_output:"1f6a3-1f3fd-200d-2642-fe0f",uc_match:"1f6a3-1f3fd-2642-fe0f",uc_greedy:"1f6a3-1f3fd-2642",shortnames:[":man_rowing_boat_medium_skin_tone:"],category:"activity"},":man_rowing_boat_tone4:":{uc_base:"1f6a3-1f3fe-2642",uc_output:"1f6a3-1f3fe-200d-2642-fe0f",uc_match:"1f6a3-1f3fe-2642-fe0f",uc_greedy:"1f6a3-1f3fe-2642",shortnames:[":man_rowing_boat_medium_dark_skin_tone:"],category:"activity"},":man_rowing_boat_tone5:":{uc_base:"1f6a3-1f3ff-2642",uc_output:"1f6a3-1f3ff-200d-2642-fe0f",uc_match:"1f6a3-1f3ff-2642-fe0f",uc_greedy:"1f6a3-1f3ff-2642",shortnames:[":man_rowing_boat_dark_skin_tone:"],category:"activity"},":man_running_tone1:":{uc_base:"1f3c3-1f3fb-2642",uc_output:"1f3c3-1f3fb-200d-2642-fe0f",uc_match:"1f3c3-1f3fb-2642-fe0f",uc_greedy:"1f3c3-1f3fb-2642",shortnames:[":man_running_light_skin_tone:"],category:"people"},":man_running_tone2:":{uc_base:"1f3c3-1f3fc-2642",uc_output:"1f3c3-1f3fc-200d-2642-fe0f",uc_match:"1f3c3-1f3fc-2642-fe0f",uc_greedy:"1f3c3-1f3fc-2642",shortnames:[":man_running_medium_light_skin_tone:"],category:"people"},":man_running_tone3:":{uc_base:"1f3c3-1f3fd-2642",uc_output:"1f3c3-1f3fd-200d-2642-fe0f",uc_match:"1f3c3-1f3fd-2642-fe0f",uc_greedy:"1f3c3-1f3fd-2642",shortnames:[":man_running_medium_skin_tone:"],category:"people"},":man_running_tone4:":{uc_base:"1f3c3-1f3fe-2642",uc_output:"1f3c3-1f3fe-200d-2642-fe0f",uc_match:"1f3c3-1f3fe-2642-fe0f",uc_greedy:"1f3c3-1f3fe-2642",shortnames:[":man_running_medium_dark_skin_tone:"],category:"people"},":man_running_tone5:":{uc_base:"1f3c3-1f3ff-2642",uc_output:"1f3c3-1f3ff-200d-2642-fe0f",uc_match:"1f3c3-1f3ff-2642-fe0f",uc_greedy:"1f3c3-1f3ff-2642",shortnames:[":man_running_dark_skin_tone:"],category:"people"},":man_shrugging_tone1:":{uc_base:"1f937-1f3fb-2642",uc_output:"1f937-1f3fb-200d-2642-fe0f",uc_match:"1f937-1f3fb-2642-fe0f",uc_greedy:"1f937-1f3fb-2642",shortnames:[":man_shrugging_light_skin_tone:"],category:"people"},":man_shrugging_tone2:":{uc_base:"1f937-1f3fc-2642",uc_output:"1f937-1f3fc-200d-2642-fe0f",uc_match:"1f937-1f3fc-2642-fe0f",uc_greedy:"1f937-1f3fc-2642",shortnames:[":man_shrugging_medium_light_skin_tone:"],category:"people"},":man_shrugging_tone3:":{uc_base:"1f937-1f3fd-2642",uc_output:"1f937-1f3fd-200d-2642-fe0f",uc_match:"1f937-1f3fd-2642-fe0f",uc_greedy:"1f937-1f3fd-2642",shortnames:[":man_shrugging_medium_skin_tone:"],category:"people"},":man_shrugging_tone4:":{uc_base:"1f937-1f3fe-2642",uc_output:"1f937-1f3fe-200d-2642-fe0f",uc_match:"1f937-1f3fe-2642-fe0f",uc_greedy:"1f937-1f3fe-2642",shortnames:[":man_shrugging_medium_dark_skin_tone:"],category:"people"},":man_shrugging_tone5:":{uc_base:"1f937-1f3ff-2642",uc_output:"1f937-1f3ff-200d-2642-fe0f",uc_match:"1f937-1f3ff-2642-fe0f",uc_greedy:"1f937-1f3ff-2642",shortnames:[":man_shrugging_dark_skin_tone:"],category:"people"},":man_superhero_tone1:":{uc_base:"1f9b8-1f3fb-2642",uc_output:"1f9b8-1f3fb-200d-2642-fe0f",uc_match:"1f9b8-1f3fb-2642-fe0f",uc_greedy:"1f9b8-1f3fb-2642",shortnames:[":man_superhero_light_skin_tone:"],category:"people"},":man_superhero_tone2:":{uc_base:"1f9b8-1f3fc-2642",uc_output:"1f9b8-1f3fc-200d-2642-fe0f",uc_match:"1f9b8-1f3fc-2642-fe0f",uc_greedy:"1f9b8-1f3fc-2642",shortnames:[":man_superhero_medium_light_skin_tone:"],category:"people"},":man_superhero_tone3:":{uc_base:"1f9b8-1f3fd-2642",uc_output:"1f9b8-1f3fd-200d-2642-fe0f",uc_match:"1f9b8-1f3fd-2642-fe0f",uc_greedy:"1f9b8-1f3fd-2642",shortnames:[":man_superhero_medium_skin_tone:"],category:"people"},":man_superhero_tone4:":{uc_base:"1f9b8-1f3fe-2642",uc_output:"1f9b8-1f3fe-200d-2642-fe0f",uc_match:"1f9b8-1f3fe-2642-fe0f",uc_greedy:"1f9b8-1f3fe-2642",shortnames:[":man_superhero_medium_dark_skin_tone:"],category:"people"},":man_superhero_tone5:":{uc_base:"1f9b8-1f3ff-2642",uc_output:"1f9b8-1f3ff-200d-2642-fe0f",uc_match:"1f9b8-1f3ff-2642-fe0f",uc_greedy:"1f9b8-1f3ff-2642",shortnames:[":man_superhero_dark_skin_tone:"],category:"people"},":man_supervillain_tone1:":{uc_base:"1f9b9-1f3fb-2642",uc_output:"1f9b9-1f3fb-200d-2642-fe0f",uc_match:"1f9b9-1f3fb-2642-fe0f",uc_greedy:"1f9b9-1f3fb-2642",shortnames:[":man_supervillain_light_skin_tone:"],category:"people"},":man_supervillain_tone2:":{uc_base:"1f9b9-1f3fc-2642",uc_output:"1f9b9-1f3fc-200d-2642-fe0f",uc_match:"1f9b9-1f3fc-2642-fe0f",uc_greedy:"1f9b9-1f3fc-2642",shortnames:[":man_supervillain_medium_light_skin_tone:"],category:"people"},":man_supervillain_tone3:":{uc_base:"1f9b9-1f3fd-2642",uc_output:"1f9b9-1f3fd-200d-2642-fe0f",uc_match:"1f9b9-1f3fd-2642-fe0f",uc_greedy:"1f9b9-1f3fd-2642",shortnames:[":man_supervillain_medium_skin_tone:"],category:"people"},":man_supervillain_tone4:":{uc_base:"1f9b9-1f3fe-2642",uc_output:"1f9b9-1f3fe-200d-2642-fe0f",uc_match:"1f9b9-1f3fe-2642-fe0f",uc_greedy:"1f9b9-1f3fe-2642",shortnames:[":man_supervillain_medium_dark_skin_tone:"],category:"people"},":man_supervillain_tone5:":{uc_base:"1f9b9-1f3ff-2642",uc_output:"1f9b9-1f3ff-200d-2642-fe0f",uc_match:"1f9b9-1f3ff-2642-fe0f",uc_greedy:"1f9b9-1f3ff-2642",shortnames:[":man_supervillain_dark_skin_tone:"],category:"people"},":man_surfing_tone1:":{uc_base:"1f3c4-1f3fb-2642",uc_output:"1f3c4-1f3fb-200d-2642-fe0f",uc_match:"1f3c4-1f3fb-2642-fe0f",uc_greedy:"1f3c4-1f3fb-2642",shortnames:[":man_surfing_light_skin_tone:"],category:"activity"},":man_surfing_tone2:":{uc_base:"1f3c4-1f3fc-2642",uc_output:"1f3c4-1f3fc-200d-2642-fe0f",uc_match:"1f3c4-1f3fc-2642-fe0f",uc_greedy:"1f3c4-1f3fc-2642",shortnames:[":man_surfing_medium_light_skin_tone:"],category:"activity"},":man_surfing_tone3:":{uc_base:"1f3c4-1f3fd-2642",uc_output:"1f3c4-1f3fd-200d-2642-fe0f",uc_match:"1f3c4-1f3fd-2642-fe0f",uc_greedy:"1f3c4-1f3fd-2642",shortnames:[":man_surfing_medium_skin_tone:"],category:"activity"},":man_surfing_tone4:":{uc_base:"1f3c4-1f3fe-2642",uc_output:"1f3c4-1f3fe-200d-2642-fe0f",uc_match:"1f3c4-1f3fe-2642-fe0f",uc_greedy:"1f3c4-1f3fe-2642",shortnames:[":man_surfing_medium_dark_skin_tone:"],category:"activity"},":man_surfing_tone5:":{uc_base:"1f3c4-1f3ff-2642",uc_output:"1f3c4-1f3ff-200d-2642-fe0f",uc_match:"1f3c4-1f3ff-2642-fe0f",uc_greedy:"1f3c4-1f3ff-2642",shortnames:[":man_surfing_dark_skin_tone:"],category:"activity"},":man_swimming_tone1:":{uc_base:"1f3ca-1f3fb-2642",uc_output:"1f3ca-1f3fb-200d-2642-fe0f",uc_match:"1f3ca-1f3fb-2642-fe0f",uc_greedy:"1f3ca-1f3fb-2642",shortnames:[":man_swimming_light_skin_tone:"],category:"activity"},":man_swimming_tone2:":{uc_base:"1f3ca-1f3fc-2642",uc_output:"1f3ca-1f3fc-200d-2642-fe0f",uc_match:"1f3ca-1f3fc-2642-fe0f",uc_greedy:"1f3ca-1f3fc-2642",shortnames:[":man_swimming_medium_light_skin_tone:"],category:"activity"},":man_swimming_tone3:":{uc_base:"1f3ca-1f3fd-2642",uc_output:"1f3ca-1f3fd-200d-2642-fe0f",uc_match:"1f3ca-1f3fd-2642-fe0f",uc_greedy:"1f3ca-1f3fd-2642",shortnames:[":man_swimming_medium_skin_tone:"],category:"activity"},":man_swimming_tone4:":{uc_base:"1f3ca-1f3fe-2642",uc_output:"1f3ca-1f3fe-200d-2642-fe0f",uc_match:"1f3ca-1f3fe-2642-fe0f",uc_greedy:"1f3ca-1f3fe-2642",shortnames:[":man_swimming_medium_dark_skin_tone:"],category:"activity"},":man_swimming_tone5:":{uc_base:"1f3ca-1f3ff-2642",uc_output:"1f3ca-1f3ff-200d-2642-fe0f",uc_match:"1f3ca-1f3ff-2642-fe0f",uc_greedy:"1f3ca-1f3ff-2642",shortnames:[":man_swimming_dark_skin_tone:"],category:"activity"},":man_tipping_hand_tone1:":{uc_base:"1f481-1f3fb-2642",uc_output:"1f481-1f3fb-200d-2642-fe0f",uc_match:"1f481-1f3fb-2642-fe0f",uc_greedy:"1f481-1f3fb-2642",shortnames:[":man_tipping_hand_light_skin_tone:"],category:"people"},":man_tipping_hand_tone2:":{uc_base:"1f481-1f3fc-2642",uc_output:"1f481-1f3fc-200d-2642-fe0f",uc_match:"1f481-1f3fc-2642-fe0f",uc_greedy:"1f481-1f3fc-2642",shortnames:[":man_tipping_hand_medium_light_skin_tone:"],category:"people"},":man_tipping_hand_tone3:":{uc_base:"1f481-1f3fd-2642",uc_output:"1f481-1f3fd-200d-2642-fe0f",uc_match:"1f481-1f3fd-2642-fe0f",uc_greedy:"1f481-1f3fd-2642",shortnames:[":man_tipping_hand_medium_skin_tone:"],category:"people"},":man_tipping_hand_tone4:":{uc_base:"1f481-1f3fe-2642",uc_output:"1f481-1f3fe-200d-2642-fe0f",uc_match:"1f481-1f3fe-2642-fe0f",uc_greedy:"1f481-1f3fe-2642",shortnames:[":man_tipping_hand_medium_dark_skin_tone:"],category:"people"},":man_tipping_hand_tone5:":{uc_base:"1f481-1f3ff-2642",uc_output:"1f481-1f3ff-200d-2642-fe0f",uc_match:"1f481-1f3ff-2642-fe0f",uc_greedy:"1f481-1f3ff-2642",shortnames:[":man_tipping_hand_dark_skin_tone:"],category:"people"},":man_vampire_tone1:":{uc_base:"1f9db-1f3fb-2642",uc_output:"1f9db-1f3fb-200d-2642-fe0f",uc_match:"1f9db-1f3fb-2642-fe0f",uc_greedy:"1f9db-1f3fb-2642",shortnames:[":man_vampire_light_skin_tone:"],category:"people"},":man_vampire_tone2:":{uc_base:"1f9db-1f3fc-2642",uc_output:"1f9db-1f3fc-200d-2642-fe0f",uc_match:"1f9db-1f3fc-2642-fe0f",uc_greedy:"1f9db-1f3fc-2642",shortnames:[":man_vampire_medium_light_skin_tone:"],category:"people"},":man_vampire_tone3:":{uc_base:"1f9db-1f3fd-2642",uc_output:"1f9db-1f3fd-200d-2642-fe0f",uc_match:"1f9db-1f3fd-2642-fe0f",uc_greedy:"1f9db-1f3fd-2642",shortnames:[":man_vampire_medium_skin_tone:"],category:"people"},":man_vampire_tone4:":{uc_base:"1f9db-1f3fe-2642",uc_output:"1f9db-1f3fe-200d-2642-fe0f",uc_match:"1f9db-1f3fe-2642-fe0f",uc_greedy:"1f9db-1f3fe-2642",shortnames:[":man_vampire_medium_dark_skin_tone:"],category:"people"},":man_vampire_tone5:":{uc_base:"1f9db-1f3ff-2642",uc_output:"1f9db-1f3ff-200d-2642-fe0f",uc_match:"1f9db-1f3ff-2642-fe0f",uc_greedy:"1f9db-1f3ff-2642",shortnames:[":man_vampire_dark_skin_tone:"],category:"people"},":man_walking_tone1:":{uc_base:"1f6b6-1f3fb-2642",uc_output:"1f6b6-1f3fb-200d-2642-fe0f",uc_match:"1f6b6-1f3fb-2642-fe0f",uc_greedy:"1f6b6-1f3fb-2642",shortnames:[":man_walking_light_skin_tone:"],category:"people"},":man_walking_tone2:":{uc_base:"1f6b6-1f3fc-2642",uc_output:"1f6b6-1f3fc-200d-2642-fe0f",uc_match:"1f6b6-1f3fc-2642-fe0f",uc_greedy:"1f6b6-1f3fc-2642",shortnames:[":man_walking_medium_light_skin_tone:"],category:"people"},":man_walking_tone3:":{uc_base:"1f6b6-1f3fd-2642",uc_output:"1f6b6-1f3fd-200d-2642-fe0f",uc_match:"1f6b6-1f3fd-2642-fe0f",uc_greedy:"1f6b6-1f3fd-2642",shortnames:[":man_walking_medium_skin_tone:"],category:"people"},":man_walking_tone4:":{uc_base:"1f6b6-1f3fe-2642",uc_output:"1f6b6-1f3fe-200d-2642-fe0f",uc_match:"1f6b6-1f3fe-2642-fe0f",uc_greedy:"1f6b6-1f3fe-2642",shortnames:[":man_walking_medium_dark_skin_tone:"],category:"people"},":man_walking_tone5:":{uc_base:"1f6b6-1f3ff-2642",uc_output:"1f6b6-1f3ff-200d-2642-fe0f",uc_match:"1f6b6-1f3ff-2642-fe0f",uc_greedy:"1f6b6-1f3ff-2642",shortnames:[":man_walking_dark_skin_tone:"],category:"people"},":man_wearing_turban_tone1:":{uc_base:"1f473-1f3fb-2642",uc_output:"1f473-1f3fb-200d-2642-fe0f",uc_match:"1f473-1f3fb-2642-fe0f",uc_greedy:"1f473-1f3fb-2642",shortnames:[":man_wearing_turban_light_skin_tone:"],category:"people"},":man_wearing_turban_tone2:":{uc_base:"1f473-1f3fc-2642",uc_output:"1f473-1f3fc-200d-2642-fe0f",uc_match:"1f473-1f3fc-2642-fe0f",uc_greedy:"1f473-1f3fc-2642",shortnames:[":man_wearing_turban_medium_light_skin_tone:"],category:"people"},":man_wearing_turban_tone3:":{uc_base:"1f473-1f3fd-2642",uc_output:"1f473-1f3fd-200d-2642-fe0f",uc_match:"1f473-1f3fd-2642-fe0f",uc_greedy:"1f473-1f3fd-2642",shortnames:[":man_wearing_turban_medium_skin_tone:"],category:"people"},":man_wearing_turban_tone4:":{uc_base:"1f473-1f3fe-2642",uc_output:"1f473-1f3fe-200d-2642-fe0f",uc_match:"1f473-1f3fe-2642-fe0f",uc_greedy:"1f473-1f3fe-2642",shortnames:[":man_wearing_turban_medium_dark_skin_tone:"],category:"people"},":man_wearing_turban_tone5:":{uc_base:"1f473-1f3ff-2642",uc_output:"1f473-1f3ff-200d-2642-fe0f",uc_match:"1f473-1f3ff-2642-fe0f",uc_greedy:"1f473-1f3ff-2642",shortnames:[":man_wearing_turban_dark_skin_tone:"],category:"people"},":mermaid_tone1:":{uc_base:"1f9dc-1f3fb-2640",uc_output:"1f9dc-1f3fb-200d-2640-fe0f",uc_match:"1f9dc-1f3fb-2640-fe0f",uc_greedy:"1f9dc-1f3fb-2640",shortnames:[":mermaid_light_skin_tone:"],category:"people"},":mermaid_tone2:":{uc_base:"1f9dc-1f3fc-2640",uc_output:"1f9dc-1f3fc-200d-2640-fe0f",uc_match:"1f9dc-1f3fc-2640-fe0f",uc_greedy:"1f9dc-1f3fc-2640",shortnames:[":mermaid_medium_light_skin_tone:"],category:"people"},":mermaid_tone3:":{uc_base:"1f9dc-1f3fd-2640",uc_output:"1f9dc-1f3fd-200d-2640-fe0f",uc_match:"1f9dc-1f3fd-2640-fe0f",uc_greedy:"1f9dc-1f3fd-2640",shortnames:[":mermaid_medium_skin_tone:"],category:"people"},":mermaid_tone4:":{uc_base:"1f9dc-1f3fe-2640",uc_output:"1f9dc-1f3fe-200d-2640-fe0f",uc_match:"1f9dc-1f3fe-2640-fe0f",uc_greedy:"1f9dc-1f3fe-2640",shortnames:[":mermaid_medium_dark_skin_tone:"],category:"people"},":mermaid_tone5:":{uc_base:"1f9dc-1f3ff-2640",uc_output:"1f9dc-1f3ff-200d-2640-fe0f",uc_match:"1f9dc-1f3ff-2640-fe0f",uc_greedy:"1f9dc-1f3ff-2640",shortnames:[":mermaid_dark_skin_tone:"],category:"people"},":merman_tone1:":{uc_base:"1f9dc-1f3fb-2642",uc_output:"1f9dc-1f3fb-200d-2642-fe0f",uc_match:"1f9dc-1f3fb-2642-fe0f",uc_greedy:"1f9dc-1f3fb-2642",shortnames:[":merman_light_skin_tone:"],category:"people"},":merman_tone2:":{uc_base:"1f9dc-1f3fc-2642",uc_output:"1f9dc-1f3fc-200d-2642-fe0f",uc_match:"1f9dc-1f3fc-2642-fe0f",uc_greedy:"1f9dc-1f3fc-2642",shortnames:[":merman_medium_light_skin_tone:"],category:"people"},":merman_tone3:":{uc_base:"1f9dc-1f3fd-2642",uc_output:"1f9dc-1f3fd-200d-2642-fe0f",uc_match:"1f9dc-1f3fd-2642-fe0f",uc_greedy:"1f9dc-1f3fd-2642",shortnames:[":merman_medium_skin_tone:"],category:"people"},":merman_tone4:":{uc_base:"1f9dc-1f3fe-2642",uc_output:"1f9dc-1f3fe-200d-2642-fe0f",uc_match:"1f9dc-1f3fe-2642-fe0f",uc_greedy:"1f9dc-1f3fe-2642",shortnames:[":merman_medium_dark_skin_tone:"],category:"people"},":merman_tone5:":{uc_base:"1f9dc-1f3ff-2642",uc_output:"1f9dc-1f3ff-200d-2642-fe0f",uc_match:"1f9dc-1f3ff-2642-fe0f",uc_greedy:"1f9dc-1f3ff-2642",shortnames:[":merman_dark_skin_tone:"],category:"people"},":woman_biking_tone1:":{uc_base:"1f6b4-1f3fb-2640",uc_output:"1f6b4-1f3fb-200d-2640-fe0f",uc_match:"1f6b4-1f3fb-2640-fe0f",uc_greedy:"1f6b4-1f3fb-2640",shortnames:[":woman_biking_light_skin_tone:"],category:"activity"},":woman_biking_tone2:":{uc_base:"1f6b4-1f3fc-2640",uc_output:"1f6b4-1f3fc-200d-2640-fe0f",uc_match:"1f6b4-1f3fc-2640-fe0f",uc_greedy:"1f6b4-1f3fc-2640",shortnames:[":woman_biking_medium_light_skin_tone:"],category:"activity"},":woman_biking_tone3:":{uc_base:"1f6b4-1f3fd-2640",uc_output:"1f6b4-1f3fd-200d-2640-fe0f",uc_match:"1f6b4-1f3fd-2640-fe0f",uc_greedy:"1f6b4-1f3fd-2640",shortnames:[":woman_biking_medium_skin_tone:"],category:"activity"},":woman_biking_tone4:":{uc_base:"1f6b4-1f3fe-2640",uc_output:"1f6b4-1f3fe-200d-2640-fe0f",uc_match:"1f6b4-1f3fe-2640-fe0f",uc_greedy:"1f6b4-1f3fe-2640",shortnames:[":woman_biking_medium_dark_skin_tone:"],category:"activity"},":woman_biking_tone5:":{uc_base:"1f6b4-1f3ff-2640",uc_output:"1f6b4-1f3ff-200d-2640-fe0f",uc_match:"1f6b4-1f3ff-2640-fe0f",uc_greedy:"1f6b4-1f3ff-2640",shortnames:[":woman_biking_dark_skin_tone:"],category:"activity"},":woman_bowing_tone1:":{uc_base:"1f647-1f3fb-2640",uc_output:"1f647-1f3fb-200d-2640-fe0f",uc_match:"1f647-1f3fb-2640-fe0f",uc_greedy:"1f647-1f3fb-2640",shortnames:[":woman_bowing_light_skin_tone:"],category:"people"},":woman_bowing_tone2:":{uc_base:"1f647-1f3fc-2640",uc_output:"1f647-1f3fc-200d-2640-fe0f",uc_match:"1f647-1f3fc-2640-fe0f",uc_greedy:"1f647-1f3fc-2640",shortnames:[":woman_bowing_medium_light_skin_tone:"],category:"people"},":woman_bowing_tone3:":{uc_base:"1f647-1f3fd-2640",uc_output:"1f647-1f3fd-200d-2640-fe0f",uc_match:"1f647-1f3fd-2640-fe0f",uc_greedy:"1f647-1f3fd-2640",shortnames:[":woman_bowing_medium_skin_tone:"],category:"people"},":woman_bowing_tone4:":{uc_base:"1f647-1f3fe-2640",uc_output:"1f647-1f3fe-200d-2640-fe0f",uc_match:"1f647-1f3fe-2640-fe0f",uc_greedy:"1f647-1f3fe-2640",shortnames:[":woman_bowing_medium_dark_skin_tone:"],category:"people"},":woman_bowing_tone5:":{uc_base:"1f647-1f3ff-2640",uc_output:"1f647-1f3ff-200d-2640-fe0f",uc_match:"1f647-1f3ff-2640-fe0f",uc_greedy:"1f647-1f3ff-2640",shortnames:[":woman_bowing_dark_skin_tone:"],category:"people"},":woman_cartwheeling_tone1:":{uc_base:"1f938-1f3fb-2640",uc_output:"1f938-1f3fb-200d-2640-fe0f",uc_match:"1f938-1f3fb-2640-fe0f",uc_greedy:"1f938-1f3fb-2640",shortnames:[":woman_cartwheeling_light_skin_tone:"],category:"activity"},":woman_cartwheeling_tone2:":{uc_base:"1f938-1f3fc-2640",uc_output:"1f938-1f3fc-200d-2640-fe0f",uc_match:"1f938-1f3fc-2640-fe0f",uc_greedy:"1f938-1f3fc-2640",shortnames:[":woman_cartwheeling_medium_light_skin_tone:"],category:"activity"},":woman_cartwheeling_tone3:":{uc_base:"1f938-1f3fd-2640",uc_output:"1f938-1f3fd-200d-2640-fe0f",uc_match:"1f938-1f3fd-2640-fe0f",uc_greedy:"1f938-1f3fd-2640",shortnames:[":woman_cartwheeling_medium_skin_tone:"],category:"activity"},":woman_cartwheeling_tone4:":{uc_base:"1f938-1f3fe-2640",uc_output:"1f938-1f3fe-200d-2640-fe0f",uc_match:"1f938-1f3fe-2640-fe0f",uc_greedy:"1f938-1f3fe-2640",shortnames:[":woman_cartwheeling_medium_dark_skin_tone:"],category:"activity"},":woman_cartwheeling_tone5:":{uc_base:"1f938-1f3ff-2640",uc_output:"1f938-1f3ff-200d-2640-fe0f",uc_match:"1f938-1f3ff-2640-fe0f",uc_greedy:"1f938-1f3ff-2640",shortnames:[":woman_cartwheeling_dark_skin_tone:"],category:"activity"},":woman_climbing_tone1:":{uc_base:"1f9d7-1f3fb-2640",uc_output:"1f9d7-1f3fb-200d-2640-fe0f",uc_match:"1f9d7-1f3fb-2640-fe0f",uc_greedy:"1f9d7-1f3fb-2640",shortnames:[":woman_climbing_light_skin_tone:"],category:"activity"},":woman_climbing_tone2:":{uc_base:"1f9d7-1f3fc-2640",uc_output:"1f9d7-1f3fc-200d-2640-fe0f",uc_match:"1f9d7-1f3fc-2640-fe0f",uc_greedy:"1f9d7-1f3fc-2640",shortnames:[":woman_climbing_medium_light_skin_tone:"],category:"activity"},":woman_climbing_tone3:":{uc_base:"1f9d7-1f3fd-2640",uc_output:"1f9d7-1f3fd-200d-2640-fe0f",uc_match:"1f9d7-1f3fd-2640-fe0f",uc_greedy:"1f9d7-1f3fd-2640",shortnames:[":woman_climbing_medium_skin_tone:"],category:"activity"},":woman_climbing_tone4:":{uc_base:"1f9d7-1f3fe-2640",uc_output:"1f9d7-1f3fe-200d-2640-fe0f",uc_match:"1f9d7-1f3fe-2640-fe0f",uc_greedy:"1f9d7-1f3fe-2640",shortnames:[":woman_climbing_medium_dark_skin_tone:"],category:"activity"},":woman_climbing_tone5:":{uc_base:"1f9d7-1f3ff-2640",uc_output:"1f9d7-1f3ff-200d-2640-fe0f",uc_match:"1f9d7-1f3ff-2640-fe0f",uc_greedy:"1f9d7-1f3ff-2640",shortnames:[":woman_climbing_dark_skin_tone:"],category:"activity"},":woman_construction_worker_tone1:":{uc_base:"1f477-1f3fb-2640",uc_output:"1f477-1f3fb-200d-2640-fe0f",uc_match:"1f477-1f3fb-2640-fe0f",uc_greedy:"1f477-1f3fb-2640",shortnames:[":woman_construction_worker_light_skin_tone:"],category:"people"},":woman_construction_worker_tone2:":{uc_base:"1f477-1f3fc-2640",uc_output:"1f477-1f3fc-200d-2640-fe0f",uc_match:"1f477-1f3fc-2640-fe0f",uc_greedy:"1f477-1f3fc-2640",shortnames:[":woman_construction_worker_medium_light_skin_tone:"],category:"people"},":woman_construction_worker_tone3:":{uc_base:"1f477-1f3fd-2640",uc_output:"1f477-1f3fd-200d-2640-fe0f",uc_match:"1f477-1f3fd-2640-fe0f",uc_greedy:"1f477-1f3fd-2640",shortnames:[":woman_construction_worker_medium_skin_tone:"],category:"people"},":woman_construction_worker_tone4:":{uc_base:"1f477-1f3fe-2640",uc_output:"1f477-1f3fe-200d-2640-fe0f",uc_match:"1f477-1f3fe-2640-fe0f",uc_greedy:"1f477-1f3fe-2640",shortnames:[":woman_construction_worker_medium_dark_skin_tone:"],category:"people"},":woman_construction_worker_tone5:":{uc_base:"1f477-1f3ff-2640",uc_output:"1f477-1f3ff-200d-2640-fe0f",uc_match:"1f477-1f3ff-2640-fe0f",uc_greedy:"1f477-1f3ff-2640",shortnames:[":woman_construction_worker_dark_skin_tone:"],category:"people"},":woman_detective_tone1:":{uc_base:"1f575-1f3fb-2640",uc_output:"1f575-1f3fb-200d-2640-fe0f",uc_match:"1f575-fe0f-1f3fb-2640-fe0f",uc_greedy:"1f575-1f3fb-2640",shortnames:[":woman_detective_light_skin_tone:"],category:"people"},":woman_detective_tone2:":{uc_base:"1f575-1f3fc-2640",uc_output:"1f575-1f3fc-200d-2640-fe0f",uc_match:"1f575-fe0f-1f3fc-2640-fe0f",uc_greedy:"1f575-1f3fc-2640",shortnames:[":woman_detective_medium_light_skin_tone:"],category:"people"},":woman_detective_tone3:":{uc_base:"1f575-1f3fd-2640",uc_output:"1f575-1f3fd-200d-2640-fe0f",uc_match:"1f575-fe0f-1f3fd-2640-fe0f",uc_greedy:"1f575-1f3fd-2640",shortnames:[":woman_detective_medium_skin_tone:"],category:"people"},":woman_detective_tone4:":{uc_base:"1f575-1f3fe-2640",uc_output:"1f575-1f3fe-200d-2640-fe0f",uc_match:"1f575-fe0f-1f3fe-2640-fe0f",uc_greedy:"1f575-1f3fe-2640",shortnames:[":woman_detective_medium_dark_skin_tone:"],category:"people"},":woman_detective_tone5:":{uc_base:"1f575-1f3ff-2640",uc_output:"1f575-1f3ff-200d-2640-fe0f",uc_match:"1f575-fe0f-1f3ff-2640-fe0f",uc_greedy:"1f575-1f3ff-2640",shortnames:[":woman_detective_dark_skin_tone:"],category:"people"},":woman_elf_tone1:":{uc_base:"1f9dd-1f3fb-2640",uc_output:"1f9dd-1f3fb-200d-2640-fe0f",uc_match:"1f9dd-1f3fb-2640-fe0f",uc_greedy:"1f9dd-1f3fb-2640",shortnames:[":woman_elf_light_skin_tone:"],category:"people"},":woman_elf_tone2:":{uc_base:"1f9dd-1f3fc-2640",uc_output:"1f9dd-1f3fc-200d-2640-fe0f",uc_match:"1f9dd-1f3fc-2640-fe0f",uc_greedy:"1f9dd-1f3fc-2640",shortnames:[":woman_elf_medium_light_skin_tone:"],category:"people"},":woman_elf_tone3:":{uc_base:"1f9dd-1f3fd-2640",uc_output:"1f9dd-1f3fd-200d-2640-fe0f",uc_match:"1f9dd-1f3fd-2640-fe0f",uc_greedy:"1f9dd-1f3fd-2640",shortnames:[":woman_elf_medium_skin_tone:"],category:"people"},":woman_elf_tone4:":{uc_base:"1f9dd-1f3fe-2640",uc_output:"1f9dd-1f3fe-200d-2640-fe0f",uc_match:"1f9dd-1f3fe-2640-fe0f",uc_greedy:"1f9dd-1f3fe-2640",shortnames:[":woman_elf_medium_dark_skin_tone:"],category:"people"},":woman_elf_tone5:":{uc_base:"1f9dd-1f3ff-2640",uc_output:"1f9dd-1f3ff-200d-2640-fe0f",uc_match:"1f9dd-1f3ff-2640-fe0f",uc_greedy:"1f9dd-1f3ff-2640",shortnames:[":woman_elf_dark_skin_tone:"],category:"people"},":woman_facepalming_tone1:":{uc_base:"1f926-1f3fb-2640",uc_output:"1f926-1f3fb-200d-2640-fe0f",uc_match:"1f926-1f3fb-2640-fe0f",uc_greedy:"1f926-1f3fb-2640",shortnames:[":woman_facepalming_light_skin_tone:"],category:"people"},":woman_facepalming_tone2:":{uc_base:"1f926-1f3fc-2640",uc_output:"1f926-1f3fc-200d-2640-fe0f",uc_match:"1f926-1f3fc-2640-fe0f",uc_greedy:"1f926-1f3fc-2640",shortnames:[":woman_facepalming_medium_light_skin_tone:"],category:"people"},":woman_facepalming_tone3:":{uc_base:"1f926-1f3fd-2640",uc_output:"1f926-1f3fd-200d-2640-fe0f",uc_match:"1f926-1f3fd-2640-fe0f",uc_greedy:"1f926-1f3fd-2640",shortnames:[":woman_facepalming_medium_skin_tone:"],category:"people"},":woman_facepalming_tone4:":{uc_base:"1f926-1f3fe-2640",uc_output:"1f926-1f3fe-200d-2640-fe0f",uc_match:"1f926-1f3fe-2640-fe0f",uc_greedy:"1f926-1f3fe-2640",shortnames:[":woman_facepalming_medium_dark_skin_tone:"],category:"people"},":woman_facepalming_tone5:":{uc_base:"1f926-1f3ff-2640",uc_output:"1f926-1f3ff-200d-2640-fe0f",uc_match:"1f926-1f3ff-2640-fe0f",uc_greedy:"1f926-1f3ff-2640",shortnames:[":woman_facepalming_dark_skin_tone:"],category:"people"},":woman_fairy_tone1:":{uc_base:"1f9da-1f3fb-2640",uc_output:"1f9da-1f3fb-200d-2640-fe0f",uc_match:"1f9da-1f3fb-2640-fe0f",uc_greedy:"1f9da-1f3fb-2640",shortnames:[":woman_fairy_light_skin_tone:"],category:"people"},":woman_fairy_tone2:":{uc_base:"1f9da-1f3fc-2640",uc_output:"1f9da-1f3fc-200d-2640-fe0f",uc_match:"1f9da-1f3fc-2640-fe0f",uc_greedy:"1f9da-1f3fc-2640",shortnames:[":woman_fairy_medium_light_skin_tone:"],category:"people"},":woman_fairy_tone3:":{uc_base:"1f9da-1f3fd-2640",uc_output:"1f9da-1f3fd-200d-2640-fe0f",uc_match:"1f9da-1f3fd-2640-fe0f",uc_greedy:"1f9da-1f3fd-2640",shortnames:[":woman_fairy_medium_skin_tone:"],category:"people"},":woman_fairy_tone4:":{uc_base:"1f9da-1f3fe-2640",uc_output:"1f9da-1f3fe-200d-2640-fe0f",uc_match:"1f9da-1f3fe-2640-fe0f",uc_greedy:"1f9da-1f3fe-2640",shortnames:[":woman_fairy_medium_dark_skin_tone:"],category:"people"},":woman_fairy_tone5:":{uc_base:"1f9da-1f3ff-2640",uc_output:"1f9da-1f3ff-200d-2640-fe0f",uc_match:"1f9da-1f3ff-2640-fe0f",uc_greedy:"1f9da-1f3ff-2640",shortnames:[":woman_fairy_dark_skin_tone:"],category:"people"},":woman_frowning_tone1:":{uc_base:"1f64d-1f3fb-2640",uc_output:"1f64d-1f3fb-200d-2640-fe0f",uc_match:"1f64d-1f3fb-2640-fe0f",uc_greedy:"1f64d-1f3fb-2640",shortnames:[":woman_frowning_light_skin_tone:"],category:"people"},":woman_frowning_tone2:":{uc_base:"1f64d-1f3fc-2640",uc_output:"1f64d-1f3fc-200d-2640-fe0f",uc_match:"1f64d-1f3fc-2640-fe0f",uc_greedy:"1f64d-1f3fc-2640",shortnames:[":woman_frowning_medium_light_skin_tone:"],category:"people"},":woman_frowning_tone3:":{uc_base:"1f64d-1f3fd-2640",uc_output:"1f64d-1f3fd-200d-2640-fe0f",uc_match:"1f64d-1f3fd-2640-fe0f",uc_greedy:"1f64d-1f3fd-2640",shortnames:[":woman_frowning_medium_skin_tone:"],category:"people"},":woman_frowning_tone4:":{uc_base:"1f64d-1f3fe-2640",uc_output:"1f64d-1f3fe-200d-2640-fe0f",uc_match:"1f64d-1f3fe-2640-fe0f",uc_greedy:"1f64d-1f3fe-2640",shortnames:[":woman_frowning_medium_dark_skin_tone:"],category:"people"},":woman_frowning_tone5:":{uc_base:"1f64d-1f3ff-2640",uc_output:"1f64d-1f3ff-200d-2640-fe0f",uc_match:"1f64d-1f3ff-2640-fe0f",uc_greedy:"1f64d-1f3ff-2640",shortnames:[":woman_frowning_dark_skin_tone:"],category:"people"},":woman_gesturing_no_tone1:":{uc_base:"1f645-1f3fb-2640",uc_output:"1f645-1f3fb-200d-2640-fe0f",uc_match:"1f645-1f3fb-2640-fe0f",uc_greedy:"1f645-1f3fb-2640",shortnames:[":woman_gesturing_no_light_skin_tone:"],category:"people"},":woman_gesturing_no_tone2:":{uc_base:"1f645-1f3fc-2640",uc_output:"1f645-1f3fc-200d-2640-fe0f",uc_match:"1f645-1f3fc-2640-fe0f",uc_greedy:"1f645-1f3fc-2640",shortnames:[":woman_gesturing_no_medium_light_skin_tone:"],category:"people"},":woman_gesturing_no_tone3:":{uc_base:"1f645-1f3fd-2640",uc_output:"1f645-1f3fd-200d-2640-fe0f",uc_match:"1f645-1f3fd-2640-fe0f",uc_greedy:"1f645-1f3fd-2640",shortnames:[":woman_gesturing_no_medium_skin_tone:"],category:"people"},":woman_gesturing_no_tone4:":{uc_base:"1f645-1f3fe-2640",uc_output:"1f645-1f3fe-200d-2640-fe0f",uc_match:"1f645-1f3fe-2640-fe0f",uc_greedy:"1f645-1f3fe-2640",shortnames:[":woman_gesturing_no_medium_dark_skin_tone:"],category:"people"},":woman_gesturing_no_tone5:":{uc_base:"1f645-1f3ff-2640",uc_output:"1f645-1f3ff-200d-2640-fe0f",uc_match:"1f645-1f3ff-2640-fe0f",uc_greedy:"1f645-1f3ff-2640",shortnames:[":woman_gesturing_no_dark_skin_tone:"],category:"people"},":woman_gesturing_ok_tone1:":{uc_base:"1f646-1f3fb-2640",uc_output:"1f646-1f3fb-200d-2640-fe0f",uc_match:"1f646-1f3fb-2640-fe0f",uc_greedy:"1f646-1f3fb-2640",shortnames:[":woman_gesturing_ok_light_skin_tone:"],category:"people"},":woman_gesturing_ok_tone2:":{uc_base:"1f646-1f3fc-2640",uc_output:"1f646-1f3fc-200d-2640-fe0f",uc_match:"1f646-1f3fc-2640-fe0f",uc_greedy:"1f646-1f3fc-2640",shortnames:[":woman_gesturing_ok_medium_light_skin_tone:"],category:"people"},":woman_gesturing_ok_tone3:":{uc_base:"1f646-1f3fd-2640",uc_output:"1f646-1f3fd-200d-2640-fe0f",uc_match:"1f646-1f3fd-2640-fe0f",uc_greedy:"1f646-1f3fd-2640",shortnames:[":woman_gesturing_ok_medium_skin_tone:"],category:"people"},":woman_gesturing_ok_tone4:":{uc_base:"1f646-1f3fe-2640",uc_output:"1f646-1f3fe-200d-2640-fe0f",uc_match:"1f646-1f3fe-2640-fe0f",uc_greedy:"1f646-1f3fe-2640",shortnames:[":woman_gesturing_ok_medium_dark_skin_tone:"],category:"people"},":woman_gesturing_ok_tone5:":{uc_base:"1f646-1f3ff-2640",uc_output:"1f646-1f3ff-200d-2640-fe0f",uc_match:"1f646-1f3ff-2640-fe0f",uc_greedy:"1f646-1f3ff-2640",shortnames:[":woman_gesturing_ok_dark_skin_tone:"],category:"people"},":woman_getting_face_massage_tone1:":{uc_base:"1f486-1f3fb-2640",uc_output:"1f486-1f3fb-200d-2640-fe0f",uc_match:"1f486-1f3fb-2640-fe0f",uc_greedy:"1f486-1f3fb-2640",shortnames:[":woman_getting_face_massage_light_skin_tone:"],category:"people"},":woman_getting_face_massage_tone2:":{uc_base:"1f486-1f3fc-2640",uc_output:"1f486-1f3fc-200d-2640-fe0f",uc_match:"1f486-1f3fc-2640-fe0f",uc_greedy:"1f486-1f3fc-2640",shortnames:[":woman_getting_face_massage_medium_light_skin_tone:"],category:"people"},":woman_getting_face_massage_tone3:":{uc_base:"1f486-1f3fd-2640",uc_output:"1f486-1f3fd-200d-2640-fe0f",uc_match:"1f486-1f3fd-2640-fe0f",uc_greedy:"1f486-1f3fd-2640",shortnames:[":woman_getting_face_massage_medium_skin_tone:"],category:"people"},":woman_getting_face_massage_tone4:":{uc_base:"1f486-1f3fe-2640",uc_output:"1f486-1f3fe-200d-2640-fe0f",uc_match:"1f486-1f3fe-2640-fe0f",uc_greedy:"1f486-1f3fe-2640",shortnames:[":woman_getting_face_massage_medium_dark_skin_tone:"],category:"people"},":woman_getting_face_massage_tone5:":{uc_base:"1f486-1f3ff-2640",uc_output:"1f486-1f3ff-200d-2640-fe0f",uc_match:"1f486-1f3ff-2640-fe0f",uc_greedy:"1f486-1f3ff-2640",shortnames:[":woman_getting_face_massage_dark_skin_tone:"],category:"people"},":woman_getting_haircut_tone1:":{uc_base:"1f487-1f3fb-2640",uc_output:"1f487-1f3fb-200d-2640-fe0f",uc_match:"1f487-1f3fb-2640-fe0f",uc_greedy:"1f487-1f3fb-2640",shortnames:[":woman_getting_haircut_light_skin_tone:"],category:"people"},":woman_getting_haircut_tone2:":{uc_base:"1f487-1f3fc-2640",uc_output:"1f487-1f3fc-200d-2640-fe0f",uc_match:"1f487-1f3fc-2640-fe0f",uc_greedy:"1f487-1f3fc-2640",shortnames:[":woman_getting_haircut_medium_light_skin_tone:"],category:"people"},":woman_getting_haircut_tone3:":{uc_base:"1f487-1f3fd-2640",uc_output:"1f487-1f3fd-200d-2640-fe0f",uc_match:"1f487-1f3fd-2640-fe0f",uc_greedy:"1f487-1f3fd-2640",shortnames:[":woman_getting_haircut_medium_skin_tone:"],category:"people"},":woman_getting_haircut_tone4:":{uc_base:"1f487-1f3fe-2640",uc_output:"1f487-1f3fe-200d-2640-fe0f",uc_match:"1f487-1f3fe-2640-fe0f",uc_greedy:"1f487-1f3fe-2640",shortnames:[":woman_getting_haircut_medium_dark_skin_tone:"],category:"people"},":woman_getting_haircut_tone5:":{uc_base:"1f487-1f3ff-2640",uc_output:"1f487-1f3ff-200d-2640-fe0f",uc_match:"1f487-1f3ff-2640-fe0f",uc_greedy:"1f487-1f3ff-2640",shortnames:[":woman_getting_haircut_dark_skin_tone:"],category:"people"},":woman_golfing_tone1:":{uc_base:"1f3cc-1f3fb-2640",uc_output:"1f3cc-1f3fb-200d-2640-fe0f",uc_match:"1f3cc-fe0f-1f3fb-2640-fe0f",uc_greedy:"1f3cc-1f3fb-2640",shortnames:[":woman_golfing_light_skin_tone:"],category:"activity"},":woman_golfing_tone2:":{uc_base:"1f3cc-1f3fc-2640",uc_output:"1f3cc-1f3fc-200d-2640-fe0f",uc_match:"1f3cc-fe0f-1f3fc-2640-fe0f",uc_greedy:"1f3cc-1f3fc-2640",shortnames:[":woman_golfing_medium_light_skin_tone:"],category:"activity"},":woman_golfing_tone3:":{uc_base:"1f3cc-1f3fd-2640",uc_output:"1f3cc-1f3fd-200d-2640-fe0f",uc_match:"1f3cc-fe0f-1f3fd-2640-fe0f",uc_greedy:"1f3cc-1f3fd-2640",shortnames:[":woman_golfing_medium_skin_tone:"],category:"activity"},":woman_golfing_tone4:":{uc_base:"1f3cc-1f3fe-2640",uc_output:"1f3cc-1f3fe-200d-2640-fe0f",uc_match:"1f3cc-fe0f-1f3fe-2640-fe0f",uc_greedy:"1f3cc-1f3fe-2640",shortnames:[":woman_golfing_medium_dark_skin_tone:"],category:"activity"},":woman_golfing_tone5:":{uc_base:"1f3cc-1f3ff-2640",uc_output:"1f3cc-1f3ff-200d-2640-fe0f",uc_match:"1f3cc-fe0f-1f3ff-2640-fe0f",uc_greedy:"1f3cc-1f3ff-2640",shortnames:[":woman_golfing_dark_skin_tone:"],category:"activity"},":woman_guard_tone1:":{uc_base:"1f482-1f3fb-2640",uc_output:"1f482-1f3fb-200d-2640-fe0f",uc_match:"1f482-1f3fb-2640-fe0f",uc_greedy:"1f482-1f3fb-2640",shortnames:[":woman_guard_light_skin_tone:"],category:"people"},":woman_guard_tone2:":{uc_base:"1f482-1f3fc-2640",uc_output:"1f482-1f3fc-200d-2640-fe0f",uc_match:"1f482-1f3fc-2640-fe0f",uc_greedy:"1f482-1f3fc-2640",shortnames:[":woman_guard_medium_light_skin_tone:"],category:"people"},":woman_guard_tone3:":{uc_base:"1f482-1f3fd-2640",uc_output:"1f482-1f3fd-200d-2640-fe0f",uc_match:"1f482-1f3fd-2640-fe0f",uc_greedy:"1f482-1f3fd-2640",shortnames:[":woman_guard_medium_skin_tone:"],category:"people"},":woman_guard_tone4:":{uc_base:"1f482-1f3fe-2640",uc_output:"1f482-1f3fe-200d-2640-fe0f",uc_match:"1f482-1f3fe-2640-fe0f",uc_greedy:"1f482-1f3fe-2640",shortnames:[":woman_guard_medium_dark_skin_tone:"],category:"people"},":woman_guard_tone5:":{uc_base:"1f482-1f3ff-2640",uc_output:"1f482-1f3ff-200d-2640-fe0f",uc_match:"1f482-1f3ff-2640-fe0f",uc_greedy:"1f482-1f3ff-2640",shortnames:[":woman_guard_dark_skin_tone:"],category:"people"},":woman_health_worker_tone1:":{uc_base:"1f469-1f3fb-2695",uc_output:"1f469-1f3fb-200d-2695-fe0f",uc_match:"1f469-1f3fb-2695-fe0f",uc_greedy:"1f469-1f3fb-2695",shortnames:[":woman_health_worker_light_skin_tone:"],category:"people"},":woman_health_worker_tone2:":{uc_base:"1f469-1f3fc-2695",uc_output:"1f469-1f3fc-200d-2695-fe0f",uc_match:"1f469-1f3fc-2695-fe0f",uc_greedy:"1f469-1f3fc-2695",shortnames:[":woman_health_worker_medium_light_skin_tone:"],category:"people"},":woman_health_worker_tone3:":{uc_base:"1f469-1f3fd-2695",uc_output:"1f469-1f3fd-200d-2695-fe0f",uc_match:"1f469-1f3fd-2695-fe0f",uc_greedy:"1f469-1f3fd-2695",shortnames:[":woman_health_worker_medium_skin_tone:"],category:"people"},":woman_health_worker_tone4:":{uc_base:"1f469-1f3fe-2695",uc_output:"1f469-1f3fe-200d-2695-fe0f",uc_match:"1f469-1f3fe-2695-fe0f",uc_greedy:"1f469-1f3fe-2695",shortnames:[":woman_health_worker_medium_dark_skin_tone:"],category:"people"},":woman_health_worker_tone5:":{uc_base:"1f469-1f3ff-2695",uc_output:"1f469-1f3ff-200d-2695-fe0f",uc_match:"1f469-1f3ff-2695-fe0f",uc_greedy:"1f469-1f3ff-2695",shortnames:[":woman_health_worker_dark_skin_tone:"],category:"people"},":woman_in_lotus_position_tone1:":{uc_base:"1f9d8-1f3fb-2640",uc_output:"1f9d8-1f3fb-200d-2640-fe0f",uc_match:"1f9d8-1f3fb-2640-fe0f",uc_greedy:"1f9d8-1f3fb-2640",shortnames:[":woman_in_lotus_position_light_skin_tone:"],category:"activity"},":woman_in_lotus_position_tone2:":{uc_base:"1f9d8-1f3fc-2640",uc_output:"1f9d8-1f3fc-200d-2640-fe0f",uc_match:"1f9d8-1f3fc-2640-fe0f",uc_greedy:"1f9d8-1f3fc-2640",shortnames:[":woman_in_lotus_position_medium_light_skin_tone:"],category:"activity"},":woman_in_lotus_position_tone3:":{uc_base:"1f9d8-1f3fd-2640",uc_output:"1f9d8-1f3fd-200d-2640-fe0f",uc_match:"1f9d8-1f3fd-2640-fe0f",uc_greedy:"1f9d8-1f3fd-2640",shortnames:[":woman_in_lotus_position_medium_skin_tone:"],category:"activity"},":woman_in_lotus_position_tone4:":{uc_base:"1f9d8-1f3fe-2640",uc_output:"1f9d8-1f3fe-200d-2640-fe0f",uc_match:"1f9d8-1f3fe-2640-fe0f",uc_greedy:"1f9d8-1f3fe-2640",shortnames:[":woman_in_lotus_position_medium_dark_skin_tone:"],category:"activity"},":woman_in_lotus_position_tone5:":{uc_base:"1f9d8-1f3ff-2640",uc_output:"1f9d8-1f3ff-200d-2640-fe0f",uc_match:"1f9d8-1f3ff-2640-fe0f",uc_greedy:"1f9d8-1f3ff-2640",shortnames:[":woman_in_lotus_position_dark_skin_tone:"],category:"activity"},":woman_in_steamy_room_tone1:":{uc_base:"1f9d6-1f3fb-2640",uc_output:"1f9d6-1f3fb-200d-2640-fe0f",uc_match:"1f9d6-1f3fb-2640-fe0f",uc_greedy:"1f9d6-1f3fb-2640",shortnames:[":woman_in_steamy_room_light_skin_tone:"],category:"people"},":woman_in_steamy_room_tone2:":{uc_base:"1f9d6-1f3fc-2640",uc_output:"1f9d6-1f3fc-200d-2640-fe0f",uc_match:"1f9d6-1f3fc-2640-fe0f",uc_greedy:"1f9d6-1f3fc-2640",shortnames:[":woman_in_steamy_room_medium_light_skin_tone:"],category:"people"},":woman_in_steamy_room_tone3:":{uc_base:"1f9d6-1f3fd-2640",uc_output:"1f9d6-1f3fd-200d-2640-fe0f",uc_match:"1f9d6-1f3fd-2640-fe0f",uc_greedy:"1f9d6-1f3fd-2640",shortnames:[":woman_in_steamy_room_medium_skin_tone:"],category:"people"},":woman_in_steamy_room_tone4:":{uc_base:"1f9d6-1f3fe-2640",uc_output:"1f9d6-1f3fe-200d-2640-fe0f",uc_match:"1f9d6-1f3fe-2640-fe0f",uc_greedy:"1f9d6-1f3fe-2640",shortnames:[":woman_in_steamy_room_medium_dark_skin_tone:"],category:"people"},":woman_in_steamy_room_tone5:":{uc_base:"1f9d6-1f3ff-2640",uc_output:"1f9d6-1f3ff-200d-2640-fe0f",uc_match:"1f9d6-1f3ff-2640-fe0f",uc_greedy:"1f9d6-1f3ff-2640",shortnames:[":woman_in_steamy_room_dark_skin_tone:"],category:"people"},":woman_judge_tone1:":{uc_base:"1f469-1f3fb-2696",uc_output:"1f469-1f3fb-200d-2696-fe0f",uc_match:"1f469-1f3fb-2696-fe0f",uc_greedy:"1f469-1f3fb-2696",shortnames:[":woman_judge_light_skin_tone:"],category:"people"},":woman_judge_tone2:":{uc_base:"1f469-1f3fc-2696",uc_output:"1f469-1f3fc-200d-2696-fe0f",uc_match:"1f469-1f3fc-2696-fe0f",uc_greedy:"1f469-1f3fc-2696",shortnames:[":woman_judge_medium_light_skin_tone:"],category:"people"},":woman_judge_tone3:":{uc_base:"1f469-1f3fd-2696",uc_output:"1f469-1f3fd-200d-2696-fe0f",uc_match:"1f469-1f3fd-2696-fe0f",uc_greedy:"1f469-1f3fd-2696",shortnames:[":woman_judge_medium_skin_tone:"],category:"people"},":woman_judge_tone4:":{uc_base:"1f469-1f3fe-2696",uc_output:"1f469-1f3fe-200d-2696-fe0f",uc_match:"1f469-1f3fe-2696-fe0f",uc_greedy:"1f469-1f3fe-2696",shortnames:[":woman_judge_medium_dark_skin_tone:"],category:"people"},":woman_judge_tone5:":{uc_base:"1f469-1f3ff-2696",uc_output:"1f469-1f3ff-200d-2696-fe0f",uc_match:"1f469-1f3ff-2696-fe0f",uc_greedy:"1f469-1f3ff-2696",shortnames:[":woman_judge_dark_skin_tone:"],category:"people"},":woman_juggling_tone1:":{uc_base:"1f939-1f3fb-2640",uc_output:"1f939-1f3fb-200d-2640-fe0f",uc_match:"1f939-1f3fb-2640-fe0f",uc_greedy:"1f939-1f3fb-2640",shortnames:[":woman_juggling_light_skin_tone:"],category:"activity"},":woman_juggling_tone2:":{uc_base:"1f939-1f3fc-2640",uc_output:"1f939-1f3fc-200d-2640-fe0f",uc_match:"1f939-1f3fc-2640-fe0f",uc_greedy:"1f939-1f3fc-2640",shortnames:[":woman_juggling_medium_light_skin_tone:"],category:"activity"},":woman_juggling_tone3:":{uc_base:"1f939-1f3fd-2640",uc_output:"1f939-1f3fd-200d-2640-fe0f",uc_match:"1f939-1f3fd-2640-fe0f",uc_greedy:"1f939-1f3fd-2640",shortnames:[":woman_juggling_medium_skin_tone:"],category:"activity"},":woman_juggling_tone4:":{uc_base:"1f939-1f3fe-2640",uc_output:"1f939-1f3fe-200d-2640-fe0f",uc_match:"1f939-1f3fe-2640-fe0f",uc_greedy:"1f939-1f3fe-2640",shortnames:[":woman_juggling_medium_dark_skin_tone:"],category:"activity"},":woman_juggling_tone5:":{uc_base:"1f939-1f3ff-2640",uc_output:"1f939-1f3ff-200d-2640-fe0f",uc_match:"1f939-1f3ff-2640-fe0f",uc_greedy:"1f939-1f3ff-2640",shortnames:[":woman_juggling_dark_skin_tone:"],category:"activity"},":woman_lifting_weights_tone1:":{uc_base:"1f3cb-1f3fb-2640",uc_output:"1f3cb-1f3fb-200d-2640-fe0f",uc_match:"1f3cb-fe0f-1f3fb-2640-fe0f",uc_greedy:"1f3cb-1f3fb-2640",shortnames:[":woman_lifting_weights_light_skin_tone:"],category:"activity"},":woman_lifting_weights_tone2:":{uc_base:"1f3cb-1f3fc-2640",uc_output:"1f3cb-1f3fc-200d-2640-fe0f",uc_match:"1f3cb-fe0f-1f3fc-2640-fe0f",uc_greedy:"1f3cb-1f3fc-2640",shortnames:[":woman_lifting_weights_medium_light_skin_tone:"],category:"activity"},":woman_lifting_weights_tone3:":{uc_base:"1f3cb-1f3fd-2640",uc_output:"1f3cb-1f3fd-200d-2640-fe0f",uc_match:"1f3cb-fe0f-1f3fd-2640-fe0f",uc_greedy:"1f3cb-1f3fd-2640",shortnames:[":woman_lifting_weights_medium_skin_tone:"],category:"activity"},":woman_lifting_weights_tone4:":{uc_base:"1f3cb-1f3fe-2640",uc_output:"1f3cb-1f3fe-200d-2640-fe0f",uc_match:"1f3cb-fe0f-1f3fe-2640-fe0f",uc_greedy:"1f3cb-1f3fe-2640",shortnames:[":woman_lifting_weights_medium_dark_skin_tone:"],category:"activity"},":woman_lifting_weights_tone5:":{uc_base:"1f3cb-1f3ff-2640",uc_output:"1f3cb-1f3ff-200d-2640-fe0f",uc_match:"1f3cb-fe0f-1f3ff-2640-fe0f",uc_greedy:"1f3cb-1f3ff-2640",shortnames:[":woman_lifting_weights_dark_skin_tone:"],category:"activity"},":woman_mage_tone1:":{uc_base:"1f9d9-1f3fb-2640",uc_output:"1f9d9-1f3fb-200d-2640-fe0f",uc_match:"1f9d9-1f3fb-2640-fe0f",uc_greedy:"1f9d9-1f3fb-2640",shortnames:[":woman_mage_light_skin_tone:"],category:"people"},":woman_mage_tone2:":{uc_base:"1f9d9-1f3fc-2640",uc_output:"1f9d9-1f3fc-200d-2640-fe0f",uc_match:"1f9d9-1f3fc-2640-fe0f",uc_greedy:"1f9d9-1f3fc-2640",shortnames:[":woman_mage_medium_light_skin_tone:"],category:"people"},":woman_mage_tone3:":{uc_base:"1f9d9-1f3fd-2640",uc_output:"1f9d9-1f3fd-200d-2640-fe0f",uc_match:"1f9d9-1f3fd-2640-fe0f",uc_greedy:"1f9d9-1f3fd-2640",shortnames:[":woman_mage_medium_skin_tone:"],category:"people"},":woman_mage_tone4:":{uc_base:"1f9d9-1f3fe-2640",uc_output:"1f9d9-1f3fe-200d-2640-fe0f",uc_match:"1f9d9-1f3fe-2640-fe0f",uc_greedy:"1f9d9-1f3fe-2640",shortnames:[":woman_mage_medium_dark_skin_tone:"],category:"people"},":woman_mage_tone5:":{uc_base:"1f9d9-1f3ff-2640",uc_output:"1f9d9-1f3ff-200d-2640-fe0f",uc_match:"1f9d9-1f3ff-2640-fe0f",uc_greedy:"1f9d9-1f3ff-2640",shortnames:[":woman_mage_dark_skin_tone:"],category:"people"},":woman_mountain_biking_tone1:":{uc_base:"1f6b5-1f3fb-2640",uc_output:"1f6b5-1f3fb-200d-2640-fe0f",uc_match:"1f6b5-1f3fb-2640-fe0f",uc_greedy:"1f6b5-1f3fb-2640",shortnames:[":woman_mountain_biking_light_skin_tone:"],category:"activity"},":woman_mountain_biking_tone2:":{uc_base:"1f6b5-1f3fc-2640",uc_output:"1f6b5-1f3fc-200d-2640-fe0f",uc_match:"1f6b5-1f3fc-2640-fe0f",uc_greedy:"1f6b5-1f3fc-2640",shortnames:[":woman_mountain_biking_medium_light_skin_tone:"],category:"activity"},":woman_mountain_biking_tone3:":{uc_base:"1f6b5-1f3fd-2640",uc_output:"1f6b5-1f3fd-200d-2640-fe0f",uc_match:"1f6b5-1f3fd-2640-fe0f",uc_greedy:"1f6b5-1f3fd-2640",shortnames:[":woman_mountain_biking_medium_skin_tone:"],category:"activity"},":woman_mountain_biking_tone4:":{uc_base:"1f6b5-1f3fe-2640",uc_output:"1f6b5-1f3fe-200d-2640-fe0f",uc_match:"1f6b5-1f3fe-2640-fe0f",uc_greedy:"1f6b5-1f3fe-2640",shortnames:[":woman_mountain_biking_medium_dark_skin_tone:"],category:"activity"},":woman_mountain_biking_tone5:":{uc_base:"1f6b5-1f3ff-2640",uc_output:"1f6b5-1f3ff-200d-2640-fe0f",uc_match:"1f6b5-1f3ff-2640-fe0f",uc_greedy:"1f6b5-1f3ff-2640",shortnames:[":woman_mountain_biking_dark_skin_tone:"],category:"activity"},":woman_pilot_tone1:":{uc_base:"1f469-1f3fb-2708",uc_output:"1f469-1f3fb-200d-2708-fe0f",uc_match:"1f469-1f3fb-2708-fe0f",uc_greedy:"1f469-1f3fb-2708",shortnames:[":woman_pilot_light_skin_tone:"],category:"people"},":woman_pilot_tone2:":{uc_base:"1f469-1f3fc-2708",uc_output:"1f469-1f3fc-200d-2708-fe0f",uc_match:"1f469-1f3fc-2708-fe0f",uc_greedy:"1f469-1f3fc-2708",shortnames:[":woman_pilot_medium_light_skin_tone:"],category:"people"},":woman_pilot_tone3:":{uc_base:"1f469-1f3fd-2708",uc_output:"1f469-1f3fd-200d-2708-fe0f",uc_match:"1f469-1f3fd-2708-fe0f",uc_greedy:"1f469-1f3fd-2708",shortnames:[":woman_pilot_medium_skin_tone:"],category:"people"},":woman_pilot_tone4:":{uc_base:"1f469-1f3fe-2708",uc_output:"1f469-1f3fe-200d-2708-fe0f",uc_match:"1f469-1f3fe-2708-fe0f",uc_greedy:"1f469-1f3fe-2708",shortnames:[":woman_pilot_medium_dark_skin_tone:"],category:"people"},":woman_pilot_tone5:":{uc_base:"1f469-1f3ff-2708",uc_output:"1f469-1f3ff-200d-2708-fe0f",uc_match:"1f469-1f3ff-2708-fe0f",uc_greedy:"1f469-1f3ff-2708",shortnames:[":woman_pilot_dark_skin_tone:"],category:"people"},":woman_playing_handball_tone1:":{uc_base:"1f93e-1f3fb-2640",uc_output:"1f93e-1f3fb-200d-2640-fe0f",uc_match:"1f93e-1f3fb-2640-fe0f",uc_greedy:"1f93e-1f3fb-2640",shortnames:[":woman_playing_handball_light_skin_tone:"],category:"activity"},":woman_playing_handball_tone2:":{uc_base:"1f93e-1f3fc-2640",uc_output:"1f93e-1f3fc-200d-2640-fe0f",uc_match:"1f93e-1f3fc-2640-fe0f",uc_greedy:"1f93e-1f3fc-2640",shortnames:[":woman_playing_handball_medium_light_skin_tone:"],category:"activity"},":woman_playing_handball_tone3:":{uc_base:"1f93e-1f3fd-2640",uc_output:"1f93e-1f3fd-200d-2640-fe0f",uc_match:"1f93e-1f3fd-2640-fe0f",uc_greedy:"1f93e-1f3fd-2640",shortnames:[":woman_playing_handball_medium_skin_tone:"],category:"activity"},":woman_playing_handball_tone4:":{uc_base:"1f93e-1f3fe-2640",uc_output:"1f93e-1f3fe-200d-2640-fe0f",uc_match:"1f93e-1f3fe-2640-fe0f",uc_greedy:"1f93e-1f3fe-2640",shortnames:[":woman_playing_handball_medium_dark_skin_tone:"],category:"activity"},":woman_playing_handball_tone5:":{uc_base:"1f93e-1f3ff-2640",uc_output:"1f93e-1f3ff-200d-2640-fe0f",uc_match:"1f93e-1f3ff-2640-fe0f",uc_greedy:"1f93e-1f3ff-2640",shortnames:[":woman_playing_handball_dark_skin_tone:"],category:"activity"},":woman_playing_water_polo_tone1:":{uc_base:"1f93d-1f3fb-2640",uc_output:"1f93d-1f3fb-200d-2640-fe0f",uc_match:"1f93d-1f3fb-2640-fe0f",uc_greedy:"1f93d-1f3fb-2640",shortnames:[":woman_playing_water_polo_light_skin_tone:"],category:"activity"},":woman_playing_water_polo_tone2:":{uc_base:"1f93d-1f3fc-2640",uc_output:"1f93d-1f3fc-200d-2640-fe0f",uc_match:"1f93d-1f3fc-2640-fe0f",uc_greedy:"1f93d-1f3fc-2640",shortnames:[":woman_playing_water_polo_medium_light_skin_tone:"],category:"activity"},":woman_playing_water_polo_tone3:":{uc_base:"1f93d-1f3fd-2640",uc_output:"1f93d-1f3fd-200d-2640-fe0f",uc_match:"1f93d-1f3fd-2640-fe0f",uc_greedy:"1f93d-1f3fd-2640",shortnames:[":woman_playing_water_polo_medium_skin_tone:"],category:"activity"},":woman_playing_water_polo_tone4:":{uc_base:"1f93d-1f3fe-2640",uc_output:"1f93d-1f3fe-200d-2640-fe0f",uc_match:"1f93d-1f3fe-2640-fe0f",uc_greedy:"1f93d-1f3fe-2640",shortnames:[":woman_playing_water_polo_medium_dark_skin_tone:"],category:"activity"},":woman_playing_water_polo_tone5:":{uc_base:"1f93d-1f3ff-2640",uc_output:"1f93d-1f3ff-200d-2640-fe0f",uc_match:"1f93d-1f3ff-2640-fe0f",uc_greedy:"1f93d-1f3ff-2640",shortnames:[":woman_playing_water_polo_dark_skin_tone:"],category:"activity"},":woman_police_officer_tone1:":{uc_base:"1f46e-1f3fb-2640",uc_output:"1f46e-1f3fb-200d-2640-fe0f",uc_match:"1f46e-1f3fb-2640-fe0f",uc_greedy:"1f46e-1f3fb-2640",shortnames:[":woman_police_officer_light_skin_tone:"],category:"people"},":woman_police_officer_tone2:":{uc_base:"1f46e-1f3fc-2640",uc_output:"1f46e-1f3fc-200d-2640-fe0f",uc_match:"1f46e-1f3fc-2640-fe0f",uc_greedy:"1f46e-1f3fc-2640",shortnames:[":woman_police_officer_medium_light_skin_tone:"],category:"people"},":woman_police_officer_tone3:":{uc_base:"1f46e-1f3fd-2640",uc_output:"1f46e-1f3fd-200d-2640-fe0f",uc_match:"1f46e-1f3fd-2640-fe0f",uc_greedy:"1f46e-1f3fd-2640",shortnames:[":woman_police_officer_medium_skin_tone:"],category:"people"},":woman_police_officer_tone4:":{uc_base:"1f46e-1f3fe-2640",uc_output:"1f46e-1f3fe-200d-2640-fe0f",uc_match:"1f46e-1f3fe-2640-fe0f",uc_greedy:"1f46e-1f3fe-2640",shortnames:[":woman_police_officer_medium_dark_skin_tone:"],category:"people"},":woman_police_officer_tone5:":{uc_base:"1f46e-1f3ff-2640",uc_output:"1f46e-1f3ff-200d-2640-fe0f",uc_match:"1f46e-1f3ff-2640-fe0f",uc_greedy:"1f46e-1f3ff-2640",shortnames:[":woman_police_officer_dark_skin_tone:"],category:"people"},":woman_pouting_tone1:":{uc_base:"1f64e-1f3fb-2640",uc_output:"1f64e-1f3fb-200d-2640-fe0f",uc_match:"1f64e-1f3fb-2640-fe0f",uc_greedy:"1f64e-1f3fb-2640",shortnames:[":woman_pouting_light_skin_tone:"],category:"people"},":woman_pouting_tone2:":{uc_base:"1f64e-1f3fc-2640",uc_output:"1f64e-1f3fc-200d-2640-fe0f",uc_match:"1f64e-1f3fc-2640-fe0f",uc_greedy:"1f64e-1f3fc-2640",shortnames:[":woman_pouting_medium_light_skin_tone:"],category:"people"},":woman_pouting_tone3:":{uc_base:"1f64e-1f3fd-2640",uc_output:"1f64e-1f3fd-200d-2640-fe0f",uc_match:"1f64e-1f3fd-2640-fe0f",uc_greedy:"1f64e-1f3fd-2640",shortnames:[":woman_pouting_medium_skin_tone:"],category:"people"},":woman_pouting_tone4:":{uc_base:"1f64e-1f3fe-2640",uc_output:"1f64e-1f3fe-200d-2640-fe0f",uc_match:"1f64e-1f3fe-2640-fe0f",uc_greedy:"1f64e-1f3fe-2640",shortnames:[":woman_pouting_medium_dark_skin_tone:"],category:"people"},":woman_pouting_tone5:":{uc_base:"1f64e-1f3ff-2640",uc_output:"1f64e-1f3ff-200d-2640-fe0f",uc_match:"1f64e-1f3ff-2640-fe0f",uc_greedy:"1f64e-1f3ff-2640",shortnames:[":woman_pouting_dark_skin_tone:"],category:"people"},":woman_raising_hand_tone1:":{uc_base:"1f64b-1f3fb-2640",uc_output:"1f64b-1f3fb-200d-2640-fe0f",uc_match:"1f64b-1f3fb-2640-fe0f",uc_greedy:"1f64b-1f3fb-2640",shortnames:[":woman_raising_hand_light_skin_tone:"],category:"people"},":woman_raising_hand_tone2:":{uc_base:"1f64b-1f3fc-2640",uc_output:"1f64b-1f3fc-200d-2640-fe0f",uc_match:"1f64b-1f3fc-2640-fe0f",uc_greedy:"1f64b-1f3fc-2640",shortnames:[":woman_raising_hand_medium_light_skin_tone:"],category:"people"},":woman_raising_hand_tone3:":{uc_base:"1f64b-1f3fd-2640",uc_output:"1f64b-1f3fd-200d-2640-fe0f",uc_match:"1f64b-1f3fd-2640-fe0f",uc_greedy:"1f64b-1f3fd-2640",shortnames:[":woman_raising_hand_medium_skin_tone:"],category:"people"},":woman_raising_hand_tone4:":{uc_base:"1f64b-1f3fe-2640",uc_output:"1f64b-1f3fe-200d-2640-fe0f",uc_match:"1f64b-1f3fe-2640-fe0f",uc_greedy:"1f64b-1f3fe-2640",shortnames:[":woman_raising_hand_medium_dark_skin_tone:"],category:"people"},":woman_raising_hand_tone5:":{uc_base:"1f64b-1f3ff-2640",uc_output:"1f64b-1f3ff-200d-2640-fe0f",uc_match:"1f64b-1f3ff-2640-fe0f",uc_greedy:"1f64b-1f3ff-2640",shortnames:[":woman_raising_hand_dark_skin_tone:"],category:"people"},":woman_rowing_boat_tone1:":{uc_base:"1f6a3-1f3fb-2640",uc_output:"1f6a3-1f3fb-200d-2640-fe0f",uc_match:"1f6a3-1f3fb-2640-fe0f",uc_greedy:"1f6a3-1f3fb-2640",shortnames:[":woman_rowing_boat_light_skin_tone:"],category:"activity"},":woman_rowing_boat_tone2:":{uc_base:"1f6a3-1f3fc-2640",uc_output:"1f6a3-1f3fc-200d-2640-fe0f",uc_match:"1f6a3-1f3fc-2640-fe0f",uc_greedy:"1f6a3-1f3fc-2640",shortnames:[":woman_rowing_boat_medium_light_skin_tone:"],category:"activity"},":woman_rowing_boat_tone3:":{uc_base:"1f6a3-1f3fd-2640",uc_output:"1f6a3-1f3fd-200d-2640-fe0f",uc_match:"1f6a3-1f3fd-2640-fe0f",uc_greedy:"1f6a3-1f3fd-2640",shortnames:[":woman_rowing_boat_medium_skin_tone:"],category:"activity"},":woman_rowing_boat_tone4:":{uc_base:"1f6a3-1f3fe-2640",uc_output:"1f6a3-1f3fe-200d-2640-fe0f",uc_match:"1f6a3-1f3fe-2640-fe0f",uc_greedy:"1f6a3-1f3fe-2640",shortnames:[":woman_rowing_boat_medium_dark_skin_tone:"],category:"activity"},":woman_rowing_boat_tone5:":{uc_base:"1f6a3-1f3ff-2640",uc_output:"1f6a3-1f3ff-200d-2640-fe0f",uc_match:"1f6a3-1f3ff-2640-fe0f",uc_greedy:"1f6a3-1f3ff-2640",shortnames:[":woman_rowing_boat_dark_skin_tone:"],category:"activity"},":woman_running_tone1:":{uc_base:"1f3c3-1f3fb-2640",uc_output:"1f3c3-1f3fb-200d-2640-fe0f",uc_match:"1f3c3-1f3fb-2640-fe0f",uc_greedy:"1f3c3-1f3fb-2640",shortnames:[":woman_running_light_skin_tone:"],category:"people"},":woman_running_tone2:":{uc_base:"1f3c3-1f3fc-2640",uc_output:"1f3c3-1f3fc-200d-2640-fe0f",uc_match:"1f3c3-1f3fc-2640-fe0f",uc_greedy:"1f3c3-1f3fc-2640",shortnames:[":woman_running_medium_light_skin_tone:"],category:"people"},":woman_running_tone3:":{uc_base:"1f3c3-1f3fd-2640",uc_output:"1f3c3-1f3fd-200d-2640-fe0f",uc_match:"1f3c3-1f3fd-2640-fe0f",uc_greedy:"1f3c3-1f3fd-2640",shortnames:[":woman_running_medium_skin_tone:"],category:"people"},":woman_running_tone4:":{uc_base:"1f3c3-1f3fe-2640",uc_output:"1f3c3-1f3fe-200d-2640-fe0f",uc_match:"1f3c3-1f3fe-2640-fe0f",uc_greedy:"1f3c3-1f3fe-2640",shortnames:[":woman_running_medium_dark_skin_tone:"],category:"people"},":woman_running_tone5:":{uc_base:"1f3c3-1f3ff-2640",uc_output:"1f3c3-1f3ff-200d-2640-fe0f",uc_match:"1f3c3-1f3ff-2640-fe0f",uc_greedy:"1f3c3-1f3ff-2640",shortnames:[":woman_running_dark_skin_tone:"],category:"people"},":woman_shrugging_tone1:":{uc_base:"1f937-1f3fb-2640",uc_output:"1f937-1f3fb-200d-2640-fe0f",uc_match:"1f937-1f3fb-2640-fe0f",uc_greedy:"1f937-1f3fb-2640",shortnames:[":woman_shrugging_light_skin_tone:"],category:"people"},":woman_shrugging_tone2:":{uc_base:"1f937-1f3fc-2640",uc_output:"1f937-1f3fc-200d-2640-fe0f",uc_match:"1f937-1f3fc-2640-fe0f",uc_greedy:"1f937-1f3fc-2640",shortnames:[":woman_shrugging_medium_light_skin_tone:"],category:"people"},":woman_shrugging_tone3:":{uc_base:"1f937-1f3fd-2640",uc_output:"1f937-1f3fd-200d-2640-fe0f",uc_match:"1f937-1f3fd-2640-fe0f",uc_greedy:"1f937-1f3fd-2640",shortnames:[":woman_shrugging_medium_skin_tone:"],category:"people"},":woman_shrugging_tone4:":{uc_base:"1f937-1f3fe-2640",uc_output:"1f937-1f3fe-200d-2640-fe0f",uc_match:"1f937-1f3fe-2640-fe0f",uc_greedy:"1f937-1f3fe-2640",shortnames:[":woman_shrugging_medium_dark_skin_tone:"],category:"people"},":woman_shrugging_tone5:":{uc_base:"1f937-1f3ff-2640",uc_output:"1f937-1f3ff-200d-2640-fe0f",uc_match:"1f937-1f3ff-2640-fe0f",uc_greedy:"1f937-1f3ff-2640",shortnames:[":woman_shrugging_dark_skin_tone:"],category:"people"},":woman_superhero_tone1:":{uc_base:"1f9b8-1f3fb-2640",uc_output:"1f9b8-1f3fb-200d-2640-fe0f",uc_match:"1f9b8-1f3fb-2640-fe0f",uc_greedy:"1f9b8-1f3fb-2640",shortnames:[":woman_superhero_light_skin_tone:"],category:"people"},":woman_superhero_tone2:":{uc_base:"1f9b8-1f3fc-2640",uc_output:"1f9b8-1f3fc-200d-2640-fe0f",uc_match:"1f9b8-1f3fc-2640-fe0f",uc_greedy:"1f9b8-1f3fc-2640",shortnames:[":woman_superhero_medium_light_skin_tone:"],category:"people"},":woman_superhero_tone3:":{uc_base:"1f9b8-1f3fd-2640",uc_output:"1f9b8-1f3fd-200d-2640-fe0f",uc_match:"1f9b8-1f3fd-2640-fe0f",uc_greedy:"1f9b8-1f3fd-2640",shortnames:[":woman_superhero_medium_skin_tone:"],category:"people"},":woman_superhero_tone4:":{uc_base:"1f9b8-1f3fe-2640",uc_output:"1f9b8-1f3fe-200d-2640-fe0f",uc_match:"1f9b8-1f3fe-2640-fe0f",uc_greedy:"1f9b8-1f3fe-2640",shortnames:[":woman_superhero_medium_dark_skin_tone:"],category:"people"},":woman_superhero_tone5:":{uc_base:"1f9b8-1f3ff-2640",uc_output:"1f9b8-1f3ff-200d-2640-fe0f",uc_match:"1f9b8-1f3ff-2640-fe0f",uc_greedy:"1f9b8-1f3ff-2640",shortnames:[":woman_superhero_dark_skin_tone:"],category:"people"},":woman_supervillain_tone1:":{uc_base:"1f9b9-1f3fb-2640",uc_output:"1f9b9-1f3fb-200d-2640-fe0f",uc_match:"1f9b9-1f3fb-2640-fe0f",uc_greedy:"1f9b9-1f3fb-2640",shortnames:[":woman_supervillain_light_skin_tone:"],category:"people"},":woman_supervillain_tone2:":{uc_base:"1f9b9-1f3fc-2640",uc_output:"1f9b9-1f3fc-200d-2640-fe0f",uc_match:"1f9b9-1f3fc-2640-fe0f",uc_greedy:"1f9b9-1f3fc-2640",shortnames:[":woman_supervillain_medium_light_skin_tone:"],category:"people"},":woman_supervillain_tone3:":{uc_base:"1f9b9-1f3fd-2640",uc_output:"1f9b9-1f3fd-200d-2640-fe0f",uc_match:"1f9b9-1f3fd-2640-fe0f",uc_greedy:"1f9b9-1f3fd-2640",shortnames:[":woman_supervillain_medium_skin_tone:"],category:"people"},":woman_supervillain_tone4:":{uc_base:"1f9b9-1f3fe-2640",uc_output:"1f9b9-1f3fe-200d-2640-fe0f",uc_match:"1f9b9-1f3fe-2640-fe0f",uc_greedy:"1f9b9-1f3fe-2640",shortnames:[":woman_supervillain_medium_dark_skin_tone:"],category:"people"},":woman_supervillain_tone5:":{uc_base:"1f9b9-1f3ff-2640",uc_output:"1f9b9-1f3ff-200d-2640-fe0f",uc_match:"1f9b9-1f3ff-2640-fe0f",uc_greedy:"1f9b9-1f3ff-2640",shortnames:[":woman_supervillain_dark_skin_tone:"],category:"people"},":woman_surfing_tone1:":{uc_base:"1f3c4-1f3fb-2640",uc_output:"1f3c4-1f3fb-200d-2640-fe0f",uc_match:"1f3c4-1f3fb-2640-fe0f",uc_greedy:"1f3c4-1f3fb-2640",shortnames:[":woman_surfing_light_skin_tone:"],category:"activity"},":woman_surfing_tone2:":{uc_base:"1f3c4-1f3fc-2640",uc_output:"1f3c4-1f3fc-200d-2640-fe0f",uc_match:"1f3c4-1f3fc-2640-fe0f",uc_greedy:"1f3c4-1f3fc-2640",shortnames:[":woman_surfing_medium_light_skin_tone:"],category:"activity"},":woman_surfing_tone3:":{uc_base:"1f3c4-1f3fd-2640",uc_output:"1f3c4-1f3fd-200d-2640-fe0f",uc_match:"1f3c4-1f3fd-2640-fe0f",uc_greedy:"1f3c4-1f3fd-2640",shortnames:[":woman_surfing_medium_skin_tone:"],category:"activity"},":woman_surfing_tone4:":{uc_base:"1f3c4-1f3fe-2640",uc_output:"1f3c4-1f3fe-200d-2640-fe0f",uc_match:"1f3c4-1f3fe-2640-fe0f",uc_greedy:"1f3c4-1f3fe-2640",shortnames:[":woman_surfing_medium_dark_skin_tone:"],category:"activity"},":woman_surfing_tone5:":{uc_base:"1f3c4-1f3ff-2640",uc_output:"1f3c4-1f3ff-200d-2640-fe0f",uc_match:"1f3c4-1f3ff-2640-fe0f",uc_greedy:"1f3c4-1f3ff-2640",shortnames:[":woman_surfing_dark_skin_tone:"],category:"activity"},":woman_swimming_tone1:":{uc_base:"1f3ca-1f3fb-2640",uc_output:"1f3ca-1f3fb-200d-2640-fe0f",uc_match:"1f3ca-1f3fb-2640-fe0f",uc_greedy:"1f3ca-1f3fb-2640",shortnames:[":woman_swimming_light_skin_tone:"],category:"activity"},":woman_swimming_tone2:":{uc_base:"1f3ca-1f3fc-2640",uc_output:"1f3ca-1f3fc-200d-2640-fe0f",uc_match:"1f3ca-1f3fc-2640-fe0f",uc_greedy:"1f3ca-1f3fc-2640",shortnames:[":woman_swimming_medium_light_skin_tone:"],category:"activity"},":woman_swimming_tone3:":{uc_base:"1f3ca-1f3fd-2640",uc_output:"1f3ca-1f3fd-200d-2640-fe0f",uc_match:"1f3ca-1f3fd-2640-fe0f",uc_greedy:"1f3ca-1f3fd-2640",shortnames:[":woman_swimming_medium_skin_tone:"],category:"activity"},":woman_swimming_tone4:":{uc_base:"1f3ca-1f3fe-2640",uc_output:"1f3ca-1f3fe-200d-2640-fe0f",uc_match:"1f3ca-1f3fe-2640-fe0f",uc_greedy:"1f3ca-1f3fe-2640",shortnames:[":woman_swimming_medium_dark_skin_tone:"],category:"activity"},":woman_swimming_tone5:":{uc_base:"1f3ca-1f3ff-2640",uc_output:"1f3ca-1f3ff-200d-2640-fe0f",uc_match:"1f3ca-1f3ff-2640-fe0f",uc_greedy:"1f3ca-1f3ff-2640",shortnames:[":woman_swimming_dark_skin_tone:"],category:"activity"},":woman_tipping_hand_tone1:":{uc_base:"1f481-1f3fb-2640",uc_output:"1f481-1f3fb-200d-2640-fe0f",uc_match:"1f481-1f3fb-2640-fe0f",uc_greedy:"1f481-1f3fb-2640",shortnames:[":woman_tipping_hand_light_skin_tone:"],category:"people"},":woman_tipping_hand_tone2:":{uc_base:"1f481-1f3fc-2640",uc_output:"1f481-1f3fc-200d-2640-fe0f",uc_match:"1f481-1f3fc-2640-fe0f",uc_greedy:"1f481-1f3fc-2640",shortnames:[":woman_tipping_hand_medium_light_skin_tone:"],category:"people"},":woman_tipping_hand_tone3:":{uc_base:"1f481-1f3fd-2640",uc_output:"1f481-1f3fd-200d-2640-fe0f",uc_match:"1f481-1f3fd-2640-fe0f",uc_greedy:"1f481-1f3fd-2640",shortnames:[":woman_tipping_hand_medium_skin_tone:"],category:"people"},":woman_tipping_hand_tone4:":{uc_base:"1f481-1f3fe-2640",uc_output:"1f481-1f3fe-200d-2640-fe0f",uc_match:"1f481-1f3fe-2640-fe0f",uc_greedy:"1f481-1f3fe-2640",shortnames:[":woman_tipping_hand_medium_dark_skin_tone:"],category:"people"},":woman_tipping_hand_tone5:":{uc_base:"1f481-1f3ff-2640",uc_output:"1f481-1f3ff-200d-2640-fe0f",uc_match:"1f481-1f3ff-2640-fe0f",uc_greedy:"1f481-1f3ff-2640",shortnames:[":woman_tipping_hand_dark_skin_tone:"],category:"people"},":woman_vampire_tone1:":{uc_base:"1f9db-1f3fb-2640",uc_output:"1f9db-1f3fb-200d-2640-fe0f",uc_match:"1f9db-1f3fb-2640-fe0f",uc_greedy:"1f9db-1f3fb-2640",shortnames:[":woman_vampire_light_skin_tone:"],category:"people"},":woman_vampire_tone2:":{uc_base:"1f9db-1f3fc-2640",uc_output:"1f9db-1f3fc-200d-2640-fe0f",uc_match:"1f9db-1f3fc-2640-fe0f",uc_greedy:"1f9db-1f3fc-2640",shortnames:[":woman_vampire_medium_light_skin_tone:"],category:"people"},":woman_vampire_tone3:":{uc_base:"1f9db-1f3fd-2640",uc_output:"1f9db-1f3fd-200d-2640-fe0f",uc_match:"1f9db-1f3fd-2640-fe0f",uc_greedy:"1f9db-1f3fd-2640",shortnames:[":woman_vampire_medium_skin_tone:"],category:"people"},":woman_vampire_tone4:":{uc_base:"1f9db-1f3fe-2640",uc_output:"1f9db-1f3fe-200d-2640-fe0f",uc_match:"1f9db-1f3fe-2640-fe0f",uc_greedy:"1f9db-1f3fe-2640",shortnames:[":woman_vampire_medium_dark_skin_tone:"],category:"people"},":woman_vampire_tone5:":{uc_base:"1f9db-1f3ff-2640",uc_output:"1f9db-1f3ff-200d-2640-fe0f",uc_match:"1f9db-1f3ff-2640-fe0f",uc_greedy:"1f9db-1f3ff-2640",shortnames:[":woman_vampire_dark_skin_tone:"],category:"people"},":woman_walking_tone1:":{uc_base:"1f6b6-1f3fb-2640",uc_output:"1f6b6-1f3fb-200d-2640-fe0f",uc_match:"1f6b6-1f3fb-2640-fe0f",uc_greedy:"1f6b6-1f3fb-2640",shortnames:[":woman_walking_light_skin_tone:"],category:"people"},":woman_walking_tone2:":{uc_base:"1f6b6-1f3fc-2640",uc_output:"1f6b6-1f3fc-200d-2640-fe0f",uc_match:"1f6b6-1f3fc-2640-fe0f",uc_greedy:"1f6b6-1f3fc-2640",shortnames:[":woman_walking_medium_light_skin_tone:"],category:"people"},":woman_walking_tone3:":{uc_base:"1f6b6-1f3fd-2640",uc_output:"1f6b6-1f3fd-200d-2640-fe0f",uc_match:"1f6b6-1f3fd-2640-fe0f",uc_greedy:"1f6b6-1f3fd-2640",shortnames:[":woman_walking_medium_skin_tone:"],category:"people"},":woman_walking_tone4:":{uc_base:"1f6b6-1f3fe-2640",uc_output:"1f6b6-1f3fe-200d-2640-fe0f",uc_match:"1f6b6-1f3fe-2640-fe0f",uc_greedy:"1f6b6-1f3fe-2640",shortnames:[":woman_walking_medium_dark_skin_tone:"],category:"people"},":woman_walking_tone5:":{uc_base:"1f6b6-1f3ff-2640",uc_output:"1f6b6-1f3ff-200d-2640-fe0f",uc_match:"1f6b6-1f3ff-2640-fe0f",uc_greedy:"1f6b6-1f3ff-2640",shortnames:[":woman_walking_dark_skin_tone:"],category:"people"},":woman_wearing_turban_tone1:":{uc_base:"1f473-1f3fb-2640",uc_output:"1f473-1f3fb-200d-2640-fe0f",uc_match:"1f473-1f3fb-2640-fe0f",uc_greedy:"1f473-1f3fb-2640",shortnames:[":woman_wearing_turban_light_skin_tone:"],category:"people"},":woman_wearing_turban_tone2:":{uc_base:"1f473-1f3fc-2640",uc_output:"1f473-1f3fc-200d-2640-fe0f",uc_match:"1f473-1f3fc-2640-fe0f",uc_greedy:"1f473-1f3fc-2640",shortnames:[":woman_wearing_turban_medium_light_skin_tone:"],category:"people"},":woman_wearing_turban_tone3:":{uc_base:"1f473-1f3fd-2640",uc_output:"1f473-1f3fd-200d-2640-fe0f",uc_match:"1f473-1f3fd-2640-fe0f",uc_greedy:"1f473-1f3fd-2640",shortnames:[":woman_wearing_turban_medium_skin_tone:"],category:"people"},":woman_wearing_turban_tone4:":{uc_base:"1f473-1f3fe-2640",uc_output:"1f473-1f3fe-200d-2640-fe0f",uc_match:"1f473-1f3fe-2640-fe0f",uc_greedy:"1f473-1f3fe-2640",shortnames:[":woman_wearing_turban_medium_dark_skin_tone:"],category:"people"},":woman_wearing_turban_tone5:":{uc_base:"1f473-1f3ff-2640",uc_output:"1f473-1f3ff-200d-2640-fe0f",uc_match:"1f473-1f3ff-2640-fe0f",uc_greedy:"1f473-1f3ff-2640",shortnames:[":woman_wearing_turban_dark_skin_tone:"],category:"people"},":man_bouncing_ball_tone1:":{uc_base:"26f9-1f3fb-2642",uc_output:"26f9-1f3fb-200d-2642-fe0f",uc_match:"26f9-fe0f-1f3fb-2642-fe0f",uc_greedy:"26f9-1f3fb-2642",shortnames:[":man_bouncing_ball_light_skin_tone:"],category:"activity"},":man_bouncing_ball_tone2:":{uc_base:"26f9-1f3fc-2642",uc_output:"26f9-1f3fc-200d-2642-fe0f",uc_match:"26f9-fe0f-1f3fc-2642-fe0f",uc_greedy:"26f9-1f3fc-2642",shortnames:[":man_bouncing_ball_medium_light_skin_tone:"],category:"activity"},":man_bouncing_ball_tone3:":{uc_base:"26f9-1f3fd-2642",uc_output:"26f9-1f3fd-200d-2642-fe0f",uc_match:"26f9-fe0f-1f3fd-2642-fe0f",uc_greedy:"26f9-1f3fd-2642",shortnames:[":man_bouncing_ball_medium_skin_tone:"],category:"activity"},":man_bouncing_ball_tone4:":{uc_base:"26f9-1f3fe-2642",uc_output:"26f9-1f3fe-200d-2642-fe0f",uc_match:"26f9-fe0f-1f3fe-2642-fe0f",uc_greedy:"26f9-1f3fe-2642",shortnames:[":man_bouncing_ball_medium_dark_skin_tone:"],category:"activity"},":man_bouncing_ball_tone5:":{uc_base:"26f9-1f3ff-2642",uc_output:"26f9-1f3ff-200d-2642-fe0f",uc_match:"26f9-fe0f-1f3ff-2642-fe0f",uc_greedy:"26f9-1f3ff-2642",shortnames:[":man_bouncing_ball_dark_skin_tone:"],category:"activity"},":man_detective:":{uc_base:"1f575-2642",uc_output:"1f575-fe0f-200d-2642-fe0f",uc_match:"1f575-fe0f-200d-2642",uc_greedy:"1f575-2642",shortnames:[],category:"people"},":man_golfing:":{uc_base:"1f3cc-2642",uc_output:"1f3cc-fe0f-200d-2642-fe0f",uc_match:"1f3cc-fe0f-200d-2642",uc_greedy:"1f3cc-2642",shortnames:[],category:"activity"},":man_lifting_weights:":{uc_base:"1f3cb-2642",uc_output:"1f3cb-fe0f-200d-2642-fe0f",uc_match:"1f3cb-fe0f-200d-2642",uc_greedy:"1f3cb-2642",shortnames:[],category:"activity"},":woman_bouncing_ball_tone1:":{uc_base:"26f9-1f3fb-2640",uc_output:"26f9-1f3fb-200d-2640-fe0f",uc_match:"26f9-fe0f-1f3fb-2640-fe0f",uc_greedy:"26f9-1f3fb-2640",shortnames:[":woman_bouncing_ball_light_skin_tone:"],category:"activity"},":woman_bouncing_ball_tone2:":{uc_base:"26f9-1f3fc-2640",uc_output:"26f9-1f3fc-200d-2640-fe0f",uc_match:"26f9-fe0f-1f3fc-2640-fe0f",uc_greedy:"26f9-1f3fc-2640",shortnames:[":woman_bouncing_ball_medium_light_skin_tone:"],category:"activity"},":woman_bouncing_ball_tone3:":{uc_base:"26f9-1f3fd-2640",uc_output:"26f9-1f3fd-200d-2640-fe0f",uc_match:"26f9-fe0f-1f3fd-2640-fe0f",uc_greedy:"26f9-1f3fd-2640",shortnames:[":woman_bouncing_ball_medium_skin_tone:"],category:"activity"},":woman_bouncing_ball_tone4:":{uc_base:"26f9-1f3fe-2640",uc_output:"26f9-1f3fe-200d-2640-fe0f",uc_match:"26f9-fe0f-1f3fe-2640-fe0f",uc_greedy:"26f9-1f3fe-2640",shortnames:[":woman_bouncing_ball_medium_dark_skin_tone:"],category:"activity"},":woman_bouncing_ball_tone5:":{uc_base:"26f9-1f3ff-2640",uc_output:"26f9-1f3ff-200d-2640-fe0f",uc_match:"26f9-fe0f-1f3ff-2640-fe0f",uc_greedy:"26f9-1f3ff-2640",shortnames:[":woman_bouncing_ball_dark_skin_tone:"],category:"activity"},":woman_detective:":{uc_base:"1f575-2640",uc_output:"1f575-fe0f-200d-2640-fe0f",uc_match:"1f575-fe0f-200d-2640",uc_greedy:"1f575-2640",shortnames:[],category:"people"},":woman_golfing:":{uc_base:"1f3cc-2640",uc_output:"1f3cc-fe0f-200d-2640-fe0f",uc_match:"1f3cc-fe0f-200d-2640",uc_greedy:"1f3cc-2640",shortnames:[],category:"activity"},":woman_lifting_weights:":{uc_base:"1f3cb-2640",uc_output:"1f3cb-fe0f-200d-2640-fe0f",uc_match:"1f3cb-fe0f-200d-2640",uc_greedy:"1f3cb-2640",shortnames:[],category:"activity"},":man_bouncing_ball:":{uc_base:"26f9-2642",uc_output:"26f9-fe0f-200d-2642-fe0f",uc_match:"26f9-fe0f-200d-2642",uc_greedy:"26f9-2642",shortnames:[],category:"activity"},":woman_bouncing_ball:":{uc_base:"26f9-2640",uc_output:"26f9-fe0f-200d-2640-fe0f",uc_match:"26f9-fe0f-200d-2640",uc_greedy:"26f9-2640",shortnames:[],category:"activity"},":man_artist_tone1:":{uc_base:"1f468-1f3fb-1f3a8",uc_output:"1f468-1f3fb-200d-1f3a8",uc_match:"1f468-1f3fb-1f3a8",uc_greedy:"1f468-1f3fb-1f3a8",shortnames:[":man_artist_light_skin_tone:"],category:"people"},":man_artist_tone2:":{uc_base:"1f468-1f3fc-1f3a8",uc_output:"1f468-1f3fc-200d-1f3a8",uc_match:"1f468-1f3fc-1f3a8",uc_greedy:"1f468-1f3fc-1f3a8",shortnames:[":man_artist_medium_light_skin_tone:"],category:"people"},":man_artist_tone3:":{uc_base:"1f468-1f3fd-1f3a8",uc_output:"1f468-1f3fd-200d-1f3a8",uc_match:"1f468-1f3fd-1f3a8",uc_greedy:"1f468-1f3fd-1f3a8",shortnames:[":man_artist_medium_skin_tone:"],category:"people"},":man_artist_tone4:":{uc_base:"1f468-1f3fe-1f3a8",uc_output:"1f468-1f3fe-200d-1f3a8",uc_match:"1f468-1f3fe-1f3a8",uc_greedy:"1f468-1f3fe-1f3a8",shortnames:[":man_artist_medium_dark_skin_tone:"],category:"people"},":man_artist_tone5:":{uc_base:"1f468-1f3ff-1f3a8",uc_output:"1f468-1f3ff-200d-1f3a8",uc_match:"1f468-1f3ff-1f3a8",uc_greedy:"1f468-1f3ff-1f3a8",shortnames:[":man_artist_dark_skin_tone:"],category:"people"},":man_astronaut_tone1:":{uc_base:"1f468-1f3fb-1f680",uc_output:"1f468-1f3fb-200d-1f680",uc_match:"1f468-1f3fb-1f680",uc_greedy:"1f468-1f3fb-1f680",shortnames:[":man_astronaut_light_skin_tone:"],category:"people"},":man_astronaut_tone2:":{uc_base:"1f468-1f3fc-1f680",uc_output:"1f468-1f3fc-200d-1f680",uc_match:"1f468-1f3fc-1f680",uc_greedy:"1f468-1f3fc-1f680",shortnames:[":man_astronaut_medium_light_skin_tone:"],category:"people"},":man_astronaut_tone3:":{uc_base:"1f468-1f3fd-1f680",uc_output:"1f468-1f3fd-200d-1f680",uc_match:"1f468-1f3fd-1f680",uc_greedy:"1f468-1f3fd-1f680",shortnames:[":man_astronaut_medium_skin_tone:"],category:"people"},":man_astronaut_tone4:":{uc_base:"1f468-1f3fe-1f680",uc_output:"1f468-1f3fe-200d-1f680",uc_match:"1f468-1f3fe-1f680",uc_greedy:"1f468-1f3fe-1f680",shortnames:[":man_astronaut_medium_dark_skin_tone:"],category:"people"},":man_astronaut_tone5:":{uc_base:"1f468-1f3ff-1f680",uc_output:"1f468-1f3ff-200d-1f680",uc_match:"1f468-1f3ff-1f680",uc_greedy:"1f468-1f3ff-1f680",shortnames:[":man_astronaut_dark_skin_tone:"],category:"people"},":man_bald_tone1:":{uc_base:"1f468-1f3fb-1f9b2",uc_output:"1f468-1f3fb-200d-1f9b2",uc_match:"1f468-1f3fb-1f9b2",uc_greedy:"1f468-1f3fb-1f9b2",shortnames:[":man_bald_light_skin_tone:"],category:"people"},":man_bald_tone2:":{uc_base:"1f468-1f3fc-1f9b2",uc_output:"1f468-1f3fc-200d-1f9b2",uc_match:"1f468-1f3fc-1f9b2",uc_greedy:"1f468-1f3fc-1f9b2",shortnames:[":man_bald_medium_light_skin_tone:"],category:"people"},":man_bald_tone3:":{uc_base:"1f468-1f3fd-1f9b2",uc_output:"1f468-1f3fd-200d-1f9b2",uc_match:"1f468-1f3fd-1f9b2",uc_greedy:"1f468-1f3fd-1f9b2",shortnames:[":man_bald_medium_skin_tone:"],category:"people"},":man_bald_tone4:":{uc_base:"1f468-1f3fe-1f9b2",uc_output:"1f468-1f3fe-200d-1f9b2",uc_match:"1f468-1f3fe-1f9b2",uc_greedy:"1f468-1f3fe-1f9b2",shortnames:[":man_bald_medium_dark_skin_tone:"],category:"people"},":man_bald_tone5:":{uc_base:"1f468-1f3ff-1f9b2",uc_output:"1f468-1f3ff-200d-1f9b2",uc_match:"1f468-1f3ff-1f9b2",uc_greedy:"1f468-1f3ff-1f9b2",shortnames:[":man_bald_dark_skin_tone:"],category:"people"},":man_cook_tone1:":{uc_base:"1f468-1f3fb-1f373",uc_output:"1f468-1f3fb-200d-1f373",uc_match:"1f468-1f3fb-1f373",uc_greedy:"1f468-1f3fb-1f373",shortnames:[":man_cook_light_skin_tone:"],category:"people"},":man_cook_tone2:":{uc_base:"1f468-1f3fc-1f373",uc_output:"1f468-1f3fc-200d-1f373",uc_match:"1f468-1f3fc-1f373",uc_greedy:"1f468-1f3fc-1f373",shortnames:[":man_cook_medium_light_skin_tone:"],category:"people"},":man_cook_tone3:":{uc_base:"1f468-1f3fd-1f373",uc_output:"1f468-1f3fd-200d-1f373",uc_match:"1f468-1f3fd-1f373",uc_greedy:"1f468-1f3fd-1f373",shortnames:[":man_cook_medium_skin_tone:"],category:"people"},":man_cook_tone4:":{uc_base:"1f468-1f3fe-1f373",uc_output:"1f468-1f3fe-200d-1f373",uc_match:"1f468-1f3fe-1f373",uc_greedy:"1f468-1f3fe-1f373",shortnames:[":man_cook_medium_dark_skin_tone:"],category:"people"},":man_cook_tone5:":{uc_base:"1f468-1f3ff-1f373",uc_output:"1f468-1f3ff-200d-1f373",uc_match:"1f468-1f3ff-1f373",uc_greedy:"1f468-1f3ff-1f373",shortnames:[":man_cook_dark_skin_tone:"],category:"people"},":man_curly_haired_tone1:":{uc_base:"1f468-1f3fb-1f9b1",uc_output:"1f468-1f3fb-200d-1f9b1",uc_match:"1f468-1f3fb-1f9b1",uc_greedy:"1f468-1f3fb-1f9b1",shortnames:[":man_curly_haired_light_skin_tone:"],category:"people"},":man_curly_haired_tone2:":{uc_base:"1f468-1f3fc-1f9b1",uc_output:"1f468-1f3fc-200d-1f9b1",uc_match:"1f468-1f3fc-1f9b1",uc_greedy:"1f468-1f3fc-1f9b1",shortnames:[":man_curly_haired_medium_light_skin_tone:"],category:"people"},":man_curly_haired_tone3:":{uc_base:"1f468-1f3fd-1f9b1",uc_output:"1f468-1f3fd-200d-1f9b1",uc_match:"1f468-1f3fd-1f9b1",uc_greedy:"1f468-1f3fd-1f9b1",shortnames:[":man_curly_haired_medium_skin_tone:"],category:"people"},":man_curly_haired_tone4:":{uc_base:"1f468-1f3fe-1f9b1",uc_output:"1f468-1f3fe-200d-1f9b1",uc_match:"1f468-1f3fe-1f9b1",uc_greedy:"1f468-1f3fe-1f9b1",shortnames:[":man_curly_haired_medium_dark_skin_tone:"],category:"people"},":man_curly_haired_tone5:":{uc_base:"1f468-1f3ff-1f9b1",uc_output:"1f468-1f3ff-200d-1f9b1",uc_match:"1f468-1f3ff-1f9b1",uc_greedy:"1f468-1f3ff-1f9b1",shortnames:[":man_curly_haired_dark_skin_tone:"],category:"people"},":man_factory_worker_tone1:":{uc_base:"1f468-1f3fb-1f3ed",uc_output:"1f468-1f3fb-200d-1f3ed",uc_match:"1f468-1f3fb-1f3ed",uc_greedy:"1f468-1f3fb-1f3ed",shortnames:[":man_factory_worker_light_skin_tone:"],category:"people"},":man_factory_worker_tone2:":{uc_base:"1f468-1f3fc-1f3ed",uc_output:"1f468-1f3fc-200d-1f3ed",uc_match:"1f468-1f3fc-1f3ed",uc_greedy:"1f468-1f3fc-1f3ed",shortnames:[":man_factory_worker_medium_light_skin_tone:"],category:"people"},":man_factory_worker_tone3:":{uc_base:"1f468-1f3fd-1f3ed",uc_output:"1f468-1f3fd-200d-1f3ed",uc_match:"1f468-1f3fd-1f3ed",uc_greedy:"1f468-1f3fd-1f3ed",shortnames:[":man_factory_worker_medium_skin_tone:"],category:"people"},":man_factory_worker_tone4:":{uc_base:"1f468-1f3fe-1f3ed",uc_output:"1f468-1f3fe-200d-1f3ed",uc_match:"1f468-1f3fe-1f3ed",uc_greedy:"1f468-1f3fe-1f3ed",shortnames:[":man_factory_worker_medium_dark_skin_tone:"],category:"people"},":man_factory_worker_tone5:":{uc_base:"1f468-1f3ff-1f3ed",uc_output:"1f468-1f3ff-200d-1f3ed",uc_match:"1f468-1f3ff-1f3ed",uc_greedy:"1f468-1f3ff-1f3ed",shortnames:[":man_factory_worker_dark_skin_tone:"],category:"people"},":man_farmer_tone1:":{uc_base:"1f468-1f3fb-1f33e",uc_output:"1f468-1f3fb-200d-1f33e",uc_match:"1f468-1f3fb-1f33e",uc_greedy:"1f468-1f3fb-1f33e",shortnames:[":man_farmer_light_skin_tone:"],category:"people"},":man_farmer_tone2:":{uc_base:"1f468-1f3fc-1f33e",uc_output:"1f468-1f3fc-200d-1f33e",uc_match:"1f468-1f3fc-1f33e",uc_greedy:"1f468-1f3fc-1f33e",shortnames:[":man_farmer_medium_light_skin_tone:"],category:"people"},":man_farmer_tone3:":{uc_base:"1f468-1f3fd-1f33e",uc_output:"1f468-1f3fd-200d-1f33e",uc_match:"1f468-1f3fd-1f33e",uc_greedy:"1f468-1f3fd-1f33e",shortnames:[":man_farmer_medium_skin_tone:"],category:"people"},":man_farmer_tone4:":{uc_base:"1f468-1f3fe-1f33e",uc_output:"1f468-1f3fe-200d-1f33e",uc_match:"1f468-1f3fe-1f33e",uc_greedy:"1f468-1f3fe-1f33e",shortnames:[":man_farmer_medium_dark_skin_tone:"],category:"people"},":man_farmer_tone5:":{uc_base:"1f468-1f3ff-1f33e",uc_output:"1f468-1f3ff-200d-1f33e",uc_match:"1f468-1f3ff-1f33e",uc_greedy:"1f468-1f3ff-1f33e",shortnames:[":man_farmer_dark_skin_tone:"],category:"people"},":man_firefighter_tone1:":{uc_base:"1f468-1f3fb-1f692",uc_output:"1f468-1f3fb-200d-1f692",uc_match:"1f468-1f3fb-1f692",uc_greedy:"1f468-1f3fb-1f692",shortnames:[":man_firefighter_light_skin_tone:"],category:"people"},":man_firefighter_tone2:":{uc_base:"1f468-1f3fc-1f692",uc_output:"1f468-1f3fc-200d-1f692",uc_match:"1f468-1f3fc-1f692",uc_greedy:"1f468-1f3fc-1f692",shortnames:[":man_firefighter_medium_light_skin_tone:"],category:"people"},":man_firefighter_tone3:":{uc_base:"1f468-1f3fd-1f692",uc_output:"1f468-1f3fd-200d-1f692",uc_match:"1f468-1f3fd-1f692",uc_greedy:"1f468-1f3fd-1f692",shortnames:[":man_firefighter_medium_skin_tone:"],category:"people"},":man_firefighter_tone4:":{uc_base:"1f468-1f3fe-1f692",uc_output:"1f468-1f3fe-200d-1f692",uc_match:"1f468-1f3fe-1f692",uc_greedy:"1f468-1f3fe-1f692",shortnames:[":man_firefighter_medium_dark_skin_tone:"],category:"people"},":man_firefighter_tone5:":{uc_base:"1f468-1f3ff-1f692",uc_output:"1f468-1f3ff-200d-1f692",uc_match:"1f468-1f3ff-1f692",uc_greedy:"1f468-1f3ff-1f692",shortnames:[":man_firefighter_dark_skin_tone:"],category:"people"},":man_mechanic_tone1:":{uc_base:"1f468-1f3fb-1f527",uc_output:"1f468-1f3fb-200d-1f527",uc_match:"1f468-1f3fb-1f527",uc_greedy:"1f468-1f3fb-1f527",shortnames:[":man_mechanic_light_skin_tone:"],category:"people"},":man_mechanic_tone2:":{uc_base:"1f468-1f3fc-1f527",uc_output:"1f468-1f3fc-200d-1f527",uc_match:"1f468-1f3fc-1f527",uc_greedy:"1f468-1f3fc-1f527",shortnames:[":man_mechanic_medium_light_skin_tone:"],category:"people"},":man_mechanic_tone3:":{uc_base:"1f468-1f3fd-1f527",uc_output:"1f468-1f3fd-200d-1f527",uc_match:"1f468-1f3fd-1f527",uc_greedy:"1f468-1f3fd-1f527",shortnames:[":man_mechanic_medium_skin_tone:"],category:"people"},":man_mechanic_tone4:":{uc_base:"1f468-1f3fe-1f527",uc_output:"1f468-1f3fe-200d-1f527",uc_match:"1f468-1f3fe-1f527",uc_greedy:"1f468-1f3fe-1f527",shortnames:[":man_mechanic_medium_dark_skin_tone:"],category:"people"},":man_mechanic_tone5:":{uc_base:"1f468-1f3ff-1f527",uc_output:"1f468-1f3ff-200d-1f527",uc_match:"1f468-1f3ff-1f527",uc_greedy:"1f468-1f3ff-1f527",shortnames:[":man_mechanic_dark_skin_tone:"],category:"people"},":man_office_worker_tone1:":{uc_base:"1f468-1f3fb-1f4bc",uc_output:"1f468-1f3fb-200d-1f4bc",uc_match:"1f468-1f3fb-1f4bc",uc_greedy:"1f468-1f3fb-1f4bc",shortnames:[":man_office_worker_light_skin_tone:"],category:"people"},":man_office_worker_tone2:":{uc_base:"1f468-1f3fc-1f4bc",uc_output:"1f468-1f3fc-200d-1f4bc",uc_match:"1f468-1f3fc-1f4bc",uc_greedy:"1f468-1f3fc-1f4bc",shortnames:[":man_office_worker_medium_light_skin_tone:"],category:"people"},":man_office_worker_tone3:":{uc_base:"1f468-1f3fd-1f4bc",uc_output:"1f468-1f3fd-200d-1f4bc",uc_match:"1f468-1f3fd-1f4bc",uc_greedy:"1f468-1f3fd-1f4bc",shortnames:[":man_office_worker_medium_skin_tone:"],category:"people"},":man_office_worker_tone4:":{uc_base:"1f468-1f3fe-1f4bc",uc_output:"1f468-1f3fe-200d-1f4bc",uc_match:"1f468-1f3fe-1f4bc",uc_greedy:"1f468-1f3fe-1f4bc",shortnames:[":man_office_worker_medium_dark_skin_tone:"],category:"people"},":man_office_worker_tone5:":{uc_base:"1f468-1f3ff-1f4bc",uc_output:"1f468-1f3ff-200d-1f4bc",uc_match:"1f468-1f3ff-1f4bc",uc_greedy:"1f468-1f3ff-1f4bc",shortnames:[":man_office_worker_dark_skin_tone:"],category:"people"},":man_red_haired_tone1:":{uc_base:"1f468-1f3fb-1f9b0",uc_output:"1f468-1f3fb-200d-1f9b0",uc_match:"1f468-1f3fb-1f9b0",uc_greedy:"1f468-1f3fb-1f9b0",shortnames:[":man_red_haired_light_skin_tone:"],category:"people"},":man_red_haired_tone2:":{uc_base:"1f468-1f3fc-1f9b0",uc_output:"1f468-1f3fc-200d-1f9b0",uc_match:"1f468-1f3fc-1f9b0",uc_greedy:"1f468-1f3fc-1f9b0",shortnames:[":man_red_haired_medium_light_skin_tone:"],category:"people"},":man_red_haired_tone3:":{uc_base:"1f468-1f3fd-1f9b0",uc_output:"1f468-1f3fd-200d-1f9b0",uc_match:"1f468-1f3fd-1f9b0",uc_greedy:"1f468-1f3fd-1f9b0",shortnames:[":man_red_haired_medium_skin_tone:"],category:"people"},":man_red_haired_tone4:":{uc_base:"1f468-1f3fe-1f9b0",uc_output:"1f468-1f3fe-200d-1f9b0",uc_match:"1f468-1f3fe-1f9b0",uc_greedy:"1f468-1f3fe-1f9b0",shortnames:[":man_red_haired_medium_dark_skin_tone:"],category:"people"},":man_red_haired_tone5:":{uc_base:"1f468-1f3ff-1f9b0",uc_output:"1f468-1f3ff-200d-1f9b0",uc_match:"1f468-1f3ff-1f9b0",uc_greedy:"1f468-1f3ff-1f9b0",shortnames:[":man_red_haired_dark_skin_tone:"],category:"people"},":man_scientist_tone1:":{uc_base:"1f468-1f3fb-1f52c",uc_output:"1f468-1f3fb-200d-1f52c",uc_match:"1f468-1f3fb-1f52c",uc_greedy:"1f468-1f3fb-1f52c",shortnames:[":man_scientist_light_skin_tone:"],category:"people"},":man_scientist_tone2:":{uc_base:"1f468-1f3fc-1f52c",uc_output:"1f468-1f3fc-200d-1f52c",uc_match:"1f468-1f3fc-1f52c",uc_greedy:"1f468-1f3fc-1f52c",shortnames:[":man_scientist_medium_light_skin_tone:"],category:"people"},":man_scientist_tone3:":{uc_base:"1f468-1f3fd-1f52c",uc_output:"1f468-1f3fd-200d-1f52c",uc_match:"1f468-1f3fd-1f52c",uc_greedy:"1f468-1f3fd-1f52c",shortnames:[":man_scientist_medium_skin_tone:"],category:"people"},":man_scientist_tone4:":{uc_base:"1f468-1f3fe-1f52c",uc_output:"1f468-1f3fe-200d-1f52c",uc_match:"1f468-1f3fe-1f52c",uc_greedy:"1f468-1f3fe-1f52c",shortnames:[":man_scientist_medium_dark_skin_tone:"],category:"people"},":man_scientist_tone5:":{uc_base:"1f468-1f3ff-1f52c",uc_output:"1f468-1f3ff-200d-1f52c",uc_match:"1f468-1f3ff-1f52c",uc_greedy:"1f468-1f3ff-1f52c",shortnames:[":man_scientist_dark_skin_tone:"],category:"people"},":man_singer_tone1:":{uc_base:"1f468-1f3fb-1f3a4",uc_output:"1f468-1f3fb-200d-1f3a4",uc_match:"1f468-1f3fb-1f3a4",uc_greedy:"1f468-1f3fb-1f3a4",shortnames:[":man_singer_light_skin_tone:"],category:"people"},":man_singer_tone2:":{uc_base:"1f468-1f3fc-1f3a4",uc_output:"1f468-1f3fc-200d-1f3a4",uc_match:"1f468-1f3fc-1f3a4",uc_greedy:"1f468-1f3fc-1f3a4",shortnames:[":man_singer_medium_light_skin_tone:"],category:"people"},":man_singer_tone3:":{uc_base:"1f468-1f3fd-1f3a4",uc_output:"1f468-1f3fd-200d-1f3a4",uc_match:"1f468-1f3fd-1f3a4",uc_greedy:"1f468-1f3fd-1f3a4",shortnames:[":man_singer_medium_skin_tone:"],category:"people"},":man_singer_tone4:":{uc_base:"1f468-1f3fe-1f3a4",uc_output:"1f468-1f3fe-200d-1f3a4",uc_match:"1f468-1f3fe-1f3a4",uc_greedy:"1f468-1f3fe-1f3a4",shortnames:[":man_singer_medium_dark_skin_tone:"],category:"people"},":man_singer_tone5:":{uc_base:"1f468-1f3ff-1f3a4",uc_output:"1f468-1f3ff-200d-1f3a4",uc_match:"1f468-1f3ff-1f3a4",uc_greedy:"1f468-1f3ff-1f3a4",shortnames:[":man_singer_dark_skin_tone:"],category:"people"},":man_student_tone1:":{uc_base:"1f468-1f3fb-1f393",uc_output:"1f468-1f3fb-200d-1f393",uc_match:"1f468-1f3fb-1f393",uc_greedy:"1f468-1f3fb-1f393",shortnames:[":man_student_light_skin_tone:"],category:"people"},":man_student_tone2:":{uc_base:"1f468-1f3fc-1f393",uc_output:"1f468-1f3fc-200d-1f393",uc_match:"1f468-1f3fc-1f393",uc_greedy:"1f468-1f3fc-1f393",shortnames:[":man_student_medium_light_skin_tone:"],category:"people"},":man_student_tone3:":{uc_base:"1f468-1f3fd-1f393",uc_output:"1f468-1f3fd-200d-1f393",uc_match:"1f468-1f3fd-1f393",uc_greedy:"1f468-1f3fd-1f393",shortnames:[":man_student_medium_skin_tone:"],category:"people"},":man_student_tone4:":{uc_base:"1f468-1f3fe-1f393",uc_output:"1f468-1f3fe-200d-1f393",uc_match:"1f468-1f3fe-1f393",uc_greedy:"1f468-1f3fe-1f393",shortnames:[":man_student_medium_dark_skin_tone:"],category:"people"},":man_student_tone5:":{uc_base:"1f468-1f3ff-1f393",uc_output:"1f468-1f3ff-200d-1f393",uc_match:"1f468-1f3ff-1f393",uc_greedy:"1f468-1f3ff-1f393",shortnames:[":man_student_dark_skin_tone:"],category:"people"},":man_teacher_tone1:":{uc_base:"1f468-1f3fb-1f3eb",uc_output:"1f468-1f3fb-200d-1f3eb",uc_match:"1f468-1f3fb-1f3eb",uc_greedy:"1f468-1f3fb-1f3eb",shortnames:[":man_teacher_light_skin_tone:"],category:"people"},":man_teacher_tone2:":{uc_base:"1f468-1f3fc-1f3eb",uc_output:"1f468-1f3fc-200d-1f3eb",uc_match:"1f468-1f3fc-1f3eb",uc_greedy:"1f468-1f3fc-1f3eb",shortnames:[":man_teacher_medium_light_skin_tone:"],category:"people"},":man_teacher_tone3:":{uc_base:"1f468-1f3fd-1f3eb",uc_output:"1f468-1f3fd-200d-1f3eb",uc_match:"1f468-1f3fd-1f3eb",uc_greedy:"1f468-1f3fd-1f3eb",shortnames:[":man_teacher_medium_skin_tone:"],category:"people"},":man_teacher_tone4:":{uc_base:"1f468-1f3fe-1f3eb",uc_output:"1f468-1f3fe-200d-1f3eb",uc_match:"1f468-1f3fe-1f3eb",uc_greedy:"1f468-1f3fe-1f3eb",shortnames:[":man_teacher_medium_dark_skin_tone:"],category:"people"},":man_teacher_tone5:":{uc_base:"1f468-1f3ff-1f3eb",uc_output:"1f468-1f3ff-200d-1f3eb",uc_match:"1f468-1f3ff-1f3eb",uc_greedy:"1f468-1f3ff-1f3eb",shortnames:[":man_teacher_dark_skin_tone:"],category:"people"},":man_technologist_tone1:":{uc_base:"1f468-1f3fb-1f4bb",uc_output:"1f468-1f3fb-200d-1f4bb",uc_match:"1f468-1f3fb-1f4bb",uc_greedy:"1f468-1f3fb-1f4bb",shortnames:[":man_technologist_light_skin_tone:"],category:"people"},":man_technologist_tone2:":{uc_base:"1f468-1f3fc-1f4bb",uc_output:"1f468-1f3fc-200d-1f4bb",uc_match:"1f468-1f3fc-1f4bb",uc_greedy:"1f468-1f3fc-1f4bb",shortnames:[":man_technologist_medium_light_skin_tone:"],category:"people"},":man_technologist_tone3:":{uc_base:"1f468-1f3fd-1f4bb",uc_output:"1f468-1f3fd-200d-1f4bb",uc_match:"1f468-1f3fd-1f4bb",uc_greedy:"1f468-1f3fd-1f4bb",shortnames:[":man_technologist_medium_skin_tone:"],category:"people"},":man_technologist_tone4:":{uc_base:"1f468-1f3fe-1f4bb",uc_output:"1f468-1f3fe-200d-1f4bb",uc_match:"1f468-1f3fe-1f4bb",uc_greedy:"1f468-1f3fe-1f4bb",shortnames:[":man_technologist_medium_dark_skin_tone:"],category:"people"},":man_technologist_tone5:":{uc_base:"1f468-1f3ff-1f4bb",uc_output:"1f468-1f3ff-200d-1f4bb",uc_match:"1f468-1f3ff-1f4bb",uc_greedy:"1f468-1f3ff-1f4bb",shortnames:[":man_technologist_dark_skin_tone:"],category:"people"},":man_white_haired_tone1:":{uc_base:"1f468-1f3fb-1f9b3",uc_output:"1f468-1f3fb-200d-1f9b3",uc_match:"1f468-1f3fb-1f9b3",uc_greedy:"1f468-1f3fb-1f9b3",shortnames:[":man_white_haired_light_skin_tone:"],category:"people"},":man_white_haired_tone2:":{uc_base:"1f468-1f3fc-1f9b3",uc_output:"1f468-1f3fc-200d-1f9b3",uc_match:"1f468-1f3fc-1f9b3",uc_greedy:"1f468-1f3fc-1f9b3",shortnames:[":man_white_haired_medium_light_skin_tone:"],category:"people"},":man_white_haired_tone3:":{uc_base:"1f468-1f3fd-1f9b3",uc_output:"1f468-1f3fd-200d-1f9b3",uc_match:"1f468-1f3fd-1f9b3",uc_greedy:"1f468-1f3fd-1f9b3",shortnames:[":man_white_haired_medium_skin_tone:"],category:"people"},":man_white_haired_tone4:":{uc_base:"1f468-1f3fe-1f9b3",uc_output:"1f468-1f3fe-200d-1f9b3",uc_match:"1f468-1f3fe-1f9b3",uc_greedy:"1f468-1f3fe-1f9b3",shortnames:[":man_white_haired_medium_dark_skin_tone:"],category:"people"},":man_white_haired_tone5:":{uc_base:"1f468-1f3ff-1f9b3",uc_output:"1f468-1f3ff-200d-1f9b3",uc_match:"1f468-1f3ff-1f9b3",uc_greedy:"1f468-1f3ff-1f9b3",shortnames:[":man_white_haired_dark_skin_tone:"],category:"people"},":woman_artist_tone1:":{uc_base:"1f469-1f3fb-1f3a8",uc_output:"1f469-1f3fb-200d-1f3a8",uc_match:"1f469-1f3fb-1f3a8",uc_greedy:"1f469-1f3fb-1f3a8",shortnames:[":woman_artist_light_skin_tone:"],category:"people"},":woman_artist_tone2:":{uc_base:"1f469-1f3fc-1f3a8",uc_output:"1f469-1f3fc-200d-1f3a8",uc_match:"1f469-1f3fc-1f3a8",uc_greedy:"1f469-1f3fc-1f3a8",shortnames:[":woman_artist_medium_light_skin_tone:"],category:"people"},":woman_artist_tone3:":{uc_base:"1f469-1f3fd-1f3a8",uc_output:"1f469-1f3fd-200d-1f3a8",uc_match:"1f469-1f3fd-1f3a8",uc_greedy:"1f469-1f3fd-1f3a8",shortnames:[":woman_artist_medium_skin_tone:"],category:"people"},":woman_artist_tone4:":{uc_base:"1f469-1f3fe-1f3a8",uc_output:"1f469-1f3fe-200d-1f3a8",uc_match:"1f469-1f3fe-1f3a8",uc_greedy:"1f469-1f3fe-1f3a8",shortnames:[":woman_artist_medium_dark_skin_tone:"],category:"people"},":woman_artist_tone5:":{uc_base:"1f469-1f3ff-1f3a8",uc_output:"1f469-1f3ff-200d-1f3a8",uc_match:"1f469-1f3ff-1f3a8",uc_greedy:"1f469-1f3ff-1f3a8",shortnames:[":woman_artist_dark_skin_tone:"],category:"people"},":woman_astronaut_tone1:":{uc_base:"1f469-1f3fb-1f680",uc_output:"1f469-1f3fb-200d-1f680",uc_match:"1f469-1f3fb-1f680",uc_greedy:"1f469-1f3fb-1f680",shortnames:[":woman_astronaut_light_skin_tone:"],category:"people"},":woman_astronaut_tone2:":{uc_base:"1f469-1f3fc-1f680",uc_output:"1f469-1f3fc-200d-1f680",uc_match:"1f469-1f3fc-1f680",uc_greedy:"1f469-1f3fc-1f680",shortnames:[":woman_astronaut_medium_light_skin_tone:"],category:"people"},":woman_astronaut_tone3:":{uc_base:"1f469-1f3fd-1f680",uc_output:"1f469-1f3fd-200d-1f680",uc_match:"1f469-1f3fd-1f680",uc_greedy:"1f469-1f3fd-1f680",shortnames:[":woman_astronaut_medium_skin_tone:"],category:"people"},":woman_astronaut_tone4:":{uc_base:"1f469-1f3fe-1f680",uc_output:"1f469-1f3fe-200d-1f680",uc_match:"1f469-1f3fe-1f680",uc_greedy:"1f469-1f3fe-1f680",shortnames:[":woman_astronaut_medium_dark_skin_tone:"],category:"people"},":woman_astronaut_tone5:":{uc_base:"1f469-1f3ff-1f680",uc_output:"1f469-1f3ff-200d-1f680",uc_match:"1f469-1f3ff-1f680",uc_greedy:"1f469-1f3ff-1f680",shortnames:[":woman_astronaut_dark_skin_tone:"],category:"people"},":woman_bald_tone1:":{uc_base:"1f469-1f3fb-1f9b2",uc_output:"1f469-1f3fb-200d-1f9b2",uc_match:"1f469-1f3fb-1f9b2",uc_greedy:"1f469-1f3fb-1f9b2",shortnames:[":woman_bald_light_skin_tone:"],category:"people"},":woman_bald_tone2:":{uc_base:"1f469-1f3fc-1f9b2",uc_output:"1f469-1f3fc-200d-1f9b2",uc_match:"1f469-1f3fc-1f9b2",uc_greedy:"1f469-1f3fc-1f9b2",shortnames:[":woman_bald_medium_light_skin_tone:"],category:"people"},":woman_bald_tone3:":{uc_base:"1f469-1f3fd-1f9b2",uc_output:"1f469-1f3fd-200d-1f9b2",uc_match:"1f469-1f3fd-1f9b2",uc_greedy:"1f469-1f3fd-1f9b2",shortnames:[":woman_bald_medium_skin_tone:"],category:"people"},":woman_bald_tone4:":{uc_base:"1f469-1f3fe-1f9b2",uc_output:"1f469-1f3fe-200d-1f9b2",uc_match:"1f469-1f3fe-1f9b2",uc_greedy:"1f469-1f3fe-1f9b2",shortnames:[":woman_bald_medium_dark_skin_tone:"],category:"people"},":woman_bald_tone5:":{uc_base:"1f469-1f3ff-1f9b2",uc_output:"1f469-1f3ff-200d-1f9b2",uc_match:"1f469-1f3ff-1f9b2",uc_greedy:"1f469-1f3ff-1f9b2",shortnames:[":woman_bald_dark_skin_tone:"],category:"people"},":woman_cook_tone1:":{uc_base:"1f469-1f3fb-1f373",uc_output:"1f469-1f3fb-200d-1f373",uc_match:"1f469-1f3fb-1f373",uc_greedy:"1f469-1f3fb-1f373",shortnames:[":woman_cook_light_skin_tone:"],category:"people"},":woman_cook_tone2:":{uc_base:"1f469-1f3fc-1f373",uc_output:"1f469-1f3fc-200d-1f373",uc_match:"1f469-1f3fc-1f373",uc_greedy:"1f469-1f3fc-1f373",shortnames:[":woman_cook_medium_light_skin_tone:"],category:"people"},":woman_cook_tone3:":{uc_base:"1f469-1f3fd-1f373",uc_output:"1f469-1f3fd-200d-1f373",uc_match:"1f469-1f3fd-1f373",uc_greedy:"1f469-1f3fd-1f373",shortnames:[":woman_cook_medium_skin_tone:"],category:"people"},":woman_cook_tone4:":{uc_base:"1f469-1f3fe-1f373",uc_output:"1f469-1f3fe-200d-1f373",uc_match:"1f469-1f3fe-1f373",uc_greedy:"1f469-1f3fe-1f373",shortnames:[":woman_cook_medium_dark_skin_tone:"],category:"people"},":woman_cook_tone5:":{uc_base:"1f469-1f3ff-1f373",uc_output:"1f469-1f3ff-200d-1f373",uc_match:"1f469-1f3ff-1f373",uc_greedy:"1f469-1f3ff-1f373",shortnames:[":woman_cook_dark_skin_tone:"],category:"people"},":woman_curly_haired_tone1:":{uc_base:"1f469-1f3fb-1f9b1",uc_output:"1f469-1f3fb-200d-1f9b1",uc_match:"1f469-1f3fb-1f9b1",uc_greedy:"1f469-1f3fb-1f9b1",shortnames:[":woman_curly_haired_light_skin_tone:"],category:"people"},":woman_curly_haired_tone2:":{uc_base:"1f469-1f3fc-1f9b1",uc_output:"1f469-1f3fc-200d-1f9b1",uc_match:"1f469-1f3fc-1f9b1",uc_greedy:"1f469-1f3fc-1f9b1",shortnames:[":woman_curly_haired_medium_light_skin_tone:"],category:"people"},":woman_curly_haired_tone3:":{uc_base:"1f469-1f3fd-1f9b1",uc_output:"1f469-1f3fd-200d-1f9b1",uc_match:"1f469-1f3fd-1f9b1",uc_greedy:"1f469-1f3fd-1f9b1",shortnames:[":woman_curly_haired_medium_skin_tone:"],category:"people"},":woman_curly_haired_tone4:":{uc_base:"1f469-1f3fe-1f9b1",uc_output:"1f469-1f3fe-200d-1f9b1",uc_match:"1f469-1f3fe-1f9b1",uc_greedy:"1f469-1f3fe-1f9b1",shortnames:[":woman_curly_haired_medium_dark_skin_tone:"],category:"people"},":woman_curly_haired_tone5:":{uc_base:"1f469-1f3ff-1f9b1",uc_output:"1f469-1f3ff-200d-1f9b1",uc_match:"1f469-1f3ff-1f9b1",uc_greedy:"1f469-1f3ff-1f9b1",shortnames:[":woman_curly_haired_dark_skin_tone:"],category:"people"},":woman_factory_worker_tone1:":{uc_base:"1f469-1f3fb-1f3ed",uc_output:"1f469-1f3fb-200d-1f3ed",uc_match:"1f469-1f3fb-1f3ed",uc_greedy:"1f469-1f3fb-1f3ed",shortnames:[":woman_factory_worker_light_skin_tone:"],category:"people"},":woman_factory_worker_tone2:":{uc_base:"1f469-1f3fc-1f3ed",uc_output:"1f469-1f3fc-200d-1f3ed",uc_match:"1f469-1f3fc-1f3ed",uc_greedy:"1f469-1f3fc-1f3ed",shortnames:[":woman_factory_worker_medium_light_skin_tone:"],category:"people"},":woman_factory_worker_tone3:":{uc_base:"1f469-1f3fd-1f3ed",uc_output:"1f469-1f3fd-200d-1f3ed",uc_match:"1f469-1f3fd-1f3ed",uc_greedy:"1f469-1f3fd-1f3ed",shortnames:[":woman_factory_worker_medium_skin_tone:"],category:"people"},":woman_factory_worker_tone4:":{uc_base:"1f469-1f3fe-1f3ed",uc_output:"1f469-1f3fe-200d-1f3ed",uc_match:"1f469-1f3fe-1f3ed",uc_greedy:"1f469-1f3fe-1f3ed",shortnames:[":woman_factory_worker_medium_dark_skin_tone:"],category:"people"},":woman_factory_worker_tone5:":{uc_base:"1f469-1f3ff-1f3ed",uc_output:"1f469-1f3ff-200d-1f3ed",uc_match:"1f469-1f3ff-1f3ed",uc_greedy:"1f469-1f3ff-1f3ed",shortnames:[":woman_factory_worker_dark_skin_tone:"],category:"people"},":woman_farmer_tone1:":{uc_base:"1f469-1f3fb-1f33e",uc_output:"1f469-1f3fb-200d-1f33e",uc_match:"1f469-1f3fb-1f33e",uc_greedy:"1f469-1f3fb-1f33e",shortnames:[":woman_farmer_light_skin_tone:"],category:"people"},":woman_farmer_tone2:":{uc_base:"1f469-1f3fc-1f33e",uc_output:"1f469-1f3fc-200d-1f33e",uc_match:"1f469-1f3fc-1f33e",uc_greedy:"1f469-1f3fc-1f33e",shortnames:[":woman_farmer_medium_light_skin_tone:"],category:"people"},":woman_farmer_tone3:":{uc_base:"1f469-1f3fd-1f33e",uc_output:"1f469-1f3fd-200d-1f33e",uc_match:"1f469-1f3fd-1f33e",uc_greedy:"1f469-1f3fd-1f33e",shortnames:[":woman_farmer_medium_skin_tone:"],category:"people"},":woman_farmer_tone4:":{uc_base:"1f469-1f3fe-1f33e",uc_output:"1f469-1f3fe-200d-1f33e",uc_match:"1f469-1f3fe-1f33e",uc_greedy:"1f469-1f3fe-1f33e",shortnames:[":woman_farmer_medium_dark_skin_tone:"],category:"people"},":woman_farmer_tone5:":{uc_base:"1f469-1f3ff-1f33e",uc_output:"1f469-1f3ff-200d-1f33e",uc_match:"1f469-1f3ff-1f33e",uc_greedy:"1f469-1f3ff-1f33e",shortnames:[":woman_farmer_dark_skin_tone:"],category:"people"},":woman_firefighter_tone1:":{uc_base:"1f469-1f3fb-1f692",uc_output:"1f469-1f3fb-200d-1f692",uc_match:"1f469-1f3fb-1f692",uc_greedy:"1f469-1f3fb-1f692",shortnames:[":woman_firefighter_light_skin_tone:"],category:"people"},":woman_firefighter_tone2:":{uc_base:"1f469-1f3fc-1f692",uc_output:"1f469-1f3fc-200d-1f692",uc_match:"1f469-1f3fc-1f692",uc_greedy:"1f469-1f3fc-1f692",shortnames:[":woman_firefighter_medium_light_skin_tone:"],category:"people"},":woman_firefighter_tone3:":{uc_base:"1f469-1f3fd-1f692",uc_output:"1f469-1f3fd-200d-1f692",uc_match:"1f469-1f3fd-1f692",uc_greedy:"1f469-1f3fd-1f692",shortnames:[":woman_firefighter_medium_skin_tone:"],category:"people"},":woman_firefighter_tone4:":{uc_base:"1f469-1f3fe-1f692",uc_output:"1f469-1f3fe-200d-1f692",uc_match:"1f469-1f3fe-1f692",uc_greedy:"1f469-1f3fe-1f692",shortnames:[":woman_firefighter_medium_dark_skin_tone:"],category:"people"},":woman_firefighter_tone5:":{uc_base:"1f469-1f3ff-1f692",uc_output:"1f469-1f3ff-200d-1f692",uc_match:"1f469-1f3ff-1f692",uc_greedy:"1f469-1f3ff-1f692",shortnames:[":woman_firefighter_dark_skin_tone:"],category:"people"},":woman_mechanic_tone1:":{uc_base:"1f469-1f3fb-1f527",uc_output:"1f469-1f3fb-200d-1f527",uc_match:"1f469-1f3fb-1f527",uc_greedy:"1f469-1f3fb-1f527",shortnames:[":woman_mechanic_light_skin_tone:"],category:"people"},":woman_mechanic_tone2:":{uc_base:"1f469-1f3fc-1f527",uc_output:"1f469-1f3fc-200d-1f527",uc_match:"1f469-1f3fc-1f527",uc_greedy:"1f469-1f3fc-1f527",shortnames:[":woman_mechanic_medium_light_skin_tone:"],category:"people"},":woman_mechanic_tone3:":{uc_base:"1f469-1f3fd-1f527",uc_output:"1f469-1f3fd-200d-1f527",uc_match:"1f469-1f3fd-1f527",uc_greedy:"1f469-1f3fd-1f527",shortnames:[":woman_mechanic_medium_skin_tone:"],category:"people"},":woman_mechanic_tone4:":{uc_base:"1f469-1f3fe-1f527",uc_output:"1f469-1f3fe-200d-1f527",uc_match:"1f469-1f3fe-1f527",uc_greedy:"1f469-1f3fe-1f527",shortnames:[":woman_mechanic_medium_dark_skin_tone:"],category:"people"},":woman_mechanic_tone5:":{uc_base:"1f469-1f3ff-1f527",uc_output:"1f469-1f3ff-200d-1f527",uc_match:"1f469-1f3ff-1f527",uc_greedy:"1f469-1f3ff-1f527",shortnames:[":woman_mechanic_dark_skin_tone:"],category:"people"},":woman_office_worker_tone1:":{uc_base:"1f469-1f3fb-1f4bc",uc_output:"1f469-1f3fb-200d-1f4bc",uc_match:"1f469-1f3fb-1f4bc",uc_greedy:"1f469-1f3fb-1f4bc",shortnames:[":woman_office_worker_light_skin_tone:"],category:"people"},":woman_office_worker_tone2:":{uc_base:"1f469-1f3fc-1f4bc",uc_output:"1f469-1f3fc-200d-1f4bc",uc_match:"1f469-1f3fc-1f4bc",uc_greedy:"1f469-1f3fc-1f4bc",shortnames:[":woman_office_worker_medium_light_skin_tone:"],category:"people"},":woman_office_worker_tone3:":{uc_base:"1f469-1f3fd-1f4bc",uc_output:"1f469-1f3fd-200d-1f4bc",uc_match:"1f469-1f3fd-1f4bc",uc_greedy:"1f469-1f3fd-1f4bc",shortnames:[":woman_office_worker_medium_skin_tone:"],category:"people"},":woman_office_worker_tone4:":{uc_base:"1f469-1f3fe-1f4bc",uc_output:"1f469-1f3fe-200d-1f4bc",uc_match:"1f469-1f3fe-1f4bc",uc_greedy:"1f469-1f3fe-1f4bc",shortnames:[":woman_office_worker_medium_dark_skin_tone:"],category:"people"},":woman_office_worker_tone5:":{uc_base:"1f469-1f3ff-1f4bc",uc_output:"1f469-1f3ff-200d-1f4bc",uc_match:"1f469-1f3ff-1f4bc",uc_greedy:"1f469-1f3ff-1f4bc",shortnames:[":woman_office_worker_dark_skin_tone:"],category:"people"},":woman_red_haired_tone1:":{uc_base:"1f469-1f3fb-1f9b0",uc_output:"1f469-1f3fb-200d-1f9b0",uc_match:"1f469-1f3fb-1f9b0",uc_greedy:"1f469-1f3fb-1f9b0",shortnames:[":woman_red_haired_light_skin_tone:"],category:"people"},":woman_red_haired_tone2:":{uc_base:"1f469-1f3fc-1f9b0",uc_output:"1f469-1f3fc-200d-1f9b0",uc_match:"1f469-1f3fc-1f9b0",uc_greedy:"1f469-1f3fc-1f9b0",shortnames:[":woman_red_haired_medium_light_skin_tone:"],category:"people"},":woman_red_haired_tone3:":{uc_base:"1f469-1f3fd-1f9b0",uc_output:"1f469-1f3fd-200d-1f9b0",uc_match:"1f469-1f3fd-1f9b0",uc_greedy:"1f469-1f3fd-1f9b0",shortnames:[":woman_red_haired_medium_skin_tone:"],category:"people"},":woman_red_haired_tone4:":{uc_base:"1f469-1f3fe-1f9b0",uc_output:"1f469-1f3fe-200d-1f9b0",uc_match:"1f469-1f3fe-1f9b0",uc_greedy:"1f469-1f3fe-1f9b0",shortnames:[":woman_red_haired_medium_dark_skin_tone:"],category:"people"},":woman_red_haired_tone5:":{uc_base:"1f469-1f3ff-1f9b0",uc_output:"1f469-1f3ff-200d-1f9b0",uc_match:"1f469-1f3ff-1f9b0",uc_greedy:"1f469-1f3ff-1f9b0",shortnames:[":woman_red_haired_dark_skin_tone:"],category:"people"},":woman_scientist_tone1:":{uc_base:"1f469-1f3fb-1f52c",uc_output:"1f469-1f3fb-200d-1f52c",uc_match:"1f469-1f3fb-1f52c",uc_greedy:"1f469-1f3fb-1f52c",shortnames:[":woman_scientist_light_skin_tone:"],category:"people"},":woman_scientist_tone2:":{uc_base:"1f469-1f3fc-1f52c",uc_output:"1f469-1f3fc-200d-1f52c",uc_match:"1f469-1f3fc-1f52c",uc_greedy:"1f469-1f3fc-1f52c",shortnames:[":woman_scientist_medium_light_skin_tone:"],category:"people"},":woman_scientist_tone3:":{uc_base:"1f469-1f3fd-1f52c",uc_output:"1f469-1f3fd-200d-1f52c",uc_match:"1f469-1f3fd-1f52c",uc_greedy:"1f469-1f3fd-1f52c",shortnames:[":woman_scientist_medium_skin_tone:"],category:"people"},":woman_scientist_tone4:":{uc_base:"1f469-1f3fe-1f52c",uc_output:"1f469-1f3fe-200d-1f52c",uc_match:"1f469-1f3fe-1f52c",uc_greedy:"1f469-1f3fe-1f52c",shortnames:[":woman_scientist_medium_dark_skin_tone:"],category:"people"},":woman_scientist_tone5:":{uc_base:"1f469-1f3ff-1f52c",uc_output:"1f469-1f3ff-200d-1f52c",uc_match:"1f469-1f3ff-1f52c",uc_greedy:"1f469-1f3ff-1f52c",shortnames:[":woman_scientist_dark_skin_tone:"],category:"people"},":woman_singer_tone1:":{uc_base:"1f469-1f3fb-1f3a4",uc_output:"1f469-1f3fb-200d-1f3a4",uc_match:"1f469-1f3fb-1f3a4",uc_greedy:"1f469-1f3fb-1f3a4",shortnames:[":woman_singer_light_skin_tone:"],category:"people"},":woman_singer_tone2:":{uc_base:"1f469-1f3fc-1f3a4",uc_output:"1f469-1f3fc-200d-1f3a4",uc_match:"1f469-1f3fc-1f3a4",uc_greedy:"1f469-1f3fc-1f3a4",shortnames:[":woman_singer_medium_light_skin_tone:"],category:"people"},":woman_singer_tone3:":{uc_base:"1f469-1f3fd-1f3a4",uc_output:"1f469-1f3fd-200d-1f3a4",uc_match:"1f469-1f3fd-1f3a4",uc_greedy:"1f469-1f3fd-1f3a4",shortnames:[":woman_singer_medium_skin_tone:"],category:"people"},":woman_singer_tone4:":{uc_base:"1f469-1f3fe-1f3a4",uc_output:"1f469-1f3fe-200d-1f3a4",uc_match:"1f469-1f3fe-1f3a4",uc_greedy:"1f469-1f3fe-1f3a4",shortnames:[":woman_singer_medium_dark_skin_tone:"],category:"people"},":woman_singer_tone5:":{uc_base:"1f469-1f3ff-1f3a4",uc_output:"1f469-1f3ff-200d-1f3a4",uc_match:"1f469-1f3ff-1f3a4",uc_greedy:"1f469-1f3ff-1f3a4",shortnames:[":woman_singer_dark_skin_tone:"],category:"people"},":woman_student_tone1:":{uc_base:"1f469-1f3fb-1f393",uc_output:"1f469-1f3fb-200d-1f393",uc_match:"1f469-1f3fb-1f393",uc_greedy:"1f469-1f3fb-1f393",shortnames:[":woman_student_light_skin_tone:"],category:"people"},":woman_student_tone2:":{uc_base:"1f469-1f3fc-1f393",uc_output:"1f469-1f3fc-200d-1f393",uc_match:"1f469-1f3fc-1f393",uc_greedy:"1f469-1f3fc-1f393",shortnames:[":woman_student_medium_light_skin_tone:"],category:"people"},":woman_student_tone3:":{uc_base:"1f469-1f3fd-1f393",uc_output:"1f469-1f3fd-200d-1f393",uc_match:"1f469-1f3fd-1f393",uc_greedy:"1f469-1f3fd-1f393",shortnames:[":woman_student_medium_skin_tone:"],category:"people"},":woman_student_tone4:":{uc_base:"1f469-1f3fe-1f393",uc_output:"1f469-1f3fe-200d-1f393",uc_match:"1f469-1f3fe-1f393",uc_greedy:"1f469-1f3fe-1f393",shortnames:[":woman_student_medium_dark_skin_tone:"],category:"people"},":woman_student_tone5:":{uc_base:"1f469-1f3ff-1f393",uc_output:"1f469-1f3ff-200d-1f393",uc_match:"1f469-1f3ff-1f393",uc_greedy:"1f469-1f3ff-1f393",shortnames:[":woman_student_dark_skin_tone:"],category:"people"},":woman_teacher_tone1:":{uc_base:"1f469-1f3fb-1f3eb",uc_output:"1f469-1f3fb-200d-1f3eb",uc_match:"1f469-1f3fb-1f3eb",uc_greedy:"1f469-1f3fb-1f3eb",shortnames:[":woman_teacher_light_skin_tone:"],category:"people"},":woman_teacher_tone2:":{uc_base:"1f469-1f3fc-1f3eb",uc_output:"1f469-1f3fc-200d-1f3eb",uc_match:"1f469-1f3fc-1f3eb",uc_greedy:"1f469-1f3fc-1f3eb",shortnames:[":woman_teacher_medium_light_skin_tone:"],category:"people"},":woman_teacher_tone3:":{uc_base:"1f469-1f3fd-1f3eb",uc_output:"1f469-1f3fd-200d-1f3eb",uc_match:"1f469-1f3fd-1f3eb",uc_greedy:"1f469-1f3fd-1f3eb",shortnames:[":woman_teacher_medium_skin_tone:"],category:"people"},":woman_teacher_tone4:":{uc_base:"1f469-1f3fe-1f3eb",uc_output:"1f469-1f3fe-200d-1f3eb",uc_match:"1f469-1f3fe-1f3eb",uc_greedy:"1f469-1f3fe-1f3eb",shortnames:[":woman_teacher_medium_dark_skin_tone:"],category:"people"},":woman_teacher_tone5:":{uc_base:"1f469-1f3ff-1f3eb",uc_output:"1f469-1f3ff-200d-1f3eb",uc_match:"1f469-1f3ff-1f3eb",uc_greedy:"1f469-1f3ff-1f3eb",shortnames:[":woman_teacher_dark_skin_tone:"],category:"people"},":woman_technologist_tone1:":{uc_base:"1f469-1f3fb-1f4bb",uc_output:"1f469-1f3fb-200d-1f4bb",uc_match:"1f469-1f3fb-1f4bb",uc_greedy:"1f469-1f3fb-1f4bb",shortnames:[":woman_technologist_light_skin_tone:"],category:"people"},":woman_technologist_tone2:":{uc_base:"1f469-1f3fc-1f4bb",uc_output:"1f469-1f3fc-200d-1f4bb",uc_match:"1f469-1f3fc-1f4bb",uc_greedy:"1f469-1f3fc-1f4bb",shortnames:[":woman_technologist_medium_light_skin_tone:"],category:"people"},":woman_technologist_tone3:":{uc_base:"1f469-1f3fd-1f4bb",uc_output:"1f469-1f3fd-200d-1f4bb",uc_match:"1f469-1f3fd-1f4bb",uc_greedy:"1f469-1f3fd-1f4bb",shortnames:[":woman_technologist_medium_skin_tone:"],category:"people"},":woman_technologist_tone4:":{uc_base:"1f469-1f3fe-1f4bb",uc_output:"1f469-1f3fe-200d-1f4bb",uc_match:"1f469-1f3fe-1f4bb",uc_greedy:"1f469-1f3fe-1f4bb",shortnames:[":woman_technologist_medium_dark_skin_tone:"],category:"people"},":woman_technologist_tone5:":{uc_base:"1f469-1f3ff-1f4bb",uc_output:"1f469-1f3ff-200d-1f4bb",uc_match:"1f469-1f3ff-1f4bb",uc_greedy:"1f469-1f3ff-1f4bb",shortnames:[":woman_technologist_dark_skin_tone:"],category:"people"},":woman_white_haired_tone1:":{uc_base:"1f469-1f3fb-1f9b3",uc_output:"1f469-1f3fb-200d-1f9b3",uc_match:"1f469-1f3fb-1f9b3",uc_greedy:"1f469-1f3fb-1f9b3",shortnames:[":woman_white_haired_light_skin_tone:"],category:"people"},":woman_white_haired_tone2:":{uc_base:"1f469-1f3fc-1f9b3",uc_output:"1f469-1f3fc-200d-1f9b3",uc_match:"1f469-1f3fc-1f9b3",uc_greedy:"1f469-1f3fc-1f9b3",shortnames:[":woman_white_haired_medium_light_skin_tone:"],category:"people"},":woman_white_haired_tone3:":{uc_base:"1f469-1f3fd-1f9b3",uc_output:"1f469-1f3fd-200d-1f9b3",uc_match:"1f469-1f3fd-1f9b3",uc_greedy:"1f469-1f3fd-1f9b3",shortnames:[":woman_white_haired_medium_skin_tone:"],category:"people"},":woman_white_haired_tone4:":{uc_base:"1f469-1f3fe-1f9b3",uc_output:"1f469-1f3fe-200d-1f9b3",uc_match:"1f469-1f3fe-1f9b3",uc_greedy:"1f469-1f3fe-1f9b3",shortnames:[":woman_white_haired_medium_dark_skin_tone:"],category:"people"},":woman_white_haired_tone5:":{uc_base:"1f469-1f3ff-1f9b3",uc_output:"1f469-1f3ff-200d-1f9b3",uc_match:"1f469-1f3ff-1f9b3",uc_greedy:"1f469-1f3ff-1f9b3",shortnames:[":woman_white_haired_dark_skin_tone:"],category:"people"},":rainbow_flag:":{uc_base:"1f3f3-1f308",uc_output:"1f3f3-fe0f-200d-1f308",uc_match:"1f3f3-fe0f-1f308",uc_greedy:"1f3f3-1f308",shortnames:[":gay_pride_flag:"],category:"flags"},":blond-haired_man:":{uc_base:"1f471-2642",uc_output:"1f471-200d-2642-fe0f",uc_match:"1f471-2642-fe0f",uc_greedy:"1f471-2642",shortnames:[],category:"people"},":blond-haired_woman:":{uc_base:"1f471-2640",uc_output:"1f471-200d-2640-fe0f",uc_match:"1f471-2640-fe0f",uc_greedy:"1f471-2640",shortnames:[],category:"people"},":man_biking:":{uc_base:"1f6b4-2642",uc_output:"1f6b4-200d-2642-fe0f",uc_match:"1f6b4-2642-fe0f",uc_greedy:"1f6b4-2642",shortnames:[],category:"activity"},":man_bowing:":{uc_base:"1f647-2642",uc_output:"1f647-200d-2642-fe0f",uc_match:"1f647-2642-fe0f",uc_greedy:"1f647-2642",shortnames:[],category:"people"},":man_cartwheeling:":{uc_base:"1f938-2642",uc_output:"1f938-200d-2642-fe0f",uc_match:"1f938-2642-fe0f",uc_greedy:"1f938-2642",shortnames:[],category:"activity"},":man_climbing:":{uc_base:"1f9d7-2642",uc_output:"1f9d7-200d-2642-fe0f",uc_match:"1f9d7-2642-fe0f",uc_greedy:"1f9d7-2642",shortnames:[],category:"activity"},":man_construction_worker:":{uc_base:"1f477-2642",uc_output:"1f477-200d-2642-fe0f",uc_match:"1f477-2642-fe0f",uc_greedy:"1f477-2642",shortnames:[],category:"people"},":man_elf:":{uc_base:"1f9dd-2642",uc_output:"1f9dd-200d-2642-fe0f",uc_match:"1f9dd-2642-fe0f",uc_greedy:"1f9dd-2642",shortnames:[],category:"people"},":man_facepalming:":{uc_base:"1f926-2642",uc_output:"1f926-200d-2642-fe0f",uc_match:"1f926-2642-fe0f",uc_greedy:"1f926-2642",shortnames:[],category:"people"},":man_fairy:":{uc_base:"1f9da-2642",uc_output:"1f9da-200d-2642-fe0f",uc_match:"1f9da-2642-fe0f",uc_greedy:"1f9da-2642",shortnames:[],category:"people"},":man_frowning:":{uc_base:"1f64d-2642",uc_output:"1f64d-200d-2642-fe0f",uc_match:"1f64d-2642-fe0f",uc_greedy:"1f64d-2642",shortnames:[],category:"people"},":man_genie:":{uc_base:"1f9de-2642",uc_output:"1f9de-200d-2642-fe0f",uc_match:"1f9de-2642-fe0f",uc_greedy:"1f9de-2642",shortnames:[],category:"people"},":man_gesturing_no:":{uc_base:"1f645-2642",uc_output:"1f645-200d-2642-fe0f",uc_match:"1f645-2642-fe0f",uc_greedy:"1f645-2642",shortnames:[],category:"people"},":man_gesturing_ok:":{uc_base:"1f646-2642",uc_output:"1f646-200d-2642-fe0f",uc_match:"1f646-2642-fe0f",uc_greedy:"1f646-2642",shortnames:[],category:"people"},":man_getting_face_massage:":{uc_base:"1f486-2642",uc_output:"1f486-200d-2642-fe0f",uc_match:"1f486-2642-fe0f",uc_greedy:"1f486-2642",shortnames:[],category:"people"},":man_getting_haircut:":{uc_base:"1f487-2642",uc_output:"1f487-200d-2642-fe0f",uc_match:"1f487-2642-fe0f",uc_greedy:"1f487-2642",shortnames:[],category:"people"},":man_guard:":{uc_base:"1f482-2642",uc_output:"1f482-200d-2642-fe0f",uc_match:"1f482-2642-fe0f",uc_greedy:"1f482-2642",shortnames:[],category:"people"},":man_health_worker:":{uc_base:"1f468-2695",uc_output:"1f468-200d-2695-fe0f",uc_match:"1f468-2695-fe0f",uc_greedy:"1f468-2695",shortnames:[],category:"people"},":man_in_lotus_position:":{uc_base:"1f9d8-2642",uc_output:"1f9d8-200d-2642-fe0f",uc_match:"1f9d8-2642-fe0f",uc_greedy:"1f9d8-2642",shortnames:[],category:"activity"},":man_in_steamy_room:":{uc_base:"1f9d6-2642",uc_output:"1f9d6-200d-2642-fe0f",uc_match:"1f9d6-2642-fe0f",uc_greedy:"1f9d6-2642",shortnames:[],category:"people"},":man_judge:":{uc_base:"1f468-2696",uc_output:"1f468-200d-2696-fe0f",uc_match:"1f468-2696-fe0f",uc_greedy:"1f468-2696",shortnames:[],category:"people"},":man_juggling:":{uc_base:"1f939-2642",uc_output:"1f939-200d-2642-fe0f",uc_match:"1f939-2642-fe0f",uc_greedy:"1f939-2642",shortnames:[],category:"activity"},":man_mage:":{uc_base:"1f9d9-2642",uc_output:"1f9d9-200d-2642-fe0f",uc_match:"1f9d9-2642-fe0f",uc_greedy:"1f9d9-2642",shortnames:[],category:"people"},":man_mountain_biking:":{uc_base:"1f6b5-2642",uc_output:"1f6b5-200d-2642-fe0f",uc_match:"1f6b5-2642-fe0f",uc_greedy:"1f6b5-2642",shortnames:[],category:"activity"},":man_pilot:":{uc_base:"1f468-2708",uc_output:"1f468-200d-2708-fe0f",uc_match:"1f468-2708-fe0f",uc_greedy:"1f468-2708",shortnames:[],category:"people"},":man_playing_handball:":{uc_base:"1f93e-2642",uc_output:"1f93e-200d-2642-fe0f",uc_match:"1f93e-2642-fe0f",uc_greedy:"1f93e-2642",shortnames:[],category:"activity"},":man_playing_water_polo:":{uc_base:"1f93d-2642",uc_output:"1f93d-200d-2642-fe0f",uc_match:"1f93d-2642-fe0f",uc_greedy:"1f93d-2642",shortnames:[],category:"activity"},":man_police_officer:":{uc_base:"1f46e-2642",uc_output:"1f46e-200d-2642-fe0f",uc_match:"1f46e-2642-fe0f",uc_greedy:"1f46e-2642",shortnames:[],category:"people"},":man_pouting:":{uc_base:"1f64e-2642",uc_output:"1f64e-200d-2642-fe0f",uc_match:"1f64e-2642-fe0f",uc_greedy:"1f64e-2642",shortnames:[],category:"people"},":man_raising_hand:":{uc_base:"1f64b-2642",uc_output:"1f64b-200d-2642-fe0f",uc_match:"1f64b-2642-fe0f",uc_greedy:"1f64b-2642",shortnames:[],category:"people"},":man_rowing_boat:":{uc_base:"1f6a3-2642",uc_output:"1f6a3-200d-2642-fe0f",uc_match:"1f6a3-2642-fe0f",uc_greedy:"1f6a3-2642",shortnames:[],category:"activity"},":man_running:":{uc_base:"1f3c3-2642",uc_output:"1f3c3-200d-2642-fe0f",uc_match:"1f3c3-2642-fe0f",uc_greedy:"1f3c3-2642",shortnames:[],category:"people"},":man_shrugging:":{uc_base:"1f937-2642",uc_output:"1f937-200d-2642-fe0f",uc_match:"1f937-2642-fe0f",uc_greedy:"1f937-2642",shortnames:[],category:"people"},":man_superhero:":{uc_base:"1f9b8-2642",uc_output:"1f9b8-200d-2642-fe0f",uc_match:"1f9b8-2642-fe0f",uc_greedy:"1f9b8-2642",shortnames:[],category:"people"},":man_supervillain:":{uc_base:"1f9b9-2642",uc_output:"1f9b9-200d-2642-fe0f",uc_match:"1f9b9-2642-fe0f",uc_greedy:"1f9b9-2642",shortnames:[],category:"people"},":man_surfing:":{uc_base:"1f3c4-2642",uc_output:"1f3c4-200d-2642-fe0f",uc_match:"1f3c4-2642-fe0f",uc_greedy:"1f3c4-2642",shortnames:[],category:"activity"},":man_swimming:":{uc_base:"1f3ca-2642",uc_output:"1f3ca-200d-2642-fe0f",uc_match:"1f3ca-2642-fe0f",uc_greedy:"1f3ca-2642",shortnames:[],category:"activity"},":man_tipping_hand:":{uc_base:"1f481-2642",uc_output:"1f481-200d-2642-fe0f",uc_match:"1f481-2642-fe0f",uc_greedy:"1f481-2642",shortnames:[],category:"people"},":man_vampire:":{uc_base:"1f9db-2642",uc_output:"1f9db-200d-2642-fe0f",uc_match:"1f9db-2642-fe0f",uc_greedy:"1f9db-2642",shortnames:[],category:"people"},":man_walking:":{uc_base:"1f6b6-2642",uc_output:"1f6b6-200d-2642-fe0f",uc_match:"1f6b6-2642-fe0f",uc_greedy:"1f6b6-2642",shortnames:[],category:"people"},":man_wearing_turban:":{uc_base:"1f473-2642",uc_output:"1f473-200d-2642-fe0f",uc_match:"1f473-2642-fe0f",uc_greedy:"1f473-2642",shortnames:[],category:"people"},":man_zombie:":{uc_base:"1f9df-2642",uc_output:"1f9df-200d-2642-fe0f",uc_match:"1f9df-2642-fe0f",uc_greedy:"1f9df-2642",shortnames:[],category:"people"},":men_with_bunny_ears_partying:":{uc_base:"1f46f-2642",uc_output:"1f46f-200d-2642-fe0f",uc_match:"1f46f-2642-fe0f",uc_greedy:"1f46f-2642",shortnames:[],category:"people"},":men_wrestling:":{uc_base:"1f93c-2642",uc_output:"1f93c-200d-2642-fe0f",uc_match:"1f93c-2642-fe0f",uc_greedy:"1f93c-2642",shortnames:[],category:"activity"},":mermaid:":{uc_base:"1f9dc-2640",uc_output:"1f9dc-200d-2640-fe0f",uc_match:"1f9dc-2640-fe0f",uc_greedy:"1f9dc-2640",shortnames:[],category:"people"},":merman:":{uc_base:"1f9dc-2642",uc_output:"1f9dc-200d-2642-fe0f",uc_match:"1f9dc-2642-fe0f",uc_greedy:"1f9dc-2642",shortnames:[],category:"people"},":pirate_flag:":{uc_base:"1f3f4-2620",uc_output:"1f3f4-200d-2620-fe0f",uc_match:"1f3f4-2620-fe0f",uc_greedy:"1f3f4-2620",shortnames:[],category:"flags"},":woman_biking:":{uc_base:"1f6b4-2640",uc_output:"1f6b4-200d-2640-fe0f",uc_match:"1f6b4-2640-fe0f",uc_greedy:"1f6b4-2640",shortnames:[],category:"activity"},":woman_bowing:":{uc_base:"1f647-2640",uc_output:"1f647-200d-2640-fe0f",uc_match:"1f647-2640-fe0f",uc_greedy:"1f647-2640",shortnames:[],category:"people"},":woman_cartwheeling:":{uc_base:"1f938-2640",uc_output:"1f938-200d-2640-fe0f",uc_match:"1f938-2640-fe0f",uc_greedy:"1f938-2640",shortnames:[],category:"activity"},":woman_climbing:":{uc_base:"1f9d7-2640",uc_output:"1f9d7-200d-2640-fe0f",uc_match:"1f9d7-2640-fe0f",uc_greedy:"1f9d7-2640",shortnames:[],category:"activity"},":woman_construction_worker:":{uc_base:"1f477-2640",uc_output:"1f477-200d-2640-fe0f",uc_match:"1f477-2640-fe0f",uc_greedy:"1f477-2640",shortnames:[],category:"people"},":woman_elf:":{uc_base:"1f9dd-2640",uc_output:"1f9dd-200d-2640-fe0f",uc_match:"1f9dd-2640-fe0f",uc_greedy:"1f9dd-2640",shortnames:[],category:"people"},":woman_facepalming:":{uc_base:"1f926-2640",uc_output:"1f926-200d-2640-fe0f",uc_match:"1f926-2640-fe0f",uc_greedy:"1f926-2640",shortnames:[],category:"people"},":woman_fairy:":{uc_base:"1f9da-2640",uc_output:"1f9da-200d-2640-fe0f",uc_match:"1f9da-2640-fe0f",uc_greedy:"1f9da-2640",shortnames:[],category:"people"},":woman_frowning:":{uc_base:"1f64d-2640",uc_output:"1f64d-200d-2640-fe0f",uc_match:"1f64d-2640-fe0f",uc_greedy:"1f64d-2640",shortnames:[],category:"people"},":woman_genie:":{uc_base:"1f9de-2640",uc_output:"1f9de-200d-2640-fe0f",uc_match:"1f9de-2640-fe0f",uc_greedy:"1f9de-2640",shortnames:[],category:"people"},":woman_gesturing_no:":{uc_base:"1f645-2640",uc_output:"1f645-200d-2640-fe0f",uc_match:"1f645-2640-fe0f",uc_greedy:"1f645-2640",shortnames:[],category:"people"},":woman_gesturing_ok:":{uc_base:"1f646-2640",uc_output:"1f646-200d-2640-fe0f",uc_match:"1f646-2640-fe0f",uc_greedy:"1f646-2640",shortnames:[],category:"people"},":woman_getting_face_massage:":{uc_base:"1f486-2640",uc_output:"1f486-200d-2640-fe0f",uc_match:"1f486-2640-fe0f",uc_greedy:"1f486-2640",shortnames:[],category:"people"},":woman_getting_haircut:":{uc_base:"1f487-2640",uc_output:"1f487-200d-2640-fe0f",uc_match:"1f487-2640-fe0f",uc_greedy:"1f487-2640",shortnames:[],category:"people"},":woman_guard:":{uc_base:"1f482-2640",uc_output:"1f482-200d-2640-fe0f",uc_match:"1f482-2640-fe0f",uc_greedy:"1f482-2640",shortnames:[],category:"people"},":woman_health_worker:":{uc_base:"1f469-2695",uc_output:"1f469-200d-2695-fe0f",uc_match:"1f469-2695-fe0f",uc_greedy:"1f469-2695",shortnames:[],category:"people"},":woman_in_lotus_position:":{uc_base:"1f9d8-2640",uc_output:"1f9d8-200d-2640-fe0f",uc_match:"1f9d8-2640-fe0f",uc_greedy:"1f9d8-2640",shortnames:[],category:"activity"},":woman_in_steamy_room:":{uc_base:"1f9d6-2640",uc_output:"1f9d6-200d-2640-fe0f",uc_match:"1f9d6-2640-fe0f",uc_greedy:"1f9d6-2640",shortnames:[],category:"people"},":woman_judge:":{uc_base:"1f469-2696",uc_output:"1f469-200d-2696-fe0f",uc_match:"1f469-2696-fe0f",uc_greedy:"1f469-2696",shortnames:[],category:"people"},":woman_juggling:":{uc_base:"1f939-2640",uc_output:"1f939-200d-2640-fe0f",uc_match:"1f939-2640-fe0f",uc_greedy:"1f939-2640",shortnames:[],category:"activity"},":woman_mage:":{uc_base:"1f9d9-2640",uc_output:"1f9d9-200d-2640-fe0f",uc_match:"1f9d9-2640-fe0f",uc_greedy:"1f9d9-2640",shortnames:[],category:"people"},":woman_mountain_biking:":{uc_base:"1f6b5-2640",uc_output:"1f6b5-200d-2640-fe0f",uc_match:"1f6b5-2640-fe0f",uc_greedy:"1f6b5-2640",shortnames:[],category:"activity"},":woman_pilot:":{uc_base:"1f469-2708",uc_output:"1f469-200d-2708-fe0f",uc_match:"1f469-2708-fe0f",uc_greedy:"1f469-2708",shortnames:[],category:"people"},":woman_playing_handball:":{uc_base:"1f93e-2640",uc_output:"1f93e-200d-2640-fe0f",uc_match:"1f93e-2640-fe0f",uc_greedy:"1f93e-2640",shortnames:[],category:"activity"},":woman_playing_water_polo:":{uc_base:"1f93d-2640",uc_output:"1f93d-200d-2640-fe0f",uc_match:"1f93d-2640-fe0f",uc_greedy:"1f93d-2640",shortnames:[],category:"activity"},":woman_police_officer:":{uc_base:"1f46e-2640",uc_output:"1f46e-200d-2640-fe0f",uc_match:"1f46e-2640-fe0f",uc_greedy:"1f46e-2640",shortnames:[],category:"people"},":woman_pouting:":{uc_base:"1f64e-2640",uc_output:"1f64e-200d-2640-fe0f",uc_match:"1f64e-2640-fe0f",uc_greedy:"1f64e-2640",shortnames:[],category:"people"},":woman_raising_hand:":{uc_base:"1f64b-2640",uc_output:"1f64b-200d-2640-fe0f",uc_match:"1f64b-2640-fe0f",uc_greedy:"1f64b-2640",shortnames:[],category:"people"},":woman_rowing_boat:":{uc_base:"1f6a3-2640",uc_output:"1f6a3-200d-2640-fe0f",uc_match:"1f6a3-2640-fe0f",uc_greedy:"1f6a3-2640",shortnames:[],category:"activity"},":woman_running:":{uc_base:"1f3c3-2640",uc_output:"1f3c3-200d-2640-fe0f",uc_match:"1f3c3-2640-fe0f",uc_greedy:"1f3c3-2640",shortnames:[],category:"people"},":woman_shrugging:":{uc_base:"1f937-2640",uc_output:"1f937-200d-2640-fe0f",uc_match:"1f937-2640-fe0f",uc_greedy:"1f937-2640",shortnames:[],category:"people"},":woman_superhero:":{uc_base:"1f9b8-2640",uc_output:"1f9b8-200d-2640-fe0f",uc_match:"1f9b8-2640-fe0f",uc_greedy:"1f9b8-2640",shortnames:[],category:"people"},":woman_supervillain:":{uc_base:"1f9b9-2640",uc_output:"1f9b9-200d-2640-fe0f",uc_match:"1f9b9-2640-fe0f",uc_greedy:"1f9b9-2640",shortnames:[],category:"people"},":woman_surfing:":{uc_base:"1f3c4-2640",uc_output:"1f3c4-200d-2640-fe0f",uc_match:"1f3c4-2640-fe0f",uc_greedy:"1f3c4-2640",shortnames:[],category:"activity"},":woman_swimming:":{uc_base:"1f3ca-2640",uc_output:"1f3ca-200d-2640-fe0f",uc_match:"1f3ca-2640-fe0f",uc_greedy:"1f3ca-2640",shortnames:[],category:"activity"},":woman_tipping_hand:":{uc_base:"1f481-2640",uc_output:"1f481-200d-2640-fe0f",uc_match:"1f481-2640-fe0f",uc_greedy:"1f481-2640",shortnames:[],category:"people"},":woman_vampire:":{uc_base:"1f9db-2640",uc_output:"1f9db-200d-2640-fe0f",uc_match:"1f9db-2640-fe0f",uc_greedy:"1f9db-2640",shortnames:[],category:"people"},":woman_walking:":{uc_base:"1f6b6-2640",uc_output:"1f6b6-200d-2640-fe0f",uc_match:"1f6b6-2640-fe0f",uc_greedy:"1f6b6-2640",shortnames:[],category:"people"},":woman_wearing_turban:":{uc_base:"1f473-2640",uc_output:"1f473-200d-2640-fe0f",uc_match:"1f473-2640-fe0f",uc_greedy:"1f473-2640",shortnames:[],category:"people"},":woman_zombie:":{uc_base:"1f9df-2640",uc_output:"1f9df-200d-2640-fe0f",uc_match:"1f9df-2640-fe0f",uc_greedy:"1f9df-2640",shortnames:[],category:"people"},":women_with_bunny_ears_partying:":{uc_base:"1f46f-2640",uc_output:"1f46f-200d-2640-fe0f",uc_match:"1f46f-2640-fe0f",uc_greedy:"1f46f-2640",shortnames:[],category:"people"},":women_wrestling:":{uc_base:"1f93c-2640",uc_output:"1f93c-200d-2640-fe0f",uc_match:"1f93c-2640-fe0f",uc_greedy:"1f93c-2640",shortnames:[],category:"activity"},":family_man_boy:":{uc_base:"1f468-1f466",uc_output:"1f468-200d-1f466",uc_match:"1f468-1f466",uc_greedy:"1f468-1f466",shortnames:[],category:"people"},":family_man_girl:":{uc_base:"1f468-1f467",uc_output:"1f468-200d-1f467",uc_match:"1f468-1f467",uc_greedy:"1f468-1f467",shortnames:[],category:"people"},":family_woman_boy:":{uc_base:"1f469-1f466",uc_output:"1f469-200d-1f466",uc_match:"1f469-1f466",uc_greedy:"1f469-1f466",shortnames:[],category:"people"},":family_woman_girl:":{uc_base:"1f469-1f467",uc_output:"1f469-200d-1f467",uc_match:"1f469-1f467",uc_greedy:"1f469-1f467",shortnames:[],category:"people"},":man_artist:":{uc_base:"1f468-1f3a8",uc_output:"1f468-200d-1f3a8",uc_match:"1f468-1f3a8",uc_greedy:"1f468-1f3a8",shortnames:[],category:"people"},":man_astronaut:":{uc_base:"1f468-1f680",uc_output:"1f468-200d-1f680",uc_match:"1f468-1f680",uc_greedy:"1f468-1f680",shortnames:[],category:"people"},":man_bald:":{uc_base:"1f468-1f9b2",uc_output:"1f468-200d-1f9b2",uc_match:"1f468-1f9b2",uc_greedy:"1f468-1f9b2",shortnames:[],category:"people"},":man_cook:":{uc_base:"1f468-1f373",uc_output:"1f468-200d-1f373",uc_match:"1f468-1f373",uc_greedy:"1f468-1f373",shortnames:[],category:"people"},":man_curly_haired:":{uc_base:"1f468-1f9b1",uc_output:"1f468-200d-1f9b1",uc_match:"1f468-1f9b1",uc_greedy:"1f468-1f9b1",shortnames:[],category:"people"},":man_factory_worker:":{uc_base:"1f468-1f3ed",uc_output:"1f468-200d-1f3ed",uc_match:"1f468-1f3ed",uc_greedy:"1f468-1f3ed",shortnames:[],category:"people"},":man_farmer:":{uc_base:"1f468-1f33e",uc_output:"1f468-200d-1f33e",uc_match:"1f468-1f33e",uc_greedy:"1f468-1f33e",shortnames:[],category:"people"},":man_firefighter:":{uc_base:"1f468-1f692",uc_output:"1f468-200d-1f692",uc_match:"1f468-1f692",uc_greedy:"1f468-1f692",shortnames:[],category:"people"},":man_mechanic:":{uc_base:"1f468-1f527",uc_output:"1f468-200d-1f527",uc_match:"1f468-1f527",uc_greedy:"1f468-1f527",shortnames:[],category:"people"},":man_office_worker:":{uc_base:"1f468-1f4bc",uc_output:"1f468-200d-1f4bc",uc_match:"1f468-1f4bc",uc_greedy:"1f468-1f4bc",shortnames:[],category:"people"},":man_red_haired:":{uc_base:"1f468-1f9b0",uc_output:"1f468-200d-1f9b0",uc_match:"1f468-1f9b0",uc_greedy:"1f468-1f9b0",shortnames:[],category:"people"},":man_scientist:":{uc_base:"1f468-1f52c",uc_output:"1f468-200d-1f52c",uc_match:"1f468-1f52c",uc_greedy:"1f468-1f52c",shortnames:[],category:"people"},":man_singer:":{uc_base:"1f468-1f3a4",uc_output:"1f468-200d-1f3a4",uc_match:"1f468-1f3a4",uc_greedy:"1f468-1f3a4",shortnames:[],category:"people"},":man_student:":{uc_base:"1f468-1f393",uc_output:"1f468-200d-1f393",uc_match:"1f468-1f393",uc_greedy:"1f468-1f393",shortnames:[],category:"people"},":man_teacher:":{uc_base:"1f468-1f3eb",uc_output:"1f468-200d-1f3eb",uc_match:"1f468-1f3eb",uc_greedy:"1f468-1f3eb",shortnames:[],category:"people"},":man_technologist:":{uc_base:"1f468-1f4bb",uc_output:"1f468-200d-1f4bb",uc_match:"1f468-1f4bb",uc_greedy:"1f468-1f4bb",shortnames:[],category:"people"},":man_white_haired:":{uc_base:"1f468-1f9b3",uc_output:"1f468-200d-1f9b3",uc_match:"1f468-1f9b3",uc_greedy:"1f468-1f9b3",shortnames:[],category:"people"},":woman_artist:":{uc_base:"1f469-1f3a8",uc_output:"1f469-200d-1f3a8",uc_match:"1f469-1f3a8",uc_greedy:"1f469-1f3a8",shortnames:[],category:"people"},":woman_astronaut:":{uc_base:"1f469-1f680",uc_output:"1f469-200d-1f680",uc_match:"1f469-1f680",uc_greedy:"1f469-1f680",shortnames:[],category:"people"},":woman_bald:":{uc_base:"1f469-1f9b2",uc_output:"1f469-200d-1f9b2",uc_match:"1f469-1f9b2",uc_greedy:"1f469-1f9b2",shortnames:[],category:"people"},":woman_cook:":{uc_base:"1f469-1f373",uc_output:"1f469-200d-1f373",uc_match:"1f469-1f373",uc_greedy:"1f469-1f373",shortnames:[],category:"people"},":woman_curly_haired:":{uc_base:"1f469-1f9b1",uc_output:"1f469-200d-1f9b1",uc_match:"1f469-1f9b1",uc_greedy:"1f469-1f9b1",shortnames:[],category:"people"},":woman_factory_worker:":{uc_base:"1f469-1f3ed",uc_output:"1f469-200d-1f3ed",uc_match:"1f469-1f3ed",uc_greedy:"1f469-1f3ed",shortnames:[],category:"people"},":woman_farmer:":{uc_base:"1f469-1f33e",uc_output:"1f469-200d-1f33e",uc_match:"1f469-1f33e",uc_greedy:"1f469-1f33e",shortnames:[],category:"people"},":woman_firefighter:":{uc_base:"1f469-1f692",uc_output:"1f469-200d-1f692",uc_match:"1f469-1f692",uc_greedy:"1f469-1f692",shortnames:[],category:"people"},":woman_mechanic:":{uc_base:"1f469-1f527",uc_output:"1f469-200d-1f527",uc_match:"1f469-1f527",uc_greedy:"1f469-1f527",shortnames:[],category:"people"},":woman_office_worker:":{uc_base:"1f469-1f4bc",uc_output:"1f469-200d-1f4bc",uc_match:"1f469-1f4bc",uc_greedy:"1f469-1f4bc",shortnames:[],category:"people"},":woman_red_haired:":{uc_base:"1f469-1f9b0",uc_output:"1f469-200d-1f9b0",uc_match:"1f469-1f9b0",uc_greedy:"1f469-1f9b0",shortnames:[],category:"people"},":woman_scientist:":{uc_base:"1f469-1f52c",uc_output:"1f469-200d-1f52c",uc_match:"1f469-1f52c",uc_greedy:"1f469-1f52c",shortnames:[],category:"people"},":woman_singer:":{uc_base:"1f469-1f3a4",uc_output:"1f469-200d-1f3a4",uc_match:"1f469-1f3a4",uc_greedy:"1f469-1f3a4",shortnames:[],category:"people"},":woman_student:":{uc_base:"1f469-1f393",uc_output:"1f469-200d-1f393",uc_match:"1f469-1f393",uc_greedy:"1f469-1f393",shortnames:[],category:"people"},":woman_teacher:":{uc_base:"1f469-1f3eb",uc_output:"1f469-200d-1f3eb",uc_match:"1f469-1f3eb",uc_greedy:"1f469-1f3eb",shortnames:[],category:"people"},":woman_technologist:":{uc_base:"1f469-1f4bb",uc_output:"1f469-200d-1f4bb",uc_match:"1f469-1f4bb",uc_greedy:"1f469-1f4bb",shortnames:[],category:"people"},":woman_white_haired:":{uc_base:"1f469-1f9b3",uc_output:"1f469-200d-1f9b3",uc_match:"1f469-1f9b3",uc_greedy:"1f469-1f9b3",shortnames:[],category:"people"},":asterisk:":{uc_base:"002a-20e3",uc_output:"002a-fe0f-20e3",uc_match:"002a-20e3",uc_greedy:"002a-20e3",shortnames:[":keycap_asterisk:"],category:"symbols"},":eight:":{uc_base:"0038-20e3",uc_output:"0038-fe0f-20e3",uc_match:"0038-20e3",uc_greedy:"0038-20e3",shortnames:[],category:"symbols"},":five:":{uc_base:"0035-20e3",uc_output:"0035-fe0f-20e3",uc_match:"0035-20e3",uc_greedy:"0035-20e3",shortnames:[],category:"symbols"},":four:":{uc_base:"0034-20e3",uc_output:"0034-fe0f-20e3",uc_match:"0034-20e3",uc_greedy:"0034-20e3",shortnames:[],category:"symbols"},":hash:":{uc_base:"0023-20e3",uc_output:"0023-fe0f-20e3",uc_match:"0023-20e3",uc_greedy:"0023-20e3",shortnames:[],category:"symbols"},":nine:":{uc_base:"0039-20e3",uc_output:"0039-fe0f-20e3",uc_match:"0039-20e3",uc_greedy:"0039-20e3",shortnames:[],category:"symbols"},":one:":{uc_base:"0031-20e3",uc_output:"0031-fe0f-20e3",uc_match:"0031-20e3",uc_greedy:"0031-20e3",shortnames:[],category:"symbols"},":seven:":{uc_base:"0037-20e3",uc_output:"0037-fe0f-20e3",uc_match:"0037-20e3",uc_greedy:"0037-20e3",shortnames:[],category:"symbols"},":six:":{uc_base:"0036-20e3",uc_output:"0036-fe0f-20e3",uc_match:"0036-20e3",uc_greedy:"0036-20e3",shortnames:[],category:"symbols"},":three:":{uc_base:"0033-20e3",uc_output:"0033-fe0f-20e3",uc_match:"0033-20e3",uc_greedy:"0033-20e3",shortnames:[],category:"symbols"},":two:":{uc_base:"0032-20e3",uc_output:"0032-fe0f-20e3",uc_match:"0032-20e3",uc_greedy:"0032-20e3",shortnames:[],category:"symbols"},":zero:":{uc_base:"0030-20e3",uc_output:"0030-fe0f-20e3",uc_match:"0030-20e3",uc_greedy:"0030-20e3",shortnames:[],category:"symbols"},":adult_tone1:":{uc_base:"1f9d1-1f3fb",uc_output:"1f9d1-1f3fb",uc_match:"1f9d1-1f3fb",uc_greedy:"1f9d1-1f3fb",shortnames:[":adult_light_skin_tone:"],category:"people"},":adult_tone2:":{uc_base:"1f9d1-1f3fc",uc_output:"1f9d1-1f3fc",uc_match:"1f9d1-1f3fc",uc_greedy:"1f9d1-1f3fc",shortnames:[":adult_medium_light_skin_tone:"],category:"people"},":adult_tone3:":{uc_base:"1f9d1-1f3fd",uc_output:"1f9d1-1f3fd",uc_match:"1f9d1-1f3fd",uc_greedy:"1f9d1-1f3fd",shortnames:[":adult_medium_skin_tone:"],category:"people"},":adult_tone4:":{uc_base:"1f9d1-1f3fe",uc_output:"1f9d1-1f3fe",uc_match:"1f9d1-1f3fe",uc_greedy:"1f9d1-1f3fe",shortnames:[":adult_medium_dark_skin_tone:"],category:"people"},":adult_tone5:":{uc_base:"1f9d1-1f3ff",uc_output:"1f9d1-1f3ff",uc_match:"1f9d1-1f3ff",uc_greedy:"1f9d1-1f3ff",shortnames:[":adult_dark_skin_tone:"],category:"people"},":angel_tone1:":{uc_base:"1f47c-1f3fb",uc_output:"1f47c-1f3fb",uc_match:"1f47c-1f3fb",uc_greedy:"1f47c-1f3fb",shortnames:[],category:"people"},":angel_tone2:":{uc_base:"1f47c-1f3fc",uc_output:"1f47c-1f3fc",uc_match:"1f47c-1f3fc",uc_greedy:"1f47c-1f3fc",shortnames:[],category:"people"},":angel_tone3:":{uc_base:"1f47c-1f3fd",uc_output:"1f47c-1f3fd",uc_match:"1f47c-1f3fd",uc_greedy:"1f47c-1f3fd",shortnames:[],category:"people"},":angel_tone4:":{uc_base:"1f47c-1f3fe",uc_output:"1f47c-1f3fe",uc_match:"1f47c-1f3fe",uc_greedy:"1f47c-1f3fe",shortnames:[],category:"people"},":angel_tone5:":{uc_base:"1f47c-1f3ff",uc_output:"1f47c-1f3ff",uc_match:"1f47c-1f3ff",uc_greedy:"1f47c-1f3ff",shortnames:[],category:"people"},":baby_tone1:":{uc_base:"1f476-1f3fb",uc_output:"1f476-1f3fb",uc_match:"1f476-1f3fb",uc_greedy:"1f476-1f3fb",shortnames:[],category:"people"},":baby_tone2:":{uc_base:"1f476-1f3fc",uc_output:"1f476-1f3fc",uc_match:"1f476-1f3fc",uc_greedy:"1f476-1f3fc",shortnames:[],category:"people"},":baby_tone3:":{uc_base:"1f476-1f3fd",uc_output:"1f476-1f3fd",uc_match:"1f476-1f3fd",uc_greedy:"1f476-1f3fd",shortnames:[],category:"people"},":baby_tone4:":{uc_base:"1f476-1f3fe",uc_output:"1f476-1f3fe",uc_match:"1f476-1f3fe",uc_greedy:"1f476-1f3fe",shortnames:[],category:"people"},":baby_tone5:":{uc_base:"1f476-1f3ff",uc_output:"1f476-1f3ff",uc_match:"1f476-1f3ff",uc_greedy:"1f476-1f3ff",shortnames:[],category:"people"},":bath_tone1:":{uc_base:"1f6c0-1f3fb",uc_output:"1f6c0-1f3fb",uc_match:"1f6c0-1f3fb",uc_greedy:"1f6c0-1f3fb",shortnames:[],category:"objects"},":bath_tone2:":{uc_base:"1f6c0-1f3fc",uc_output:"1f6c0-1f3fc",uc_match:"1f6c0-1f3fc",uc_greedy:"1f6c0-1f3fc",shortnames:[],category:"objects"},":bath_tone3:":{uc_base:"1f6c0-1f3fd",uc_output:"1f6c0-1f3fd",uc_match:"1f6c0-1f3fd",uc_greedy:"1f6c0-1f3fd",shortnames:[],category:"objects"},":bath_tone4:":{uc_base:"1f6c0-1f3fe",uc_output:"1f6c0-1f3fe",uc_match:"1f6c0-1f3fe",uc_greedy:"1f6c0-1f3fe",shortnames:[],category:"objects"},":bath_tone5:":{uc_base:"1f6c0-1f3ff",uc_output:"1f6c0-1f3ff",uc_match:"1f6c0-1f3ff",uc_greedy:"1f6c0-1f3ff",shortnames:[],category:"objects"},":bearded_person_tone1:":{uc_base:"1f9d4-1f3fb",uc_output:"1f9d4-1f3fb",uc_match:"1f9d4-1f3fb",uc_greedy:"1f9d4-1f3fb",shortnames:[":bearded_person_light_skin_tone:"],category:"people"},":bearded_person_tone2:":{uc_base:"1f9d4-1f3fc",uc_output:"1f9d4-1f3fc",uc_match:"1f9d4-1f3fc",uc_greedy:"1f9d4-1f3fc",shortnames:[":bearded_person_medium_light_skin_tone:"],category:"people"},":bearded_person_tone3:":{uc_base:"1f9d4-1f3fd",uc_output:"1f9d4-1f3fd",uc_match:"1f9d4-1f3fd",uc_greedy:"1f9d4-1f3fd",shortnames:[":bearded_person_medium_skin_tone:"],category:"people"},":bearded_person_tone4:":{uc_base:"1f9d4-1f3fe",uc_output:"1f9d4-1f3fe",uc_match:"1f9d4-1f3fe",uc_greedy:"1f9d4-1f3fe",shortnames:[":bearded_person_medium_dark_skin_tone:"],category:"people"},":bearded_person_tone5:":{uc_base:"1f9d4-1f3ff",uc_output:"1f9d4-1f3ff",uc_match:"1f9d4-1f3ff",uc_greedy:"1f9d4-1f3ff",shortnames:[":bearded_person_dark_skin_tone:"],category:"people"},":blond_haired_person_tone1:":{uc_base:"1f471-1f3fb",uc_output:"1f471-1f3fb",uc_match:"1f471-1f3fb",uc_greedy:"1f471-1f3fb",shortnames:[":person_with_blond_hair_tone1:"],category:"people"},":blond_haired_person_tone2:":{uc_base:"1f471-1f3fc",uc_output:"1f471-1f3fc",uc_match:"1f471-1f3fc",uc_greedy:"1f471-1f3fc",shortnames:[":person_with_blond_hair_tone2:"],category:"people"},":blond_haired_person_tone3:":{uc_base:"1f471-1f3fd",uc_output:"1f471-1f3fd",uc_match:"1f471-1f3fd",uc_greedy:"1f471-1f3fd",shortnames:[":person_with_blond_hair_tone3:"],category:"people"},":blond_haired_person_tone4:":{uc_base:"1f471-1f3fe",uc_output:"1f471-1f3fe",uc_match:"1f471-1f3fe",uc_greedy:"1f471-1f3fe",shortnames:[":person_with_blond_hair_tone4:"],category:"people"},":blond_haired_person_tone5:":{uc_base:"1f471-1f3ff",uc_output:"1f471-1f3ff",uc_match:"1f471-1f3ff",uc_greedy:"1f471-1f3ff",shortnames:[":person_with_blond_hair_tone5:"],category:"people"},":boy_tone1:":{uc_base:"1f466-1f3fb",uc_output:"1f466-1f3fb",uc_match:"1f466-1f3fb",uc_greedy:"1f466-1f3fb",shortnames:[],category:"people"},":boy_tone2:":{uc_base:"1f466-1f3fc",uc_output:"1f466-1f3fc",uc_match:"1f466-1f3fc",uc_greedy:"1f466-1f3fc",shortnames:[],category:"people"},":boy_tone3:":{uc_base:"1f466-1f3fd",uc_output:"1f466-1f3fd",uc_match:"1f466-1f3fd",uc_greedy:"1f466-1f3fd",shortnames:[],category:"people"},":boy_tone4:":{uc_base:"1f466-1f3fe",uc_output:"1f466-1f3fe",uc_match:"1f466-1f3fe",uc_greedy:"1f466-1f3fe",shortnames:[],category:"people"},":boy_tone5:":{uc_base:"1f466-1f3ff",uc_output:"1f466-1f3ff",uc_match:"1f466-1f3ff",uc_greedy:"1f466-1f3ff",shortnames:[],category:"people"},":breast_feeding_tone1:":{uc_base:"1f931-1f3fb",uc_output:"1f931-1f3fb",uc_match:"1f931-1f3fb",uc_greedy:"1f931-1f3fb",shortnames:[":breast_feeding_light_skin_tone:"],category:"people"},":breast_feeding_tone2:":{uc_base:"1f931-1f3fc",uc_output:"1f931-1f3fc",uc_match:"1f931-1f3fc",uc_greedy:"1f931-1f3fc",shortnames:[":breast_feeding_medium_light_skin_tone:"],category:"people"},":breast_feeding_tone3:":{uc_base:"1f931-1f3fd",uc_output:"1f931-1f3fd",uc_match:"1f931-1f3fd",uc_greedy:"1f931-1f3fd",shortnames:[":breast_feeding_medium_skin_tone:"],category:"people"},":breast_feeding_tone4:":{uc_base:"1f931-1f3fe",uc_output:"1f931-1f3fe",uc_match:"1f931-1f3fe",uc_greedy:"1f931-1f3fe",shortnames:[":breast_feeding_medium_dark_skin_tone:"],category:"people"},":breast_feeding_tone5:":{uc_base:"1f931-1f3ff",uc_output:"1f931-1f3ff",uc_match:"1f931-1f3ff",uc_greedy:"1f931-1f3ff",shortnames:[":breast_feeding_dark_skin_tone:"],category:"people"},":bride_with_veil_tone1:":{uc_base:"1f470-1f3fb",uc_output:"1f470-1f3fb",uc_match:"1f470-1f3fb",uc_greedy:"1f470-1f3fb",shortnames:[],category:"people"},":bride_with_veil_tone2:":{uc_base:"1f470-1f3fc",uc_output:"1f470-1f3fc",uc_match:"1f470-1f3fc",uc_greedy:"1f470-1f3fc",shortnames:[],category:"people"},":bride_with_veil_tone3:":{uc_base:"1f470-1f3fd",uc_output:"1f470-1f3fd",uc_match:"1f470-1f3fd",uc_greedy:"1f470-1f3fd",shortnames:[],category:"people"},":bride_with_veil_tone4:":{uc_base:"1f470-1f3fe",uc_output:"1f470-1f3fe",uc_match:"1f470-1f3fe",uc_greedy:"1f470-1f3fe",shortnames:[],category:"people"},":bride_with_veil_tone5:":{uc_base:"1f470-1f3ff",uc_output:"1f470-1f3ff",uc_match:"1f470-1f3ff",uc_greedy:"1f470-1f3ff",shortnames:[],category:"people"},":call_me_tone1:":{uc_base:"1f919-1f3fb",uc_output:"1f919-1f3fb",uc_match:"1f919-1f3fb",uc_greedy:"1f919-1f3fb",shortnames:[":call_me_hand_tone1:"],category:"people"},":call_me_tone2:":{uc_base:"1f919-1f3fc",uc_output:"1f919-1f3fc",uc_match:"1f919-1f3fc",uc_greedy:"1f919-1f3fc",shortnames:[":call_me_hand_tone2:"],category:"people"},":call_me_tone3:":{uc_base:"1f919-1f3fd",uc_output:"1f919-1f3fd",uc_match:"1f919-1f3fd",uc_greedy:"1f919-1f3fd",shortnames:[":call_me_hand_tone3:"],category:"people"},":call_me_tone4:":{uc_base:"1f919-1f3fe",uc_output:"1f919-1f3fe",uc_match:"1f919-1f3fe",uc_greedy:"1f919-1f3fe",shortnames:[":call_me_hand_tone4:"],category:"people"},":call_me_tone5:":{uc_base:"1f919-1f3ff",uc_output:"1f919-1f3ff",uc_match:"1f919-1f3ff",uc_greedy:"1f919-1f3ff",shortnames:[":call_me_hand_tone5:"],category:"people"},":child_tone1:":{uc_base:"1f9d2-1f3fb",uc_output:"1f9d2-1f3fb",uc_match:"1f9d2-1f3fb",uc_greedy:"1f9d2-1f3fb",shortnames:[":child_light_skin_tone:"],category:"people"},":child_tone2:":{uc_base:"1f9d2-1f3fc",uc_output:"1f9d2-1f3fc",uc_match:"1f9d2-1f3fc",uc_greedy:"1f9d2-1f3fc",shortnames:[":child_medium_light_skin_tone:"],category:"people"},":child_tone3:":{uc_base:"1f9d2-1f3fd",uc_output:"1f9d2-1f3fd",uc_match:"1f9d2-1f3fd",uc_greedy:"1f9d2-1f3fd",shortnames:[":child_medium_skin_tone:"],category:"people"},":child_tone4:":{uc_base:"1f9d2-1f3fe",uc_output:"1f9d2-1f3fe",uc_match:"1f9d2-1f3fe",uc_greedy:"1f9d2-1f3fe",shortnames:[":child_medium_dark_skin_tone:"],category:"people"},":child_tone5:":{uc_base:"1f9d2-1f3ff",uc_output:"1f9d2-1f3ff",uc_match:"1f9d2-1f3ff",uc_greedy:"1f9d2-1f3ff",shortnames:[":child_dark_skin_tone:"],category:"people"},":clap_tone1:":{uc_base:"1f44f-1f3fb",uc_output:"1f44f-1f3fb",uc_match:"1f44f-1f3fb",uc_greedy:"1f44f-1f3fb",shortnames:[],category:"people"},":clap_tone2:":{uc_base:"1f44f-1f3fc",uc_output:"1f44f-1f3fc",uc_match:"1f44f-1f3fc",uc_greedy:"1f44f-1f3fc",shortnames:[],category:"people"},":clap_tone3:":{uc_base:"1f44f-1f3fd",uc_output:"1f44f-1f3fd",uc_match:"1f44f-1f3fd",uc_greedy:"1f44f-1f3fd",shortnames:[],category:"people"},":clap_tone4:":{uc_base:"1f44f-1f3fe",uc_output:"1f44f-1f3fe",uc_match:"1f44f-1f3fe",uc_greedy:"1f44f-1f3fe",shortnames:[],category:"people"},":clap_tone5:":{uc_base:"1f44f-1f3ff",uc_output:"1f44f-1f3ff",uc_match:"1f44f-1f3ff",uc_greedy:"1f44f-1f3ff",shortnames:[],category:"people"},":construction_worker_tone1:":{uc_base:"1f477-1f3fb",uc_output:"1f477-1f3fb",uc_match:"1f477-1f3fb",uc_greedy:"1f477-1f3fb",shortnames:[],category:"people"},":construction_worker_tone2:":{uc_base:"1f477-1f3fc",uc_output:"1f477-1f3fc",uc_match:"1f477-1f3fc",uc_greedy:"1f477-1f3fc",shortnames:[],category:"people"},":construction_worker_tone3:":{uc_base:"1f477-1f3fd",uc_output:"1f477-1f3fd",uc_match:"1f477-1f3fd",uc_greedy:"1f477-1f3fd",shortnames:[],category:"people"},":construction_worker_tone4:":{uc_base:"1f477-1f3fe",uc_output:"1f477-1f3fe",uc_match:"1f477-1f3fe",uc_greedy:"1f477-1f3fe",shortnames:[],category:"people"},":construction_worker_tone5:":{uc_base:"1f477-1f3ff",uc_output:"1f477-1f3ff",uc_match:"1f477-1f3ff",uc_greedy:"1f477-1f3ff",shortnames:[],category:"people"},":dancer_tone1:":{uc_base:"1f483-1f3fb",uc_output:"1f483-1f3fb",uc_match:"1f483-1f3fb",uc_greedy:"1f483-1f3fb",shortnames:[],category:"people"},":dancer_tone2:":{uc_base:"1f483-1f3fc",uc_output:"1f483-1f3fc",uc_match:"1f483-1f3fc",uc_greedy:"1f483-1f3fc",shortnames:[],category:"people"},":dancer_tone3:":{uc_base:"1f483-1f3fd",uc_output:"1f483-1f3fd",uc_match:"1f483-1f3fd",uc_greedy:"1f483-1f3fd",shortnames:[],category:"people"},":dancer_tone4:":{uc_base:"1f483-1f3fe",uc_output:"1f483-1f3fe",uc_match:"1f483-1f3fe",uc_greedy:"1f483-1f3fe",shortnames:[],category:"people"},":dancer_tone5:":{uc_base:"1f483-1f3ff",uc_output:"1f483-1f3ff",uc_match:"1f483-1f3ff",uc_greedy:"1f483-1f3ff",shortnames:[],category:"people"},":detective_tone1:":{uc_base:"1f575-1f3fb",uc_output:"1f575-1f3fb",uc_match:"1f575-fe0f-1f3fb",uc_greedy:"1f575-fe0f-1f3fb",shortnames:[":spy_tone1:",":sleuth_or_spy_tone1:"],category:"people"},":detective_tone2:":{uc_base:"1f575-1f3fc",uc_output:"1f575-1f3fc",uc_match:"1f575-fe0f-1f3fc",uc_greedy:"1f575-fe0f-1f3fc",shortnames:[":spy_tone2:",":sleuth_or_spy_tone2:"],category:"people"},":detective_tone3:":{uc_base:"1f575-1f3fd",uc_output:"1f575-1f3fd",uc_match:"1f575-fe0f-1f3fd",uc_greedy:"1f575-fe0f-1f3fd",shortnames:[":spy_tone3:",":sleuth_or_spy_tone3:"],category:"people"},":detective_tone4:":{uc_base:"1f575-1f3fe",uc_output:"1f575-1f3fe",uc_match:"1f575-fe0f-1f3fe",uc_greedy:"1f575-fe0f-1f3fe",shortnames:[":spy_tone4:",":sleuth_or_spy_tone4:"],category:"people"},":detective_tone5:":{uc_base:"1f575-1f3ff",uc_output:"1f575-1f3ff",uc_match:"1f575-fe0f-1f3ff",uc_greedy:"1f575-fe0f-1f3ff",shortnames:[":spy_tone5:",":sleuth_or_spy_tone5:"],category:"people"},":ear_tone1:":{uc_base:"1f442-1f3fb",uc_output:"1f442-1f3fb",uc_match:"1f442-1f3fb",uc_greedy:"1f442-1f3fb",shortnames:[],category:"people"},":ear_tone2:":{uc_base:"1f442-1f3fc",uc_output:"1f442-1f3fc",uc_match:"1f442-1f3fc",uc_greedy:"1f442-1f3fc",shortnames:[],category:"people"},":ear_tone3:":{uc_base:"1f442-1f3fd",uc_output:"1f442-1f3fd",uc_match:"1f442-1f3fd",uc_greedy:"1f442-1f3fd",shortnames:[],category:"people"},":ear_tone4:":{uc_base:"1f442-1f3fe",uc_output:"1f442-1f3fe",uc_match:"1f442-1f3fe",uc_greedy:"1f442-1f3fe",shortnames:[],category:"people"},":ear_tone5:":{uc_base:"1f442-1f3ff",uc_output:"1f442-1f3ff",uc_match:"1f442-1f3ff",uc_greedy:"1f442-1f3ff",shortnames:[],category:"people"},":elf_tone1:":{uc_base:"1f9dd-1f3fb",uc_output:"1f9dd-1f3fb",uc_match:"1f9dd-1f3fb",uc_greedy:"1f9dd-1f3fb",shortnames:[":elf_light_skin_tone:"],category:"people"},":elf_tone2:":{uc_base:"1f9dd-1f3fc",uc_output:"1f9dd-1f3fc",uc_match:"1f9dd-1f3fc",uc_greedy:"1f9dd-1f3fc",shortnames:[":elf_medium_light_skin_tone:"],category:"people"},":elf_tone3:":{uc_base:"1f9dd-1f3fd",uc_output:"1f9dd-1f3fd",uc_match:"1f9dd-1f3fd",uc_greedy:"1f9dd-1f3fd",shortnames:[":elf_medium_skin_tone:"],category:"people"},":elf_tone4:":{uc_base:"1f9dd-1f3fe",uc_output:"1f9dd-1f3fe",uc_match:"1f9dd-1f3fe",uc_greedy:"1f9dd-1f3fe",shortnames:[":elf_medium_dark_skin_tone:"],category:"people"},":elf_tone5:":{uc_base:"1f9dd-1f3ff",uc_output:"1f9dd-1f3ff",uc_match:"1f9dd-1f3ff",uc_greedy:"1f9dd-1f3ff",shortnames:[":elf_dark_skin_tone:"],category:"people"},":fairy_tone1:":{uc_base:"1f9da-1f3fb",uc_output:"1f9da-1f3fb",uc_match:"1f9da-1f3fb",uc_greedy:"1f9da-1f3fb",shortnames:[":fairy_light_skin_tone:"],category:"people"},":fairy_tone2:":{uc_base:"1f9da-1f3fc",uc_output:"1f9da-1f3fc",uc_match:"1f9da-1f3fc",uc_greedy:"1f9da-1f3fc",shortnames:[":fairy_medium_light_skin_tone:"],category:"people"},":fairy_tone3:":{uc_base:"1f9da-1f3fd",uc_output:"1f9da-1f3fd",uc_match:"1f9da-1f3fd",uc_greedy:"1f9da-1f3fd",shortnames:[":fairy_medium_skin_tone:"],category:"people"},":fairy_tone4:":{uc_base:"1f9da-1f3fe",uc_output:"1f9da-1f3fe",uc_match:"1f9da-1f3fe",uc_greedy:"1f9da-1f3fe",shortnames:[":fairy_medium_dark_skin_tone:"],category:"people"},":fairy_tone5:":{uc_base:"1f9da-1f3ff",uc_output:"1f9da-1f3ff",uc_match:"1f9da-1f3ff",uc_greedy:"1f9da-1f3ff",shortnames:[":fairy_dark_skin_tone:"],category:"people"},":fingers_crossed_tone1:":{uc_base:"1f91e-1f3fb",uc_output:"1f91e-1f3fb",uc_match:"1f91e-1f3fb",uc_greedy:"1f91e-1f3fb",shortnames:[":hand_with_index_and_middle_fingers_crossed_tone1:"],category:"people"},":fingers_crossed_tone2:":{uc_base:"1f91e-1f3fc",uc_output:"1f91e-1f3fc",uc_match:"1f91e-1f3fc",uc_greedy:"1f91e-1f3fc",shortnames:[":hand_with_index_and_middle_fingers_crossed_tone2:"],category:"people"},":fingers_crossed_tone3:":{uc_base:"1f91e-1f3fd",uc_output:"1f91e-1f3fd",uc_match:"1f91e-1f3fd",uc_greedy:"1f91e-1f3fd",shortnames:[":hand_with_index_and_middle_fingers_crossed_tone3:"],category:"people"},":fingers_crossed_tone4:":{uc_base:"1f91e-1f3fe",uc_output:"1f91e-1f3fe",uc_match:"1f91e-1f3fe",uc_greedy:"1f91e-1f3fe",shortnames:[":hand_with_index_and_middle_fingers_crossed_tone4:"],category:"people"},":fingers_crossed_tone5:":{uc_base:"1f91e-1f3ff",uc_output:"1f91e-1f3ff",uc_match:"1f91e-1f3ff",uc_greedy:"1f91e-1f3ff",shortnames:[":hand_with_index_and_middle_fingers_crossed_tone5:"],category:"people"},":flag_ac:":{uc_base:"1f1e6-1f1e8",uc_output:"1f1e6-1f1e8",uc_match:"1f1e6-1f1e8",uc_greedy:"1f1e6-1f1e8",shortnames:[":ac:"],category:"flags"},":flag_ad:":{uc_base:"1f1e6-1f1e9",uc_output:"1f1e6-1f1e9",uc_match:"1f1e6-1f1e9",uc_greedy:"1f1e6-1f1e9",shortnames:[":ad:"],category:"flags"},":flag_ae:":{uc_base:"1f1e6-1f1ea",uc_output:"1f1e6-1f1ea",uc_match:"1f1e6-1f1ea",uc_greedy:"1f1e6-1f1ea",shortnames:[":ae:"],category:"flags"},":flag_af:":{uc_base:"1f1e6-1f1eb",uc_output:"1f1e6-1f1eb",uc_match:"1f1e6-1f1eb",uc_greedy:"1f1e6-1f1eb",shortnames:[":af:"],category:"flags"},":flag_ag:":{uc_base:"1f1e6-1f1ec",uc_output:"1f1e6-1f1ec",uc_match:"1f1e6-1f1ec",uc_greedy:"1f1e6-1f1ec",shortnames:[":ag:"],category:"flags"},":flag_ai:":{uc_base:"1f1e6-1f1ee",uc_output:"1f1e6-1f1ee",uc_match:"1f1e6-1f1ee",uc_greedy:"1f1e6-1f1ee",shortnames:[":ai:"],category:"flags"},":flag_al:":{uc_base:"1f1e6-1f1f1",uc_output:"1f1e6-1f1f1",uc_match:"1f1e6-1f1f1",uc_greedy:"1f1e6-1f1f1",shortnames:[":al:"],category:"flags"},":flag_am:":{uc_base:"1f1e6-1f1f2",uc_output:"1f1e6-1f1f2",uc_match:"1f1e6-1f1f2",uc_greedy:"1f1e6-1f1f2",shortnames:[":am:"],category:"flags"},":flag_ao:":{uc_base:"1f1e6-1f1f4",uc_output:"1f1e6-1f1f4",uc_match:"1f1e6-1f1f4",uc_greedy:"1f1e6-1f1f4",shortnames:[":ao:"],category:"flags"},":flag_aq:":{uc_base:"1f1e6-1f1f6",uc_output:"1f1e6-1f1f6",uc_match:"1f1e6-1f1f6",uc_greedy:"1f1e6-1f1f6",shortnames:[":aq:"],category:"flags"},":flag_ar:":{uc_base:"1f1e6-1f1f7",uc_output:"1f1e6-1f1f7",uc_match:"1f1e6-1f1f7",uc_greedy:"1f1e6-1f1f7",shortnames:[":ar:"],category:"flags"},":flag_as:":{uc_base:"1f1e6-1f1f8",uc_output:"1f1e6-1f1f8",uc_match:"1f1e6-1f1f8",uc_greedy:"1f1e6-1f1f8",shortnames:[":as:"],category:"flags"},":flag_at:":{uc_base:"1f1e6-1f1f9",uc_output:"1f1e6-1f1f9",uc_match:"1f1e6-1f1f9",uc_greedy:"1f1e6-1f1f9",shortnames:[":at:"],category:"flags"},":flag_au:":{uc_base:"1f1e6-1f1fa",uc_output:"1f1e6-1f1fa",uc_match:"1f1e6-1f1fa",uc_greedy:"1f1e6-1f1fa",shortnames:[":au:"],category:"flags"},":flag_aw:":{uc_base:"1f1e6-1f1fc",uc_output:"1f1e6-1f1fc",uc_match:"1f1e6-1f1fc",uc_greedy:"1f1e6-1f1fc",shortnames:[":aw:"],category:"flags"},":flag_ax:":{uc_base:"1f1e6-1f1fd",uc_output:"1f1e6-1f1fd",uc_match:"1f1e6-1f1fd",uc_greedy:"1f1e6-1f1fd",shortnames:[":ax:"],category:"flags"},":flag_az:":{uc_base:"1f1e6-1f1ff",uc_output:"1f1e6-1f1ff",uc_match:"1f1e6-1f1ff",uc_greedy:"1f1e6-1f1ff",shortnames:[":az:"],category:"flags"},":flag_ba:":{uc_base:"1f1e7-1f1e6",uc_output:"1f1e7-1f1e6",uc_match:"1f1e7-1f1e6",uc_greedy:"1f1e7-1f1e6",shortnames:[":ba:"],category:"flags"},":flag_bb:":{uc_base:"1f1e7-1f1e7",uc_output:"1f1e7-1f1e7",uc_match:"1f1e7-1f1e7",uc_greedy:"1f1e7-1f1e7",shortnames:[":bb:"],category:"flags"},":flag_bd:":{uc_base:"1f1e7-1f1e9",uc_output:"1f1e7-1f1e9",uc_match:"1f1e7-1f1e9",uc_greedy:"1f1e7-1f1e9",shortnames:[":bd:"],category:"flags"},":flag_be:":{uc_base:"1f1e7-1f1ea",uc_output:"1f1e7-1f1ea",uc_match:"1f1e7-1f1ea",uc_greedy:"1f1e7-1f1ea",shortnames:[":be:"],category:"flags"},":flag_bf:":{uc_base:"1f1e7-1f1eb",uc_output:"1f1e7-1f1eb",uc_match:"1f1e7-1f1eb",uc_greedy:"1f1e7-1f1eb",shortnames:[":bf:"],category:"flags"},":flag_bg:":{uc_base:"1f1e7-1f1ec",uc_output:"1f1e7-1f1ec",uc_match:"1f1e7-1f1ec",uc_greedy:"1f1e7-1f1ec",shortnames:[":bg:"],category:"flags"},":flag_bh:":{uc_base:"1f1e7-1f1ed",uc_output:"1f1e7-1f1ed",uc_match:"1f1e7-1f1ed",uc_greedy:"1f1e7-1f1ed",shortnames:[":bh:"],category:"flags"},":flag_bi:":{uc_base:"1f1e7-1f1ee",uc_output:"1f1e7-1f1ee",uc_match:"1f1e7-1f1ee",uc_greedy:"1f1e7-1f1ee",shortnames:[":bi:"],category:"flags"},":flag_bj:":{uc_base:"1f1e7-1f1ef",uc_output:"1f1e7-1f1ef",uc_match:"1f1e7-1f1ef",uc_greedy:"1f1e7-1f1ef",shortnames:[":bj:"],category:"flags"},":flag_bl:":{uc_base:"1f1e7-1f1f1",uc_output:"1f1e7-1f1f1",uc_match:"1f1e7-1f1f1",uc_greedy:"1f1e7-1f1f1",shortnames:[":bl:"],category:"flags"},":flag_bm:":{uc_base:"1f1e7-1f1f2",uc_output:"1f1e7-1f1f2",uc_match:"1f1e7-1f1f2",uc_greedy:"1f1e7-1f1f2",shortnames:[":bm:"],category:"flags"},":flag_bn:":{uc_base:"1f1e7-1f1f3",uc_output:"1f1e7-1f1f3",uc_match:"1f1e7-1f1f3",uc_greedy:"1f1e7-1f1f3",shortnames:[":bn:"],category:"flags"},":flag_bo:":{uc_base:"1f1e7-1f1f4",uc_output:"1f1e7-1f1f4",uc_match:"1f1e7-1f1f4",uc_greedy:"1f1e7-1f1f4",shortnames:[":bo:"],category:"flags"},":flag_bq:":{uc_base:"1f1e7-1f1f6",uc_output:"1f1e7-1f1f6",uc_match:"1f1e7-1f1f6",uc_greedy:"1f1e7-1f1f6",shortnames:[":bq:"],category:"flags"},":flag_br:":{uc_base:"1f1e7-1f1f7",uc_output:"1f1e7-1f1f7",uc_match:"1f1e7-1f1f7",uc_greedy:"1f1e7-1f1f7",shortnames:[":br:"],category:"flags"},":flag_bs:":{uc_base:"1f1e7-1f1f8",uc_output:"1f1e7-1f1f8",uc_match:"1f1e7-1f1f8",uc_greedy:"1f1e7-1f1f8",shortnames:[":bs:"],category:"flags"},":flag_bt:":{uc_base:"1f1e7-1f1f9",uc_output:"1f1e7-1f1f9",uc_match:"1f1e7-1f1f9",uc_greedy:"1f1e7-1f1f9",shortnames:[":bt:"],category:"flags"},":flag_bv:":{uc_base:"1f1e7-1f1fb",uc_output:"1f1e7-1f1fb",uc_match:"1f1e7-1f1fb",uc_greedy:"1f1e7-1f1fb",shortnames:[":bv:"],category:"flags"},":flag_bw:":{uc_base:"1f1e7-1f1fc",uc_output:"1f1e7-1f1fc",uc_match:"1f1e7-1f1fc",uc_greedy:"1f1e7-1f1fc",shortnames:[":bw:"],category:"flags"},":flag_by:":{uc_base:"1f1e7-1f1fe",uc_output:"1f1e7-1f1fe",uc_match:"1f1e7-1f1fe",uc_greedy:"1f1e7-1f1fe",shortnames:[":by:"],category:"flags"},":flag_bz:":{uc_base:"1f1e7-1f1ff",uc_output:"1f1e7-1f1ff",uc_match:"1f1e7-1f1ff",uc_greedy:"1f1e7-1f1ff",shortnames:[":bz:"],category:"flags"},":flag_ca:":{uc_base:"1f1e8-1f1e6",uc_output:"1f1e8-1f1e6",uc_match:"1f1e8-1f1e6",uc_greedy:"1f1e8-1f1e6",shortnames:[":ca:"],category:"flags"},":flag_cc:":{uc_base:"1f1e8-1f1e8",uc_output:"1f1e8-1f1e8",uc_match:"1f1e8-1f1e8",uc_greedy:"1f1e8-1f1e8",shortnames:[":cc:"],category:"flags"},":flag_cd:":{uc_base:"1f1e8-1f1e9",uc_output:"1f1e8-1f1e9",uc_match:"1f1e8-1f1e9",uc_greedy:"1f1e8-1f1e9",shortnames:[":congo:"],category:"flags"},":flag_cf:":{uc_base:"1f1e8-1f1eb",uc_output:"1f1e8-1f1eb",uc_match:"1f1e8-1f1eb",uc_greedy:"1f1e8-1f1eb",shortnames:[":cf:"],category:"flags"},":flag_cg:":{uc_base:"1f1e8-1f1ec",uc_output:"1f1e8-1f1ec",uc_match:"1f1e8-1f1ec",uc_greedy:"1f1e8-1f1ec",shortnames:[":cg:"],category:"flags"},":flag_ch:":{uc_base:"1f1e8-1f1ed",uc_output:"1f1e8-1f1ed",uc_match:"1f1e8-1f1ed",uc_greedy:"1f1e8-1f1ed",shortnames:[":ch:"],category:"flags"},":flag_ci:":{uc_base:"1f1e8-1f1ee",uc_output:"1f1e8-1f1ee",uc_match:"1f1e8-1f1ee",uc_greedy:"1f1e8-1f1ee",shortnames:[":ci:"],category:"flags"},":flag_ck:":{uc_base:"1f1e8-1f1f0",uc_output:"1f1e8-1f1f0",uc_match:"1f1e8-1f1f0",uc_greedy:"1f1e8-1f1f0",shortnames:[":ck:"],category:"flags"},":flag_cl:":{uc_base:"1f1e8-1f1f1",uc_output:"1f1e8-1f1f1",uc_match:"1f1e8-1f1f1",uc_greedy:"1f1e8-1f1f1",shortnames:[":chile:"],category:"flags"},":flag_cm:":{uc_base:"1f1e8-1f1f2",uc_output:"1f1e8-1f1f2",uc_match:"1f1e8-1f1f2",uc_greedy:"1f1e8-1f1f2",shortnames:[":cm:"],category:"flags"},":flag_cn:":{uc_base:"1f1e8-1f1f3",uc_output:"1f1e8-1f1f3",uc_match:"1f1e8-1f1f3",uc_greedy:"1f1e8-1f1f3",shortnames:[":cn:"],category:"flags"},":flag_co:":{uc_base:"1f1e8-1f1f4",uc_output:"1f1e8-1f1f4",uc_match:"1f1e8-1f1f4",uc_greedy:"1f1e8-1f1f4",shortnames:[":co:"],category:"flags"},":flag_cp:":{uc_base:"1f1e8-1f1f5",uc_output:"1f1e8-1f1f5",uc_match:"1f1e8-1f1f5",uc_greedy:"1f1e8-1f1f5",shortnames:[":cp:"],category:"flags"},":flag_cr:":{uc_base:"1f1e8-1f1f7",uc_output:"1f1e8-1f1f7",uc_match:"1f1e8-1f1f7",uc_greedy:"1f1e8-1f1f7",shortnames:[":cr:"],category:"flags"},":flag_cu:":{uc_base:"1f1e8-1f1fa",uc_output:"1f1e8-1f1fa",uc_match:"1f1e8-1f1fa",uc_greedy:"1f1e8-1f1fa",shortnames:[":cu:"],category:"flags"},":flag_cv:":{uc_base:"1f1e8-1f1fb",uc_output:"1f1e8-1f1fb",uc_match:"1f1e8-1f1fb",uc_greedy:"1f1e8-1f1fb",shortnames:[":cv:"],category:"flags"},":flag_cw:":{uc_base:"1f1e8-1f1fc",uc_output:"1f1e8-1f1fc",uc_match:"1f1e8-1f1fc",uc_greedy:"1f1e8-1f1fc",shortnames:[":cw:"],category:"flags"},":flag_cx:":{uc_base:"1f1e8-1f1fd",uc_output:"1f1e8-1f1fd",uc_match:"1f1e8-1f1fd",uc_greedy:"1f1e8-1f1fd",shortnames:[":cx:"],category:"flags"},":flag_cy:":{uc_base:"1f1e8-1f1fe",uc_output:"1f1e8-1f1fe",uc_match:"1f1e8-1f1fe",uc_greedy:"1f1e8-1f1fe",shortnames:[":cy:"],category:"flags"},":flag_cz:":{uc_base:"1f1e8-1f1ff",uc_output:"1f1e8-1f1ff",uc_match:"1f1e8-1f1ff",uc_greedy:"1f1e8-1f1ff",shortnames:[":cz:"],category:"flags"},":flag_de:":{uc_base:"1f1e9-1f1ea",uc_output:"1f1e9-1f1ea",uc_match:"1f1e9-1f1ea",uc_greedy:"1f1e9-1f1ea",shortnames:[":de:"],category:"flags"},":flag_dg:":{uc_base:"1f1e9-1f1ec",uc_output:"1f1e9-1f1ec",uc_match:"1f1e9-1f1ec",uc_greedy:"1f1e9-1f1ec",shortnames:[":dg:"],category:"flags"},":flag_dj:":{uc_base:"1f1e9-1f1ef",uc_output:"1f1e9-1f1ef",uc_match:"1f1e9-1f1ef",uc_greedy:"1f1e9-1f1ef",shortnames:[":dj:"],category:"flags"},":flag_dk:":{uc_base:"1f1e9-1f1f0",uc_output:"1f1e9-1f1f0",uc_match:"1f1e9-1f1f0",uc_greedy:"1f1e9-1f1f0",shortnames:[":dk:"],category:"flags"},":flag_dm:":{uc_base:"1f1e9-1f1f2",uc_output:"1f1e9-1f1f2",uc_match:"1f1e9-1f1f2",uc_greedy:"1f1e9-1f1f2",shortnames:[":dm:"],category:"flags"},":flag_do:":{uc_base:"1f1e9-1f1f4",uc_output:"1f1e9-1f1f4",uc_match:"1f1e9-1f1f4",uc_greedy:"1f1e9-1f1f4",shortnames:[":do:"],category:"flags"},":flag_dz:":{uc_base:"1f1e9-1f1ff",uc_output:"1f1e9-1f1ff",uc_match:"1f1e9-1f1ff",uc_greedy:"1f1e9-1f1ff",shortnames:[":dz:"],category:"flags"},":flag_ea:":{uc_base:"1f1ea-1f1e6",uc_output:"1f1ea-1f1e6",uc_match:"1f1ea-1f1e6",uc_greedy:"1f1ea-1f1e6",shortnames:[":ea:"],category:"flags"},":flag_ec:":{uc_base:"1f1ea-1f1e8",uc_output:"1f1ea-1f1e8",uc_match:"1f1ea-1f1e8",uc_greedy:"1f1ea-1f1e8",shortnames:[":ec:"],category:"flags"},":flag_ee:":{uc_base:"1f1ea-1f1ea",uc_output:"1f1ea-1f1ea",uc_match:"1f1ea-1f1ea",uc_greedy:"1f1ea-1f1ea",shortnames:[":ee:"],category:"flags"},":flag_eg:":{uc_base:"1f1ea-1f1ec",uc_output:"1f1ea-1f1ec",uc_match:"1f1ea-1f1ec",uc_greedy:"1f1ea-1f1ec",shortnames:[":eg:"],category:"flags"},":flag_eh:":{uc_base:"1f1ea-1f1ed",uc_output:"1f1ea-1f1ed",uc_match:"1f1ea-1f1ed",uc_greedy:"1f1ea-1f1ed",shortnames:[":eh:"],category:"flags"},":flag_er:":{uc_base:"1f1ea-1f1f7",uc_output:"1f1ea-1f1f7",uc_match:"1f1ea-1f1f7",uc_greedy:"1f1ea-1f1f7",shortnames:[":er:"],category:"flags"},":flag_es:":{uc_base:"1f1ea-1f1f8",uc_output:"1f1ea-1f1f8",uc_match:"1f1ea-1f1f8",uc_greedy:"1f1ea-1f1f8",shortnames:[":es:"],category:"flags"},":flag_et:":{uc_base:"1f1ea-1f1f9",uc_output:"1f1ea-1f1f9",uc_match:"1f1ea-1f1f9",uc_greedy:"1f1ea-1f1f9",shortnames:[":et:"],category:"flags"},":flag_eu:":{uc_base:"1f1ea-1f1fa",uc_output:"1f1ea-1f1fa",uc_match:"1f1ea-1f1fa",uc_greedy:"1f1ea-1f1fa",shortnames:[":eu:"],category:"flags"},":flag_fi:":{uc_base:"1f1eb-1f1ee",uc_output:"1f1eb-1f1ee",uc_match:"1f1eb-1f1ee",uc_greedy:"1f1eb-1f1ee",shortnames:[":fi:"],category:"flags"},":flag_fj:":{uc_base:"1f1eb-1f1ef",uc_output:"1f1eb-1f1ef",uc_match:"1f1eb-1f1ef",uc_greedy:"1f1eb-1f1ef",shortnames:[":fj:"],category:"flags"},":flag_fk:":{uc_base:"1f1eb-1f1f0",uc_output:"1f1eb-1f1f0",uc_match:"1f1eb-1f1f0",uc_greedy:"1f1eb-1f1f0",shortnames:[":fk:"],category:"flags"},":flag_fm:":{uc_base:"1f1eb-1f1f2",uc_output:"1f1eb-1f1f2",uc_match:"1f1eb-1f1f2",uc_greedy:"1f1eb-1f1f2",shortnames:[":fm:"],category:"flags"},":flag_fo:":{uc_base:"1f1eb-1f1f4",uc_output:"1f1eb-1f1f4",uc_match:"1f1eb-1f1f4",uc_greedy:"1f1eb-1f1f4",shortnames:[":fo:"],category:"flags"},":flag_fr:":{uc_base:"1f1eb-1f1f7",uc_output:"1f1eb-1f1f7",uc_match:"1f1eb-1f1f7",uc_greedy:"1f1eb-1f1f7",shortnames:[":fr:"],category:"flags"},":flag_ga:":{uc_base:"1f1ec-1f1e6",uc_output:"1f1ec-1f1e6",uc_match:"1f1ec-1f1e6",uc_greedy:"1f1ec-1f1e6",shortnames:[":ga:"],category:"flags"},":flag_gb:":{uc_base:"1f1ec-1f1e7",uc_output:"1f1ec-1f1e7",uc_match:"1f1ec-1f1e7",uc_greedy:"1f1ec-1f1e7",shortnames:[":gb:"],category:"flags"},":flag_gd:":{uc_base:"1f1ec-1f1e9",uc_output:"1f1ec-1f1e9",uc_match:"1f1ec-1f1e9",uc_greedy:"1f1ec-1f1e9",shortnames:[":gd:"],category:"flags"},":flag_ge:":{uc_base:"1f1ec-1f1ea",uc_output:"1f1ec-1f1ea",uc_match:"1f1ec-1f1ea",uc_greedy:"1f1ec-1f1ea",shortnames:[":ge:"],category:"flags"},":flag_gf:":{uc_base:"1f1ec-1f1eb",uc_output:"1f1ec-1f1eb",uc_match:"1f1ec-1f1eb",uc_greedy:"1f1ec-1f1eb",shortnames:[":gf:"],category:"flags"},":flag_gg:":{uc_base:"1f1ec-1f1ec",uc_output:"1f1ec-1f1ec",uc_match:"1f1ec-1f1ec",uc_greedy:"1f1ec-1f1ec",shortnames:[":gg:"],category:"flags"},":flag_gh:":{uc_base:"1f1ec-1f1ed",uc_output:"1f1ec-1f1ed",uc_match:"1f1ec-1f1ed",uc_greedy:"1f1ec-1f1ed",shortnames:[":gh:"],category:"flags"},":flag_gi:":{uc_base:"1f1ec-1f1ee",uc_output:"1f1ec-1f1ee",uc_match:"1f1ec-1f1ee",uc_greedy:"1f1ec-1f1ee",shortnames:[":gi:"],category:"flags"},":flag_gl:":{uc_base:"1f1ec-1f1f1",uc_output:"1f1ec-1f1f1",uc_match:"1f1ec-1f1f1",uc_greedy:"1f1ec-1f1f1",shortnames:[":gl:"],category:"flags"},":flag_gm:":{uc_base:"1f1ec-1f1f2",uc_output:"1f1ec-1f1f2",uc_match:"1f1ec-1f1f2",uc_greedy:"1f1ec-1f1f2",shortnames:[":gm:"],category:"flags"},":flag_gn:":{uc_base:"1f1ec-1f1f3",uc_output:"1f1ec-1f1f3",uc_match:"1f1ec-1f1f3",uc_greedy:"1f1ec-1f1f3",shortnames:[":gn:"],category:"flags"},":flag_gp:":{uc_base:"1f1ec-1f1f5",uc_output:"1f1ec-1f1f5",uc_match:"1f1ec-1f1f5",uc_greedy:"1f1ec-1f1f5",shortnames:[":gp:"],category:"flags"},":flag_gq:":{uc_base:"1f1ec-1f1f6",uc_output:"1f1ec-1f1f6",uc_match:"1f1ec-1f1f6",uc_greedy:"1f1ec-1f1f6",shortnames:[":gq:"],category:"flags"},":flag_gr:":{uc_base:"1f1ec-1f1f7",uc_output:"1f1ec-1f1f7",uc_match:"1f1ec-1f1f7",uc_greedy:"1f1ec-1f1f7",shortnames:[":gr:"],category:"flags"},":flag_gs:":{uc_base:"1f1ec-1f1f8",uc_output:"1f1ec-1f1f8",uc_match:"1f1ec-1f1f8",uc_greedy:"1f1ec-1f1f8",shortnames:[":gs:"],category:"flags"},":flag_gt:":{uc_base:"1f1ec-1f1f9",uc_output:"1f1ec-1f1f9",uc_match:"1f1ec-1f1f9",uc_greedy:"1f1ec-1f1f9",shortnames:[":gt:"],category:"flags"},":flag_gu:":{uc_base:"1f1ec-1f1fa",uc_output:"1f1ec-1f1fa",uc_match:"1f1ec-1f1fa",uc_greedy:"1f1ec-1f1fa",shortnames:[":gu:"],category:"flags"},":flag_gw:":{uc_base:"1f1ec-1f1fc",uc_output:"1f1ec-1f1fc",uc_match:"1f1ec-1f1fc",uc_greedy:"1f1ec-1f1fc",shortnames:[":gw:"],category:"flags"},":flag_gy:":{uc_base:"1f1ec-1f1fe",uc_output:"1f1ec-1f1fe",uc_match:"1f1ec-1f1fe",uc_greedy:"1f1ec-1f1fe",shortnames:[":gy:"],category:"flags"},":flag_hk:":{uc_base:"1f1ed-1f1f0",uc_output:"1f1ed-1f1f0",uc_match:"1f1ed-1f1f0",uc_greedy:"1f1ed-1f1f0",shortnames:[":hk:"],category:"flags"},":flag_hm:":{uc_base:"1f1ed-1f1f2",uc_output:"1f1ed-1f1f2",uc_match:"1f1ed-1f1f2",uc_greedy:"1f1ed-1f1f2",shortnames:[":hm:"],category:"flags"},":flag_hn:":{uc_base:"1f1ed-1f1f3",uc_output:"1f1ed-1f1f3",uc_match:"1f1ed-1f1f3",uc_greedy:"1f1ed-1f1f3",shortnames:[":hn:"],category:"flags"},":flag_hr:":{uc_base:"1f1ed-1f1f7",uc_output:"1f1ed-1f1f7",uc_match:"1f1ed-1f1f7",uc_greedy:"1f1ed-1f1f7",shortnames:[":hr:"],category:"flags"},":flag_ht:":{uc_base:"1f1ed-1f1f9",uc_output:"1f1ed-1f1f9",uc_match:"1f1ed-1f1f9",uc_greedy:"1f1ed-1f1f9",shortnames:[":ht:"],category:"flags"},":flag_hu:":{uc_base:"1f1ed-1f1fa",uc_output:"1f1ed-1f1fa",uc_match:"1f1ed-1f1fa",uc_greedy:"1f1ed-1f1fa",shortnames:[":hu:"],category:"flags"},":flag_ic:":{uc_base:"1f1ee-1f1e8",uc_output:"1f1ee-1f1e8",uc_match:"1f1ee-1f1e8",uc_greedy:"1f1ee-1f1e8",shortnames:[":ic:"],category:"flags"},":flag_id:":{uc_base:"1f1ee-1f1e9",uc_output:"1f1ee-1f1e9",uc_match:"1f1ee-1f1e9",uc_greedy:"1f1ee-1f1e9",shortnames:[":indonesia:"],category:"flags"},":flag_ie:":{uc_base:"1f1ee-1f1ea",uc_output:"1f1ee-1f1ea",uc_match:"1f1ee-1f1ea",uc_greedy:"1f1ee-1f1ea",shortnames:[":ie:"],category:"flags"},":flag_il:":{uc_base:"1f1ee-1f1f1",uc_output:"1f1ee-1f1f1",uc_match:"1f1ee-1f1f1",uc_greedy:"1f1ee-1f1f1",shortnames:[":il:"],category:"flags"},":flag_im:":{uc_base:"1f1ee-1f1f2",uc_output:"1f1ee-1f1f2",uc_match:"1f1ee-1f1f2",uc_greedy:"1f1ee-1f1f2",shortnames:[":im:"],category:"flags"},":flag_in:":{uc_base:"1f1ee-1f1f3",uc_output:"1f1ee-1f1f3",uc_match:"1f1ee-1f1f3",uc_greedy:"1f1ee-1f1f3",shortnames:[":in:"],category:"flags"},":flag_io:":{uc_base:"1f1ee-1f1f4",uc_output:"1f1ee-1f1f4",uc_match:"1f1ee-1f1f4",uc_greedy:"1f1ee-1f1f4",shortnames:[":io:"],category:"flags"},":flag_iq:":{uc_base:"1f1ee-1f1f6",uc_output:"1f1ee-1f1f6",uc_match:"1f1ee-1f1f6",uc_greedy:"1f1ee-1f1f6",shortnames:[":iq:"],category:"flags"},":flag_ir:":{uc_base:"1f1ee-1f1f7",uc_output:"1f1ee-1f1f7",uc_match:"1f1ee-1f1f7",uc_greedy:"1f1ee-1f1f7",shortnames:[":ir:"],category:"flags"},":flag_is:":{uc_base:"1f1ee-1f1f8",uc_output:"1f1ee-1f1f8",uc_match:"1f1ee-1f1f8",uc_greedy:"1f1ee-1f1f8",shortnames:[":is:"],category:"flags"},":flag_it:":{uc_base:"1f1ee-1f1f9",uc_output:"1f1ee-1f1f9",uc_match:"1f1ee-1f1f9",uc_greedy:"1f1ee-1f1f9",shortnames:[":it:"],category:"flags"},":flag_je:":{uc_base:"1f1ef-1f1ea",uc_output:"1f1ef-1f1ea",uc_match:"1f1ef-1f1ea",uc_greedy:"1f1ef-1f1ea",shortnames:[":je:"],category:"flags"},":flag_jm:":{uc_base:"1f1ef-1f1f2",uc_output:"1f1ef-1f1f2",uc_match:"1f1ef-1f1f2",uc_greedy:"1f1ef-1f1f2",shortnames:[":jm:"],category:"flags"},":flag_jo:":{uc_base:"1f1ef-1f1f4",uc_output:"1f1ef-1f1f4",uc_match:"1f1ef-1f1f4",uc_greedy:"1f1ef-1f1f4",shortnames:[":jo:"],category:"flags"},":flag_jp:":{uc_base:"1f1ef-1f1f5",uc_output:"1f1ef-1f1f5",uc_match:"1f1ef-1f1f5",uc_greedy:"1f1ef-1f1f5",shortnames:[":jp:"],category:"flags"},":flag_ke:":{uc_base:"1f1f0-1f1ea",uc_output:"1f1f0-1f1ea",uc_match:"1f1f0-1f1ea",uc_greedy:"1f1f0-1f1ea",shortnames:[":ke:"],category:"flags"},":flag_kg:":{uc_base:"1f1f0-1f1ec",uc_output:"1f1f0-1f1ec",uc_match:"1f1f0-1f1ec",uc_greedy:"1f1f0-1f1ec",shortnames:[":kg:"],category:"flags"},":flag_kh:":{uc_base:"1f1f0-1f1ed",uc_output:"1f1f0-1f1ed",uc_match:"1f1f0-1f1ed",uc_greedy:"1f1f0-1f1ed",shortnames:[":kh:"],category:"flags"},":flag_ki:":{uc_base:"1f1f0-1f1ee",uc_output:"1f1f0-1f1ee",uc_match:"1f1f0-1f1ee",uc_greedy:"1f1f0-1f1ee",shortnames:[":ki:"],category:"flags"},":flag_km:":{uc_base:"1f1f0-1f1f2",uc_output:"1f1f0-1f1f2",uc_match:"1f1f0-1f1f2",uc_greedy:"1f1f0-1f1f2",shortnames:[":km:"],category:"flags"},":flag_kn:":{uc_base:"1f1f0-1f1f3",uc_output:"1f1f0-1f1f3",uc_match:"1f1f0-1f1f3",uc_greedy:"1f1f0-1f1f3",shortnames:[":kn:"],category:"flags"},":flag_kp:":{uc_base:"1f1f0-1f1f5",uc_output:"1f1f0-1f1f5",uc_match:"1f1f0-1f1f5",uc_greedy:"1f1f0-1f1f5",shortnames:[":kp:"],category:"flags"},":flag_kr:":{uc_base:"1f1f0-1f1f7",uc_output:"1f1f0-1f1f7",uc_match:"1f1f0-1f1f7",uc_greedy:"1f1f0-1f1f7",shortnames:[":kr:"],category:"flags"},":flag_kw:":{uc_base:"1f1f0-1f1fc",uc_output:"1f1f0-1f1fc",uc_match:"1f1f0-1f1fc",uc_greedy:"1f1f0-1f1fc",shortnames:[":kw:"],category:"flags"},":flag_ky:":{uc_base:"1f1f0-1f1fe",uc_output:"1f1f0-1f1fe",uc_match:"1f1f0-1f1fe",uc_greedy:"1f1f0-1f1fe",shortnames:[":ky:"],category:"flags"},":flag_kz:":{uc_base:"1f1f0-1f1ff",uc_output:"1f1f0-1f1ff",uc_match:"1f1f0-1f1ff",uc_greedy:"1f1f0-1f1ff",shortnames:[":kz:"],category:"flags"},":flag_la:":{uc_base:"1f1f1-1f1e6",uc_output:"1f1f1-1f1e6",uc_match:"1f1f1-1f1e6",uc_greedy:"1f1f1-1f1e6",shortnames:[":la:"],category:"flags"},":flag_lb:":{uc_base:"1f1f1-1f1e7",uc_output:"1f1f1-1f1e7",uc_match:"1f1f1-1f1e7",uc_greedy:"1f1f1-1f1e7",shortnames:[":lb:"],category:"flags"},":flag_lc:":{uc_base:"1f1f1-1f1e8",uc_output:"1f1f1-1f1e8",uc_match:"1f1f1-1f1e8",uc_greedy:"1f1f1-1f1e8",shortnames:[":lc:"],category:"flags"},":flag_li:":{uc_base:"1f1f1-1f1ee",uc_output:"1f1f1-1f1ee",uc_match:"1f1f1-1f1ee",uc_greedy:"1f1f1-1f1ee",shortnames:[":li:"],category:"flags"},":flag_lk:":{uc_base:"1f1f1-1f1f0",uc_output:"1f1f1-1f1f0",uc_match:"1f1f1-1f1f0",uc_greedy:"1f1f1-1f1f0",shortnames:[":lk:"],category:"flags"},":flag_lr:":{uc_base:"1f1f1-1f1f7",uc_output:"1f1f1-1f1f7",uc_match:"1f1f1-1f1f7",uc_greedy:"1f1f1-1f1f7",shortnames:[":lr:"],category:"flags"},":flag_ls:":{uc_base:"1f1f1-1f1f8",uc_output:"1f1f1-1f1f8",uc_match:"1f1f1-1f1f8",uc_greedy:"1f1f1-1f1f8",shortnames:[":ls:"],category:"flags"},":flag_lt:":{uc_base:"1f1f1-1f1f9",uc_output:"1f1f1-1f1f9",uc_match:"1f1f1-1f1f9",uc_greedy:"1f1f1-1f1f9",shortnames:[":lt:"],category:"flags"},":flag_lu:":{uc_base:"1f1f1-1f1fa",uc_output:"1f1f1-1f1fa",uc_match:"1f1f1-1f1fa",uc_greedy:"1f1f1-1f1fa",shortnames:[":lu:"],category:"flags"},":flag_lv:":{uc_base:"1f1f1-1f1fb",uc_output:"1f1f1-1f1fb",uc_match:"1f1f1-1f1fb",uc_greedy:"1f1f1-1f1fb",shortnames:[":lv:"],category:"flags"},":flag_ly:":{uc_base:"1f1f1-1f1fe",uc_output:"1f1f1-1f1fe",uc_match:"1f1f1-1f1fe",uc_greedy:"1f1f1-1f1fe",shortnames:[":ly:"],category:"flags"},":flag_ma:":{uc_base:"1f1f2-1f1e6",uc_output:"1f1f2-1f1e6",uc_match:"1f1f2-1f1e6",uc_greedy:"1f1f2-1f1e6",shortnames:[":ma:"],category:"flags"},":flag_mc:":{uc_base:"1f1f2-1f1e8",uc_output:"1f1f2-1f1e8",uc_match:"1f1f2-1f1e8",uc_greedy:"1f1f2-1f1e8",shortnames:[":mc:"],category:"flags"},":flag_md:":{uc_base:"1f1f2-1f1e9",uc_output:"1f1f2-1f1e9",uc_match:"1f1f2-1f1e9",uc_greedy:"1f1f2-1f1e9",shortnames:[":md:"],category:"flags"},":flag_me:":{uc_base:"1f1f2-1f1ea",uc_output:"1f1f2-1f1ea",uc_match:"1f1f2-1f1ea",uc_greedy:"1f1f2-1f1ea",shortnames:[":me:"],category:"flags"},":flag_mf:":{uc_base:"1f1f2-1f1eb",uc_output:"1f1f2-1f1eb",uc_match:"1f1f2-1f1eb",uc_greedy:"1f1f2-1f1eb",shortnames:[":mf:"],category:"flags"},":flag_mg:":{uc_base:"1f1f2-1f1ec",uc_output:"1f1f2-1f1ec",uc_match:"1f1f2-1f1ec",uc_greedy:"1f1f2-1f1ec",shortnames:[":mg:"],category:"flags"},":flag_mh:":{uc_base:"1f1f2-1f1ed",uc_output:"1f1f2-1f1ed",uc_match:"1f1f2-1f1ed",uc_greedy:"1f1f2-1f1ed",shortnames:[":mh:"],category:"flags"},":flag_mk:":{uc_base:"1f1f2-1f1f0",uc_output:"1f1f2-1f1f0",uc_match:"1f1f2-1f1f0",uc_greedy:"1f1f2-1f1f0",shortnames:[":mk:"],category:"flags"},":flag_ml:":{uc_base:"1f1f2-1f1f1",uc_output:"1f1f2-1f1f1",uc_match:"1f1f2-1f1f1",uc_greedy:"1f1f2-1f1f1",shortnames:[":ml:"],category:"flags"},":flag_mm:":{uc_base:"1f1f2-1f1f2",uc_output:"1f1f2-1f1f2",uc_match:"1f1f2-1f1f2",uc_greedy:"1f1f2-1f1f2",shortnames:[":mm:"],category:"flags"},":flag_mn:":{uc_base:"1f1f2-1f1f3",uc_output:"1f1f2-1f1f3",uc_match:"1f1f2-1f1f3",uc_greedy:"1f1f2-1f1f3",shortnames:[":mn:"],category:"flags"},":flag_mo:":{uc_base:"1f1f2-1f1f4",uc_output:"1f1f2-1f1f4",uc_match:"1f1f2-1f1f4",uc_greedy:"1f1f2-1f1f4",shortnames:[":mo:"],category:"flags"},":flag_mp:":{uc_base:"1f1f2-1f1f5",uc_output:"1f1f2-1f1f5",uc_match:"1f1f2-1f1f5",uc_greedy:"1f1f2-1f1f5",shortnames:[":mp:"],category:"flags"},":flag_mq:":{uc_base:"1f1f2-1f1f6",uc_output:"1f1f2-1f1f6",uc_match:"1f1f2-1f1f6",uc_greedy:"1f1f2-1f1f6",shortnames:[":mq:"],category:"flags"},":flag_mr:":{uc_base:"1f1f2-1f1f7",uc_output:"1f1f2-1f1f7",uc_match:"1f1f2-1f1f7",uc_greedy:"1f1f2-1f1f7",shortnames:[":mr:"],category:"flags"},":flag_ms:":{uc_base:"1f1f2-1f1f8",uc_output:"1f1f2-1f1f8",uc_match:"1f1f2-1f1f8",uc_greedy:"1f1f2-1f1f8",shortnames:[":ms:"],category:"flags"},":flag_mt:":{uc_base:"1f1f2-1f1f9",uc_output:"1f1f2-1f1f9",uc_match:"1f1f2-1f1f9",uc_greedy:"1f1f2-1f1f9",shortnames:[":mt:"],category:"flags"},":flag_mu:":{uc_base:"1f1f2-1f1fa",uc_output:"1f1f2-1f1fa",uc_match:"1f1f2-1f1fa",uc_greedy:"1f1f2-1f1fa",shortnames:[":mu:"],category:"flags"},":flag_mv:":{uc_base:"1f1f2-1f1fb",uc_output:"1f1f2-1f1fb",uc_match:"1f1f2-1f1fb",uc_greedy:"1f1f2-1f1fb",shortnames:[":mv:"],category:"flags"},":flag_mw:":{uc_base:"1f1f2-1f1fc",uc_output:"1f1f2-1f1fc",uc_match:"1f1f2-1f1fc",uc_greedy:"1f1f2-1f1fc",shortnames:[":mw:"],category:"flags"},":flag_mx:":{uc_base:"1f1f2-1f1fd",uc_output:"1f1f2-1f1fd",uc_match:"1f1f2-1f1fd",uc_greedy:"1f1f2-1f1fd",shortnames:[":mx:"],category:"flags"},":flag_my:":{uc_base:"1f1f2-1f1fe",uc_output:"1f1f2-1f1fe",uc_match:"1f1f2-1f1fe",uc_greedy:"1f1f2-1f1fe",shortnames:[":my:"],category:"flags"},":flag_mz:":{uc_base:"1f1f2-1f1ff",uc_output:"1f1f2-1f1ff",uc_match:"1f1f2-1f1ff",uc_greedy:"1f1f2-1f1ff",shortnames:[":mz:"],category:"flags"},":flag_na:":{uc_base:"1f1f3-1f1e6",uc_output:"1f1f3-1f1e6",uc_match:"1f1f3-1f1e6",uc_greedy:"1f1f3-1f1e6",shortnames:[":na:"],category:"flags"},":flag_nc:":{uc_base:"1f1f3-1f1e8",uc_output:"1f1f3-1f1e8",uc_match:"1f1f3-1f1e8",uc_greedy:"1f1f3-1f1e8",shortnames:[":nc:"],category:"flags"},":flag_ne:":{uc_base:"1f1f3-1f1ea",uc_output:"1f1f3-1f1ea",uc_match:"1f1f3-1f1ea",uc_greedy:"1f1f3-1f1ea",shortnames:[":ne:"],category:"flags"},":flag_nf:":{uc_base:"1f1f3-1f1eb",uc_output:"1f1f3-1f1eb",uc_match:"1f1f3-1f1eb",uc_greedy:"1f1f3-1f1eb",shortnames:[":nf:"],category:"flags"},":flag_ng:":{uc_base:"1f1f3-1f1ec",uc_output:"1f1f3-1f1ec",uc_match:"1f1f3-1f1ec",uc_greedy:"1f1f3-1f1ec",shortnames:[":nigeria:"],category:"flags"},":flag_ni:":{uc_base:"1f1f3-1f1ee",uc_output:"1f1f3-1f1ee",uc_match:"1f1f3-1f1ee",uc_greedy:"1f1f3-1f1ee",shortnames:[":ni:"],category:"flags"},":flag_nl:":{uc_base:"1f1f3-1f1f1",uc_output:"1f1f3-1f1f1",uc_match:"1f1f3-1f1f1",uc_greedy:"1f1f3-1f1f1",shortnames:[":nl:"],category:"flags"},":flag_no:":{uc_base:"1f1f3-1f1f4",uc_output:"1f1f3-1f1f4",uc_match:"1f1f3-1f1f4",uc_greedy:"1f1f3-1f1f4",shortnames:[":no:"],category:"flags"},":flag_np:":{uc_base:"1f1f3-1f1f5",uc_output:"1f1f3-1f1f5",uc_match:"1f1f3-1f1f5",uc_greedy:"1f1f3-1f1f5",shortnames:[":np:"],category:"flags"},":flag_nr:":{uc_base:"1f1f3-1f1f7",uc_output:"1f1f3-1f1f7",uc_match:"1f1f3-1f1f7",uc_greedy:"1f1f3-1f1f7",shortnames:[":nr:"],category:"flags"},":flag_nu:":{uc_base:"1f1f3-1f1fa",uc_output:"1f1f3-1f1fa",uc_match:"1f1f3-1f1fa",uc_greedy:"1f1f3-1f1fa",shortnames:[":nu:"],category:"flags"},":flag_nz:":{uc_base:"1f1f3-1f1ff",uc_output:"1f1f3-1f1ff",uc_match:"1f1f3-1f1ff",uc_greedy:"1f1f3-1f1ff",shortnames:[":nz:"],category:"flags"},":flag_om:":{uc_base:"1f1f4-1f1f2",uc_output:"1f1f4-1f1f2",uc_match:"1f1f4-1f1f2",uc_greedy:"1f1f4-1f1f2",shortnames:[":om:"],category:"flags"},":flag_pa:":{uc_base:"1f1f5-1f1e6",uc_output:"1f1f5-1f1e6",uc_match:"1f1f5-1f1e6",uc_greedy:"1f1f5-1f1e6",shortnames:[":pa:"],category:"flags"},":flag_pe:":{uc_base:"1f1f5-1f1ea",uc_output:"1f1f5-1f1ea",uc_match:"1f1f5-1f1ea",uc_greedy:"1f1f5-1f1ea",shortnames:[":pe:"],category:"flags"},":flag_pf:":{uc_base:"1f1f5-1f1eb",uc_output:"1f1f5-1f1eb",uc_match:"1f1f5-1f1eb",uc_greedy:"1f1f5-1f1eb",shortnames:[":pf:"],category:"flags"},":flag_pg:":{uc_base:"1f1f5-1f1ec",uc_output:"1f1f5-1f1ec",uc_match:"1f1f5-1f1ec",uc_greedy:"1f1f5-1f1ec",shortnames:[":pg:"],category:"flags"},":flag_ph:":{uc_base:"1f1f5-1f1ed",uc_output:"1f1f5-1f1ed",uc_match:"1f1f5-1f1ed",uc_greedy:"1f1f5-1f1ed",shortnames:[":ph:"],category:"flags"},":flag_pk:":{uc_base:"1f1f5-1f1f0",uc_output:"1f1f5-1f1f0",uc_match:"1f1f5-1f1f0",uc_greedy:"1f1f5-1f1f0",shortnames:[":pk:"],category:"flags"},":flag_pl:":{uc_base:"1f1f5-1f1f1",uc_output:"1f1f5-1f1f1",uc_match:"1f1f5-1f1f1",uc_greedy:"1f1f5-1f1f1",shortnames:[":pl:"],category:"flags"},":flag_pm:":{uc_base:"1f1f5-1f1f2",uc_output:"1f1f5-1f1f2",uc_match:"1f1f5-1f1f2",uc_greedy:"1f1f5-1f1f2",shortnames:[":pm:"],category:"flags"},":flag_pn:":{uc_base:"1f1f5-1f1f3",uc_output:"1f1f5-1f1f3",uc_match:"1f1f5-1f1f3",uc_greedy:"1f1f5-1f1f3",shortnames:[":pn:"],category:"flags"},":flag_pr:":{uc_base:"1f1f5-1f1f7",uc_output:"1f1f5-1f1f7",uc_match:"1f1f5-1f1f7",uc_greedy:"1f1f5-1f1f7",shortnames:[":pr:"],category:"flags"},":flag_ps:":{uc_base:"1f1f5-1f1f8",uc_output:"1f1f5-1f1f8",uc_match:"1f1f5-1f1f8",uc_greedy:"1f1f5-1f1f8",shortnames:[":ps:"],category:"flags"},":flag_pt:":{uc_base:"1f1f5-1f1f9",uc_output:"1f1f5-1f1f9",uc_match:"1f1f5-1f1f9",uc_greedy:"1f1f5-1f1f9",shortnames:[":pt:"],category:"flags"},":flag_pw:":{uc_base:"1f1f5-1f1fc",uc_output:"1f1f5-1f1fc",uc_match:"1f1f5-1f1fc",uc_greedy:"1f1f5-1f1fc",shortnames:[":pw:"],category:"flags"},":flag_py:":{uc_base:"1f1f5-1f1fe",uc_output:"1f1f5-1f1fe",uc_match:"1f1f5-1f1fe",uc_greedy:"1f1f5-1f1fe",shortnames:[":py:"],category:"flags"},":flag_qa:":{uc_base:"1f1f6-1f1e6",uc_output:"1f1f6-1f1e6",uc_match:"1f1f6-1f1e6",uc_greedy:"1f1f6-1f1e6",shortnames:[":qa:"],category:"flags"},":flag_re:":{uc_base:"1f1f7-1f1ea",uc_output:"1f1f7-1f1ea",uc_match:"1f1f7-1f1ea",uc_greedy:"1f1f7-1f1ea",shortnames:[":re:"],category:"flags"},":flag_ro:":{uc_base:"1f1f7-1f1f4",uc_output:"1f1f7-1f1f4",uc_match:"1f1f7-1f1f4",uc_greedy:"1f1f7-1f1f4",shortnames:[":ro:"],category:"flags"},":flag_rs:":{uc_base:"1f1f7-1f1f8",uc_output:"1f1f7-1f1f8",uc_match:"1f1f7-1f1f8",uc_greedy:"1f1f7-1f1f8",shortnames:[":rs:"],category:"flags"},":flag_ru:":{uc_base:"1f1f7-1f1fa",uc_output:"1f1f7-1f1fa",uc_match:"1f1f7-1f1fa",uc_greedy:"1f1f7-1f1fa",shortnames:[":ru:"],category:"flags"},":flag_rw:":{uc_base:"1f1f7-1f1fc",uc_output:"1f1f7-1f1fc",uc_match:"1f1f7-1f1fc",uc_greedy:"1f1f7-1f1fc",shortnames:[":rw:"],category:"flags"},":flag_sa:":{uc_base:"1f1f8-1f1e6",uc_output:"1f1f8-1f1e6",uc_match:"1f1f8-1f1e6",uc_greedy:"1f1f8-1f1e6",shortnames:[":saudiarabia:",":saudi:"],category:"flags"},":flag_sb:":{uc_base:"1f1f8-1f1e7",uc_output:"1f1f8-1f1e7",uc_match:"1f1f8-1f1e7",uc_greedy:"1f1f8-1f1e7",shortnames:[":sb:"],category:"flags"},":flag_sc:":{uc_base:"1f1f8-1f1e8",uc_output:"1f1f8-1f1e8",uc_match:"1f1f8-1f1e8",uc_greedy:"1f1f8-1f1e8",shortnames:[":sc:"],category:"flags"},":flag_sd:":{uc_base:"1f1f8-1f1e9",uc_output:"1f1f8-1f1e9",uc_match:"1f1f8-1f1e9",uc_greedy:"1f1f8-1f1e9",shortnames:[":sd:"],category:"flags"},":flag_se:":{uc_base:"1f1f8-1f1ea",uc_output:"1f1f8-1f1ea",uc_match:"1f1f8-1f1ea",uc_greedy:"1f1f8-1f1ea",shortnames:[":se:"],category:"flags"},":flag_sg:":{uc_base:"1f1f8-1f1ec",uc_output:"1f1f8-1f1ec",uc_match:"1f1f8-1f1ec",uc_greedy:"1f1f8-1f1ec",shortnames:[":sg:"],category:"flags"},":flag_sh:":{uc_base:"1f1f8-1f1ed",uc_output:"1f1f8-1f1ed",uc_match:"1f1f8-1f1ed",uc_greedy:"1f1f8-1f1ed",shortnames:[":sh:"],category:"flags"},":flag_si:":{uc_base:"1f1f8-1f1ee",uc_output:"1f1f8-1f1ee",uc_match:"1f1f8-1f1ee",uc_greedy:"1f1f8-1f1ee",shortnames:[":si:"],category:"flags"},":flag_sj:":{uc_base:"1f1f8-1f1ef",uc_output:"1f1f8-1f1ef",uc_match:"1f1f8-1f1ef",uc_greedy:"1f1f8-1f1ef",shortnames:[":sj:"],category:"flags"},":flag_sk:":{uc_base:"1f1f8-1f1f0",uc_output:"1f1f8-1f1f0",uc_match:"1f1f8-1f1f0",uc_greedy:"1f1f8-1f1f0",shortnames:[":sk:"],category:"flags"},":flag_sl:":{uc_base:"1f1f8-1f1f1",uc_output:"1f1f8-1f1f1",uc_match:"1f1f8-1f1f1",uc_greedy:"1f1f8-1f1f1",shortnames:[":sl:"],category:"flags"},":flag_sm:":{uc_base:"1f1f8-1f1f2",uc_output:"1f1f8-1f1f2",uc_match:"1f1f8-1f1f2",uc_greedy:"1f1f8-1f1f2",shortnames:[":sm:"],category:"flags"},":flag_sn:":{uc_base:"1f1f8-1f1f3",uc_output:"1f1f8-1f1f3",uc_match:"1f1f8-1f1f3",uc_greedy:"1f1f8-1f1f3",shortnames:[":sn:"],category:"flags"},":flag_so:":{uc_base:"1f1f8-1f1f4",uc_output:"1f1f8-1f1f4",uc_match:"1f1f8-1f1f4",uc_greedy:"1f1f8-1f1f4",shortnames:[":so:"],category:"flags"},":flag_sr:":{uc_base:"1f1f8-1f1f7",uc_output:"1f1f8-1f1f7",uc_match:"1f1f8-1f1f7",uc_greedy:"1f1f8-1f1f7",shortnames:[":sr:"],category:"flags"},":flag_ss:":{uc_base:"1f1f8-1f1f8",uc_output:"1f1f8-1f1f8",uc_match:"1f1f8-1f1f8",uc_greedy:"1f1f8-1f1f8",shortnames:[":ss:"],category:"flags"},":flag_st:":{uc_base:"1f1f8-1f1f9",uc_output:"1f1f8-1f1f9",uc_match:"1f1f8-1f1f9",uc_greedy:"1f1f8-1f1f9",shortnames:[":st:"],category:"flags"},":flag_sv:":{uc_base:"1f1f8-1f1fb",uc_output:"1f1f8-1f1fb",uc_match:"1f1f8-1f1fb",uc_greedy:"1f1f8-1f1fb",shortnames:[":sv:"],category:"flags"},":flag_sx:":{uc_base:"1f1f8-1f1fd",uc_output:"1f1f8-1f1fd",uc_match:"1f1f8-1f1fd",uc_greedy:"1f1f8-1f1fd",shortnames:[":sx:"],category:"flags"},":flag_sy:":{uc_base:"1f1f8-1f1fe",uc_output:"1f1f8-1f1fe",uc_match:"1f1f8-1f1fe",uc_greedy:"1f1f8-1f1fe",shortnames:[":sy:"],category:"flags"},":flag_sz:":{uc_base:"1f1f8-1f1ff",uc_output:"1f1f8-1f1ff",uc_match:"1f1f8-1f1ff",uc_greedy:"1f1f8-1f1ff",shortnames:[":sz:"],category:"flags"},":flag_ta:":{uc_base:"1f1f9-1f1e6",uc_output:"1f1f9-1f1e6",uc_match:"1f1f9-1f1e6",uc_greedy:"1f1f9-1f1e6",shortnames:[":ta:"],category:"flags"},":flag_tc:":{uc_base:"1f1f9-1f1e8",uc_output:"1f1f9-1f1e8",uc_match:"1f1f9-1f1e8",uc_greedy:"1f1f9-1f1e8",shortnames:[":tc:"],category:"flags"},":flag_td:":{uc_base:"1f1f9-1f1e9",uc_output:"1f1f9-1f1e9",uc_match:"1f1f9-1f1e9",uc_greedy:"1f1f9-1f1e9",shortnames:[":td:"],category:"flags"},":flag_tf:":{uc_base:"1f1f9-1f1eb",uc_output:"1f1f9-1f1eb",uc_match:"1f1f9-1f1eb",uc_greedy:"1f1f9-1f1eb",shortnames:[":tf:"],category:"flags"},":flag_tg:":{uc_base:"1f1f9-1f1ec",uc_output:"1f1f9-1f1ec",uc_match:"1f1f9-1f1ec",uc_greedy:"1f1f9-1f1ec",shortnames:[":tg:"],category:"flags"},":flag_th:":{uc_base:"1f1f9-1f1ed",uc_output:"1f1f9-1f1ed",uc_match:"1f1f9-1f1ed",uc_greedy:"1f1f9-1f1ed",shortnames:[":th:"],category:"flags"},":flag_tj:":{uc_base:"1f1f9-1f1ef",uc_output:"1f1f9-1f1ef",uc_match:"1f1f9-1f1ef",uc_greedy:"1f1f9-1f1ef",shortnames:[":tj:"],category:"flags"},":flag_tk:":{uc_base:"1f1f9-1f1f0",uc_output:"1f1f9-1f1f0",uc_match:"1f1f9-1f1f0",uc_greedy:"1f1f9-1f1f0",shortnames:[":tk:"],category:"flags"},":flag_tl:":{uc_base:"1f1f9-1f1f1",uc_output:"1f1f9-1f1f1",uc_match:"1f1f9-1f1f1",uc_greedy:"1f1f9-1f1f1",shortnames:[":tl:"],category:"flags"},":flag_tm:":{uc_base:"1f1f9-1f1f2",uc_output:"1f1f9-1f1f2",uc_match:"1f1f9-1f1f2",uc_greedy:"1f1f9-1f1f2",shortnames:[":turkmenistan:"],category:"flags"},":flag_tn:":{uc_base:"1f1f9-1f1f3",uc_output:"1f1f9-1f1f3",uc_match:"1f1f9-1f1f3",uc_greedy:"1f1f9-1f1f3",shortnames:[":tn:"],category:"flags"},":flag_to:":{uc_base:"1f1f9-1f1f4",uc_output:"1f1f9-1f1f4",uc_match:"1f1f9-1f1f4",uc_greedy:"1f1f9-1f1f4",shortnames:[":to:"],category:"flags"},":flag_tr:":{uc_base:"1f1f9-1f1f7",uc_output:"1f1f9-1f1f7",uc_match:"1f1f9-1f1f7",uc_greedy:"1f1f9-1f1f7",shortnames:[":tr:"],category:"flags"},":flag_tt:":{uc_base:"1f1f9-1f1f9",uc_output:"1f1f9-1f1f9",uc_match:"1f1f9-1f1f9",uc_greedy:"1f1f9-1f1f9",shortnames:[":tt:"],category:"flags"},":flag_tv:":{uc_base:"1f1f9-1f1fb",uc_output:"1f1f9-1f1fb",uc_match:"1f1f9-1f1fb",uc_greedy:"1f1f9-1f1fb",shortnames:[":tuvalu:"],category:"flags"},":flag_tw:":{uc_base:"1f1f9-1f1fc",uc_output:"1f1f9-1f1fc",uc_match:"1f1f9-1f1fc",uc_greedy:"1f1f9-1f1fc",shortnames:[":tw:"],category:"flags"},":flag_tz:":{uc_base:"1f1f9-1f1ff",uc_output:"1f1f9-1f1ff",uc_match:"1f1f9-1f1ff",uc_greedy:"1f1f9-1f1ff",shortnames:[":tz:"],category:"flags"},":flag_ua:":{uc_base:"1f1fa-1f1e6",uc_output:"1f1fa-1f1e6",uc_match:"1f1fa-1f1e6",uc_greedy:"1f1fa-1f1e6",shortnames:[":ua:"],category:"flags"},":flag_ug:":{uc_base:"1f1fa-1f1ec",uc_output:"1f1fa-1f1ec",uc_match:"1f1fa-1f1ec",uc_greedy:"1f1fa-1f1ec",shortnames:[":ug:"],category:"flags"},":flag_um:":{uc_base:"1f1fa-1f1f2",uc_output:"1f1fa-1f1f2",uc_match:"1f1fa-1f1f2",uc_greedy:"1f1fa-1f1f2",shortnames:[":um:"],category:"flags"},":flag_us:":{uc_base:"1f1fa-1f1f8",uc_output:"1f1fa-1f1f8",uc_match:"1f1fa-1f1f8",uc_greedy:"1f1fa-1f1f8",shortnames:[":us:"],category:"flags"},":flag_uy:":{uc_base:"1f1fa-1f1fe",uc_output:"1f1fa-1f1fe",uc_match:"1f1fa-1f1fe",uc_greedy:"1f1fa-1f1fe",shortnames:[":uy:"],category:"flags"},":flag_uz:":{uc_base:"1f1fa-1f1ff",uc_output:"1f1fa-1f1ff",uc_match:"1f1fa-1f1ff",uc_greedy:"1f1fa-1f1ff",shortnames:[":uz:"],category:"flags"},":flag_va:":{uc_base:"1f1fb-1f1e6",uc_output:"1f1fb-1f1e6",uc_match:"1f1fb-1f1e6",uc_greedy:"1f1fb-1f1e6",shortnames:[":va:"],category:"flags"},":flag_vc:":{uc_base:"1f1fb-1f1e8",uc_output:"1f1fb-1f1e8",uc_match:"1f1fb-1f1e8",uc_greedy:"1f1fb-1f1e8",shortnames:[":vc:"],category:"flags"},":flag_ve:":{uc_base:"1f1fb-1f1ea",uc_output:"1f1fb-1f1ea",uc_match:"1f1fb-1f1ea",uc_greedy:"1f1fb-1f1ea",shortnames:[":ve:"],category:"flags"},":flag_vg:":{uc_base:"1f1fb-1f1ec",uc_output:"1f1fb-1f1ec",uc_match:"1f1fb-1f1ec",uc_greedy:"1f1fb-1f1ec",shortnames:[":vg:"],category:"flags"},":flag_vi:":{uc_base:"1f1fb-1f1ee",uc_output:"1f1fb-1f1ee",uc_match:"1f1fb-1f1ee",uc_greedy:"1f1fb-1f1ee",shortnames:[":vi:"],category:"flags"},":flag_vn:":{uc_base:"1f1fb-1f1f3",uc_output:"1f1fb-1f1f3",uc_match:"1f1fb-1f1f3",uc_greedy:"1f1fb-1f1f3",shortnames:[":vn:"],category:"flags"},":flag_vu:":{uc_base:"1f1fb-1f1fa",uc_output:"1f1fb-1f1fa",uc_match:"1f1fb-1f1fa",uc_greedy:"1f1fb-1f1fa",shortnames:[":vu:"],category:"flags"},":flag_wf:":{uc_base:"1f1fc-1f1eb",uc_output:"1f1fc-1f1eb",uc_match:"1f1fc-1f1eb",uc_greedy:"1f1fc-1f1eb",shortnames:[":wf:"],category:"flags"},":flag_ws:":{uc_base:"1f1fc-1f1f8",uc_output:"1f1fc-1f1f8",uc_match:"1f1fc-1f1f8",uc_greedy:"1f1fc-1f1f8",shortnames:[":ws:"],category:"flags"},":flag_xk:":{uc_base:"1f1fd-1f1f0",uc_output:"1f1fd-1f1f0",uc_match:"1f1fd-1f1f0",uc_greedy:"1f1fd-1f1f0",shortnames:[":xk:"],category:"flags"},":flag_ye:":{uc_base:"1f1fe-1f1ea",uc_output:"1f1fe-1f1ea",uc_match:"1f1fe-1f1ea",uc_greedy:"1f1fe-1f1ea",shortnames:[":ye:"],category:"flags"},":flag_yt:":{uc_base:"1f1fe-1f1f9",uc_output:"1f1fe-1f1f9",uc_match:"1f1fe-1f1f9",uc_greedy:"1f1fe-1f1f9",shortnames:[":yt:"],category:"flags"},":flag_za:":{uc_base:"1f1ff-1f1e6",uc_output:"1f1ff-1f1e6",uc_match:"1f1ff-1f1e6",uc_greedy:"1f1ff-1f1e6",shortnames:[":za:"],category:"flags"},":flag_zm:":{uc_base:"1f1ff-1f1f2",uc_output:"1f1ff-1f1f2",uc_match:"1f1ff-1f1f2",uc_greedy:"1f1ff-1f1f2",shortnames:[":zm:"],category:"flags"},":flag_zw:":{uc_base:"1f1ff-1f1fc",uc_output:"1f1ff-1f1fc",uc_match:"1f1ff-1f1fc",uc_greedy:"1f1ff-1f1fc",shortnames:[":zw:"],category:"flags"},":foot_tone1:":{uc_base:"1f9b6-1f3fb",uc_output:"1f9b6-1f3fb",uc_match:"1f9b6-1f3fb",uc_greedy:"1f9b6-1f3fb",shortnames:[":foot_light_skin_tone:"],category:"people"},":foot_tone2:":{uc_base:"1f9b6-1f3fc",uc_output:"1f9b6-1f3fc",uc_match:"1f9b6-1f3fc",uc_greedy:"1f9b6-1f3fc",shortnames:[":foot_medium_light_skin_tone:"],category:"people"},":foot_tone3:":{uc_base:"1f9b6-1f3fd",uc_output:"1f9b6-1f3fd",uc_match:"1f9b6-1f3fd",uc_greedy:"1f9b6-1f3fd",shortnames:[":foot_medium_skin_tone:"],category:"people"},":foot_tone4:":{uc_base:"1f9b6-1f3fe",uc_output:"1f9b6-1f3fe",uc_match:"1f9b6-1f3fe",uc_greedy:"1f9b6-1f3fe",shortnames:[":foot_medium_dark_skin_tone:"],category:"people"},":foot_tone5:":{uc_base:"1f9b6-1f3ff",uc_output:"1f9b6-1f3ff",uc_match:"1f9b6-1f3ff",uc_greedy:"1f9b6-1f3ff",shortnames:[":foot_dark_skin_tone:"],category:"people"},":girl_tone1:":{uc_base:"1f467-1f3fb",uc_output:"1f467-1f3fb",uc_match:"1f467-1f3fb",uc_greedy:"1f467-1f3fb",shortnames:[],category:"people"},":girl_tone2:":{uc_base:"1f467-1f3fc",uc_output:"1f467-1f3fc",uc_match:"1f467-1f3fc",uc_greedy:"1f467-1f3fc",shortnames:[],category:"people"},":girl_tone3:":{uc_base:"1f467-1f3fd",uc_output:"1f467-1f3fd",uc_match:"1f467-1f3fd",uc_greedy:"1f467-1f3fd",shortnames:[],category:"people"},":girl_tone4:":{uc_base:"1f467-1f3fe",uc_output:"1f467-1f3fe",uc_match:"1f467-1f3fe",uc_greedy:"1f467-1f3fe",shortnames:[],category:"people"},":girl_tone5:":{uc_base:"1f467-1f3ff",uc_output:"1f467-1f3ff",uc_match:"1f467-1f3ff",uc_greedy:"1f467-1f3ff",shortnames:[],category:"people"},":guard_tone1:":{uc_base:"1f482-1f3fb",uc_output:"1f482-1f3fb",uc_match:"1f482-1f3fb",uc_greedy:"1f482-1f3fb",shortnames:[":guardsman_tone1:"],category:"people"},":guard_tone2:":{uc_base:"1f482-1f3fc",uc_output:"1f482-1f3fc",uc_match:"1f482-1f3fc",uc_greedy:"1f482-1f3fc",shortnames:[":guardsman_tone2:"],category:"people"},":guard_tone3:":{uc_base:"1f482-1f3fd",uc_output:"1f482-1f3fd",uc_match:"1f482-1f3fd",uc_greedy:"1f482-1f3fd",shortnames:[":guardsman_tone3:"],category:"people"},":guard_tone4:":{uc_base:"1f482-1f3fe",uc_output:"1f482-1f3fe",uc_match:"1f482-1f3fe",uc_greedy:"1f482-1f3fe",shortnames:[":guardsman_tone4:"],category:"people"},":guard_tone5:":{uc_base:"1f482-1f3ff",uc_output:"1f482-1f3ff",uc_match:"1f482-1f3ff",uc_greedy:"1f482-1f3ff",shortnames:[":guardsman_tone5:"],category:"people"},":hand_splayed_tone1:":{uc_base:"1f590-1f3fb",uc_output:"1f590-1f3fb",uc_match:"1f590-fe0f-1f3fb",uc_greedy:"1f590-fe0f-1f3fb",shortnames:[":raised_hand_with_fingers_splayed_tone1:"],category:"people"},":hand_splayed_tone2:":{uc_base:"1f590-1f3fc",uc_output:"1f590-1f3fc",uc_match:"1f590-fe0f-1f3fc",uc_greedy:"1f590-fe0f-1f3fc",shortnames:[":raised_hand_with_fingers_splayed_tone2:"],category:"people"},":hand_splayed_tone3:":{uc_base:"1f590-1f3fd",uc_output:"1f590-1f3fd",uc_match:"1f590-fe0f-1f3fd",uc_greedy:"1f590-fe0f-1f3fd",shortnames:[":raised_hand_with_fingers_splayed_tone3:"],category:"people"},":hand_splayed_tone4:":{uc_base:"1f590-1f3fe",uc_output:"1f590-1f3fe",uc_match:"1f590-fe0f-1f3fe",uc_greedy:"1f590-fe0f-1f3fe",shortnames:[":raised_hand_with_fingers_splayed_tone4:"],category:"people"},":hand_splayed_tone5:":{uc_base:"1f590-1f3ff",uc_output:"1f590-1f3ff",uc_match:"1f590-fe0f-1f3ff",uc_greedy:"1f590-fe0f-1f3ff",shortnames:[":raised_hand_with_fingers_splayed_tone5:"],category:"people"},":horse_racing_tone1:":{uc_base:"1f3c7-1f3fb",uc_output:"1f3c7-1f3fb",uc_match:"1f3c7-1f3fb",uc_greedy:"1f3c7-1f3fb",shortnames:[],category:"activity"},":horse_racing_tone2:":{uc_base:"1f3c7-1f3fc",uc_output:"1f3c7-1f3fc",uc_match:"1f3c7-1f3fc",uc_greedy:"1f3c7-1f3fc",shortnames:[],category:"activity"},":horse_racing_tone3:":{uc_base:"1f3c7-1f3fd",uc_output:"1f3c7-1f3fd",uc_match:"1f3c7-1f3fd",uc_greedy:"1f3c7-1f3fd",shortnames:[],category:"activity"},":horse_racing_tone4:":{uc_base:"1f3c7-1f3fe",uc_output:"1f3c7-1f3fe",uc_match:"1f3c7-1f3fe",uc_greedy:"1f3c7-1f3fe",shortnames:[],category:"activity"},":horse_racing_tone5:":{uc_base:"1f3c7-1f3ff",uc_output:"1f3c7-1f3ff",uc_match:"1f3c7-1f3ff",uc_greedy:"1f3c7-1f3ff",shortnames:[],category:"activity"},":left_facing_fist_tone1:":{uc_base:"1f91b-1f3fb",uc_output:"1f91b-1f3fb",uc_match:"1f91b-1f3fb",uc_greedy:"1f91b-1f3fb",shortnames:[":left_fist_tone1:"],category:"people"},":left_facing_fist_tone2:":{uc_base:"1f91b-1f3fc",uc_output:"1f91b-1f3fc",uc_match:"1f91b-1f3fc",uc_greedy:"1f91b-1f3fc",shortnames:[":left_fist_tone2:"],category:"people"},":left_facing_fist_tone3:":{uc_base:"1f91b-1f3fd",uc_output:"1f91b-1f3fd",uc_match:"1f91b-1f3fd",uc_greedy:"1f91b-1f3fd",shortnames:[":left_fist_tone3:"],category:"people"},":left_facing_fist_tone4:":{uc_base:"1f91b-1f3fe",uc_output:"1f91b-1f3fe",uc_match:"1f91b-1f3fe",uc_greedy:"1f91b-1f3fe",shortnames:[":left_fist_tone4:"],category:"people"},":left_facing_fist_tone5:":{uc_base:"1f91b-1f3ff",uc_output:"1f91b-1f3ff",uc_match:"1f91b-1f3ff",uc_greedy:"1f91b-1f3ff",shortnames:[":left_fist_tone5:"],category:"people"},":leg_tone1:":{uc_base:"1f9b5-1f3fb",uc_output:"1f9b5-1f3fb",uc_match:"1f9b5-1f3fb",uc_greedy:"1f9b5-1f3fb",shortnames:[":leg_light_skin_tone:"],category:"people"},":leg_tone2:":{uc_base:"1f9b5-1f3fc",uc_output:"1f9b5-1f3fc",uc_match:"1f9b5-1f3fc",uc_greedy:"1f9b5-1f3fc",shortnames:[":leg_medium_light_skin_tone:"],category:"people"},":leg_tone3:":{uc_base:"1f9b5-1f3fd",uc_output:"1f9b5-1f3fd",uc_match:"1f9b5-1f3fd",uc_greedy:"1f9b5-1f3fd",shortnames:[":leg_medium_skin_tone:"],category:"people"},":leg_tone4:":{uc_base:"1f9b5-1f3fe",uc_output:"1f9b5-1f3fe",uc_match:"1f9b5-1f3fe",uc_greedy:"1f9b5-1f3fe",shortnames:[":leg_medium_dark_skin_tone:"],category:"people"},":leg_tone5:":{uc_base:"1f9b5-1f3ff",uc_output:"1f9b5-1f3ff",uc_match:"1f9b5-1f3ff",uc_greedy:"1f9b5-1f3ff",shortnames:[":leg_dark_skin_tone:"],category:"people"},":levitate_tone1:":{uc_base:"1f574-1f3fb",uc_output:"1f574-1f3fb",uc_match:"1f574-fe0f-1f3fb",uc_greedy:"1f574-fe0f-1f3fb",shortnames:[":man_in_business_suit_levitating_tone1:",":man_in_business_suit_levitating_light_skin_tone:"],category:"people"},":levitate_tone2:":{uc_base:"1f574-1f3fc",uc_output:"1f574-1f3fc",uc_match:"1f574-fe0f-1f3fc",uc_greedy:"1f574-fe0f-1f3fc",shortnames:[":man_in_business_suit_levitating_tone2:",":man_in_business_suit_levitating_medium_light_skin_tone:"],category:"people"},":levitate_tone3:":{uc_base:"1f574-1f3fd",uc_output:"1f574-1f3fd",uc_match:"1f574-fe0f-1f3fd",uc_greedy:"1f574-fe0f-1f3fd",shortnames:[":man_in_business_suit_levitating_tone3:",":man_in_business_suit_levitating_medium_skin_tone:"],category:"people"},":levitate_tone4:":{uc_base:"1f574-1f3fe",uc_output:"1f574-1f3fe",uc_match:"1f574-fe0f-1f3fe",uc_greedy:"1f574-fe0f-1f3fe",shortnames:[":man_in_business_suit_levitating_tone4:",":man_in_business_suit_levitating_medium_dark_skin_tone:"],category:"people"},":levitate_tone5:":{uc_base:"1f574-1f3ff",uc_output:"1f574-1f3ff",uc_match:"1f574-fe0f-1f3ff",uc_greedy:"1f574-fe0f-1f3ff",shortnames:[":man_in_business_suit_levitating_tone5:",":man_in_business_suit_levitating_dark_skin_tone:"],category:"people"},":love_you_gesture_tone1:":{uc_base:"1f91f-1f3fb",uc_output:"1f91f-1f3fb",uc_match:"1f91f-1f3fb",uc_greedy:"1f91f-1f3fb",shortnames:[":love_you_gesture_light_skin_tone:"],category:"people"},":love_you_gesture_tone2:":{uc_base:"1f91f-1f3fc",uc_output:"1f91f-1f3fc",uc_match:"1f91f-1f3fc",uc_greedy:"1f91f-1f3fc",shortnames:[":love_you_gesture_medium_light_skin_tone:"],category:"people"},":love_you_gesture_tone3:":{uc_base:"1f91f-1f3fd",uc_output:"1f91f-1f3fd",uc_match:"1f91f-1f3fd",uc_greedy:"1f91f-1f3fd",shortnames:[":love_you_gesture_medium_skin_tone:"],category:"people"},":love_you_gesture_tone4:":{uc_base:"1f91f-1f3fe",uc_output:"1f91f-1f3fe",uc_match:"1f91f-1f3fe",uc_greedy:"1f91f-1f3fe",shortnames:[":love_you_gesture_medium_dark_skin_tone:"],category:"people"},":love_you_gesture_tone5:":{uc_base:"1f91f-1f3ff",uc_output:"1f91f-1f3ff",uc_match:"1f91f-1f3ff",uc_greedy:"1f91f-1f3ff",shortnames:[":love_you_gesture_dark_skin_tone:"],category:"people"},":mage_tone1:":{uc_base:"1f9d9-1f3fb",uc_output:"1f9d9-1f3fb",uc_match:"1f9d9-1f3fb",uc_greedy:"1f9d9-1f3fb",shortnames:[":mage_light_skin_tone:"],category:"people"},":mage_tone2:":{uc_base:"1f9d9-1f3fc",uc_output:"1f9d9-1f3fc",uc_match:"1f9d9-1f3fc",uc_greedy:"1f9d9-1f3fc",shortnames:[":mage_medium_light_skin_tone:"],category:"people"},":mage_tone3:":{uc_base:"1f9d9-1f3fd",uc_output:"1f9d9-1f3fd",uc_match:"1f9d9-1f3fd",uc_greedy:"1f9d9-1f3fd",shortnames:[":mage_medium_skin_tone:"],category:"people"},":mage_tone4:":{uc_base:"1f9d9-1f3fe",uc_output:"1f9d9-1f3fe",uc_match:"1f9d9-1f3fe",uc_greedy:"1f9d9-1f3fe",shortnames:[":mage_medium_dark_skin_tone:"],category:"people"},":mage_tone5:":{uc_base:"1f9d9-1f3ff",uc_output:"1f9d9-1f3ff",uc_match:"1f9d9-1f3ff",uc_greedy:"1f9d9-1f3ff",shortnames:[":mage_dark_skin_tone:"],category:"people"},":man_dancing_tone1:":{uc_base:"1f57a-1f3fb",uc_output:"1f57a-1f3fb",uc_match:"1f57a-1f3fb",uc_greedy:"1f57a-1f3fb",shortnames:[":male_dancer_tone1:"],category:"people"},":man_dancing_tone2:":{uc_base:"1f57a-1f3fc",uc_output:"1f57a-1f3fc",uc_match:"1f57a-1f3fc",uc_greedy:"1f57a-1f3fc",shortnames:[":male_dancer_tone2:"],category:"people"},":man_dancing_tone3:":{uc_base:"1f57a-1f3fd",uc_output:"1f57a-1f3fd",uc_match:"1f57a-1f3fd",uc_greedy:"1f57a-1f3fd",shortnames:[":male_dancer_tone3:"],category:"people"},":man_dancing_tone4:":{uc_base:"1f57a-1f3fe",uc_output:"1f57a-1f3fe",uc_match:"1f57a-1f3fe",uc_greedy:"1f57a-1f3fe",shortnames:[":male_dancer_tone4:"],category:"people"},":man_dancing_tone5:":{uc_base:"1f57a-1f3ff",uc_output:"1f57a-1f3ff",uc_match:"1f57a-1f3ff",uc_greedy:"1f57a-1f3ff",shortnames:[":male_dancer_tone5:"],category:"people"},":man_in_tuxedo_tone1:":{uc_base:"1f935-1f3fb",uc_output:"1f935-1f3fb",uc_match:"1f935-1f3fb",uc_greedy:"1f935-1f3fb",shortnames:[":tuxedo_tone1:"],category:"people"},":man_in_tuxedo_tone2:":{uc_base:"1f935-1f3fc",uc_output:"1f935-1f3fc",uc_match:"1f935-1f3fc",uc_greedy:"1f935-1f3fc",shortnames:[":tuxedo_tone2:"],category:"people"},":man_in_tuxedo_tone3:":{uc_base:"1f935-1f3fd",uc_output:"1f935-1f3fd",uc_match:"1f935-1f3fd",uc_greedy:"1f935-1f3fd",shortnames:[":tuxedo_tone3:"],category:"people"},":man_in_tuxedo_tone4:":{uc_base:"1f935-1f3fe",uc_output:"1f935-1f3fe",uc_match:"1f935-1f3fe",uc_greedy:"1f935-1f3fe",shortnames:[":tuxedo_tone4:"],category:"people"},":man_in_tuxedo_tone5:":{uc_base:"1f935-1f3ff",uc_output:"1f935-1f3ff",uc_match:"1f935-1f3ff",uc_greedy:"1f935-1f3ff",shortnames:[":tuxedo_tone5:"],category:"people"},":man_tone1:":{uc_base:"1f468-1f3fb",uc_output:"1f468-1f3fb",uc_match:"1f468-1f3fb",uc_greedy:"1f468-1f3fb",shortnames:[],category:"people"},":man_tone2:":{uc_base:"1f468-1f3fc",uc_output:"1f468-1f3fc",uc_match:"1f468-1f3fc",uc_greedy:"1f468-1f3fc",shortnames:[],category:"people"},":man_tone3:":{uc_base:"1f468-1f3fd",uc_output:"1f468-1f3fd",uc_match:"1f468-1f3fd",uc_greedy:"1f468-1f3fd",shortnames:[],category:"people"},":man_tone4:":{uc_base:"1f468-1f3fe",uc_output:"1f468-1f3fe",uc_match:"1f468-1f3fe",uc_greedy:"1f468-1f3fe",shortnames:[],category:"people"},":man_tone5:":{uc_base:"1f468-1f3ff",uc_output:"1f468-1f3ff",uc_match:"1f468-1f3ff",uc_greedy:"1f468-1f3ff",shortnames:[],category:"people"},":man_with_chinese_cap_tone1:":{uc_base:"1f472-1f3fb",uc_output:"1f472-1f3fb",uc_match:"1f472-1f3fb",uc_greedy:"1f472-1f3fb",shortnames:[":man_with_gua_pi_mao_tone1:"],category:"people"},":man_with_chinese_cap_tone2:":{uc_base:"1f472-1f3fc",uc_output:"1f472-1f3fc",uc_match:"1f472-1f3fc",uc_greedy:"1f472-1f3fc",shortnames:[":man_with_gua_pi_mao_tone2:"],category:"people"},":man_with_chinese_cap_tone3:":{uc_base:"1f472-1f3fd",uc_output:"1f472-1f3fd",uc_match:"1f472-1f3fd",uc_greedy:"1f472-1f3fd",shortnames:[":man_with_gua_pi_mao_tone3:"],category:"people"},":man_with_chinese_cap_tone4:":{uc_base:"1f472-1f3fe",uc_output:"1f472-1f3fe",uc_match:"1f472-1f3fe",uc_greedy:"1f472-1f3fe",shortnames:[":man_with_gua_pi_mao_tone4:"],category:"people"},":man_with_chinese_cap_tone5:":{uc_base:"1f472-1f3ff",uc_output:"1f472-1f3ff",uc_match:"1f472-1f3ff",uc_greedy:"1f472-1f3ff",shortnames:[":man_with_gua_pi_mao_tone5:"],category:"people"},":merperson_tone1:":{uc_base:"1f9dc-1f3fb",uc_output:"1f9dc-1f3fb",uc_match:"1f9dc-1f3fb",uc_greedy:"1f9dc-1f3fb",shortnames:[":merperson_light_skin_tone:"],category:"people"},":merperson_tone2:":{uc_base:"1f9dc-1f3fc",uc_output:"1f9dc-1f3fc",uc_match:"1f9dc-1f3fc",uc_greedy:"1f9dc-1f3fc",shortnames:[":merperson_medium_light_skin_tone:"],category:"people"},":merperson_tone3:":{uc_base:"1f9dc-1f3fd",uc_output:"1f9dc-1f3fd",uc_match:"1f9dc-1f3fd",uc_greedy:"1f9dc-1f3fd",shortnames:[":merperson_medium_skin_tone:"],category:"people"},":merperson_tone4:":{uc_base:"1f9dc-1f3fe",uc_output:"1f9dc-1f3fe",uc_match:"1f9dc-1f3fe",uc_greedy:"1f9dc-1f3fe",shortnames:[":merperson_medium_dark_skin_tone:"],category:"people"},":merperson_tone5:":{uc_base:"1f9dc-1f3ff",uc_output:"1f9dc-1f3ff",uc_match:"1f9dc-1f3ff",uc_greedy:"1f9dc-1f3ff",shortnames:[":merperson_dark_skin_tone:"],category:"people"},":metal_tone1:":{uc_base:"1f918-1f3fb",uc_output:"1f918-1f3fb",uc_match:"1f918-1f3fb",uc_greedy:"1f918-1f3fb",shortnames:[":sign_of_the_horns_tone1:"],category:"people"},":metal_tone2:":{uc_base:"1f918-1f3fc",uc_output:"1f918-1f3fc",uc_match:"1f918-1f3fc",uc_greedy:"1f918-1f3fc",shortnames:[":sign_of_the_horns_tone2:"],category:"people"},":metal_tone3:":{uc_base:"1f918-1f3fd",uc_output:"1f918-1f3fd",uc_match:"1f918-1f3fd",uc_greedy:"1f918-1f3fd",shortnames:[":sign_of_the_horns_tone3:"],category:"people"},":metal_tone4:":{uc_base:"1f918-1f3fe",uc_output:"1f918-1f3fe",uc_match:"1f918-1f3fe",uc_greedy:"1f918-1f3fe",shortnames:[":sign_of_the_horns_tone4:"],category:"people"},":metal_tone5:":{uc_base:"1f918-1f3ff",uc_output:"1f918-1f3ff",uc_match:"1f918-1f3ff",uc_greedy:"1f918-1f3ff",shortnames:[":sign_of_the_horns_tone5:"],category:"people"},":middle_finger_tone1:":{uc_base:"1f595-1f3fb",uc_output:"1f595-1f3fb",uc_match:"1f595-1f3fb",uc_greedy:"1f595-1f3fb",shortnames:[":reversed_hand_with_middle_finger_extended_tone1:"],category:"people"},":middle_finger_tone2:":{uc_base:"1f595-1f3fc",uc_output:"1f595-1f3fc",uc_match:"1f595-1f3fc",uc_greedy:"1f595-1f3fc",shortnames:[":reversed_hand_with_middle_finger_extended_tone2:"],category:"people"},":middle_finger_tone3:":{uc_base:"1f595-1f3fd",uc_output:"1f595-1f3fd",uc_match:"1f595-1f3fd",uc_greedy:"1f595-1f3fd",shortnames:[":reversed_hand_with_middle_finger_extended_tone3:"],category:"people"},":middle_finger_tone4:":{uc_base:"1f595-1f3fe",uc_output:"1f595-1f3fe",uc_match:"1f595-1f3fe",uc_greedy:"1f595-1f3fe",shortnames:[":reversed_hand_with_middle_finger_extended_tone4:"],category:"people"},":middle_finger_tone5:":{uc_base:"1f595-1f3ff",uc_output:"1f595-1f3ff",uc_match:"1f595-1f3ff",uc_greedy:"1f595-1f3ff",shortnames:[":reversed_hand_with_middle_finger_extended_tone5:"],category:"people"},":mrs_claus_tone1:":{uc_base:"1f936-1f3fb",uc_output:"1f936-1f3fb",uc_match:"1f936-1f3fb",uc_greedy:"1f936-1f3fb",shortnames:[":mother_christmas_tone1:"],category:"people"},":mrs_claus_tone2:":{uc_base:"1f936-1f3fc",uc_output:"1f936-1f3fc",uc_match:"1f936-1f3fc",uc_greedy:"1f936-1f3fc",shortnames:[":mother_christmas_tone2:"],category:"people"},":mrs_claus_tone3:":{uc_base:"1f936-1f3fd",uc_output:"1f936-1f3fd",uc_match:"1f936-1f3fd",uc_greedy:"1f936-1f3fd",shortnames:[":mother_christmas_tone3:"],category:"people"},":mrs_claus_tone4:":{uc_base:"1f936-1f3fe",uc_output:"1f936-1f3fe",uc_match:"1f936-1f3fe",uc_greedy:"1f936-1f3fe",shortnames:[":mother_christmas_tone4:"],category:"people"},":mrs_claus_tone5:":{uc_base:"1f936-1f3ff",uc_output:"1f936-1f3ff",uc_match:"1f936-1f3ff",uc_greedy:"1f936-1f3ff",shortnames:[":mother_christmas_tone5:"],category:"people"},":muscle_tone1:":{uc_base:"1f4aa-1f3fb",uc_output:"1f4aa-1f3fb",uc_match:"1f4aa-1f3fb",uc_greedy:"1f4aa-1f3fb",shortnames:[],category:"people"},":muscle_tone2:":{uc_base:"1f4aa-1f3fc",uc_output:"1f4aa-1f3fc",uc_match:"1f4aa-1f3fc",uc_greedy:"1f4aa-1f3fc",shortnames:[],category:"people"},":muscle_tone3:":{uc_base:"1f4aa-1f3fd",uc_output:"1f4aa-1f3fd",uc_match:"1f4aa-1f3fd",uc_greedy:"1f4aa-1f3fd",shortnames:[],category:"people"},":muscle_tone4:":{uc_base:"1f4aa-1f3fe",uc_output:"1f4aa-1f3fe",uc_match:"1f4aa-1f3fe",uc_greedy:"1f4aa-1f3fe",shortnames:[],category:"people"},":muscle_tone5:":{uc_base:"1f4aa-1f3ff",uc_output:"1f4aa-1f3ff",uc_match:"1f4aa-1f3ff",uc_greedy:"1f4aa-1f3ff",shortnames:[],category:"people"},":nail_care_tone1:":{uc_base:"1f485-1f3fb",uc_output:"1f485-1f3fb",uc_match:"1f485-1f3fb",uc_greedy:"1f485-1f3fb",shortnames:[],category:"people"},":nail_care_tone2:":{uc_base:"1f485-1f3fc",uc_output:"1f485-1f3fc",uc_match:"1f485-1f3fc",uc_greedy:"1f485-1f3fc",shortnames:[],category:"people"},":nail_care_tone3:":{uc_base:"1f485-1f3fd",uc_output:"1f485-1f3fd",uc_match:"1f485-1f3fd",uc_greedy:"1f485-1f3fd",shortnames:[],category:"people"},":nail_care_tone4:":{uc_base:"1f485-1f3fe",uc_output:"1f485-1f3fe",uc_match:"1f485-1f3fe",uc_greedy:"1f485-1f3fe",shortnames:[],category:"people"},":nail_care_tone5:":{uc_base:"1f485-1f3ff",uc_output:"1f485-1f3ff",uc_match:"1f485-1f3ff",uc_greedy:"1f485-1f3ff",shortnames:[],category:"people"},":nose_tone1:":{uc_base:"1f443-1f3fb",uc_output:"1f443-1f3fb",uc_match:"1f443-1f3fb",uc_greedy:"1f443-1f3fb",shortnames:[],category:"people"},":nose_tone2:":{uc_base:"1f443-1f3fc",uc_output:"1f443-1f3fc",uc_match:"1f443-1f3fc",uc_greedy:"1f443-1f3fc",shortnames:[],category:"people"},":nose_tone3:":{uc_base:"1f443-1f3fd",uc_output:"1f443-1f3fd",uc_match:"1f443-1f3fd",uc_greedy:"1f443-1f3fd",shortnames:[],category:"people"},":nose_tone4:":{uc_base:"1f443-1f3fe",uc_output:"1f443-1f3fe",uc_match:"1f443-1f3fe",uc_greedy:"1f443-1f3fe",shortnames:[],category:"people"},":nose_tone5:":{uc_base:"1f443-1f3ff",uc_output:"1f443-1f3ff",uc_match:"1f443-1f3ff",uc_greedy:"1f443-1f3ff",shortnames:[],category:"people"},":ok_hand_tone1:":{uc_base:"1f44c-1f3fb",uc_output:"1f44c-1f3fb",uc_match:"1f44c-1f3fb",uc_greedy:"1f44c-1f3fb",shortnames:[],category:"people"},":ok_hand_tone2:":{uc_base:"1f44c-1f3fc",uc_output:"1f44c-1f3fc",uc_match:"1f44c-1f3fc",uc_greedy:"1f44c-1f3fc",shortnames:[],category:"people"},":ok_hand_tone3:":{uc_base:"1f44c-1f3fd",uc_output:"1f44c-1f3fd",uc_match:"1f44c-1f3fd",uc_greedy:"1f44c-1f3fd",shortnames:[],category:"people"},":ok_hand_tone4:":{uc_base:"1f44c-1f3fe",uc_output:"1f44c-1f3fe",uc_match:"1f44c-1f3fe",uc_greedy:"1f44c-1f3fe",shortnames:[],category:"people"},":ok_hand_tone5:":{uc_base:"1f44c-1f3ff",uc_output:"1f44c-1f3ff",uc_match:"1f44c-1f3ff",uc_greedy:"1f44c-1f3ff",shortnames:[],category:"people"},":older_adult_tone1:":{uc_base:"1f9d3-1f3fb",uc_output:"1f9d3-1f3fb",uc_match:"1f9d3-1f3fb",uc_greedy:"1f9d3-1f3fb",shortnames:[":older_adult_light_skin_tone:"],category:"people"},":older_adult_tone2:":{uc_base:"1f9d3-1f3fc",uc_output:"1f9d3-1f3fc",uc_match:"1f9d3-1f3fc",uc_greedy:"1f9d3-1f3fc",shortnames:[":older_adult_medium_light_skin_tone:"],category:"people"},":older_adult_tone3:":{uc_base:"1f9d3-1f3fd",uc_output:"1f9d3-1f3fd",uc_match:"1f9d3-1f3fd",uc_greedy:"1f9d3-1f3fd",shortnames:[":older_adult_medium_skin_tone:"],category:"people"},":older_adult_tone4:":{uc_base:"1f9d3-1f3fe",uc_output:"1f9d3-1f3fe",uc_match:"1f9d3-1f3fe",uc_greedy:"1f9d3-1f3fe",shortnames:[":older_adult_medium_dark_skin_tone:"],category:"people"},":older_adult_tone5:":{uc_base:"1f9d3-1f3ff",uc_output:"1f9d3-1f3ff",uc_match:"1f9d3-1f3ff",uc_greedy:"1f9d3-1f3ff",shortnames:[":older_adult_dark_skin_tone:"],category:"people"},":older_man_tone1:":{uc_base:"1f474-1f3fb",uc_output:"1f474-1f3fb",uc_match:"1f474-1f3fb",uc_greedy:"1f474-1f3fb",shortnames:[],category:"people"},":older_man_tone2:":{uc_base:"1f474-1f3fc",uc_output:"1f474-1f3fc",uc_match:"1f474-1f3fc",uc_greedy:"1f474-1f3fc",shortnames:[],category:"people"},":older_man_tone3:":{uc_base:"1f474-1f3fd",uc_output:"1f474-1f3fd",uc_match:"1f474-1f3fd",uc_greedy:"1f474-1f3fd",shortnames:[],category:"people"},":older_man_tone4:":{uc_base:"1f474-1f3fe",uc_output:"1f474-1f3fe",uc_match:"1f474-1f3fe",uc_greedy:"1f474-1f3fe",shortnames:[],category:"people"},":older_man_tone5:":{uc_base:"1f474-1f3ff",uc_output:"1f474-1f3ff",uc_match:"1f474-1f3ff",uc_greedy:"1f474-1f3ff",shortnames:[],category:"people"},":older_woman_tone1:":{uc_base:"1f475-1f3fb",uc_output:"1f475-1f3fb",uc_match:"1f475-1f3fb",uc_greedy:"1f475-1f3fb",shortnames:[":grandma_tone1:"],category:"people"},":older_woman_tone2:":{uc_base:"1f475-1f3fc",uc_output:"1f475-1f3fc",uc_match:"1f475-1f3fc",uc_greedy:"1f475-1f3fc",shortnames:[":grandma_tone2:"],category:"people"},":older_woman_tone3:":{uc_base:"1f475-1f3fd",uc_output:"1f475-1f3fd",uc_match:"1f475-1f3fd",uc_greedy:"1f475-1f3fd",shortnames:[":grandma_tone3:"],category:"people"},":older_woman_tone4:":{uc_base:"1f475-1f3fe",uc_output:"1f475-1f3fe",uc_match:"1f475-1f3fe",uc_greedy:"1f475-1f3fe",shortnames:[":grandma_tone4:"],category:"people"},":older_woman_tone5:":{uc_base:"1f475-1f3ff",uc_output:"1f475-1f3ff",uc_match:"1f475-1f3ff",uc_greedy:"1f475-1f3ff",shortnames:[":grandma_tone5:"],category:"people"},":open_hands_tone1:":{uc_base:"1f450-1f3fb",uc_output:"1f450-1f3fb",uc_match:"1f450-1f3fb",uc_greedy:"1f450-1f3fb",shortnames:[],category:"people"},":open_hands_tone2:":{uc_base:"1f450-1f3fc",uc_output:"1f450-1f3fc",uc_match:"1f450-1f3fc",uc_greedy:"1f450-1f3fc",shortnames:[],category:"people"},":open_hands_tone3:":{uc_base:"1f450-1f3fd",uc_output:"1f450-1f3fd",uc_match:"1f450-1f3fd",uc_greedy:"1f450-1f3fd",shortnames:[],category:"people"},":open_hands_tone4:":{uc_base:"1f450-1f3fe",uc_output:"1f450-1f3fe",uc_match:"1f450-1f3fe",uc_greedy:"1f450-1f3fe",shortnames:[],category:"people"},":open_hands_tone5:":{uc_base:"1f450-1f3ff",uc_output:"1f450-1f3ff",uc_match:"1f450-1f3ff",uc_greedy:"1f450-1f3ff",shortnames:[],category:"people"},":palms_up_together_tone1:":{uc_base:"1f932-1f3fb",uc_output:"1f932-1f3fb",uc_match:"1f932-1f3fb",uc_greedy:"1f932-1f3fb",shortnames:[":palms_up_together_light_skin_tone:"],category:"people"},":palms_up_together_tone2:":{uc_base:"1f932-1f3fc",uc_output:"1f932-1f3fc",uc_match:"1f932-1f3fc",uc_greedy:"1f932-1f3fc",shortnames:[":palms_up_together_medium_light_skin_tone:"],category:"people"},":palms_up_together_tone3:":{uc_base:"1f932-1f3fd",uc_output:"1f932-1f3fd",uc_match:"1f932-1f3fd",uc_greedy:"1f932-1f3fd",shortnames:[":palms_up_together_medium_skin_tone:"],category:"people"},":palms_up_together_tone4:":{uc_base:"1f932-1f3fe",uc_output:"1f932-1f3fe",uc_match:"1f932-1f3fe",uc_greedy:"1f932-1f3fe",shortnames:[":palms_up_together_medium_dark_skin_tone:"],category:"people"},":palms_up_together_tone5:":{uc_base:"1f932-1f3ff",uc_output:"1f932-1f3ff",uc_match:"1f932-1f3ff",uc_greedy:"1f932-1f3ff",shortnames:[":palms_up_together_dark_skin_tone:"],category:"people"},":person_biking_tone1:":{uc_base:"1f6b4-1f3fb",uc_output:"1f6b4-1f3fb",uc_match:"1f6b4-1f3fb",uc_greedy:"1f6b4-1f3fb",shortnames:[":bicyclist_tone1:"],category:"activity"},":person_biking_tone2:":{uc_base:"1f6b4-1f3fc",uc_output:"1f6b4-1f3fc",uc_match:"1f6b4-1f3fc",uc_greedy:"1f6b4-1f3fc",shortnames:[":bicyclist_tone2:"],category:"activity"},":person_biking_tone3:":{uc_base:"1f6b4-1f3fd",uc_output:"1f6b4-1f3fd",uc_match:"1f6b4-1f3fd",uc_greedy:"1f6b4-1f3fd",shortnames:[":bicyclist_tone3:"],category:"activity"},":person_biking_tone4:":{uc_base:"1f6b4-1f3fe",uc_output:"1f6b4-1f3fe",uc_match:"1f6b4-1f3fe",uc_greedy:"1f6b4-1f3fe",shortnames:[":bicyclist_tone4:"],category:"activity"},":person_biking_tone5:":{uc_base:"1f6b4-1f3ff",uc_output:"1f6b4-1f3ff",uc_match:"1f6b4-1f3ff",uc_greedy:"1f6b4-1f3ff",shortnames:[":bicyclist_tone5:"],category:"activity"},":person_bowing_tone1:":{uc_base:"1f647-1f3fb",uc_output:"1f647-1f3fb",uc_match:"1f647-1f3fb",uc_greedy:"1f647-1f3fb",shortnames:[":bow_tone1:"],category:"people"},":person_bowing_tone2:":{uc_base:"1f647-1f3fc",uc_output:"1f647-1f3fc",uc_match:"1f647-1f3fc",uc_greedy:"1f647-1f3fc",shortnames:[":bow_tone2:"],category:"people"},":person_bowing_tone3:":{uc_base:"1f647-1f3fd",uc_output:"1f647-1f3fd",uc_match:"1f647-1f3fd",uc_greedy:"1f647-1f3fd",shortnames:[":bow_tone3:"],category:"people"},":person_bowing_tone4:":{uc_base:"1f647-1f3fe",uc_output:"1f647-1f3fe",uc_match:"1f647-1f3fe",uc_greedy:"1f647-1f3fe",shortnames:[":bow_tone4:"],category:"people"},":person_bowing_tone5:":{uc_base:"1f647-1f3ff",uc_output:"1f647-1f3ff",uc_match:"1f647-1f3ff",uc_greedy:"1f647-1f3ff",shortnames:[":bow_tone5:"],category:"people"},":person_climbing_tone1:":{uc_base:"1f9d7-1f3fb",uc_output:"1f9d7-1f3fb",uc_match:"1f9d7-1f3fb",uc_greedy:"1f9d7-1f3fb",shortnames:[":person_climbing_light_skin_tone:"],category:"activity"},":person_climbing_tone2:":{uc_base:"1f9d7-1f3fc",uc_output:"1f9d7-1f3fc",uc_match:"1f9d7-1f3fc",uc_greedy:"1f9d7-1f3fc",shortnames:[":person_climbing_medium_light_skin_tone:"],category:"activity"},":person_climbing_tone3:":{uc_base:"1f9d7-1f3fd",uc_output:"1f9d7-1f3fd",uc_match:"1f9d7-1f3fd",uc_greedy:"1f9d7-1f3fd",shortnames:[":person_climbing_medium_skin_tone:"],category:"activity"},":person_climbing_tone4:":{uc_base:"1f9d7-1f3fe",uc_output:"1f9d7-1f3fe",uc_match:"1f9d7-1f3fe",uc_greedy:"1f9d7-1f3fe",shortnames:[":person_climbing_medium_dark_skin_tone:"],category:"activity"},":person_climbing_tone5:":{uc_base:"1f9d7-1f3ff",uc_output:"1f9d7-1f3ff",uc_match:"1f9d7-1f3ff",uc_greedy:"1f9d7-1f3ff",shortnames:[":person_climbing_dark_skin_tone:"],category:"activity"},":person_doing_cartwheel_tone1:":{uc_base:"1f938-1f3fb",uc_output:"1f938-1f3fb",uc_match:"1f938-1f3fb",uc_greedy:"1f938-1f3fb",shortnames:[":cartwheel_tone1:"],category:"activity"},":person_doing_cartwheel_tone2:":{uc_base:"1f938-1f3fc",uc_output:"1f938-1f3fc",uc_match:"1f938-1f3fc",uc_greedy:"1f938-1f3fc",shortnames:[":cartwheel_tone2:"],category:"activity"},":person_doing_cartwheel_tone3:":{uc_base:"1f938-1f3fd",uc_output:"1f938-1f3fd",uc_match:"1f938-1f3fd",uc_greedy:"1f938-1f3fd",shortnames:[":cartwheel_tone3:"],category:"activity"},":person_doing_cartwheel_tone4:":{uc_base:"1f938-1f3fe",uc_output:"1f938-1f3fe",uc_match:"1f938-1f3fe",uc_greedy:"1f938-1f3fe",shortnames:[":cartwheel_tone4:"],category:"activity"},":person_doing_cartwheel_tone5:":{uc_base:"1f938-1f3ff",uc_output:"1f938-1f3ff",uc_match:"1f938-1f3ff",uc_greedy:"1f938-1f3ff",shortnames:[":cartwheel_tone5:"],category:"activity"},":person_facepalming_tone1:":{uc_base:"1f926-1f3fb",uc_output:"1f926-1f3fb",uc_match:"1f926-1f3fb",uc_greedy:"1f926-1f3fb",shortnames:[":face_palm_tone1:",":facepalm_tone1:"],category:"people"},":person_facepalming_tone2:":{uc_base:"1f926-1f3fc",uc_output:"1f926-1f3fc",uc_match:"1f926-1f3fc",uc_greedy:"1f926-1f3fc",shortnames:[":face_palm_tone2:",":facepalm_tone2:"],category:"people"},":person_facepalming_tone3:":{uc_base:"1f926-1f3fd",uc_output:"1f926-1f3fd",uc_match:"1f926-1f3fd",uc_greedy:"1f926-1f3fd",shortnames:[":face_palm_tone3:",":facepalm_tone3:"],category:"people"},":person_facepalming_tone4:":{uc_base:"1f926-1f3fe",uc_output:"1f926-1f3fe",uc_match:"1f926-1f3fe",uc_greedy:"1f926-1f3fe",shortnames:[":face_palm_tone4:",":facepalm_tone4:"],category:"people"},":person_facepalming_tone5:":{uc_base:"1f926-1f3ff",uc_output:"1f926-1f3ff",uc_match:"1f926-1f3ff",uc_greedy:"1f926-1f3ff",shortnames:[":face_palm_tone5:",":facepalm_tone5:"],category:"people"},":person_frowning_tone1:":{uc_base:"1f64d-1f3fb",uc_output:"1f64d-1f3fb",uc_match:"1f64d-1f3fb",uc_greedy:"1f64d-1f3fb",shortnames:[],category:"people"},":person_frowning_tone2:":{uc_base:"1f64d-1f3fc",uc_output:"1f64d-1f3fc",uc_match:"1f64d-1f3fc",uc_greedy:"1f64d-1f3fc",shortnames:[],category:"people"},":person_frowning_tone3:":{uc_base:"1f64d-1f3fd",uc_output:"1f64d-1f3fd",uc_match:"1f64d-1f3fd",uc_greedy:"1f64d-1f3fd",shortnames:[],category:"people"},":person_frowning_tone4:":{uc_base:"1f64d-1f3fe",uc_output:"1f64d-1f3fe",uc_match:"1f64d-1f3fe",uc_greedy:"1f64d-1f3fe",shortnames:[],category:"people"},":person_frowning_tone5:":{uc_base:"1f64d-1f3ff",uc_output:"1f64d-1f3ff",uc_match:"1f64d-1f3ff",uc_greedy:"1f64d-1f3ff",shortnames:[],category:"people"},":person_gesturing_no_tone1:":{uc_base:"1f645-1f3fb",uc_output:"1f645-1f3fb",uc_match:"1f645-1f3fb",uc_greedy:"1f645-1f3fb",shortnames:[":no_good_tone1:"],category:"people"},":person_gesturing_no_tone2:":{uc_base:"1f645-1f3fc",uc_output:"1f645-1f3fc",uc_match:"1f645-1f3fc",uc_greedy:"1f645-1f3fc",shortnames:[":no_good_tone2:"],category:"people"},":person_gesturing_no_tone3:":{uc_base:"1f645-1f3fd",uc_output:"1f645-1f3fd",uc_match:"1f645-1f3fd",uc_greedy:"1f645-1f3fd",shortnames:[":no_good_tone3:"],category:"people"},":person_gesturing_no_tone4:":{uc_base:"1f645-1f3fe",uc_output:"1f645-1f3fe",uc_match:"1f645-1f3fe",uc_greedy:"1f645-1f3fe",shortnames:[":no_good_tone4:"],category:"people"},":person_gesturing_no_tone5:":{uc_base:"1f645-1f3ff",uc_output:"1f645-1f3ff",uc_match:"1f645-1f3ff",uc_greedy:"1f645-1f3ff",shortnames:[":no_good_tone5:"],category:"people"},":person_gesturing_ok_tone1:":{uc_base:"1f646-1f3fb",uc_output:"1f646-1f3fb",uc_match:"1f646-1f3fb",uc_greedy:"1f646-1f3fb",shortnames:[":ok_woman_tone1:"],category:"people"},":person_gesturing_ok_tone2:":{uc_base:"1f646-1f3fc",uc_output:"1f646-1f3fc",uc_match:"1f646-1f3fc",uc_greedy:"1f646-1f3fc",shortnames:[":ok_woman_tone2:"],category:"people"},":person_gesturing_ok_tone3:":{uc_base:"1f646-1f3fd",uc_output:"1f646-1f3fd",uc_match:"1f646-1f3fd",uc_greedy:"1f646-1f3fd",shortnames:[":ok_woman_tone3:"],category:"people"},":person_gesturing_ok_tone4:":{uc_base:"1f646-1f3fe",uc_output:"1f646-1f3fe",uc_match:"1f646-1f3fe",uc_greedy:"1f646-1f3fe",shortnames:[":ok_woman_tone4:"],category:"people"},":person_gesturing_ok_tone5:":{uc_base:"1f646-1f3ff",uc_output:"1f646-1f3ff",uc_match:"1f646-1f3ff",uc_greedy:"1f646-1f3ff",shortnames:[":ok_woman_tone5:"],category:"people"},":person_getting_haircut_tone1:":{uc_base:"1f487-1f3fb",uc_output:"1f487-1f3fb",uc_match:"1f487-1f3fb",uc_greedy:"1f487-1f3fb",shortnames:[":haircut_tone1:"],category:"people"},":person_getting_haircut_tone2:":{uc_base:"1f487-1f3fc",uc_output:"1f487-1f3fc",uc_match:"1f487-1f3fc",uc_greedy:"1f487-1f3fc",shortnames:[":haircut_tone2:"],category:"people"},":person_getting_haircut_tone3:":{uc_base:"1f487-1f3fd",uc_output:"1f487-1f3fd",uc_match:"1f487-1f3fd",uc_greedy:"1f487-1f3fd",shortnames:[":haircut_tone3:"],category:"people"},":person_getting_haircut_tone4:":{uc_base:"1f487-1f3fe",uc_output:"1f487-1f3fe",uc_match:"1f487-1f3fe",uc_greedy:"1f487-1f3fe",shortnames:[":haircut_tone4:"],category:"people"},":person_getting_haircut_tone5:":{uc_base:"1f487-1f3ff",uc_output:"1f487-1f3ff",uc_match:"1f487-1f3ff",uc_greedy:"1f487-1f3ff",shortnames:[":haircut_tone5:"],category:"people"},":person_getting_massage_tone1:":{uc_base:"1f486-1f3fb",uc_output:"1f486-1f3fb",uc_match:"1f486-1f3fb",uc_greedy:"1f486-1f3fb",shortnames:[":massage_tone1:"],category:"people"},":person_getting_massage_tone2:":{uc_base:"1f486-1f3fc",uc_output:"1f486-1f3fc",uc_match:"1f486-1f3fc",uc_greedy:"1f486-1f3fc",shortnames:[":massage_tone2:"],category:"people"},":person_getting_massage_tone3:":{uc_base:"1f486-1f3fd",uc_output:"1f486-1f3fd",uc_match:"1f486-1f3fd",uc_greedy:"1f486-1f3fd",shortnames:[":massage_tone3:"],category:"people"},":person_getting_massage_tone4:":{uc_base:"1f486-1f3fe",uc_output:"1f486-1f3fe",uc_match:"1f486-1f3fe",uc_greedy:"1f486-1f3fe",shortnames:[":massage_tone4:"],category:"people"},":person_getting_massage_tone5:":{uc_base:"1f486-1f3ff",uc_output:"1f486-1f3ff",uc_match:"1f486-1f3ff",uc_greedy:"1f486-1f3ff",shortnames:[":massage_tone5:"],category:"people"},":person_golfing_tone1:":{uc_base:"1f3cc-1f3fb",uc_output:"1f3cc-1f3fb",uc_match:"1f3cc-fe0f-1f3fb",uc_greedy:"1f3cc-fe0f-1f3fb",shortnames:[":person_golfing_light_skin_tone:"],category:"activity"},":person_golfing_tone2:":{uc_base:"1f3cc-1f3fc",uc_output:"1f3cc-1f3fc",uc_match:"1f3cc-fe0f-1f3fc",uc_greedy:"1f3cc-fe0f-1f3fc",shortnames:[":person_golfing_medium_light_skin_tone:"],category:"activity"},":person_golfing_tone3:":{uc_base:"1f3cc-1f3fd",uc_output:"1f3cc-1f3fd",uc_match:"1f3cc-fe0f-1f3fd",uc_greedy:"1f3cc-fe0f-1f3fd",shortnames:[":person_golfing_medium_skin_tone:"],category:"activity"},":person_golfing_tone4:":{uc_base:"1f3cc-1f3fe",uc_output:"1f3cc-1f3fe",uc_match:"1f3cc-fe0f-1f3fe",uc_greedy:"1f3cc-fe0f-1f3fe",shortnames:[":person_golfing_medium_dark_skin_tone:"],category:"activity"},":person_golfing_tone5:":{uc_base:"1f3cc-1f3ff",uc_output:"1f3cc-1f3ff",uc_match:"1f3cc-fe0f-1f3ff",uc_greedy:"1f3cc-fe0f-1f3ff",shortnames:[":person_golfing_dark_skin_tone:"],category:"activity"},":person_in_bed_tone1:":{uc_base:"1f6cc-1f3fb",uc_output:"1f6cc-1f3fb",uc_match:"1f6cc-1f3fb",uc_greedy:"1f6cc-1f3fb",shortnames:[":person_in_bed_light_skin_tone:"],category:"objects"},":person_in_bed_tone2:":{uc_base:"1f6cc-1f3fc",uc_output:"1f6cc-1f3fc",uc_match:"1f6cc-1f3fc",uc_greedy:"1f6cc-1f3fc",shortnames:[":person_in_bed_medium_light_skin_tone:"],category:"objects"},":person_in_bed_tone3:":{uc_base:"1f6cc-1f3fd",uc_output:"1f6cc-1f3fd",uc_match:"1f6cc-1f3fd",uc_greedy:"1f6cc-1f3fd",shortnames:[":person_in_bed_medium_skin_tone:"],category:"objects"},":person_in_bed_tone4:":{uc_base:"1f6cc-1f3fe",uc_output:"1f6cc-1f3fe",uc_match:"1f6cc-1f3fe",uc_greedy:"1f6cc-1f3fe",shortnames:[":person_in_bed_medium_dark_skin_tone:"],category:"objects"},":person_in_bed_tone5:":{uc_base:"1f6cc-1f3ff",uc_output:"1f6cc-1f3ff",uc_match:"1f6cc-1f3ff",uc_greedy:"1f6cc-1f3ff",shortnames:[":person_in_bed_dark_skin_tone:"],category:"objects"},":person_in_lotus_position_tone1:":{uc_base:"1f9d8-1f3fb",uc_output:"1f9d8-1f3fb",uc_match:"1f9d8-1f3fb",uc_greedy:"1f9d8-1f3fb",shortnames:[":person_in_lotus_position_light_skin_tone:"],category:"activity"},":person_in_lotus_position_tone2:":{uc_base:"1f9d8-1f3fc",uc_output:"1f9d8-1f3fc",uc_match:"1f9d8-1f3fc",uc_greedy:"1f9d8-1f3fc",shortnames:[":person_in_lotus_position_medium_light_skin_tone:"],category:"activity"},":person_in_lotus_position_tone3:":{uc_base:"1f9d8-1f3fd",uc_output:"1f9d8-1f3fd",uc_match:"1f9d8-1f3fd",uc_greedy:"1f9d8-1f3fd",shortnames:[":person_in_lotus_position_medium_skin_tone:"],category:"activity"},":person_in_lotus_position_tone4:":{uc_base:"1f9d8-1f3fe",uc_output:"1f9d8-1f3fe",uc_match:"1f9d8-1f3fe",uc_greedy:"1f9d8-1f3fe",shortnames:[":person_in_lotus_position_medium_dark_skin_tone:"],category:"activity"},":person_in_lotus_position_tone5:":{uc_base:"1f9d8-1f3ff",uc_output:"1f9d8-1f3ff",uc_match:"1f9d8-1f3ff",uc_greedy:"1f9d8-1f3ff",shortnames:[":person_in_lotus_position_dark_skin_tone:"],category:"activity"},":person_in_steamy_room_tone1:":{uc_base:"1f9d6-1f3fb",uc_output:"1f9d6-1f3fb",uc_match:"1f9d6-1f3fb",uc_greedy:"1f9d6-1f3fb",shortnames:[":person_in_steamy_room_light_skin_tone:"],category:"people"},":person_in_steamy_room_tone2:":{uc_base:"1f9d6-1f3fc",uc_output:"1f9d6-1f3fc",uc_match:"1f9d6-1f3fc",uc_greedy:"1f9d6-1f3fc",shortnames:[":person_in_steamy_room_medium_light_skin_tone:"],category:"people"},":person_in_steamy_room_tone3:":{uc_base:"1f9d6-1f3fd",uc_output:"1f9d6-1f3fd",uc_match:"1f9d6-1f3fd",uc_greedy:"1f9d6-1f3fd",shortnames:[":person_in_steamy_room_medium_skin_tone:"],category:"people"},":person_in_steamy_room_tone4:":{uc_base:"1f9d6-1f3fe",uc_output:"1f9d6-1f3fe",uc_match:"1f9d6-1f3fe",uc_greedy:"1f9d6-1f3fe",shortnames:[":person_in_steamy_room_medium_dark_skin_tone:"],category:"people"},":person_in_steamy_room_tone5:":{uc_base:"1f9d6-1f3ff",uc_output:"1f9d6-1f3ff",uc_match:"1f9d6-1f3ff",uc_greedy:"1f9d6-1f3ff",shortnames:[":person_in_steamy_room_dark_skin_tone:"],category:"people"},":person_juggling_tone1:":{uc_base:"1f939-1f3fb",uc_output:"1f939-1f3fb",uc_match:"1f939-1f3fb",uc_greedy:"1f939-1f3fb",shortnames:[":juggling_tone1:",":juggler_tone1:"],category:"activity"},":person_juggling_tone2:":{uc_base:"1f939-1f3fc",uc_output:"1f939-1f3fc",uc_match:"1f939-1f3fc",uc_greedy:"1f939-1f3fc",shortnames:[":juggling_tone2:",":juggler_tone2:"],category:"activity"},":person_juggling_tone3:":{uc_base:"1f939-1f3fd",uc_output:"1f939-1f3fd",uc_match:"1f939-1f3fd",uc_greedy:"1f939-1f3fd",shortnames:[":juggling_tone3:",":juggler_tone3:"],category:"activity"},":person_juggling_tone4:":{uc_base:"1f939-1f3fe",uc_output:"1f939-1f3fe",uc_match:"1f939-1f3fe",uc_greedy:"1f939-1f3fe",shortnames:[":juggling_tone4:",":juggler_tone4:"],category:"activity"},":person_juggling_tone5:":{uc_base:"1f939-1f3ff",uc_output:"1f939-1f3ff",uc_match:"1f939-1f3ff",uc_greedy:"1f939-1f3ff",shortnames:[":juggling_tone5:",":juggler_tone5:"],category:"activity"},":person_lifting_weights_tone1:":{uc_base:"1f3cb-1f3fb",uc_output:"1f3cb-1f3fb",uc_match:"1f3cb-fe0f-1f3fb",uc_greedy:"1f3cb-fe0f-1f3fb",shortnames:[":lifter_tone1:",":weight_lifter_tone1:"],category:"activity"},":person_lifting_weights_tone2:":{uc_base:"1f3cb-1f3fc",uc_output:"1f3cb-1f3fc",uc_match:"1f3cb-fe0f-1f3fc",uc_greedy:"1f3cb-fe0f-1f3fc",shortnames:[":lifter_tone2:",":weight_lifter_tone2:"],category:"activity"},":person_lifting_weights_tone3:":{uc_base:"1f3cb-1f3fd",uc_output:"1f3cb-1f3fd",uc_match:"1f3cb-fe0f-1f3fd",uc_greedy:"1f3cb-fe0f-1f3fd",shortnames:[":lifter_tone3:",":weight_lifter_tone3:"],category:"activity"},":person_lifting_weights_tone4:":{uc_base:"1f3cb-1f3fe",uc_output:"1f3cb-1f3fe",uc_match:"1f3cb-fe0f-1f3fe",uc_greedy:"1f3cb-fe0f-1f3fe",shortnames:[":lifter_tone4:",":weight_lifter_tone4:"],category:"activity"},":person_lifting_weights_tone5:":{uc_base:"1f3cb-1f3ff",uc_output:"1f3cb-1f3ff",uc_match:"1f3cb-fe0f-1f3ff",uc_greedy:"1f3cb-fe0f-1f3ff",shortnames:[":lifter_tone5:",":weight_lifter_tone5:"],category:"activity"},":person_mountain_biking_tone1:":{uc_base:"1f6b5-1f3fb",uc_output:"1f6b5-1f3fb",uc_match:"1f6b5-1f3fb",uc_greedy:"1f6b5-1f3fb",shortnames:[":mountain_bicyclist_tone1:"],category:"activity"},":person_mountain_biking_tone2:":{uc_base:"1f6b5-1f3fc",uc_output:"1f6b5-1f3fc",uc_match:"1f6b5-1f3fc",uc_greedy:"1f6b5-1f3fc",shortnames:[":mountain_bicyclist_tone2:"],category:"activity"},":person_mountain_biking_tone3:":{uc_base:"1f6b5-1f3fd",uc_output:"1f6b5-1f3fd",uc_match:"1f6b5-1f3fd",uc_greedy:"1f6b5-1f3fd",shortnames:[":mountain_bicyclist_tone3:"],category:"activity"},":person_mountain_biking_tone4:":{uc_base:"1f6b5-1f3fe",uc_output:"1f6b5-1f3fe",uc_match:"1f6b5-1f3fe",uc_greedy:"1f6b5-1f3fe",shortnames:[":mountain_bicyclist_tone4:"],category:"activity"},":person_mountain_biking_tone5:":{uc_base:"1f6b5-1f3ff",uc_output:"1f6b5-1f3ff",uc_match:"1f6b5-1f3ff",uc_greedy:"1f6b5-1f3ff",shortnames:[":mountain_bicyclist_tone5:"],category:"activity"},":person_playing_handball_tone1:":{uc_base:"1f93e-1f3fb",uc_output:"1f93e-1f3fb",uc_match:"1f93e-1f3fb",uc_greedy:"1f93e-1f3fb",shortnames:[":handball_tone1:"],category:"activity"},":person_playing_handball_tone2:":{uc_base:"1f93e-1f3fc",uc_output:"1f93e-1f3fc",uc_match:"1f93e-1f3fc",uc_greedy:"1f93e-1f3fc",shortnames:[":handball_tone2:"],category:"activity"},":person_playing_handball_tone3:":{uc_base:"1f93e-1f3fd",uc_output:"1f93e-1f3fd",uc_match:"1f93e-1f3fd",uc_greedy:"1f93e-1f3fd",shortnames:[":handball_tone3:"],category:"activity"},":person_playing_handball_tone4:":{uc_base:"1f93e-1f3fe",uc_output:"1f93e-1f3fe",uc_match:"1f93e-1f3fe",uc_greedy:"1f93e-1f3fe",shortnames:[":handball_tone4:"],category:"activity"},":person_playing_handball_tone5:":{uc_base:"1f93e-1f3ff",uc_output:"1f93e-1f3ff",uc_match:"1f93e-1f3ff",uc_greedy:"1f93e-1f3ff",shortnames:[":handball_tone5:"],category:"activity"},":person_playing_water_polo_tone1:":{uc_base:"1f93d-1f3fb",uc_output:"1f93d-1f3fb",uc_match:"1f93d-1f3fb",uc_greedy:"1f93d-1f3fb",shortnames:[":water_polo_tone1:"],category:"activity"},":person_playing_water_polo_tone2:":{uc_base:"1f93d-1f3fc",uc_output:"1f93d-1f3fc",uc_match:"1f93d-1f3fc",uc_greedy:"1f93d-1f3fc",shortnames:[":water_polo_tone2:"],category:"activity"},":person_playing_water_polo_tone3:":{uc_base:"1f93d-1f3fd",uc_output:"1f93d-1f3fd",uc_match:"1f93d-1f3fd",uc_greedy:"1f93d-1f3fd",shortnames:[":water_polo_tone3:"],category:"activity"},":person_playing_water_polo_tone4:":{uc_base:"1f93d-1f3fe",uc_output:"1f93d-1f3fe",uc_match:"1f93d-1f3fe",uc_greedy:"1f93d-1f3fe",shortnames:[":water_polo_tone4:"],category:"activity"},":person_playing_water_polo_tone5:":{uc_base:"1f93d-1f3ff",uc_output:"1f93d-1f3ff",uc_match:"1f93d-1f3ff",uc_greedy:"1f93d-1f3ff",shortnames:[":water_polo_tone5:"],category:"activity"},":person_pouting_tone1:":{uc_base:"1f64e-1f3fb",uc_output:"1f64e-1f3fb",uc_match:"1f64e-1f3fb",uc_greedy:"1f64e-1f3fb",shortnames:[":person_with_pouting_face_tone1:"],category:"people"},":person_pouting_tone2:":{uc_base:"1f64e-1f3fc",uc_output:"1f64e-1f3fc",uc_match:"1f64e-1f3fc",uc_greedy:"1f64e-1f3fc",shortnames:[":person_with_pouting_face_tone2:"],category:"people"},":person_pouting_tone3:":{uc_base:"1f64e-1f3fd",uc_output:"1f64e-1f3fd",uc_match:"1f64e-1f3fd",uc_greedy:"1f64e-1f3fd",shortnames:[":person_with_pouting_face_tone3:"],category:"people"},":person_pouting_tone4:":{uc_base:"1f64e-1f3fe",uc_output:"1f64e-1f3fe",uc_match:"1f64e-1f3fe",uc_greedy:"1f64e-1f3fe",shortnames:[":person_with_pouting_face_tone4:"],category:"people"},":person_pouting_tone5:":{uc_base:"1f64e-1f3ff",uc_output:"1f64e-1f3ff",uc_match:"1f64e-1f3ff",uc_greedy:"1f64e-1f3ff",shortnames:[":person_with_pouting_face_tone5:"],category:"people"},":person_raising_hand_tone1:":{uc_base:"1f64b-1f3fb",uc_output:"1f64b-1f3fb",uc_match:"1f64b-1f3fb",uc_greedy:"1f64b-1f3fb",shortnames:[":raising_hand_tone1:"],category:"people"},":person_raising_hand_tone2:":{uc_base:"1f64b-1f3fc",uc_output:"1f64b-1f3fc",uc_match:"1f64b-1f3fc",uc_greedy:"1f64b-1f3fc",shortnames:[":raising_hand_tone2:"],category:"people"},":person_raising_hand_tone3:":{uc_base:"1f64b-1f3fd",uc_output:"1f64b-1f3fd",uc_match:"1f64b-1f3fd",uc_greedy:"1f64b-1f3fd",shortnames:[":raising_hand_tone3:"],category:"people"},":person_raising_hand_tone4:":{uc_base:"1f64b-1f3fe",uc_output:"1f64b-1f3fe",uc_match:"1f64b-1f3fe",uc_greedy:"1f64b-1f3fe",shortnames:[":raising_hand_tone4:"],category:"people"},":person_raising_hand_tone5:":{uc_base:"1f64b-1f3ff",uc_output:"1f64b-1f3ff",uc_match:"1f64b-1f3ff",uc_greedy:"1f64b-1f3ff",shortnames:[":raising_hand_tone5:"],category:"people"},":person_rowing_boat_tone1:":{uc_base:"1f6a3-1f3fb",uc_output:"1f6a3-1f3fb",uc_match:"1f6a3-1f3fb",uc_greedy:"1f6a3-1f3fb",shortnames:[":rowboat_tone1:"],category:"activity"},":person_rowing_boat_tone2:":{uc_base:"1f6a3-1f3fc",uc_output:"1f6a3-1f3fc",uc_match:"1f6a3-1f3fc",uc_greedy:"1f6a3-1f3fc",shortnames:[":rowboat_tone2:"],category:"activity"},":person_rowing_boat_tone3:":{uc_base:"1f6a3-1f3fd",uc_output:"1f6a3-1f3fd",uc_match:"1f6a3-1f3fd",uc_greedy:"1f6a3-1f3fd",shortnames:[":rowboat_tone3:"],category:"activity"},":person_rowing_boat_tone4:":{uc_base:"1f6a3-1f3fe",uc_output:"1f6a3-1f3fe",uc_match:"1f6a3-1f3fe",uc_greedy:"1f6a3-1f3fe",shortnames:[":rowboat_tone4:"],category:"activity"},":person_rowing_boat_tone5:":{uc_base:"1f6a3-1f3ff",uc_output:"1f6a3-1f3ff",uc_match:"1f6a3-1f3ff",uc_greedy:"1f6a3-1f3ff",shortnames:[":rowboat_tone5:"],category:"activity"},":person_running_tone1:":{uc_base:"1f3c3-1f3fb",uc_output:"1f3c3-1f3fb",uc_match:"1f3c3-1f3fb",uc_greedy:"1f3c3-1f3fb",shortnames:[":runner_tone1:"],category:"people"},":person_running_tone2:":{uc_base:"1f3c3-1f3fc",uc_output:"1f3c3-1f3fc",uc_match:"1f3c3-1f3fc",uc_greedy:"1f3c3-1f3fc",shortnames:[":runner_tone2:"],category:"people"},":person_running_tone3:":{uc_base:"1f3c3-1f3fd",uc_output:"1f3c3-1f3fd",uc_match:"1f3c3-1f3fd",uc_greedy:"1f3c3-1f3fd",shortnames:[":runner_tone3:"],category:"people"},":person_running_tone4:":{uc_base:"1f3c3-1f3fe",uc_output:"1f3c3-1f3fe",uc_match:"1f3c3-1f3fe",uc_greedy:"1f3c3-1f3fe",shortnames:[":runner_tone4:"],category:"people"},":person_running_tone5:":{uc_base:"1f3c3-1f3ff",uc_output:"1f3c3-1f3ff",uc_match:"1f3c3-1f3ff",uc_greedy:"1f3c3-1f3ff",shortnames:[":runner_tone5:"],category:"people"},":person_shrugging_tone1:":{uc_base:"1f937-1f3fb",uc_output:"1f937-1f3fb",uc_match:"1f937-1f3fb",uc_greedy:"1f937-1f3fb",shortnames:[":shrug_tone1:"],category:"people"},":person_shrugging_tone2:":{uc_base:"1f937-1f3fc",uc_output:"1f937-1f3fc",uc_match:"1f937-1f3fc",uc_greedy:"1f937-1f3fc",shortnames:[":shrug_tone2:"],category:"people"},":person_shrugging_tone3:":{uc_base:"1f937-1f3fd",uc_output:"1f937-1f3fd",uc_match:"1f937-1f3fd",uc_greedy:"1f937-1f3fd",shortnames:[":shrug_tone3:"],category:"people"},":person_shrugging_tone4:":{uc_base:"1f937-1f3fe",uc_output:"1f937-1f3fe",uc_match:"1f937-1f3fe",uc_greedy:"1f937-1f3fe",shortnames:[":shrug_tone4:"],category:"people"},":person_shrugging_tone5:":{uc_base:"1f937-1f3ff",uc_output:"1f937-1f3ff",uc_match:"1f937-1f3ff",uc_greedy:"1f937-1f3ff",shortnames:[":shrug_tone5:"],category:"people"},":person_surfing_tone1:":{uc_base:"1f3c4-1f3fb",uc_output:"1f3c4-1f3fb",uc_match:"1f3c4-1f3fb",uc_greedy:"1f3c4-1f3fb",shortnames:[":surfer_tone1:"],category:"activity"},":person_surfing_tone2:":{uc_base:"1f3c4-1f3fc",uc_output:"1f3c4-1f3fc",uc_match:"1f3c4-1f3fc",uc_greedy:"1f3c4-1f3fc",shortnames:[":surfer_tone2:"],category:"activity"},":person_surfing_tone3:":{uc_base:"1f3c4-1f3fd",uc_output:"1f3c4-1f3fd",uc_match:"1f3c4-1f3fd",uc_greedy:"1f3c4-1f3fd",shortnames:[":surfer_tone3:"],category:"activity"},":person_surfing_tone4:":{uc_base:"1f3c4-1f3fe",uc_output:"1f3c4-1f3fe",uc_match:"1f3c4-1f3fe",uc_greedy:"1f3c4-1f3fe",shortnames:[":surfer_tone4:"],category:"activity"},":person_surfing_tone5:":{uc_base:"1f3c4-1f3ff",uc_output:"1f3c4-1f3ff",uc_match:"1f3c4-1f3ff",uc_greedy:"1f3c4-1f3ff",shortnames:[":surfer_tone5:"],category:"activity"},":person_swimming_tone1:":{uc_base:"1f3ca-1f3fb",uc_output:"1f3ca-1f3fb",uc_match:"1f3ca-1f3fb",uc_greedy:"1f3ca-1f3fb",shortnames:[":swimmer_tone1:"],category:"activity"},":person_swimming_tone2:":{uc_base:"1f3ca-1f3fc",uc_output:"1f3ca-1f3fc",uc_match:"1f3ca-1f3fc",uc_greedy:"1f3ca-1f3fc",shortnames:[":swimmer_tone2:"],category:"activity"},":person_swimming_tone3:":{uc_base:"1f3ca-1f3fd",uc_output:"1f3ca-1f3fd",uc_match:"1f3ca-1f3fd",uc_greedy:"1f3ca-1f3fd",shortnames:[":swimmer_tone3:"],category:"activity"},":person_swimming_tone4:":{uc_base:"1f3ca-1f3fe",uc_output:"1f3ca-1f3fe",uc_match:"1f3ca-1f3fe",uc_greedy:"1f3ca-1f3fe",shortnames:[":swimmer_tone4:"],category:"activity"},":person_swimming_tone5:":{uc_base:"1f3ca-1f3ff",uc_output:"1f3ca-1f3ff",uc_match:"1f3ca-1f3ff",uc_greedy:"1f3ca-1f3ff",shortnames:[":swimmer_tone5:"],category:"activity"},":person_tipping_hand_tone1:":{uc_base:"1f481-1f3fb",uc_output:"1f481-1f3fb",uc_match:"1f481-1f3fb",uc_greedy:"1f481-1f3fb",shortnames:[":information_desk_person_tone1:"],category:"people"},":person_tipping_hand_tone2:":{uc_base:"1f481-1f3fc",uc_output:"1f481-1f3fc",uc_match:"1f481-1f3fc",uc_greedy:"1f481-1f3fc",shortnames:[":information_desk_person_tone2:"],category:"people"},":person_tipping_hand_tone3:":{uc_base:"1f481-1f3fd",uc_output:"1f481-1f3fd",uc_match:"1f481-1f3fd",uc_greedy:"1f481-1f3fd",shortnames:[":information_desk_person_tone3:"],category:"people"},":person_tipping_hand_tone4:":{uc_base:"1f481-1f3fe",uc_output:"1f481-1f3fe",uc_match:"1f481-1f3fe",uc_greedy:"1f481-1f3fe",shortnames:[":information_desk_person_tone4:"],category:"people"},":person_tipping_hand_tone5:":{uc_base:"1f481-1f3ff",uc_output:"1f481-1f3ff",uc_match:"1f481-1f3ff",uc_greedy:"1f481-1f3ff",shortnames:[":information_desk_person_tone5:"],category:"people"},":person_walking_tone1:":{uc_base:"1f6b6-1f3fb",uc_output:"1f6b6-1f3fb",uc_match:"1f6b6-1f3fb",uc_greedy:"1f6b6-1f3fb",shortnames:[":walking_tone1:"],category:"people"},":person_walking_tone2:":{uc_base:"1f6b6-1f3fc",uc_output:"1f6b6-1f3fc",uc_match:"1f6b6-1f3fc",uc_greedy:"1f6b6-1f3fc",shortnames:[":walking_tone2:"],category:"people"},":person_walking_tone3:":{uc_base:"1f6b6-1f3fd",uc_output:"1f6b6-1f3fd",uc_match:"1f6b6-1f3fd",uc_greedy:"1f6b6-1f3fd",shortnames:[":walking_tone3:"],category:"people"},":person_walking_tone4:":{uc_base:"1f6b6-1f3fe",uc_output:"1f6b6-1f3fe",uc_match:"1f6b6-1f3fe",uc_greedy:"1f6b6-1f3fe",shortnames:[":walking_tone4:"],category:"people"},":person_walking_tone5:":{uc_base:"1f6b6-1f3ff",uc_output:"1f6b6-1f3ff",uc_match:"1f6b6-1f3ff",uc_greedy:"1f6b6-1f3ff",shortnames:[":walking_tone5:"],category:"people"},":person_wearing_turban_tone1:":{uc_base:"1f473-1f3fb",uc_output:"1f473-1f3fb",uc_match:"1f473-1f3fb",uc_greedy:"1f473-1f3fb",shortnames:[":man_with_turban_tone1:"],category:"people"},":person_wearing_turban_tone2:":{uc_base:"1f473-1f3fc",uc_output:"1f473-1f3fc",uc_match:"1f473-1f3fc",uc_greedy:"1f473-1f3fc",shortnames:[":man_with_turban_tone2:"],category:"people"},":person_wearing_turban_tone3:":{uc_base:"1f473-1f3fd",uc_output:"1f473-1f3fd",uc_match:"1f473-1f3fd",uc_greedy:"1f473-1f3fd",shortnames:[":man_with_turban_tone3:"],category:"people"},":person_wearing_turban_tone4:":{uc_base:"1f473-1f3fe",uc_output:"1f473-1f3fe",uc_match:"1f473-1f3fe",uc_greedy:"1f473-1f3fe",shortnames:[":man_with_turban_tone4:"],category:"people"},":person_wearing_turban_tone5:":{uc_base:"1f473-1f3ff",uc_output:"1f473-1f3ff",uc_match:"1f473-1f3ff",uc_greedy:"1f473-1f3ff",shortnames:[":man_with_turban_tone5:"],category:"people"},":point_down_tone1:":{uc_base:"1f447-1f3fb",uc_output:"1f447-1f3fb",uc_match:"1f447-1f3fb",uc_greedy:"1f447-1f3fb",shortnames:[],category:"people"},":point_down_tone2:":{uc_base:"1f447-1f3fc",uc_output:"1f447-1f3fc",uc_match:"1f447-1f3fc",uc_greedy:"1f447-1f3fc",shortnames:[],category:"people"},":point_down_tone3:":{uc_base:"1f447-1f3fd",uc_output:"1f447-1f3fd",uc_match:"1f447-1f3fd",uc_greedy:"1f447-1f3fd",shortnames:[],category:"people"},":point_down_tone4:":{uc_base:"1f447-1f3fe",uc_output:"1f447-1f3fe",uc_match:"1f447-1f3fe",uc_greedy:"1f447-1f3fe",shortnames:[],category:"people"},":point_down_tone5:":{uc_base:"1f447-1f3ff",uc_output:"1f447-1f3ff",uc_match:"1f447-1f3ff",uc_greedy:"1f447-1f3ff",shortnames:[],category:"people"},":point_left_tone1:":{uc_base:"1f448-1f3fb",uc_output:"1f448-1f3fb",uc_match:"1f448-1f3fb",uc_greedy:"1f448-1f3fb",shortnames:[],category:"people"},":point_left_tone2:":{uc_base:"1f448-1f3fc",uc_output:"1f448-1f3fc",uc_match:"1f448-1f3fc",uc_greedy:"1f448-1f3fc",shortnames:[],category:"people"},":point_left_tone3:":{uc_base:"1f448-1f3fd",uc_output:"1f448-1f3fd",uc_match:"1f448-1f3fd",uc_greedy:"1f448-1f3fd",shortnames:[],category:"people"},":point_left_tone4:":{uc_base:"1f448-1f3fe",uc_output:"1f448-1f3fe",uc_match:"1f448-1f3fe",uc_greedy:"1f448-1f3fe",shortnames:[],category:"people"},":point_left_tone5:":{uc_base:"1f448-1f3ff",uc_output:"1f448-1f3ff",uc_match:"1f448-1f3ff",uc_greedy:"1f448-1f3ff",shortnames:[],category:"people"},":point_right_tone1:":{uc_base:"1f449-1f3fb",uc_output:"1f449-1f3fb",uc_match:"1f449-1f3fb",uc_greedy:"1f449-1f3fb",shortnames:[],category:"people"},":point_right_tone2:":{uc_base:"1f449-1f3fc",uc_output:"1f449-1f3fc",uc_match:"1f449-1f3fc",uc_greedy:"1f449-1f3fc",shortnames:[],category:"people"},":point_right_tone3:":{uc_base:"1f449-1f3fd",uc_output:"1f449-1f3fd",uc_match:"1f449-1f3fd",uc_greedy:"1f449-1f3fd",shortnames:[],category:"people"},":point_right_tone4:":{uc_base:"1f449-1f3fe",uc_output:"1f449-1f3fe",uc_match:"1f449-1f3fe",uc_greedy:"1f449-1f3fe",shortnames:[],category:"people"},":point_right_tone5:":{uc_base:"1f449-1f3ff",uc_output:"1f449-1f3ff",uc_match:"1f449-1f3ff",uc_greedy:"1f449-1f3ff",shortnames:[],category:"people"},":point_up_2_tone1:":{uc_base:"1f446-1f3fb",uc_output:"1f446-1f3fb",uc_match:"1f446-1f3fb",uc_greedy:"1f446-1f3fb",shortnames:[],category:"people"},":point_up_2_tone2:":{uc_base:"1f446-1f3fc",uc_output:"1f446-1f3fc",uc_match:"1f446-1f3fc",uc_greedy:"1f446-1f3fc",shortnames:[],category:"people"},":point_up_2_tone3:":{uc_base:"1f446-1f3fd",uc_output:"1f446-1f3fd",uc_match:"1f446-1f3fd",uc_greedy:"1f446-1f3fd",shortnames:[],category:"people"},":point_up_2_tone4:":{uc_base:"1f446-1f3fe",uc_output:"1f446-1f3fe",uc_match:"1f446-1f3fe",uc_greedy:"1f446-1f3fe",shortnames:[],category:"people"},":point_up_2_tone5:":{uc_base:"1f446-1f3ff",uc_output:"1f446-1f3ff",uc_match:"1f446-1f3ff",uc_greedy:"1f446-1f3ff",shortnames:[],category:"people"},":police_officer_tone1:":{uc_base:"1f46e-1f3fb",uc_output:"1f46e-1f3fb",uc_match:"1f46e-1f3fb",uc_greedy:"1f46e-1f3fb",shortnames:[":cop_tone1:"],category:"people"},":police_officer_tone2:":{uc_base:"1f46e-1f3fc",uc_output:"1f46e-1f3fc",uc_match:"1f46e-1f3fc",uc_greedy:"1f46e-1f3fc",shortnames:[":cop_tone2:"],category:"people"},":police_officer_tone3:":{uc_base:"1f46e-1f3fd",uc_output:"1f46e-1f3fd",uc_match:"1f46e-1f3fd",uc_greedy:"1f46e-1f3fd",shortnames:[":cop_tone3:"],category:"people"},":police_officer_tone4:":{uc_base:"1f46e-1f3fe",uc_output:"1f46e-1f3fe",uc_match:"1f46e-1f3fe",uc_greedy:"1f46e-1f3fe",shortnames:[":cop_tone4:"],category:"people"},":police_officer_tone5:":{uc_base:"1f46e-1f3ff",uc_output:"1f46e-1f3ff",uc_match:"1f46e-1f3ff",uc_greedy:"1f46e-1f3ff",shortnames:[":cop_tone5:"],category:"people"},":pray_tone1:":{uc_base:"1f64f-1f3fb",uc_output:"1f64f-1f3fb",uc_match:"1f64f-1f3fb",uc_greedy:"1f64f-1f3fb",shortnames:[],category:"people"},":pray_tone2:":{uc_base:"1f64f-1f3fc",uc_output:"1f64f-1f3fc",uc_match:"1f64f-1f3fc",uc_greedy:"1f64f-1f3fc",shortnames:[],category:"people"},":pray_tone3:":{uc_base:"1f64f-1f3fd",uc_output:"1f64f-1f3fd",uc_match:"1f64f-1f3fd",uc_greedy:"1f64f-1f3fd",shortnames:[],category:"people"},":pray_tone4:":{uc_base:"1f64f-1f3fe",uc_output:"1f64f-1f3fe",uc_match:"1f64f-1f3fe",uc_greedy:"1f64f-1f3fe",shortnames:[],category:"people"},":pray_tone5:":{uc_base:"1f64f-1f3ff",uc_output:"1f64f-1f3ff",uc_match:"1f64f-1f3ff",uc_greedy:"1f64f-1f3ff",shortnames:[],category:"people"},":pregnant_woman_tone1:":{uc_base:"1f930-1f3fb",uc_output:"1f930-1f3fb",uc_match:"1f930-1f3fb",uc_greedy:"1f930-1f3fb",shortnames:[":expecting_woman_tone1:"],category:"people"},":pregnant_woman_tone2:":{uc_base:"1f930-1f3fc",uc_output:"1f930-1f3fc",uc_match:"1f930-1f3fc",uc_greedy:"1f930-1f3fc",shortnames:[":expecting_woman_tone2:"],category:"people"},":pregnant_woman_tone3:":{uc_base:"1f930-1f3fd",uc_output:"1f930-1f3fd",uc_match:"1f930-1f3fd",uc_greedy:"1f930-1f3fd",shortnames:[":expecting_woman_tone3:"],category:"people"},":pregnant_woman_tone4:":{uc_base:"1f930-1f3fe",uc_output:"1f930-1f3fe",uc_match:"1f930-1f3fe",uc_greedy:"1f930-1f3fe",shortnames:[":expecting_woman_tone4:"],category:"people"},":pregnant_woman_tone5:":{uc_base:"1f930-1f3ff",uc_output:"1f930-1f3ff",uc_match:"1f930-1f3ff",uc_greedy:"1f930-1f3ff",shortnames:[":expecting_woman_tone5:"],category:"people"},":prince_tone1:":{uc_base:"1f934-1f3fb",uc_output:"1f934-1f3fb",uc_match:"1f934-1f3fb",uc_greedy:"1f934-1f3fb",shortnames:[],category:"people"},":prince_tone2:":{uc_base:"1f934-1f3fc",uc_output:"1f934-1f3fc",uc_match:"1f934-1f3fc",uc_greedy:"1f934-1f3fc",shortnames:[],category:"people"},":prince_tone3:":{uc_base:"1f934-1f3fd",uc_output:"1f934-1f3fd",uc_match:"1f934-1f3fd",uc_greedy:"1f934-1f3fd",shortnames:[],category:"people"},":prince_tone4:":{uc_base:"1f934-1f3fe",uc_output:"1f934-1f3fe",uc_match:"1f934-1f3fe",uc_greedy:"1f934-1f3fe",shortnames:[],category:"people"},":prince_tone5:":{uc_base:"1f934-1f3ff",uc_output:"1f934-1f3ff",uc_match:"1f934-1f3ff",uc_greedy:"1f934-1f3ff",shortnames:[],category:"people"},":princess_tone1:":{uc_base:"1f478-1f3fb",uc_output:"1f478-1f3fb",uc_match:"1f478-1f3fb",uc_greedy:"1f478-1f3fb",shortnames:[],category:"people"},":princess_tone2:":{uc_base:"1f478-1f3fc",uc_output:"1f478-1f3fc",uc_match:"1f478-1f3fc",uc_greedy:"1f478-1f3fc",shortnames:[],category:"people"},":princess_tone3:":{uc_base:"1f478-1f3fd",uc_output:"1f478-1f3fd",uc_match:"1f478-1f3fd",uc_greedy:"1f478-1f3fd",shortnames:[],category:"people"},":princess_tone4:":{uc_base:"1f478-1f3fe",uc_output:"1f478-1f3fe",uc_match:"1f478-1f3fe",uc_greedy:"1f478-1f3fe",shortnames:[],category:"people"},":princess_tone5:":{uc_base:"1f478-1f3ff",uc_output:"1f478-1f3ff",uc_match:"1f478-1f3ff",uc_greedy:"1f478-1f3ff",shortnames:[],category:"people"},":punch_tone1:":{uc_base:"1f44a-1f3fb",uc_output:"1f44a-1f3fb",uc_match:"1f44a-1f3fb",uc_greedy:"1f44a-1f3fb",shortnames:[],category:"people"},":punch_tone2:":{uc_base:"1f44a-1f3fc",uc_output:"1f44a-1f3fc",uc_match:"1f44a-1f3fc",uc_greedy:"1f44a-1f3fc",shortnames:[],category:"people"},":punch_tone3:":{uc_base:"1f44a-1f3fd",uc_output:"1f44a-1f3fd",uc_match:"1f44a-1f3fd",uc_greedy:"1f44a-1f3fd",shortnames:[],category:"people"},":punch_tone4:":{uc_base:"1f44a-1f3fe",uc_output:"1f44a-1f3fe",uc_match:"1f44a-1f3fe",uc_greedy:"1f44a-1f3fe",shortnames:[],category:"people"},":punch_tone5:":{uc_base:"1f44a-1f3ff",uc_output:"1f44a-1f3ff",uc_match:"1f44a-1f3ff",uc_greedy:"1f44a-1f3ff",shortnames:[],category:"people"},":raised_back_of_hand_tone1:":{uc_base:"1f91a-1f3fb",uc_output:"1f91a-1f3fb",uc_match:"1f91a-1f3fb",uc_greedy:"1f91a-1f3fb",shortnames:[":back_of_hand_tone1:"],category:"people"},":raised_back_of_hand_tone2:":{uc_base:"1f91a-1f3fc",uc_output:"1f91a-1f3fc",uc_match:"1f91a-1f3fc",uc_greedy:"1f91a-1f3fc",shortnames:[":back_of_hand_tone2:"],category:"people"},":raised_back_of_hand_tone3:":{uc_base:"1f91a-1f3fd",uc_output:"1f91a-1f3fd",uc_match:"1f91a-1f3fd",uc_greedy:"1f91a-1f3fd",shortnames:[":back_of_hand_tone3:"],category:"people"},":raised_back_of_hand_tone4:":{uc_base:"1f91a-1f3fe",uc_output:"1f91a-1f3fe",uc_match:"1f91a-1f3fe",uc_greedy:"1f91a-1f3fe",shortnames:[":back_of_hand_tone4:"],category:"people"},":raised_back_of_hand_tone5:":{uc_base:"1f91a-1f3ff",uc_output:"1f91a-1f3ff",uc_match:"1f91a-1f3ff",uc_greedy:"1f91a-1f3ff",shortnames:[":back_of_hand_tone5:"],category:"people"},":raised_hands_tone1:":{uc_base:"1f64c-1f3fb",uc_output:"1f64c-1f3fb",uc_match:"1f64c-1f3fb",uc_greedy:"1f64c-1f3fb",shortnames:[],category:"people"},":raised_hands_tone2:":{uc_base:"1f64c-1f3fc",uc_output:"1f64c-1f3fc",uc_match:"1f64c-1f3fc",uc_greedy:"1f64c-1f3fc",shortnames:[],category:"people"},":raised_hands_tone3:":{uc_base:"1f64c-1f3fd",uc_output:"1f64c-1f3fd",uc_match:"1f64c-1f3fd",uc_greedy:"1f64c-1f3fd",shortnames:[],category:"people"},":raised_hands_tone4:":{uc_base:"1f64c-1f3fe",uc_output:"1f64c-1f3fe",uc_match:"1f64c-1f3fe",uc_greedy:"1f64c-1f3fe",shortnames:[],category:"people"},":raised_hands_tone5:":{uc_base:"1f64c-1f3ff",uc_output:"1f64c-1f3ff",uc_match:"1f64c-1f3ff",uc_greedy:"1f64c-1f3ff",shortnames:[],category:"people"},":right_facing_fist_tone1:":{uc_base:"1f91c-1f3fb",uc_output:"1f91c-1f3fb",uc_match:"1f91c-1f3fb",uc_greedy:"1f91c-1f3fb",shortnames:[":right_fist_tone1:"],category:"people"},":right_facing_fist_tone2:":{uc_base:"1f91c-1f3fc",uc_output:"1f91c-1f3fc",uc_match:"1f91c-1f3fc",uc_greedy:"1f91c-1f3fc",shortnames:[":right_fist_tone2:"],category:"people"},":right_facing_fist_tone3:":{uc_base:"1f91c-1f3fd",uc_output:"1f91c-1f3fd",uc_match:"1f91c-1f3fd",uc_greedy:"1f91c-1f3fd",shortnames:[":right_fist_tone3:"],category:"people"},":right_facing_fist_tone4:":{uc_base:"1f91c-1f3fe",uc_output:"1f91c-1f3fe",uc_match:"1f91c-1f3fe",uc_greedy:"1f91c-1f3fe",shortnames:[":right_fist_tone4:"],category:"people"},":right_facing_fist_tone5:":{uc_base:"1f91c-1f3ff",uc_output:"1f91c-1f3ff",uc_match:"1f91c-1f3ff",uc_greedy:"1f91c-1f3ff",shortnames:[":right_fist_tone5:"],category:"people"},":santa_tone1:":{uc_base:"1f385-1f3fb",uc_output:"1f385-1f3fb",uc_match:"1f385-1f3fb",uc_greedy:"1f385-1f3fb",shortnames:[],category:"people"},":santa_tone2:":{uc_base:"1f385-1f3fc",uc_output:"1f385-1f3fc",uc_match:"1f385-1f3fc",uc_greedy:"1f385-1f3fc",shortnames:[],category:"people"},":santa_tone3:":{uc_base:"1f385-1f3fd",uc_output:"1f385-1f3fd",uc_match:"1f385-1f3fd",uc_greedy:"1f385-1f3fd",shortnames:[],category:"people"},":santa_tone4:":{uc_base:"1f385-1f3fe",uc_output:"1f385-1f3fe",uc_match:"1f385-1f3fe",uc_greedy:"1f385-1f3fe",shortnames:[],category:"people"},":santa_tone5:":{uc_base:"1f385-1f3ff",uc_output:"1f385-1f3ff",uc_match:"1f385-1f3ff",uc_greedy:"1f385-1f3ff",shortnames:[],category:"people"},":selfie_tone1:":{uc_base:"1f933-1f3fb",uc_output:"1f933-1f3fb",uc_match:"1f933-1f3fb",uc_greedy:"1f933-1f3fb",shortnames:[],category:"people"},":selfie_tone2:":{uc_base:"1f933-1f3fc",uc_output:"1f933-1f3fc",uc_match:"1f933-1f3fc",uc_greedy:"1f933-1f3fc",shortnames:[],category:"people"},":selfie_tone3:":{uc_base:"1f933-1f3fd",uc_output:"1f933-1f3fd",uc_match:"1f933-1f3fd",uc_greedy:"1f933-1f3fd",shortnames:[],category:"people"},":selfie_tone4:":{uc_base:"1f933-1f3fe",uc_output:"1f933-1f3fe",uc_match:"1f933-1f3fe",uc_greedy:"1f933-1f3fe",shortnames:[],category:"people"},":selfie_tone5:":{uc_base:"1f933-1f3ff",uc_output:"1f933-1f3ff",uc_match:"1f933-1f3ff",uc_greedy:"1f933-1f3ff",shortnames:[],category:"people"},":snowboarder_tone1:":{uc_base:"1f3c2-1f3fb",uc_output:"1f3c2-1f3fb",uc_match:"1f3c2-1f3fb",uc_greedy:"1f3c2-1f3fb",shortnames:[":snowboarder_light_skin_tone:"],category:"activity"},":snowboarder_tone2:":{uc_base:"1f3c2-1f3fc",uc_output:"1f3c2-1f3fc",uc_match:"1f3c2-1f3fc",uc_greedy:"1f3c2-1f3fc",shortnames:[":snowboarder_medium_light_skin_tone:"],category:"activity"},":snowboarder_tone3:":{uc_base:"1f3c2-1f3fd",uc_output:"1f3c2-1f3fd",uc_match:"1f3c2-1f3fd",uc_greedy:"1f3c2-1f3fd",shortnames:[":snowboarder_medium_skin_tone:"],category:"activity"},":snowboarder_tone4:":{uc_base:"1f3c2-1f3fe",uc_output:"1f3c2-1f3fe",uc_match:"1f3c2-1f3fe",uc_greedy:"1f3c2-1f3fe",shortnames:[":snowboarder_medium_dark_skin_tone:"],category:"activity"},":snowboarder_tone5:":{uc_base:"1f3c2-1f3ff",uc_output:"1f3c2-1f3ff",uc_match:"1f3c2-1f3ff",uc_greedy:"1f3c2-1f3ff",shortnames:[":snowboarder_dark_skin_tone:"],category:"activity"},":superhero_tone1:":{uc_base:"1f9b8-1f3fb",uc_output:"1f9b8-1f3fb",uc_match:"1f9b8-1f3fb",uc_greedy:"1f9b8-1f3fb",shortnames:[":superhero_light_skin_tone:"],category:"people"},":superhero_tone2:":{uc_base:"1f9b8-1f3fc",uc_output:"1f9b8-1f3fc",uc_match:"1f9b8-1f3fc",uc_greedy:"1f9b8-1f3fc",shortnames:[":superhero_medium_light_skin_tone:"],category:"people"},":superhero_tone3:":{uc_base:"1f9b8-1f3fd",uc_output:"1f9b8-1f3fd",uc_match:"1f9b8-1f3fd",uc_greedy:"1f9b8-1f3fd",shortnames:[":superhero_medium_skin_tone:"],category:"people"},":superhero_tone4:":{uc_base:"1f9b8-1f3fe",uc_output:"1f9b8-1f3fe",uc_match:"1f9b8-1f3fe",uc_greedy:"1f9b8-1f3fe",shortnames:[":superhero_medium_dark_skin_tone:"],category:"people"},":superhero_tone5:":{uc_base:"1f9b8-1f3ff",uc_output:"1f9b8-1f3ff",uc_match:"1f9b8-1f3ff",uc_greedy:"1f9b8-1f3ff",shortnames:[":superhero_dark_skin_tone:"],category:"people"},":supervillain_tone1:":{uc_base:"1f9b9-1f3fb",uc_output:"1f9b9-1f3fb",uc_match:"1f9b9-1f3fb",uc_greedy:"1f9b9-1f3fb",shortnames:[":supervillain_light_skin_tone:"],category:"people"},":supervillain_tone2:":{uc_base:"1f9b9-1f3fc",uc_output:"1f9b9-1f3fc",uc_match:"1f9b9-1f3fc",uc_greedy:"1f9b9-1f3fc",shortnames:[":supervillain_medium_light_skin_tone:"],category:"people"},":supervillain_tone3:":{uc_base:"1f9b9-1f3fd",uc_output:"1f9b9-1f3fd",uc_match:"1f9b9-1f3fd",uc_greedy:"1f9b9-1f3fd",shortnames:[":supervillain_medium_skin_tone:"],category:"people"},":supervillain_tone4:":{uc_base:"1f9b9-1f3fe",uc_output:"1f9b9-1f3fe",uc_match:"1f9b9-1f3fe",uc_greedy:"1f9b9-1f3fe",shortnames:[":supervillain_medium_dark_skin_tone:"],category:"people"},":supervillain_tone5:":{uc_base:"1f9b9-1f3ff",uc_output:"1f9b9-1f3ff",uc_match:"1f9b9-1f3ff",uc_greedy:"1f9b9-1f3ff",shortnames:[":supervillain_dark_skin_tone:"],category:"people"},":thumbsdown_tone1:":{uc_base:"1f44e-1f3fb",uc_output:"1f44e-1f3fb",uc_match:"1f44e-1f3fb",uc_greedy:"1f44e-1f3fb",shortnames:[":-1_tone1:",":thumbdown_tone1:"],category:"people"},":thumbsdown_tone2:":{uc_base:"1f44e-1f3fc",uc_output:"1f44e-1f3fc",uc_match:"1f44e-1f3fc",uc_greedy:"1f44e-1f3fc",shortnames:[":-1_tone2:",":thumbdown_tone2:"],category:"people"},":thumbsdown_tone3:":{uc_base:"1f44e-1f3fd",uc_output:"1f44e-1f3fd",uc_match:"1f44e-1f3fd",uc_greedy:"1f44e-1f3fd",shortnames:[":-1_tone3:",":thumbdown_tone3:"],category:"people"},":thumbsdown_tone4:":{uc_base:"1f44e-1f3fe",uc_output:"1f44e-1f3fe",uc_match:"1f44e-1f3fe",uc_greedy:"1f44e-1f3fe",shortnames:[":-1_tone4:",":thumbdown_tone4:"],category:"people"},":thumbsdown_tone5:":{uc_base:"1f44e-1f3ff",uc_output:"1f44e-1f3ff",uc_match:"1f44e-1f3ff",uc_greedy:"1f44e-1f3ff",shortnames:[":-1_tone5:",":thumbdown_tone5:"],category:"people"},":thumbsup_tone1:":{uc_base:"1f44d-1f3fb",uc_output:"1f44d-1f3fb",uc_match:"1f44d-1f3fb",uc_greedy:"1f44d-1f3fb",shortnames:[":+1_tone1:",":thumbup_tone1:"],category:"people"},":thumbsup_tone2:":{uc_base:"1f44d-1f3fc",uc_output:"1f44d-1f3fc",uc_match:"1f44d-1f3fc",uc_greedy:"1f44d-1f3fc",shortnames:[":+1_tone2:",":thumbup_tone2:"],category:"people"},":thumbsup_tone3:":{uc_base:"1f44d-1f3fd",uc_output:"1f44d-1f3fd",uc_match:"1f44d-1f3fd",uc_greedy:"1f44d-1f3fd",shortnames:[":+1_tone3:",":thumbup_tone3:"],category:"people"},":thumbsup_tone4:":{uc_base:"1f44d-1f3fe",uc_output:"1f44d-1f3fe",uc_match:"1f44d-1f3fe",uc_greedy:"1f44d-1f3fe",shortnames:[":+1_tone4:",":thumbup_tone4:"],category:"people"},":thumbsup_tone5:":{uc_base:"1f44d-1f3ff",uc_output:"1f44d-1f3ff",uc_match:"1f44d-1f3ff",uc_greedy:"1f44d-1f3ff",shortnames:[":+1_tone5:",":thumbup_tone5:"],category:"people"},":united_nations:":{uc_base:"1f1fa-1f1f3",uc_output:"1f1fa-1f1f3",uc_match:"1f1fa-1f1f3",uc_greedy:"1f1fa-1f1f3",shortnames:[],category:"flags"},":vampire_tone1:":{uc_base:"1f9db-1f3fb",uc_output:"1f9db-1f3fb",uc_match:"1f9db-1f3fb",uc_greedy:"1f9db-1f3fb",shortnames:[":vampire_light_skin_tone:"],category:"people"},":vampire_tone2:":{uc_base:"1f9db-1f3fc",uc_output:"1f9db-1f3fc",uc_match:"1f9db-1f3fc",uc_greedy:"1f9db-1f3fc",shortnames:[":vampire_medium_light_skin_tone:"],category:"people"},":vampire_tone3:":{uc_base:"1f9db-1f3fd",uc_output:"1f9db-1f3fd",uc_match:"1f9db-1f3fd",uc_greedy:"1f9db-1f3fd",shortnames:[":vampire_medium_skin_tone:"],category:"people"},":vampire_tone4:":{uc_base:"1f9db-1f3fe",uc_output:"1f9db-1f3fe",uc_match:"1f9db-1f3fe",uc_greedy:"1f9db-1f3fe",shortnames:[":vampire_medium_dark_skin_tone:"],category:"people"},":vampire_tone5:":{uc_base:"1f9db-1f3ff",uc_output:"1f9db-1f3ff",uc_match:"1f9db-1f3ff",uc_greedy:"1f9db-1f3ff",shortnames:[":vampire_dark_skin_tone:"],category:"people"},":vulcan_tone1:":{uc_base:"1f596-1f3fb",uc_output:"1f596-1f3fb",uc_match:"1f596-1f3fb",uc_greedy:"1f596-1f3fb",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers_tone1:"],category:"people"},":vulcan_tone2:":{uc_base:"1f596-1f3fc",uc_output:"1f596-1f3fc",uc_match:"1f596-1f3fc",uc_greedy:"1f596-1f3fc",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers_tone2:"],category:"people"},":vulcan_tone3:":{uc_base:"1f596-1f3fd",uc_output:"1f596-1f3fd",uc_match:"1f596-1f3fd",uc_greedy:"1f596-1f3fd",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers_tone3:"],category:"people"},":vulcan_tone4:":{uc_base:"1f596-1f3fe",uc_output:"1f596-1f3fe",uc_match:"1f596-1f3fe",uc_greedy:"1f596-1f3fe",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers_tone4:"],category:"people"},":vulcan_tone5:":{uc_base:"1f596-1f3ff",uc_output:"1f596-1f3ff",uc_match:"1f596-1f3ff",uc_greedy:"1f596-1f3ff",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers_tone5:"],category:"people"},":wave_tone1:":{uc_base:"1f44b-1f3fb",uc_output:"1f44b-1f3fb",uc_match:"1f44b-1f3fb",uc_greedy:"1f44b-1f3fb",shortnames:[],category:"people"},":wave_tone2:":{uc_base:"1f44b-1f3fc",uc_output:"1f44b-1f3fc",uc_match:"1f44b-1f3fc",uc_greedy:"1f44b-1f3fc",shortnames:[],category:"people"},":wave_tone3:":{uc_base:"1f44b-1f3fd",uc_output:"1f44b-1f3fd",uc_match:"1f44b-1f3fd",uc_greedy:"1f44b-1f3fd",shortnames:[],category:"people"},":wave_tone4:":{uc_base:"1f44b-1f3fe",uc_output:"1f44b-1f3fe",uc_match:"1f44b-1f3fe",uc_greedy:"1f44b-1f3fe",shortnames:[],category:"people"},":wave_tone5:":{uc_base:"1f44b-1f3ff",uc_output:"1f44b-1f3ff",uc_match:"1f44b-1f3ff",uc_greedy:"1f44b-1f3ff",shortnames:[],category:"people"},":woman_tone1:":{uc_base:"1f469-1f3fb",uc_output:"1f469-1f3fb",uc_match:"1f469-1f3fb",uc_greedy:"1f469-1f3fb",shortnames:[],category:"people"},":woman_tone2:":{uc_base:"1f469-1f3fc",uc_output:"1f469-1f3fc",uc_match:"1f469-1f3fc",uc_greedy:"1f469-1f3fc",shortnames:[],category:"people"},":woman_tone3:":{uc_base:"1f469-1f3fd",uc_output:"1f469-1f3fd",uc_match:"1f469-1f3fd",uc_greedy:"1f469-1f3fd",shortnames:[],category:"people"},":woman_tone4:":{uc_base:"1f469-1f3fe",uc_output:"1f469-1f3fe",uc_match:"1f469-1f3fe",uc_greedy:"1f469-1f3fe",shortnames:[],category:"people"},":woman_tone5:":{uc_base:"1f469-1f3ff",uc_output:"1f469-1f3ff",uc_match:"1f469-1f3ff",uc_greedy:"1f469-1f3ff",shortnames:[],category:"people"},":woman_with_headscarf_tone1:":{uc_base:"1f9d5-1f3fb",uc_output:"1f9d5-1f3fb",uc_match:"1f9d5-1f3fb",uc_greedy:"1f9d5-1f3fb",shortnames:[":woman_with_headscarf_light_skin_tone:"],category:"people"},":woman_with_headscarf_tone2:":{uc_base:"1f9d5-1f3fc",uc_output:"1f9d5-1f3fc",uc_match:"1f9d5-1f3fc",uc_greedy:"1f9d5-1f3fc",shortnames:[":woman_with_headscarf_medium_light_skin_tone:"],category:"people"},":woman_with_headscarf_tone3:":{uc_base:"1f9d5-1f3fd",uc_output:"1f9d5-1f3fd",uc_match:"1f9d5-1f3fd",uc_greedy:"1f9d5-1f3fd",shortnames:[":woman_with_headscarf_medium_skin_tone:"],category:"people"},":woman_with_headscarf_tone4:":{uc_base:"1f9d5-1f3fe",uc_output:"1f9d5-1f3fe",uc_match:"1f9d5-1f3fe",uc_greedy:"1f9d5-1f3fe",shortnames:[":woman_with_headscarf_medium_dark_skin_tone:"],category:"people"},":woman_with_headscarf_tone5:":{uc_base:"1f9d5-1f3ff",uc_output:"1f9d5-1f3ff",uc_match:"1f9d5-1f3ff",uc_greedy:"1f9d5-1f3ff",shortnames:[":woman_with_headscarf_dark_skin_tone:"],category:"people"},":fist_tone1:":{uc_base:"270a-1f3fb",uc_output:"270a-1f3fb",uc_match:"270a-1f3fb",uc_greedy:"270a-1f3fb",shortnames:[],category:"people"},":fist_tone2:":{uc_base:"270a-1f3fc",uc_output:"270a-1f3fc",uc_match:"270a-1f3fc",uc_greedy:"270a-1f3fc",shortnames:[],category:"people"},":fist_tone3:":{uc_base:"270a-1f3fd",uc_output:"270a-1f3fd",uc_match:"270a-1f3fd",uc_greedy:"270a-1f3fd",shortnames:[],category:"people"},":fist_tone4:":{uc_base:"270a-1f3fe",uc_output:"270a-1f3fe",uc_match:"270a-1f3fe",uc_greedy:"270a-1f3fe",shortnames:[],category:"people"},":fist_tone5:":{uc_base:"270a-1f3ff",uc_output:"270a-1f3ff",uc_match:"270a-1f3ff",uc_greedy:"270a-1f3ff",shortnames:[],category:"people"},":person_bouncing_ball_tone1:":{uc_base:"26f9-1f3fb",uc_output:"26f9-1f3fb",uc_match:"26f9-fe0f-1f3fb",uc_greedy:"26f9-fe0f-1f3fb",shortnames:[":basketball_player_tone1:",":person_with_ball_tone1:"],category:"activity"},":person_bouncing_ball_tone2:":{uc_base:"26f9-1f3fc",uc_output:"26f9-1f3fc",uc_match:"26f9-fe0f-1f3fc",uc_greedy:"26f9-fe0f-1f3fc",shortnames:[":basketball_player_tone2:",":person_with_ball_tone2:"],category:"activity"},":person_bouncing_ball_tone3:":{uc_base:"26f9-1f3fd",uc_output:"26f9-1f3fd",uc_match:"26f9-fe0f-1f3fd",uc_greedy:"26f9-fe0f-1f3fd",shortnames:[":basketball_player_tone3:",":person_with_ball_tone3:"],category:"activity"},":person_bouncing_ball_tone4:":{uc_base:"26f9-1f3fe",uc_output:"26f9-1f3fe",uc_match:"26f9-fe0f-1f3fe",uc_greedy:"26f9-fe0f-1f3fe",shortnames:[":basketball_player_tone4:",":person_with_ball_tone4:"],category:"activity"},":person_bouncing_ball_tone5:":{uc_base:"26f9-1f3ff",uc_output:"26f9-1f3ff",uc_match:"26f9-fe0f-1f3ff",uc_greedy:"26f9-fe0f-1f3ff",shortnames:[":basketball_player_tone5:",":person_with_ball_tone5:"],category:"activity"},":point_up_tone1:":{uc_base:"261d-1f3fb",uc_output:"261d-1f3fb",uc_match:"261d-fe0f-1f3fb",uc_greedy:"261d-fe0f-1f3fb",shortnames:[],category:"people"},":point_up_tone2:":{uc_base:"261d-1f3fc",uc_output:"261d-1f3fc",uc_match:"261d-fe0f-1f3fc",uc_greedy:"261d-fe0f-1f3fc",shortnames:[],category:"people"},":point_up_tone3:":{uc_base:"261d-1f3fd",uc_output:"261d-1f3fd",uc_match:"261d-fe0f-1f3fd",uc_greedy:"261d-fe0f-1f3fd",shortnames:[],category:"people"},":point_up_tone4:":{uc_base:"261d-1f3fe",uc_output:"261d-1f3fe",uc_match:"261d-fe0f-1f3fe",uc_greedy:"261d-fe0f-1f3fe",shortnames:[],category:"people"},":point_up_tone5:":{uc_base:"261d-1f3ff",uc_output:"261d-1f3ff",uc_match:"261d-fe0f-1f3ff",uc_greedy:"261d-fe0f-1f3ff",shortnames:[],category:"people"},":raised_hand_tone1:":{uc_base:"270b-1f3fb",uc_output:"270b-1f3fb",uc_match:"270b-1f3fb",uc_greedy:"270b-1f3fb",shortnames:[],category:"people"},":raised_hand_tone2:":{uc_base:"270b-1f3fc",uc_output:"270b-1f3fc",uc_match:"270b-1f3fc",uc_greedy:"270b-1f3fc",shortnames:[],category:"people"},":raised_hand_tone3:":{uc_base:"270b-1f3fd",uc_output:"270b-1f3fd",uc_match:"270b-1f3fd",uc_greedy:"270b-1f3fd",shortnames:[],category:"people"},":raised_hand_tone4:":{uc_base:"270b-1f3fe",uc_output:"270b-1f3fe",uc_match:"270b-1f3fe",uc_greedy:"270b-1f3fe",shortnames:[],category:"people"},":raised_hand_tone5:":{uc_base:"270b-1f3ff",uc_output:"270b-1f3ff",uc_match:"270b-1f3ff",uc_greedy:"270b-1f3ff",shortnames:[],category:"people"},":v_tone1:":{uc_base:"270c-1f3fb",uc_output:"270c-1f3fb",uc_match:"270c-fe0f-1f3fb",uc_greedy:"270c-fe0f-1f3fb",shortnames:[],category:"people"},":v_tone2:":{uc_base:"270c-1f3fc",uc_output:"270c-1f3fc",uc_match:"270c-fe0f-1f3fc",uc_greedy:"270c-fe0f-1f3fc",shortnames:[],category:"people"},":v_tone3:":{uc_base:"270c-1f3fd",uc_output:"270c-1f3fd",uc_match:"270c-fe0f-1f3fd",uc_greedy:"270c-fe0f-1f3fd",shortnames:[],category:"people"},":v_tone4:":{uc_base:"270c-1f3fe",uc_output:"270c-1f3fe",uc_match:"270c-fe0f-1f3fe",uc_greedy:"270c-fe0f-1f3fe",shortnames:[],category:"people"},":v_tone5:":{uc_base:"270c-1f3ff",uc_output:"270c-1f3ff",uc_match:"270c-fe0f-1f3ff",uc_greedy:"270c-fe0f-1f3ff",shortnames:[],category:"people"},":writing_hand_tone1:":{uc_base:"270d-1f3fb",uc_output:"270d-1f3fb",uc_match:"270d-fe0f-1f3fb",uc_greedy:"270d-fe0f-1f3fb",shortnames:[],category:"people"},":writing_hand_tone2:":{uc_base:"270d-1f3fc",uc_output:"270d-1f3fc",uc_match:"270d-fe0f-1f3fc",uc_greedy:"270d-fe0f-1f3fc",shortnames:[],category:"people"},":writing_hand_tone3:":{uc_base:"270d-1f3fd",uc_output:"270d-1f3fd",uc_match:"270d-fe0f-1f3fd",uc_greedy:"270d-fe0f-1f3fd",shortnames:[],category:"people"},":writing_hand_tone4:":{uc_base:"270d-1f3fe",uc_output:"270d-1f3fe",uc_match:"270d-fe0f-1f3fe",uc_greedy:"270d-fe0f-1f3fe",shortnames:[],category:"people"},":writing_hand_tone5:":{uc_base:"270d-1f3ff",uc_output:"270d-1f3ff",uc_match:"270d-fe0f-1f3ff",uc_greedy:"270d-fe0f-1f3ff",shortnames:[],category:"people"},":chess_pawn:":{uc_base:"265f",uc_output:"265f-fe0f",uc_match:"265f",uc_greedy:"265f",shortnames:[],category:"objects"},":infinity:":{uc_base:"267e",uc_output:"267e-fe0f",uc_match:"267e",uc_greedy:"267e",shortnames:[],category:"symbols"},":100:":{uc_base:"1f4af",uc_output:"1f4af",uc_match:"1f4af",uc_greedy:"1f4af",shortnames:[],category:"symbols"},":1234:":{uc_base:"1f522",uc_output:"1f522",uc_match:"1f522",uc_greedy:"1f522",shortnames:[],category:"symbols"},":8ball:":{uc_base:"1f3b1",uc_output:"1f3b1",uc_match:"1f3b1",uc_greedy:"1f3b1",shortnames:[],category:"activity"},":a:":{uc_base:"1f170",uc_output:"1f170",uc_match:"1f170-fe0f",uc_greedy:"1f170-fe0f",shortnames:[],category:"symbols"},":ab:":{uc_base:"1f18e",uc_output:"1f18e",uc_match:"1f18e",uc_greedy:"1f18e",shortnames:[],category:"symbols"},":abacus:":{uc_base:"1f9ee",uc_output:"1f9ee",uc_match:"1f9ee",uc_greedy:"1f9ee",shortnames:[],category:"objects"},":abc:":{uc_base:"1f524",uc_output:"1f524",uc_match:"1f524",uc_greedy:"1f524",shortnames:[],category:"symbols"},":abcd:":{uc_base:"1f521",uc_output:"1f521",uc_match:"1f521",uc_greedy:"1f521",shortnames:[],category:"symbols"},":accept:":{uc_base:"1f251",uc_output:"1f251",uc_match:"1f251",uc_greedy:"1f251",shortnames:[],category:"symbols"},":adult:":{uc_base:"1f9d1",uc_output:"1f9d1",uc_match:"1f9d1",uc_greedy:"1f9d1",shortnames:[],category:"people"},":aerial_tramway:":{uc_base:"1f6a1",uc_output:"1f6a1",uc_match:"1f6a1",uc_greedy:"1f6a1",shortnames:[],category:"travel"},":airplane_arriving:":{uc_base:"1f6ec",uc_output:"1f6ec",uc_match:"1f6ec",uc_greedy:"1f6ec",shortnames:[],category:"travel"},":airplane_departure:":{uc_base:"1f6eb",uc_output:"1f6eb",uc_match:"1f6eb",uc_greedy:"1f6eb",shortnames:[],category:"travel"},":airplane_small:":{uc_base:"1f6e9",uc_output:"1f6e9",uc_match:"1f6e9-fe0f",uc_greedy:"1f6e9-fe0f",shortnames:[":small_airplane:"],category:"travel"},":alien:":{uc_base:"1f47d",uc_output:"1f47d",uc_match:"1f47d-fe0f",uc_greedy:"1f47d-fe0f",shortnames:[],category:"people"},":ambulance:":{uc_base:"1f691",uc_output:"1f691",uc_match:"1f691-fe0f",uc_greedy:"1f691-fe0f",shortnames:[],category:"travel"},":amphora:":{uc_base:"1f3fa",uc_output:"1f3fa",uc_match:"1f3fa",uc_greedy:"1f3fa",shortnames:[],category:"objects"},":angel:":{uc_base:"1f47c",uc_output:"1f47c",uc_match:"1f47c",uc_greedy:"1f47c",shortnames:[],category:"people"},":anger:":{uc_base:"1f4a2",uc_output:"1f4a2",uc_match:"1f4a2",uc_greedy:"1f4a2",shortnames:[],category:"symbols"},":anger_right:":{uc_base:"1f5ef",uc_output:"1f5ef",uc_match:"1f5ef-fe0f",uc_greedy:"1f5ef-fe0f",shortnames:[":right_anger_bubble:"],category:"symbols"},":angry:":{uc_base:"1f620",uc_output:"1f620",uc_match:"1f620",uc_greedy:"1f620",shortnames:[],category:"people"},":anguished:":{uc_base:"1f627",uc_output:"1f627",uc_match:"1f627",uc_greedy:"1f627",shortnames:[],category:"people"},":ant:":{uc_base:"1f41c",uc_output:"1f41c",uc_match:"1f41c",uc_greedy:"1f41c",shortnames:[],category:"nature"},":apple:":{uc_base:"1f34e",uc_output:"1f34e",uc_match:"1f34e",uc_greedy:"1f34e",shortnames:[],category:"food"},":arrow_down_small:":{uc_base:"1f53d",uc_output:"1f53d",uc_match:"1f53d",uc_greedy:"1f53d",shortnames:[],category:"symbols"},":arrow_up_small:":{uc_base:"1f53c",uc_output:"1f53c",uc_match:"1f53c",uc_greedy:"1f53c",shortnames:[],category:"symbols"},":arrows_clockwise:":{uc_base:"1f503",uc_output:"1f503",uc_match:"1f503",uc_greedy:"1f503",shortnames:[],category:"symbols"},":arrows_counterclockwise:":{uc_base:"1f504",uc_output:"1f504",uc_match:"1f504",uc_greedy:"1f504",shortnames:[],category:"symbols"},":art:":{uc_base:"1f3a8",uc_output:"1f3a8",uc_match:"1f3a8",uc_greedy:"1f3a8",shortnames:[],category:"activity"},":articulated_lorry:":{uc_base:"1f69b",uc_output:"1f69b",uc_match:"1f69b",uc_greedy:"1f69b",shortnames:[],category:"travel"},":astonished:":{uc_base:"1f632",uc_output:"1f632",uc_match:"1f632",uc_greedy:"1f632",shortnames:[],category:"people"},":athletic_shoe:":{uc_base:"1f45f",uc_output:"1f45f",uc_match:"1f45f",uc_greedy:"1f45f",shortnames:[],category:"people"},":atm:":{uc_base:"1f3e7",uc_output:"1f3e7",uc_match:"1f3e7",uc_greedy:"1f3e7",shortnames:[],category:"symbols"},":avocado:":{uc_base:"1f951",uc_output:"1f951",uc_match:"1f951",uc_greedy:"1f951",shortnames:[],category:"food"},":b:":{uc_base:"1f171",uc_output:"1f171",uc_match:"1f171-fe0f",uc_greedy:"1f171-fe0f",shortnames:[],category:"symbols"},":baby:":{uc_base:"1f476",uc_output:"1f476",uc_match:"1f476",uc_greedy:"1f476",shortnames:[],category:"people"},":baby_bottle:":{uc_base:"1f37c",uc_output:"1f37c",uc_match:"1f37c",uc_greedy:"1f37c",shortnames:[],category:"food"},":baby_chick:":{uc_base:"1f424",uc_output:"1f424",uc_match:"1f424",uc_greedy:"1f424",shortnames:[],category:"nature"},":baby_symbol:":{uc_base:"1f6bc",uc_output:"1f6bc",uc_match:"1f6bc-fe0f",uc_greedy:"1f6bc-fe0f",shortnames:[],category:"symbols"},":back:":{uc_base:"1f519",uc_output:"1f519",uc_match:"1f519",uc_greedy:"1f519",shortnames:[],category:"symbols"},":bacon:":{uc_base:"1f953",uc_output:"1f953",uc_match:"1f953",uc_greedy:"1f953",shortnames:[],category:"food"},":badger:":{uc_base:"1f9a1",uc_output:"1f9a1",uc_match:"1f9a1",uc_greedy:"1f9a1",shortnames:[],category:"nature"},":badminton:":{uc_base:"1f3f8",uc_output:"1f3f8",uc_match:"1f3f8",uc_greedy:"1f3f8",shortnames:[],category:"activity"},":bagel:":{uc_base:"1f96f",uc_output:"1f96f",uc_match:"1f96f",uc_greedy:"1f96f",shortnames:[],category:"food"},":baggage_claim:":{uc_base:"1f6c4",uc_output:"1f6c4",uc_match:"1f6c4",uc_greedy:"1f6c4",shortnames:[],category:"symbols"},":bald:":{uc_base:"1f9b2",uc_output:"1f9b2",uc_match:"1f9b2",uc_greedy:"1f9b2",shortnames:[],category:"people"},":balloon:":{uc_base:"1f388",uc_output:"1f388",uc_match:"1f388",uc_greedy:"1f388",shortnames:[],category:"objects"},":ballot_box:":{uc_base:"1f5f3",uc_output:"1f5f3",uc_match:"1f5f3-fe0f",uc_greedy:"1f5f3-fe0f",shortnames:[":ballot_box_with_ballot:"],category:"objects"},":bamboo:":{uc_base:"1f38d",uc_output:"1f38d",uc_match:"1f38d",uc_greedy:"1f38d",shortnames:[],category:"nature"},":banana:":{uc_base:"1f34c",uc_output:"1f34c",uc_match:"1f34c",uc_greedy:"1f34c",shortnames:[],category:"food"},":bank:":{uc_base:"1f3e6",uc_output:"1f3e6",uc_match:"1f3e6",uc_greedy:"1f3e6",shortnames:[],category:"travel"},":bar_chart:":{uc_base:"1f4ca",uc_output:"1f4ca",uc_match:"1f4ca",uc_greedy:"1f4ca",shortnames:[],category:"objects"},":barber:":{uc_base:"1f488",uc_output:"1f488",uc_match:"1f488",uc_greedy:"1f488",shortnames:[],category:"objects"},":basket:":{uc_base:"1f9fa",uc_output:"1f9fa",uc_match:"1f9fa",uc_greedy:"1f9fa",shortnames:[],category:"objects"},":basketball:":{uc_base:"1f3c0",uc_output:"1f3c0",uc_match:"1f3c0",uc_greedy:"1f3c0",shortnames:[],category:"activity"},":bat:":{uc_base:"1f987",uc_output:"1f987",uc_match:"1f987",uc_greedy:"1f987",shortnames:[],category:"nature"},":bath:":{uc_base:"1f6c0",uc_output:"1f6c0",uc_match:"1f6c0",uc_greedy:"1f6c0",shortnames:[],category:"objects"},":bathtub:":{uc_base:"1f6c1",uc_output:"1f6c1",uc_match:"1f6c1",uc_greedy:"1f6c1",shortnames:[],category:"objects"},":battery:":{uc_base:"1f50b",uc_output:"1f50b",uc_match:"1f50b",uc_greedy:"1f50b",shortnames:[],category:"objects"},":beach:":{uc_base:"1f3d6",uc_output:"1f3d6",uc_match:"1f3d6-fe0f",uc_greedy:"1f3d6-fe0f",shortnames:[":beach_with_umbrella:"],category:"travel"},":bear:":{uc_base:"1f43b",uc_output:"1f43b",uc_match:"1f43b",uc_greedy:"1f43b",shortnames:[],category:"nature"},":bearded_person:":{uc_base:"1f9d4",uc_output:"1f9d4",uc_match:"1f9d4",uc_greedy:"1f9d4",shortnames:[],category:"people"},":bed:":{uc_base:"1f6cf",uc_output:"1f6cf",uc_match:"1f6cf-fe0f",uc_greedy:"1f6cf-fe0f",shortnames:[],category:"objects"},":bee:":{uc_base:"1f41d",uc_output:"1f41d",uc_match:"1f41d",uc_greedy:"1f41d",shortnames:[],category:"nature"},":beer:":{uc_base:"1f37a",uc_output:"1f37a",uc_match:"1f37a",uc_greedy:"1f37a",shortnames:[],category:"food"},":beers:":{uc_base:"1f37b",uc_output:"1f37b",uc_match:"1f37b",uc_greedy:"1f37b",shortnames:[],category:"food"},":beetle:":{uc_base:"1f41e",uc_output:"1f41e",uc_match:"1f41e",uc_greedy:"1f41e",shortnames:[],category:"nature"},":beginner:":{uc_base:"1f530",uc_output:"1f530",uc_match:"1f530",uc_greedy:"1f530",shortnames:[],category:"symbols"},":bell:":{uc_base:"1f514",uc_output:"1f514",uc_match:"1f514",uc_greedy:"1f514",shortnames:[],category:"symbols"},":bellhop:":{uc_base:"1f6ce",uc_output:"1f6ce",uc_match:"1f6ce-fe0f",uc_greedy:"1f6ce-fe0f",shortnames:[":bellhop_bell:"],category:"objects"},":bento:":{uc_base:"1f371",uc_output:"1f371",uc_match:"1f371",uc_greedy:"1f371",shortnames:[],category:"food"},":bike:":{uc_base:"1f6b2",uc_output:"1f6b2",uc_match:"1f6b2-fe0f",uc_greedy:"1f6b2-fe0f",shortnames:[],category:"travel"},":bikini:":{uc_base:"1f459",uc_output:"1f459",uc_match:"1f459",uc_greedy:"1f459",shortnames:[],category:"people"},":billed_cap:":{uc_base:"1f9e2",uc_output:"1f9e2",uc_match:"1f9e2",uc_greedy:"1f9e2",shortnames:[],category:"people"},":bird:":{uc_base:"1f426",uc_output:"1f426",uc_match:"1f426-fe0f",uc_greedy:"1f426-fe0f",shortnames:[],category:"nature"},":birthday:":{uc_base:"1f382",uc_output:"1f382",uc_match:"1f382",uc_greedy:"1f382",shortnames:[],category:"food"},":black_heart:":{uc_base:"1f5a4",uc_output:"1f5a4",uc_match:"1f5a4",uc_greedy:"1f5a4",shortnames:[],category:"symbols"},":black_joker:":{uc_base:"1f0cf",uc_output:"1f0cf",uc_match:"1f0cf",uc_greedy:"1f0cf",shortnames:[],category:"symbols"},":black_square_button:":{uc_base:"1f532",uc_output:"1f532",uc_match:"1f532",uc_greedy:"1f532",shortnames:[],category:"symbols"},":blond_haired_person:":{uc_base:"1f471",uc_output:"1f471",uc_match:"1f471",uc_greedy:"1f471",shortnames:[":person_with_blond_hair:"],category:"people"},":blossom:":{uc_base:"1f33c",uc_output:"1f33c",uc_match:"1f33c",uc_greedy:"1f33c",shortnames:[],category:"nature"},":blowfish:":{uc_base:"1f421",uc_output:"1f421",uc_match:"1f421",uc_greedy:"1f421",shortnames:[],category:"nature"},":blue_book:":{uc_base:"1f4d8",uc_output:"1f4d8",uc_match:"1f4d8",uc_greedy:"1f4d8",shortnames:[],category:"objects"},":blue_car:":{uc_base:"1f699",uc_output:"1f699",uc_match:"1f699",uc_greedy:"1f699",shortnames:[],category:"travel"},":blue_circle:":{uc_base:"1f535",uc_output:"1f535",uc_match:"1f535",uc_greedy:"1f535",shortnames:[],category:"symbols"},":blue_heart:":{uc_base:"1f499",uc_output:"1f499",uc_match:"1f499",uc_greedy:"1f499",shortnames:[],category:"symbols"},":blush:":{uc_base:"1f60a",uc_output:"1f60a",uc_match:"1f60a",uc_greedy:"1f60a",shortnames:[],category:"people"},":boar:":{uc_base:"1f417",uc_output:"1f417",uc_match:"1f417",uc_greedy:"1f417",shortnames:[],category:"nature"},":bomb:":{uc_base:"1f4a3",uc_output:"1f4a3",uc_match:"1f4a3-fe0f",uc_greedy:"1f4a3-fe0f",shortnames:[],category:"objects"},":bone:":{uc_base:"1f9b4",uc_output:"1f9b4",uc_match:"1f9b4",uc_greedy:"1f9b4",shortnames:[],category:"people"},":book:":{uc_base:"1f4d6",uc_output:"1f4d6",uc_match:"1f4d6",uc_greedy:"1f4d6",shortnames:[],category:"objects"},":bookmark:":{uc_base:"1f516",uc_output:"1f516",uc_match:"1f516",uc_greedy:"1f516",shortnames:[],category:"objects"},":bookmark_tabs:":{uc_base:"1f4d1",uc_output:"1f4d1",uc_match:"1f4d1",uc_greedy:"1f4d1",shortnames:[],category:"objects"},":books:":{uc_base:"1f4da",uc_output:"1f4da",uc_match:"1f4da-fe0f",uc_greedy:"1f4da-fe0f",shortnames:[],category:"objects"},":boom:":{uc_base:"1f4a5",uc_output:"1f4a5",uc_match:"1f4a5",uc_greedy:"1f4a5",shortnames:[],category:"nature"},":boot:":{uc_base:"1f462",uc_output:"1f462",uc_match:"1f462",uc_greedy:"1f462",shortnames:[],category:"people"},":bouquet:":{uc_base:"1f490",uc_output:"1f490",uc_match:"1f490",uc_greedy:"1f490",shortnames:[],category:"nature"},":bow_and_arrow:":{uc_base:"1f3f9",uc_output:"1f3f9",uc_match:"1f3f9",uc_greedy:"1f3f9",shortnames:[":archery:"],category:"activity"},":bowl_with_spoon:":{uc_base:"1f963",uc_output:"1f963",uc_match:"1f963",uc_greedy:"1f963",shortnames:[],category:"food"},":bowling:":{uc_base:"1f3b3",uc_output:"1f3b3",uc_match:"1f3b3",uc_greedy:"1f3b3",shortnames:[],category:"activity"},":boxing_glove:":{uc_base:"1f94a",uc_output:"1f94a",uc_match:"1f94a",uc_greedy:"1f94a",shortnames:[":boxing_gloves:"],category:"activity"},":boy:":{uc_base:"1f466",uc_output:"1f466",uc_match:"1f466",uc_greedy:"1f466",shortnames:[],category:"people"},":brain:":{uc_base:"1f9e0",uc_output:"1f9e0",uc_match:"1f9e0",uc_greedy:"1f9e0",shortnames:[],category:"people"},":bread:":{uc_base:"1f35e",uc_output:"1f35e",uc_match:"1f35e",uc_greedy:"1f35e",shortnames:[],category:"food"},":breast_feeding:":{uc_base:"1f931",uc_output:"1f931",uc_match:"1f931",uc_greedy:"1f931",shortnames:[],category:"people"},":bricks:":{uc_base:"1f9f1",uc_output:"1f9f1",uc_match:"1f9f1",uc_greedy:"1f9f1",shortnames:[],category:"objects"},":bride_with_veil:":{uc_base:"1f470",uc_output:"1f470",uc_match:"1f470",uc_greedy:"1f470",shortnames:[],category:"people"},":bridge_at_night:":{uc_base:"1f309",uc_output:"1f309",uc_match:"1f309",uc_greedy:"1f309",shortnames:[],category:"travel"},":briefcase:":{uc_base:"1f4bc",uc_output:"1f4bc",uc_match:"1f4bc",uc_greedy:"1f4bc",shortnames:[],category:"people"},":broccoli:":{uc_base:"1f966",uc_output:"1f966",uc_match:"1f966",uc_greedy:"1f966",shortnames:[],category:"food"},":broken_heart:":{uc_base:"1f494",uc_output:"1f494",uc_match:"1f494",uc_greedy:"1f494",shortnames:[],category:"symbols"},":broom:":{uc_base:"1f9f9",uc_output:"1f9f9",uc_match:"1f9f9",uc_greedy:"1f9f9",shortnames:[],category:"objects"},":bug:":{uc_base:"1f41b",uc_output:"1f41b",uc_match:"1f41b",uc_greedy:"1f41b",shortnames:[],category:"nature"},":bulb:":{uc_base:"1f4a1",uc_output:"1f4a1",uc_match:"1f4a1",uc_greedy:"1f4a1",shortnames:[],category:"objects"},":bullettrain_front:":{uc_base:"1f685",uc_output:"1f685",uc_match:"1f685",uc_greedy:"1f685",shortnames:[],category:"travel"},":bullettrain_side:":{uc_base:"1f684",uc_output:"1f684",uc_match:"1f684",uc_greedy:"1f684",shortnames:[],category:"travel"},":burrito:":{uc_base:"1f32f",uc_output:"1f32f",uc_match:"1f32f",uc_greedy:"1f32f",shortnames:[],category:"food"},":bus:":{uc_base:"1f68c",uc_output:"1f68c",uc_match:"1f68c",uc_greedy:"1f68c",shortnames:[],category:"travel"},":busstop:":{uc_base:"1f68f",uc_output:"1f68f",uc_match:"1f68f",uc_greedy:"1f68f",shortnames:[],category:"travel"},":bust_in_silhouette:":{uc_base:"1f464",uc_output:"1f464",uc_match:"1f464",uc_greedy:"1f464",shortnames:[],category:"people"},":busts_in_silhouette:":{uc_base:"1f465",uc_output:"1f465",uc_match:"1f465",uc_greedy:"1f465",shortnames:[],category:"people"},":butterfly:":{uc_base:"1f98b",uc_output:"1f98b",uc_match:"1f98b",uc_greedy:"1f98b",shortnames:[],category:"nature"},":cactus:":{uc_base:"1f335",uc_output:"1f335",uc_match:"1f335",uc_greedy:"1f335",shortnames:[],category:"nature"},":cake:":{uc_base:"1f370",uc_output:"1f370",uc_match:"1f370",uc_greedy:"1f370",shortnames:[],category:"food"},":calendar:":{uc_base:"1f4c6",uc_output:"1f4c6",uc_match:"1f4c6",uc_greedy:"1f4c6",shortnames:[],category:"objects"},":calendar_spiral:":{uc_base:"1f5d3",uc_output:"1f5d3",uc_match:"1f5d3-fe0f",uc_greedy:"1f5d3-fe0f",shortnames:[":spiral_calendar_pad:"],category:"objects"},":call_me:":{uc_base:"1f919",uc_output:"1f919",uc_match:"1f919",uc_greedy:"1f919",shortnames:[":call_me_hand:"],category:"people"},":calling:":{uc_base:"1f4f2",uc_output:"1f4f2",uc_match:"1f4f2",uc_greedy:"1f4f2",shortnames:[],category:"objects"},":camel:":{uc_base:"1f42b",uc_output:"1f42b",uc_match:"1f42b",uc_greedy:"1f42b",shortnames:[],category:"nature"},":camera:":{uc_base:"1f4f7",uc_output:"1f4f7",uc_match:"1f4f7-fe0f",uc_greedy:"1f4f7-fe0f",shortnames:[],category:"objects"},":camera_with_flash:":{uc_base:"1f4f8",uc_output:"1f4f8",uc_match:"1f4f8",uc_greedy:"1f4f8",shortnames:[],category:"objects"},":camping:":{uc_base:"1f3d5",uc_output:"1f3d5",uc_match:"1f3d5-fe0f",uc_greedy:"1f3d5-fe0f",shortnames:[],category:"travel"},":candle:":{uc_base:"1f56f",uc_output:"1f56f",uc_match:"1f56f-fe0f",uc_greedy:"1f56f-fe0f",shortnames:[],category:"objects"},":candy:":{uc_base:"1f36c",uc_output:"1f36c",uc_match:"1f36c",uc_greedy:"1f36c",shortnames:[],category:"food"},":canned_food:":{uc_base:"1f96b",uc_output:"1f96b",uc_match:"1f96b",uc_greedy:"1f96b",shortnames:[],category:"food"},":canoe:":{uc_base:"1f6f6",uc_output:"1f6f6",uc_match:"1f6f6",uc_greedy:"1f6f6",shortnames:[":kayak:"],category:"travel"},":capital_abcd:":{uc_base:"1f520",uc_output:"1f520",uc_match:"1f520",uc_greedy:"1f520",shortnames:[],category:"symbols"},":card_box:":{uc_base:"1f5c3",uc_output:"1f5c3",uc_match:"1f5c3-fe0f",uc_greedy:"1f5c3-fe0f",shortnames:[":card_file_box:"],category:"objects"},":card_index:":{uc_base:"1f4c7",uc_output:"1f4c7",uc_match:"1f4c7",uc_greedy:"1f4c7",shortnames:[],category:"objects"},":carousel_horse:":{uc_base:"1f3a0",uc_output:"1f3a0",uc_match:"1f3a0",uc_greedy:"1f3a0",shortnames:[],category:"travel"},":carrot:":{uc_base:"1f955",uc_output:"1f955",uc_match:"1f955",uc_greedy:"1f955",shortnames:[],category:"food"},":cat2:":{uc_base:"1f408",uc_output:"1f408",uc_match:"1f408-fe0f",uc_greedy:"1f408-fe0f",shortnames:[],category:"nature"},":cat:":{uc_base:"1f431",uc_output:"1f431",uc_match:"1f431",uc_greedy:"1f431",shortnames:[],category:"nature"},":cd:":{uc_base:"1f4bf",uc_output:"1f4bf",uc_match:"1f4bf-fe0f",uc_greedy:"1f4bf-fe0f",shortnames:[],category:"objects"},":champagne:":{uc_base:"1f37e",uc_output:"1f37e",uc_match:"1f37e",uc_greedy:"1f37e",shortnames:[":bottle_with_popping_cork:"],category:"food"},":champagne_glass:":{uc_base:"1f942",uc_output:"1f942",uc_match:"1f942",uc_greedy:"1f942",shortnames:[":clinking_glass:"],category:"food"},":chart:":{uc_base:"1f4b9",uc_output:"1f4b9",uc_match:"1f4b9",uc_greedy:"1f4b9",shortnames:[],category:"symbols"},":chart_with_downwards_trend:":{uc_base:"1f4c9",uc_output:"1f4c9",uc_match:"1f4c9",uc_greedy:"1f4c9",shortnames:[],category:"objects"},":chart_with_upwards_trend:":{uc_base:"1f4c8",uc_output:"1f4c8",uc_match:"1f4c8",uc_greedy:"1f4c8",shortnames:[],category:"objects"},":checkered_flag:":{uc_base:"1f3c1",uc_output:"1f3c1",uc_match:"1f3c1",uc_greedy:"1f3c1",shortnames:[],category:"flags"},":cheese:":{uc_base:"1f9c0",uc_output:"1f9c0",uc_match:"1f9c0",uc_greedy:"1f9c0",shortnames:[":cheese_wedge:"],category:"food"},":cherries:":{uc_base:"1f352",uc_output:"1f352",uc_match:"1f352",uc_greedy:"1f352",shortnames:[],category:"food"},":cherry_blossom:":{uc_base:"1f338",uc_output:"1f338",uc_match:"1f338",uc_greedy:"1f338",shortnames:[],category:"nature"},":chestnut:":{uc_base:"1f330",uc_output:"1f330",uc_match:"1f330",uc_greedy:"1f330",shortnames:[],category:"food"},":chicken:":{uc_base:"1f414",uc_output:"1f414",uc_match:"1f414",uc_greedy:"1f414",shortnames:[],category:"nature"},":child:":{uc_base:"1f9d2",uc_output:"1f9d2",uc_match:"1f9d2",uc_greedy:"1f9d2",shortnames:[],category:"people"},":children_crossing:":{uc_base:"1f6b8",uc_output:"1f6b8",uc_match:"1f6b8",uc_greedy:"1f6b8",shortnames:[],category:"symbols"},":chipmunk:":{uc_base:"1f43f",uc_output:"1f43f",uc_match:"1f43f-fe0f",uc_greedy:"1f43f-fe0f",shortnames:[],category:"nature"},":chocolate_bar:":{uc_base:"1f36b",uc_output:"1f36b",uc_match:"1f36b",uc_greedy:"1f36b",shortnames:[],category:"food"},":chopsticks:":{uc_base:"1f962",uc_output:"1f962",uc_match:"1f962",uc_greedy:"1f962",shortnames:[],category:"food"},":christmas_tree:":{uc_base:"1f384",uc_output:"1f384",uc_match:"1f384",uc_greedy:"1f384",shortnames:[],category:"nature"},":cinema:":{uc_base:"1f3a6",uc_output:"1f3a6",uc_match:"1f3a6",uc_greedy:"1f3a6",shortnames:[],category:"symbols"},":circus_tent:":{uc_base:"1f3aa",uc_output:"1f3aa",uc_match:"1f3aa",uc_greedy:"1f3aa",shortnames:[],category:"activity"},":city_dusk:":{uc_base:"1f306",uc_output:"1f306",uc_match:"1f306",uc_greedy:"1f306",shortnames:[],category:"travel"},":city_sunset:":{uc_base:"1f307",uc_output:"1f307",uc_match:"1f307",uc_greedy:"1f307",shortnames:[":city_sunrise:"],category:"travel"},":cityscape:":{uc_base:"1f3d9",uc_output:"1f3d9",uc_match:"1f3d9-fe0f",uc_greedy:"1f3d9-fe0f",shortnames:[],category:"travel"},":cl:":{uc_base:"1f191",uc_output:"1f191",uc_match:"1f191",uc_greedy:"1f191",shortnames:[],category:"symbols"},":clap:":{uc_base:"1f44f",uc_output:"1f44f",uc_match:"1f44f",uc_greedy:"1f44f",shortnames:[],category:"people"},":clapper:":{uc_base:"1f3ac",uc_output:"1f3ac",uc_match:"1f3ac-fe0f",uc_greedy:"1f3ac-fe0f",shortnames:[],category:"activity"},":classical_building:":{uc_base:"1f3db",uc_output:"1f3db",uc_match:"1f3db-fe0f",uc_greedy:"1f3db-fe0f",shortnames:[],category:"travel"},":clipboard:":{uc_base:"1f4cb",uc_output:"1f4cb",uc_match:"1f4cb-fe0f",uc_greedy:"1f4cb-fe0f",shortnames:[],category:"objects"},":clock1030:":{uc_base:"1f565",uc_output:"1f565",uc_match:"1f565-fe0f",uc_greedy:"1f565-fe0f",shortnames:[],category:"symbols"},":clock10:":{uc_base:"1f559",uc_output:"1f559",uc_match:"1f559-fe0f",uc_greedy:"1f559-fe0f",shortnames:[],category:"symbols"},":clock1130:":{uc_base:"1f566",uc_output:"1f566",uc_match:"1f566-fe0f",uc_greedy:"1f566-fe0f",shortnames:[],category:"symbols"},":clock11:":{uc_base:"1f55a",uc_output:"1f55a",uc_match:"1f55a-fe0f",uc_greedy:"1f55a-fe0f",shortnames:[],category:"symbols"},":clock1230:":{uc_base:"1f567",uc_output:"1f567",uc_match:"1f567-fe0f",uc_greedy:"1f567-fe0f",shortnames:[],category:"symbols"},":clock12:":{uc_base:"1f55b",uc_output:"1f55b",uc_match:"1f55b-fe0f",uc_greedy:"1f55b-fe0f",shortnames:[],category:"symbols"},":clock130:":{uc_base:"1f55c",uc_output:"1f55c",uc_match:"1f55c-fe0f",uc_greedy:"1f55c-fe0f",shortnames:[],category:"symbols"},":clock1:":{uc_base:"1f550",uc_output:"1f550",uc_match:"1f550-fe0f",uc_greedy:"1f550-fe0f",shortnames:[],category:"symbols"},":clock230:":{uc_base:"1f55d",uc_output:"1f55d",uc_match:"1f55d-fe0f",uc_greedy:"1f55d-fe0f",shortnames:[],category:"symbols"},":clock2:":{uc_base:"1f551",uc_output:"1f551",uc_match:"1f551-fe0f",uc_greedy:"1f551-fe0f",shortnames:[],category:"symbols"},":clock330:":{uc_base:"1f55e",uc_output:"1f55e",uc_match:"1f55e-fe0f",uc_greedy:"1f55e-fe0f",shortnames:[],category:"symbols"},":clock3:":{uc_base:"1f552",uc_output:"1f552",uc_match:"1f552-fe0f",uc_greedy:"1f552-fe0f",shortnames:[],category:"symbols"},":clock430:":{uc_base:"1f55f",uc_output:"1f55f",uc_match:"1f55f-fe0f",uc_greedy:"1f55f-fe0f",shortnames:[],category:"symbols"},":clock4:":{uc_base:"1f553",uc_output:"1f553",uc_match:"1f553-fe0f",uc_greedy:"1f553-fe0f",shortnames:[],category:"symbols"},":clock530:":{uc_base:"1f560",uc_output:"1f560",uc_match:"1f560-fe0f",uc_greedy:"1f560-fe0f",shortnames:[],category:"symbols"},":clock5:":{uc_base:"1f554",uc_output:"1f554",uc_match:"1f554-fe0f",uc_greedy:"1f554-fe0f",shortnames:[],category:"symbols"},":clock630:":{uc_base:"1f561",uc_output:"1f561",uc_match:"1f561-fe0f",uc_greedy:"1f561-fe0f",shortnames:[],category:"symbols"},":clock6:":{uc_base:"1f555",uc_output:"1f555",uc_match:"1f555-fe0f",uc_greedy:"1f555-fe0f",shortnames:[],category:"symbols"},":clock730:":{uc_base:"1f562",uc_output:"1f562",uc_match:"1f562-fe0f",uc_greedy:"1f562-fe0f",shortnames:[],category:"symbols"},":clock7:":{uc_base:"1f556",uc_output:"1f556",uc_match:"1f556-fe0f",uc_greedy:"1f556-fe0f",shortnames:[],category:"symbols"},":clock830:":{uc_base:"1f563",uc_output:"1f563",uc_match:"1f563-fe0f",uc_greedy:"1f563-fe0f",shortnames:[],category:"symbols"},":clock8:":{uc_base:"1f557",uc_output:"1f557",uc_match:"1f557-fe0f",uc_greedy:"1f557-fe0f",shortnames:[],category:"symbols"},":clock930:":{uc_base:"1f564",uc_output:"1f564",uc_match:"1f564-fe0f",uc_greedy:"1f564-fe0f",shortnames:[],category:"symbols"},":clock9:":{uc_base:"1f558",uc_output:"1f558",uc_match:"1f558-fe0f",uc_greedy:"1f558-fe0f",shortnames:[],category:"symbols"},":clock:":{uc_base:"1f570",uc_output:"1f570",uc_match:"1f570-fe0f",uc_greedy:"1f570-fe0f",shortnames:[":mantlepiece_clock:"],category:"objects"},":closed_book:":{uc_base:"1f4d5",uc_output:"1f4d5",uc_match:"1f4d5",uc_greedy:"1f4d5",shortnames:[],category:"objects"},":closed_lock_with_key:":{uc_base:"1f510",uc_output:"1f510",uc_match:"1f510",uc_greedy:"1f510",shortnames:[],category:"objects"},":closed_umbrella:":{uc_base:"1f302",uc_output:"1f302",uc_match:"1f302",uc_greedy:"1f302",shortnames:[],category:"people"},":cloud_lightning:":{uc_base:"1f329",uc_output:"1f329",uc_match:"1f329-fe0f",uc_greedy:"1f329-fe0f",shortnames:[":cloud_with_lightning:"],category:"nature"},":cloud_rain:":{uc_base:"1f327",uc_output:"1f327",uc_match:"1f327-fe0f",uc_greedy:"1f327-fe0f",shortnames:[":cloud_with_rain:"],category:"nature"},":cloud_snow:":{uc_base:"1f328",uc_output:"1f328",uc_match:"1f328-fe0f",uc_greedy:"1f328-fe0f",shortnames:[":cloud_with_snow:"],category:"nature"},":cloud_tornado:":{uc_base:"1f32a",uc_output:"1f32a",uc_match:"1f32a-fe0f",uc_greedy:"1f32a-fe0f",shortnames:[":cloud_with_tornado:"],category:"nature"},":clown:":{uc_base:"1f921",uc_output:"1f921",uc_match:"1f921",uc_greedy:"1f921",shortnames:[":clown_face:"],category:"people"},":coat:":{uc_base:"1f9e5",uc_output:"1f9e5",uc_match:"1f9e5",uc_greedy:"1f9e5",shortnames:[],category:"people"},":cocktail:":{uc_base:"1f378",uc_output:"1f378",uc_match:"1f378-fe0f",uc_greedy:"1f378-fe0f",shortnames:[],category:"food"},":coconut:":{uc_base:"1f965",uc_output:"1f965",uc_match:"1f965",uc_greedy:"1f965",shortnames:[],category:"food"},":cold_face:":{uc_base:"1f976",uc_output:"1f976",uc_match:"1f976",uc_greedy:"1f976",shortnames:[],category:"people"},":cold_sweat:":{uc_base:"1f630",uc_output:"1f630",uc_match:"1f630",uc_greedy:"1f630",shortnames:[],category:"people"},":compass:":{uc_base:"1f9ed",uc_output:"1f9ed",uc_match:"1f9ed",uc_greedy:"1f9ed",shortnames:[],category:"objects"},":compression:":{uc_base:"1f5dc",uc_output:"1f5dc",uc_match:"1f5dc-fe0f",uc_greedy:"1f5dc-fe0f",shortnames:[],category:"objects"},":computer:":{uc_base:"1f4bb",uc_output:"1f4bb",uc_match:"1f4bb-fe0f",uc_greedy:"1f4bb-fe0f",shortnames:[],category:"objects"},":confetti_ball:":{uc_base:"1f38a",uc_output:"1f38a",uc_match:"1f38a",uc_greedy:"1f38a",shortnames:[],category:"objects"},":confounded:":{uc_base:"1f616",uc_output:"1f616",uc_match:"1f616",uc_greedy:"1f616",shortnames:[],category:"people"},":confused:":{uc_base:"1f615",uc_output:"1f615",uc_match:"1f615",uc_greedy:"1f615",shortnames:[],category:"people"},":construction:":{uc_base:"1f6a7",uc_output:"1f6a7",uc_match:"1f6a7",uc_greedy:"1f6a7",shortnames:[],category:"travel"},":construction_site:":{uc_base:"1f3d7",uc_output:"1f3d7",uc_match:"1f3d7-fe0f",uc_greedy:"1f3d7-fe0f",shortnames:[":building_construction:"],category:"travel"},":construction_worker:":{uc_base:"1f477",uc_output:"1f477",uc_match:"1f477",uc_greedy:"1f477",shortnames:[],category:"people"},":control_knobs:":{uc_base:"1f39b",uc_output:"1f39b",uc_match:"1f39b-fe0f",uc_greedy:"1f39b-fe0f",shortnames:[],category:"objects"},":convenience_store:":{uc_base:"1f3ea",uc_output:"1f3ea",uc_match:"1f3ea",uc_greedy:"1f3ea",shortnames:[],category:"travel"},":cookie:":{uc_base:"1f36a",uc_output:"1f36a",uc_match:"1f36a",uc_greedy:"1f36a",shortnames:[],category:"food"},":cooking:":{uc_base:"1f373",uc_output:"1f373",uc_match:"1f373",uc_greedy:"1f373",shortnames:[],category:"food"},":cool:":{uc_base:"1f192",uc_output:"1f192",uc_match:"1f192",uc_greedy:"1f192",shortnames:[],category:"symbols"},":corn:":{uc_base:"1f33d",uc_output:"1f33d",uc_match:"1f33d",uc_greedy:"1f33d",shortnames:[],category:"food"},":couch:":{uc_base:"1f6cb",uc_output:"1f6cb",uc_match:"1f6cb-fe0f",uc_greedy:"1f6cb-fe0f",shortnames:[":couch_and_lamp:"],category:"objects"},":couple:":{uc_base:"1f46b",uc_output:"1f46b",uc_match:"1f46b",uc_greedy:"1f46b",shortnames:[],category:"people"},":couple_with_heart:":{uc_base:"1f491",uc_output:"1f491",uc_match:"1f491",uc_greedy:"1f491",shortnames:[],category:"people"},":couplekiss:":{uc_base:"1f48f",uc_output:"1f48f",uc_match:"1f48f",uc_greedy:"1f48f",shortnames:[],category:"people"},":cow2:":{uc_base:"1f404",uc_output:"1f404",uc_match:"1f404",uc_greedy:"1f404",shortnames:[],category:"nature"},":cow:":{uc_base:"1f42e",uc_output:"1f42e",uc_match:"1f42e",uc_greedy:"1f42e",shortnames:[],category:"nature"},":cowboy:":{uc_base:"1f920",uc_output:"1f920",uc_match:"1f920",uc_greedy:"1f920",shortnames:[":face_with_cowboy_hat:"],category:"people"},":crab:":{uc_base:"1f980",uc_output:"1f980",uc_match:"1f980",uc_greedy:"1f980",shortnames:[],category:"nature"},":crayon:":{uc_base:"1f58d",uc_output:"1f58d",uc_match:"1f58d-fe0f",uc_greedy:"1f58d-fe0f",shortnames:[":lower_left_crayon:"],category:"objects"},":credit_card:":{uc_base:"1f4b3",uc_output:"1f4b3",uc_match:"1f4b3-fe0f",uc_greedy:"1f4b3-fe0f",shortnames:[],category:"objects"},":crescent_moon:":{uc_base:"1f319",uc_output:"1f319",uc_match:"1f319",uc_greedy:"1f319",shortnames:[],category:"nature"},":cricket:":{uc_base:"1f997",uc_output:"1f997",uc_match:"1f997",uc_greedy:"1f997",shortnames:[],category:"nature"},":cricket_game:":{uc_base:"1f3cf",uc_output:"1f3cf",uc_match:"1f3cf",uc_greedy:"1f3cf",shortnames:[":cricket_bat_ball:"],category:"activity"},":crocodile:":{uc_base:"1f40a",uc_output:"1f40a",uc_match:"1f40a",uc_greedy:"1f40a",shortnames:[],category:"nature"},":croissant:":{uc_base:"1f950",uc_output:"1f950",uc_match:"1f950",uc_greedy:"1f950",shortnames:[],category:"food"},":crossed_flags:":{uc_base:"1f38c",uc_output:"1f38c",uc_match:"1f38c",uc_greedy:"1f38c",shortnames:[],category:"flags"},":crown:":{uc_base:"1f451",uc_output:"1f451",uc_match:"1f451",uc_greedy:"1f451",shortnames:[],category:"people"},":cruise_ship:":{uc_base:"1f6f3",uc_output:"1f6f3",uc_match:"1f6f3-fe0f",uc_greedy:"1f6f3-fe0f",shortnames:[":passenger_ship:"],category:"travel"},":cry:":{uc_base:"1f622",uc_output:"1f622",uc_match:"1f622",uc_greedy:"1f622",shortnames:[],category:"people"},":crying_cat_face:":{uc_base:"1f63f",uc_output:"1f63f",uc_match:"1f63f",uc_greedy:"1f63f",shortnames:[],category:"people"},":crystal_ball:":{uc_base:"1f52e",uc_output:"1f52e",uc_match:"1f52e",uc_greedy:"1f52e",shortnames:[],category:"objects"},":cucumber:":{uc_base:"1f952",uc_output:"1f952",uc_match:"1f952",uc_greedy:"1f952",shortnames:[],category:"food"},":cup_with_straw:":{uc_base:"1f964",uc_output:"1f964",uc_match:"1f964",uc_greedy:"1f964",shortnames:[],category:"food"},":cupcake:":{uc_base:"1f9c1",uc_output:"1f9c1",uc_match:"1f9c1",uc_greedy:"1f9c1",shortnames:[],category:"food"},":cupid:":{uc_base:"1f498",uc_output:"1f498",uc_match:"1f498",uc_greedy:"1f498",shortnames:[],category:"symbols"},":curling_stone:":{uc_base:"1f94c",uc_output:"1f94c",uc_match:"1f94c",uc_greedy:"1f94c",shortnames:[],category:"activity"},":curly_haired:":{uc_base:"1f9b1",uc_output:"1f9b1",uc_match:"1f9b1",uc_greedy:"1f9b1",shortnames:[],category:"people"},":currency_exchange:":{uc_base:"1f4b1",uc_output:"1f4b1",uc_match:"1f4b1",uc_greedy:"1f4b1",shortnames:[],category:"symbols"},":curry:":{uc_base:"1f35b",uc_output:"1f35b",uc_match:"1f35b",uc_greedy:"1f35b",shortnames:[],category:"food"},":custard:":{uc_base:"1f36e",uc_output:"1f36e",uc_match:"1f36e",uc_greedy:"1f36e",shortnames:[":pudding:",":flan:"],category:"food"},":customs:":{uc_base:"1f6c3",uc_output:"1f6c3",uc_match:"1f6c3",uc_greedy:"1f6c3",shortnames:[],category:"symbols"},":cut_of_meat:":{uc_base:"1f969",uc_output:"1f969",uc_match:"1f969",uc_greedy:"1f969",shortnames:[],category:"food"},":cyclone:":{uc_base:"1f300",uc_output:"1f300",uc_match:"1f300",uc_greedy:"1f300",shortnames:[],category:"symbols"},":dagger:":{uc_base:"1f5e1",uc_output:"1f5e1",uc_match:"1f5e1-fe0f",uc_greedy:"1f5e1-fe0f",shortnames:[":dagger_knife:"],category:"objects"},":dancer:":{uc_base:"1f483",uc_output:"1f483",uc_match:"1f483",uc_greedy:"1f483",shortnames:[],category:"people"},":dango:":{uc_base:"1f361",uc_output:"1f361",uc_match:"1f361",uc_greedy:"1f361",shortnames:[],category:"food"},":dark_sunglasses:":{uc_base:"1f576",uc_output:"1f576",uc_match:"1f576-fe0f",uc_greedy:"1f576-fe0f",shortnames:[],category:"people"},":dart:":{uc_base:"1f3af",uc_output:"1f3af",uc_match:"1f3af",uc_greedy:"1f3af",shortnames:[],category:"activity"},":dash:":{uc_base:"1f4a8",uc_output:"1f4a8",uc_match:"1f4a8",uc_greedy:"1f4a8",shortnames:[],category:"nature"},":date:":{uc_base:"1f4c5",uc_output:"1f4c5",uc_match:"1f4c5",uc_greedy:"1f4c5",shortnames:[],category:"objects"},":deciduous_tree:":{uc_base:"1f333",uc_output:"1f333",uc_match:"1f333",uc_greedy:"1f333",shortnames:[],category:"nature"},":deer:":{uc_base:"1f98c",uc_output:"1f98c",uc_match:"1f98c",uc_greedy:"1f98c",shortnames:[],category:"nature"},":department_store:":{uc_base:"1f3ec",uc_output:"1f3ec",uc_match:"1f3ec",uc_greedy:"1f3ec",shortnames:[],category:"travel"},":desert:":{uc_base:"1f3dc",uc_output:"1f3dc",uc_match:"1f3dc-fe0f",uc_greedy:"1f3dc-fe0f",shortnames:[],category:"travel"},":desktop:":{uc_base:"1f5a5",uc_output:"1f5a5",uc_match:"1f5a5-fe0f",uc_greedy:"1f5a5-fe0f",shortnames:[":desktop_computer:"],category:"objects"},":detective:":{uc_base:"1f575",uc_output:"1f575",uc_match:"1f575-fe0f",uc_greedy:"1f575-fe0f",shortnames:[":spy:",":sleuth_or_spy:"],category:"people"},":diamond_shape_with_a_dot_inside:":{uc_base:"1f4a0",uc_output:"1f4a0",uc_match:"1f4a0",uc_greedy:"1f4a0",shortnames:[],category:"symbols"},":disappointed:":{uc_base:"1f61e",uc_output:"1f61e",uc_match:"1f61e",uc_greedy:"1f61e",shortnames:[],category:"people"},":disappointed_relieved:":{uc_base:"1f625",uc_output:"1f625",uc_match:"1f625",uc_greedy:"1f625",shortnames:[],category:"people"},":dividers:":{uc_base:"1f5c2",uc_output:"1f5c2",uc_match:"1f5c2-fe0f",uc_greedy:"1f5c2-fe0f",shortnames:[":card_index_dividers:"],category:"objects"},":dizzy:":{uc_base:"1f4ab",uc_output:"1f4ab",uc_match:"1f4ab",uc_greedy:"1f4ab",shortnames:[],category:"nature"},":dizzy_face:":{uc_base:"1f635",uc_output:"1f635",uc_match:"1f635",uc_greedy:"1f635",shortnames:[],category:"people"},":dna:":{uc_base:"1f9ec",uc_output:"1f9ec",uc_match:"1f9ec",uc_greedy:"1f9ec",shortnames:[],category:"objects"},":do_not_litter:":{uc_base:"1f6af",uc_output:"1f6af",uc_match:"1f6af",uc_greedy:"1f6af",shortnames:[],category:"symbols"},":dog2:":{uc_base:"1f415",uc_output:"1f415",uc_match:"1f415-fe0f",uc_greedy:"1f415-fe0f",shortnames:[],category:"nature"},":dog:":{uc_base:"1f436",uc_output:"1f436",uc_match:"1f436",uc_greedy:"1f436",shortnames:[],category:"nature"},":dollar:":{uc_base:"1f4b5",uc_output:"1f4b5",uc_match:"1f4b5",uc_greedy:"1f4b5",shortnames:[],category:"objects"},":dolls:":{uc_base:"1f38e",uc_output:"1f38e",uc_match:"1f38e",uc_greedy:"1f38e",shortnames:[],category:"objects"},":dolphin:":{uc_base:"1f42c",uc_output:"1f42c",uc_match:"1f42c",uc_greedy:"1f42c",shortnames:[],category:"nature"},":door:":{uc_base:"1f6aa",uc_output:"1f6aa",uc_match:"1f6aa",uc_greedy:"1f6aa",shortnames:[],category:"objects"},":doughnut:":{uc_base:"1f369",uc_output:"1f369",uc_match:"1f369",uc_greedy:"1f369",shortnames:[],category:"food"},":dove:":{uc_base:"1f54a",uc_output:"1f54a",uc_match:"1f54a-fe0f",uc_greedy:"1f54a-fe0f",shortnames:[":dove_of_peace:"],category:"nature"},":dragon:":{uc_base:"1f409",uc_output:"1f409",uc_match:"1f409",uc_greedy:"1f409",shortnames:[],category:"nature"},":dragon_face:":{uc_base:"1f432",uc_output:"1f432",uc_match:"1f432",uc_greedy:"1f432",shortnames:[],category:"nature"},":dress:":{uc_base:"1f457",uc_output:"1f457",uc_match:"1f457",uc_greedy:"1f457",shortnames:[],category:"people"},":dromedary_camel:":{uc_base:"1f42a",uc_output:"1f42a",uc_match:"1f42a",uc_greedy:"1f42a",shortnames:[],category:"nature"},":drooling_face:":{uc_base:"1f924",uc_output:"1f924",uc_match:"1f924",uc_greedy:"1f924",shortnames:[":drool:"],category:"people"},":droplet:":{uc_base:"1f4a7",uc_output:"1f4a7",uc_match:"1f4a7",uc_greedy:"1f4a7",shortnames:[],category:"nature"},":drum:":{uc_base:"1f941",uc_output:"1f941",uc_match:"1f941",uc_greedy:"1f941",shortnames:[":drum_with_drumsticks:"],category:"activity"},":duck:":{uc_base:"1f986",uc_output:"1f986",uc_match:"1f986",uc_greedy:"1f986",shortnames:[],category:"nature"},":dumpling:":{uc_base:"1f95f",uc_output:"1f95f",uc_match:"1f95f",uc_greedy:"1f95f",shortnames:[],category:"food"},":dvd:":{uc_base:"1f4c0",uc_output:"1f4c0",uc_match:"1f4c0",uc_greedy:"1f4c0",shortnames:[],category:"objects"},":e-mail:":{uc_base:"1f4e7",uc_output:"1f4e7",uc_match:"1f4e7",uc_greedy:"1f4e7",shortnames:[":email:"],category:"objects"},":eagle:":{uc_base:"1f985",uc_output:"1f985",uc_match:"1f985",uc_greedy:"1f985",shortnames:[],category:"nature"},":ear:":{uc_base:"1f442",uc_output:"1f442",uc_match:"1f442-fe0f",uc_greedy:"1f442-fe0f",shortnames:[],category:"people"},":ear_of_rice:":{uc_base:"1f33e",uc_output:"1f33e",uc_match:"1f33e",uc_greedy:"1f33e",shortnames:[],category:"nature"},":earth_africa:":{uc_base:"1f30d",uc_output:"1f30d",uc_match:"1f30d-fe0f",uc_greedy:"1f30d-fe0f",shortnames:[],category:"nature"},":earth_americas:":{uc_base:"1f30e",uc_output:"1f30e",uc_match:"1f30e-fe0f",uc_greedy:"1f30e-fe0f",shortnames:[],category:"nature"},":earth_asia:":{uc_base:"1f30f",uc_output:"1f30f",uc_match:"1f30f-fe0f",uc_greedy:"1f30f-fe0f",shortnames:[],category:"nature"},":egg:":{uc_base:"1f95a",uc_output:"1f95a",uc_match:"1f95a",uc_greedy:"1f95a",shortnames:[],category:"food"},":eggplant:":{uc_base:"1f346",uc_output:"1f346",uc_match:"1f346",uc_greedy:"1f346",shortnames:[],category:"food"},":electric_plug:":{uc_base:"1f50c",uc_output:"1f50c",uc_match:"1f50c",uc_greedy:"1f50c",shortnames:[],category:"objects"},":elephant:":{uc_base:"1f418",uc_output:"1f418",uc_match:"1f418",uc_greedy:"1f418",shortnames:[],category:"nature"},":elf:":{uc_base:"1f9dd",uc_output:"1f9dd",uc_match:"1f9dd",uc_greedy:"1f9dd",shortnames:[],category:"people"},":end:":{uc_base:"1f51a",uc_output:"1f51a",uc_match:"1f51a",uc_greedy:"1f51a",shortnames:[],category:"symbols"},":envelope_with_arrow:":{uc_base:"1f4e9",uc_output:"1f4e9",uc_match:"1f4e9",uc_greedy:"1f4e9",shortnames:[],category:"objects"},":euro:":{uc_base:"1f4b6",uc_output:"1f4b6",uc_match:"1f4b6",uc_greedy:"1f4b6",shortnames:[],category:"objects"},":european_castle:":{uc_base:"1f3f0",uc_output:"1f3f0",uc_match:"1f3f0",uc_greedy:"1f3f0",shortnames:[],category:"travel"},":european_post_office:":{uc_base:"1f3e4",uc_output:"1f3e4",uc_match:"1f3e4",uc_greedy:"1f3e4",shortnames:[],category:"travel"},":evergreen_tree:":{uc_base:"1f332",uc_output:"1f332",uc_match:"1f332",uc_greedy:"1f332",shortnames:[],category:"nature"},":exploding_head:":{uc_base:"1f92f",uc_output:"1f92f",uc_match:"1f92f",uc_greedy:"1f92f",shortnames:[],category:"people"},":expressionless:":{uc_base:"1f611",uc_output:"1f611",uc_match:"1f611",uc_greedy:"1f611",shortnames:[],category:"people"},":eye:":{uc_base:"1f441",uc_output:"1f441",uc_match:"1f441-fe0f",uc_greedy:"1f441-fe0f",shortnames:[],category:"people"},":eyeglasses:":{uc_base:"1f453",uc_output:"1f453",uc_match:"1f453-fe0f",uc_greedy:"1f453-fe0f",shortnames:[],category:"people"},":eyes:":{uc_base:"1f440",uc_output:"1f440",uc_match:"1f440",uc_greedy:"1f440",shortnames:[],category:"people"},":face_vomiting:":{uc_base:"1f92e",uc_output:"1f92e",uc_match:"1f92e",uc_greedy:"1f92e",shortnames:[],category:"people"},":face_with_hand_over_mouth:":{uc_base:"1f92d",uc_output:"1f92d",uc_match:"1f92d",uc_greedy:"1f92d",shortnames:[],category:"people"},":face_with_monocle:":{uc_base:"1f9d0",uc_output:"1f9d0",uc_match:"1f9d0",uc_greedy:"1f9d0",shortnames:[],category:"people"},":face_with_raised_eyebrow:":{uc_base:"1f928",uc_output:"1f928",uc_match:"1f928",uc_greedy:"1f928",shortnames:[],category:"people"},":face_with_symbols_over_mouth:":{uc_base:"1f92c",uc_output:"1f92c",uc_match:"1f92c",uc_greedy:"1f92c",shortnames:[],category:"people"},":factory:":{uc_base:"1f3ed",uc_output:"1f3ed",uc_match:"1f3ed-fe0f",uc_greedy:"1f3ed-fe0f",shortnames:[],category:"travel"},":fairy:":{uc_base:"1f9da",uc_output:"1f9da",uc_match:"1f9da",uc_greedy:"1f9da",shortnames:[],category:"people"},":fallen_leaf:":{uc_base:"1f342",uc_output:"1f342",uc_match:"1f342",uc_greedy:"1f342",shortnames:[],category:"nature"},":family:":{uc_base:"1f46a",uc_output:"1f46a",uc_match:"1f46a-fe0f",uc_greedy:"1f46a-fe0f",shortnames:[],category:"people"},":fax:":{uc_base:"1f4e0",uc_output:"1f4e0",uc_match:"1f4e0",uc_greedy:"1f4e0",shortnames:[],category:"objects"},":fearful:":{uc_base:"1f628",uc_output:"1f628",uc_match:"1f628",uc_greedy:"1f628",shortnames:[],category:"people"},":feet:":{uc_base:"1f43e",uc_output:"1f43e",uc_match:"1f43e",uc_greedy:"1f43e",shortnames:[":paw_prints:"],category:"nature"},":ferris_wheel:":{uc_base:"1f3a1",uc_output:"1f3a1",uc_match:"1f3a1",uc_greedy:"1f3a1",shortnames:[],category:"travel"},":field_hockey:":{uc_base:"1f3d1",uc_output:"1f3d1",uc_match:"1f3d1",uc_greedy:"1f3d1",shortnames:[],category:"activity"},":file_cabinet:":{uc_base:"1f5c4",uc_output:"1f5c4",uc_match:"1f5c4-fe0f",uc_greedy:"1f5c4-fe0f",shortnames:[],category:"objects"},":file_folder:":{uc_base:"1f4c1",uc_output:"1f4c1",uc_match:"1f4c1",uc_greedy:"1f4c1",shortnames:[],category:"objects"},":film_frames:":{uc_base:"1f39e",uc_output:"1f39e",uc_match:"1f39e-fe0f",uc_greedy:"1f39e-fe0f",shortnames:[],category:"objects"},":fingers_crossed:":{uc_base:"1f91e",uc_output:"1f91e",uc_match:"1f91e",uc_greedy:"1f91e",shortnames:[":hand_with_index_and_middle_finger_crossed:"],category:"people"},":fire:":{uc_base:"1f525",uc_output:"1f525",uc_match:"1f525",uc_greedy:"1f525",shortnames:[":flame:"],category:"nature"},":fire_engine:":{uc_base:"1f692",uc_output:"1f692",uc_match:"1f692",uc_greedy:"1f692",shortnames:[],category:"travel"},":fire_extinguisher:":{uc_base:"1f9ef",uc_output:"1f9ef",uc_match:"1f9ef",uc_greedy:"1f9ef",shortnames:[],category:"objects"},":firecracker:":{uc_base:"1f9e8",uc_output:"1f9e8",uc_match:"1f9e8",uc_greedy:"1f9e8",shortnames:[],category:"travel"},":fireworks:":{uc_base:"1f386",uc_output:"1f386",uc_match:"1f386",uc_greedy:"1f386",shortnames:[],category:"travel"},":first_place:":{uc_base:"1f947",uc_output:"1f947",uc_match:"1f947",uc_greedy:"1f947",shortnames:[":first_place_medal:"],category:"activity"},":first_quarter_moon:":{uc_base:"1f313",uc_output:"1f313",uc_match:"1f313",uc_greedy:"1f313",shortnames:[],category:"nature"},":first_quarter_moon_with_face:":{uc_base:"1f31b",uc_output:"1f31b",uc_match:"1f31b",uc_greedy:"1f31b",shortnames:[],category:"nature"},":fish:":{uc_base:"1f41f",uc_output:"1f41f",uc_match:"1f41f-fe0f",uc_greedy:"1f41f-fe0f",shortnames:[],category:"nature"},":fish_cake:":{uc_base:"1f365",uc_output:"1f365",uc_match:"1f365",uc_greedy:"1f365",shortnames:[],category:"food"},":fishing_pole_and_fish:":{uc_base:"1f3a3",uc_output:"1f3a3",uc_match:"1f3a3",uc_greedy:"1f3a3",shortnames:[],category:"activity"},":flag_black:":{uc_base:"1f3f4",uc_output:"1f3f4",uc_match:"1f3f4",uc_greedy:"1f3f4",shortnames:[":waving_black_flag:"],category:"flags"},":flag_white:":{uc_base:"1f3f3",uc_output:"1f3f3",uc_match:"1f3f3-fe0f",uc_greedy:"1f3f3-fe0f",shortnames:[":waving_white_flag:"],category:"flags"},":flags:":{uc_base:"1f38f",uc_output:"1f38f",uc_match:"1f38f",uc_greedy:"1f38f",shortnames:[],category:"objects"},":flashlight:":{uc_base:"1f526",uc_output:"1f526",uc_match:"1f526",uc_greedy:"1f526",shortnames:[],category:"objects"},":floppy_disk:":{uc_base:"1f4be",uc_output:"1f4be",uc_match:"1f4be",uc_greedy:"1f4be",shortnames:[],category:"objects"},":flower_playing_cards:":{uc_base:"1f3b4",uc_output:"1f3b4",uc_match:"1f3b4",uc_greedy:"1f3b4",shortnames:[],category:"symbols"},":flushed:":{uc_base:"1f633",uc_output:"1f633",uc_match:"1f633",uc_greedy:"1f633",shortnames:[],category:"people"},":flying_disc:":{uc_base:"1f94f",uc_output:"1f94f",uc_match:"1f94f",uc_greedy:"1f94f",shortnames:[],category:"activity"},":flying_saucer:":{uc_base:"1f6f8",uc_output:"1f6f8",uc_match:"1f6f8",uc_greedy:"1f6f8",shortnames:[],category:"travel"},":fog:":{uc_base:"1f32b",uc_output:"1f32b",uc_match:"1f32b-fe0f",uc_greedy:"1f32b-fe0f",shortnames:[],category:"nature"},":foggy:":{uc_base:"1f301",uc_output:"1f301",uc_match:"1f301",uc_greedy:"1f301",shortnames:[],category:"travel"},":foot:":{uc_base:"1f9b6",uc_output:"1f9b6",uc_match:"1f9b6",uc_greedy:"1f9b6",shortnames:[],category:"people"},":football:":{uc_base:"1f3c8",uc_output:"1f3c8",uc_match:"1f3c8",uc_greedy:"1f3c8",shortnames:[],category:"activity"},":footprints:":{uc_base:"1f463",uc_output:"1f463",uc_match:"1f463",uc_greedy:"1f463",shortnames:[],category:"people"},":fork_and_knife:":{uc_base:"1f374",uc_output:"1f374",uc_match:"1f374",uc_greedy:"1f374",shortnames:[],category:"food"},":fork_knife_plate:":{uc_base:"1f37d",uc_output:"1f37d",uc_match:"1f37d-fe0f",uc_greedy:"1f37d-fe0f",shortnames:[":fork_and_knife_with_plate:"],category:"food"},":fortune_cookie:":{uc_base:"1f960",uc_output:"1f960",uc_match:"1f960",uc_greedy:"1f960",shortnames:[],category:"food"},":four_leaf_clover:":{uc_base:"1f340",uc_output:"1f340",uc_match:"1f340",uc_greedy:"1f340",shortnames:[],category:"nature"},":fox:":{uc_base:"1f98a",uc_output:"1f98a",uc_match:"1f98a",uc_greedy:"1f98a",shortnames:[":fox_face:"],category:"nature"},":frame_photo:":{uc_base:"1f5bc",uc_output:"1f5bc",uc_match:"1f5bc-fe0f",uc_greedy:"1f5bc-fe0f",shortnames:[":frame_with_picture:"],category:"objects"},":free:":{uc_base:"1f193",uc_output:"1f193",uc_match:"1f193",uc_greedy:"1f193",shortnames:[],category:"symbols"},":french_bread:":{uc_base:"1f956",uc_output:"1f956",uc_match:"1f956",uc_greedy:"1f956",shortnames:[":baguette_bread:"],category:"food"},":fried_shrimp:":{uc_base:"1f364",uc_output:"1f364",uc_match:"1f364",uc_greedy:"1f364",shortnames:[],category:"food"},":fries:":{uc_base:"1f35f",uc_output:"1f35f",uc_match:"1f35f",uc_greedy:"1f35f",shortnames:[],category:"food"},":frog:":{uc_base:"1f438",uc_output:"1f438",uc_match:"1f438",uc_greedy:"1f438",shortnames:[],category:"nature"},":frowning:":{uc_base:"1f626",uc_output:"1f626",uc_match:"1f626",uc_greedy:"1f626",shortnames:[],category:"people"},":full_moon:":{uc_base:"1f315",uc_output:"1f315",uc_match:"1f315-fe0f",uc_greedy:"1f315-fe0f",shortnames:[],category:"nature"},":full_moon_with_face:":{uc_base:"1f31d",uc_output:"1f31d",uc_match:"1f31d",uc_greedy:"1f31d",shortnames:[],category:"nature"},":game_die:":{uc_base:"1f3b2",uc_output:"1f3b2",uc_match:"1f3b2",uc_greedy:"1f3b2",shortnames:[],category:"activity"},":gem:":{uc_base:"1f48e",uc_output:"1f48e",uc_match:"1f48e",uc_greedy:"1f48e",shortnames:[],category:"objects"},":genie:":{uc_base:"1f9de",uc_output:"1f9de",uc_match:"1f9de",uc_greedy:"1f9de",shortnames:[],category:"people"},":ghost:":{uc_base:"1f47b",uc_output:"1f47b",uc_match:"1f47b",uc_greedy:"1f47b",shortnames:[],category:"people"},":gift:":{uc_base:"1f381",uc_output:"1f381",uc_match:"1f381",uc_greedy:"1f381",shortnames:[],category:"objects"},":gift_heart:":{uc_base:"1f49d",uc_output:"1f49d",uc_match:"1f49d",uc_greedy:"1f49d",shortnames:[],category:"symbols"},":giraffe:":{uc_base:"1f992",uc_output:"1f992",uc_match:"1f992",uc_greedy:"1f992",shortnames:[],category:"nature"},":girl:":{uc_base:"1f467",uc_output:"1f467",uc_match:"1f467",uc_greedy:"1f467",shortnames:[],category:"people"},":globe_with_meridians:":{uc_base:"1f310",uc_output:"1f310",uc_match:"1f310",uc_greedy:"1f310",shortnames:[],category:"symbols"},":gloves:":{uc_base:"1f9e4",uc_output:"1f9e4",uc_match:"1f9e4",uc_greedy:"1f9e4",shortnames:[],category:"people"},":goal:":{uc_base:"1f945",uc_output:"1f945",uc_match:"1f945",uc_greedy:"1f945",shortnames:[":goal_net:"],category:"activity"},":goat:":{uc_base:"1f410",uc_output:"1f410",uc_match:"1f410",uc_greedy:"1f410",shortnames:[],category:"nature"},":goggles:":{uc_base:"1f97d",uc_output:"1f97d",uc_match:"1f97d",uc_greedy:"1f97d",shortnames:[],category:"people"},":gorilla:":{uc_base:"1f98d",uc_output:"1f98d",uc_match:"1f98d",uc_greedy:"1f98d",shortnames:[],category:"nature"},":grapes:":{uc_base:"1f347",uc_output:"1f347",uc_match:"1f347",uc_greedy:"1f347",shortnames:[],category:"food"},":green_apple:":{uc_base:"1f34f",uc_output:"1f34f",uc_match:"1f34f",uc_greedy:"1f34f",shortnames:[],category:"food"},":green_book:":{uc_base:"1f4d7",uc_output:"1f4d7",uc_match:"1f4d7",uc_greedy:"1f4d7",shortnames:[],category:"objects"},":green_heart:":{uc_base:"1f49a",uc_output:"1f49a",uc_match:"1f49a",uc_greedy:"1f49a",shortnames:[],category:"symbols"},":grimacing:":{uc_base:"1f62c",uc_output:"1f62c",uc_match:"1f62c",uc_greedy:"1f62c",shortnames:[],category:"people"},":grin:":{uc_base:"1f601",uc_output:"1f601",uc_match:"1f601",uc_greedy:"1f601",shortnames:[],category:"people"},":grinning:":{uc_base:"1f600",uc_output:"1f600",uc_match:"1f600",uc_greedy:"1f600",shortnames:[],category:"people"},":guard:":{uc_base:"1f482",uc_output:"1f482",uc_match:"1f482",uc_greedy:"1f482",shortnames:[":guardsman:"],category:"people"},":guitar:":{uc_base:"1f3b8",uc_output:"1f3b8",uc_match:"1f3b8",uc_greedy:"1f3b8",shortnames:[],category:"activity"},":gun:":{uc_base:"1f52b",uc_output:"1f52b",uc_match:"1f52b",uc_greedy:"1f52b",shortnames:[],category:"objects"},":hamburger:":{uc_base:"1f354",uc_output:"1f354",uc_match:"1f354",uc_greedy:"1f354",shortnames:[],category:"food"},":hammer:":{uc_base:"1f528",uc_output:"1f528",uc_match:"1f528",uc_greedy:"1f528",shortnames:[],category:"objects"},":hamster:":{uc_base:"1f439",uc_output:"1f439",uc_match:"1f439",uc_greedy:"1f439",shortnames:[],category:"nature"},":hand_splayed:":{uc_base:"1f590",uc_output:"1f590",uc_match:"1f590-fe0f",uc_greedy:"1f590-fe0f",shortnames:[":raised_hand_with_fingers_splayed:"],category:"people"},":handbag:":{uc_base:"1f45c",uc_output:"1f45c",uc_match:"1f45c",uc_greedy:"1f45c",shortnames:[],category:"people"},":handshake:":{uc_base:"1f91d",uc_output:"1f91d",uc_match:"1f91d",uc_greedy:"1f91d",shortnames:[":shaking_hands:"],category:"people"},":hatched_chick:":{uc_base:"1f425",uc_output:"1f425",uc_match:"1f425",uc_greedy:"1f425",shortnames:[],category:"nature"},":hatching_chick:":{uc_base:"1f423",uc_output:"1f423",uc_match:"1f423",uc_greedy:"1f423",shortnames:[],category:"nature"},":head_bandage:":{uc_base:"1f915",uc_output:"1f915",uc_match:"1f915",uc_greedy:"1f915",shortnames:[":face_with_head_bandage:"],category:"people"},":headphones:":{uc_base:"1f3a7",uc_output:"1f3a7",uc_match:"1f3a7-fe0f",uc_greedy:"1f3a7-fe0f",shortnames:[],category:"activity"},":hear_no_evil:":{uc_base:"1f649",uc_output:"1f649",uc_match:"1f649",uc_greedy:"1f649",shortnames:[],category:"nature"},":heart_decoration:":{uc_base:"1f49f",uc_output:"1f49f",uc_match:"1f49f",uc_greedy:"1f49f",shortnames:[],category:"symbols"},":heart_eyes:":{uc_base:"1f60d",uc_output:"1f60d",uc_match:"1f60d",uc_greedy:"1f60d",shortnames:[],category:"people"},":heart_eyes_cat:":{uc_base:"1f63b",uc_output:"1f63b",uc_match:"1f63b",uc_greedy:"1f63b",shortnames:[],category:"people"},":heartbeat:":{uc_base:"1f493",uc_output:"1f493",uc_match:"1f493",uc_greedy:"1f493",shortnames:[],category:"symbols"},":heartpulse:":{uc_base:"1f497",uc_output:"1f497",uc_match:"1f497",uc_greedy:"1f497",shortnames:[],category:"symbols"},":heavy_dollar_sign:":{uc_base:"1f4b2",uc_output:"1f4b2",uc_match:"1f4b2",uc_greedy:"1f4b2",shortnames:[],category:"symbols"},":hedgehog:":{uc_base:"1f994",uc_output:"1f994",uc_match:"1f994",uc_greedy:"1f994",shortnames:[],category:"nature"},":helicopter:":{uc_base:"1f681",uc_output:"1f681",uc_match:"1f681",uc_greedy:"1f681",shortnames:[],category:"travel"},":herb:":{uc_base:"1f33f",uc_output:"1f33f",uc_match:"1f33f",uc_greedy:"1f33f",shortnames:[],category:"nature"},":hibiscus:":{uc_base:"1f33a",uc_output:"1f33a",uc_match:"1f33a",uc_greedy:"1f33a",shortnames:[],category:"nature"},":high_brightness:":{uc_base:"1f506",uc_output:"1f506",uc_match:"1f506",uc_greedy:"1f506",shortnames:[],category:"symbols"},":high_heel:":{uc_base:"1f460",uc_output:"1f460",uc_match:"1f460",uc_greedy:"1f460",shortnames:[],category:"people"},":hiking_boot:":{uc_base:"1f97e",uc_output:"1f97e",uc_match:"1f97e",uc_greedy:"1f97e",shortnames:[],category:"people"},":hippopotamus:":{uc_base:"1f99b",uc_output:"1f99b",uc_match:"1f99b",uc_greedy:"1f99b",shortnames:[],category:"nature"},":hockey:":{uc_base:"1f3d2",uc_output:"1f3d2",uc_match:"1f3d2",uc_greedy:"1f3d2",shortnames:[],category:"activity"},":hole:":{uc_base:"1f573",uc_output:"1f573",uc_match:"1f573-fe0f",uc_greedy:"1f573-fe0f",shortnames:[],category:"objects"},":homes:":{uc_base:"1f3d8",uc_output:"1f3d8",uc_match:"1f3d8-fe0f",uc_greedy:"1f3d8-fe0f",shortnames:[":house_buildings:"],category:"travel"},":honey_pot:":{uc_base:"1f36f",uc_output:"1f36f",uc_match:"1f36f",uc_greedy:"1f36f",shortnames:[],category:"food"},":horse:":{uc_base:"1f434",uc_output:"1f434",uc_match:"1f434",uc_greedy:"1f434",shortnames:[],category:"nature"},":horse_racing:":{uc_base:"1f3c7",uc_output:"1f3c7",uc_match:"1f3c7",uc_greedy:"1f3c7",shortnames:[],category:"activity"},":hospital:":{uc_base:"1f3e5",uc_output:"1f3e5",uc_match:"1f3e5",uc_greedy:"1f3e5",shortnames:[],category:"travel"},":hot_face:":{uc_base:"1f975",uc_output:"1f975",uc_match:"1f975",uc_greedy:"1f975",shortnames:[],category:"people"},":hot_pepper:":{uc_base:"1f336",uc_output:"1f336",uc_match:"1f336-fe0f",uc_greedy:"1f336-fe0f",shortnames:[],category:"food"},":hotdog:":{uc_base:"1f32d",uc_output:"1f32d",uc_match:"1f32d",uc_greedy:"1f32d",shortnames:[":hot_dog:"],category:"food"},":hotel:":{uc_base:"1f3e8",uc_output:"1f3e8",uc_match:"1f3e8",uc_greedy:"1f3e8",shortnames:[],category:"travel"},":house:":{uc_base:"1f3e0",uc_output:"1f3e0",uc_match:"1f3e0-fe0f",uc_greedy:"1f3e0-fe0f",shortnames:[],category:"travel"},":house_abandoned:":{uc_base:"1f3da",uc_output:"1f3da",uc_match:"1f3da-fe0f",uc_greedy:"1f3da-fe0f",shortnames:[":derelict_house_building:"],category:"travel"},":house_with_garden:":{uc_base:"1f3e1",uc_output:"1f3e1",uc_match:"1f3e1",uc_greedy:"1f3e1",shortnames:[],category:"travel"},":hugging:":{uc_base:"1f917",uc_output:"1f917",uc_match:"1f917",uc_greedy:"1f917",shortnames:[":hugging_face:"],category:"people"},":hushed:":{uc_base:"1f62f",uc_output:"1f62f",uc_match:"1f62f",uc_greedy:"1f62f",shortnames:[],category:"people"},":ice_cream:":{uc_base:"1f368",uc_output:"1f368",uc_match:"1f368",uc_greedy:"1f368",shortnames:[],category:"food"},":icecream:":{uc_base:"1f366",uc_output:"1f366",uc_match:"1f366",uc_greedy:"1f366",shortnames:[],category:"food"},":id:":{uc_base:"1f194",uc_output:"1f194",uc_match:"1f194",uc_greedy:"1f194",shortnames:[],category:"symbols"},":ideograph_advantage:":{uc_base:"1f250",uc_output:"1f250",uc_match:"1f250",uc_greedy:"1f250",shortnames:[],category:"symbols"},":imp:":{uc_base:"1f47f",uc_output:"1f47f",uc_match:"1f47f",uc_greedy:"1f47f",shortnames:[],category:"people"},":inbox_tray:":{uc_base:"1f4e5",uc_output:"1f4e5",uc_match:"1f4e5-fe0f",uc_greedy:"1f4e5-fe0f",shortnames:[],category:"objects"},":incoming_envelope:":{uc_base:"1f4e8",uc_output:"1f4e8",uc_match:"1f4e8",uc_greedy:"1f4e8",shortnames:[],category:"objects"},":innocent:":{uc_base:"1f607",uc_output:"1f607",uc_match:"1f607",uc_greedy:"1f607",shortnames:[],category:"people"},":iphone:":{uc_base:"1f4f1",uc_output:"1f4f1",uc_match:"1f4f1",uc_greedy:"1f4f1",shortnames:[],category:"objects"},":island:":{uc_base:"1f3dd",uc_output:"1f3dd",uc_match:"1f3dd-fe0f",uc_greedy:"1f3dd-fe0f",shortnames:[":desert_island:"],category:"travel"},":izakaya_lantern:":{uc_base:"1f3ee",uc_output:"1f3ee",uc_match:"1f3ee",uc_greedy:"1f3ee",shortnames:[],category:"objects"},":jack_o_lantern:":{uc_base:"1f383",uc_output:"1f383",uc_match:"1f383",uc_greedy:"1f383",shortnames:[],category:"people"},":japan:":{uc_base:"1f5fe",uc_output:"1f5fe",uc_match:"1f5fe",uc_greedy:"1f5fe",shortnames:[],category:"travel"},":japanese_castle:":{uc_base:"1f3ef",uc_output:"1f3ef",uc_match:"1f3ef",uc_greedy:"1f3ef",shortnames:[],category:"travel"},":japanese_goblin:":{uc_base:"1f47a",uc_output:"1f47a",uc_match:"1f47a",uc_greedy:"1f47a",shortnames:[],category:"people"},":japanese_ogre:":{uc_base:"1f479",uc_output:"1f479",uc_match:"1f479",uc_greedy:"1f479",shortnames:[],category:"people"},":jeans:":{uc_base:"1f456",uc_output:"1f456",uc_match:"1f456",uc_greedy:"1f456",shortnames:[],category:"people"},":jigsaw:":{uc_base:"1f9e9",uc_output:"1f9e9",uc_match:"1f9e9",uc_greedy:"1f9e9",shortnames:[],category:"objects"},":joy:":{uc_base:"1f602",uc_output:"1f602",uc_match:"1f602",uc_greedy:"1f602",shortnames:[],category:"people"},":joy_cat:":{uc_base:"1f639",uc_output:"1f639",uc_match:"1f639",uc_greedy:"1f639",shortnames:[],category:"people"},":joystick:":{uc_base:"1f579",uc_output:"1f579",uc_match:"1f579-fe0f",uc_greedy:"1f579-fe0f",shortnames:[],category:"objects"},":kaaba:":{uc_base:"1f54b",uc_output:"1f54b",uc_match:"1f54b",uc_greedy:"1f54b",shortnames:[],category:"travel"},":kangaroo:":{uc_base:"1f998",uc_output:"1f998",uc_match:"1f998",uc_greedy:"1f998",shortnames:[],category:"nature"},":key2:":{uc_base:"1f5dd",uc_output:"1f5dd",uc_match:"1f5dd-fe0f",uc_greedy:"1f5dd",shortnames:[":old_key:"],category:"objects"},":key:":{uc_base:"1f511",uc_output:"1f511",uc_match:"1f511",uc_greedy:"1f511",shortnames:[],category:"objects"},":keycap_ten:":{uc_base:"1f51f",uc_output:"1f51f",uc_match:"1f51f",uc_greedy:"1f51f",shortnames:[],category:"symbols"},":kimono:":{uc_base:"1f458",uc_output:"1f458",uc_match:"1f458",uc_greedy:"1f458",shortnames:[],category:"people"},":kiss:":{uc_base:"1f48b",uc_output:"1f48b",uc_match:"1f48b",uc_greedy:"1f48b",shortnames:[],category:"people"},":kissing:":{uc_base:"1f617",uc_output:"1f617",uc_match:"1f617",uc_greedy:"1f617",shortnames:[],category:"people"},":kissing_cat:":{uc_base:"1f63d",uc_output:"1f63d",uc_match:"1f63d",uc_greedy:"1f63d",shortnames:[],category:"people"},":kissing_closed_eyes:":{uc_base:"1f61a",uc_output:"1f61a",uc_match:"1f61a",uc_greedy:"1f61a",shortnames:[],category:"people"},":kissing_heart:":{uc_base:"1f618",uc_output:"1f618",uc_match:"1f618",uc_greedy:"1f618",shortnames:[],category:"people"},":kissing_smiling_eyes:":{uc_base:"1f619",uc_output:"1f619",uc_match:"1f619",uc_greedy:"1f619",shortnames:[],category:"people"},":kiwi:":{uc_base:"1f95d",uc_output:"1f95d",uc_match:"1f95d",uc_greedy:"1f95d",shortnames:[":kiwifruit:"],category:"food"},":knife:":{uc_base:"1f52a",uc_output:"1f52a",uc_match:"1f52a",uc_greedy:"1f52a",shortnames:[],category:"objects"},":koala:":{uc_base:"1f428",uc_output:"1f428",uc_match:"1f428",uc_greedy:"1f428",shortnames:[],category:"nature"},":koko:":{uc_base:"1f201",uc_output:"1f201",uc_match:"1f201",uc_greedy:"1f201",shortnames:[],category:"symbols"},":lab_coat:":{uc_base:"1f97c",uc_output:"1f97c",uc_match:"1f97c",uc_greedy:"1f97c",shortnames:[],category:"people"},":label:":{uc_base:"1f3f7",uc_output:"1f3f7",uc_match:"1f3f7-fe0f",uc_greedy:"1f3f7-fe0f",shortnames:[],category:"objects"},":lacrosse:":{uc_base:"1f94d",uc_output:"1f94d",uc_match:"1f94d",uc_greedy:"1f94d",shortnames:[],category:"activity"},":large_blue_diamond:":{uc_base:"1f537",uc_output:"1f537",uc_match:"1f537",uc_greedy:"1f537",shortnames:[],category:"symbols"},":large_orange_diamond:":{uc_base:"1f536",uc_output:"1f536",uc_match:"1f536",uc_greedy:"1f536",shortnames:[],category:"symbols"},":last_quarter_moon:":{uc_base:"1f317",uc_output:"1f317",uc_match:"1f317",uc_greedy:"1f317",shortnames:[],category:"nature"},":last_quarter_moon_with_face:":{uc_base:"1f31c",uc_output:"1f31c",uc_match:"1f31c-fe0f",uc_greedy:"1f31c-fe0f",shortnames:[],category:"nature"},":laughing:":{uc_base:"1f606",uc_output:"1f606",uc_match:"1f606",uc_greedy:"1f606",shortnames:[":satisfied:"],category:"people"},":leafy_green:":{uc_base:"1f96c",uc_output:"1f96c",uc_match:"1f96c",uc_greedy:"1f96c",shortnames:[],category:"food"},":leaves:":{uc_base:"1f343",uc_output:"1f343",uc_match:"1f343",uc_greedy:"1f343",shortnames:[],category:"nature"},":ledger:":{uc_base:"1f4d2",uc_output:"1f4d2",uc_match:"1f4d2",uc_greedy:"1f4d2",shortnames:[],category:"objects"},":left_facing_fist:":{uc_base:"1f91b",uc_output:"1f91b",uc_match:"1f91b",uc_greedy:"1f91b",shortnames:[":left_fist:"],category:"people"},":left_luggage:":{uc_base:"1f6c5",uc_output:"1f6c5",uc_match:"1f6c5",uc_greedy:"1f6c5",shortnames:[],category:"symbols"},":leg:":{uc_base:"1f9b5",uc_output:"1f9b5",uc_match:"1f9b5",uc_greedy:"1f9b5",shortnames:[],category:"people"},":lemon:":{uc_base:"1f34b",uc_output:"1f34b",uc_match:"1f34b",uc_greedy:"1f34b",shortnames:[],category:"food"},":leopard:":{uc_base:"1f406",uc_output:"1f406",uc_match:"1f406",uc_greedy:"1f406",shortnames:[],category:"nature"},":level_slider:":{uc_base:"1f39a",uc_output:"1f39a",uc_match:"1f39a-fe0f",uc_greedy:"1f39a-fe0f",shortnames:[],category:"objects"},":levitate:":{uc_base:"1f574",uc_output:"1f574",uc_match:"1f574-fe0f",uc_greedy:"1f574-fe0f",shortnames:[":man_in_business_suit_levitating:"],category:"people"},":light_rail:":{uc_base:"1f688",uc_output:"1f688",uc_match:"1f688",uc_greedy:"1f688",shortnames:[],category:"travel"},":link:":{uc_base:"1f517",uc_output:"1f517",uc_match:"1f517",uc_greedy:"1f517",shortnames:[],category:"objects"},":lion_face:":{uc_base:"1f981",uc_output:"1f981",uc_match:"1f981",uc_greedy:"1f981",shortnames:[":lion:"],category:"nature"},":lips:":{uc_base:"1f444",uc_output:"1f444",uc_match:"1f444",uc_greedy:"1f444",shortnames:[],category:"people"},":lipstick:":{uc_base:"1f484",uc_output:"1f484",uc_match:"1f484",uc_greedy:"1f484",shortnames:[],category:"people"},":lizard:":{uc_base:"1f98e",uc_output:"1f98e",uc_match:"1f98e",uc_greedy:"1f98e",shortnames:[],category:"nature"},":llama:":{uc_base:"1f999",uc_output:"1f999",uc_match:"1f999",uc_greedy:"1f999",shortnames:[],category:"nature"},":lobster:":{uc_base:"1f99e",uc_output:"1f99e",uc_match:"1f99e",uc_greedy:"1f99e",shortnames:[],category:"nature"},":lock:":{uc_base:"1f512",uc_output:"1f512",uc_match:"1f512-fe0f",uc_greedy:"1f512-fe0f",shortnames:[],category:"objects"},":lock_with_ink_pen:":{uc_base:"1f50f",uc_output:"1f50f",uc_match:"1f50f",uc_greedy:"1f50f",shortnames:[],category:"objects"},":lollipop:":{uc_base:"1f36d",uc_output:"1f36d",uc_match:"1f36d",uc_greedy:"1f36d",shortnames:[],category:"food"},":loud_sound:":{uc_base:"1f50a",uc_output:"1f50a",uc_match:"1f50a",uc_greedy:"1f50a",shortnames:[],category:"symbols"},":loudspeaker:":{uc_base:"1f4e2",uc_output:"1f4e2",uc_match:"1f4e2",uc_greedy:"1f4e2",shortnames:[],category:"symbols"},":love_hotel:":{uc_base:"1f3e9",uc_output:"1f3e9",uc_match:"1f3e9",uc_greedy:"1f3e9",shortnames:[],category:"travel"},":love_letter:":{uc_base:"1f48c",uc_output:"1f48c",uc_match:"1f48c",uc_greedy:"1f48c",shortnames:[],category:"objects"},":love_you_gesture:":{uc_base:"1f91f",uc_output:"1f91f",uc_match:"1f91f",uc_greedy:"1f91f",shortnames:[],category:"people"},":low_brightness:":{uc_base:"1f505",uc_output:"1f505",uc_match:"1f505",uc_greedy:"1f505",shortnames:[],category:"symbols"},":luggage:":{uc_base:"1f9f3",uc_output:"1f9f3",uc_match:"1f9f3",uc_greedy:"1f9f3",shortnames:[],category:"travel"},":lying_face:":{uc_base:"1f925",uc_output:"1f925",uc_match:"1f925",uc_greedy:"1f925",shortnames:[":liar:"],category:"people"},":mag:":{uc_base:"1f50d",uc_output:"1f50d",uc_match:"1f50d-fe0f",uc_greedy:"1f50d-fe0f",shortnames:[],category:"objects"},":mag_right:":{uc_base:"1f50e",uc_output:"1f50e",uc_match:"1f50e",uc_greedy:"1f50e",shortnames:[],category:"objects"},":mage:":{uc_base:"1f9d9",uc_output:"1f9d9",uc_match:"1f9d9",uc_greedy:"1f9d9",shortnames:[],category:"people"},":magnet:":{uc_base:"1f9f2",uc_output:"1f9f2",uc_match:"1f9f2",uc_greedy:"1f9f2",shortnames:[],category:"objects"},":mahjong:":{uc_base:"1f004",uc_output:"1f004",uc_match:"1f004-fe0f",uc_greedy:"1f004-fe0f",shortnames:[],category:"symbols"},":mailbox:":{uc_base:"1f4eb",uc_output:"1f4eb",uc_match:"1f4eb-fe0f",uc_greedy:"1f4eb-fe0f",shortnames:[],category:"objects"},":mailbox_closed:":{uc_base:"1f4ea",uc_output:"1f4ea",uc_match:"1f4ea-fe0f",uc_greedy:"1f4ea-fe0f",shortnames:[],category:"objects"},":mailbox_with_mail:":{uc_base:"1f4ec",uc_output:"1f4ec",uc_match:"1f4ec-fe0f",uc_greedy:"1f4ec-fe0f",shortnames:[],category:"objects"},":mailbox_with_no_mail:":{uc_base:"1f4ed",uc_output:"1f4ed",uc_match:"1f4ed-fe0f",uc_greedy:"1f4ed-fe0f",shortnames:[],category:"objects"},":man:":{uc_base:"1f468",uc_output:"1f468",uc_match:"1f468",uc_greedy:"1f468",shortnames:[],category:"people"},":man_dancing:":{uc_base:"1f57a",uc_output:"1f57a",uc_match:"1f57a",uc_greedy:"1f57a",shortnames:[":male_dancer:"],category:"people"},":man_in_tuxedo:":{uc_base:"1f935",uc_output:"1f935",uc_match:"1f935",uc_greedy:"1f935",shortnames:[],category:"people"},":man_with_chinese_cap:":{uc_base:"1f472",uc_output:"1f472",uc_match:"1f472",uc_greedy:"1f472",shortnames:[":man_with_gua_pi_mao:"],category:"people"},":mango:":{uc_base:"1f96d",uc_output:"1f96d",uc_match:"1f96d",uc_greedy:"1f96d",shortnames:[],category:"food"},":mans_shoe:":{uc_base:"1f45e",uc_output:"1f45e",uc_match:"1f45e",uc_greedy:"1f45e",shortnames:[],category:"people"},":map:":{uc_base:"1f5fa",uc_output:"1f5fa",uc_match:"1f5fa-fe0f",uc_greedy:"1f5fa-fe0f",shortnames:[":world_map:"],category:"travel"},":maple_leaf:":{uc_base:"1f341",uc_output:"1f341",uc_match:"1f341",uc_greedy:"1f341",shortnames:[],category:"nature"},":martial_arts_uniform:":{uc_base:"1f94b",uc_output:"1f94b",uc_match:"1f94b",uc_greedy:"1f94b",shortnames:[":karate_uniform:"],category:"activity"},":mask:":{uc_base:"1f637",uc_output:"1f637",uc_match:"1f637",uc_greedy:"1f637",shortnames:[],category:"people"},":meat_on_bone:":{uc_base:"1f356",uc_output:"1f356",uc_match:"1f356",uc_greedy:"1f356",shortnames:[],category:"food"},":medal:":{uc_base:"1f3c5",uc_output:"1f3c5",uc_match:"1f3c5",uc_greedy:"1f3c5",shortnames:[":sports_medal:"],category:"activity"},":mega:":{uc_base:"1f4e3",uc_output:"1f4e3",uc_match:"1f4e3",uc_greedy:"1f4e3",shortnames:[],category:"symbols"},":melon:":{uc_base:"1f348",uc_output:"1f348",uc_match:"1f348",uc_greedy:"1f348",shortnames:[],category:"food"},":menorah:":{uc_base:"1f54e",uc_output:"1f54e",uc_match:"1f54e",uc_greedy:"1f54e",shortnames:[],category:"symbols"},":mens:":{uc_base:"1f6b9",uc_output:"1f6b9",uc_match:"1f6b9-fe0f",uc_greedy:"1f6b9-fe0f",shortnames:[],category:"symbols"},":merperson:":{uc_base:"1f9dc",uc_output:"1f9dc",uc_match:"1f9dc",uc_greedy:"1f9dc",shortnames:[],category:"people"},":metal:":{uc_base:"1f918",uc_output:"1f918",uc_match:"1f918",uc_greedy:"1f918",shortnames:[":sign_of_the_horns:"],category:"people"},":metro:":{uc_base:"1f687",uc_output:"1f687",uc_match:"1f687-fe0f",uc_greedy:"1f687-fe0f",shortnames:[],category:"travel"},":microbe:":{uc_base:"1f9a0",uc_output:"1f9a0",uc_match:"1f9a0",uc_greedy:"1f9a0",shortnames:[],category:"nature"},":microphone2:":{uc_base:"1f399",uc_output:"1f399",uc_match:"1f399-fe0f",uc_greedy:"1f399-fe0f",shortnames:[":studio_microphone:"],category:"objects"},":microphone:":{uc_base:"1f3a4",uc_output:"1f3a4",uc_match:"1f3a4",uc_greedy:"1f3a4",shortnames:[],category:"activity"},":microscope:":{uc_base:"1f52c",uc_output:"1f52c",uc_match:"1f52c",uc_greedy:"1f52c",shortnames:[],category:"objects"},":middle_finger:":{uc_base:"1f595",uc_output:"1f595",uc_match:"1f595",uc_greedy:"1f595",shortnames:[":reversed_hand_with_middle_finger_extended:"],category:"people"},":military_medal:":{uc_base:"1f396",uc_output:"1f396",uc_match:"1f396-fe0f",uc_greedy:"1f396-fe0f",shortnames:[],category:"activity"},":milk:":{uc_base:"1f95b",uc_output:"1f95b",uc_match:"1f95b",uc_greedy:"1f95b",shortnames:[":glass_of_milk:"],category:"food"},":milky_way:":{uc_base:"1f30c",uc_output:"1f30c",uc_match:"1f30c",uc_greedy:"1f30c",shortnames:[],category:"travel"},":minibus:":{uc_base:"1f690",uc_output:"1f690",uc_match:"1f690",uc_greedy:"1f690",shortnames:[],category:"travel"},":minidisc:":{uc_base:"1f4bd",uc_output:"1f4bd",uc_match:"1f4bd",uc_greedy:"1f4bd",shortnames:[],category:"objects"},":mobile_phone_off:":{uc_base:"1f4f4",uc_output:"1f4f4",uc_match:"1f4f4",uc_greedy:"1f4f4",shortnames:[],category:"symbols"},":money_mouth:":{uc_base:"1f911",uc_output:"1f911",uc_match:"1f911",uc_greedy:"1f911",shortnames:[":money_mouth_face:"],category:"people"},":money_with_wings:":{uc_base:"1f4b8",uc_output:"1f4b8",uc_match:"1f4b8",uc_greedy:"1f4b8",shortnames:[],category:"objects"},":moneybag:":{uc_base:"1f4b0",uc_output:"1f4b0",uc_match:"1f4b0-fe0f",uc_greedy:"1f4b0-fe0f",shortnames:[],category:"objects"},":monkey:":{uc_base:"1f412",uc_output:"1f412",uc_match:"1f412",uc_greedy:"1f412",shortnames:[],category:"nature"},":monkey_face:":{uc_base:"1f435",uc_output:"1f435",uc_match:"1f435",uc_greedy:"1f435",shortnames:[],category:"nature"},":monorail:":{uc_base:"1f69d",uc_output:"1f69d",uc_match:"1f69d",uc_greedy:"1f69d",shortnames:[],category:"travel"},":moon_cake:":{uc_base:"1f96e",uc_output:"1f96e",uc_match:"1f96e",uc_greedy:"1f96e",shortnames:[],category:"food"},":mortar_board:":{uc_base:"1f393",uc_output:"1f393",uc_match:"1f393-fe0f",uc_greedy:"1f393-fe0f",shortnames:[],category:"people"},":mosque:":{uc_base:"1f54c",uc_output:"1f54c",uc_match:"1f54c",uc_greedy:"1f54c",shortnames:[],category:"travel"},":mosquito:":{uc_base:"1f99f",uc_output:"1f99f",uc_match:"1f99f",uc_greedy:"1f99f",shortnames:[],category:"nature"},":motor_scooter:":{uc_base:"1f6f5",uc_output:"1f6f5",uc_match:"1f6f5",uc_greedy:"1f6f5",shortnames:[":motorbike:"],category:"travel"},":motorboat:":{uc_base:"1f6e5",uc_output:"1f6e5",uc_match:"1f6e5-fe0f",uc_greedy:"1f6e5-fe0f",shortnames:[],category:"travel"},":motorcycle:":{uc_base:"1f3cd",uc_output:"1f3cd",uc_match:"1f3cd-fe0f",uc_greedy:"1f3cd-fe0f",shortnames:[":racing_motorcycle:"],category:"travel"},":motorway:":{uc_base:"1f6e3",uc_output:"1f6e3",uc_match:"1f6e3-fe0f",uc_greedy:"1f6e3-fe0f",shortnames:[],category:"travel"},":mount_fuji:":{uc_base:"1f5fb",uc_output:"1f5fb",uc_match:"1f5fb",uc_greedy:"1f5fb",shortnames:[],category:"travel"},":mountain_cableway:":{uc_base:"1f6a0",uc_output:"1f6a0",uc_match:"1f6a0",uc_greedy:"1f6a0",shortnames:[],category:"travel"},":mountain_railway:":{uc_base:"1f69e",uc_output:"1f69e",uc_match:"1f69e",uc_greedy:"1f69e",shortnames:[],category:"travel"},":mountain_snow:":{uc_base:"1f3d4",uc_output:"1f3d4",uc_match:"1f3d4-fe0f",uc_greedy:"1f3d4-fe0f",shortnames:[":snow_capped_mountain:"],category:"travel"},":mouse2:":{uc_base:"1f401",uc_output:"1f401",uc_match:"1f401",uc_greedy:"1f401",shortnames:[],category:"nature"},":mouse:":{uc_base:"1f42d",uc_output:"1f42d",uc_match:"1f42d",uc_greedy:"1f42d",shortnames:[],category:"nature"},":mouse_three_button:":{uc_base:"1f5b1",uc_output:"1f5b1",uc_match:"1f5b1-fe0f",uc_greedy:"1f5b1-fe0f",shortnames:[":three_button_mouse:"],category:"objects"},":movie_camera:":{uc_base:"1f3a5",uc_output:"1f3a5",uc_match:"1f3a5",uc_greedy:"1f3a5",shortnames:[],category:"objects"},":moyai:":{uc_base:"1f5ff",uc_output:"1f5ff",uc_match:"1f5ff",uc_greedy:"1f5ff",shortnames:[],category:"travel"},":mrs_claus:":{uc_base:"1f936",uc_output:"1f936",uc_match:"1f936",uc_greedy:"1f936",shortnames:[":mother_christmas:"],category:"people"},":muscle:":{uc_base:"1f4aa",uc_output:"1f4aa",uc_match:"1f4aa",uc_greedy:"1f4aa",shortnames:[],category:"people"},":mushroom:":{uc_base:"1f344",uc_output:"1f344",uc_match:"1f344",uc_greedy:"1f344",shortnames:[],category:"nature"},":musical_keyboard:":{uc_base:"1f3b9",uc_output:"1f3b9",uc_match:"1f3b9",uc_greedy:"1f3b9",shortnames:[],category:"activity"},":musical_note:":{uc_base:"1f3b5",uc_output:"1f3b5",uc_match:"1f3b5",uc_greedy:"1f3b5",shortnames:[],category:"symbols"},":musical_score:":{uc_base:"1f3bc",uc_output:"1f3bc",uc_match:"1f3bc",uc_greedy:"1f3bc",shortnames:[],category:"activity"},":mute:":{uc_base:"1f507",uc_output:"1f507",uc_match:"1f507",uc_greedy:"1f507",shortnames:[],category:"symbols"},":nail_care:":{uc_base:"1f485",uc_output:"1f485",uc_match:"1f485",uc_greedy:"1f485",shortnames:[],category:"people"},":name_badge:":{uc_base:"1f4db",uc_output:"1f4db",uc_match:"1f4db",uc_greedy:"1f4db",shortnames:[],category:"symbols"},":nauseated_face:":{uc_base:"1f922",uc_output:"1f922",uc_match:"1f922",uc_greedy:"1f922",shortnames:[":sick:"],category:"people"},":nazar_amulet:":{uc_base:"1f9ff",uc_output:"1f9ff",uc_match:"1f9ff",uc_greedy:"1f9ff",shortnames:[],category:"objects"},":necktie:":{uc_base:"1f454",uc_output:"1f454",uc_match:"1f454",uc_greedy:"1f454",shortnames:[],category:"people"},":nerd:":{uc_base:"1f913",uc_output:"1f913",uc_match:"1f913",uc_greedy:"1f913",shortnames:[":nerd_face:"],category:"people"},":neutral_face:":{uc_base:"1f610",uc_output:"1f610",uc_match:"1f610-fe0f",uc_greedy:"1f610-fe0f",shortnames:[],category:"people"},":new:":{uc_base:"1f195",uc_output:"1f195",uc_match:"1f195",uc_greedy:"1f195",shortnames:[],category:"symbols"},":new_moon:":{uc_base:"1f311",uc_output:"1f311",uc_match:"1f311",uc_greedy:"1f311",shortnames:[],category:"nature"},":new_moon_with_face:":{uc_base:"1f31a",uc_output:"1f31a",uc_match:"1f31a",uc_greedy:"1f31a",shortnames:[],category:"nature"},":newspaper2:":{uc_base:"1f5de",uc_output:"1f5de",uc_match:"1f5de-fe0f",uc_greedy:"1f5de-fe0f",shortnames:[":rolled_up_newspaper:"],category:"objects"},":newspaper:":{uc_base:"1f4f0",uc_output:"1f4f0",uc_match:"1f4f0",uc_greedy:"1f4f0",shortnames:[],category:"objects"},":ng:":{uc_base:"1f196",uc_output:"1f196",uc_match:"1f196",uc_greedy:"1f196",shortnames:[],category:"symbols"},":night_with_stars:":{uc_base:"1f303",uc_output:"1f303",uc_match:"1f303",uc_greedy:"1f303",shortnames:[],category:"travel"},":no_bell:":{uc_base:"1f515",uc_output:"1f515",uc_match:"1f515",uc_greedy:"1f515",shortnames:[],category:"symbols"},":no_bicycles:":{uc_base:"1f6b3",uc_output:"1f6b3",uc_match:"1f6b3",uc_greedy:"1f6b3",shortnames:[],category:"symbols"},":no_entry_sign:":{uc_base:"1f6ab",uc_output:"1f6ab",uc_match:"1f6ab",uc_greedy:"1f6ab",shortnames:[],category:"symbols"},":no_mobile_phones:":{uc_base:"1f4f5",uc_output:"1f4f5",uc_match:"1f4f5",uc_greedy:"1f4f5",shortnames:[],category:"symbols"},":no_mouth:":{uc_base:"1f636",uc_output:"1f636",uc_match:"1f636",uc_greedy:"1f636",shortnames:[],category:"people"},":no_pedestrians:":{uc_base:"1f6b7",uc_output:"1f6b7",uc_match:"1f6b7",uc_greedy:"1f6b7",shortnames:[],category:"symbols"},":no_smoking:":{uc_base:"1f6ad",uc_output:"1f6ad",uc_match:"1f6ad-fe0f",uc_greedy:"1f6ad-fe0f",shortnames:[],category:"symbols"},":non-potable_water:":{uc_base:"1f6b1",uc_output:"1f6b1",uc_match:"1f6b1",uc_greedy:"1f6b1",shortnames:[],category:"symbols"},":nose:":{uc_base:"1f443",uc_output:"1f443",uc_match:"1f443",uc_greedy:"1f443",shortnames:[],category:"people"},":notebook:":{uc_base:"1f4d3",uc_output:"1f4d3",uc_match:"1f4d3",uc_greedy:"1f4d3",shortnames:[],category:"objects"},":notebook_with_decorative_cover:":{uc_base:"1f4d4",uc_output:"1f4d4",uc_match:"1f4d4",uc_greedy:"1f4d4",shortnames:[],category:"objects"},":notepad_spiral:":{uc_base:"1f5d2",uc_output:"1f5d2",uc_match:"1f5d2-fe0f",uc_greedy:"1f5d2-fe0f",shortnames:[":spiral_note_pad:"],category:"objects"},":notes:":{uc_base:"1f3b6",uc_output:"1f3b6",uc_match:"1f3b6",uc_greedy:"1f3b6",shortnames:[],category:"symbols"},":nut_and_bolt:":{uc_base:"1f529",uc_output:"1f529",uc_match:"1f529",uc_greedy:"1f529",shortnames:[],category:"objects"},":o2:":{uc_base:"1f17e",uc_output:"1f17e",uc_match:"1f17e-fe0f",uc_greedy:"1f17e-fe0f",shortnames:[],category:"symbols"},":ocean:":{uc_base:"1f30a",uc_output:"1f30a",uc_match:"1f30a",uc_greedy:"1f30a",shortnames:[],category:"nature"},":octagonal_sign:":{uc_base:"1f6d1",uc_output:"1f6d1",uc_match:"1f6d1",uc_greedy:"1f6d1",shortnames:[":stop_sign:"],category:"symbols"},":octopus:":{uc_base:"1f419",uc_output:"1f419",uc_match:"1f419",uc_greedy:"1f419",shortnames:[],category:"nature"},":oden:":{uc_base:"1f362",uc_output:"1f362",uc_match:"1f362",uc_greedy:"1f362",shortnames:[],category:"food"},":office:":{uc_base:"1f3e2",uc_output:"1f3e2",uc_match:"1f3e2",uc_greedy:"1f3e2",shortnames:[],category:"travel"},":oil:":{uc_base:"1f6e2",uc_output:"1f6e2",uc_match:"1f6e2-fe0f",uc_greedy:"1f6e2-fe0f",shortnames:[":oil_drum:"],category:"objects"},":ok:":{uc_base:"1f197",uc_output:"1f197",uc_match:"1f197",uc_greedy:"1f197",shortnames:[],category:"symbols"},":ok_hand:":{uc_base:"1f44c",uc_output:"1f44c",uc_match:"1f44c",uc_greedy:"1f44c",shortnames:[],category:"people"},":older_adult:":{uc_base:"1f9d3",uc_output:"1f9d3",uc_match:"1f9d3",uc_greedy:"1f9d3",shortnames:[],category:"people"},":older_man:":{uc_base:"1f474",uc_output:"1f474",uc_match:"1f474",uc_greedy:"1f474",shortnames:[],category:"people"},":older_woman:":{uc_base:"1f475",uc_output:"1f475",uc_match:"1f475",uc_greedy:"1f475",shortnames:[":grandma:"],category:"people"},":om_symbol:":{uc_base:"1f549",uc_output:"1f549",uc_match:"1f549-fe0f",uc_greedy:"1f549",shortnames:[],category:"symbols"},":on:":{uc_base:"1f51b",uc_output:"1f51b",uc_match:"1f51b",uc_greedy:"1f51b",shortnames:[],category:"symbols"},":oncoming_automobile:":{uc_base:"1f698",uc_output:"1f698",uc_match:"1f698-fe0f",uc_greedy:"1f698-fe0f",shortnames:[],category:"travel"},":oncoming_bus:":{uc_base:"1f68d",uc_output:"1f68d",uc_match:"1f68d-fe0f",uc_greedy:"1f68d-fe0f",shortnames:[],category:"travel"},":oncoming_police_car:":{uc_base:"1f694",uc_output:"1f694",uc_match:"1f694-fe0f",uc_greedy:"1f694-fe0f",shortnames:[],category:"travel"},":oncoming_taxi:":{uc_base:"1f696",uc_output:"1f696",uc_match:"1f696",uc_greedy:"1f696",shortnames:[],category:"travel"},":open_file_folder:":{uc_base:"1f4c2",uc_output:"1f4c2",uc_match:"1f4c2",uc_greedy:"1f4c2",shortnames:[],category:"objects"},":open_hands:":{uc_base:"1f450",uc_output:"1f450",uc_match:"1f450",uc_greedy:"1f450",shortnames:[],category:"people"},":open_mouth:":{uc_base:"1f62e",uc_output:"1f62e",uc_match:"1f62e",uc_greedy:"1f62e",shortnames:[],category:"people"},":orange_book:":{uc_base:"1f4d9",uc_output:"1f4d9",uc_match:"1f4d9",uc_greedy:"1f4d9",shortnames:[],category:"objects"},":orange_heart:":{uc_base:"1f9e1",uc_output:"1f9e1",uc_match:"1f9e1",uc_greedy:"1f9e1",shortnames:[],category:"symbols"},":outbox_tray:":{uc_base:"1f4e4",uc_output:"1f4e4",uc_match:"1f4e4-fe0f",uc_greedy:"1f4e4-fe0f",shortnames:[],category:"objects"},":owl:":{uc_base:"1f989",uc_output:"1f989",uc_match:"1f989",uc_greedy:"1f989",shortnames:[],category:"nature"},":ox:":{uc_base:"1f402",uc_output:"1f402",uc_match:"1f402",uc_greedy:"1f402",shortnames:[],category:"nature"},":package:":{uc_base:"1f4e6",uc_output:"1f4e6",uc_match:"1f4e6-fe0f",uc_greedy:"1f4e6-fe0f",shortnames:[],category:"objects"},":page_facing_up:":{uc_base:"1f4c4",uc_output:"1f4c4",uc_match:"1f4c4",uc_greedy:"1f4c4",shortnames:[],category:"objects"},":page_with_curl:":{uc_base:"1f4c3",uc_output:"1f4c3",uc_match:"1f4c3",uc_greedy:"1f4c3",shortnames:[],category:"objects"},":pager:":{uc_base:"1f4df",uc_output:"1f4df",uc_match:"1f4df-fe0f",uc_greedy:"1f4df-fe0f",shortnames:[],category:"objects"},":paintbrush:":{uc_base:"1f58c",uc_output:"1f58c",uc_match:"1f58c-fe0f",uc_greedy:"1f58c-fe0f",shortnames:[":lower_left_paintbrush:"],category:"objects"},":palm_tree:":{uc_base:"1f334",uc_output:"1f334",uc_match:"1f334",uc_greedy:"1f334",shortnames:[],category:"nature"},":palms_up_together:":{uc_base:"1f932",uc_output:"1f932",uc_match:"1f932",uc_greedy:"1f932",shortnames:[],category:"people"},":pancakes:":{uc_base:"1f95e",uc_output:"1f95e",uc_match:"1f95e",uc_greedy:"1f95e",shortnames:[],category:"food"},":panda_face:":{uc_base:"1f43c",uc_output:"1f43c",uc_match:"1f43c",uc_greedy:"1f43c",shortnames:[],category:"nature"},":paperclip:":{uc_base:"1f4ce",uc_output:"1f4ce",uc_match:"1f4ce",uc_greedy:"1f4ce",shortnames:[],category:"objects"},":paperclips:":{uc_base:"1f587",uc_output:"1f587",uc_match:"1f587-fe0f",uc_greedy:"1f587-fe0f",shortnames:[":linked_paperclips:"],category:"objects"},":park:":{uc_base:"1f3de",uc_output:"1f3de",uc_match:"1f3de-fe0f",uc_greedy:"1f3de-fe0f",shortnames:[":national_park:"],category:"travel"},":parking:":{uc_base:"1f17f",uc_output:"1f17f",uc_match:"1f17f-fe0f",uc_greedy:"1f17f-fe0f",shortnames:[],category:"symbols"},":parrot:":{uc_base:"1f99c",uc_output:"1f99c",uc_match:"1f99c",uc_greedy:"1f99c",shortnames:[],category:"nature"},":partying_face:":{uc_base:"1f973",uc_output:"1f973",uc_match:"1f973",uc_greedy:"1f973",shortnames:[],category:"people"},":passport_control:":{uc_base:"1f6c2",uc_output:"1f6c2",uc_match:"1f6c2",uc_greedy:"1f6c2",shortnames:[],category:"symbols"},":peach:":{uc_base:"1f351",uc_output:"1f351",uc_match:"1f351",uc_greedy:"1f351",shortnames:[],category:"food"},":peacock:":{uc_base:"1f99a",uc_output:"1f99a",uc_match:"1f99a",uc_greedy:"1f99a",shortnames:[],category:"nature"},":peanuts:":{uc_base:"1f95c",uc_output:"1f95c",uc_match:"1f95c",uc_greedy:"1f95c",shortnames:[":shelled_peanut:"],category:"food"},":pear:":{uc_base:"1f350",uc_output:"1f350",uc_match:"1f350",uc_greedy:"1f350",shortnames:[],category:"food"},":pen_ballpoint:":{uc_base:"1f58a",uc_output:"1f58a",uc_match:"1f58a-fe0f",uc_greedy:"1f58a-fe0f",shortnames:[":lower_left_ballpoint_pen:"],category:"objects"},":pen_fountain:":{uc_base:"1f58b",uc_output:"1f58b",uc_match:"1f58b-fe0f",uc_greedy:"1f58b-fe0f",shortnames:[":lower_left_fountain_pen:"],category:"objects"},":pencil:":{uc_base:"1f4dd",uc_output:"1f4dd",uc_match:"1f4dd",uc_greedy:"1f4dd",shortnames:[":memo:"],category:"objects"},":penguin:":{uc_base:"1f427",uc_output:"1f427",uc_match:"1f427",uc_greedy:"1f427",shortnames:[],category:"nature"},":pensive:":{uc_base:"1f614",uc_output:"1f614",uc_match:"1f614",uc_greedy:"1f614",shortnames:[],category:"people"},":people_with_bunny_ears_partying:":{uc_base:"1f46f",uc_output:"1f46f",uc_match:"1f46f",uc_greedy:"1f46f",shortnames:[":dancers:"],category:"people"},":people_wrestling:":{uc_base:"1f93c",uc_output:"1f93c",uc_match:"1f93c",uc_greedy:"1f93c",shortnames:[":wrestlers:",":wrestling:"],category:"activity"},":performing_arts:":{uc_base:"1f3ad",uc_output:"1f3ad",uc_match:"1f3ad-fe0f",uc_greedy:"1f3ad-fe0f",shortnames:[],category:"activity"},":persevere:":{uc_base:"1f623",uc_output:"1f623",uc_match:"1f623",uc_greedy:"1f623",shortnames:[],category:"people"},":person_biking:":{uc_base:"1f6b4",uc_output:"1f6b4",uc_match:"1f6b4",uc_greedy:"1f6b4",shortnames:[":bicyclist:"],category:"activity"},":person_bowing:":{uc_base:"1f647",uc_output:"1f647",uc_match:"1f647",uc_greedy:"1f647",shortnames:[":bow:"],category:"people"},":person_climbing:":{uc_base:"1f9d7",uc_output:"1f9d7",uc_match:"1f9d7",uc_greedy:"1f9d7",shortnames:[],category:"activity"},":person_doing_cartwheel:":{uc_base:"1f938",uc_output:"1f938",uc_match:"1f938",uc_greedy:"1f938",shortnames:[":cartwheel:"],category:"activity"},":person_facepalming:":{uc_base:"1f926",uc_output:"1f926",uc_match:"1f926",uc_greedy:"1f926",shortnames:[":face_palm:",":facepalm:"],category:"people"},":person_fencing:":{uc_base:"1f93a",uc_output:"1f93a",uc_match:"1f93a",uc_greedy:"1f93a",shortnames:[":fencer:",":fencing:"],category:"activity"},":person_frowning:":{uc_base:"1f64d",uc_output:"1f64d",uc_match:"1f64d",uc_greedy:"1f64d",shortnames:[],category:"people"},":person_gesturing_no:":{uc_base:"1f645",uc_output:"1f645",uc_match:"1f645",uc_greedy:"1f645",shortnames:[":no_good:"],category:"people"},":person_gesturing_ok:":{uc_base:"1f646",uc_output:"1f646",uc_match:"1f646",uc_greedy:"1f646",shortnames:[":ok_woman:"],category:"people"},":person_getting_haircut:":{uc_base:"1f487",uc_output:"1f487",uc_match:"1f487",uc_greedy:"1f487",shortnames:[":haircut:"],category:"people"},":person_getting_massage:":{uc_base:"1f486",uc_output:"1f486",uc_match:"1f486",uc_greedy:"1f486",shortnames:[":massage:"],category:"people"},":person_golfing:":{uc_base:"1f3cc",uc_output:"1f3cc",uc_match:"1f3cc-fe0f",uc_greedy:"1f3cc-fe0f",shortnames:[":golfer:"],category:"activity"},":person_in_lotus_position:":{uc_base:"1f9d8",uc_output:"1f9d8",uc_match:"1f9d8",uc_greedy:"1f9d8",shortnames:[],category:"activity"},":person_in_steamy_room:":{uc_base:"1f9d6",uc_output:"1f9d6",uc_match:"1f9d6",uc_greedy:"1f9d6",shortnames:[],category:"people"},":person_juggling:":{uc_base:"1f939",uc_output:"1f939",uc_match:"1f939",uc_greedy:"1f939",shortnames:[":juggling:",":juggler:"],category:"activity"},":person_lifting_weights:":{uc_base:"1f3cb",uc_output:"1f3cb",uc_match:"1f3cb-fe0f",uc_greedy:"1f3cb-fe0f",shortnames:[":lifter:",":weight_lifter:"],category:"activity"},":person_mountain_biking:":{uc_base:"1f6b5",uc_output:"1f6b5",uc_match:"1f6b5",uc_greedy:"1f6b5",shortnames:[":mountain_bicyclist:"],category:"activity"},":person_playing_handball:":{uc_base:"1f93e",uc_output:"1f93e",uc_match:"1f93e",uc_greedy:"1f93e",shortnames:[":handball:"],category:"activity"},":person_playing_water_polo:":{uc_base:"1f93d",uc_output:"1f93d",uc_match:"1f93d",uc_greedy:"1f93d",shortnames:[":water_polo:"],category:"activity"},":person_pouting:":{uc_base:"1f64e",uc_output:"1f64e",uc_match:"1f64e",uc_greedy:"1f64e",shortnames:[":person_with_pouting_face:"],category:"people"},":person_raising_hand:":{uc_base:"1f64b",uc_output:"1f64b",uc_match:"1f64b",uc_greedy:"1f64b",shortnames:[":raising_hand:"],category:"people"},":person_rowing_boat:":{uc_base:"1f6a3",uc_output:"1f6a3",uc_match:"1f6a3",uc_greedy:"1f6a3",shortnames:[":rowboat:"],category:"activity"},":person_running:":{uc_base:"1f3c3",uc_output:"1f3c3",uc_match:"1f3c3",uc_greedy:"1f3c3",shortnames:[":runner:"],category:"people"},":person_shrugging:":{uc_base:"1f937",uc_output:"1f937",uc_match:"1f937",uc_greedy:"1f937",shortnames:[":shrug:"],category:"people"},":person_surfing:":{uc_base:"1f3c4",uc_output:"1f3c4",uc_match:"1f3c4-fe0f",uc_greedy:"1f3c4-fe0f",shortnames:[":surfer:"],category:"activity"},":person_swimming:":{uc_base:"1f3ca",uc_output:"1f3ca",uc_match:"1f3ca-fe0f",uc_greedy:"1f3ca-fe0f",shortnames:[":swimmer:"],category:"activity"},":person_tipping_hand:":{uc_base:"1f481",uc_output:"1f481",uc_match:"1f481",uc_greedy:"1f481",shortnames:[":information_desk_person:"],category:"people"},":person_walking:":{uc_base:"1f6b6",uc_output:"1f6b6",uc_match:"1f6b6",uc_greedy:"1f6b6",shortnames:[":walking:"],category:"people"},":person_wearing_turban:":{uc_base:"1f473",uc_output:"1f473",uc_match:"1f473",uc_greedy:"1f473",shortnames:[":man_with_turban:"],category:"people"},":petri_dish:":{uc_base:"1f9eb",uc_output:"1f9eb",uc_match:"1f9eb",uc_greedy:"1f9eb",shortnames:[],category:"objects"},":pie:":{uc_base:"1f967",uc_output:"1f967",uc_match:"1f967",uc_greedy:"1f967",shortnames:[],category:"food"},":pig2:":{uc_base:"1f416",uc_output:"1f416",uc_match:"1f416",uc_greedy:"1f416",shortnames:[],category:"nature"},":pig:":{uc_base:"1f437",uc_output:"1f437",uc_match:"1f437",uc_greedy:"1f437",shortnames:[],category:"nature"},":pig_nose:":{uc_base:"1f43d",uc_output:"1f43d",uc_match:"1f43d",uc_greedy:"1f43d",shortnames:[],category:"nature"},":pill:":{uc_base:"1f48a",uc_output:"1f48a",uc_match:"1f48a",uc_greedy:"1f48a",shortnames:[],category:"objects"},":pineapple:":{uc_base:"1f34d",uc_output:"1f34d",uc_match:"1f34d",uc_greedy:"1f34d",shortnames:[],category:"food"},":ping_pong:":{uc_base:"1f3d3",uc_output:"1f3d3",uc_match:"1f3d3",uc_greedy:"1f3d3",shortnames:[":table_tennis:"],category:"activity"},":pizza:":{uc_base:"1f355",uc_output:"1f355",uc_match:"1f355",uc_greedy:"1f355",shortnames:[],category:"food"},":place_of_worship:":{uc_base:"1f6d0",uc_output:"1f6d0",uc_match:"1f6d0",uc_greedy:"1f6d0",shortnames:[":worship_symbol:"],category:"symbols"},":pleading_face:":{uc_base:"1f97a",uc_output:"1f97a",uc_match:"1f97a",uc_greedy:"1f97a",shortnames:[],category:"people"},":point_down:":{uc_base:"1f447",uc_output:"1f447",uc_match:"1f447-fe0f",uc_greedy:"1f447-fe0f",shortnames:[],category:"people"},":point_left:":{uc_base:"1f448",uc_output:"1f448",uc_match:"1f448-fe0f",uc_greedy:"1f448-fe0f",shortnames:[],category:"people"},":point_right:":{uc_base:"1f449",uc_output:"1f449",uc_match:"1f449-fe0f",uc_greedy:"1f449-fe0f",shortnames:[],category:"people"},":point_up_2:":{uc_base:"1f446",uc_output:"1f446",uc_match:"1f446-fe0f",uc_greedy:"1f446-fe0f",shortnames:[],category:"people"},":police_car:":{uc_base:"1f693",uc_output:"1f693",uc_match:"1f693",uc_greedy:"1f693",shortnames:[],category:"travel"},":police_officer:":{uc_base:"1f46e",uc_output:"1f46e",uc_match:"1f46e",uc_greedy:"1f46e",shortnames:[":cop:"],category:"people"},":poodle:":{uc_base:"1f429",uc_output:"1f429",uc_match:"1f429",uc_greedy:"1f429",shortnames:[],category:"nature"},":poop:":{uc_base:"1f4a9",uc_output:"1f4a9",uc_match:"1f4a9",uc_greedy:"1f4a9",shortnames:[":shit:",":hankey:",":poo:"],category:"people"},":popcorn:":{uc_base:"1f37f",uc_output:"1f37f",uc_match:"1f37f",uc_greedy:"1f37f",shortnames:[],category:"food"},":post_office:":{uc_base:"1f3e3",uc_output:"1f3e3",uc_match:"1f3e3",uc_greedy:"1f3e3",shortnames:[],category:"travel"},":postal_horn:":{uc_base:"1f4ef",uc_output:"1f4ef",uc_match:"1f4ef",uc_greedy:"1f4ef",shortnames:[],category:"objects"},":postbox:":{uc_base:"1f4ee",uc_output:"1f4ee",uc_match:"1f4ee",uc_greedy:"1f4ee",shortnames:[],category:"objects"},":potable_water:":{uc_base:"1f6b0",uc_output:"1f6b0",uc_match:"1f6b0",uc_greedy:"1f6b0",shortnames:[],category:"objects"},":potato:":{uc_base:"1f954",uc_output:"1f954",uc_match:"1f954",uc_greedy:"1f954",shortnames:[],category:"food"},":pouch:":{uc_base:"1f45d",uc_output:"1f45d",uc_match:"1f45d",uc_greedy:"1f45d",shortnames:[],category:"people"},":poultry_leg:":{uc_base:"1f357",uc_output:"1f357",uc_match:"1f357",uc_greedy:"1f357",shortnames:[],category:"food"},":pound:":{uc_base:"1f4b7",uc_output:"1f4b7",uc_match:"1f4b7",uc_greedy:"1f4b7",shortnames:[],category:"objects"},":pouting_cat:":{uc_base:"1f63e",uc_output:"1f63e",uc_match:"1f63e",uc_greedy:"1f63e",shortnames:[],category:"people"},":pray:":{uc_base:"1f64f",uc_output:"1f64f",uc_match:"1f64f",uc_greedy:"1f64f",shortnames:[],category:"people"},":prayer_beads:":{uc_base:"1f4ff",uc_output:"1f4ff",uc_match:"1f4ff",uc_greedy:"1f4ff",shortnames:[],category:"objects"},":pregnant_woman:":{uc_base:"1f930",uc_output:"1f930",uc_match:"1f930",uc_greedy:"1f930",shortnames:[":expecting_woman:"],category:"people"},":pretzel:":{uc_base:"1f968",uc_output:"1f968",uc_match:"1f968",uc_greedy:"1f968",shortnames:[],category:"food"},":prince:":{uc_base:"1f934",uc_output:"1f934",uc_match:"1f934",uc_greedy:"1f934",shortnames:[],category:"people"},":princess:":{uc_base:"1f478",uc_output:"1f478",uc_match:"1f478",uc_greedy:"1f478",shortnames:[],category:"people"},":printer:":{uc_base:"1f5a8",uc_output:"1f5a8",uc_match:"1f5a8-fe0f",uc_greedy:"1f5a8-fe0f",shortnames:[],category:"objects"},":projector:":{uc_base:"1f4fd",uc_output:"1f4fd",uc_match:"1f4fd-fe0f",uc_greedy:"1f4fd-fe0f",shortnames:[":film_projector:"],category:"objects"},":punch:":{uc_base:"1f44a",uc_output:"1f44a",uc_match:"1f44a",uc_greedy:"1f44a",shortnames:[],category:"people"},":purple_heart:":{uc_base:"1f49c",uc_output:"1f49c",uc_match:"1f49c",uc_greedy:"1f49c",shortnames:[],category:"symbols"},":purse:":{uc_base:"1f45b",uc_output:"1f45b",uc_match:"1f45b",uc_greedy:"1f45b",shortnames:[],category:"people"},":pushpin:":{uc_base:"1f4cc",uc_output:"1f4cc",uc_match:"1f4cc",uc_greedy:"1f4cc",shortnames:[],category:"objects"},":put_litter_in_its_place:":{uc_base:"1f6ae",uc_output:"1f6ae",uc_match:"1f6ae",uc_greedy:"1f6ae",shortnames:[],category:"symbols"},":rabbit2:":{uc_base:"1f407",uc_output:"1f407",uc_match:"1f407",uc_greedy:"1f407",shortnames:[],category:"nature"},":rabbit:":{uc_base:"1f430",uc_output:"1f430",uc_match:"1f430",uc_greedy:"1f430",shortnames:[],category:"nature"},":raccoon:":{uc_base:"1f99d",uc_output:"1f99d",uc_match:"1f99d",uc_greedy:"1f99d",shortnames:[],category:"nature"},":race_car:":{uc_base:"1f3ce",uc_output:"1f3ce",uc_match:"1f3ce-fe0f",uc_greedy:"1f3ce-fe0f",shortnames:[":racing_car:"],category:"travel"},":racehorse:":{uc_base:"1f40e",uc_output:"1f40e",uc_match:"1f40e",uc_greedy:"1f40e",shortnames:[],category:"nature"},":radio:":{uc_base:"1f4fb",uc_output:"1f4fb",uc_match:"1f4fb-fe0f",uc_greedy:"1f4fb-fe0f",shortnames:[],category:"objects"},":radio_button:":{uc_base:"1f518",uc_output:"1f518",uc_match:"1f518",uc_greedy:"1f518",shortnames:[],category:"symbols"},":rage:":{uc_base:"1f621",uc_output:"1f621",uc_match:"1f621",uc_greedy:"1f621",shortnames:[],category:"people"},":railway_car:":{uc_base:"1f683",uc_output:"1f683",uc_match:"1f683",uc_greedy:"1f683",shortnames:[],category:"travel"},":railway_track:":{uc_base:"1f6e4",uc_output:"1f6e4",uc_match:"1f6e4-fe0f",uc_greedy:"1f6e4-fe0f",shortnames:[":railroad_track:"],category:"travel"},":rainbow:":{uc_base:"1f308",uc_output:"1f308",uc_match:"1f308",uc_greedy:"1f308",shortnames:[],category:"nature"},":raised_back_of_hand:":{uc_base:"1f91a",uc_output:"1f91a",uc_match:"1f91a",uc_greedy:"1f91a",shortnames:[":back_of_hand:"],category:"people"},":raised_hands:":{uc_base:"1f64c",uc_output:"1f64c",uc_match:"1f64c",uc_greedy:"1f64c",shortnames:[],category:"people"},":ram:":{uc_base:"1f40f",uc_output:"1f40f",uc_match:"1f40f",uc_greedy:"1f40f",shortnames:[],category:"nature"},":ramen:":{uc_base:"1f35c",uc_output:"1f35c",uc_match:"1f35c",uc_greedy:"1f35c",shortnames:[],category:"food"},":rat:":{uc_base:"1f400",uc_output:"1f400",uc_match:"1f400",uc_greedy:"1f400",shortnames:[],category:"nature"},":receipt:":{uc_base:"1f9fe",uc_output:"1f9fe",uc_match:"1f9fe",uc_greedy:"1f9fe",shortnames:[],category:"objects"},":red_car:":{uc_base:"1f697",uc_output:"1f697",uc_match:"1f697",uc_greedy:"1f697",shortnames:[],category:"travel"},":red_circle:":{uc_base:"1f534",uc_output:"1f534",uc_match:"1f534",uc_greedy:"1f534",shortnames:[],category:"symbols"},":red_envelope:":{uc_base:"1f9e7",uc_output:"1f9e7",uc_match:"1f9e7",uc_greedy:"1f9e7",shortnames:[],category:"objects"},":red_haired:":{uc_base:"1f9b0",uc_output:"1f9b0",uc_match:"1f9b0",uc_greedy:"1f9b0",shortnames:[],category:"people"},":regional_indicator_a:":{uc_base:"1f1e6",uc_output:"1f1e6",uc_match:"1f1e6",uc_greedy:"1f1e6",shortnames:[],category:"regional"},":regional_indicator_b:":{uc_base:"1f1e7",uc_output:"1f1e7",uc_match:"1f1e7",uc_greedy:"1f1e7",shortnames:[],category:"regional"},":regional_indicator_c:":{uc_base:"1f1e8",uc_output:"1f1e8",uc_match:"1f1e8",uc_greedy:"1f1e8",shortnames:[],category:"regional"},":regional_indicator_d:":{uc_base:"1f1e9",uc_output:"1f1e9",uc_match:"1f1e9",uc_greedy:"1f1e9",shortnames:[],category:"regional"},":regional_indicator_e:":{uc_base:"1f1ea",uc_output:"1f1ea",uc_match:"1f1ea",uc_greedy:"1f1ea",shortnames:[],category:"regional"},":regional_indicator_f:":{uc_base:"1f1eb",uc_output:"1f1eb",uc_match:"1f1eb",uc_greedy:"1f1eb",shortnames:[],category:"regional"},":regional_indicator_g:":{uc_base:"1f1ec",uc_output:"1f1ec",uc_match:"1f1ec",uc_greedy:"1f1ec",shortnames:[],category:"regional"},":regional_indicator_h:":{uc_base:"1f1ed",uc_output:"1f1ed",uc_match:"1f1ed",uc_greedy:"1f1ed",shortnames:[],category:"regional"},":regional_indicator_i:":{uc_base:"1f1ee",uc_output:"1f1ee",uc_match:"1f1ee",uc_greedy:"1f1ee",shortnames:[],category:"regional"},":regional_indicator_j:":{uc_base:"1f1ef",uc_output:"1f1ef",uc_match:"1f1ef",uc_greedy:"1f1ef",shortnames:[],category:"regional"},":regional_indicator_k:":{uc_base:"1f1f0",uc_output:"1f1f0",uc_match:"1f1f0",uc_greedy:"1f1f0",shortnames:[],category:"regional"},":regional_indicator_l:":{uc_base:"1f1f1",uc_output:"1f1f1",uc_match:"1f1f1",uc_greedy:"1f1f1",shortnames:[],category:"regional"},":regional_indicator_m:":{uc_base:"1f1f2",uc_output:"1f1f2",uc_match:"1f1f2",uc_greedy:"1f1f2",shortnames:[],category:"regional"},":regional_indicator_n:":{uc_base:"1f1f3",uc_output:"1f1f3",uc_match:"1f1f3",uc_greedy:"1f1f3",shortnames:[],category:"regional"},":regional_indicator_o:":{uc_base:"1f1f4",uc_output:"1f1f4",uc_match:"1f1f4",uc_greedy:"1f1f4",shortnames:[],category:"regional"},":regional_indicator_p:":{uc_base:"1f1f5",uc_output:"1f1f5",uc_match:"1f1f5",uc_greedy:"1f1f5",shortnames:[],category:"regional"},":regional_indicator_q:":{uc_base:"1f1f6",uc_output:"1f1f6",uc_match:"1f1f6",uc_greedy:"1f1f6",shortnames:[],category:"regional"},":regional_indicator_r:":{uc_base:"1f1f7",uc_output:"1f1f7",uc_match:"1f1f7",uc_greedy:"1f1f7",shortnames:[],category:"regional"},":regional_indicator_s:":{uc_base:"1f1f8",uc_output:"1f1f8",uc_match:"1f1f8",uc_greedy:"1f1f8",shortnames:[],category:"regional"},":regional_indicator_t:":{uc_base:"1f1f9",uc_output:"1f1f9",uc_match:"1f1f9",uc_greedy:"1f1f9",shortnames:[],category:"regional"},":regional_indicator_u:":{uc_base:"1f1fa",uc_output:"1f1fa",uc_match:"1f1fa",uc_greedy:"1f1fa",shortnames:[],category:"regional"},":regional_indicator_v:":{uc_base:"1f1fb",uc_output:"1f1fb",uc_match:"1f1fb",uc_greedy:"1f1fb",shortnames:[],category:"regional"},":regional_indicator_w:":{uc_base:"1f1fc",uc_output:"1f1fc",uc_match:"1f1fc",uc_greedy:"1f1fc",shortnames:[],category:"regional"},":regional_indicator_x:":{uc_base:"1f1fd",uc_output:"1f1fd",uc_match:"1f1fd",uc_greedy:"1f1fd",shortnames:[],category:"regional"},":regional_indicator_y:":{uc_base:"1f1fe",uc_output:"1f1fe",uc_match:"1f1fe",uc_greedy:"1f1fe",shortnames:[],category:"regional"},":regional_indicator_z:":{uc_base:"1f1ff",uc_output:"1f1ff",uc_match:"1f1ff",uc_greedy:"1f1ff",shortnames:[],category:"regional"},":relieved:":{uc_base:"1f60c",uc_output:"1f60c",uc_match:"1f60c",uc_greedy:"1f60c",shortnames:[],category:"people"},":reminder_ribbon:":{uc_base:"1f397",uc_output:"1f397",uc_match:"1f397-fe0f",uc_greedy:"1f397-fe0f",shortnames:[],category:"activity"},":repeat:":{uc_base:"1f501",uc_output:"1f501",uc_match:"1f501",uc_greedy:"1f501",shortnames:[],category:"symbols"},":repeat_one:":{uc_base:"1f502",uc_output:"1f502",uc_match:"1f502",uc_greedy:"1f502",shortnames:[],category:"symbols"},":restroom:":{uc_base:"1f6bb",uc_output:"1f6bb",uc_match:"1f6bb",uc_greedy:"1f6bb",shortnames:[],category:"symbols"},":revolving_hearts:":{uc_base:"1f49e",uc_output:"1f49e",uc_match:"1f49e",uc_greedy:"1f49e",shortnames:[],category:"symbols"},":rhino:":{uc_base:"1f98f",uc_output:"1f98f",uc_match:"1f98f",uc_greedy:"1f98f",shortnames:[":rhinoceros:"],category:"nature"},":ribbon:":{uc_base:"1f380",uc_output:"1f380",uc_match:"1f380",uc_greedy:"1f380",shortnames:[],category:"objects"},":rice:":{uc_base:"1f35a",uc_output:"1f35a",uc_match:"1f35a",uc_greedy:"1f35a",shortnames:[],category:"food"},":rice_ball:":{uc_base:"1f359",uc_output:"1f359",uc_match:"1f359",uc_greedy:"1f359",shortnames:[],category:"food"},":rice_cracker:":{uc_base:"1f358",uc_output:"1f358",uc_match:"1f358",uc_greedy:"1f358",shortnames:[],category:"food"},":rice_scene:":{uc_base:"1f391",uc_output:"1f391",uc_match:"1f391",uc_greedy:"1f391",shortnames:[],category:"travel"},":right_facing_fist:":{uc_base:"1f91c",uc_output:"1f91c",uc_match:"1f91c",uc_greedy:"1f91c",shortnames:[":right_fist:"],category:"people"},":ring:":{uc_base:"1f48d",uc_output:"1f48d",uc_match:"1f48d",uc_greedy:"1f48d",shortnames:[],category:"people"},":robot:":{uc_base:"1f916",uc_output:"1f916",uc_match:"1f916",uc_greedy:"1f916",shortnames:[":robot_face:"],category:"people"},":rocket:":{uc_base:"1f680",uc_output:"1f680",uc_match:"1f680",uc_greedy:"1f680",shortnames:[],category:"travel"},":rofl:":{uc_base:"1f923",uc_output:"1f923",uc_match:"1f923",uc_greedy:"1f923",shortnames:[":rolling_on_the_floor_laughing:"],category:"people"},":roll_of_paper:":{uc_base:"1f9fb",uc_output:"1f9fb",uc_match:"1f9fb",uc_greedy:"1f9fb",shortnames:[],category:"objects"},":roller_coaster:":{uc_base:"1f3a2",uc_output:"1f3a2",uc_match:"1f3a2",uc_greedy:"1f3a2",shortnames:[],category:"travel"},":rolling_eyes:":{uc_base:"1f644",uc_output:"1f644",uc_match:"1f644",uc_greedy:"1f644",shortnames:[":face_with_rolling_eyes:"],category:"people"},":rooster:":{uc_base:"1f413",uc_output:"1f413",uc_match:"1f413",uc_greedy:"1f413",shortnames:[],category:"nature"},":rose:":{uc_base:"1f339",uc_output:"1f339",uc_match:"1f339",uc_greedy:"1f339",shortnames:[],category:"nature"},":rosette:":{uc_base:"1f3f5",uc_output:"1f3f5",uc_match:"1f3f5-fe0f",uc_greedy:"1f3f5-fe0f",shortnames:[],category:"activity"},":rotating_light:":{uc_base:"1f6a8",uc_output:"1f6a8",uc_match:"1f6a8",uc_greedy:"1f6a8",shortnames:[],category:"travel"},":round_pushpin:":{uc_base:"1f4cd",uc_output:"1f4cd",uc_match:"1f4cd",uc_greedy:"1f4cd",shortnames:[],category:"objects"},":rugby_football:":{uc_base:"1f3c9",uc_output:"1f3c9",uc_match:"1f3c9",uc_greedy:"1f3c9",shortnames:[],category:"activity"},":running_shirt_with_sash:":{uc_base:"1f3bd",uc_output:"1f3bd",uc_match:"1f3bd",uc_greedy:"1f3bd",shortnames:[],category:"activity"},":sa:":{uc_base:"1f202",uc_output:"1f202",uc_match:"1f202-fe0f",uc_greedy:"1f202-fe0f",shortnames:[],category:"symbols"},":safety_pin:":{uc_base:"1f9f7",uc_output:"1f9f7",uc_match:"1f9f7",uc_greedy:"1f9f7",shortnames:[],category:"objects"},":sake:":{uc_base:"1f376",uc_output:"1f376",uc_match:"1f376",uc_greedy:"1f376",shortnames:[],category:"food"},":salad:":{uc_base:"1f957",uc_output:"1f957",uc_match:"1f957",uc_greedy:"1f957",shortnames:[":green_salad:"],category:"food"},":salt:":{uc_base:"1f9c2",uc_output:"1f9c2",uc_match:"1f9c2",uc_greedy:"1f9c2",shortnames:[],category:"food"},":sandal:":{uc_base:"1f461",uc_output:"1f461",uc_match:"1f461",uc_greedy:"1f461",shortnames:[],category:"people"},":sandwich:":{uc_base:"1f96a",uc_output:"1f96a",uc_match:"1f96a",uc_greedy:"1f96a",shortnames:[],category:"food"},":santa:":{uc_base:"1f385",uc_output:"1f385",uc_match:"1f385",uc_greedy:"1f385",shortnames:[],category:"people"},":satellite:":{uc_base:"1f4e1",uc_output:"1f4e1",uc_match:"1f4e1",uc_greedy:"1f4e1",shortnames:[],category:"objects"},":satellite_orbital:":{uc_base:"1f6f0",uc_output:"1f6f0",uc_match:"1f6f0-fe0f",uc_greedy:"1f6f0-fe0f",shortnames:[],category:"travel"},":sauropod:":{uc_base:"1f995",uc_output:"1f995",uc_match:"1f995",uc_greedy:"1f995",shortnames:[],category:"nature"},":saxophone:":{uc_base:"1f3b7",uc_output:"1f3b7",uc_match:"1f3b7",uc_greedy:"1f3b7",shortnames:[],category:"activity"},":scarf:":{uc_base:"1f9e3",uc_output:"1f9e3",uc_match:"1f9e3",uc_greedy:"1f9e3",shortnames:[],category:"people"},":school:":{uc_base:"1f3eb",uc_output:"1f3eb",uc_match:"1f3eb",uc_greedy:"1f3eb",shortnames:[],category:"travel"},":school_satchel:":{uc_base:"1f392",uc_output:"1f392",uc_match:"1f392",uc_greedy:"1f392",shortnames:[],category:"people"},":scooter:":{uc_base:"1f6f4",uc_output:"1f6f4",uc_match:"1f6f4",uc_greedy:"1f6f4",shortnames:[],category:"travel"},":scorpion:":{uc_base:"1f982",uc_output:"1f982",uc_match:"1f982",uc_greedy:"1f982",shortnames:[],category:"nature"},":scream:":{uc_base:"1f631",uc_output:"1f631",uc_match:"1f631",uc_greedy:"1f631",shortnames:[],category:"people"},":scream_cat:":{uc_base:"1f640",uc_output:"1f640",uc_match:"1f640",uc_greedy:"1f640",shortnames:[],category:"people"},":scroll:":{uc_base:"1f4dc",uc_output:"1f4dc",uc_match:"1f4dc",uc_greedy:"1f4dc",shortnames:[],category:"objects"},":seat:":{uc_base:"1f4ba",uc_output:"1f4ba",uc_match:"1f4ba",uc_greedy:"1f4ba",shortnames:[],category:"travel"},":second_place:":{uc_base:"1f948",uc_output:"1f948",uc_match:"1f948",uc_greedy:"1f948",shortnames:[":second_place_medal:"],category:"activity"},":see_no_evil:":{uc_base:"1f648",uc_output:"1f648",uc_match:"1f648",uc_greedy:"1f648",shortnames:[],category:"nature"},":seedling:":{uc_base:"1f331",uc_output:"1f331",uc_match:"1f331",uc_greedy:"1f331",shortnames:[],category:"nature"},":selfie:":{uc_base:"1f933",uc_output:"1f933",uc_match:"1f933",uc_greedy:"1f933",shortnames:[],category:"people"},":shallow_pan_of_food:":{uc_base:"1f958",uc_output:"1f958",uc_match:"1f958",uc_greedy:"1f958",shortnames:[":paella:"],category:"food"},":shark:":{uc_base:"1f988",uc_output:"1f988",uc_match:"1f988",uc_greedy:"1f988",shortnames:[],category:"nature"},":shaved_ice:":{uc_base:"1f367",uc_output:"1f367",uc_match:"1f367",uc_greedy:"1f367",shortnames:[],category:"food"},":sheep:":{uc_base:"1f411",uc_output:"1f411",uc_match:"1f411",uc_greedy:"1f411",shortnames:[],category:"nature"},":shell:":{uc_base:"1f41a",uc_output:"1f41a",uc_match:"1f41a",uc_greedy:"1f41a",shortnames:[],category:"nature"},":shield:":{uc_base:"1f6e1",uc_output:"1f6e1",uc_match:"1f6e1-fe0f",uc_greedy:"1f6e1-fe0f",shortnames:[],category:"objects"},":ship:":{uc_base:"1f6a2",uc_output:"1f6a2",uc_match:"1f6a2",uc_greedy:"1f6a2",shortnames:[],category:"travel"},":shirt:":{uc_base:"1f455",uc_output:"1f455",uc_match:"1f455",uc_greedy:"1f455",shortnames:[],category:"people"},":shopping_bags:":{uc_base:"1f6cd",uc_output:"1f6cd",uc_match:"1f6cd-fe0f",uc_greedy:"1f6cd-fe0f",shortnames:[],category:"objects"},":shopping_cart:":{uc_base:"1f6d2",uc_output:"1f6d2",uc_match:"1f6d2",uc_greedy:"1f6d2",shortnames:[":shopping_trolley:"],category:"objects"},":shower:":{uc_base:"1f6bf",uc_output:"1f6bf",uc_match:"1f6bf",uc_greedy:"1f6bf",shortnames:[],category:"objects"},":shrimp:":{uc_base:"1f990",uc_output:"1f990",uc_match:"1f990",uc_greedy:"1f990",shortnames:[],category:"nature"},":shushing_face:":{uc_base:"1f92b",uc_output:"1f92b",uc_match:"1f92b",uc_greedy:"1f92b",shortnames:[],category:"people"},":signal_strength:":{uc_base:"1f4f6",uc_output:"1f4f6",uc_match:"1f4f6",uc_greedy:"1f4f6",shortnames:[],category:"symbols"},":six_pointed_star:":{uc_base:"1f52f",uc_output:"1f52f",uc_match:"1f52f",uc_greedy:"1f52f",shortnames:[],category:"symbols"},":skateboard:":{uc_base:"1f6f9",uc_output:"1f6f9",uc_match:"1f6f9",uc_greedy:"1f6f9",shortnames:[],category:"activity"},":ski:":{uc_base:"1f3bf",uc_output:"1f3bf",uc_match:"1f3bf",uc_greedy:"1f3bf",shortnames:[],category:"activity"},":skull:":{uc_base:"1f480",uc_output:"1f480",uc_match:"1f480",uc_greedy:"1f480",shortnames:[":skeleton:"],category:"people"},":sled:":{uc_base:"1f6f7",uc_output:"1f6f7",uc_match:"1f6f7",uc_greedy:"1f6f7",shortnames:[],category:"activity"},":sleeping:":{uc_base:"1f634",uc_output:"1f634",uc_match:"1f634",uc_greedy:"1f634",shortnames:[],category:"people"},":sleeping_accommodation:":{uc_base:"1f6cc",uc_output:"1f6cc",uc_match:"1f6cc",uc_greedy:"1f6cc",shortnames:[],category:"objects"},":sleepy:":{uc_base:"1f62a",uc_output:"1f62a",uc_match:"1f62a",uc_greedy:"1f62a",shortnames:[],category:"people"},":slight_frown:":{uc_base:"1f641",uc_output:"1f641",uc_match:"1f641",uc_greedy:"1f641",shortnames:[":slightly_frowning_face:"],category:"people"},":slight_smile:":{uc_base:"1f642",uc_output:"1f642",uc_match:"1f642",uc_greedy:"1f642",shortnames:[":slightly_smiling_face:"],category:"people"},":slot_machine:":{uc_base:"1f3b0",uc_output:"1f3b0",uc_match:"1f3b0",uc_greedy:"1f3b0",shortnames:[],category:"activity"},":small_blue_diamond:":{uc_base:"1f539",uc_output:"1f539",uc_match:"1f539",uc_greedy:"1f539",shortnames:[],category:"symbols"},":small_orange_diamond:":{uc_base:"1f538",uc_output:"1f538",uc_match:"1f538",uc_greedy:"1f538",shortnames:[],category:"symbols"},":small_red_triangle:":{uc_base:"1f53a",uc_output:"1f53a",uc_match:"1f53a",uc_greedy:"1f53a",shortnames:[],category:"symbols"},":small_red_triangle_down:":{uc_base:"1f53b",uc_output:"1f53b",uc_match:"1f53b",uc_greedy:"1f53b",shortnames:[],category:"symbols"},":smile:":{uc_base:"1f604",uc_output:"1f604",uc_match:"1f604",uc_greedy:"1f604",shortnames:[],category:"people"},":smile_cat:":{uc_base:"1f638",uc_output:"1f638",uc_match:"1f638",uc_greedy:"1f638",shortnames:[],category:"people"},":smiley:":{uc_base:"1f603",uc_output:"1f603",uc_match:"1f603",uc_greedy:"1f603",shortnames:[],category:"people"},":smiley_cat:":{uc_base:"1f63a",uc_output:"1f63a",uc_match:"1f63a",uc_greedy:"1f63a",shortnames:[],category:"people"},":smiling_face_with_3_hearts:":{uc_base:"1f970",uc_output:"1f970",uc_match:"1f970",uc_greedy:"1f970",shortnames:[],category:"people"},":smiling_imp:":{uc_base:"1f608",uc_output:"1f608",uc_match:"1f608",uc_greedy:"1f608",shortnames:[],category:"people"},":smirk:":{uc_base:"1f60f",uc_output:"1f60f",uc_match:"1f60f",uc_greedy:"1f60f",shortnames:[],category:"people"},":smirk_cat:":{uc_base:"1f63c",uc_output:"1f63c",uc_match:"1f63c",uc_greedy:"1f63c",shortnames:[],category:"people"},":smoking:":{uc_base:"1f6ac",uc_output:"1f6ac",uc_match:"1f6ac",uc_greedy:"1f6ac",shortnames:[],category:"objects"},":snail:":{uc_base:"1f40c",uc_output:"1f40c",uc_match:"1f40c",uc_greedy:"1f40c",shortnames:[],category:"nature"},":snake:":{uc_base:"1f40d",uc_output:"1f40d",uc_match:"1f40d",uc_greedy:"1f40d",shortnames:[],category:"nature"},":sneezing_face:":{uc_base:"1f927",uc_output:"1f927",uc_match:"1f927",uc_greedy:"1f927",shortnames:[":sneeze:"],category:"people"},":snowboarder:":{uc_base:"1f3c2",uc_output:"1f3c2",uc_match:"1f3c2-fe0f",uc_greedy:"1f3c2-fe0f",shortnames:[],category:"activity"},":soap:":{uc_base:"1f9fc",uc_output:"1f9fc",uc_match:"1f9fc",uc_greedy:"1f9fc",shortnames:[],category:"objects"},":sob:":{uc_base:"1f62d",uc_output:"1f62d",uc_match:"1f62d",uc_greedy:"1f62d",shortnames:[],category:"people"},":socks:":{uc_base:"1f9e6",uc_output:"1f9e6",uc_match:"1f9e6",uc_greedy:"1f9e6",shortnames:[],category:"people"},":softball:":{uc_base:"1f94e",uc_output:"1f94e",uc_match:"1f94e",uc_greedy:"1f94e",shortnames:[],category:"activity"},":soon:":{uc_base:"1f51c",uc_output:"1f51c",uc_match:"1f51c",uc_greedy:"1f51c",shortnames:[],category:"symbols"},":sos:":{uc_base:"1f198",uc_output:"1f198",uc_match:"1f198",uc_greedy:"1f198",shortnames:[],category:"symbols"},":sound:":{uc_base:"1f509",uc_output:"1f509",uc_match:"1f509",uc_greedy:"1f509",shortnames:[],category:"symbols"},":space_invader:":{uc_base:"1f47e",uc_output:"1f47e",uc_match:"1f47e",uc_greedy:"1f47e",shortnames:[],category:"people"},":spaghetti:":{uc_base:"1f35d",uc_output:"1f35d",uc_match:"1f35d",uc_greedy:"1f35d",shortnames:[],category:"food"},":sparkler:":{uc_base:"1f387",uc_output:"1f387",uc_match:"1f387",uc_greedy:"1f387",shortnames:[],category:"travel"},":sparkling_heart:":{uc_base:"1f496",uc_output:"1f496",uc_match:"1f496",uc_greedy:"1f496",shortnames:[],category:"symbols"},":speak_no_evil:":{uc_base:"1f64a",uc_output:"1f64a",uc_match:"1f64a",uc_greedy:"1f64a",shortnames:[],category:"nature"},":speaker:":{uc_base:"1f508",uc_output:"1f508",uc_match:"1f508-fe0f",uc_greedy:"1f508-fe0f",shortnames:[],category:"symbols"},":speaking_head:":{uc_base:"1f5e3",uc_output:"1f5e3",uc_match:"1f5e3-fe0f",uc_greedy:"1f5e3-fe0f",shortnames:[":speaking_head_in_silhouette:"],category:"people"},":speech_balloon:":{uc_base:"1f4ac",uc_output:"1f4ac",uc_match:"1f4ac",uc_greedy:"1f4ac",shortnames:[],category:"symbols"},":speech_left:":{uc_base:"1f5e8",uc_output:"1f5e8",uc_match:"1f5e8-fe0f",uc_greedy:"1f5e8-fe0f",shortnames:[":left_speech_bubble:"],category:"symbols"},":speedboat:":{uc_base:"1f6a4",uc_output:"1f6a4",uc_match:"1f6a4",uc_greedy:"1f6a4",shortnames:[],category:"travel"},":spider:":{uc_base:"1f577",uc_output:"1f577",uc_match:"1f577-fe0f",uc_greedy:"1f577-fe0f",shortnames:[],category:"nature"},":spider_web:":{uc_base:"1f578",uc_output:"1f578",uc_match:"1f578-fe0f",uc_greedy:"1f578-fe0f",shortnames:[],category:"nature"},":sponge:":{uc_base:"1f9fd",uc_output:"1f9fd",uc_match:"1f9fd",uc_greedy:"1f9fd",shortnames:[],category:"objects"},":spoon:":{uc_base:"1f944",uc_output:"1f944",uc_match:"1f944",uc_greedy:"1f944",shortnames:[],category:"food"},":squeeze_bottle:":{uc_base:"1f9f4",uc_output:"1f9f4",uc_match:"1f9f4",uc_greedy:"1f9f4",shortnames:[],category:"objects"},":squid:":{uc_base:"1f991",uc_output:"1f991",uc_match:"1f991",uc_greedy:"1f991",shortnames:[],category:"nature"},":stadium:":{uc_base:"1f3df",uc_output:"1f3df",uc_match:"1f3df-fe0f",uc_greedy:"1f3df-fe0f",shortnames:[],category:"travel"},":star2:":{uc_base:"1f31f",uc_output:"1f31f",uc_match:"1f31f",uc_greedy:"1f31f",shortnames:[],category:"nature"},":star_struck:":{uc_base:"1f929",uc_output:"1f929",uc_match:"1f929",uc_greedy:"1f929",shortnames:[],category:"people"},":stars:":{uc_base:"1f320",uc_output:"1f320",uc_match:"1f320",uc_greedy:"1f320",shortnames:[],category:"travel"},":station:":{uc_base:"1f689",uc_output:"1f689",uc_match:"1f689",uc_greedy:"1f689",shortnames:[],category:"travel"},":statue_of_liberty:":{uc_base:"1f5fd",uc_output:"1f5fd",uc_match:"1f5fd",uc_greedy:"1f5fd",shortnames:[],category:"travel"},":steam_locomotive:":{uc_base:"1f682",uc_output:"1f682",uc_match:"1f682",uc_greedy:"1f682",shortnames:[],category:"travel"},":stew:":{uc_base:"1f372",uc_output:"1f372",uc_match:"1f372",uc_greedy:"1f372",shortnames:[],category:"food"},":straight_ruler:":{uc_base:"1f4cf",uc_output:"1f4cf",uc_match:"1f4cf",uc_greedy:"1f4cf",shortnames:[],category:"objects"},":strawberry:":{uc_base:"1f353",uc_output:"1f353",uc_match:"1f353",uc_greedy:"1f353",shortnames:[],category:"food"},":stuck_out_tongue:":{uc_base:"1f61b",uc_output:"1f61b",uc_match:"1f61b",uc_greedy:"1f61b",shortnames:[],category:"people"},":stuck_out_tongue_closed_eyes:":{uc_base:"1f61d",uc_output:"1f61d",uc_match:"1f61d",uc_greedy:"1f61d",shortnames:[],category:"people"},":stuck_out_tongue_winking_eye:":{uc_base:"1f61c",uc_output:"1f61c",uc_match:"1f61c",uc_greedy:"1f61c",shortnames:[],category:"people"},":stuffed_flatbread:":{uc_base:"1f959",uc_output:"1f959",uc_match:"1f959",uc_greedy:"1f959",shortnames:[":stuffed_pita:"],category:"food"},":sun_with_face:":{uc_base:"1f31e",uc_output:"1f31e",uc_match:"1f31e",uc_greedy:"1f31e",shortnames:[],category:"nature"},":sunflower:":{uc_base:"1f33b",uc_output:"1f33b",uc_match:"1f33b",uc_greedy:"1f33b",shortnames:[],category:"nature"},":sunglasses:":{uc_base:"1f60e",uc_output:"1f60e",uc_match:"1f60e",uc_greedy:"1f60e",shortnames:[],category:"people"},":sunrise:":{uc_base:"1f305",uc_output:"1f305",uc_match:"1f305",uc_greedy:"1f305",shortnames:[],category:"travel"},":sunrise_over_mountains:":{uc_base:"1f304",uc_output:"1f304",uc_match:"1f304",uc_greedy:"1f304",shortnames:[],category:"travel"},":superhero:":{uc_base:"1f9b8",uc_output:"1f9b8",uc_match:"1f9b8",uc_greedy:"1f9b8",shortnames:[],category:"people"},":supervillain:":{uc_base:"1f9b9",uc_output:"1f9b9",uc_match:"1f9b9",uc_greedy:"1f9b9",shortnames:[],category:"people"},":sushi:":{uc_base:"1f363",uc_output:"1f363",uc_match:"1f363",uc_greedy:"1f363",shortnames:[],category:"food"},":suspension_railway:":{uc_base:"1f69f",uc_output:"1f69f",uc_match:"1f69f",uc_greedy:"1f69f",shortnames:[],category:"travel"},":swan:":{uc_base:"1f9a2",uc_output:"1f9a2",uc_match:"1f9a2",uc_greedy:"1f9a2",shortnames:[],category:"nature"},":sweat:":{uc_base:"1f613",uc_output:"1f613",uc_match:"1f613",uc_greedy:"1f613",shortnames:[],category:"people"},":sweat_drops:":{uc_base:"1f4a6",uc_output:"1f4a6",uc_match:"1f4a6",uc_greedy:"1f4a6",shortnames:[],category:"nature"},":sweat_smile:":{uc_base:"1f605",uc_output:"1f605",uc_match:"1f605",uc_greedy:"1f605",shortnames:[],category:"people"},":sweet_potato:":{uc_base:"1f360",uc_output:"1f360",uc_match:"1f360",uc_greedy:"1f360",shortnames:[],category:"food"},":symbols:":{uc_base:"1f523",uc_output:"1f523",uc_match:"1f523",uc_greedy:"1f523",shortnames:[],category:"symbols"},":synagogue:":{uc_base:"1f54d",uc_output:"1f54d",uc_match:"1f54d",uc_greedy:"1f54d",shortnames:[],category:"travel"},":syringe:":{uc_base:"1f489",uc_output:"1f489",uc_match:"1f489",uc_greedy:"1f489",shortnames:[],category:"objects"},":t_rex:":{uc_base:"1f996",uc_output:"1f996",uc_match:"1f996",uc_greedy:"1f996",shortnames:[],category:"nature"},":taco:":{uc_base:"1f32e",uc_output:"1f32e",uc_match:"1f32e",uc_greedy:"1f32e",shortnames:[],category:"food"},":tada:":{uc_base:"1f389",uc_output:"1f389",uc_match:"1f389",uc_greedy:"1f389",shortnames:[],category:"objects"},":takeout_box:":{uc_base:"1f961",uc_output:"1f961",uc_match:"1f961",uc_greedy:"1f961",shortnames:[],category:"food"},":tanabata_tree:":{uc_base:"1f38b",uc_output:"1f38b",uc_match:"1f38b",uc_greedy:"1f38b",shortnames:[],category:"nature"},":tangerine:":{uc_base:"1f34a",uc_output:"1f34a",uc_match:"1f34a",uc_greedy:"1f34a",shortnames:[],category:"food"},":taxi:":{uc_base:"1f695",uc_output:"1f695",uc_match:"1f695",uc_greedy:"1f695",shortnames:[],category:"travel"},":tea:":{uc_base:"1f375",uc_output:"1f375",uc_match:"1f375",uc_greedy:"1f375",shortnames:[],category:"food"},":teddy_bear:":{uc_base:"1f9f8",uc_output:"1f9f8",uc_match:"1f9f8",uc_greedy:"1f9f8",shortnames:[],category:"objects"},":telephone_receiver:":{uc_base:"1f4de",uc_output:"1f4de",uc_match:"1f4de",uc_greedy:"1f4de",shortnames:[],category:"objects"},":telescope:":{uc_base:"1f52d",uc_output:"1f52d",uc_match:"1f52d",uc_greedy:"1f52d",shortnames:[],category:"objects"},":tennis:":{uc_base:"1f3be",uc_output:"1f3be",uc_match:"1f3be",uc_greedy:"1f3be",shortnames:[],category:"activity"},":test_tube:":{uc_base:"1f9ea",uc_output:"1f9ea",uc_match:"1f9ea",uc_greedy:"1f9ea",shortnames:[],category:"objects"},":thermometer:":{uc_base:"1f321",uc_output:"1f321",uc_match:"1f321-fe0f",uc_greedy:"1f321-fe0f",shortnames:[],category:"objects"},":thermometer_face:":{uc_base:"1f912",uc_output:"1f912",uc_match:"1f912",uc_greedy:"1f912",shortnames:[":face_with_thermometer:"],category:"people"},":thinking:":{uc_base:"1f914",uc_output:"1f914",uc_match:"1f914",uc_greedy:"1f914",shortnames:[":thinking_face:"],category:"people"},":third_place:":{uc_base:"1f949",uc_output:"1f949",uc_match:"1f949",uc_greedy:"1f949",shortnames:[":third_place_medal:"],category:"activity"},":thought_balloon:":{uc_base:"1f4ad",uc_output:"1f4ad",uc_match:"1f4ad",uc_greedy:"1f4ad",shortnames:[],category:"symbols"},":thread:":{uc_base:"1f9f5",uc_output:"1f9f5",uc_match:"1f9f5",uc_greedy:"1f9f5",shortnames:[],category:"objects"},":thumbsdown:":{uc_base:"1f44e",uc_output:"1f44e",uc_match:"1f44e-fe0f",uc_greedy:"1f44e-fe0f",shortnames:[":-1:",":thumbdown:"],category:"people"},":thumbsup:":{uc_base:"1f44d",uc_output:"1f44d",uc_match:"1f44d-fe0f",uc_greedy:"1f44d-fe0f",shortnames:[":+1:",":thumbup:"],category:"people"},":ticket:":{uc_base:"1f3ab",uc_output:"1f3ab",uc_match:"1f3ab",uc_greedy:"1f3ab",shortnames:[],category:"activity"},":tickets:":{uc_base:"1f39f",uc_output:"1f39f",uc_match:"1f39f-fe0f",uc_greedy:"1f39f-fe0f",shortnames:[":admission_tickets:"],category:"activity"},":tiger2:":{uc_base:"1f405",uc_output:"1f405",uc_match:"1f405",uc_greedy:"1f405",shortnames:[],category:"nature"},":tiger:":{uc_base:"1f42f",uc_output:"1f42f",uc_match:"1f42f",uc_greedy:"1f42f",shortnames:[],category:"nature"},":tired_face:":{uc_base:"1f62b",uc_output:"1f62b",uc_match:"1f62b",uc_greedy:"1f62b",shortnames:[],category:"people"},":toilet:":{uc_base:"1f6bd",uc_output:"1f6bd",uc_match:"1f6bd",uc_greedy:"1f6bd",shortnames:[],category:"objects"},":tokyo_tower:":{uc_base:"1f5fc",uc_output:"1f5fc",uc_match:"1f5fc",uc_greedy:"1f5fc",shortnames:[],category:"travel"},":tomato:":{uc_base:"1f345",uc_output:"1f345",uc_match:"1f345",uc_greedy:"1f345",shortnames:[],category:"food"},":tone1:":{uc_base:"1f3fb",uc_output:"1f3fb",uc_match:"1f3fb",uc_greedy:"1f3fb",shortnames:[],category:"modifier"},":tone2:":{uc_base:"1f3fc",uc_output:"1f3fc",uc_match:"1f3fc",uc_greedy:"1f3fc",shortnames:[],category:"modifier"},":tone3:":{uc_base:"1f3fd",uc_output:"1f3fd",uc_match:"1f3fd",uc_greedy:"1f3fd",shortnames:[],category:"modifier"},":tone4:":{uc_base:"1f3fe",uc_output:"1f3fe",uc_match:"1f3fe",uc_greedy:"1f3fe",shortnames:[],category:"modifier"},":tone5:":{uc_base:"1f3ff",uc_output:"1f3ff",uc_match:"1f3ff",uc_greedy:"1f3ff",shortnames:[],category:"modifier"},":tongue:":{uc_base:"1f445",uc_output:"1f445",uc_match:"1f445",uc_greedy:"1f445",shortnames:[],category:"people"},":toolbox:":{uc_base:"1f9f0",uc_output:"1f9f0",uc_match:"1f9f0",uc_greedy:"1f9f0",shortnames:[],category:"objects"},":tools:":{uc_base:"1f6e0",uc_output:"1f6e0",uc_match:"1f6e0-fe0f",uc_greedy:"1f6e0-fe0f",shortnames:[":hammer_and_wrench:"],category:"objects"},":tooth:":{uc_base:"1f9b7",uc_output:"1f9b7",uc_match:"1f9b7",uc_greedy:"1f9b7",shortnames:[],category:"people"},":top:":{uc_base:"1f51d",uc_output:"1f51d",uc_match:"1f51d",uc_greedy:"1f51d",shortnames:[],category:"symbols"},":tophat:":{uc_base:"1f3a9",uc_output:"1f3a9",uc_match:"1f3a9",uc_greedy:"1f3a9",shortnames:[],category:"people"},":trackball:":{uc_base:"1f5b2",uc_output:"1f5b2",uc_match:"1f5b2-fe0f",uc_greedy:"1f5b2-fe0f",shortnames:[],category:"objects"},":tractor:":{uc_base:"1f69c",uc_output:"1f69c",uc_match:"1f69c",uc_greedy:"1f69c",shortnames:[],category:"travel"},":traffic_light:":{uc_base:"1f6a5",uc_output:"1f6a5",uc_match:"1f6a5",uc_greedy:"1f6a5",shortnames:[],category:"travel"},":train2:":{uc_base:"1f686",uc_output:"1f686",uc_match:"1f686",uc_greedy:"1f686",shortnames:[],category:"travel"},":train:":{uc_base:"1f68b",uc_output:"1f68b",uc_match:"1f68b",uc_greedy:"1f68b",shortnames:[],category:"travel"},":tram:":{uc_base:"1f68a",uc_output:"1f68a",uc_match:"1f68a",uc_greedy:"1f68a",shortnames:[],category:"travel"},":triangular_flag_on_post:":{uc_base:"1f6a9",uc_output:"1f6a9",uc_match:"1f6a9",uc_greedy:"1f6a9",shortnames:[],category:"flags"},":triangular_ruler:":{uc_base:"1f4d0",uc_output:"1f4d0",uc_match:"1f4d0",uc_greedy:"1f4d0",shortnames:[],category:"objects"},":trident:":{uc_base:"1f531",uc_output:"1f531",uc_match:"1f531",uc_greedy:"1f531",shortnames:[],category:"symbols"},":triumph:":{uc_base:"1f624",uc_output:"1f624",uc_match:"1f624",uc_greedy:"1f624",shortnames:[],category:"people"},":trolleybus:":{uc_base:"1f68e",uc_output:"1f68e",uc_match:"1f68e",uc_greedy:"1f68e",shortnames:[],category:"travel"},":trophy:":{uc_base:"1f3c6",uc_output:"1f3c6",uc_match:"1f3c6-fe0f",uc_greedy:"1f3c6-fe0f",shortnames:[],category:"activity"},":tropical_drink:":{uc_base:"1f379",uc_output:"1f379",uc_match:"1f379",uc_greedy:"1f379",shortnames:[],category:"food"},":tropical_fish:":{uc_base:"1f420",uc_output:"1f420",uc_match:"1f420",uc_greedy:"1f420",shortnames:[],category:"nature"},":truck:":{uc_base:"1f69a",uc_output:"1f69a",uc_match:"1f69a",uc_greedy:"1f69a",shortnames:[],category:"travel"},":trumpet:":{uc_base:"1f3ba",uc_output:"1f3ba",uc_match:"1f3ba",uc_greedy:"1f3ba",shortnames:[],category:"activity"},":tulip:":{uc_base:"1f337",uc_output:"1f337",uc_match:"1f337",uc_greedy:"1f337",shortnames:[],category:"nature"},":tumbler_glass:":{uc_base:"1f943",uc_output:"1f943",uc_match:"1f943",uc_greedy:"1f943",shortnames:[":whisky:"],category:"food"},":turkey:":{uc_base:"1f983",uc_output:"1f983",uc_match:"1f983",uc_greedy:"1f983",shortnames:[],category:"nature"},":turtle:":{uc_base:"1f422",uc_output:"1f422",uc_match:"1f422",uc_greedy:"1f422",shortnames:[],category:"nature"},":tv:":{uc_base:"1f4fa",uc_output:"1f4fa",uc_match:"1f4fa-fe0f",uc_greedy:"1f4fa-fe0f",shortnames:[],category:"objects"},":twisted_rightwards_arrows:":{uc_base:"1f500",uc_output:"1f500",uc_match:"1f500",uc_greedy:"1f500",shortnames:[],category:"symbols"},":two_hearts:":{uc_base:"1f495",uc_output:"1f495",uc_match:"1f495",uc_greedy:"1f495",shortnames:[],category:"symbols"},":two_men_holding_hands:":{uc_base:"1f46c",uc_output:"1f46c",uc_match:"1f46c",uc_greedy:"1f46c",shortnames:[],category:"people"},":two_women_holding_hands:":{uc_base:"1f46d",uc_output:"1f46d",uc_match:"1f46d",uc_greedy:"1f46d",shortnames:[],category:"people"},":u5272:":{uc_base:"1f239",uc_output:"1f239",uc_match:"1f239",uc_greedy:"1f239",shortnames:[],category:"symbols"},":u5408:":{uc_base:"1f234",uc_output:"1f234",uc_match:"1f234",uc_greedy:"1f234",shortnames:[],category:"symbols"},":u55b6:":{uc_base:"1f23a",uc_output:"1f23a",uc_match:"1f23a",uc_greedy:"1f23a",shortnames:[],category:"symbols"},":u6307:":{uc_base:"1f22f",uc_output:"1f22f",uc_match:"1f22f-fe0f",uc_greedy:"1f22f-fe0f",shortnames:[],category:"symbols"},":u6708:":{uc_base:"1f237",uc_output:"1f237",uc_match:"1f237-fe0f",uc_greedy:"1f237-fe0f",shortnames:[],category:"symbols"},":u6709:":{uc_base:"1f236",uc_output:"1f236",uc_match:"1f236",uc_greedy:"1f236",shortnames:[],category:"symbols"},":u6e80:":{uc_base:"1f235",uc_output:"1f235",uc_match:"1f235",uc_greedy:"1f235",shortnames:[],category:"symbols"},":u7121:":{uc_base:"1f21a",uc_output:"1f21a",uc_match:"1f21a-fe0f",uc_greedy:"1f21a-fe0f",shortnames:[],category:"symbols"},":u7533:":{uc_base:"1f238",uc_output:"1f238",uc_match:"1f238",uc_greedy:"1f238",shortnames:[],category:"symbols"},":u7981:":{uc_base:"1f232",uc_output:"1f232",uc_match:"1f232",uc_greedy:"1f232",shortnames:[],category:"symbols"},":u7a7a:":{uc_base:"1f233",uc_output:"1f233",uc_match:"1f233",uc_greedy:"1f233",shortnames:[],category:"symbols"},":unamused:":{uc_base:"1f612",uc_output:"1f612",uc_match:"1f612",uc_greedy:"1f612",shortnames:[],category:"people"},":underage:":{uc_base:"1f51e",uc_output:"1f51e",uc_match:"1f51e",uc_greedy:"1f51e",shortnames:[],category:"symbols"},":unicorn:":{uc_base:"1f984",uc_output:"1f984",uc_match:"1f984",uc_greedy:"1f984",shortnames:[":unicorn_face:"],category:"nature"},":unlock:":{uc_base:"1f513",uc_output:"1f513",uc_match:"1f513-fe0f",uc_greedy:"1f513-fe0f",shortnames:[],category:"objects"},":up:":{uc_base:"1f199",uc_output:"1f199",uc_match:"1f199",uc_greedy:"1f199",shortnames:[],category:"symbols"},":upside_down:":{uc_base:"1f643",uc_output:"1f643",uc_match:"1f643",uc_greedy:"1f643",shortnames:[":upside_down_face:"],category:"people"},":vampire:":{uc_base:"1f9db",uc_output:"1f9db",uc_match:"1f9db",uc_greedy:"1f9db",shortnames:[],category:"people"},":vertical_traffic_light:":{uc_base:"1f6a6",uc_output:"1f6a6",uc_match:"1f6a6",uc_greedy:"1f6a6",shortnames:[],category:"travel"},":vhs:":{uc_base:"1f4fc",uc_output:"1f4fc",uc_match:"1f4fc",uc_greedy:"1f4fc",shortnames:[],category:"objects"},":vibration_mode:":{uc_base:"1f4f3",uc_output:"1f4f3",uc_match:"1f4f3",uc_greedy:"1f4f3",shortnames:[],category:"symbols"},":video_camera:":{uc_base:"1f4f9",uc_output:"1f4f9",uc_match:"1f4f9-fe0f",uc_greedy:"1f4f9-fe0f",shortnames:[],category:"objects"},":video_game:":{uc_base:"1f3ae",uc_output:"1f3ae",uc_match:"1f3ae-fe0f",uc_greedy:"1f3ae-fe0f",shortnames:[],category:"activity"},":violin:":{uc_base:"1f3bb",uc_output:"1f3bb",uc_match:"1f3bb",uc_greedy:"1f3bb",shortnames:[],category:"activity"},":volcano:":{uc_base:"1f30b",uc_output:"1f30b",uc_match:"1f30b",uc_greedy:"1f30b",shortnames:[],category:"travel"},":volleyball:":{uc_base:"1f3d0",uc_output:"1f3d0",uc_match:"1f3d0",uc_greedy:"1f3d0",shortnames:[],category:"activity"},":vs:":{uc_base:"1f19a",uc_output:"1f19a",uc_match:"1f19a",uc_greedy:"1f19a",shortnames:[],category:"symbols"},":vulcan:":{uc_base:"1f596",uc_output:"1f596",uc_match:"1f596",uc_greedy:"1f596",shortnames:[":raised_hand_with_part_between_middle_and_ring_fingers:"],category:"people"},":waning_crescent_moon:":{uc_base:"1f318",uc_output:"1f318",uc_match:"1f318",uc_greedy:"1f318",shortnames:[],category:"nature"},":waning_gibbous_moon:":{uc_base:"1f316",uc_output:"1f316",uc_match:"1f316",uc_greedy:"1f316",shortnames:[],category:"nature"},":wastebasket:":{uc_base:"1f5d1",uc_output:"1f5d1",uc_match:"1f5d1-fe0f",uc_greedy:"1f5d1-fe0f",shortnames:[],category:"objects"},":water_buffalo:":{uc_base:"1f403",uc_output:"1f403",uc_match:"1f403",uc_greedy:"1f403",shortnames:[],category:"nature"},":watermelon:":{uc_base:"1f349",uc_output:"1f349",uc_match:"1f349",uc_greedy:"1f349",shortnames:[],category:"food"},":wave:":{uc_base:"1f44b",uc_output:"1f44b",uc_match:"1f44b",uc_greedy:"1f44b",shortnames:[],category:"people"},":waxing_crescent_moon:":{uc_base:"1f312",uc_output:"1f312",uc_match:"1f312",uc_greedy:"1f312",shortnames:[],category:"nature"},":waxing_gibbous_moon:":{uc_base:"1f314",uc_output:"1f314",uc_match:"1f314",uc_greedy:"1f314",shortnames:[],category:"nature"},":wc:":{uc_base:"1f6be",uc_output:"1f6be",uc_match:"1f6be",uc_greedy:"1f6be",shortnames:[],category:"symbols"},":weary:":{uc_base:"1f629",uc_output:"1f629",uc_match:"1f629",uc_greedy:"1f629",shortnames:[],category:"people"},":wedding:":{uc_base:"1f492",uc_output:"1f492",uc_match:"1f492",uc_greedy:"1f492",shortnames:[],category:"travel"},":whale2:":{uc_base:"1f40b",uc_output:"1f40b",uc_match:"1f40b",uc_greedy:"1f40b",shortnames:[],category:"nature"},":whale:":{uc_base:"1f433",uc_output:"1f433",uc_match:"1f433",uc_greedy:"1f433",shortnames:[],category:"nature"},":white_flower:":{uc_base:"1f4ae",uc_output:"1f4ae",uc_match:"1f4ae",uc_greedy:"1f4ae",shortnames:[],category:"symbols"},":white_haired:":{uc_base:"1f9b3",uc_output:"1f9b3",uc_match:"1f9b3",uc_greedy:"1f9b3",shortnames:[],category:"people"},":white_square_button:":{uc_base:"1f533",uc_output:"1f533",uc_match:"1f533",uc_greedy:"1f533",shortnames:[],category:"symbols"},":white_sun_cloud:":{uc_base:"1f325",uc_output:"1f325",uc_match:"1f325-fe0f",uc_greedy:"1f325-fe0f",shortnames:[":white_sun_behind_cloud:"],category:"nature"},":white_sun_rain_cloud:":{uc_base:"1f326",uc_output:"1f326",uc_match:"1f326-fe0f",uc_greedy:"1f326-fe0f",shortnames:[":white_sun_behind_cloud_with_rain:"],category:"nature"},":white_sun_small_cloud:":{uc_base:"1f324",uc_output:"1f324",uc_match:"1f324-fe0f",uc_greedy:"1f324-fe0f",shortnames:[":white_sun_with_small_cloud:"],category:"nature"},":wilted_rose:":{uc_base:"1f940",uc_output:"1f940",uc_match:"1f940",uc_greedy:"1f940",shortnames:[":wilted_flower:"],category:"nature"},":wind_blowing_face:":{uc_base:"1f32c",uc_output:"1f32c",uc_match:"1f32c-fe0f",uc_greedy:"1f32c-fe0f",shortnames:[],category:"nature"},":wind_chime:":{uc_base:"1f390",uc_output:"1f390",uc_match:"1f390",uc_greedy:"1f390",shortnames:[],category:"objects"},":wine_glass:":{uc_base:"1f377",uc_output:"1f377",uc_match:"1f377",uc_greedy:"1f377",shortnames:[],category:"food"},":wink:":{uc_base:"1f609",uc_output:"1f609",uc_match:"1f609",uc_greedy:"1f609",shortnames:[],category:"people"},":wolf:":{uc_base:"1f43a",uc_output:"1f43a",uc_match:"1f43a",uc_greedy:"1f43a",shortnames:[],category:"nature"},":woman:":{uc_base:"1f469",uc_output:"1f469",uc_match:"1f469",uc_greedy:"1f469",shortnames:[],category:"people"},":woman_with_headscarf:":{uc_base:"1f9d5",uc_output:"1f9d5",uc_match:"1f9d5",uc_greedy:"1f9d5",shortnames:[],category:"people"},":womans_clothes:":{uc_base:"1f45a",uc_output:"1f45a",uc_match:"1f45a",uc_greedy:"1f45a",shortnames:[],category:"people"},":womans_flat_shoe:":{uc_base:"1f97f",uc_output:"1f97f",uc_match:"1f97f",uc_greedy:"1f97f",shortnames:[],category:"people"},":womans_hat:":{uc_base:"1f452",uc_output:"1f452",uc_match:"1f452",uc_greedy:"1f452",shortnames:[],category:"people"},":womens:":{uc_base:"1f6ba",uc_output:"1f6ba",uc_match:"1f6ba-fe0f",uc_greedy:"1f6ba-fe0f",shortnames:[],category:"symbols"},":woozy_face:":{uc_base:"1f974",uc_output:"1f974",uc_match:"1f974",uc_greedy:"1f974",shortnames:[],category:"people"},":worried:":{uc_base:"1f61f",uc_output:"1f61f",uc_match:"1f61f",uc_greedy:"1f61f",shortnames:[],category:"people"},":wrench:":{uc_base:"1f527",uc_output:"1f527",uc_match:"1f527",uc_greedy:"1f527",shortnames:[],category:"objects"},":yarn:":{uc_base:"1f9f6",uc_output:"1f9f6",uc_match:"1f9f6",uc_greedy:"1f9f6",shortnames:[],category:"objects"},":yellow_heart:":{uc_base:"1f49b",uc_output:"1f49b",uc_match:"1f49b",uc_greedy:"1f49b",shortnames:[],category:"symbols"},":yen:":{uc_base:"1f4b4",uc_output:"1f4b4",uc_match:"1f4b4",uc_greedy:"1f4b4",shortnames:[],category:"objects"},":yum:":{uc_base:"1f60b",uc_output:"1f60b",uc_match:"1f60b",uc_greedy:"1f60b",shortnames:[],category:"people"},":zany_face:":{uc_base:"1f92a",uc_output:"1f92a",uc_match:"1f92a",uc_greedy:"1f92a",shortnames:[],category:"people"},":zebra:":{uc_base:"1f993",uc_output:"1f993",uc_match:"1f993",uc_greedy:"1f993",shortnames:[],category:"nature"},":zipper_mouth:":{uc_base:"1f910",uc_output:"1f910",uc_match:"1f910",uc_greedy:"1f910",shortnames:[":zipper_mouth_face:"],category:"people"},":zombie:":{uc_base:"1f9df",uc_output:"1f9df",uc_match:"1f9df",uc_greedy:"1f9df",shortnames:[],category:"people"},":zzz:":{uc_base:"1f4a4",uc_output:"1f4a4",uc_match:"1f4a4",uc_greedy:"1f4a4",shortnames:[],category:"symbols"},":airplane:":{uc_base:"2708",uc_output:"2708",uc_match:"2708-fe0f",uc_greedy:"2708-fe0f",shortnames:[],category:"travel"},":alarm_clock:":{uc_base:"23f0",uc_output:"23f0",uc_match:"23f0",uc_greedy:"23f0",shortnames:[],category:"objects"},":alembic:":{uc_base:"2697",uc_output:"2697",uc_match:"2697-fe0f",uc_greedy:"2697-fe0f",shortnames:[],category:"objects"},":anchor:":{uc_base:"2693",uc_output:"2693",uc_match:"2693-fe0f",uc_greedy:"2693-fe0f",shortnames:[],category:"travel"},":aquarius:":{uc_base:"2652",uc_output:"2652",uc_match:"2652-fe0f",uc_greedy:"2652-fe0f",shortnames:[],category:"symbols"},":aries:":{uc_base:"2648",uc_output:"2648",uc_match:"2648-fe0f",uc_greedy:"2648-fe0f",shortnames:[],category:"symbols"},":arrow_backward:":{uc_base:"25c0",uc_output:"25c0",uc_match:"25c0-fe0f",uc_greedy:"25c0",shortnames:[],category:"symbols"},":arrow_double_down:":{uc_base:"23ec",uc_output:"23ec",uc_match:"23ec",uc_greedy:"23ec",shortnames:[],category:"symbols"},":arrow_double_up:":{uc_base:"23eb",uc_output:"23eb",uc_match:"23eb",uc_greedy:"23eb",shortnames:[],category:"symbols"},":arrow_down:":{uc_base:"2b07",uc_output:"2b07",uc_match:"2b07-fe0f",uc_greedy:"2b07",shortnames:[],category:"symbols"},":arrow_forward:":{uc_base:"25b6",uc_output:"25b6",uc_match:"25b6-fe0f",uc_greedy:"25b6",shortnames:[],category:"symbols"},":arrow_heading_down:":{uc_base:"2935",uc_output:"2935",uc_match:"2935-fe0f",uc_greedy:"2935",shortnames:[],category:"symbols"},":arrow_heading_up:":{uc_base:"2934",uc_output:"2934",uc_match:"2934-fe0f",uc_greedy:"2934",shortnames:[],category:"symbols"},":arrow_left:":{uc_base:"2b05",uc_output:"2b05",uc_match:"2b05-fe0f",uc_greedy:"2b05",shortnames:[],category:"symbols"},":arrow_lower_left:":{uc_base:"2199",uc_output:"2199",uc_match:"2199-fe0f",uc_greedy:"2199",shortnames:[],category:"symbols"},":arrow_lower_right:":{uc_base:"2198",uc_output:"2198",uc_match:"2198-fe0f",uc_greedy:"2198",shortnames:[],category:"symbols"},":arrow_right:":{uc_base:"27a1",uc_output:"27a1",uc_match:"27a1-fe0f",uc_greedy:"27a1",shortnames:[],category:"symbols"},":arrow_right_hook:":{uc_base:"21aa",uc_output:"21aa",uc_match:"21aa-fe0f",uc_greedy:"21aa",shortnames:[],category:"symbols"},":arrow_up:":{uc_base:"2b06",uc_output:"2b06",uc_match:"2b06-fe0f",uc_greedy:"2b06",shortnames:[],category:"symbols"},":arrow_up_down:":{uc_base:"2195",uc_output:"2195",uc_match:"2195-fe0f",uc_greedy:"2195",shortnames:[],category:"symbols"},":arrow_upper_left:":{uc_base:"2196",uc_output:"2196",uc_match:"2196-fe0f",uc_greedy:"2196",shortnames:[],category:"symbols"},":arrow_upper_right:":{uc_base:"2197",uc_output:"2197",uc_match:"2197-fe0f",uc_greedy:"2197",shortnames:[],category:"symbols"},":atom:":{uc_base:"269b",uc_output:"269b",uc_match:"269b-fe0f",uc_greedy:"269b",shortnames:[":atom_symbol:"],category:"symbols"},":ballot_box_with_check:":{uc_base:"2611",uc_output:"2611",uc_match:"2611-fe0f",uc_greedy:"2611",shortnames:[],category:"symbols"},":bangbang:":{uc_base:"203c",uc_output:"203c",uc_match:"203c-fe0f",uc_greedy:"203c",shortnames:[],category:"symbols"},":baseball:":{uc_base:"26be",uc_output:"26be",uc_match:"26be-fe0f",uc_greedy:"26be-fe0f",shortnames:[],category:"activity"},":beach_umbrella:":{uc_base:"26f1",uc_output:"26f1",uc_match:"26f1-fe0f",uc_greedy:"26f1-fe0f",shortnames:[":umbrella_on_ground:"],category:"travel"},":biohazard:":{uc_base:"2623",uc_output:"2623",uc_match:"2623-fe0f",uc_greedy:"2623",shortnames:[":biohazard_sign:"],category:"symbols"},":black_circle:":{uc_base:"26ab",uc_output:"26ab",uc_match:"26ab-fe0f",uc_greedy:"26ab-fe0f",shortnames:[],category:"symbols"},":black_large_square:":{uc_base:"2b1b",uc_output:"2b1b",uc_match:"2b1b-fe0f",uc_greedy:"2b1b-fe0f",shortnames:[],category:"symbols"},":black_medium_small_square:":{uc_base:"25fe",uc_output:"25fe",uc_match:"25fe-fe0f",uc_greedy:"25fe-fe0f",shortnames:[],category:"symbols"},":black_medium_square:":{uc_base:"25fc",uc_output:"25fc",uc_match:"25fc-fe0f",uc_greedy:"25fc",shortnames:[],category:"symbols"},":black_nib:":{uc_base:"2712",uc_output:"2712",uc_match:"2712-fe0f",uc_greedy:"2712-fe0f",shortnames:[],category:"objects"},":black_small_square:":{uc_base:"25aa",uc_output:"25aa",uc_match:"25aa-fe0f",uc_greedy:"25aa",shortnames:[],category:"symbols"},":cancer:":{uc_base:"264b",uc_output:"264b",uc_match:"264b-fe0f",uc_greedy:"264b-fe0f",shortnames:[],category:"symbols"},":capricorn:":{uc_base:"2651",uc_output:"2651",uc_match:"2651-fe0f",uc_greedy:"2651-fe0f",shortnames:[],category:"symbols"},":chains:":{uc_base:"26d3",uc_output:"26d3",uc_match:"26d3-fe0f",uc_greedy:"26d3-fe0f",shortnames:[],category:"objects"},":church:":{uc_base:"26ea",uc_output:"26ea",uc_match:"26ea-fe0f",uc_greedy:"26ea-fe0f",shortnames:[],category:"travel"},":cloud:":{uc_base:"2601",uc_output:"2601",uc_match:"2601-fe0f",uc_greedy:"2601-fe0f",shortnames:[],category:"nature"},":clubs:":{uc_base:"2663",uc_output:"2663",uc_match:"2663-fe0f",uc_greedy:"2663-fe0f",shortnames:[],category:"symbols"},":coffee:":{uc_base:"2615",uc_output:"2615",uc_match:"2615-fe0f",uc_greedy:"2615-fe0f",shortnames:[],category:"food"},":coffin:":{uc_base:"26b0",uc_output:"26b0",uc_match:"26b0-fe0f",uc_greedy:"26b0-fe0f",shortnames:[],category:"objects"},":comet:":{uc_base:"2604",uc_output:"2604",uc_match:"2604-fe0f",uc_greedy:"2604-fe0f",shortnames:[],category:"nature"},":congratulations:":{uc_base:"3297",uc_output:"3297",uc_match:"3297-fe0f",uc_greedy:"3297-fe0f",shortnames:[],category:"symbols"},":cross:":{uc_base:"271d",uc_output:"271d",uc_match:"271d-fe0f",uc_greedy:"271d",shortnames:[":latin_cross:"],category:"symbols"},":crossed_swords:":{uc_base:"2694",uc_output:"2694",uc_match:"2694-fe0f",uc_greedy:"2694-fe0f",shortnames:[],category:"objects"},":curly_loop:":{uc_base:"27b0",uc_output:"27b0",uc_match:"27b0",uc_greedy:"27b0",shortnames:[],category:"symbols"},":diamonds:":{uc_base:"2666",uc_output:"2666",uc_match:"2666-fe0f",uc_greedy:"2666-fe0f",shortnames:[],category:"symbols"},":eight_pointed_black_star:":{uc_base:"2734",uc_output:"2734",uc_match:"2734-fe0f",uc_greedy:"2734-fe0f",shortnames:[],category:"symbols"},":eight_spoked_asterisk:":{uc_base:"2733",uc_output:"2733",uc_match:"2733-fe0f",uc_greedy:"2733-fe0f",shortnames:[],category:"symbols"},":eject:":{uc_base:"23cf",uc_output:"23cf",uc_match:"23cf-fe0f",uc_greedy:"23cf",shortnames:[":eject_symbol:"],category:"symbols"},":envelope:":{uc_base:"2709",uc_output:"2709",uc_match:"2709-fe0f",uc_greedy:"2709-fe0f",shortnames:[],category:"objects"},":exclamation:":{uc_base:"2757",uc_output:"2757",uc_match:"2757-fe0f",uc_greedy:"2757-fe0f",shortnames:[],category:"symbols"},":fast_forward:":{uc_base:"23e9",uc_output:"23e9",uc_match:"23e9-fe0f",uc_greedy:"23e9-fe0f",shortnames:[],category:"symbols"},":female_sign:":{uc_base:"2640",uc_output:"2640",uc_match:"2640-fe0f",uc_greedy:"2640",shortnames:[],category:"symbols"},":ferry:":{uc_base:"26f4",uc_output:"26f4",uc_match:"26f4-fe0f",uc_greedy:"26f4-fe0f",shortnames:[],category:"travel"},":fist:":{uc_base:"270a",uc_output:"270a",uc_match:"270a",uc_greedy:"270a",shortnames:[],category:"people"},":fleur-de-lis:":{uc_base:"269c",uc_output:"269c",uc_match:"269c-fe0f",uc_greedy:"269c-fe0f",shortnames:[],category:"symbols"},":fountain:":{uc_base:"26f2",uc_output:"26f2",uc_match:"26f2-fe0f",uc_greedy:"26f2-fe0f",shortnames:[],category:"travel"},":frowning2:":{uc_base:"2639",uc_output:"2639",uc_match:"2639-fe0f",uc_greedy:"2639-fe0f",shortnames:[":white_frowning_face:"],category:"people"},":fuelpump:":{uc_base:"26fd",uc_output:"26fd",uc_match:"26fd-fe0f",uc_greedy:"26fd-fe0f",shortnames:[],category:"travel"},":gear:":{uc_base:"2699",uc_output:"2699",uc_match:"2699-fe0f",uc_greedy:"2699-fe0f",shortnames:[],category:"objects"},":gemini:":{uc_base:"264a",uc_output:"264a",uc_match:"264a-fe0f",uc_greedy:"264a-fe0f",shortnames:[],category:"symbols"},":golf:":{uc_base:"26f3",uc_output:"26f3",uc_match:"26f3-fe0f",uc_greedy:"26f3-fe0f",shortnames:[],category:"activity"},":grey_exclamation:":{uc_base:"2755",uc_output:"2755",uc_match:"2755",uc_greedy:"2755",shortnames:[],category:"symbols"},":grey_question:":{uc_base:"2754",uc_output:"2754",uc_match:"2754",uc_greedy:"2754",shortnames:[],category:"symbols"},":hammer_pick:":{uc_base:"2692",uc_output:"2692",uc_match:"2692-fe0f",uc_greedy:"2692-fe0f",shortnames:[":hammer_and_pick:"],category:"objects"},":heart:":{uc_base:"2764",uc_output:"2764",uc_match:"2764-fe0f",uc_greedy:"2764-fe0f",shortnames:[],category:"symbols"},":heart_exclamation:":{uc_base:"2763",uc_output:"2763",uc_match:"2763-fe0f",uc_greedy:"2763-fe0f",shortnames:[":heavy_heart_exclamation_mark_ornament:"],category:"symbols"},":hearts:":{uc_base:"2665",uc_output:"2665",uc_match:"2665-fe0f",uc_greedy:"2665-fe0f",shortnames:[],category:"symbols"},":heavy_check_mark:":{uc_base:"2714",uc_output:"2714",uc_match:"2714-fe0f",uc_greedy:"2714",shortnames:[],category:"symbols"},":heavy_division_sign:":{uc_base:"2797",uc_output:"2797",uc_match:"2797",uc_greedy:"2797",shortnames:[],category:"symbols"},":heavy_minus_sign:":{uc_base:"2796",uc_output:"2796",uc_match:"2796",uc_greedy:"2796",shortnames:[],category:"symbols"},":heavy_multiplication_x:":{uc_base:"2716",uc_output:"2716",uc_match:"2716-fe0f",uc_greedy:"2716",shortnames:[],category:"symbols"},":heavy_plus_sign:":{uc_base:"2795",uc_output:"2795",uc_match:"2795",uc_greedy:"2795",shortnames:[],category:"symbols"},":helmet_with_cross:":{uc_base:"26d1",uc_output:"26d1",uc_match:"26d1-fe0f",uc_greedy:"26d1-fe0f",shortnames:[":helmet_with_white_cross:"],category:"people"},":hotsprings:":{uc_base:"2668",uc_output:"2668",uc_match:"2668-fe0f",uc_greedy:"2668-fe0f",shortnames:[],category:"symbols"},":hourglass:":{uc_base:"231b",uc_output:"231b",uc_match:"231b-fe0f",uc_greedy:"231b-fe0f",shortnames:[],category:"objects"},":hourglass_flowing_sand:":{uc_base:"23f3",uc_output:"23f3",uc_match:"23f3-fe0f",uc_greedy:"23f3-fe0f",shortnames:[],category:"objects"},":ice_skate:":{uc_base:"26f8",uc_output:"26f8",uc_match:"26f8-fe0f",uc_greedy:"26f8-fe0f",shortnames:[],category:"activity"},":information_source:":{uc_base:"2139",uc_output:"2139",uc_match:"2139-fe0f",uc_greedy:"2139",shortnames:[],category:"symbols"},":interrobang:":{uc_base:"2049",uc_output:"2049",uc_match:"2049-fe0f",uc_greedy:"2049",shortnames:[],category:"symbols"},":keyboard:":{uc_base:"2328",uc_output:"2328",uc_match:"2328-fe0f",uc_greedy:"2328-fe0f",shortnames:[],category:"objects"},":left_right_arrow:":{uc_base:"2194",uc_output:"2194",uc_match:"2194-fe0f",uc_greedy:"2194",shortnames:[],category:"symbols"},":leftwards_arrow_with_hook:":{uc_base:"21a9",uc_output:"21a9",uc_match:"21a9-fe0f",uc_greedy:"21a9",shortnames:[],category:"symbols"},":leo:":{uc_base:"264c",uc_output:"264c",uc_match:"264c-fe0f",uc_greedy:"264c-fe0f",shortnames:[],category:"symbols"},":libra:":{uc_base:"264e",uc_output:"264e",uc_match:"264e-fe0f",uc_greedy:"264e-fe0f",shortnames:[],category:"symbols"},":loop:":{uc_base:"27bf",uc_output:"27bf",uc_match:"27bf",uc_greedy:"27bf",shortnames:[],category:"symbols"},":m:":{uc_base:"24c2",uc_output:"24c2",uc_match:"24c2-fe0f",uc_greedy:"24c2-fe0f",shortnames:[],category:"symbols"},":male_sign:":{uc_base:"2642",uc_output:"2642",uc_match:"2642-fe0f",uc_greedy:"2642",shortnames:[],category:"symbols"},":medical_symbol:":{uc_base:"2695",uc_output:"2695",uc_match:"2695-fe0f",uc_greedy:"2695",shortnames:[],category:"symbols"},":mountain:":{uc_base:"26f0",uc_output:"26f0",uc_match:"26f0-fe0f",uc_greedy:"26f0-fe0f",shortnames:[],category:"travel"},":negative_squared_cross_mark:":{uc_base:"274e",uc_output:"274e",uc_match:"274e",uc_greedy:"274e",shortnames:[],category:"symbols"},":no_entry:":{uc_base:"26d4",uc_output:"26d4",uc_match:"26d4-fe0f",uc_greedy:"26d4-fe0f",shortnames:[],category:"symbols"},":o:":{uc_base:"2b55",uc_output:"2b55",uc_match:"2b55-fe0f",uc_greedy:"2b55-fe0f",shortnames:[],category:"symbols"},":ophiuchus:":{uc_base:"26ce",uc_output:"26ce",uc_match:"26ce",uc_greedy:"26ce",shortnames:[],category:"symbols"},":orthodox_cross:":{uc_base:"2626",uc_output:"2626",uc_match:"2626-fe0f",uc_greedy:"2626",shortnames:[],category:"symbols"},":part_alternation_mark:":{uc_base:"303d",uc_output:"303d",uc_match:"303d-fe0f",uc_greedy:"303d-fe0f",shortnames:[],category:"symbols"},":partly_sunny:":{uc_base:"26c5",uc_output:"26c5",uc_match:"26c5-fe0f",uc_greedy:"26c5-fe0f",shortnames:[],category:"nature"},":pause_button:":{uc_base:"23f8",uc_output:"23f8",uc_match:"23f8-fe0f",uc_greedy:"23f8",shortnames:[":double_vertical_bar:"],category:"symbols"},":peace:":{uc_base:"262e",uc_output:"262e",uc_match:"262e-fe0f",uc_greedy:"262e",shortnames:[":peace_symbol:"],category:"symbols"},":pencil2:":{uc_base:"270f",uc_output:"270f",uc_match:"270f-fe0f",uc_greedy:"270f-fe0f",shortnames:[],category:"objects"},":person_bouncing_ball:":{uc_base:"26f9",uc_output:"26f9",uc_match:"26f9-fe0f",uc_greedy:"26f9-fe0f",shortnames:[":basketball_player:",":person_with_ball:"],category:"activity"},":pick:":{uc_base:"26cf",uc_output:"26cf",uc_match:"26cf-fe0f",uc_greedy:"26cf-fe0f",shortnames:[],category:"objects"},":pisces:":{uc_base:"2653",uc_output:"2653",uc_match:"2653-fe0f",uc_greedy:"2653-fe0f",shortnames:[],category:"symbols"},":play_pause:":{uc_base:"23ef",uc_output:"23ef",uc_match:"23ef-fe0f",uc_greedy:"23ef",shortnames:[],category:"symbols"},":point_up:":{uc_base:"261d",uc_output:"261d",uc_match:"261d-fe0f",uc_greedy:"261d-fe0f",shortnames:[],category:"people"},":question:":{uc_base:"2753",uc_output:"2753",uc_match:"2753-fe0f",uc_greedy:"2753-fe0f",shortnames:[],category:"symbols"},":radioactive:":{uc_base:"2622",uc_output:"2622",uc_match:"2622-fe0f",uc_greedy:"2622",shortnames:[":radioactive_sign:"],category:"symbols"},":raised_hand:":{uc_base:"270b",uc_output:"270b",uc_match:"270b",uc_greedy:"270b",shortnames:[],category:"people"},":record_button:":{uc_base:"23fa",uc_output:"23fa",uc_match:"23fa-fe0f",uc_greedy:"23fa",shortnames:[],category:"symbols"},":recycle:":{uc_base:"267b",uc_output:"267b",uc_match:"267b-fe0f",uc_greedy:"267b-fe0f",shortnames:[],category:"symbols"},":relaxed:":{uc_base:"263a",uc_output:"263a",uc_match:"263a-fe0f",uc_greedy:"263a-fe0f",shortnames:[],category:"people"},":rewind:":{uc_base:"23ea",uc_output:"23ea",uc_match:"23ea-fe0f",uc_greedy:"23ea-fe0f",shortnames:[],category:"symbols"},":sagittarius:":{uc_base:"2650",uc_output:"2650",uc_match:"2650-fe0f",uc_greedy:"2650-fe0f",shortnames:[],category:"symbols"},":sailboat:":{uc_base:"26f5",uc_output:"26f5",uc_match:"26f5-fe0f",uc_greedy:"26f5-fe0f",shortnames:[],category:"travel"},":scales:":{uc_base:"2696",uc_output:"2696",uc_match:"2696-fe0f",uc_greedy:"2696-fe0f",shortnames:[],category:"objects"},":scissors:":{uc_base:"2702",uc_output:"2702",uc_match:"2702-fe0f",uc_greedy:"2702-fe0f",shortnames:[],category:"objects"},":scorpius:":{uc_base:"264f",uc_output:"264f",uc_match:"264f-fe0f",uc_greedy:"264f-fe0f",shortnames:[],category:"symbols"},":secret:":{uc_base:"3299",uc_output:"3299",uc_match:"3299-fe0f",uc_greedy:"3299-fe0f",shortnames:[],category:"symbols"},":shamrock:":{uc_base:"2618",uc_output:"2618",uc_match:"2618-fe0f",uc_greedy:"2618-fe0f",shortnames:[],category:"nature"},":shinto_shrine:":{uc_base:"26e9",uc_output:"26e9",uc_match:"26e9-fe0f",uc_greedy:"26e9-fe0f",shortnames:[],category:"travel"},":skier:":{uc_base:"26f7",uc_output:"26f7",uc_match:"26f7-fe0f",uc_greedy:"26f7-fe0f",shortnames:[],category:"activity"},":skull_crossbones:":{uc_base:"2620",uc_output:"2620",uc_match:"2620-fe0f",uc_greedy:"2620-fe0f",shortnames:[":skull_and_crossbones:"],category:"people"},":snowflake:":{uc_base:"2744",uc_output:"2744",uc_match:"2744-fe0f",uc_greedy:"2744-fe0f",shortnames:[],category:"nature"},":snowman2:":{uc_base:"2603",uc_output:"2603",uc_match:"2603-fe0f",uc_greedy:"2603-fe0f",shortnames:[],category:"nature"},":snowman:":{uc_base:"26c4",uc_output:"26c4",uc_match:"26c4-fe0f",uc_greedy:"26c4-fe0f",shortnames:[],category:"nature"},":soccer:":{uc_base:"26bd",uc_output:"26bd",uc_match:"26bd-fe0f",uc_greedy:"26bd-fe0f",shortnames:[],category:"activity"},":spades:":{uc_base:"2660",uc_output:"2660",uc_match:"2660-fe0f",uc_greedy:"2660-fe0f",shortnames:[],category:"symbols"},":sparkle:":{uc_base:"2747",uc_output:"2747",uc_match:"2747-fe0f",uc_greedy:"2747-fe0f",shortnames:[],category:"symbols"},":sparkles:":{uc_base:"2728",uc_output:"2728",uc_match:"2728",uc_greedy:"2728",shortnames:[],category:"nature"},":star:":{uc_base:"2b50",uc_output:"2b50",uc_match:"2b50-fe0f",uc_greedy:"2b50-fe0f",shortnames:[],category:"nature"},":star_and_crescent:":{uc_base:"262a",uc_output:"262a",uc_match:"262a-fe0f",uc_greedy:"262a",shortnames:[],category:"symbols"},":star_of_david:":{uc_base:"2721",uc_output:"2721",uc_match:"2721-fe0f",uc_greedy:"2721",shortnames:[],category:"symbols"},":stop_button:":{uc_base:"23f9",uc_output:"23f9",uc_match:"23f9-fe0f",uc_greedy:"23f9",shortnames:[],category:"symbols"},":stopwatch:":{uc_base:"23f1",uc_output:"23f1",uc_match:"23f1-fe0f",uc_greedy:"23f1-fe0f",shortnames:[],category:"objects"},":sunny:":{uc_base:"2600",uc_output:"2600",uc_match:"2600-fe0f",uc_greedy:"2600-fe0f",shortnames:[],category:"nature"},":taurus:":{uc_base:"2649",uc_output:"2649",uc_match:"2649-fe0f",uc_greedy:"2649-fe0f",shortnames:[],category:"symbols"},":telephone:":{uc_base:"260e",uc_output:"260e",uc_match:"260e-fe0f",uc_greedy:"260e-fe0f",shortnames:[],category:"objects"},":tent:":{uc_base:"26fa",uc_output:"26fa",uc_match:"26fa-fe0f",uc_greedy:"26fa-fe0f",shortnames:[],category:"travel"},":thunder_cloud_rain:":{uc_base:"26c8",uc_output:"26c8",uc_match:"26c8-fe0f",uc_greedy:"26c8-fe0f",shortnames:[":thunder_cloud_and_rain:"],category:"nature"},":timer:":{uc_base:"23f2",uc_output:"23f2",uc_match:"23f2-fe0f",uc_greedy:"23f2-fe0f",shortnames:[":timer_clock:"],category:"objects"},":track_next:":{uc_base:"23ed",uc_output:"23ed",uc_match:"23ed-fe0f",uc_greedy:"23ed",shortnames:[":next_track:"],category:"symbols"},":track_previous:":{uc_base:"23ee",uc_output:"23ee",uc_match:"23ee-fe0f",uc_greedy:"23ee",shortnames:[":previous_track:"],category:"symbols"},":umbrella2:":{uc_base:"2602",uc_output:"2602",uc_match:"2602-fe0f",uc_greedy:"2602-fe0f",shortnames:[],category:"nature"},":umbrella:":{uc_base:"2614",uc_output:"2614",uc_match:"2614-fe0f",uc_greedy:"2614-fe0f",shortnames:[],category:"nature"},":urn:":{uc_base:"26b1",uc_output:"26b1",uc_match:"26b1-fe0f",uc_greedy:"26b1-fe0f",shortnames:[":funeral_urn:"],category:"objects"},":v:":{uc_base:"270c",uc_output:"270c",uc_match:"270c-fe0f",uc_greedy:"270c-fe0f",shortnames:[],category:"people"},":virgo:":{uc_base:"264d",uc_output:"264d",uc_match:"264d-fe0f",uc_greedy:"264d-fe0f",shortnames:[],category:"symbols"},":warning:":{uc_base:"26a0",uc_output:"26a0",uc_match:"26a0-fe0f",uc_greedy:"26a0",shortnames:[],category:"symbols"},":watch:":{uc_base:"231a",uc_output:"231a",uc_match:"231a-fe0f",uc_greedy:"231a-fe0f",shortnames:[],category:"objects"},":wavy_dash:":{uc_base:"3030",uc_output:"3030",uc_match:"3030-fe0f",uc_greedy:"3030",shortnames:[],category:"symbols"},":wheel_of_dharma:":{uc_base:"2638",uc_output:"2638",uc_match:"2638-fe0f",uc_greedy:"2638",shortnames:[],category:"symbols"},":wheelchair:":{uc_base:"267f",uc_output:"267f",uc_match:"267f-fe0f",uc_greedy:"267f-fe0f",shortnames:[],category:"symbols"},":white_check_mark:":{uc_base:"2705",uc_output:"2705",uc_match:"2705",uc_greedy:"2705",shortnames:[],category:"symbols"},":white_circle:":{uc_base:"26aa",uc_output:"26aa",uc_match:"26aa-fe0f",uc_greedy:"26aa-fe0f",shortnames:[],category:"symbols"},":white_large_square:":{uc_base:"2b1c",uc_output:"2b1c",uc_match:"2b1c-fe0f",uc_greedy:"2b1c-fe0f",shortnames:[],category:"symbols"},":white_medium_small_square:":{uc_base:"25fd",uc_output:"25fd",uc_match:"25fd-fe0f",uc_greedy:"25fd-fe0f",shortnames:[],category:"symbols"},":white_medium_square:":{uc_base:"25fb",uc_output:"25fb",uc_match:"25fb-fe0f",uc_greedy:"25fb",shortnames:[],category:"symbols"},":white_small_square:":{uc_base:"25ab",uc_output:"25ab",uc_match:"25ab-fe0f",uc_greedy:"25ab",shortnames:[],category:"symbols"},":writing_hand:":{uc_base:"270d",uc_output:"270d",uc_match:"270d-fe0f",uc_greedy:"270d-fe0f",shortnames:[],category:"people"},":x:":{uc_base:"274c",uc_output:"274c",uc_match:"274c",uc_greedy:"274c",shortnames:[],category:"symbols"},":yin_yang:":{uc_base:"262f",uc_output:"262f",uc_match:"262f-fe0f",uc_greedy:"262f",shortnames:[],category:"symbols"},":zap:":{uc_base:"26a1",uc_output:"26a1",uc_match:"26a1-fe0f",uc_greedy:"26a1-fe0f",shortnames:[],category:"nature"}};var e,t=[];for(e in f.emojioneList)if(f.emojioneList.hasOwnProperty(e)&&""!==e){t.push(e.replace(/[+]/g,"\\$&"));for(var c=0;c<f.emojioneList[e].shortnames.length;c++)t.push(f.emojioneList[e].shortnames[c].replace(/[+]/g,"\\$&"))}f.shortnames=t.join("|"),f.jsEscapeMap={"👩‍❤️‍💋‍👩":"1f469-2764-1f48b-1f469","👨‍❤️‍💋‍👨":"1f468-2764-1f48b-1f468","👩‍❤️‍💋‍👨":"1f469-2764-1f48b-1f468","🏴󠁧󠁢󠁥󠁮󠁧󠁿":"1f3f4-e0067-e0062-e0065-e006e-e0067-e007f","🏴󠁧󠁢󠁳󠁣󠁴󠁿":"1f3f4-e0067-e0062-e0073-e0063-e0074-e007f","🏴󠁧󠁢󠁷󠁬󠁳󠁿":"1f3f4-e0067-e0062-e0077-e006c-e0073-e007f","👨‍👨‍👦‍👦":"1f468-1f468-1f466-1f466","👨‍👨‍👧‍👦":"1f468-1f468-1f467-1f466","👨‍👨‍👧‍👧":"1f468-1f468-1f467-1f467","👨‍👩‍👦‍👦":"1f468-1f469-1f466-1f466","👨‍👩‍👧‍👦":"1f468-1f469-1f467-1f466","👨‍👩‍👧‍👧":"1f468-1f469-1f467-1f467","👩‍👩‍👦‍👦":"1f469-1f469-1f466-1f466","👩‍👩‍👧‍👦":"1f469-1f469-1f467-1f466","👩‍👩‍👧‍👧":"1f469-1f469-1f467-1f467","👨‍❤‍💋‍👨":"1f468-2764-1f48b-1f468","👩‍❤‍💋‍👨":"1f469-2764-1f48b-1f468","👩‍❤‍💋‍👩":"1f469-2764-1f48b-1f469","👩‍❤️‍👩":"1f469-2764-1f469","👨‍❤️‍👨":"1f468-2764-1f468","👩‍❤️‍👨":"1f469-2764-1f468","🕵️🏻‍♀️":"1f575-1f3fb-2640","🕵️🏻‍♂️":"1f575-1f3fb-2642","🕵️🏼‍♀️":"1f575-1f3fc-2640","🕵️🏼‍♂️":"1f575-1f3fc-2642","🕵️🏽‍♀️":"1f575-1f3fd-2640","🕵️🏽‍♂️":"1f575-1f3fd-2642","🕵️🏾‍♀️":"1f575-1f3fe-2640","🕵️🏾‍♂️":"1f575-1f3fe-2642","🕵️🏿‍♀️":"1f575-1f3ff-2640","🕵️🏿‍♂️":"1f575-1f3ff-2642","🏋️🏻‍♀️":"1f3cb-1f3fb-2640","🏋️🏻‍♂️":"1f3cb-1f3fb-2642","🏋️🏼‍♀️":"1f3cb-1f3fc-2640","🏋️🏼‍♂️":"1f3cb-1f3fc-2642","🏋️🏽‍♀️":"1f3cb-1f3fd-2640","🏋️🏽‍♂️":"1f3cb-1f3fd-2642","🏋️🏾‍♀️":"1f3cb-1f3fe-2640","🏋️🏾‍♂️":"1f3cb-1f3fe-2642","🏋️🏿‍♀️":"1f3cb-1f3ff-2640","🏋️🏿‍♂️":"1f3cb-1f3ff-2642","🏌️🏻‍♀️":"1f3cc-1f3fb-2640","🏌️🏻‍♂️":"1f3cc-1f3fb-2642","🏌️🏼‍♀️":"1f3cc-1f3fc-2640","🏌️🏼‍♂️":"1f3cc-1f3fc-2642","🏌️🏽‍♀️":"1f3cc-1f3fd-2640","🏌️🏽‍♂️":"1f3cc-1f3fd-2642","🏌️🏾‍♀️":"1f3cc-1f3fe-2640","🏌️🏾‍♂️":"1f3cc-1f3fe-2642","🏌️🏿‍♀️":"1f3cc-1f3ff-2640","🏌️🏿‍♂️":"1f3cc-1f3ff-2642","⛹️🏻‍♀️":"26f9-1f3fb-2640","⛹️🏻‍♂️":"26f9-1f3fb-2642","⛹️🏼‍♀️":"26f9-1f3fc-2640","⛹️🏼‍♂️":"26f9-1f3fc-2642","⛹️🏽‍♀️":"26f9-1f3fd-2640","⛹️🏽‍♂️":"26f9-1f3fd-2642","⛹️🏾‍♀️":"26f9-1f3fe-2640","⛹️🏾‍♂️":"26f9-1f3fe-2642","⛹️🏿‍♀️":"26f9-1f3ff-2640","⛹️🏿‍♂️":"26f9-1f3ff-2642","👨‍👨‍👦":"1f468-1f468-1f466","👨‍👨‍👧":"1f468-1f468-1f467","👨‍👩‍👧":"1f468-1f469-1f467","👩‍👩‍👦":"1f469-1f469-1f466","👩‍👩‍👧":"1f469-1f469-1f467","👨‍👦‍👦":"1f468-1f466-1f466","👨‍👧‍👦":"1f468-1f467-1f466","👩‍👦‍👦":"1f469-1f466-1f466","👩‍👧‍👦":"1f469-1f467-1f466","👩‍👧‍👧":"1f469-1f467-1f467","👨❤️💋👨":"1f468-2764-1f48b-1f468","👨‍👧‍👧":"1f468-1f467-1f467","👨‍👩‍👦":"1f468-1f469-1f466","👩❤️💋👨":"1f469-2764-1f48b-1f468","👩❤️💋👩":"1f469-2764-1f48b-1f469","👨‍❤‍👨":"1f468-2764-1f468","👩‍❤‍👨":"1f469-2764-1f468","👩‍❤‍👩":"1f469-2764-1f469","👨🏻‍⚕️":"1f468-1f3fb-2695","👨🏻‍⚖️":"1f468-1f3fb-2696","👨🏻‍✈️":"1f468-1f3fb-2708","👨🏼‍⚕️":"1f468-1f3fc-2695","👨🏼‍⚖️":"1f468-1f3fc-2696","👨🏼‍✈️":"1f468-1f3fc-2708","👨🏽‍⚕️":"1f468-1f3fd-2695","👨🏽‍⚖️":"1f468-1f3fd-2696","👨🏽‍✈️":"1f468-1f3fd-2708","👨🏾‍⚕️":"1f468-1f3fe-2695","👨🏾‍⚖️":"1f468-1f3fe-2696","👨🏾‍✈️":"1f468-1f3fe-2708","👨🏿‍⚕️":"1f468-1f3ff-2695","👨🏿‍⚖️":"1f468-1f3ff-2696","👨🏿‍✈️":"1f468-1f3ff-2708","👩🏻‍⚕️":"1f469-1f3fb-2695","👩🏻‍⚖️":"1f469-1f3fb-2696","👩🏻‍✈️":"1f469-1f3fb-2708","👩🏼‍⚕️":"1f469-1f3fc-2695","👩🏼‍⚖️":"1f469-1f3fc-2696","👩🏼‍✈️":"1f469-1f3fc-2708","👩🏽‍⚕️":"1f469-1f3fd-2695","👩🏽‍⚖️":"1f469-1f3fd-2696","👩🏽‍✈️":"1f469-1f3fd-2708","👩🏾‍⚕️":"1f469-1f3fe-2695","👩🏾‍⚖️":"1f469-1f3fe-2696","👩🏾‍✈️":"1f469-1f3fe-2708","👩🏿‍⚕️":"1f469-1f3ff-2695","👩🏿‍⚖️":"1f469-1f3ff-2696","👩🏿‍✈️":"1f469-1f3ff-2708","👮🏻‍♀️":"1f46e-1f3fb-2640","👮🏻‍♂️":"1f46e-1f3fb-2642","👮🏼‍♀️":"1f46e-1f3fc-2640","👮🏼‍♂️":"1f46e-1f3fc-2642","👮🏽‍♀️":"1f46e-1f3fd-2640","👮🏽‍♂️":"1f46e-1f3fd-2642","👮🏾‍♀️":"1f46e-1f3fe-2640","👮🏾‍♂️":"1f46e-1f3fe-2642","👮🏿‍♀️":"1f46e-1f3ff-2640","👮🏿‍♂️":"1f46e-1f3ff-2642","👱🏻‍♀️":"1f471-1f3fb-2640","👱🏻‍♂️":"1f471-1f3fb-2642","👱🏼‍♀️":"1f471-1f3fc-2640","👱🏼‍♂️":"1f471-1f3fc-2642","👱🏽‍♀️":"1f471-1f3fd-2640","👱🏽‍♂️":"1f471-1f3fd-2642","👱🏾‍♀️":"1f471-1f3fe-2640","👱🏾‍♂️":"1f471-1f3fe-2642","👱🏿‍♀️":"1f471-1f3ff-2640","👱🏿‍♂️":"1f471-1f3ff-2642","👳🏻‍♀️":"1f473-1f3fb-2640","👳🏻‍♂️":"1f473-1f3fb-2642","👳🏼‍♀️":"1f473-1f3fc-2640","👳🏼‍♂️":"1f473-1f3fc-2642","👳🏽‍♀️":"1f473-1f3fd-2640","👳🏽‍♂️":"1f473-1f3fd-2642","👳🏾‍♀️":"1f473-1f3fe-2640","👳🏾‍♂️":"1f473-1f3fe-2642","👳🏿‍♀️":"1f473-1f3ff-2640","👳🏿‍♂️":"1f473-1f3ff-2642","👷🏻‍♀️":"1f477-1f3fb-2640","👷🏻‍♂️":"1f477-1f3fb-2642","👷🏼‍♀️":"1f477-1f3fc-2640","👷🏼‍♂️":"1f477-1f3fc-2642","👷🏽‍♀️":"1f477-1f3fd-2640","👷🏽‍♂️":"1f477-1f3fd-2642","👷🏾‍♀️":"1f477-1f3fe-2640","👷🏾‍♂️":"1f477-1f3fe-2642","👷🏿‍♀️":"1f477-1f3ff-2640","👷🏿‍♂️":"1f477-1f3ff-2642","💂🏻‍♀️":"1f482-1f3fb-2640","💂🏻‍♂️":"1f482-1f3fb-2642","💂🏼‍♀️":"1f482-1f3fc-2640","💂🏼‍♂️":"1f482-1f3fc-2642","💂🏽‍♀️":"1f482-1f3fd-2640","💂🏽‍♂️":"1f482-1f3fd-2642","💂🏾‍♀️":"1f482-1f3fe-2640","💂🏾‍♂️":"1f482-1f3fe-2642","💂🏿‍♀️":"1f482-1f3ff-2640","💂🏿‍♂️":"1f482-1f3ff-2642","🕵️🏻♀️":"1f575-1f3fb-2640","🕵️🏻♂️":"1f575-1f3fb-2642","🕵️🏼♀️":"1f575-1f3fc-2640","🕵️🏼♂️":"1f575-1f3fc-2642","🕵️🏽♀️":"1f575-1f3fd-2640","🕵️🏽♂️":"1f575-1f3fd-2642","🕵️🏾♀️":"1f575-1f3fe-2640","🕵️🏾♂️":"1f575-1f3fe-2642","🕵️🏿♀️":"1f575-1f3ff-2640","🕵️🏿♂️":"1f575-1f3ff-2642","🏃🏻‍♀️":"1f3c3-1f3fb-2640","🏃🏻‍♂️":"1f3c3-1f3fb-2642","🏃🏼‍♀️":"1f3c3-1f3fc-2640","🏃🏼‍♂️":"1f3c3-1f3fc-2642","🏃🏽‍♀️":"1f3c3-1f3fd-2640","🏃🏽‍♂️":"1f3c3-1f3fd-2642","🏃🏾‍♀️":"1f3c3-1f3fe-2640","🏃🏾‍♂️":"1f3c3-1f3fe-2642","🏃🏿‍♀️":"1f3c3-1f3ff-2640","🏃🏿‍♂️":"1f3c3-1f3ff-2642","🏄🏻‍♀️":"1f3c4-1f3fb-2640","🏄🏻‍♂️":"1f3c4-1f3fb-2642","🏄🏼‍♀️":"1f3c4-1f3fc-2640","🏄🏼‍♂️":"1f3c4-1f3fc-2642","🏄🏽‍♀️":"1f3c4-1f3fd-2640","🏄🏽‍♂️":"1f3c4-1f3fd-2642","🏄🏾‍♀️":"1f3c4-1f3fe-2640","🏄🏾‍♂️":"1f3c4-1f3fe-2642","🏄🏿‍♀️":"1f3c4-1f3ff-2640","🏄🏿‍♂️":"1f3c4-1f3ff-2642","🏊🏻‍♀️":"1f3ca-1f3fb-2640","🏊🏻‍♂️":"1f3ca-1f3fb-2642","🏊🏼‍♀️":"1f3ca-1f3fc-2640","🏊🏼‍♂️":"1f3ca-1f3fc-2642","🏊🏽‍♀️":"1f3ca-1f3fd-2640","🏊🏽‍♂️":"1f3ca-1f3fd-2642","🏊🏾‍♀️":"1f3ca-1f3fe-2640","🏊🏾‍♂️":"1f3ca-1f3fe-2642","🏊🏿‍♀️":"1f3ca-1f3ff-2640","🏊🏿‍♂️":"1f3ca-1f3ff-2642","🏋️🏻♀️":"1f3cb-1f3fb-2640","🏋️🏻♂️":"1f3cb-1f3fb-2642","🏋️🏼♀️":"1f3cb-1f3fc-2640","🏋️🏼♂️":"1f3cb-1f3fc-2642","🏋️🏽♀️":"1f3cb-1f3fd-2640","🏋️🏽♂️":"1f3cb-1f3fd-2642","🏋️🏾♀️":"1f3cb-1f3fe-2640","🏋️🏾♂️":"1f3cb-1f3fe-2642","🏋️🏿♀️":"1f3cb-1f3ff-2640","🏋️🏿♂️":"1f3cb-1f3ff-2642","🏌️🏻♀️":"1f3cc-1f3fb-2640","🏌️🏻♂️":"1f3cc-1f3fb-2642","🏌️🏼♀️":"1f3cc-1f3fc-2640","🏌️🏼♂️":"1f3cc-1f3fc-2642","🏌️🏽♀️":"1f3cc-1f3fd-2640","🏌️🏽♂️":"1f3cc-1f3fd-2642","🏌️🏾♀️":"1f3cc-1f3fe-2640","🏌️🏾♂️":"1f3cc-1f3fe-2642","🏌️🏿♀️":"1f3cc-1f3ff-2640","🏌️🏿♂️":"1f3cc-1f3ff-2642","💆🏻‍♀️":"1f486-1f3fb-2640","💆🏻‍♂️":"1f486-1f3fb-2642","💆🏼‍♀️":"1f486-1f3fc-2640","💆🏼‍♂️":"1f486-1f3fc-2642","💆🏽‍♀️":"1f486-1f3fd-2640","💆🏽‍♂️":"1f486-1f3fd-2642","💆🏾‍♀️":"1f486-1f3fe-2640","💆🏾‍♂️":"1f486-1f3fe-2642","💆🏿‍♀️":"1f486-1f3ff-2640","💆🏿‍♂️":"1f486-1f3ff-2642","💇🏻‍♀️":"1f487-1f3fb-2640","💇🏻‍♂️":"1f487-1f3fb-2642","💇🏼‍♀️":"1f487-1f3fc-2640","💇🏼‍♂️":"1f487-1f3fc-2642","💇🏽‍♀️":"1f487-1f3fd-2640","💇🏽‍♂️":"1f487-1f3fd-2642","💇🏾‍♀️":"1f487-1f3fe-2640","💇🏾‍♂️":"1f487-1f3fe-2642","💇🏿‍♀️":"1f487-1f3ff-2640","💇🏿‍♂️":"1f487-1f3ff-2642","🚣🏻‍♀️":"1f6a3-1f3fb-2640","🚣🏻‍♂️":"1f6a3-1f3fb-2642","🚣🏼‍♀️":"1f6a3-1f3fc-2640","🚣🏼‍♂️":"1f6a3-1f3fc-2642","🚣🏽‍♀️":"1f6a3-1f3fd-2640","🚣🏽‍♂️":"1f6a3-1f3fd-2642","🚣🏾‍♀️":"1f6a3-1f3fe-2640","🚣🏾‍♂️":"1f6a3-1f3fe-2642","🚣🏿‍♀️":"1f6a3-1f3ff-2640","🚣🏿‍♂️":"1f6a3-1f3ff-2642","🚴🏻‍♀️":"1f6b4-1f3fb-2640","🚴🏻‍♂️":"1f6b4-1f3fb-2642","🚴🏼‍♀️":"1f6b4-1f3fc-2640","🚴🏼‍♂️":"1f6b4-1f3fc-2642","🚴🏽‍♀️":"1f6b4-1f3fd-2640","🚴🏽‍♂️":"1f6b4-1f3fd-2642","🚴🏾‍♀️":"1f6b4-1f3fe-2640","🚴🏾‍♂️":"1f6b4-1f3fe-2642","🚴🏿‍♀️":"1f6b4-1f3ff-2640","🚴🏿‍♂️":"1f6b4-1f3ff-2642","🚵🏻‍♀️":"1f6b5-1f3fb-2640","🚵🏻‍♂️":"1f6b5-1f3fb-2642","🚵🏼‍♀️":"1f6b5-1f3fc-2640","🚵🏼‍♂️":"1f6b5-1f3fc-2642","🚵🏽‍♀️":"1f6b5-1f3fd-2640","🚵🏽‍♂️":"1f6b5-1f3fd-2642","🚵🏾‍♀️":"1f6b5-1f3fe-2640","🚵🏾‍♂️":"1f6b5-1f3fe-2642","🚵🏿‍♀️":"1f6b5-1f3ff-2640","🚵🏿‍♂️":"1f6b5-1f3ff-2642","🚶🏻‍♀️":"1f6b6-1f3fb-2640","🚶🏻‍♂️":"1f6b6-1f3fb-2642","🚶🏼‍♀️":"1f6b6-1f3fc-2640","🚶🏼‍♂️":"1f6b6-1f3fc-2642","🚶🏽‍♀️":"1f6b6-1f3fd-2640","🚶🏽‍♂️":"1f6b6-1f3fd-2642","🚶🏾‍♀️":"1f6b6-1f3fe-2640","🚶🏾‍♂️":"1f6b6-1f3fe-2642","🚶🏿‍♀️":"1f6b6-1f3ff-2640","🚶🏿‍♂️":"1f6b6-1f3ff-2642","🤸🏻‍♀️":"1f938-1f3fb-2640","🤸🏻‍♂️":"1f938-1f3fb-2642","🤸🏼‍♀️":"1f938-1f3fc-2640","🤸🏼‍♂️":"1f938-1f3fc-2642","🤸🏽‍♀️":"1f938-1f3fd-2640","🤸🏽‍♂️":"1f938-1f3fd-2642","🤸🏾‍♀️":"1f938-1f3fe-2640","🤸🏾‍♂️":"1f938-1f3fe-2642","🤸🏿‍♀️":"1f938-1f3ff-2640","🤸🏿‍♂️":"1f938-1f3ff-2642","🤹🏻‍♀️":"1f939-1f3fb-2640","🤹🏻‍♂️":"1f939-1f3fb-2642","🤹🏼‍♀️":"1f939-1f3fc-2640","🤹🏼‍♂️":"1f939-1f3fc-2642","🤹🏽‍♀️":"1f939-1f3fd-2640","🤹🏽‍♂️":"1f939-1f3fd-2642","🤹🏾‍♀️":"1f939-1f3fe-2640","🤹🏾‍♂️":"1f939-1f3fe-2642","🤹🏿‍♀️":"1f939-1f3ff-2640","🤹🏿‍♂️":"1f939-1f3ff-2642","🤽🏻‍♀️":"1f93d-1f3fb-2640","🤽🏻‍♂️":"1f93d-1f3fb-2642","🤽🏼‍♀️":"1f93d-1f3fc-2640","🤽🏼‍♂️":"1f93d-1f3fc-2642","🤽🏽‍♀️":"1f93d-1f3fd-2640","🤽🏽‍♂️":"1f93d-1f3fd-2642","🤽🏾‍♀️":"1f93d-1f3fe-2640","🤽🏾‍♂️":"1f93d-1f3fe-2642","🤽🏿‍♀️":"1f93d-1f3ff-2640","🤽🏿‍♂️":"1f93d-1f3ff-2642","🤾🏻‍♀️":"1f93e-1f3fb-2640","🤾🏻‍♂️":"1f93e-1f3fb-2642","🤾🏼‍♀️":"1f93e-1f3fc-2640","🤾🏼‍♂️":"1f93e-1f3fc-2642","🤾🏽‍♀️":"1f93e-1f3fd-2640","🤾🏽‍♂️":"1f93e-1f3fd-2642","🤾🏾‍♀️":"1f93e-1f3fe-2640","🤾🏾‍♂️":"1f93e-1f3fe-2642","🤾🏿‍♀️":"1f93e-1f3ff-2640","🤾🏿‍♂️":"1f93e-1f3ff-2642","💁🏻‍♀️":"1f481-1f3fb-2640","💁🏻‍♂️":"1f481-1f3fb-2642","💁🏼‍♀️":"1f481-1f3fc-2640","💁🏼‍♂️":"1f481-1f3fc-2642","💁🏽‍♀️":"1f481-1f3fd-2640","💁🏽‍♂️":"1f481-1f3fd-2642","💁🏾‍♀️":"1f481-1f3fe-2640","💁🏾‍♂️":"1f481-1f3fe-2642","💁🏿‍♀️":"1f481-1f3ff-2640","💁🏿‍♂️":"1f481-1f3ff-2642","🙅🏻‍♀️":"1f645-1f3fb-2640","🙅🏻‍♂️":"1f645-1f3fb-2642","🙅🏼‍♀️":"1f645-1f3fc-2640","🙅🏼‍♂️":"1f645-1f3fc-2642","🙅🏽‍♀️":"1f645-1f3fd-2640","🙅🏽‍♂️":"1f645-1f3fd-2642","🙅🏾‍♀️":"1f645-1f3fe-2640","🙅🏾‍♂️":"1f645-1f3fe-2642","🙅🏿‍♀️":"1f645-1f3ff-2640","🙅🏿‍♂️":"1f645-1f3ff-2642","🙆🏻‍♀️":"1f646-1f3fb-2640","🙆🏻‍♂️":"1f646-1f3fb-2642","🙆🏼‍♀️":"1f646-1f3fc-2640","🙆🏼‍♂️":"1f646-1f3fc-2642","🙆🏽‍♀️":"1f646-1f3fd-2640","🙆🏽‍♂️":"1f646-1f3fd-2642","🙆🏾‍♀️":"1f646-1f3fe-2640","🙆🏾‍♂️":"1f646-1f3fe-2642","🙆🏿‍♀️":"1f646-1f3ff-2640","🙆🏿‍♂️":"1f646-1f3ff-2642","🙇🏻‍♀️":"1f647-1f3fb-2640","🙇🏻‍♂️":"1f647-1f3fb-2642","🙇🏼‍♀️":"1f647-1f3fc-2640","🙇🏼‍♂️":"1f647-1f3fc-2642","🙇🏽‍♀️":"1f647-1f3fd-2640","🙇🏽‍♂️":"1f647-1f3fd-2642","🙇🏾‍♀️":"1f647-1f3fe-2640","🙇🏾‍♂️":"1f647-1f3fe-2642","🙇🏿‍♀️":"1f647-1f3ff-2640","🙇🏿‍♂️":"1f647-1f3ff-2642","🙋🏻‍♀️":"1f64b-1f3fb-2640","🙋🏻‍♂️":"1f64b-1f3fb-2642","🙋🏼‍♀️":"1f64b-1f3fc-2640","🙋🏼‍♂️":"1f64b-1f3fc-2642","🙋🏽‍♀️":"1f64b-1f3fd-2640","🙋🏽‍♂️":"1f64b-1f3fd-2642","🙋🏾‍♀️":"1f64b-1f3fe-2640","🙋🏾‍♂️":"1f64b-1f3fe-2642","🙋🏿‍♀️":"1f64b-1f3ff-2640","🙋🏿‍♂️":"1f64b-1f3ff-2642","🙍🏻‍♀️":"1f64d-1f3fb-2640","🙍🏻‍♂️":"1f64d-1f3fb-2642","🙍🏼‍♀️":"1f64d-1f3fc-2640","🙍🏼‍♂️":"1f64d-1f3fc-2642","🙍🏽‍♀️":"1f64d-1f3fd-2640","🙍🏽‍♂️":"1f64d-1f3fd-2642","🙍🏾‍♀️":"1f64d-1f3fe-2640","🙍🏾‍♂️":"1f64d-1f3fe-2642","🙍🏿‍♀️":"1f64d-1f3ff-2640","🙍🏿‍♂️":"1f64d-1f3ff-2642","🙎🏻‍♀️":"1f64e-1f3fb-2640","🙎🏻‍♂️":"1f64e-1f3fb-2642","🙎🏼‍♀️":"1f64e-1f3fc-2640","🙎🏼‍♂️":"1f64e-1f3fc-2642","🙎🏽‍♀️":"1f64e-1f3fd-2640","🙎🏽‍♂️":"1f64e-1f3fd-2642","🙎🏾‍♀️":"1f64e-1f3fe-2640","🙎🏾‍♂️":"1f64e-1f3fe-2642","🙎🏿‍♀️":"1f64e-1f3ff-2640","🙎🏿‍♂️":"1f64e-1f3ff-2642","🤦🏻‍♀️":"1f926-1f3fb-2640","🤦🏻‍♂️":"1f926-1f3fb-2642","🤦🏼‍♀️":"1f926-1f3fc-2640","🤦🏼‍♂️":"1f926-1f3fc-2642","🤦🏽‍♀️":"1f926-1f3fd-2640","🤦🏽‍♂️":"1f926-1f3fd-2642","🤦🏾‍♀️":"1f926-1f3fe-2640","🤦🏾‍♂️":"1f926-1f3fe-2642","🤦🏿‍♀️":"1f926-1f3ff-2640","🤦🏿‍♂️":"1f926-1f3ff-2642","🤷🏻‍♀️":"1f937-1f3fb-2640","🤷🏻‍♂️":"1f937-1f3fb-2642","🤷🏼‍♀️":"1f937-1f3fc-2640","🤷🏼‍♂️":"1f937-1f3fc-2642","🤷🏽‍♀️":"1f937-1f3fd-2640","🤷🏽‍♂️":"1f937-1f3fd-2642","🤷🏾‍♀️":"1f937-1f3fe-2640","🤷🏾‍♂️":"1f937-1f3fe-2642","🤷🏿‍♀️":"1f937-1f3ff-2640","🤷🏿‍♂️":"1f937-1f3ff-2642","👁️‍🗨️":"1f441-1f5e8","🕵🏻‍♀️":"1f575-1f3fb-2640","🕵🏻‍♂️":"1f575-1f3fb-2642","🕵🏼‍♀️":"1f575-1f3fc-2640","🕵🏼‍♂️":"1f575-1f3fc-2642","🕵🏽‍♀️":"1f575-1f3fd-2640","🕵🏽‍♂️":"1f575-1f3fd-2642","🕵🏾‍♀️":"1f575-1f3fe-2640","🕵🏾‍♂️":"1f575-1f3fe-2642","🕵🏿‍♀️":"1f575-1f3ff-2640","🕵🏿‍♂️":"1f575-1f3ff-2642","🏋🏻‍♀️":"1f3cb-1f3fb-2640","🏋🏻‍♂️":"1f3cb-1f3fb-2642","🏋🏼‍♀️":"1f3cb-1f3fc-2640","🏋🏼‍♂️":"1f3cb-1f3fc-2642","🏋🏽‍♀️":"1f3cb-1f3fd-2640","🏋🏽‍♂️":"1f3cb-1f3fd-2642","🏋🏾‍♀️":"1f3cb-1f3fe-2640","🏋🏾‍♂️":"1f3cb-1f3fe-2642","🏋🏿‍♀️":"1f3cb-1f3ff-2640","🏋🏿‍♂️":"1f3cb-1f3ff-2642","🏌🏻‍♀️":"1f3cc-1f3fb-2640","🏌🏻‍♂️":"1f3cc-1f3fb-2642","🏌🏼‍♀️":"1f3cc-1f3fc-2640","🏌🏼‍♂️":"1f3cc-1f3fc-2642","🏌🏽‍♀️":"1f3cc-1f3fd-2640","🏌🏽‍♂️":"1f3cc-1f3fd-2642","🏌🏾‍♀️":"1f3cc-1f3fe-2640","🏌🏾‍♂️":"1f3cc-1f3fe-2642","🏌🏿‍♀️":"1f3cc-1f3ff-2640","🏌🏿‍♂️":"1f3cc-1f3ff-2642","🧙🏻‍♀️":"1f9d9-1f3fb-2640","🧙🏻‍♂️":"1f9d9-1f3fb-2642","🧙🏼‍♀️":"1f9d9-1f3fc-2640","🧙🏼‍♂️":"1f9d9-1f3fc-2642","🧙🏽‍♀️":"1f9d9-1f3fd-2640","🧙🏽‍♂️":"1f9d9-1f3fd-2642","🧙🏾‍♀️":"1f9d9-1f3fe-2640","🧙🏾‍♂️":"1f9d9-1f3fe-2642","🧙🏿‍♀️":"1f9d9-1f3ff-2640","🧙🏿‍♂️":"1f9d9-1f3ff-2642","🧚🏻‍♀️":"1f9da-1f3fb-2640","🧚🏻‍♂️":"1f9da-1f3fb-2642","🧚🏼‍♀️":"1f9da-1f3fc-2640","🧚🏼‍♂️":"1f9da-1f3fc-2642","🧚🏽‍♀️":"1f9da-1f3fd-2640","🧚🏽‍♂️":"1f9da-1f3fd-2642","🧚🏾‍♀️":"1f9da-1f3fe-2640","🧚🏾‍♂️":"1f9da-1f3fe-2642","🧚🏿‍♀️":"1f9da-1f3ff-2640","🧚🏿‍♂️":"1f9da-1f3ff-2642","🧛🏻‍♀️":"1f9db-1f3fb-2640","🧛🏻‍♂️":"1f9db-1f3fb-2642","🧛🏼‍♀️":"1f9db-1f3fc-2640","🧛🏼‍♂️":"1f9db-1f3fc-2642","🧛🏽‍♀️":"1f9db-1f3fd-2640","🧛🏽‍♂️":"1f9db-1f3fd-2642","🧛🏾‍♀️":"1f9db-1f3fe-2640","🧛🏾‍♂️":"1f9db-1f3fe-2642","🧛🏿‍♀️":"1f9db-1f3ff-2640","🧛🏿‍♂️":"1f9db-1f3ff-2642","🧜🏻‍♀️":"1f9dc-1f3fb-2640","🧜🏻‍♂️":"1f9dc-1f3fb-2642","🧜🏼‍♀️":"1f9dc-1f3fc-2640","🧜🏼‍♂️":"1f9dc-1f3fc-2642","🧜🏽‍♀️":"1f9dc-1f3fd-2640","🧜🏽‍♂️":"1f9dc-1f3fd-2642","🧜🏾‍♀️":"1f9dc-1f3fe-2640","🧜🏾‍♂️":"1f9dc-1f3fe-2642","🧜🏿‍♀️":"1f9dc-1f3ff-2640","🧜🏿‍♂️":"1f9dc-1f3ff-2642","🧝🏻‍♀️":"1f9dd-1f3fb-2640","🧝🏻‍♂️":"1f9dd-1f3fb-2642","🧝🏼‍♀️":"1f9dd-1f3fc-2640","🧝🏼‍♂️":"1f9dd-1f3fc-2642","🧝🏽‍♀️":"1f9dd-1f3fd-2640","🧝🏽‍♂️":"1f9dd-1f3fd-2642","🧝🏾‍♀️":"1f9dd-1f3fe-2640","🧝🏾‍♂️":"1f9dd-1f3fe-2642","🧝🏿‍♀️":"1f9dd-1f3ff-2640","🧝🏿‍♂️":"1f9dd-1f3ff-2642","🧖🏻‍♀️":"1f9d6-1f3fb-2640","🧖🏻‍♂️":"1f9d6-1f3fb-2642","🧖🏼‍♀️":"1f9d6-1f3fc-2640","🧖🏼‍♂️":"1f9d6-1f3fc-2642","🧖🏽‍♀️":"1f9d6-1f3fd-2640","🧖🏽‍♂️":"1f9d6-1f3fd-2642","🧖🏾‍♀️":"1f9d6-1f3fe-2640","🧖🏾‍♂️":"1f9d6-1f3fe-2642","🧖🏿‍♀️":"1f9d6-1f3ff-2640","🧖🏿‍♂️":"1f9d6-1f3ff-2642","🧗🏻‍♀️":"1f9d7-1f3fb-2640","🧗🏻‍♂️":"1f9d7-1f3fb-2642","🧗🏼‍♀️":"1f9d7-1f3fc-2640","🧗🏼‍♂️":"1f9d7-1f3fc-2642","🧗🏽‍♀️":"1f9d7-1f3fd-2640","🧗🏽‍♂️":"1f9d7-1f3fd-2642","🧗🏾‍♀️":"1f9d7-1f3fe-2640","🧗🏾‍♂️":"1f9d7-1f3fe-2642","🧗🏿‍♀️":"1f9d7-1f3ff-2640","🧗🏿‍♂️":"1f9d7-1f3ff-2642","🧘🏻‍♀️":"1f9d8-1f3fb-2640","🧘🏻‍♂️":"1f9d8-1f3fb-2642","🧘🏼‍♀️":"1f9d8-1f3fc-2640","🧘🏼‍♂️":"1f9d8-1f3fc-2642","🧘🏽‍♀️":"1f9d8-1f3fd-2640","🧘🏽‍♂️":"1f9d8-1f3fd-2642","🧘🏾‍♀️":"1f9d8-1f3fe-2640","🧘🏾‍♂️":"1f9d8-1f3fe-2642","🧘🏿‍♀️":"1f9d8-1f3ff-2640","🧘🏿‍♂️":"1f9d8-1f3ff-2642","🦸🏻‍♀️":"1f9b8-1f3fb-2640","🦸🏻‍♂️":"1f9b8-1f3fb-2642","🦸🏼‍♀️":"1f9b8-1f3fc-2640","🦸🏼‍♂️":"1f9b8-1f3fc-2642","🦸🏽‍♀️":"1f9b8-1f3fd-2640","🦸🏽‍♂️":"1f9b8-1f3fd-2642","🦸🏾‍♀️":"1f9b8-1f3fe-2640","🦸🏾‍♂️":"1f9b8-1f3fe-2642","🦸🏿‍♀️":"1f9b8-1f3ff-2640","🦸🏿‍♂️":"1f9b8-1f3ff-2642","🦹🏻‍♀️":"1f9b9-1f3fb-2640","🦹🏻‍♂️":"1f9b9-1f3fb-2642","🦹🏼‍♀️":"1f9b9-1f3fc-2640","🦹🏼‍♂️":"1f9b9-1f3fc-2642","🦹🏽‍♀️":"1f9b9-1f3fd-2640","🦹🏽‍♂️":"1f9b9-1f3fd-2642","🦹🏾‍♀️":"1f9b9-1f3fe-2640","🦹🏾‍♂️":"1f9b9-1f3fe-2642","🦹🏿‍♀️":"1f9b9-1f3ff-2640","🦹🏿‍♂️":"1f9b9-1f3ff-2642","🕵️‍♀️":"1f575-2640","🕵️‍♂️":"1f575-2642","⛹️🏻♀️":"26f9-1f3fb-2640","⛹️🏻♂️":"26f9-1f3fb-2642","⛹️🏼♀️":"26f9-1f3fc-2640","⛹️🏼♂️":"26f9-1f3fc-2642","⛹️🏽♀️":"26f9-1f3fd-2640","⛹️🏽♂️":"26f9-1f3fd-2642","⛹️🏾♀️":"26f9-1f3fe-2640","⛹️🏾♂️":"26f9-1f3fe-2642","⛹️🏿♀️":"26f9-1f3ff-2640","⛹️🏿♂️":"26f9-1f3ff-2642","🏋️‍♀️":"1f3cb-2640","🏋️‍♂️":"1f3cb-2642","🏌️‍♀️":"1f3cc-2640","🏌️‍♂️":"1f3cc-2642","⛹🏻‍♀️":"26f9-1f3fb-2640","⛹🏻‍♂️":"26f9-1f3fb-2642","⛹🏼‍♀️":"26f9-1f3fc-2640","⛹🏼‍♂️":"26f9-1f3fc-2642","⛹🏽‍♀️":"26f9-1f3fd-2640","⛹🏽‍♂️":"26f9-1f3fd-2642","⛹🏾‍♀️":"26f9-1f3fe-2640","⛹🏾‍♂️":"26f9-1f3fe-2642","⛹🏿‍♀️":"26f9-1f3ff-2640","⛹🏿‍♂️":"26f9-1f3ff-2642","⛹️‍♀️":"26f9-2640","⛹️‍♂️":"26f9-2642","👨👨👦👦":"1f468-1f468-1f466-1f466","👨👨👧👦":"1f468-1f468-1f467-1f466","👨👨👧👧":"1f468-1f468-1f467-1f467","👨👩👦👦":"1f468-1f469-1f466-1f466","👨👩👧👦":"1f468-1f469-1f467-1f466","👨👩👧👧":"1f468-1f469-1f467-1f467","👩👩👦👦":"1f469-1f469-1f466-1f466","👩👩👧👦":"1f469-1f469-1f467-1f466","👩👩👧👧":"1f469-1f469-1f467-1f467","👨🏿‍💻":"1f468-1f3ff-1f4bb","👨🏾‍💻":"1f468-1f3fe-1f4bb","👨🏽‍💻":"1f468-1f3fd-1f4bb","👨🏼‍💻":"1f468-1f3fc-1f4bb","👨🏻‍💻":"1f468-1f3fb-1f4bb","👩🏿‍💻":"1f469-1f3ff-1f4bb","👩🏾‍💻":"1f469-1f3fe-1f4bb","👩🏽‍💻":"1f469-1f3fd-1f4bb","👩🏼‍💻":"1f469-1f3fc-1f4bb","👩🏻‍💻":"1f469-1f3fb-1f4bb","👨🏿‍🏫":"1f468-1f3ff-1f3eb","👨🏾‍🏫":"1f468-1f3fe-1f3eb","👨🏽‍🏫":"1f468-1f3fd-1f3eb","👨🏼‍🏫":"1f468-1f3fc-1f3eb","👨🏻‍🏫":"1f468-1f3fb-1f3eb","👩🏿‍🏫":"1f469-1f3ff-1f3eb","👩🏾‍🏫":"1f469-1f3fe-1f3eb","👩🏽‍🏫":"1f469-1f3fd-1f3eb","👩🏼‍🏫":"1f469-1f3fc-1f3eb","👩🏻‍🏫":"1f469-1f3fb-1f3eb","👨🏿‍🎓":"1f468-1f3ff-1f393","👨🏾‍🎓":"1f468-1f3fe-1f393","👨🏽‍🎓":"1f468-1f3fd-1f393","👨🏼‍🎓":"1f468-1f3fc-1f393","👨🏻‍🎓":"1f468-1f3fb-1f393","👩🏿‍🎓":"1f469-1f3ff-1f393","👩🏾‍🎓":"1f469-1f3fe-1f393","👩🏽‍🎓":"1f469-1f3fd-1f393","👩🏼‍🎓":"1f469-1f3fc-1f393","👩🏻‍🎓":"1f469-1f3fb-1f393","👨🏿‍🎤":"1f468-1f3ff-1f3a4","👨🏾‍🎤":"1f468-1f3fe-1f3a4","👨🏽‍🎤":"1f468-1f3fd-1f3a4","👨🏼‍🎤":"1f468-1f3fc-1f3a4","👨🏻‍🎤":"1f468-1f3fb-1f3a4","👩🏿‍🎤":"1f469-1f3ff-1f3a4","👩🏾‍🎤":"1f469-1f3fe-1f3a4","👩🏽‍🎤":"1f469-1f3fd-1f3a4","👩🏼‍🎤":"1f469-1f3fc-1f3a4","👩🏻‍🎤":"1f469-1f3fb-1f3a4","👨🏿‍🔬":"1f468-1f3ff-1f52c","👨🏾‍🔬":"1f468-1f3fe-1f52c","👨🏽‍🔬":"1f468-1f3fd-1f52c","👨🏼‍🔬":"1f468-1f3fc-1f52c","👨🏻‍🔬":"1f468-1f3fb-1f52c","👩🏿‍🔬":"1f469-1f3ff-1f52c","👩🏾‍🔬":"1f469-1f3fe-1f52c","👩🏽‍🔬":"1f469-1f3fd-1f52c","👩🏼‍🔬":"1f469-1f3fc-1f52c","👩🏻‍🔬":"1f469-1f3fb-1f52c","👨🏿‍💼":"1f468-1f3ff-1f4bc","👨🏾‍💼":"1f468-1f3fe-1f4bc","👨🏽‍💼":"1f468-1f3fd-1f4bc","👨🏼‍💼":"1f468-1f3fc-1f4bc","👨🏻‍💼":"1f468-1f3fb-1f4bc","👩🏿‍💼":"1f469-1f3ff-1f4bc","👩🏾‍💼":"1f469-1f3fe-1f4bc","👩🏽‍💼":"1f469-1f3fd-1f4bc","👩🏼‍💼":"1f469-1f3fc-1f4bc","👩🏻‍💼":"1f469-1f3fb-1f4bc","👨🏿‍🔧":"1f468-1f3ff-1f527","👨🏾‍🔧":"1f468-1f3fe-1f527","👨🏽‍🔧":"1f468-1f3fd-1f527","👨🏼‍🔧":"1f468-1f3fc-1f527","👨🏻‍🔧":"1f468-1f3fb-1f527","👩🏿‍🔧":"1f469-1f3ff-1f527","👩🏾‍🔧":"1f469-1f3fe-1f527","👩🏽‍🔧":"1f469-1f3fd-1f527","👩🏼‍🔧":"1f469-1f3fc-1f527","👩🏻‍🔧":"1f469-1f3fb-1f527","👨🏿‍🏭":"1f468-1f3ff-1f3ed","👨🏾‍🏭":"1f468-1f3fe-1f3ed","👨🏽‍🏭":"1f468-1f3fd-1f3ed","👨🏼‍🏭":"1f468-1f3fc-1f3ed","👨🏻‍🏭":"1f468-1f3fb-1f3ed","👩🏿‍🏭":"1f469-1f3ff-1f3ed","👩🏾‍🏭":"1f469-1f3fe-1f3ed","👩🏽‍🏭":"1f469-1f3fd-1f3ed","👩🏼‍🏭":"1f469-1f3fc-1f3ed","👩🏻‍🏭":"1f469-1f3fb-1f3ed","👨🏿‍🍳":"1f468-1f3ff-1f373","👨🏾‍🍳":"1f468-1f3fe-1f373","👨🏽‍🍳":"1f468-1f3fd-1f373","👨🏼‍🍳":"1f468-1f3fc-1f373","👨🏻‍🍳":"1f468-1f3fb-1f373","👩🏿‍🍳":"1f469-1f3ff-1f373","👩🏾‍🍳":"1f469-1f3fe-1f373","👩🏽‍🍳":"1f469-1f3fd-1f373","👩🏼‍🍳":"1f469-1f3fc-1f373","👩🏻‍🍳":"1f469-1f3fb-1f373","👨🏿‍🌾":"1f468-1f3ff-1f33e","👨🏾‍🌾":"1f468-1f3fe-1f33e","👨🏽‍🌾":"1f468-1f3fd-1f33e","👨🏼‍🌾":"1f468-1f3fc-1f33e","👨🏻‍🌾":"1f468-1f3fb-1f33e","👩🏿‍🌾":"1f469-1f3ff-1f33e","👩🏾‍🌾":"1f469-1f3fe-1f33e","👩🏽‍🌾":"1f469-1f3fd-1f33e","👩🏼‍🌾":"1f469-1f3fc-1f33e","👩🏻‍🌾":"1f469-1f3fb-1f33e","👨🏻‍🎨":"1f468-1f3fb-1f3a8","👨🏼‍🎨":"1f468-1f3fc-1f3a8","👨🏽‍🎨":"1f468-1f3fd-1f3a8","👨🏾‍🎨":"1f468-1f3fe-1f3a8","👨🏿‍🎨":"1f468-1f3ff-1f3a8","👩🏻‍🎨":"1f469-1f3fb-1f3a8","👩🏼‍🎨":"1f469-1f3fc-1f3a8","👩🏽‍🎨":"1f469-1f3fd-1f3a8","👩🏾‍🎨":"1f469-1f3fe-1f3a8","👩🏿‍🎨":"1f469-1f3ff-1f3a8","👨🏻‍🚀":"1f468-1f3fb-1f680","👨🏼‍🚀":"1f468-1f3fc-1f680","👨🏽‍🚀":"1f468-1f3fd-1f680","👨🏾‍🚀":"1f468-1f3fe-1f680","👨🏿‍🚀":"1f468-1f3ff-1f680","👩🏻‍🚀":"1f469-1f3fb-1f680","👩🏼‍🚀":"1f469-1f3fc-1f680","👩🏽‍🚀":"1f469-1f3fd-1f680","👩🏾‍🚀":"1f469-1f3fe-1f680","👩🏿‍🚀":"1f469-1f3ff-1f680","👨🏻‍🚒":"1f468-1f3fb-1f692","👨🏼‍🚒":"1f468-1f3fc-1f692","👨🏽‍🚒":"1f468-1f3fd-1f692","👨🏾‍🚒":"1f468-1f3fe-1f692","👨🏿‍🚒":"1f468-1f3ff-1f692","👩🏻‍🚒":"1f469-1f3fb-1f692","👩🏼‍🚒":"1f469-1f3fc-1f692","👩🏽‍🚒":"1f469-1f3fd-1f692","👩🏾‍🚒":"1f469-1f3fe-1f692","👩🏿‍🚒":"1f469-1f3ff-1f692","👨🏻‍🦰":"1f468-1f3fb-1f9b0","👨🏻‍🦱":"1f468-1f3fb-1f9b1","👨🏻‍🦲":"1f468-1f3fb-1f9b2","👨🏻‍🦳":"1f468-1f3fb-1f9b3","👨🏼‍🦰":"1f468-1f3fc-1f9b0","👨🏼‍🦱":"1f468-1f3fc-1f9b1","👨🏼‍🦲":"1f468-1f3fc-1f9b2","👨🏼‍🦳":"1f468-1f3fc-1f9b3","👨🏽‍🦰":"1f468-1f3fd-1f9b0","👨🏽‍🦱":"1f468-1f3fd-1f9b1","👨🏽‍🦲":"1f468-1f3fd-1f9b2","👨🏽‍🦳":"1f468-1f3fd-1f9b3","👨🏾‍🦰":"1f468-1f3fe-1f9b0","👨🏾‍🦱":"1f468-1f3fe-1f9b1","👨🏾‍🦲":"1f468-1f3fe-1f9b2","👨🏾‍🦳":"1f468-1f3fe-1f9b3","👨🏿‍🦰":"1f468-1f3ff-1f9b0","👨🏿‍🦱":"1f468-1f3ff-1f9b1","👨🏿‍🦲":"1f468-1f3ff-1f9b2","👨🏿‍🦳":"1f468-1f3ff-1f9b3","👩🏻‍🦰":"1f469-1f3fb-1f9b0","👩🏻‍🦱":"1f469-1f3fb-1f9b1","👩🏻‍🦲":"1f469-1f3fb-1f9b2","👩🏻‍🦳":"1f469-1f3fb-1f9b3","👩🏼‍🦰":"1f469-1f3fc-1f9b0","👩🏼‍🦱":"1f469-1f3fc-1f9b1","👩🏼‍🦲":"1f469-1f3fc-1f9b2","👩🏼‍🦳":"1f469-1f3fc-1f9b3","👩🏽‍🦰":"1f469-1f3fd-1f9b0","👩🏽‍🦱":"1f469-1f3fd-1f9b1","👩🏽‍🦲":"1f469-1f3fd-1f9b2","👩🏽‍🦳":"1f469-1f3fd-1f9b3","👩🏾‍🦰":"1f469-1f3fe-1f9b0","👩🏾‍🦱":"1f469-1f3fe-1f9b1","👩🏾‍🦲":"1f469-1f3fe-1f9b2","👩🏾‍🦳":"1f469-1f3fe-1f9b3","👩🏿‍🦰":"1f469-1f3ff-1f9b0","👩🏿‍🦱":"1f469-1f3ff-1f9b1","👩🏿‍🦲":"1f469-1f3ff-1f9b2","👩🏿‍🦳":"1f469-1f3ff-1f9b3","🏳️‍🌈":"1f3f3-1f308","🏌🏻‍♂":"1f3cc-1f3fb-2642","🏌🏼‍♂":"1f3cc-1f3fc-2642","🏌🏽‍♂":"1f3cc-1f3fd-2642","🏌🏾‍♂":"1f3cc-1f3fe-2642","🏌🏿‍♂":"1f3cc-1f3ff-2642","🏌🏻‍♀":"1f3cc-1f3fb-2640","🏌🏼‍♀":"1f3cc-1f3fc-2640","🏌🏽‍♀":"1f3cc-1f3fd-2640","🏌🏾‍♀":"1f3cc-1f3fe-2640","🏌🏿‍♀":"1f3cc-1f3ff-2640","🤹🏿‍♂":"1f939-1f3ff-2642","🤹🏾‍♂":"1f939-1f3fe-2642","🤹🏽‍♂":"1f939-1f3fd-2642","🤹🏼‍♂":"1f939-1f3fc-2642","🤹🏻‍♂":"1f939-1f3fb-2642","🤹🏿‍♀":"1f939-1f3ff-2640","🤹🏾‍♀":"1f939-1f3fe-2640","🤹🏽‍♀":"1f939-1f3fd-2640","🤹🏼‍♀":"1f939-1f3fc-2640","🤹🏻‍♀":"1f939-1f3fb-2640","🤾🏿‍♂":"1f93e-1f3ff-2642","🤾🏾‍♂":"1f93e-1f3fe-2642","🤾🏽‍♂":"1f93e-1f3fd-2642","🤾🏼‍♂":"1f93e-1f3fc-2642","🤾🏻‍♂":"1f93e-1f3fb-2642","🤾🏿‍♀":"1f93e-1f3ff-2640","🤾🏾‍♀":"1f93e-1f3fe-2640","🤾🏽‍♀":"1f93e-1f3fd-2640","🤾🏼‍♀":"1f93e-1f3fc-2640","🤾🏻‍♀":"1f93e-1f3fb-2640","🤽🏿‍♂":"1f93d-1f3ff-2642","🤽🏾‍♂":"1f93d-1f3fe-2642","🤽🏽‍♂":"1f93d-1f3fd-2642","🤽🏼‍♂":"1f93d-1f3fc-2642","🤽🏻‍♂":"1f93d-1f3fb-2642","🤽🏿‍♀":"1f93d-1f3ff-2640","🤽🏾‍♀":"1f93d-1f3fe-2640","🤽🏽‍♀":"1f93d-1f3fd-2640","🤽🏼‍♀":"1f93d-1f3fc-2640","🤽🏻‍♀":"1f93d-1f3fb-2640","🤸🏿‍♂":"1f938-1f3ff-2642","🤸🏾‍♂":"1f938-1f3fe-2642","🤸🏽‍♂":"1f938-1f3fd-2642","🤸🏼‍♂":"1f938-1f3fc-2642","🤸🏻‍♂":"1f938-1f3fb-2642","🤸🏿‍♀":"1f938-1f3ff-2640","🤸🏾‍♀":"1f938-1f3fe-2640","🤸🏽‍♀":"1f938-1f3fd-2640","🤸🏼‍♀":"1f938-1f3fc-2640","🤸🏻‍♀":"1f938-1f3fb-2640","🚶🏿‍♂":"1f6b6-1f3ff-2642","🚶🏾‍♂":"1f6b6-1f3fe-2642","🚶🏽‍♂":"1f6b6-1f3fd-2642","🚶🏼‍♂":"1f6b6-1f3fc-2642","🚶🏻‍♂":"1f6b6-1f3fb-2642","🚶🏿‍♀":"1f6b6-1f3ff-2640","🚶🏾‍♀":"1f6b6-1f3fe-2640","🚶🏽‍♀":"1f6b6-1f3fd-2640","🚶🏼‍♀":"1f6b6-1f3fc-2640","🚶🏻‍♀":"1f6b6-1f3fb-2640","🚵🏿‍♂":"1f6b5-1f3ff-2642","🚵🏾‍♂":"1f6b5-1f3fe-2642","🚵🏽‍♂":"1f6b5-1f3fd-2642","🚵🏼‍♂":"1f6b5-1f3fc-2642","🚵🏻‍♂":"1f6b5-1f3fb-2642","🚵🏿‍♀":"1f6b5-1f3ff-2640","🚵🏾‍♀":"1f6b5-1f3fe-2640","🚵🏽‍♀":"1f6b5-1f3fd-2640","🚵🏼‍♀":"1f6b5-1f3fc-2640","🚵🏻‍♀":"1f6b5-1f3fb-2640","🚴🏿‍♂":"1f6b4-1f3ff-2642","🚴🏾‍♂":"1f6b4-1f3fe-2642","🚴🏽‍♂":"1f6b4-1f3fd-2642","🚴🏼‍♂":"1f6b4-1f3fc-2642","🚴🏻‍♂":"1f6b4-1f3fb-2642","🚴🏿‍♀":"1f6b4-1f3ff-2640","🚴🏾‍♀":"1f6b4-1f3fe-2640","🚴🏽‍♀":"1f6b4-1f3fd-2640","🚴🏼‍♀":"1f6b4-1f3fc-2640","🚴🏻‍♀":"1f6b4-1f3fb-2640","🚣🏿‍♂":"1f6a3-1f3ff-2642","🚣🏾‍♂":"1f6a3-1f3fe-2642","🚣🏽‍♂":"1f6a3-1f3fd-2642","🚣🏼‍♂":"1f6a3-1f3fc-2642","🚣🏻‍♂":"1f6a3-1f3fb-2642","🚣🏿‍♀":"1f6a3-1f3ff-2640","🚣🏾‍♀":"1f6a3-1f3fe-2640","🚣🏽‍♀":"1f6a3-1f3fd-2640","🚣🏼‍♀":"1f6a3-1f3fc-2640","🚣🏻‍♀":"1f6a3-1f3fb-2640","🏋🏿‍♂":"1f3cb-1f3ff-2642","🏋🏾‍♂":"1f3cb-1f3fe-2642","🏋🏽‍♂":"1f3cb-1f3fd-2642","🏋🏼‍♂":"1f3cb-1f3fc-2642","🏋🏻‍♂":"1f3cb-1f3fb-2642","🏋🏿‍♀":"1f3cb-1f3ff-2640","🏋🏾‍♀":"1f3cb-1f3fe-2640","🏋🏽‍♀":"1f3cb-1f3fd-2640","🏋🏼‍♀":"1f3cb-1f3fc-2640","🏋🏻‍♀":"1f3cb-1f3fb-2640","🏊🏿‍♂":"1f3ca-1f3ff-2642","🏊🏾‍♂":"1f3ca-1f3fe-2642","🏊🏽‍♂":"1f3ca-1f3fd-2642","🏊🏼‍♂":"1f3ca-1f3fc-2642","🏊🏻‍♂":"1f3ca-1f3fb-2642","🏊🏿‍♀":"1f3ca-1f3ff-2640","🏊🏾‍♀":"1f3ca-1f3fe-2640","🏊🏽‍♀":"1f3ca-1f3fd-2640","🏊🏼‍♀":"1f3ca-1f3fc-2640","🏊🏻‍♀":"1f3ca-1f3fb-2640","🏄🏿‍♂":"1f3c4-1f3ff-2642","🏄🏾‍♂":"1f3c4-1f3fe-2642","🏄🏽‍♂":"1f3c4-1f3fd-2642","🏄🏼‍♂":"1f3c4-1f3fc-2642","🏄🏻‍♂":"1f3c4-1f3fb-2642","🏄🏿‍♀":"1f3c4-1f3ff-2640","🏄🏾‍♀":"1f3c4-1f3fe-2640","🏄🏽‍♀":"1f3c4-1f3fd-2640","🏄🏼‍♀":"1f3c4-1f3fc-2640","🏄🏻‍♀":"1f3c4-1f3fb-2640","🏃🏿‍♂":"1f3c3-1f3ff-2642","🏃🏾‍♂":"1f3c3-1f3fe-2642","🏃🏽‍♂":"1f3c3-1f3fd-2642","🏃🏼‍♂":"1f3c3-1f3fc-2642","🏃🏻‍♂":"1f3c3-1f3fb-2642","🏃🏿‍♀":"1f3c3-1f3ff-2640","🏃🏾‍♀":"1f3c3-1f3fe-2640","🏃🏽‍♀":"1f3c3-1f3fd-2640","🏃🏼‍♀":"1f3c3-1f3fc-2640","🏃🏻‍♀":"1f3c3-1f3fb-2640","🤷🏿‍♂":"1f937-1f3ff-2642","🤷🏾‍♂":"1f937-1f3fe-2642","🤷🏽‍♂":"1f937-1f3fd-2642","🤷🏼‍♂":"1f937-1f3fc-2642","🤷🏻‍♂":"1f937-1f3fb-2642","🤷🏿‍♀":"1f937-1f3ff-2640","🤷🏾‍♀":"1f937-1f3fe-2640","🤷🏽‍♀":"1f937-1f3fd-2640","🤷🏼‍♀":"1f937-1f3fc-2640","🤷🏻‍♀":"1f937-1f3fb-2640","🤦🏿‍♂":"1f926-1f3ff-2642","🤦🏾‍♂":"1f926-1f3fe-2642","🤦🏽‍♂":"1f926-1f3fd-2642","🤦🏼‍♂":"1f926-1f3fc-2642","🤦🏻‍♂":"1f926-1f3fb-2642","🤦🏿‍♀":"1f926-1f3ff-2640","🤦🏾‍♀":"1f926-1f3fe-2640","🤦🏽‍♀":"1f926-1f3fd-2640","🤦🏼‍♀":"1f926-1f3fc-2640","🤦🏻‍♀":"1f926-1f3fb-2640","🙎🏿‍♂":"1f64e-1f3ff-2642","🙎🏾‍♂":"1f64e-1f3fe-2642","🙎🏽‍♂":"1f64e-1f3fd-2642","🙎🏼‍♂":"1f64e-1f3fc-2642","🙎🏻‍♂":"1f64e-1f3fb-2642","🙎🏿‍♀":"1f64e-1f3ff-2640","🙎🏾‍♀":"1f64e-1f3fe-2640","🙎🏽‍♀":"1f64e-1f3fd-2640","🙎🏼‍♀":"1f64e-1f3fc-2640","🙎🏻‍♀":"1f64e-1f3fb-2640","🙍🏿‍♂":"1f64d-1f3ff-2642","🙍🏾‍♂":"1f64d-1f3fe-2642","🙍🏽‍♂":"1f64d-1f3fd-2642","🙍🏼‍♂":"1f64d-1f3fc-2642","🙍🏻‍♂":"1f64d-1f3fb-2642","🙍🏿‍♀":"1f64d-1f3ff-2640","🙍🏾‍♀":"1f64d-1f3fe-2640","🙍🏽‍♀":"1f64d-1f3fd-2640","🙍🏼‍♀":"1f64d-1f3fc-2640","🙍🏻‍♀":"1f64d-1f3fb-2640","🙋🏿‍♂":"1f64b-1f3ff-2642","🙋🏾‍♂":"1f64b-1f3fe-2642","🙋🏽‍♂":"1f64b-1f3fd-2642","🙋🏼‍♂":"1f64b-1f3fc-2642","🙋🏻‍♂":"1f64b-1f3fb-2642","🙋🏿‍♀":"1f64b-1f3ff-2640","🙋🏾‍♀":"1f64b-1f3fe-2640","🙋🏽‍♀":"1f64b-1f3fd-2640","🙋🏼‍♀":"1f64b-1f3fc-2640","🙋🏻‍♀":"1f64b-1f3fb-2640","🙇🏿‍♂":"1f647-1f3ff-2642","🙇🏾‍♂":"1f647-1f3fe-2642","🙇🏽‍♂":"1f647-1f3fd-2642","🙇🏼‍♂":"1f647-1f3fc-2642","🙇🏻‍♂":"1f647-1f3fb-2642","🙇🏿‍♀":"1f647-1f3ff-2640","🙇🏾‍♀":"1f647-1f3fe-2640","🙇🏽‍♀":"1f647-1f3fd-2640","🙇🏼‍♀":"1f647-1f3fc-2640","🙇🏻‍♀":"1f647-1f3fb-2640","🙆🏿‍♂":"1f646-1f3ff-2642","🙆🏾‍♂":"1f646-1f3fe-2642","🙆🏽‍♂":"1f646-1f3fd-2642","🙆🏼‍♂":"1f646-1f3fc-2642","🙆🏻‍♂":"1f646-1f3fb-2642","🙆🏿‍♀":"1f646-1f3ff-2640","🙆🏾‍♀":"1f646-1f3fe-2640","🙆🏽‍♀":"1f646-1f3fd-2640","🙆🏼‍♀":"1f646-1f3fc-2640","🙆🏻‍♀":"1f646-1f3fb-2640","🙅🏿‍♂":"1f645-1f3ff-2642","🙅🏾‍♂":"1f645-1f3fe-2642","🙅🏽‍♂":"1f645-1f3fd-2642","🙅🏼‍♂":"1f645-1f3fc-2642","🙅🏻‍♂":"1f645-1f3fb-2642","🙅🏿‍♀":"1f645-1f3ff-2640","🙅🏾‍♀":"1f645-1f3fe-2640","🙅🏽‍♀":"1f645-1f3fd-2640","🙅🏼‍♀":"1f645-1f3fc-2640","🙅🏻‍♀":"1f645-1f3fb-2640","💇🏿‍♂":"1f487-1f3ff-2642","💇🏾‍♂":"1f487-1f3fe-2642","💇🏽‍♂":"1f487-1f3fd-2642","💇🏼‍♂":"1f487-1f3fc-2642","💇🏻‍♂":"1f487-1f3fb-2642","💇🏿‍♀":"1f487-1f3ff-2640","💇🏾‍♀":"1f487-1f3fe-2640","💇🏽‍♀":"1f487-1f3fd-2640","💇🏼‍♀":"1f487-1f3fc-2640","💇🏻‍♀":"1f487-1f3fb-2640","💆🏿‍♂":"1f486-1f3ff-2642","💆🏾‍♂":"1f486-1f3fe-2642","💆🏽‍♂":"1f486-1f3fd-2642","💆🏼‍♂":"1f486-1f3fc-2642","💆🏻‍♂":"1f486-1f3fb-2642","💆🏿‍♀":"1f486-1f3ff-2640","💆🏾‍♀":"1f486-1f3fe-2640","💆🏽‍♀":"1f486-1f3fd-2640","💆🏼‍♀":"1f486-1f3fc-2640","💆🏻‍♀":"1f486-1f3fb-2640","💁🏿‍♂":"1f481-1f3ff-2642","💁🏾‍♂":"1f481-1f3fe-2642","💁🏽‍♂":"1f481-1f3fd-2642","💁🏼‍♂":"1f481-1f3fc-2642","💁🏻‍♂":"1f481-1f3fb-2642","💁🏿‍♀":"1f481-1f3ff-2640","💁🏾‍♀":"1f481-1f3fe-2640","💁🏽‍♀":"1f481-1f3fd-2640","💁🏼‍♀":"1f481-1f3fc-2640","💁🏻‍♀":"1f481-1f3fb-2640","👱🏿‍♂":"1f471-1f3ff-2642","👱🏾‍♂":"1f471-1f3fe-2642","👱🏽‍♂":"1f471-1f3fd-2642","👱🏼‍♂":"1f471-1f3fc-2642","👱🏻‍♂":"1f471-1f3fb-2642","👱🏿‍♀":"1f471-1f3ff-2640","👱🏾‍♀":"1f471-1f3fe-2640","👱🏽‍♀":"1f471-1f3fd-2640","👱🏼‍♀":"1f471-1f3fc-2640","👱🏻‍♀":"1f471-1f3fb-2640","👳🏿‍♂":"1f473-1f3ff-2642","👳🏾‍♂":"1f473-1f3fe-2642","👳🏽‍♂":"1f473-1f3fd-2642","👳🏼‍♂":"1f473-1f3fc-2642","👳🏻‍♂":"1f473-1f3fb-2642","👳🏿‍♀":"1f473-1f3ff-2640","👳🏾‍♀":"1f473-1f3fe-2640","👳🏽‍♀":"1f473-1f3fd-2640","👳🏼‍♀":"1f473-1f3fc-2640","👳🏻‍♀":"1f473-1f3fb-2640","💂🏿‍♂":"1f482-1f3ff-2642","💂🏾‍♂":"1f482-1f3fe-2642","💂🏽‍♂":"1f482-1f3fd-2642","💂🏼‍♂":"1f482-1f3fc-2642","💂🏻‍♂":"1f482-1f3fb-2642","💂🏿‍♀":"1f482-1f3ff-2640","💂🏾‍♀":"1f482-1f3fe-2640","💂🏽‍♀":"1f482-1f3fd-2640","💂🏼‍♀":"1f482-1f3fc-2640","💂🏻‍♀":"1f482-1f3fb-2640","🕵🏿‍♂":"1f575-1f3ff-2642","🕵🏾‍♂":"1f575-1f3fe-2642","🕵🏽‍♂":"1f575-1f3fd-2642","🕵🏼‍♂":"1f575-1f3fc-2642","🕵🏻‍♂":"1f575-1f3fb-2642","🕵🏿‍♀":"1f575-1f3ff-2640","🕵🏾‍♀":"1f575-1f3fe-2640","🕵🏽‍♀":"1f575-1f3fd-2640","🕵🏼‍♀":"1f575-1f3fc-2640","🕵🏻‍♀":"1f575-1f3fb-2640","👷🏿‍♂":"1f477-1f3ff-2642","👷🏾‍♂":"1f477-1f3fe-2642","👷🏽‍♂":"1f477-1f3fd-2642","👷🏼‍♂":"1f477-1f3fc-2642","👷🏻‍♂":"1f477-1f3fb-2642","👷🏿‍♀":"1f477-1f3ff-2640","👷🏾‍♀":"1f477-1f3fe-2640","👷🏽‍♀":"1f477-1f3fd-2640","👷🏼‍♀":"1f477-1f3fc-2640","👷🏻‍♀":"1f477-1f3fb-2640","👮🏿‍♂":"1f46e-1f3ff-2642","👮🏾‍♂":"1f46e-1f3fe-2642","👮🏽‍♂":"1f46e-1f3fd-2642","👮🏼‍♂":"1f46e-1f3fc-2642","👮🏻‍♂":"1f46e-1f3fb-2642","👮🏿‍♀":"1f46e-1f3ff-2640","👮🏾‍♀":"1f46e-1f3fe-2640","👮🏽‍♀":"1f46e-1f3fd-2640","👮🏼‍♀":"1f46e-1f3fc-2640","👮🏻‍♀":"1f46e-1f3fb-2640","👨🏿‍⚕":"1f468-1f3ff-2695","👨🏾‍⚕":"1f468-1f3fe-2695","👨🏽‍⚕":"1f468-1f3fd-2695","👨🏼‍⚕":"1f468-1f3fc-2695","👨🏻‍⚕":"1f468-1f3fb-2695","👩🏿‍⚕":"1f469-1f3ff-2695","👩🏾‍⚕":"1f469-1f3fe-2695","👩🏽‍⚕":"1f469-1f3fd-2695","👩🏼‍⚕":"1f469-1f3fc-2695","👩🏻‍⚕":"1f469-1f3fb-2695","👨🏻‍⚖":"1f468-1f3fb-2696","👨🏼‍⚖":"1f468-1f3fc-2696","👨🏽‍⚖":"1f468-1f3fd-2696","👨🏾‍⚖":"1f468-1f3fe-2696","👨🏿‍⚖":"1f468-1f3ff-2696","👩🏻‍⚖":"1f469-1f3fb-2696","👩🏼‍⚖":"1f469-1f3fc-2696","👩🏽‍⚖":"1f469-1f3fd-2696","👩🏾‍⚖":"1f469-1f3fe-2696","👩🏿‍⚖":"1f469-1f3ff-2696","👨🏻‍✈":"1f468-1f3fb-2708","👨🏼‍✈":"1f468-1f3fc-2708","👨🏽‍✈":"1f468-1f3fd-2708","👨🏾‍✈":"1f468-1f3fe-2708","👨🏿‍✈":"1f468-1f3ff-2708","👩🏻‍✈":"1f469-1f3fb-2708","👩🏼‍✈":"1f469-1f3fc-2708","👩🏽‍✈":"1f469-1f3fd-2708","👩🏾‍✈":"1f469-1f3fe-2708","👩🏿‍✈":"1f469-1f3ff-2708","👨❤️👨":"1f468-2764-1f468","👩❤️👨":"1f469-2764-1f468","👩❤️👩":"1f469-2764-1f469","👨🏻⚕️":"1f468-1f3fb-2695","👨🏻⚖️":"1f468-1f3fb-2696","👨🏻✈️":"1f468-1f3fb-2708","👨🏼⚕️":"1f468-1f3fc-2695","👨🏼⚖️":"1f468-1f3fc-2696","👨🏼✈️":"1f468-1f3fc-2708","👨🏽⚕️":"1f468-1f3fd-2695","👨🏽⚖️":"1f468-1f3fd-2696","👨🏽✈️":"1f468-1f3fd-2708","👨🏾⚕️":"1f468-1f3fe-2695","👨🏾⚖️":"1f468-1f3fe-2696","👨🏾✈️":"1f468-1f3fe-2708","👨🏿⚕️":"1f468-1f3ff-2695","👨🏿⚖️":"1f468-1f3ff-2696","👨🏿✈️":"1f468-1f3ff-2708","👩🏻⚕️":"1f469-1f3fb-2695","👩🏻⚖️":"1f469-1f3fb-2696","👩🏻✈️":"1f469-1f3fb-2708","👩🏼⚕️":"1f469-1f3fc-2695","👩🏼⚖️":"1f469-1f3fc-2696","👩🏼✈️":"1f469-1f3fc-2708","👩🏽⚕️":"1f469-1f3fd-2695","👩🏽⚖️":"1f469-1f3fd-2696","👩🏽✈️":"1f469-1f3fd-2708","👩🏾⚕️":"1f469-1f3fe-2695","👩🏾⚖️":"1f469-1f3fe-2696","👩🏾✈️":"1f469-1f3fe-2708","👩🏿⚕️":"1f469-1f3ff-2695","👩🏿⚖️":"1f469-1f3ff-2696","👩🏿✈️":"1f469-1f3ff-2708","👮🏻♀️":"1f46e-1f3fb-2640","👮🏻♂️":"1f46e-1f3fb-2642","👮🏼♀️":"1f46e-1f3fc-2640","👮🏼♂️":"1f46e-1f3fc-2642","👮🏽♀️":"1f46e-1f3fd-2640","👮🏽♂️":"1f46e-1f3fd-2642","👮🏾♀️":"1f46e-1f3fe-2640","👮🏾♂️":"1f46e-1f3fe-2642","👮🏿♀️":"1f46e-1f3ff-2640","👮🏿♂️":"1f46e-1f3ff-2642","👱🏻♀️":"1f471-1f3fb-2640","👱🏻♂️":"1f471-1f3fb-2642","👱🏼♀️":"1f471-1f3fc-2640","👱🏼♂️":"1f471-1f3fc-2642","👱🏽♀️":"1f471-1f3fd-2640","👱🏽♂️":"1f471-1f3fd-2642","👱🏾♀️":"1f471-1f3fe-2640","👱🏾♂️":"1f471-1f3fe-2642","👱🏿♀️":"1f471-1f3ff-2640","👱🏿♂️":"1f471-1f3ff-2642","👳🏻♀️":"1f473-1f3fb-2640","👳🏻♂️":"1f473-1f3fb-2642","👳🏼♀️":"1f473-1f3fc-2640","👳🏼♂️":"1f473-1f3fc-2642","👳🏽♀️":"1f473-1f3fd-2640","👳🏽♂️":"1f473-1f3fd-2642","👳🏾♀️":"1f473-1f3fe-2640","👳🏾♂️":"1f473-1f3fe-2642","👳🏿♀️":"1f473-1f3ff-2640","👳🏿♂️":"1f473-1f3ff-2642","👷🏻♀️":"1f477-1f3fb-2640","👷🏻♂️":"1f477-1f3fb-2642","👷🏼♀️":"1f477-1f3fc-2640","👷🏼♂️":"1f477-1f3fc-2642","👷🏽♀️":"1f477-1f3fd-2640","👷🏽♂️":"1f477-1f3fd-2642","👷🏾♀️":"1f477-1f3fe-2640","👷🏾♂️":"1f477-1f3fe-2642","👷🏿♀️":"1f477-1f3ff-2640","👷🏿♂️":"1f477-1f3ff-2642","💂🏻♀️":"1f482-1f3fb-2640","💂🏻♂️":"1f482-1f3fb-2642","💂🏼♀️":"1f482-1f3fc-2640","💂🏼♂️":"1f482-1f3fc-2642","💂🏽♀️":"1f482-1f3fd-2640","💂🏽♂️":"1f482-1f3fd-2642","💂🏾♀️":"1f482-1f3fe-2640","💂🏾♂️":"1f482-1f3fe-2642","💂🏿♀️":"1f482-1f3ff-2640","💂🏿♂️":"1f482-1f3ff-2642","🏃🏻♀️":"1f3c3-1f3fb-2640","🏃🏻♂️":"1f3c3-1f3fb-2642","🏃🏼♀️":"1f3c3-1f3fc-2640","🏃🏼♂️":"1f3c3-1f3fc-2642","🏃🏽♀️":"1f3c3-1f3fd-2640","🏃🏽♂️":"1f3c3-1f3fd-2642","🏃🏾♀️":"1f3c3-1f3fe-2640","🏃🏾♂️":"1f3c3-1f3fe-2642","🏃🏿♀️":"1f3c3-1f3ff-2640","🏃🏿♂️":"1f3c3-1f3ff-2642","🏄🏻♀️":"1f3c4-1f3fb-2640","🏄🏻♂️":"1f3c4-1f3fb-2642","🏄🏼♀️":"1f3c4-1f3fc-2640","🏄🏼♂️":"1f3c4-1f3fc-2642","🏄🏽♀️":"1f3c4-1f3fd-2640","🏄🏽♂️":"1f3c4-1f3fd-2642","🏄🏾♀️":"1f3c4-1f3fe-2640","🏄🏾♂️":"1f3c4-1f3fe-2642","🏄🏿♀️":"1f3c4-1f3ff-2640","🏄🏿♂️":"1f3c4-1f3ff-2642","🏊🏻♀️":"1f3ca-1f3fb-2640","🏊🏻♂️":"1f3ca-1f3fb-2642","🏊🏼♀️":"1f3ca-1f3fc-2640","🏊🏼♂️":"1f3ca-1f3fc-2642","🏊🏽♀️":"1f3ca-1f3fd-2640","🏊🏽♂️":"1f3ca-1f3fd-2642","🏊🏾♀️":"1f3ca-1f3fe-2640","🏊🏾♂️":"1f3ca-1f3fe-2642","🏊🏿♀️":"1f3ca-1f3ff-2640","🏊🏿♂️":"1f3ca-1f3ff-2642","💆🏻♀️":"1f486-1f3fb-2640","💆🏻♂️":"1f486-1f3fb-2642","💆🏼♀️":"1f486-1f3fc-2640","💆🏼♂️":"1f486-1f3fc-2642","💆🏽♀️":"1f486-1f3fd-2640","💆🏽♂️":"1f486-1f3fd-2642","💆🏾♀️":"1f486-1f3fe-2640","💆🏾♂️":"1f486-1f3fe-2642","💆🏿♀️":"1f486-1f3ff-2640","💆🏿♂️":"1f486-1f3ff-2642","💇🏻♀️":"1f487-1f3fb-2640","💇🏻♂️":"1f487-1f3fb-2642","💇🏼♀️":"1f487-1f3fc-2640","💇🏼♂️":"1f487-1f3fc-2642","💇🏽♀️":"1f487-1f3fd-2640","💇🏽♂️":"1f487-1f3fd-2642","💇🏾♀️":"1f487-1f3fe-2640","💇🏾♂️":"1f487-1f3fe-2642","💇🏿♀️":"1f487-1f3ff-2640","💇🏿♂️":"1f487-1f3ff-2642","🚣🏻♀️":"1f6a3-1f3fb-2640","🚣🏻♂️":"1f6a3-1f3fb-2642","🚣🏼♀️":"1f6a3-1f3fc-2640","🚣🏼♂️":"1f6a3-1f3fc-2642","🚣🏽♀️":"1f6a3-1f3fd-2640","🚣🏽♂️":"1f6a3-1f3fd-2642","🚣🏾♀️":"1f6a3-1f3fe-2640","🚣🏾♂️":"1f6a3-1f3fe-2642","🚣🏿♀️":"1f6a3-1f3ff-2640","🚣🏿♂️":"1f6a3-1f3ff-2642","🚴🏻♀️":"1f6b4-1f3fb-2640","🚴🏻♂️":"1f6b4-1f3fb-2642","🚴🏼♀️":"1f6b4-1f3fc-2640","🚴🏼♂️":"1f6b4-1f3fc-2642","🚴🏽♀️":"1f6b4-1f3fd-2640","🚴🏽♂️":"1f6b4-1f3fd-2642","🚴🏾♀️":"1f6b4-1f3fe-2640","🚴🏾♂️":"1f6b4-1f3fe-2642","🚴🏿♀️":"1f6b4-1f3ff-2640","🚴🏿♂️":"1f6b4-1f3ff-2642","🚵🏻♀️":"1f6b5-1f3fb-2640","🚵🏻♂️":"1f6b5-1f3fb-2642","🚵🏼♀️":"1f6b5-1f3fc-2640","🚵🏼♂️":"1f6b5-1f3fc-2642","🚵🏽♀️":"1f6b5-1f3fd-2640","🚵🏽♂️":"1f6b5-1f3fd-2642","🚵🏾♀️":"1f6b5-1f3fe-2640","🚵🏾♂️":"1f6b5-1f3fe-2642","🚵🏿♀️":"1f6b5-1f3ff-2640","🚵🏿♂️":"1f6b5-1f3ff-2642","🚶🏻♀️":"1f6b6-1f3fb-2640","🚶🏻♂️":"1f6b6-1f3fb-2642","🚶🏼♀️":"1f6b6-1f3fc-2640","🚶🏼♂️":"1f6b6-1f3fc-2642","🚶🏽♀️":"1f6b6-1f3fd-2640","🚶🏽♂️":"1f6b6-1f3fd-2642","🚶🏾♀️":"1f6b6-1f3fe-2640","🚶🏾♂️":"1f6b6-1f3fe-2642","🚶🏿♀️":"1f6b6-1f3ff-2640","🚶🏿♂️":"1f6b6-1f3ff-2642","🤸🏻♀️":"1f938-1f3fb-2640","🤸🏻♂️":"1f938-1f3fb-2642","🤸🏼♀️":"1f938-1f3fc-2640","🤸🏼♂️":"1f938-1f3fc-2642","🤸🏽♀️":"1f938-1f3fd-2640","🤸🏽♂️":"1f938-1f3fd-2642","🤸🏾♀️":"1f938-1f3fe-2640","🤸🏾♂️":"1f938-1f3fe-2642","🤸🏿♀️":"1f938-1f3ff-2640","🤸🏿♂️":"1f938-1f3ff-2642","🤹🏻♀️":"1f939-1f3fb-2640","🤹🏻♂️":"1f939-1f3fb-2642","🤹🏼♀️":"1f939-1f3fc-2640","🤹🏼♂️":"1f939-1f3fc-2642","🤹🏽♀️":"1f939-1f3fd-2640","🤹🏽♂️":"1f939-1f3fd-2642","🤹🏾♀️":"1f939-1f3fe-2640","🤹🏾♂️":"1f939-1f3fe-2642","🤹🏿♀️":"1f939-1f3ff-2640","🤹🏿♂️":"1f939-1f3ff-2642","🤽🏻♀️":"1f93d-1f3fb-2640","🤽🏻♂️":"1f93d-1f3fb-2642","🤽🏼♀️":"1f93d-1f3fc-2640","🤽🏼♂️":"1f93d-1f3fc-2642","🤽🏽♀️":"1f93d-1f3fd-2640","🤽🏽♂️":"1f93d-1f3fd-2642","🤽🏾♀️":"1f93d-1f3fe-2640","🤽🏾♂️":"1f93d-1f3fe-2642","🤽🏿♀️":"1f93d-1f3ff-2640","🤽🏿♂️":"1f93d-1f3ff-2642","🤾🏻♀️":"1f93e-1f3fb-2640","🤾🏻♂️":"1f93e-1f3fb-2642","🤾🏼♀️":"1f93e-1f3fc-2640","🤾🏼♂️":"1f93e-1f3fc-2642","🤾🏽♀️":"1f93e-1f3fd-2640","🤾🏽♂️":"1f93e-1f3fd-2642","🤾🏾♀️":"1f93e-1f3fe-2640","🤾🏾♂️":"1f93e-1f3fe-2642","🤾🏿♀️":"1f93e-1f3ff-2640","🤾🏿♂️":"1f93e-1f3ff-2642","💁🏻♀️":"1f481-1f3fb-2640","💁🏻♂️":"1f481-1f3fb-2642","💁🏼♀️":"1f481-1f3fc-2640","💁🏼♂️":"1f481-1f3fc-2642","💁🏽♀️":"1f481-1f3fd-2640","💁🏽♂️":"1f481-1f3fd-2642","💁🏾♀️":"1f481-1f3fe-2640","💁🏾♂️":"1f481-1f3fe-2642","💁🏿♀️":"1f481-1f3ff-2640","💁🏿♂️":"1f481-1f3ff-2642","🙅🏻♀️":"1f645-1f3fb-2640","🙅🏻♂️":"1f645-1f3fb-2642","🙅🏼♀️":"1f645-1f3fc-2640","🙅🏼♂️":"1f645-1f3fc-2642","🙅🏽♀️":"1f645-1f3fd-2640","🙅🏽♂️":"1f645-1f3fd-2642","🙅🏾♀️":"1f645-1f3fe-2640","🙅🏾♂️":"1f645-1f3fe-2642","🙅🏿♀️":"1f645-1f3ff-2640","🙅🏿♂️":"1f645-1f3ff-2642","🙆🏻♀️":"1f646-1f3fb-2640","🙆🏻♂️":"1f646-1f3fb-2642","🙆🏼♀️":"1f646-1f3fc-2640","🙆🏼♂️":"1f646-1f3fc-2642","🙆🏽♀️":"1f646-1f3fd-2640","🙆🏽♂️":"1f646-1f3fd-2642","🙆🏾♀️":"1f646-1f3fe-2640","🙆🏾♂️":"1f646-1f3fe-2642","🙆🏿♀️":"1f646-1f3ff-2640","🙆🏿♂️":"1f646-1f3ff-2642","🙇🏻♀️":"1f647-1f3fb-2640","🙇🏻♂️":"1f647-1f3fb-2642","🙇🏼♀️":"1f647-1f3fc-2640","🙇🏼♂️":"1f647-1f3fc-2642","🙇🏽♀️":"1f647-1f3fd-2640","🙇🏽♂️":"1f647-1f3fd-2642","🙇🏾♀️":"1f647-1f3fe-2640","🙇🏾♂️":"1f647-1f3fe-2642","🙇🏿♀️":"1f647-1f3ff-2640","🙇🏿♂️":"1f647-1f3ff-2642","🙋🏻♀️":"1f64b-1f3fb-2640","🙋🏻♂️":"1f64b-1f3fb-2642","🙋🏼♀️":"1f64b-1f3fc-2640","🙋🏼♂️":"1f64b-1f3fc-2642","🙋🏽♀️":"1f64b-1f3fd-2640","🙋🏽♂️":"1f64b-1f3fd-2642","🙋🏾♀️":"1f64b-1f3fe-2640","🙋🏾♂️":"1f64b-1f3fe-2642","🙋🏿♀️":"1f64b-1f3ff-2640","🙋🏿♂️":"1f64b-1f3ff-2642","🙍🏻♀️":"1f64d-1f3fb-2640","🙍🏻♂️":"1f64d-1f3fb-2642","🙍🏼♀️":"1f64d-1f3fc-2640","🙍🏼♂️":"1f64d-1f3fc-2642","🙍🏽♀️":"1f64d-1f3fd-2640","🙍🏽♂️":"1f64d-1f3fd-2642","🙍🏾♀️":"1f64d-1f3fe-2640","🙍🏾♂️":"1f64d-1f3fe-2642","🙍🏿♀️":"1f64d-1f3ff-2640","🙍🏿♂️":"1f64d-1f3ff-2642","🙎🏻♀️":"1f64e-1f3fb-2640","🙎🏻♂️":"1f64e-1f3fb-2642","🙎🏼♀️":"1f64e-1f3fc-2640","🙎🏼♂️":"1f64e-1f3fc-2642","🙎🏽♀️":"1f64e-1f3fd-2640","🙎🏽♂️":"1f64e-1f3fd-2642","🙎🏾♀️":"1f64e-1f3fe-2640","🙎🏾♂️":"1f64e-1f3fe-2642","🙎🏿♀️":"1f64e-1f3ff-2640","🙎🏿♂️":"1f64e-1f3ff-2642","🤦🏻♀️":"1f926-1f3fb-2640","🤦🏻♂️":"1f926-1f3fb-2642","🤦🏼♀️":"1f926-1f3fc-2640","🤦🏼♂️":"1f926-1f3fc-2642","🤦🏽♀️":"1f926-1f3fd-2640","🤦🏽♂️":"1f926-1f3fd-2642","🤦🏾♀️":"1f926-1f3fe-2640","🤦🏾♂️":"1f926-1f3fe-2642","🤦🏿♀️":"1f926-1f3ff-2640","🤦🏿♂️":"1f926-1f3ff-2642","🤷🏻♀️":"1f937-1f3fb-2640","🤷🏻♂️":"1f937-1f3fb-2642","🤷🏼♀️":"1f937-1f3fc-2640","🤷🏼♂️":"1f937-1f3fc-2642","🤷🏽♀️":"1f937-1f3fd-2640","🤷🏽♂️":"1f937-1f3fd-2642","🤷🏾♀️":"1f937-1f3fe-2640","🤷🏾♂️":"1f937-1f3fe-2642","🤷🏿♀️":"1f937-1f3ff-2640","🤷🏿♂️":"1f937-1f3ff-2642","👁️🗨️":"1f441-1f5e8","🧙🏻‍♀":"1f9d9-1f3fb-2640","🧙🏻♀️":"1f9d9-1f3fb-2640","🧙🏻‍♂":"1f9d9-1f3fb-2642","🧙🏻♂️":"1f9d9-1f3fb-2642","🧙🏼‍♀":"1f9d9-1f3fc-2640","🧙🏼♀️":"1f9d9-1f3fc-2640","🧙🏼‍♂":"1f9d9-1f3fc-2642","🧙🏼♂️":"1f9d9-1f3fc-2642","🧙🏽‍♀":"1f9d9-1f3fd-2640","🧙🏽♀️":"1f9d9-1f3fd-2640","🧙🏽‍♂":"1f9d9-1f3fd-2642","🧙🏽♂️":"1f9d9-1f3fd-2642","🧙🏾‍♀":"1f9d9-1f3fe-2640","🧙🏾♀️":"1f9d9-1f3fe-2640","🧙🏾‍♂":"1f9d9-1f3fe-2642","🧙🏾♂️":"1f9d9-1f3fe-2642","🧙🏿‍♀":"1f9d9-1f3ff-2640","🧙🏿♀️":"1f9d9-1f3ff-2640","🧙🏿‍♂":"1f9d9-1f3ff-2642","🧙🏿♂️":"1f9d9-1f3ff-2642","🧚🏻‍♀":"1f9da-1f3fb-2640","🧚🏻♀️":"1f9da-1f3fb-2640","🧚🏻‍♂":"1f9da-1f3fb-2642","🧚🏻♂️":"1f9da-1f3fb-2642","🧚🏼‍♀":"1f9da-1f3fc-2640","🧚🏼♀️":"1f9da-1f3fc-2640","🧚🏼‍♂":"1f9da-1f3fc-2642","🧚🏼♂️":"1f9da-1f3fc-2642","🧚🏽‍♀":"1f9da-1f3fd-2640","🧚🏽♀️":"1f9da-1f3fd-2640","🧚🏽‍♂":"1f9da-1f3fd-2642","🧚🏽♂️":"1f9da-1f3fd-2642","🧚🏾‍♀":"1f9da-1f3fe-2640","🧚🏾♀️":"1f9da-1f3fe-2640","🧚🏾‍♂":"1f9da-1f3fe-2642","🧚🏾♂️":"1f9da-1f3fe-2642","🧚🏿‍♀":"1f9da-1f3ff-2640","🧚🏿♀️":"1f9da-1f3ff-2640","🧚🏿‍♂":"1f9da-1f3ff-2642","🧚🏿♂️":"1f9da-1f3ff-2642","🧛🏻‍♀":"1f9db-1f3fb-2640","🧛🏻♀️":"1f9db-1f3fb-2640","🧛🏻‍♂":"1f9db-1f3fb-2642","🧛🏻♂️":"1f9db-1f3fb-2642","🧛🏼‍♀":"1f9db-1f3fc-2640","🧛🏼♀️":"1f9db-1f3fc-2640","🧛🏼‍♂":"1f9db-1f3fc-2642","🧛🏼♂️":"1f9db-1f3fc-2642","🧛🏽‍♀":"1f9db-1f3fd-2640","🧛🏽♀️":"1f9db-1f3fd-2640","🧛🏽‍♂":"1f9db-1f3fd-2642","🧛🏽♂️":"1f9db-1f3fd-2642","🧛🏾‍♀":"1f9db-1f3fe-2640","🧛🏾♀️":"1f9db-1f3fe-2640","🧛🏾‍♂":"1f9db-1f3fe-2642","🧛🏾♂️":"1f9db-1f3fe-2642","🧛🏿‍♀":"1f9db-1f3ff-2640","🧛🏿♀️":"1f9db-1f3ff-2640","🧛🏿‍♂":"1f9db-1f3ff-2642","🧛🏿♂️":"1f9db-1f3ff-2642","🧜🏻‍♀":"1f9dc-1f3fb-2640","🧜🏻♀️":"1f9dc-1f3fb-2640","🧜🏻‍♂":"1f9dc-1f3fb-2642","🧜🏻♂️":"1f9dc-1f3fb-2642","🧜🏼‍♀":"1f9dc-1f3fc-2640","🧜🏼♀️":"1f9dc-1f3fc-2640","🧜🏼‍♂":"1f9dc-1f3fc-2642","🧜🏼♂️":"1f9dc-1f3fc-2642","🧜🏽‍♀":"1f9dc-1f3fd-2640","🧜🏽♀️":"1f9dc-1f3fd-2640","🧜🏽‍♂":"1f9dc-1f3fd-2642","🧜🏽♂️":"1f9dc-1f3fd-2642","🧜🏾‍♀":"1f9dc-1f3fe-2640","🧜🏾♀️":"1f9dc-1f3fe-2640","🧜🏾‍♂":"1f9dc-1f3fe-2642","🧜🏾♂️":"1f9dc-1f3fe-2642","🧜🏿‍♀":"1f9dc-1f3ff-2640","🧜🏿♀️":"1f9dc-1f3ff-2640","🧜🏿‍♂":"1f9dc-1f3ff-2642","🧜🏿♂️":"1f9dc-1f3ff-2642","🧝🏻‍♀":"1f9dd-1f3fb-2640","🧝🏻♀️":"1f9dd-1f3fb-2640","🧝🏻‍♂":"1f9dd-1f3fb-2642","🧝🏻♂️":"1f9dd-1f3fb-2642","🧝🏼‍♀":"1f9dd-1f3fc-2640","🧝🏼♀️":"1f9dd-1f3fc-2640","🧝🏼‍♂":"1f9dd-1f3fc-2642","🧝🏼♂️":"1f9dd-1f3fc-2642","🧝🏽‍♀":"1f9dd-1f3fd-2640","🧝🏽♀️":"1f9dd-1f3fd-2640","🧝🏽‍♂":"1f9dd-1f3fd-2642","🧝🏽♂️":"1f9dd-1f3fd-2642","🧝🏾‍♀":"1f9dd-1f3fe-2640","🧝🏾♀️":"1f9dd-1f3fe-2640","🧝🏾‍♂":"1f9dd-1f3fe-2642","🧝🏾♂️":"1f9dd-1f3fe-2642","🧝🏿‍♀":"1f9dd-1f3ff-2640","🧝🏿♀️":"1f9dd-1f3ff-2640","🧝🏿‍♂":"1f9dd-1f3ff-2642","🧝🏿♂️":"1f9dd-1f3ff-2642","🧖🏻‍♀":"1f9d6-1f3fb-2640","🧖🏻♀️":"1f9d6-1f3fb-2640","🧖🏻‍♂":"1f9d6-1f3fb-2642","🧖🏻♂️":"1f9d6-1f3fb-2642","🧖🏼‍♀":"1f9d6-1f3fc-2640","🧖🏼♀️":"1f9d6-1f3fc-2640","🧖🏼‍♂":"1f9d6-1f3fc-2642","🧖🏼♂️":"1f9d6-1f3fc-2642","🧖🏽‍♀":"1f9d6-1f3fd-2640","🧖🏽♀️":"1f9d6-1f3fd-2640","🧖🏽‍♂":"1f9d6-1f3fd-2642","🧖🏽♂️":"1f9d6-1f3fd-2642","🧖🏾‍♀":"1f9d6-1f3fe-2640","🧖🏾♀️":"1f9d6-1f3fe-2640","🧖🏾‍♂":"1f9d6-1f3fe-2642","🧖🏾♂️":"1f9d6-1f3fe-2642","🧖🏿‍♀":"1f9d6-1f3ff-2640","🧖🏿♀️":"1f9d6-1f3ff-2640","🧖🏿‍♂":"1f9d6-1f3ff-2642","🧖🏿♂️":"1f9d6-1f3ff-2642","🧗🏻‍♀":"1f9d7-1f3fb-2640","🧗🏻♀️":"1f9d7-1f3fb-2640","🧗🏻‍♂":"1f9d7-1f3fb-2642","🧗🏻♂️":"1f9d7-1f3fb-2642","🧗🏼‍♀":"1f9d7-1f3fc-2640","🧗🏼♀️":"1f9d7-1f3fc-2640","🧗🏼‍♂":"1f9d7-1f3fc-2642","🧗🏼♂️":"1f9d7-1f3fc-2642","🧗🏽‍♀":"1f9d7-1f3fd-2640","🧗🏽♀️":"1f9d7-1f3fd-2640","🧗🏽‍♂":"1f9d7-1f3fd-2642","🧗🏽♂️":"1f9d7-1f3fd-2642","🧗🏾‍♀":"1f9d7-1f3fe-2640","🧗🏾♀️":"1f9d7-1f3fe-2640","🧗🏾‍♂":"1f9d7-1f3fe-2642","🧗🏾♂️":"1f9d7-1f3fe-2642","🧗🏿‍♀":"1f9d7-1f3ff-2640","🧗🏿♀️":"1f9d7-1f3ff-2640","🧗🏿‍♂":"1f9d7-1f3ff-2642","🧗🏿♂️":"1f9d7-1f3ff-2642","🧘🏻‍♀":"1f9d8-1f3fb-2640","🧘🏻♀️":"1f9d8-1f3fb-2640","🧘🏻‍♂":"1f9d8-1f3fb-2642","🧘🏻♂️":"1f9d8-1f3fb-2642","🧘🏼‍♀":"1f9d8-1f3fc-2640","🧘🏼♀️":"1f9d8-1f3fc-2640","🧘🏼‍♂":"1f9d8-1f3fc-2642","🧘🏼♂️":"1f9d8-1f3fc-2642","🧘🏽‍♀":"1f9d8-1f3fd-2640","🧘🏽♀️":"1f9d8-1f3fd-2640","🧘🏽‍♂":"1f9d8-1f3fd-2642","🧘🏽♂️":"1f9d8-1f3fd-2642","🧘🏾‍♀":"1f9d8-1f3fe-2640","🧘🏾♀️":"1f9d8-1f3fe-2640","🧘🏾‍♂":"1f9d8-1f3fe-2642","🧘🏾♂️":"1f9d8-1f3fe-2642","🧘🏿‍♀":"1f9d8-1f3ff-2640","🧘🏿♀️":"1f9d8-1f3ff-2640","🧘🏿‍♂":"1f9d8-1f3ff-2642","🧘🏿♂️":"1f9d8-1f3ff-2642","👁‍🗨️":"1f441-1f5e8","👁️‍🗨":"1f441-1f5e8","🦸🏻‍♀":"1f9b8-1f3fb-2640","🦸🏻♀️":"1f9b8-1f3fb-2640","🦸🏻‍♂":"1f9b8-1f3fb-2642","🦸🏻♂️":"1f9b8-1f3fb-2642","🦸🏼‍♀":"1f9b8-1f3fc-2640","🦸🏼♀️":"1f9b8-1f3fc-2640","🦸🏼‍♂":"1f9b8-1f3fc-2642","🦸🏼♂️":"1f9b8-1f3fc-2642","🦸🏽‍♀":"1f9b8-1f3fd-2640","🦸🏽♀️":"1f9b8-1f3fd-2640","🦸🏽‍♂":"1f9b8-1f3fd-2642","🦸🏽♂️":"1f9b8-1f3fd-2642","🦸🏾‍♀":"1f9b8-1f3fe-2640","🦸🏾♀️":"1f9b8-1f3fe-2640","🦸🏾‍♂":"1f9b8-1f3fe-2642","🦸🏾♂️":"1f9b8-1f3fe-2642","🦸🏿‍♀":"1f9b8-1f3ff-2640","🦸🏿♀️":"1f9b8-1f3ff-2640","🦸🏿‍♂":"1f9b8-1f3ff-2642","🦸🏿♂️":"1f9b8-1f3ff-2642","🦹🏻‍♀":"1f9b9-1f3fb-2640","🦹🏻♀️":"1f9b9-1f3fb-2640","🦹🏻‍♂":"1f9b9-1f3fb-2642","🦹🏻♂️":"1f9b9-1f3fb-2642","🦹🏼‍♀":"1f9b9-1f3fc-2640","🦹🏼♀️":"1f9b9-1f3fc-2640","🦹🏼‍♂":"1f9b9-1f3fc-2642","🦹🏼♂️":"1f9b9-1f3fc-2642","🦹🏽‍♀":"1f9b9-1f3fd-2640","🦹🏽♀️":"1f9b9-1f3fd-2640","🦹🏽‍♂":"1f9b9-1f3fd-2642","🦹🏽♂️":"1f9b9-1f3fd-2642","🦹🏾‍♀":"1f9b9-1f3fe-2640","🦹🏾♀️":"1f9b9-1f3fe-2640","🦹🏾‍♂":"1f9b9-1f3fe-2642","🦹🏾♂️":"1f9b9-1f3fe-2642","🦹🏿‍♀":"1f9b9-1f3ff-2640","🦹🏿♀️":"1f9b9-1f3ff-2640","🦹🏿‍♂":"1f9b9-1f3ff-2642","🦹🏿♂️":"1f9b9-1f3ff-2642","⛹🏿‍♂":"26f9-1f3ff-2642","⛹🏾‍♂":"26f9-1f3fe-2642","⛹🏽‍♂":"26f9-1f3fd-2642","⛹🏼‍♂":"26f9-1f3fc-2642","⛹🏻‍♂":"26f9-1f3fb-2642","⛹🏿‍♀":"26f9-1f3ff-2640","⛹🏾‍♀":"26f9-1f3fe-2640","⛹🏽‍♀":"26f9-1f3fd-2640","⛹🏼‍♀":"26f9-1f3fc-2640","⛹🏻‍♀":"26f9-1f3fb-2640","👨‍⚕️":"1f468-2695","👨‍⚖️":"1f468-2696","👨‍✈️":"1f468-2708","👩‍⚕️":"1f469-2695","👩‍⚖️":"1f469-2696","👩‍✈️":"1f469-2708","👮‍♀️":"1f46e-2640","👮‍♂️":"1f46e-2642","👱‍♀️":"1f471-2640","👱‍♂️":"1f471-2642","👳‍♀️":"1f473-2640","👳‍♂️":"1f473-2642","👷‍♀️":"1f477-2640","👷‍♂️":"1f477-2642","💂‍♀️":"1f482-2640","💂‍♂️":"1f482-2642","🕵️♀️":"1f575-2640","🕵️♂️":"1f575-2642","🏃‍♀️":"1f3c3-2640","🏃‍♂️":"1f3c3-2642","🏄‍♀️":"1f3c4-2640","🏄‍♂️":"1f3c4-2642","🏊‍♀️":"1f3ca-2640","🏊‍♂️":"1f3ca-2642","🏋️♀️":"1f3cb-2640","🏋️♂️":"1f3cb-2642","🏌️♀️":"1f3cc-2640","🏌️♂️":"1f3cc-2642","👯‍♀️":"1f46f-2640","👯‍♂️":"1f46f-2642","💆‍♀️":"1f486-2640","💆‍♂️":"1f486-2642","💇‍♀️":"1f487-2640","💇‍♂️":"1f487-2642","🚣‍♀️":"1f6a3-2640","🚣‍♂️":"1f6a3-2642","🚴‍♀️":"1f6b4-2640","🚴‍♂️":"1f6b4-2642","🚵‍♀️":"1f6b5-2640","🚵‍♂️":"1f6b5-2642","🚶‍♀️":"1f6b6-2640","🚶‍♂️":"1f6b6-2642","🤸‍♀️":"1f938-2640","🤸‍♂️":"1f938-2642","🤹‍♀️":"1f939-2640","🤹‍♂️":"1f939-2642","🤼‍♀️":"1f93c-2640","🤼‍♂️":"1f93c-2642","🤽‍♀️":"1f93d-2640","🤽‍♂️":"1f93d-2642","🤾‍♀️":"1f93e-2640","🤾‍♂️":"1f93e-2642","💁‍♀️":"1f481-2640","💁‍♂️":"1f481-2642","🙅‍♀️":"1f645-2640","🙅‍♂️":"1f645-2642","🙆‍♀️":"1f646-2640","🙆‍♂️":"1f646-2642","🙇‍♀️":"1f647-2640","🙇‍♂️":"1f647-2642","🙋‍♀️":"1f64b-2640","🙋‍♂️":"1f64b-2642","🙍‍♀️":"1f64d-2640","🙍‍♂️":"1f64d-2642","🙎‍♀️":"1f64e-2640","🙎‍♂️":"1f64e-2642","🤦‍♀️":"1f926-2640","🤦‍♂️":"1f926-2642","🤷‍♀️":"1f937-2640","🤷‍♂️":"1f937-2642","🧙‍♀️":"1f9d9-2640","🧙‍♂️":"1f9d9-2642","🧚‍♀️":"1f9da-2640","🧚‍♂️":"1f9da-2642","🧛‍♀️":"1f9db-2640","🧛‍♂️":"1f9db-2642","🧜‍♀️":"1f9dc-2640","🧜‍♂️":"1f9dc-2642","🧝‍♀️":"1f9dd-2640","🧝‍♂️":"1f9dd-2642","🧞‍♀️":"1f9de-2640","🧞‍♂️":"1f9de-2642","🧟‍♀️":"1f9df-2640","🧟‍♂️":"1f9df-2642","🧖‍♀️":"1f9d6-2640","🧖‍♂️":"1f9d6-2642","🧗‍♀️":"1f9d7-2640","🧗‍♂️":"1f9d7-2642","🧘‍♀️":"1f9d8-2640","🧘‍♂️":"1f9d8-2642","🕵‍♀️":"1f575-2640","🕵️‍♀":"1f575-2640","🕵‍♂️":"1f575-2642","🕵️‍♂":"1f575-2642","🏋‍♀️":"1f3cb-2640","🏋️‍♀":"1f3cb-2640","🏋‍♂️":"1f3cb-2642","🏋️‍♂":"1f3cb-2642","🏌‍♀️":"1f3cc-2640","🏌️‍♀":"1f3cc-2640","🏌‍♂️":"1f3cc-2642","🏌️‍♂":"1f3cc-2642","🦸‍♀️":"1f9b8-2640","🦸‍♂️":"1f9b8-2642","🦹‍♀️":"1f9b9-2640","🦹‍♂️":"1f9b9-2642","🏴‍☠️":"1f3f4-2620","⛹️♀️":"26f9-2640","⛹️♂️":"26f9-2642","⛹‍♀️":"26f9-2640","⛹️‍♀":"26f9-2640","⛹‍♂️":"26f9-2642","⛹️‍♂":"26f9-2642","👨👨👦":"1f468-1f468-1f466","👨👨👧":"1f468-1f468-1f467","👨👩👧":"1f468-1f469-1f467","👩👩👦":"1f469-1f469-1f466","👩👩👧":"1f469-1f469-1f467","👨👦👦":"1f468-1f466-1f466","👨👧👦":"1f468-1f467-1f466","👩👦👦":"1f469-1f466-1f466","👩👧👦":"1f469-1f467-1f466","👩👧👧":"1f469-1f467-1f467","👨🏻🎨":"1f468-1f3fb-1f3a8","👨🏼🎨":"1f468-1f3fc-1f3a8","👨🏽🎨":"1f468-1f3fd-1f3a8","👨🏾🎨":"1f468-1f3fe-1f3a8","👨🏿🎨":"1f468-1f3ff-1f3a8","👩🏻🎨":"1f469-1f3fb-1f3a8","👩🏼🎨":"1f469-1f3fc-1f3a8","👩🏽🎨":"1f469-1f3fd-1f3a8","👩🏾🎨":"1f469-1f3fe-1f3a8","👩🏿🎨":"1f469-1f3ff-1f3a8","👨🏻🚀":"1f468-1f3fb-1f680","👨🏼🚀":"1f468-1f3fc-1f680","👨🏽🚀":"1f468-1f3fd-1f680","👨🏾🚀":"1f468-1f3fe-1f680","👨🏿🚀":"1f468-1f3ff-1f680","👩🏻🚀":"1f469-1f3fb-1f680","👩🏼🚀":"1f469-1f3fc-1f680","👩🏽🚀":"1f469-1f3fd-1f680","👩🏾🚀":"1f469-1f3fe-1f680","👩🏿🚀":"1f469-1f3ff-1f680","👨🏻🚒":"1f468-1f3fb-1f692","👨🏼🚒":"1f468-1f3fc-1f692","👨🏽🚒":"1f468-1f3fd-1f692","👨🏾🚒":"1f468-1f3fe-1f692","👨🏿🚒":"1f468-1f3ff-1f692","👩🏻🚒":"1f469-1f3fb-1f692","👩🏼🚒":"1f469-1f3fc-1f692","👩🏽🚒":"1f469-1f3fd-1f692","👩🏾🚒":"1f469-1f3fe-1f692","👩🏿🚒":"1f469-1f3ff-1f692","👨👩👦":"1f468-1f469-1f466","👨👧👧":"1f468-1f467-1f467","👨🏻🌾":"1f468-1f3fb-1f33e","👨🏻🍳":"1f468-1f3fb-1f373","👨🏻🎓":"1f468-1f3fb-1f393","👨🏻🎤":"1f468-1f3fb-1f3a4","👨🏻🏫":"1f468-1f3fb-1f3eb","👨🏻🏭":"1f468-1f3fb-1f3ed","👨🏻💻":"1f468-1f3fb-1f4bb","👨🏻💼":"1f468-1f3fb-1f4bc","👨🏻🔧":"1f468-1f3fb-1f527","👨🏻🔬":"1f468-1f3fb-1f52c","👨🏼🌾":"1f468-1f3fc-1f33e","👨🏼🍳":"1f468-1f3fc-1f373","👨🏼🎓":"1f468-1f3fc-1f393","👨🏼🎤":"1f468-1f3fc-1f3a4","👨🏼🏫":"1f468-1f3fc-1f3eb","👨🏼🏭":"1f468-1f3fc-1f3ed","👨🏼💻":"1f468-1f3fc-1f4bb","👨🏼💼":"1f468-1f3fc-1f4bc","👨🏼🔧":"1f468-1f3fc-1f527","👨🏼🔬":"1f468-1f3fc-1f52c","👨🏽🌾":"1f468-1f3fd-1f33e","👨🏽🍳":"1f468-1f3fd-1f373","👨🏽🎓":"1f468-1f3fd-1f393","👨🏽🎤":"1f468-1f3fd-1f3a4","👨🏽🏫":"1f468-1f3fd-1f3eb","👨🏽🏭":"1f468-1f3fd-1f3ed","👨🏽💻":"1f468-1f3fd-1f4bb","👨🏽💼":"1f468-1f3fd-1f4bc","👨🏽🔧":"1f468-1f3fd-1f527","👨🏽🔬":"1f468-1f3fd-1f52c","👨🏾🌾":"1f468-1f3fe-1f33e","👨🏾🍳":"1f468-1f3fe-1f373","👨🏾🎓":"1f468-1f3fe-1f393","👨🏾🎤":"1f468-1f3fe-1f3a4","👨🏾🏫":"1f468-1f3fe-1f3eb","👨🏾🏭":"1f468-1f3fe-1f3ed","👨🏾💻":"1f468-1f3fe-1f4bb","👨🏾💼":"1f468-1f3fe-1f4bc","👨🏾🔧":"1f468-1f3fe-1f527","👨🏾🔬":"1f468-1f3fe-1f52c","👨🏿🌾":"1f468-1f3ff-1f33e","👨🏿🍳":"1f468-1f3ff-1f373","👨🏿🎓":"1f468-1f3ff-1f393","👨🏿🎤":"1f468-1f3ff-1f3a4","👨🏿🏫":"1f468-1f3ff-1f3eb","👨🏿🏭":"1f468-1f3ff-1f3ed","👨🏿💻":"1f468-1f3ff-1f4bb","👨🏿💼":"1f468-1f3ff-1f4bc","👨🏿🔧":"1f468-1f3ff-1f527","👨🏿🔬":"1f468-1f3ff-1f52c","👩🏻🌾":"1f469-1f3fb-1f33e","👩🏻🍳":"1f469-1f3fb-1f373","👩🏻🎓":"1f469-1f3fb-1f393","👩🏻🎤":"1f469-1f3fb-1f3a4","👩🏻🏫":"1f469-1f3fb-1f3eb","👩🏻🏭":"1f469-1f3fb-1f3ed","👩🏻💻":"1f469-1f3fb-1f4bb","👩🏻💼":"1f469-1f3fb-1f4bc","👩🏻🔧":"1f469-1f3fb-1f527","👩🏻🔬":"1f469-1f3fb-1f52c","👩🏼🌾":"1f469-1f3fc-1f33e","👩🏼🍳":"1f469-1f3fc-1f373","👩🏼🎓":"1f469-1f3fc-1f393","👩🏼🎤":"1f469-1f3fc-1f3a4","👩🏼🏫":"1f469-1f3fc-1f3eb","👩🏼🏭":"1f469-1f3fc-1f3ed","👩🏼💻":"1f469-1f3fc-1f4bb","👩🏼💼":"1f469-1f3fc-1f4bc","👩🏼🔧":"1f469-1f3fc-1f527","👩🏼🔬":"1f469-1f3fc-1f52c","👩🏽🌾":"1f469-1f3fd-1f33e","👩🏽🍳":"1f469-1f3fd-1f373","👩🏽🎓":"1f469-1f3fd-1f393","👩🏽🎤":"1f469-1f3fd-1f3a4","👩🏽🏫":"1f469-1f3fd-1f3eb","👩🏽🏭":"1f469-1f3fd-1f3ed","👩🏽💻":"1f469-1f3fd-1f4bb","👩🏽💼":"1f469-1f3fd-1f4bc","👩🏽🔧":"1f469-1f3fd-1f527","👩🏽🔬":"1f469-1f3fd-1f52c","👩🏾🌾":"1f469-1f3fe-1f33e","👩🏾🍳":"1f469-1f3fe-1f373","👩🏾🎓":"1f469-1f3fe-1f393","👩🏾🎤":"1f469-1f3fe-1f3a4","👩🏾🏫":"1f469-1f3fe-1f3eb","👩🏾🏭":"1f469-1f3fe-1f3ed","👩🏾💻":"1f469-1f3fe-1f4bb","👩🏾💼":"1f469-1f3fe-1f4bc","👩🏾🔧":"1f469-1f3fe-1f527","👩🏾🔬":"1f469-1f3fe-1f52c","👩🏿🌾":"1f469-1f3ff-1f33e","👩🏿🍳":"1f469-1f3ff-1f373","👩🏿🎓":"1f469-1f3ff-1f393","👩🏿🎤":"1f469-1f3ff-1f3a4","👩🏿🏫":"1f469-1f3ff-1f3eb","👩🏿🏭":"1f469-1f3ff-1f3ed","👩🏿💻":"1f469-1f3ff-1f4bb","👩🏿💼":"1f469-1f3ff-1f4bc","👩🏿🔧":"1f469-1f3ff-1f527","👩🏿🔬":"1f469-1f3ff-1f52c","👨🏻🦰":"1f468-1f3fb-1f9b0","👨🏻🦱":"1f468-1f3fb-1f9b1","👨🏻🦲":"1f468-1f3fb-1f9b2","👨🏻🦳":"1f468-1f3fb-1f9b3","👨🏼🦰":"1f468-1f3fc-1f9b0","👨🏼🦱":"1f468-1f3fc-1f9b1","👨🏼🦲":"1f468-1f3fc-1f9b2","👨🏼🦳":"1f468-1f3fc-1f9b3","👨🏽🦰":"1f468-1f3fd-1f9b0","👨🏽🦱":"1f468-1f3fd-1f9b1","👨🏽🦲":"1f468-1f3fd-1f9b2","👨🏽🦳":"1f468-1f3fd-1f9b3","👨🏾🦰":"1f468-1f3fe-1f9b0","👨🏾🦱":"1f468-1f3fe-1f9b1","👨🏾🦲":"1f468-1f3fe-1f9b2","👨🏾🦳":"1f468-1f3fe-1f9b3","👨🏿🦰":"1f468-1f3ff-1f9b0","👨🏿🦱":"1f468-1f3ff-1f9b1","👨🏿🦲":"1f468-1f3ff-1f9b2","👨🏿🦳":"1f468-1f3ff-1f9b3","👩🏻🦰":"1f469-1f3fb-1f9b0","👩🏻🦱":"1f469-1f3fb-1f9b1","👩🏻🦲":"1f469-1f3fb-1f9b2","👩🏻🦳":"1f469-1f3fb-1f9b3","👩🏼🦰":"1f469-1f3fc-1f9b0","👩🏼🦱":"1f469-1f3fc-1f9b1","👩🏼🦲":"1f469-1f3fc-1f9b2","👩🏼🦳":"1f469-1f3fc-1f9b3","👩🏽🦰":"1f469-1f3fd-1f9b0","👩🏽🦱":"1f469-1f3fd-1f9b1","👩🏽🦲":"1f469-1f3fd-1f9b2","👩🏽🦳":"1f469-1f3fd-1f9b3","👩🏾🦰":"1f469-1f3fe-1f9b0","👩🏾🦱":"1f469-1f3fe-1f9b1","👩🏾🦲":"1f469-1f3fe-1f9b2","👩🏾🦳":"1f469-1f3fe-1f9b3","👩🏿🦰":"1f469-1f3ff-1f9b0","👩🏿🦱":"1f469-1f3ff-1f9b1","👩🏿🦲":"1f469-1f3ff-1f9b2","👩🏿🦳":"1f469-1f3ff-1f9b3","👁‍🗨":"1f441-1f5e8","👨‍💻":"1f468-1f4bb","👩‍💻":"1f469-1f4bb","👨‍🏫":"1f468-1f3eb","👩‍🏫":"1f469-1f3eb","👨‍🎓":"1f468-1f393","👩‍🎓":"1f469-1f393","👨‍🎤":"1f468-1f3a4","👩‍🎤":"1f469-1f3a4","👨‍🔬":"1f468-1f52c","👩‍🔬":"1f469-1f52c","👨‍💼":"1f468-1f4bc","👩‍💼":"1f469-1f4bc","👨‍🔧":"1f468-1f527","👩‍🔧":"1f469-1f527","👨‍🏭":"1f468-1f3ed","👩‍🏭":"1f469-1f3ed","👨‍🍳":"1f468-1f373","👩‍🍳":"1f469-1f373","👨‍🌾":"1f468-1f33e","👩‍🌾":"1f469-1f33e","👨‍👦":"1f468-1f466","👨‍👧":"1f468-1f467","👩‍👦":"1f469-1f466","👩‍👧":"1f469-1f467","👨‍🎨":"1f468-1f3a8","👩‍🎨":"1f469-1f3a8","👨‍🚀":"1f468-1f680","👩‍🚀":"1f469-1f680","👨‍🚒":"1f468-1f692","👩‍🚒":"1f469-1f692","🏋️🏻":"1f3cb-1f3fb","🏋️🏼":"1f3cb-1f3fc","🏋️🏽":"1f3cb-1f3fd","🏋️🏾":"1f3cb-1f3fe","🏋️🏿":"1f3cb-1f3ff","🏌️🏻":"1f3cc-1f3fb","🏌️🏼":"1f3cc-1f3fc","🏌️🏽":"1f3cc-1f3fd","🏌️🏾":"1f3cc-1f3fe","🏌️🏿":"1f3cc-1f3ff","🕴️🏻":"1f574-1f3fb","🕴️🏼":"1f574-1f3fc","🕴️🏽":"1f574-1f3fd","🕴️🏾":"1f574-1f3fe","🕴️🏿":"1f574-1f3ff","🕵️🏻":"1f575-1f3fb","🕵️🏼":"1f575-1f3fc","🕵️🏽":"1f575-1f3fd","🕵️🏾":"1f575-1f3fe","🕵️🏿":"1f575-1f3ff","🖐️🏻":"1f590-1f3fb","🖐️🏼":"1f590-1f3fc","🖐️🏽":"1f590-1f3fd","🖐️🏾":"1f590-1f3fe","🖐️🏿":"1f590-1f3ff","🏳‍🌈":"1f3f3-1f308","🏳️🌈":"1f3f3-1f308","👨‍🦰":"1f468-1f9b0","👨‍🦱":"1f468-1f9b1","👨‍🦲":"1f468-1f9b2","👨‍🦳":"1f468-1f9b3","👩‍🦰":"1f469-1f9b0","👩‍🦱":"1f469-1f9b1","👩‍🦲":"1f469-1f9b2","👩‍🦳":"1f469-1f9b3","👯‍♂":"1f46f-2642","👯‍♀":"1f46f-2640","🤼‍♂":"1f93c-2642","🤼‍♀":"1f93c-2640","🤹‍♂":"1f939-2642","🤹‍♀":"1f939-2640","🤾‍♂":"1f93e-2642","🤾‍♀":"1f93e-2640","🤽‍♂":"1f93d-2642","🤽‍♀":"1f93d-2640","🤸‍♂":"1f938-2642","🤸‍♀":"1f938-2640","🚶‍♂":"1f6b6-2642","🚶‍♀":"1f6b6-2640","🚵‍♂":"1f6b5-2642","🚵‍♀":"1f6b5-2640","🚴‍♂":"1f6b4-2642","🚴‍♀":"1f6b4-2640","🚣‍♂":"1f6a3-2642","🚣‍♀":"1f6a3-2640","🏊‍♂":"1f3ca-2642","🏊‍♀":"1f3ca-2640","🏄‍♂":"1f3c4-2642","🏄‍♀":"1f3c4-2640","🏃‍♂":"1f3c3-2642","🏃‍♀":"1f3c3-2640","🤷‍♂":"1f937-2642","🤷‍♀":"1f937-2640","🤦‍♂":"1f926-2642","🤦‍♀":"1f926-2640","🙎‍♂":"1f64e-2642","🙎‍♀":"1f64e-2640","🙍‍♂":"1f64d-2642","🙍‍♀":"1f64d-2640","🙋‍♂":"1f64b-2642","🙋‍♀":"1f64b-2640","🙇‍♂":"1f647-2642","🙇‍♀":"1f647-2640","🙆‍♂":"1f646-2642","🙆‍♀":"1f646-2640","🙅‍♂":"1f645-2642","🙅‍♀":"1f645-2640","💇‍♂":"1f487-2642","💇‍♀":"1f487-2640","💆‍♂":"1f486-2642","💆‍♀":"1f486-2640","💁‍♂":"1f481-2642","💁‍♀":"1f481-2640","👱‍♂":"1f471-2642","👱‍♀":"1f471-2640","👳‍♂":"1f473-2642","👳‍♀":"1f473-2640","💂‍♂":"1f482-2642","💂‍♀":"1f482-2640","👷‍♂":"1f477-2642","👷‍♀":"1f477-2640","👮‍♂":"1f46e-2642","👮‍♀":"1f46e-2640","👨‍⚕":"1f468-2695","👩‍⚕":"1f469-2695","👨‍⚖":"1f468-2696","👩‍⚖":"1f469-2696","👨‍✈":"1f468-2708","👩‍✈":"1f469-2708","☝️🏻":"261d-1f3fb","☝️🏼":"261d-1f3fc","☝️🏽":"261d-1f3fd","☝️🏾":"261d-1f3fe","☝️🏿":"261d-1f3ff","⛹️🏻":"26f9-1f3fb","⛹️🏼":"26f9-1f3fc","⛹️🏽":"26f9-1f3fd","⛹️🏾":"26f9-1f3fe","⛹️🏿":"26f9-1f3ff","✌️🏻":"270c-1f3fb","✌️🏼":"270c-1f3fc","✌️🏽":"270c-1f3fd","✌️🏾":"270c-1f3fe","✌️🏿":"270c-1f3ff","✍️🏻":"270d-1f3fb","✍️🏼":"270d-1f3fc","✍️🏽":"270d-1f3fd","✍️🏾":"270d-1f3fe","✍️🏿":"270d-1f3ff","👨⚕️":"1f468-2695","👨⚖️":"1f468-2696","👨✈️":"1f468-2708","👩⚕️":"1f469-2695","👩⚖️":"1f469-2696","👩✈️":"1f469-2708","👮♀️":"1f46e-2640","👮♂️":"1f46e-2642","👱♀️":"1f471-2640","👱♂️":"1f471-2642","👳♀️":"1f473-2640","👳♂️":"1f473-2642","👷♀️":"1f477-2640","👷♂️":"1f477-2642","💂♀️":"1f482-2640","💂♂️":"1f482-2642","🕵‍♀":"1f575-2640","🕵‍♂":"1f575-2642","🏃♀️":"1f3c3-2640","🏃♂️":"1f3c3-2642","🏄♀️":"1f3c4-2640","🏄♂️":"1f3c4-2642","🏊♀️":"1f3ca-2640","🏊♂️":"1f3ca-2642","🏋‍♀":"1f3cb-2640","🏋‍♂":"1f3cb-2642","🏌‍♀":"1f3cc-2640","🏌‍♂":"1f3cc-2642","👯♀️":"1f46f-2640","👯♂️":"1f46f-2642","💆♀️":"1f486-2640","💆♂️":"1f486-2642","💇♀️":"1f487-2640","💇♂️":"1f487-2642","🚣♀️":"1f6a3-2640","🚣♂️":"1f6a3-2642","🚴♀️":"1f6b4-2640","🚴♂️":"1f6b4-2642","🚵♀️":"1f6b5-2640","🚵♂️":"1f6b5-2642","🚶♀️":"1f6b6-2640","🚶♂️":"1f6b6-2642","🤸♀️":"1f938-2640","🤸♂️":"1f938-2642","🤹♀️":"1f939-2640","🤹♂️":"1f939-2642","🤼♀️":"1f93c-2640","🤼♂️":"1f93c-2642","🤽♀️":"1f93d-2640","🤽♂️":"1f93d-2642","🤾♀️":"1f93e-2640","🤾♂️":"1f93e-2642","💁♀️":"1f481-2640","💁♂️":"1f481-2642","🙅♀️":"1f645-2640","🙅♂️":"1f645-2642","🙆♀️":"1f646-2640","🙆♂️":"1f646-2642","🙇♀️":"1f647-2640","🙇♂️":"1f647-2642","🙋♀️":"1f64b-2640","🙋♂️":"1f64b-2642","🙍♀️":"1f64d-2640","🙍♂️":"1f64d-2642","🙎♀️":"1f64e-2640","🙎♂️":"1f64e-2642","🤦♀️":"1f926-2640","🤦♂️":"1f926-2642","🤷♀️":"1f937-2640","🤷♂️":"1f937-2642","🧙‍♀":"1f9d9-2640","🧙♀️":"1f9d9-2640","🧙‍♂":"1f9d9-2642","🧙♂️":"1f9d9-2642","🧚‍♀":"1f9da-2640","🧚♀️":"1f9da-2640","🧚‍♂":"1f9da-2642","🧚♂️":"1f9da-2642","🧛‍♀":"1f9db-2640","🧛♀️":"1f9db-2640","🧛‍♂":"1f9db-2642","🧛♂️":"1f9db-2642","🧜‍♀":"1f9dc-2640","🧜♀️":"1f9dc-2640","🧜‍♂":"1f9dc-2642","🧜♂️":"1f9dc-2642","🧝‍♀":"1f9dd-2640","🧝♀️":"1f9dd-2640","🧝‍♂":"1f9dd-2642","🧝♂️":"1f9dd-2642","🧞‍♀":"1f9de-2640","🧞♀️":"1f9de-2640","🧞‍♂":"1f9de-2642","🧞♂️":"1f9de-2642","🧟‍♀":"1f9df-2640","🧟♀️":"1f9df-2640","🧟‍♂":"1f9df-2642","🧟♂️":"1f9df-2642","🧖‍♀":"1f9d6-2640","🧖♀️":"1f9d6-2640","🧖‍♂":"1f9d6-2642","🧖♂️":"1f9d6-2642","🧗‍♀":"1f9d7-2640","🧗♀️":"1f9d7-2640","🧗‍♂":"1f9d7-2642","🧗♂️":"1f9d7-2642","🧘‍♀":"1f9d8-2640","🧘♀️":"1f9d8-2640","🧘‍♂":"1f9d8-2642","🧘♂️":"1f9d8-2642","🦸‍♀":"1f9b8-2640","🦸♀️":"1f9b8-2640","🦸‍♂":"1f9b8-2642","🦸♂️":"1f9b8-2642","🦹‍♀":"1f9b9-2640","🦹♀️":"1f9b9-2640","🦹‍♂":"1f9b9-2642","🦹♂️":"1f9b9-2642","🏴‍☠":"1f3f4-2620","🏴☠️":"1f3f4-2620","#️⃣":"0023-20e3","0️⃣":"0030-20e3","1️⃣":"0031-20e3","2️⃣":"0032-20e3","3️⃣":"0033-20e3","4️⃣":"0034-20e3","5️⃣":"0035-20e3","6️⃣":"0036-20e3","7️⃣":"0037-20e3","8️⃣":"0038-20e3","9️⃣":"0039-20e3","*️⃣":"002a-20e3","⛹‍♀":"26f9-2640","⛹‍♂":"26f9-2642","🇨🇳":"1f1e8-1f1f3","🇩🇪":"1f1e9-1f1ea","🇪🇸":"1f1ea-1f1f8","🇫🇷":"1f1eb-1f1f7","🇬🇧":"1f1ec-1f1e7","🇮🇹":"1f1ee-1f1f9","🇯🇵":"1f1ef-1f1f5","🇰🇷":"1f1f0-1f1f7","🇺🇸":"1f1fa-1f1f8","🇷🇺":"1f1f7-1f1fa","🤴🏻":"1f934-1f3fb","🤴🏼":"1f934-1f3fc","🤴🏽":"1f934-1f3fd","🤴🏾":"1f934-1f3fe","🤴🏿":"1f934-1f3ff","🤶🏻":"1f936-1f3fb","🤶🏼":"1f936-1f3fc","🤶🏽":"1f936-1f3fd","🤶🏾":"1f936-1f3fe","🤶🏿":"1f936-1f3ff","🤵🏻":"1f935-1f3fb","🤵🏼":"1f935-1f3fc","🤵🏽":"1f935-1f3fd","🤵🏾":"1f935-1f3fe","🤵🏿":"1f935-1f3ff","🤷🏻":"1f937-1f3fb","🤷🏼":"1f937-1f3fc","🤷🏽":"1f937-1f3fd","🤷🏾":"1f937-1f3fe","🤷🏿":"1f937-1f3ff","🤦🏻":"1f926-1f3fb","🤦🏼":"1f926-1f3fc","🤦🏽":"1f926-1f3fd","🤦🏾":"1f926-1f3fe","🤦🏿":"1f926-1f3ff","🤰🏻":"1f930-1f3fb","🤰🏼":"1f930-1f3fc","🤰🏽":"1f930-1f3fd","🤰🏾":"1f930-1f3fe","🤰🏿":"1f930-1f3ff","🕺🏻":"1f57a-1f3fb","🕺🏼":"1f57a-1f3fc","🕺🏽":"1f57a-1f3fd","🕺🏾":"1f57a-1f3fe","🕺🏿":"1f57a-1f3ff","🤳🏻":"1f933-1f3fb","🤳🏼":"1f933-1f3fc","🤳🏽":"1f933-1f3fd","🤳🏾":"1f933-1f3fe","🤳🏿":"1f933-1f3ff","🤞🏻":"1f91e-1f3fb","🤞🏼":"1f91e-1f3fc","🤞🏽":"1f91e-1f3fd","🤞🏾":"1f91e-1f3fe","🤞🏿":"1f91e-1f3ff","🤙🏻":"1f919-1f3fb","🤙🏼":"1f919-1f3fc","🤙🏽":"1f919-1f3fd","🇦🇫":"1f1e6-1f1eb","🇦🇱":"1f1e6-1f1f1","🇩🇿":"1f1e9-1f1ff","🇦🇩":"1f1e6-1f1e9","🇦🇴":"1f1e6-1f1f4","🇦🇬":"1f1e6-1f1ec","🇦🇷":"1f1e6-1f1f7","🇦🇲":"1f1e6-1f1f2","🇦🇺":"1f1e6-1f1fa","🇦🇹":"1f1e6-1f1f9","🇦🇿":"1f1e6-1f1ff","🇧🇸":"1f1e7-1f1f8","🇧🇭":"1f1e7-1f1ed","🇧🇩":"1f1e7-1f1e9","🇧🇧":"1f1e7-1f1e7","🇧🇾":"1f1e7-1f1fe","🇧🇪":"1f1e7-1f1ea","🇧🇿":"1f1e7-1f1ff","🇧🇯":"1f1e7-1f1ef","🇧🇹":"1f1e7-1f1f9","🇧🇴":"1f1e7-1f1f4","🇧🇦":"1f1e7-1f1e6","🇧🇼":"1f1e7-1f1fc","🇧🇷":"1f1e7-1f1f7","🇧🇳":"1f1e7-1f1f3","🇧🇬":"1f1e7-1f1ec","🇧🇫":"1f1e7-1f1eb","🇧🇮":"1f1e7-1f1ee","🇰🇭":"1f1f0-1f1ed","🇨🇲":"1f1e8-1f1f2","🇨🇦":"1f1e8-1f1e6","🇨🇻":"1f1e8-1f1fb","🤙🏾":"1f919-1f3fe","🇨🇫":"1f1e8-1f1eb","🇹🇩":"1f1f9-1f1e9","🇨🇱":"1f1e8-1f1f1","🇨🇴":"1f1e8-1f1f4","🇰🇲":"1f1f0-1f1f2","🇨🇷":"1f1e8-1f1f7","🇨🇮":"1f1e8-1f1ee","🇭🇷":"1f1ed-1f1f7","🇨🇺":"1f1e8-1f1fa","🇨🇾":"1f1e8-1f1fe","🇨🇿":"1f1e8-1f1ff","🤙🏿":"1f919-1f3ff","🇨🇩":"1f1e8-1f1e9","🤛🏻":"1f91b-1f3fb","🇩🇰":"1f1e9-1f1f0","🇩🇯":"1f1e9-1f1ef","🇩🇲":"1f1e9-1f1f2","🇩🇴":"1f1e9-1f1f4","🇹🇱":"1f1f9-1f1f1","🇪🇨":"1f1ea-1f1e8","🇪🇬":"1f1ea-1f1ec","🇸🇻":"1f1f8-1f1fb","🇬🇶":"1f1ec-1f1f6","🇪🇷":"1f1ea-1f1f7","🇪🇪":"1f1ea-1f1ea","🇪🇹":"1f1ea-1f1f9","🤛🏼":"1f91b-1f3fc","🇫🇯":"1f1eb-1f1ef","🇫🇮":"1f1eb-1f1ee","🇬🇦":"1f1ec-1f1e6","🇬🇲":"1f1ec-1f1f2","🇬🇪":"1f1ec-1f1ea","🇬🇭":"1f1ec-1f1ed","🇬🇷":"1f1ec-1f1f7","🇬🇩":"1f1ec-1f1e9","🇬🇹":"1f1ec-1f1f9","🇬🇳":"1f1ec-1f1f3","🇬🇼":"1f1ec-1f1fc","🇬🇾":"1f1ec-1f1fe","🇭🇹":"1f1ed-1f1f9","🇭🇳":"1f1ed-1f1f3","🇭🇺":"1f1ed-1f1fa","🇮🇸":"1f1ee-1f1f8","🇮🇳":"1f1ee-1f1f3","🇮🇩":"1f1ee-1f1e9","🇮🇷":"1f1ee-1f1f7","🇮🇶":"1f1ee-1f1f6","🇮🇪":"1f1ee-1f1ea","🇮🇱":"1f1ee-1f1f1","🇯🇲":"1f1ef-1f1f2","🇯🇴":"1f1ef-1f1f4","🇰🇿":"1f1f0-1f1ff","🇰🇪":"1f1f0-1f1ea","🇰🇮":"1f1f0-1f1ee","🇽🇰":"1f1fd-1f1f0","🇰🇼":"1f1f0-1f1fc","🇰🇬":"1f1f0-1f1ec","🤛🏽":"1f91b-1f3fd","🇱🇦":"1f1f1-1f1e6","🇱🇻":"1f1f1-1f1fb","🇱🇧":"1f1f1-1f1e7","🇱🇸":"1f1f1-1f1f8","🇱🇷":"1f1f1-1f1f7","🇱🇾":"1f1f1-1f1fe","🇱🇮":"1f1f1-1f1ee","🇱🇹":"1f1f1-1f1f9","🇱🇺":"1f1f1-1f1fa","🇲🇰":"1f1f2-1f1f0","🇲🇬":"1f1f2-1f1ec","🇲🇼":"1f1f2-1f1fc","🇲🇾":"1f1f2-1f1fe","🇲🇻":"1f1f2-1f1fb","🇲🇱":"1f1f2-1f1f1","🇲🇹":"1f1f2-1f1f9","🇲🇭":"1f1f2-1f1ed","🇲🇷":"1f1f2-1f1f7","🇲🇺":"1f1f2-1f1fa","🇲🇽":"1f1f2-1f1fd","🇫🇲":"1f1eb-1f1f2","🇲🇩":"1f1f2-1f1e9","🇲🇨":"1f1f2-1f1e8","🇲🇳":"1f1f2-1f1f3","🇲🇪":"1f1f2-1f1ea","🇲🇦":"1f1f2-1f1e6","🇲🇿":"1f1f2-1f1ff","🇲🇲":"1f1f2-1f1f2","🇳🇦":"1f1f3-1f1e6","🇳🇷":"1f1f3-1f1f7","🇳🇵":"1f1f3-1f1f5","🇳🇱":"1f1f3-1f1f1","🇳🇿":"1f1f3-1f1ff","🇳🇮":"1f1f3-1f1ee","🇳🇪":"1f1f3-1f1ea","🇳🇬":"1f1f3-1f1ec","🇰🇵":"1f1f0-1f1f5","🇳🇴":"1f1f3-1f1f4","🇴🇲":"1f1f4-1f1f2","🇵🇰":"1f1f5-1f1f0","🇵🇼":"1f1f5-1f1fc","🇵🇦":"1f1f5-1f1e6","🇵🇬":"1f1f5-1f1ec","🤛🏾":"1f91b-1f3fe","🇵🇾":"1f1f5-1f1fe","🇵🇪":"1f1f5-1f1ea","🇵🇭":"1f1f5-1f1ed","🇵🇱":"1f1f5-1f1f1","🇵🇹":"1f1f5-1f1f9","🇶🇦":"1f1f6-1f1e6","🇹🇼":"1f1f9-1f1fc","🇨🇬":"1f1e8-1f1ec","🇷🇴":"1f1f7-1f1f4","🇷🇼":"1f1f7-1f1fc","🇰🇳":"1f1f0-1f1f3","🇱🇨":"1f1f1-1f1e8","🇻🇨":"1f1fb-1f1e8","🇼🇸":"1f1fc-1f1f8","🇸🇲":"1f1f8-1f1f2","🇸🇹":"1f1f8-1f1f9","🇸🇦":"1f1f8-1f1e6","🤛🏿":"1f91b-1f3ff","🇸🇳":"1f1f8-1f1f3","🇷🇸":"1f1f7-1f1f8","🇸🇨":"1f1f8-1f1e8","🇸🇱":"1f1f8-1f1f1","🇸🇬":"1f1f8-1f1ec","🇸🇰":"1f1f8-1f1f0","🇸🇮":"1f1f8-1f1ee","🇸🇧":"1f1f8-1f1e7","🇸🇴":"1f1f8-1f1f4","🇿🇦":"1f1ff-1f1e6","🇱🇰":"1f1f1-1f1f0","🇸🇩":"1f1f8-1f1e9","🇸🇷":"1f1f8-1f1f7","🇸🇿":"1f1f8-1f1ff","🇸🇪":"1f1f8-1f1ea","🇨🇭":"1f1e8-1f1ed","🇸🇾":"1f1f8-1f1fe","🇹🇯":"1f1f9-1f1ef","🇹🇿":"1f1f9-1f1ff","🇹🇭":"1f1f9-1f1ed","🇹🇬":"1f1f9-1f1ec","🇹🇴":"1f1f9-1f1f4","🇹🇹":"1f1f9-1f1f9","🇹🇳":"1f1f9-1f1f3","🇹🇷":"1f1f9-1f1f7","🇹🇲":"1f1f9-1f1f2","🇹🇻":"1f1f9-1f1fb","🇺🇬":"1f1fa-1f1ec","🇺🇦":"1f1fa-1f1e6","🇦🇪":"1f1e6-1f1ea","🇺🇾":"1f1fa-1f1fe","🇺🇿":"1f1fa-1f1ff","🇻🇺":"1f1fb-1f1fa","🇻🇦":"1f1fb-1f1e6","🇻🇪":"1f1fb-1f1ea","🇻🇳":"1f1fb-1f1f3","🇪🇭":"1f1ea-1f1ed","🤜🏻":"1f91c-1f3fb","🇾🇪":"1f1fe-1f1ea","🇿🇲":"1f1ff-1f1f2","🇿🇼":"1f1ff-1f1fc","🇵🇷":"1f1f5-1f1f7","🇰🇾":"1f1f0-1f1fe","🇧🇲":"1f1e7-1f1f2","🇵🇫":"1f1f5-1f1eb","🇵🇸":"1f1f5-1f1f8","🇳🇨":"1f1f3-1f1e8","🤜🏼":"1f91c-1f3fc","🇸🇭":"1f1f8-1f1ed","🇦🇼":"1f1e6-1f1fc","🇻🇮":"1f1fb-1f1ee","🇭🇰":"1f1ed-1f1f0","🇦🇨":"1f1e6-1f1e8","🇲🇸":"1f1f2-1f1f8","🇬🇺":"1f1ec-1f1fa","🇬🇱":"1f1ec-1f1f1","🇳🇺":"1f1f3-1f1fa","🇼🇫":"1f1fc-1f1eb","🇲🇴":"1f1f2-1f1f4","🤜🏽":"1f91c-1f3fd","🇫🇴":"1f1eb-1f1f4","🇫🇰":"1f1eb-1f1f0","🇯🇪":"1f1ef-1f1ea","🇦🇮":"1f1e6-1f1ee","🇬🇮":"1f1ec-1f1ee","🤜🏾":"1f91c-1f3fe","🤜🏿":"1f91c-1f3ff","🤚🏻":"1f91a-1f3fb","🤚🏼":"1f91a-1f3fc","🤚🏽":"1f91a-1f3fd","🤚🏾":"1f91a-1f3fe","👶🏻":"1f476-1f3fb","👶🏼":"1f476-1f3fc","👶🏽":"1f476-1f3fd","👶🏾":"1f476-1f3fe","👶🏿":"1f476-1f3ff","👦🏻":"1f466-1f3fb","👦🏼":"1f466-1f3fc","👦🏽":"1f466-1f3fd","👦🏾":"1f466-1f3fe","👦🏿":"1f466-1f3ff","👧🏻":"1f467-1f3fb","👧🏼":"1f467-1f3fc","👧🏽":"1f467-1f3fd","👧🏾":"1f467-1f3fe","👧🏿":"1f467-1f3ff","👨🏻":"1f468-1f3fb","👨🏼":"1f468-1f3fc","👨🏽":"1f468-1f3fd","👨🏾":"1f468-1f3fe","👨🏿":"1f468-1f3ff","👩🏻":"1f469-1f3fb","👩🏼":"1f469-1f3fc","👩🏽":"1f469-1f3fd","👩🏾":"1f469-1f3fe","👩🏿":"1f469-1f3ff","👰🏻":"1f470-1f3fb","👰🏼":"1f470-1f3fc","🤚🏿":"1f91a-1f3ff","👰🏽":"1f470-1f3fd","👰🏾":"1f470-1f3fe","👰🏿":"1f470-1f3ff","👱🏻":"1f471-1f3fb","👱🏼":"1f471-1f3fc","👱🏽":"1f471-1f3fd","👱🏾":"1f471-1f3fe","👱🏿":"1f471-1f3ff","👲🏻":"1f472-1f3fb","👲🏼":"1f472-1f3fc","👲🏽":"1f472-1f3fd","👲🏾":"1f472-1f3fe","👲🏿":"1f472-1f3ff","👳🏻":"1f473-1f3fb","👳🏼":"1f473-1f3fc","👳🏽":"1f473-1f3fd","👳🏾":"1f473-1f3fe","👳🏿":"1f473-1f3ff","👴🏻":"1f474-1f3fb","👴🏼":"1f474-1f3fc","👴🏽":"1f474-1f3fd","👴🏾":"1f474-1f3fe","👴🏿":"1f474-1f3ff","👵🏻":"1f475-1f3fb","👵🏼":"1f475-1f3fc","👵🏽":"1f475-1f3fd","👵🏾":"1f475-1f3fe","👵🏿":"1f475-1f3ff","👮🏻":"1f46e-1f3fb","👮🏼":"1f46e-1f3fc","👮🏽":"1f46e-1f3fd","👮🏾":"1f46e-1f3fe","👮🏿":"1f46e-1f3ff","👷🏻":"1f477-1f3fb","👷🏼":"1f477-1f3fc","👷🏽":"1f477-1f3fd","👷🏾":"1f477-1f3fe","👷🏿":"1f477-1f3ff","👸🏻":"1f478-1f3fb","👸🏼":"1f478-1f3fc","👸🏽":"1f478-1f3fd","👸🏾":"1f478-1f3fe","🤸🏻":"1f938-1f3fb","👸🏿":"1f478-1f3ff","💂🏻":"1f482-1f3fb","💂🏼":"1f482-1f3fc","🤸🏼":"1f938-1f3fc","💂🏽":"1f482-1f3fd","💂🏾":"1f482-1f3fe","💂🏿":"1f482-1f3ff","🤸🏽":"1f938-1f3fd","👼🏻":"1f47c-1f3fb","👼🏼":"1f47c-1f3fc","👼🏽":"1f47c-1f3fd","👼🏾":"1f47c-1f3fe","👼🏿":"1f47c-1f3ff","🙇🏻":"1f647-1f3fb","🙇🏼":"1f647-1f3fc","🙇🏽":"1f647-1f3fd","🙇🏾":"1f647-1f3fe","🙇🏿":"1f647-1f3ff","💁🏻":"1f481-1f3fb","💁🏼":"1f481-1f3fc","💁🏽":"1f481-1f3fd","🤸🏾":"1f938-1f3fe","💁🏾":"1f481-1f3fe","💁🏿":"1f481-1f3ff","🙅🏻":"1f645-1f3fb","🤸🏿":"1f938-1f3ff","🙅🏼":"1f645-1f3fc","🙅🏽":"1f645-1f3fd","🙅🏾":"1f645-1f3fe","🙅🏿":"1f645-1f3ff","🙆🏻":"1f646-1f3fb","🙆🏼":"1f646-1f3fc","🙆🏽":"1f646-1f3fd","🙆🏾":"1f646-1f3fe","🙆🏿":"1f646-1f3ff","🙋🏻":"1f64b-1f3fb","🙋🏼":"1f64b-1f3fc","🙋🏽":"1f64b-1f3fd","🙋🏾":"1f64b-1f3fe","🙋🏿":"1f64b-1f3ff","🙎🏻":"1f64e-1f3fb","🙎🏼":"1f64e-1f3fc","🙎🏽":"1f64e-1f3fd","🙎🏾":"1f64e-1f3fe","🙎🏿":"1f64e-1f3ff","🙍🏻":"1f64d-1f3fb","🙍🏼":"1f64d-1f3fc","🙍🏽":"1f64d-1f3fd","🙍🏾":"1f64d-1f3fe","🙍🏿":"1f64d-1f3ff","💆🏻":"1f486-1f3fb","💆🏼":"1f486-1f3fc","💆🏽":"1f486-1f3fd","💆🏾":"1f486-1f3fe","💆🏿":"1f486-1f3ff","💇🏻":"1f487-1f3fb","💇🏼":"1f487-1f3fc","💇🏽":"1f487-1f3fd","💇🏾":"1f487-1f3fe","💇🏿":"1f487-1f3ff","🙌🏻":"1f64c-1f3fb","🙌🏼":"1f64c-1f3fc","🙌🏽":"1f64c-1f3fd","🙌🏾":"1f64c-1f3fe","🙌🏿":"1f64c-1f3ff","👏🏻":"1f44f-1f3fb","👏🏼":"1f44f-1f3fc","👏🏽":"1f44f-1f3fd","🤽🏻":"1f93d-1f3fb","👏🏾":"1f44f-1f3fe","👏🏿":"1f44f-1f3ff","🤽🏼":"1f93d-1f3fc","👂🏻":"1f442-1f3fb","👂🏼":"1f442-1f3fc","👂🏽":"1f442-1f3fd","👂🏾":"1f442-1f3fe","👂🏿":"1f442-1f3ff","👃🏻":"1f443-1f3fb","👃🏼":"1f443-1f3fc","👃🏽":"1f443-1f3fd","👃🏾":"1f443-1f3fe","👃🏿":"1f443-1f3ff","💅🏻":"1f485-1f3fb","💅🏼":"1f485-1f3fc","💅🏽":"1f485-1f3fd","💅🏾":"1f485-1f3fe","💅🏿":"1f485-1f3ff","👋🏻":"1f44b-1f3fb","👋🏼":"1f44b-1f3fc","👋🏽":"1f44b-1f3fd","👋🏾":"1f44b-1f3fe","👋🏿":"1f44b-1f3ff","👍🏻":"1f44d-1f3fb","👍🏼":"1f44d-1f3fc","👍🏽":"1f44d-1f3fd","👍🏾":"1f44d-1f3fe","👍🏿":"1f44d-1f3ff","👎🏻":"1f44e-1f3fb","👎🏼":"1f44e-1f3fc","👎🏽":"1f44e-1f3fd","👎🏾":"1f44e-1f3fe","👎🏿":"1f44e-1f3ff","👆🏻":"1f446-1f3fb","👆🏼":"1f446-1f3fc","👆🏽":"1f446-1f3fd","👆🏾":"1f446-1f3fe","👆🏿":"1f446-1f3ff","👇🏻":"1f447-1f3fb","👇🏼":"1f447-1f3fc","👇🏽":"1f447-1f3fd","👇🏾":"1f447-1f3fe","👇🏿":"1f447-1f3ff","👈🏻":"1f448-1f3fb","👈🏼":"1f448-1f3fc","👈🏽":"1f448-1f3fd","👈🏾":"1f448-1f3fe","👈🏿":"1f448-1f3ff","👉🏻":"1f449-1f3fb","👉🏼":"1f449-1f3fc","👉🏽":"1f449-1f3fd","👉🏾":"1f449-1f3fe","👉🏿":"1f449-1f3ff","👌🏻":"1f44c-1f3fb","👌🏼":"1f44c-1f3fc","🤽🏽":"1f93d-1f3fd","👌🏽":"1f44c-1f3fd","👌🏾":"1f44c-1f3fe","🤽🏾":"1f93d-1f3fe","👌🏿":"1f44c-1f3ff","👊🏻":"1f44a-1f3fb","👊🏼":"1f44a-1f3fc","👊🏽":"1f44a-1f3fd","👊🏾":"1f44a-1f3fe","👊🏿":"1f44a-1f3ff","💪🏻":"1f4aa-1f3fb","💪🏼":"1f4aa-1f3fc","💪🏽":"1f4aa-1f3fd","💪🏾":"1f4aa-1f3fe","💪🏿":"1f4aa-1f3ff","👐🏻":"1f450-1f3fb","👐🏼":"1f450-1f3fc","👐🏽":"1f450-1f3fd","👐🏾":"1f450-1f3fe","👐🏿":"1f450-1f3ff","🙏🏻":"1f64f-1f3fb","🤽🏿":"1f93d-1f3ff","🙏🏼":"1f64f-1f3fc","🙏🏽":"1f64f-1f3fd","🤾🏻":"1f93e-1f3fb","🙏🏾":"1f64f-1f3fe","🙏🏿":"1f64f-1f3ff","🤾🏼":"1f93e-1f3fc","🏃🏻":"1f3c3-1f3fb","🏃🏼":"1f3c3-1f3fc","🏃🏽":"1f3c3-1f3fd","🏃🏾":"1f3c3-1f3fe","🤾🏽":"1f93e-1f3fd","🏃🏿":"1f3c3-1f3ff","🚶🏻":"1f6b6-1f3fb","🚶🏼":"1f6b6-1f3fc","🚶🏽":"1f6b6-1f3fd","🚶🏾":"1f6b6-1f3fe","🚶🏿":"1f6b6-1f3ff","💃🏻":"1f483-1f3fb","🤾🏾":"1f93e-1f3fe","💃🏼":"1f483-1f3fc","💃🏽":"1f483-1f3fd","🤾🏿":"1f93e-1f3ff","💃🏾":"1f483-1f3fe","💃🏿":"1f483-1f3ff","🤹🏻":"1f939-1f3fb","🚣🏻":"1f6a3-1f3fb","🚣🏼":"1f6a3-1f3fc","🚣🏽":"1f6a3-1f3fd","🚣🏾":"1f6a3-1f3fe","🚣🏿":"1f6a3-1f3ff","🏊🏻":"1f3ca-1f3fb","🏊🏼":"1f3ca-1f3fc","🤹🏼":"1f939-1f3fc","🏊🏽":"1f3ca-1f3fd","🏊🏾":"1f3ca-1f3fe","🏊🏿":"1f3ca-1f3ff","🤹🏽":"1f939-1f3fd","🏄🏻":"1f3c4-1f3fb","🏄🏼":"1f3c4-1f3fc","🏄🏽":"1f3c4-1f3fd","🏄🏾":"1f3c4-1f3fe","🏄🏿":"1f3c4-1f3ff","🛀🏻":"1f6c0-1f3fb","🛀🏼":"1f6c0-1f3fc","🤹🏾":"1f939-1f3fe","🛀🏽":"1f6c0-1f3fd","🛀🏾":"1f6c0-1f3fe","🛀🏿":"1f6c0-1f3ff","🤹🏿":"1f939-1f3ff","🚴🏻":"1f6b4-1f3fb","🚴🏼":"1f6b4-1f3fc","🚴🏽":"1f6b4-1f3fd","🚴🏾":"1f6b4-1f3fe","🚴🏿":"1f6b4-1f3ff","🚵🏻":"1f6b5-1f3fb","🚵🏼":"1f6b5-1f3fc","🚵🏽":"1f6b5-1f3fd","🚵🏾":"1f6b5-1f3fe","🚵🏿":"1f6b5-1f3ff","🏇🏻":"1f3c7-1f3fb","🏇🏼":"1f3c7-1f3fc","🏇🏽":"1f3c7-1f3fd","🏇🏾":"1f3c7-1f3fe","🏇🏿":"1f3c7-1f3ff","🖐🏻":"1f590-1f3fb","🖐🏼":"1f590-1f3fc","🖐🏽":"1f590-1f3fd","🖐🏾":"1f590-1f3fe","🖐🏿":"1f590-1f3ff","🖕🏻":"1f595-1f3fb","🖕🏼":"1f595-1f3fc","🖕🏽":"1f595-1f3fd","🖕🏾":"1f595-1f3fe","🖕🏿":"1f595-1f3ff","🖖🏻":"1f596-1f3fb","🖖🏼":"1f596-1f3fc","🖖🏽":"1f596-1f3fd","🖖🏾":"1f596-1f3fe","🖖🏿":"1f596-1f3ff","🎅🏻":"1f385-1f3fb","🎅🏼":"1f385-1f3fc","🎅🏽":"1f385-1f3fd","🎅🏾":"1f385-1f3fe","🎅🏿":"1f385-1f3ff","🤘🏻":"1f918-1f3fb","🤘🏼":"1f918-1f3fc","🤘🏽":"1f918-1f3fd","🤘🏾":"1f918-1f3fe","🤘🏿":"1f918-1f3ff","🏋🏻":"1f3cb-1f3fb","🏋🏼":"1f3cb-1f3fc","🏋🏽":"1f3cb-1f3fd","🏋🏾":"1f3cb-1f3fe","🏋🏿":"1f3cb-1f3ff","🇦🇽":"1f1e6-1f1fd","🇹🇦":"1f1f9-1f1e6","🇮🇴":"1f1ee-1f1f4","🇧🇶":"1f1e7-1f1f6","🇨🇽":"1f1e8-1f1fd","🇨🇨":"1f1e8-1f1e8","🇬🇬":"1f1ec-1f1ec","🇮🇲":"1f1ee-1f1f2","🇾🇹":"1f1fe-1f1f9","🇳🇫":"1f1f3-1f1eb","🇵🇳":"1f1f5-1f1f3","🇧🇱":"1f1e7-1f1f1","🇵🇲":"1f1f5-1f1f2","🇬🇸":"1f1ec-1f1f8","🇹🇰":"1f1f9-1f1f0","🇧🇻":"1f1e7-1f1fb","🇭🇲":"1f1ed-1f1f2","🇸🇯":"1f1f8-1f1ef","🇺🇲":"1f1fa-1f1f2","🇮🇨":"1f1ee-1f1e8","🇪🇦":"1f1ea-1f1e6","🇨🇵":"1f1e8-1f1f5","🇩🇬":"1f1e9-1f1ec","🇦🇸":"1f1e6-1f1f8","🇦🇶":"1f1e6-1f1f6","🇻🇬":"1f1fb-1f1ec","🇨🇰":"1f1e8-1f1f0","🇨🇼":"1f1e8-1f1fc","🇪🇺":"1f1ea-1f1fa","🇬🇫":"1f1ec-1f1eb","🇹🇫":"1f1f9-1f1eb","🇬🇵":"1f1ec-1f1f5","🇲🇶":"1f1f2-1f1f6","🇲🇵":"1f1f2-1f1f5","🇷🇪":"1f1f7-1f1ea","🇸🇽":"1f1f8-1f1fd","🇸🇸":"1f1f8-1f1f8","🇹🇨":"1f1f9-1f1e8","🇲🇫":"1f1f2-1f1eb","🕵🏻":"1f575-1f3fb","🕵🏼":"1f575-1f3fc","🕵🏽":"1f575-1f3fd","🕵🏾":"1f575-1f3fe","🕵🏿":"1f575-1f3ff","🏂🏻":"1f3c2-1f3fb","👨💻":"1f468-1f4bb","👩💻":"1f469-1f4bb","👨🏫":"1f468-1f3eb","👩🏫":"1f469-1f3eb","👨🎓":"1f468-1f393","👩🎓":"1f469-1f393","👨🎤":"1f468-1f3a4","👩🎤":"1f469-1f3a4","👨🔬":"1f468-1f52c","👩🔬":"1f469-1f52c","👨💼":"1f468-1f4bc","👩💼":"1f469-1f4bc","👨🔧":"1f468-1f527","👩🔧":"1f469-1f527","👨🏭":"1f468-1f3ed","👩🏭":"1f469-1f3ed","👨🍳":"1f468-1f373","👩🍳":"1f469-1f373","👨🌾":"1f468-1f33e","👩🌾":"1f469-1f33e","🕴🏻":"1f574-1f3fb","🕴🏼":"1f574-1f3fc","🕴🏽":"1f574-1f3fd","🕴🏾":"1f574-1f3fe","🕴🏿":"1f574-1f3ff","🛌🏻":"1f6cc-1f3fb","🛌🏼":"1f6cc-1f3fc","🛌🏽":"1f6cc-1f3fd","🛌🏾":"1f6cc-1f3fe","🛌🏿":"1f6cc-1f3ff","👨👦":"1f468-1f466","👨👧":"1f468-1f467","👩👦":"1f469-1f466","👩👧":"1f469-1f467","👨🎨":"1f468-1f3a8","👩🎨":"1f469-1f3a8","👨🚀":"1f468-1f680","👩🚀":"1f469-1f680","👨🚒":"1f468-1f692","👩🚒":"1f469-1f692","🇺🇳":"1f1fa-1f1f3","🏂🏼":"1f3c2-1f3fc","🏂🏽":"1f3c2-1f3fd","🏂🏾":"1f3c2-1f3fe","🏂🏿":"1f3c2-1f3ff","🏌🏻":"1f3cc-1f3fb","🏌🏼":"1f3cc-1f3fc","🏌🏽":"1f3cc-1f3fd","🏌🏾":"1f3cc-1f3fe","🏌🏿":"1f3cc-1f3ff","🤟🏻":"1f91f-1f3fb","🤟🏼":"1f91f-1f3fc","🤟🏽":"1f91f-1f3fd","🤟🏾":"1f91f-1f3fe","🤟🏿":"1f91f-1f3ff","🤱🏻":"1f931-1f3fb","🤱🏼":"1f931-1f3fc","🤱🏽":"1f931-1f3fd","🤱🏾":"1f931-1f3fe","🤱🏿":"1f931-1f3ff","🤲🏻":"1f932-1f3fb","🤲🏼":"1f932-1f3fc","🤲🏽":"1f932-1f3fd","🤲🏾":"1f932-1f3fe","🤲🏿":"1f932-1f3ff","🧑🏻":"1f9d1-1f3fb","🧑🏼":"1f9d1-1f3fc","🧑🏽":"1f9d1-1f3fd","🧑🏾":"1f9d1-1f3fe","🧑🏿":"1f9d1-1f3ff","🧒🏻":"1f9d2-1f3fb","🧒🏼":"1f9d2-1f3fc","🧒🏽":"1f9d2-1f3fd","🧒🏾":"1f9d2-1f3fe","🧒🏿":"1f9d2-1f3ff","🧓🏻":"1f9d3-1f3fb","🧓🏼":"1f9d3-1f3fc","🧓🏽":"1f9d3-1f3fd","🧓🏾":"1f9d3-1f3fe","🧓🏿":"1f9d3-1f3ff","🧔🏻":"1f9d4-1f3fb","🧔🏼":"1f9d4-1f3fc","🧔🏽":"1f9d4-1f3fd","🧔🏾":"1f9d4-1f3fe","🧔🏿":"1f9d4-1f3ff","🧕🏻":"1f9d5-1f3fb","🧕🏼":"1f9d5-1f3fc","🧕🏽":"1f9d5-1f3fd","🧕🏾":"1f9d5-1f3fe","🧕🏿":"1f9d5-1f3ff","🧖🏻":"1f9d6-1f3fb","🧖🏼":"1f9d6-1f3fc","🧖🏽":"1f9d6-1f3fd","🧖🏾":"1f9d6-1f3fe","🧖🏿":"1f9d6-1f3ff","🧗🏻":"1f9d7-1f3fb","🧗🏼":"1f9d7-1f3fc","🧗🏽":"1f9d7-1f3fd","🧗🏾":"1f9d7-1f3fe","🧗🏿":"1f9d7-1f3ff","🧘🏻":"1f9d8-1f3fb","🧘🏼":"1f9d8-1f3fc","🧘🏽":"1f9d8-1f3fd","🧘🏾":"1f9d8-1f3fe","🧘🏿":"1f9d8-1f3ff","🧙🏻":"1f9d9-1f3fb","🧙🏼":"1f9d9-1f3fc","🧙🏽":"1f9d9-1f3fd","🧙🏾":"1f9d9-1f3fe","🧙🏿":"1f9d9-1f3ff","🧚🏻":"1f9da-1f3fb","🧚🏼":"1f9da-1f3fc","🧚🏽":"1f9da-1f3fd","🧚🏾":"1f9da-1f3fe","🧚🏿":"1f9da-1f3ff","🧛🏻":"1f9db-1f3fb","🧛🏼":"1f9db-1f3fc","🧛🏽":"1f9db-1f3fd","🧛🏾":"1f9db-1f3fe","🧛🏿":"1f9db-1f3ff","🧜🏻":"1f9dc-1f3fb","🧜🏼":"1f9dc-1f3fc","🧜🏽":"1f9dc-1f3fd","🧜🏾":"1f9dc-1f3fe","🧜🏿":"1f9dc-1f3ff","🧝🏻":"1f9dd-1f3fb","🧝🏼":"1f9dd-1f3fc","🧝🏽":"1f9dd-1f3fd","🧝🏾":"1f9dd-1f3fe","🧝🏿":"1f9dd-1f3ff","🦵🏻":"1f9b5-1f3fb","🦵🏼":"1f9b5-1f3fc","🦵🏽":"1f9b5-1f3fd","🦵🏾":"1f9b5-1f3fe","🦵🏿":"1f9b5-1f3ff","🦶🏻":"1f9b6-1f3fb","🦶🏼":"1f9b6-1f3fc","🦶🏽":"1f9b6-1f3fd","🦶🏾":"1f9b6-1f3fe","🦶🏿":"1f9b6-1f3ff","🦸🏻":"1f9b8-1f3fb","🦸🏼":"1f9b8-1f3fc","🦸🏽":"1f9b8-1f3fd","🦸🏾":"1f9b8-1f3fe","🦸🏿":"1f9b8-1f3ff","🦹🏻":"1f9b9-1f3fb","🦹🏼":"1f9b9-1f3fc","🦹🏽":"1f9b9-1f3fd","🦹🏾":"1f9b9-1f3fe","🦹🏿":"1f9b9-1f3ff","👨🦰":"1f468-1f9b0","👨🦱":"1f468-1f9b1","👨🦲":"1f468-1f9b2","👨🦳":"1f468-1f9b3","👩🦰":"1f469-1f9b0","👩🦱":"1f469-1f9b1","👩🦲":"1f469-1f9b2","👩🦳":"1f469-1f9b3","🅿️":"1f17f","🈂️":"1f202","🈷️":"1f237","🎞️":"1f39e","🎟️":"1f39f","🏋️":"1f3cb","🏌️":"1f3cc","🏍️":"1f3cd","🏎️":"1f3ce","🎖️":"1f396","🎗️":"1f397","🌶️":"1f336","🌧️":"1f327","🌨️":"1f328","🌩️":"1f329","🌪️":"1f32a","🌫️":"1f32b","🌬️":"1f32c","🐿️":"1f43f","🕷️":"1f577","🕸️":"1f578","🌡️":"1f321","🎙️":"1f399","🎚️":"1f39a","🎛️":"1f39b","🏳️":"1f3f3","🏵️":"1f3f5","🏷️":"1f3f7","📽️":"1f4fd","🕉️":"1f549","🕊️":"1f54a","🕯️":"1f56f","🕰️":"1f570","🕳️":"1f573","🕶️":"1f576","🕹️":"1f579","🖇️":"1f587","🖊️":"1f58a","🖋️":"1f58b","🖌️":"1f58c","🖍️":"1f58d","🖥️":"1f5a5","🖨️":"1f5a8","🖲️":"1f5b2","🖼️":"1f5bc","🗂️":"1f5c2","🗃️":"1f5c3","🗄️":"1f5c4","🗑️":"1f5d1","🗒️":"1f5d2","🗓️":"1f5d3","🗜️":"1f5dc","🗝️":"1f5dd","🗞️":"1f5de","🗡️":"1f5e1","🗣️":"1f5e3","🗨️":"1f5e8","🗯️":"1f5ef","🗳️":"1f5f3","🗺️":"1f5fa","🛠️":"1f6e0","🛡️":"1f6e1","🛢️":"1f6e2","🛰️":"1f6f0","🍽️":"1f37d","👁️":"1f441","🕴️":"1f574","🕵️":"1f575","🖐️":"1f590","🏔️":"1f3d4","🏕️":"1f3d5","🏖️":"1f3d6","🏗️":"1f3d7","🏘️":"1f3d8","🏙️":"1f3d9","🏚️":"1f3da","🏛️":"1f3db","🏜️":"1f3dc","🏝️":"1f3dd","🏞️":"1f3de","🏟️":"1f3df","🛋️":"1f6cb","🛍️":"1f6cd","🛎️":"1f6ce","🛏️":"1f6cf","🛣️":"1f6e3","🛤️":"1f6e4","🛥️":"1f6e5","🛩️":"1f6e9","🛳️":"1f6f3","☝🏻":"261d-1f3fb","☝🏼":"261d-1f3fc","☝🏽":"261d-1f3fd","☝🏾":"261d-1f3fe","☝🏿":"261d-1f3ff","✌🏻":"270c-1f3fb","✌🏼":"270c-1f3fc","✌🏽":"270c-1f3fd","✌🏾":"270c-1f3fe","✌🏿":"270c-1f3ff","✊🏻":"270a-1f3fb","✊🏼":"270a-1f3fc","✊🏽":"270a-1f3fd","✊🏾":"270a-1f3fe","✊🏿":"270a-1f3ff","✋🏻":"270b-1f3fb","✋🏼":"270b-1f3fc","✋🏽":"270b-1f3fd","✋🏾":"270b-1f3fe","✋🏿":"270b-1f3ff","✍🏻":"270d-1f3fb","✍🏼":"270d-1f3fc","✍🏽":"270d-1f3fd","✍🏾":"270d-1f3fe","✍🏿":"270d-1f3ff","🌤️":"1f324","🌥️":"1f325","🌦️":"1f326","🖱️":"1f5b1","⛹🏻":"26f9-1f3fb","⛹🏼":"26f9-1f3fc","⛹🏽":"26f9-1f3fd","⛹🏾":"26f9-1f3fe","⛹🏿":"26f9-1f3ff","🅰️":"1f170","🅱️":"1f171","🅾️":"1f17e","🀄️":"1f004","🈚️":"1f21a","🈯️":"1f22f","🌍️":"1f30d","🌎️":"1f30e","🌏️":"1f30f","🌕️":"1f315","🌜️":"1f31c","🍸️":"1f378","🎓️":"1f393","🎧️":"1f3a7","🎬️":"1f3ac","🎭️":"1f3ad","🎮️":"1f3ae","🏂️":"1f3c2","🏄️":"1f3c4","🏆️":"1f3c6","🏊️":"1f3ca","🏠️":"1f3e0","🏭️":"1f3ed","🐈️":"1f408","🐕️":"1f415","🐟️":"1f41f","🐦️":"1f426","👂️":"1f442","👆️":"1f446","👇️":"1f447","👈️":"1f448","👉️":"1f449","👍️":"1f44d","👎️":"1f44e","👓️":"1f453","👪️":"1f46a","👽️":"1f47d","💣️":"1f4a3","💰️":"1f4b0","💳️":"1f4b3","💻️":"1f4bb","💿️":"1f4bf","📋️":"1f4cb","📚️":"1f4da","📟️":"1f4df","📤️":"1f4e4","📥️":"1f4e5","📦️":"1f4e6","📪️":"1f4ea","📫️":"1f4eb","📬️":"1f4ec","📭️":"1f4ed","📷️":"1f4f7","📹️":"1f4f9","📺️":"1f4fa","📻️":"1f4fb","🔈️":"1f508","🔍️":"1f50d","🔒️":"1f512","🔓️":"1f513","🕐️":"1f550","🕑️":"1f551","🕒️":"1f552","🕓️":"1f553","🕔️":"1f554","🕕️":"1f555","🕖️":"1f556","🕗️":"1f557","🕘️":"1f558","🕙️":"1f559","🕚️":"1f55a","🕛️":"1f55b","🕜️":"1f55c","🕝️":"1f55d","🕞️":"1f55e","🕟️":"1f55f","🕠️":"1f560","🕡️":"1f561","🕢️":"1f562","🕣️":"1f563","🕤️":"1f564","🕥️":"1f565","🕦️":"1f566","🕧️":"1f567","😐️":"1f610","🚇️":"1f687","🚍️":"1f68d","🚑️":"1f691","🚔️":"1f694","🚘️":"1f698","🚭️":"1f6ad","🚲️":"1f6b2","🚹️":"1f6b9","🚺️":"1f6ba","🚼️":"1f6bc","#⃣":"0023-20e3","0⃣":"0030-20e3","1⃣":"0031-20e3","2⃣":"0032-20e3","3⃣":"0033-20e3","4⃣":"0034-20e3","5⃣":"0035-20e3","6⃣":"0036-20e3","7⃣":"0037-20e3","8⃣":"0038-20e3","9⃣":"0039-20e3","‼️":"203c","⁉️":"2049","ℹ️":"2139","↔️":"2194","↕️":"2195","↖️":"2196","↗️":"2197","↘️":"2198","↙️":"2199","↩️":"21a9","↪️":"21aa","Ⓜ️":"24c2","▪️":"25aa","▫️":"25ab","▶️":"25b6","◀️":"25c0","◻️":"25fb","◼️":"25fc","☀️":"2600","☁️":"2601","☎️":"260e","☑️":"2611","☝️":"261d","☺️":"263a","♠️":"2660","♣️":"2663","♥️":"2665","♦️":"2666","♨️":"2668","♻️":"267b","⚠️":"26a0","✂️":"2702","✈️":"2708","✉️":"2709","✌️":"270c","✏️":"270f","✒️":"2712","✔️":"2714","✖️":"2716","✳️":"2733","✴️":"2734","❄️":"2744","❇️":"2747","❤️":"2764","➡️":"27a1","⤴️":"2934","⤵️":"2935","⬅️":"2b05","⬆️":"2b06","⬇️":"2b07","〰️":"3030","〽️":"303d","㊗️":"3297","㊙️":"3299","✝️":"271d","⌨️":"2328","✍️":"270d","*⃣":"002a-20e3","⏏️":"23cf","⏭️":"23ed","⏮️":"23ee","⏯️":"23ef","⏱️":"23f1","⏲️":"23f2","⏸️":"23f8","⏹️":"23f9","⏺️":"23fa","☂️":"2602","☃️":"2603","☄️":"2604","☘️":"2618","☠️":"2620","☢️":"2622","☣️":"2623","☦️":"2626","☪️":"262a","☮️":"262e","☯️":"262f","☸️":"2638","☹️":"2639","⚒️":"2692","⚔️":"2694","⚖️":"2696","⚗️":"2697","⚙️":"2699","⚛️":"269b","⚜️":"269c","⚰️":"26b0","⚱️":"26b1","⛈️":"26c8","⛏️":"26cf","⛑️":"26d1","⛓️":"26d3","⛩️":"26e9","⛰️":"26f0","⛱️":"26f1","⛴️":"26f4","⛷️":"26f7","⛸️":"26f8","⛹️":"26f9","✡️":"2721","❣️":"2763","♀️":"2640","♂️":"2642","⚕️":"2695","♟️":"265f","♾️":"267e","⌚️":"231a","⌛️":"231b","⏩️":"23e9","⏪️":"23ea","⏳️":"23f3","◽️":"25fd","◾️":"25fe","☔️":"2614","☕️":"2615","♈️":"2648","♉️":"2649","♊️":"264a","♋️":"264b","♌️":"264c","♍️":"264d","♎️":"264e","♏️":"264f","♐️":"2650","♑️":"2651","♒️":"2652","♓️":"2653","♿️":"267f","⚓️":"2693","⚡️":"26a1","⚪️":"26aa","⚫️":"26ab","⚽️":"26bd","⚾️":"26be","⛄️":"26c4","⛅️":"26c5","⛔️":"26d4","⛪️":"26ea","⛲️":"26f2","⛳️":"26f3","⛵️":"26f5","⛺️":"26fa","⛽️":"26fd","❓️":"2753","❗️":"2757","⬛️":"2b1b","⬜️":"2b1c","⭐️":"2b50","⭕️":"2b55","🥉":"1f949","🥈":"1f948","🥇":"1f947","🤺":"1f93a","🥅":"1f945","🤾":"1f93e","🇿":"1f1ff","🤽":"1f93d","🥋":"1f94b","🥊":"1f94a","🤼":"1f93c","🤹":"1f939","🤸":"1f938","🛶":"1f6f6","🛵":"1f6f5","🛴":"1f6f4","🛒":"1f6d2","🀄":"1f004","🃏":"1f0cf","🅰":"1f170","🅱":"1f171","🅾":"1f17e","🅿":"1f17f","🛑":"1f6d1","🆎":"1f18e","🆑":"1f191","🇾":"1f1fe","🆒":"1f192","🆓":"1f193","🆔":"1f194","🆕":"1f195","🆖":"1f196","🆗":"1f197","🆘":"1f198","🥄":"1f944","🆙":"1f199","🆚":"1f19a","🥂":"1f942","🥃":"1f943","🈁":"1f201","🈂":"1f202","🈚":"1f21a","🈯":"1f22f","🥙":"1f959","🈲":"1f232","🈳":"1f233","🈴":"1f234","🈵":"1f235","🈶":"1f236","🥘":"1f958","🈷":"1f237","🈸":"1f238","🈹":"1f239","🥗":"1f957","🈺":"1f23a","🉐":"1f250","🉑":"1f251","🌀":"1f300","🥖":"1f956","🌁":"1f301","🌂":"1f302","🌃":"1f303","🌄":"1f304","🌅":"1f305","🌆":"1f306","🥕":"1f955","🌇":"1f307","🌈":"1f308","🥔":"1f954","🌉":"1f309","🌊":"1f30a","🌋":"1f30b","🌌":"1f30c","🌏":"1f30f","🌑":"1f311","🥓":"1f953","🌓":"1f313","🌔":"1f314","🌕":"1f315","🌙":"1f319","🌛":"1f31b","🌟":"1f31f","🥒":"1f952","🌠":"1f320","🌰":"1f330","🥑":"1f951","🌱":"1f331","🌴":"1f334","🌵":"1f335","🌷":"1f337","🌸":"1f338","🌹":"1f339","🌺":"1f33a","🌻":"1f33b","🌼":"1f33c","🌽":"1f33d","🥐":"1f950","🌾":"1f33e","🌿":"1f33f","🍀":"1f340","🍁":"1f341","🍂":"1f342","🍃":"1f343","🍄":"1f344","🍅":"1f345","🍆":"1f346","🍇":"1f347","🍈":"1f348","🍉":"1f349","🍊":"1f34a","🥀":"1f940","🍌":"1f34c","🍍":"1f34d","🍎":"1f34e","🍏":"1f34f","🍑":"1f351","🍒":"1f352","🍓":"1f353","🦏":"1f98f","🍔":"1f354","🍕":"1f355","🍖":"1f356","🦎":"1f98e","🍗":"1f357","🍘":"1f358","🍙":"1f359","🦍":"1f98d","🍚":"1f35a","🍛":"1f35b","🦌":"1f98c","🍜":"1f35c","🍝":"1f35d","🍞":"1f35e","🍟":"1f35f","🦋":"1f98b","🍠":"1f360","🍡":"1f361","🦊":"1f98a","🍢":"1f362","🍣":"1f363","🦉":"1f989","🍤":"1f364","🍥":"1f365","🦈":"1f988","🍦":"1f366","🦇":"1f987","🍧":"1f367","🇽":"1f1fd","🍨":"1f368","🦆":"1f986","🍩":"1f369","🦅":"1f985","🍪":"1f36a","🖤":"1f5a4","🍫":"1f36b","🍬":"1f36c","🍭":"1f36d","🍮":"1f36e","🍯":"1f36f","🤞":"1f91e","🍰":"1f370","🍱":"1f371","🍲":"1f372","🤝":"1f91d","🍳":"1f373","🍴":"1f374","🍵":"1f375","🍶":"1f376","🍷":"1f377","🍸":"1f378","🍹":"1f379","🍺":"1f37a","🍻":"1f37b","🎀":"1f380","🎁":"1f381","🎂":"1f382","🎃":"1f383","🤛":"1f91b","🤜":"1f91c","🎄":"1f384","🎅":"1f385","🎆":"1f386","🤚":"1f91a","🎇":"1f387","🎈":"1f388","🎉":"1f389","🎊":"1f38a","🎋":"1f38b","🎌":"1f38c","🤙":"1f919","🎍":"1f38d","🕺":"1f57a","🎎":"1f38e","🤳":"1f933","🎏":"1f38f","🤰":"1f930","🎐":"1f390","🤦":"1f926","🤷":"1f937","🎑":"1f391","🎒":"1f392","🎓":"1f393","🎠":"1f3a0","🎡":"1f3a1","🎢":"1f3a2","🎣":"1f3a3","🎤":"1f3a4","🎥":"1f3a5","🎦":"1f3a6","🎧":"1f3a7","🤶":"1f936","🎨":"1f3a8","🤵":"1f935","🎩":"1f3a9","🎪":"1f3aa","🤴":"1f934","🎫":"1f3ab","🎬":"1f3ac","🎭":"1f3ad","🤧":"1f927","🎮":"1f3ae","🎯":"1f3af","🎰":"1f3b0","🎱":"1f3b1","🎲":"1f3b2","🎳":"1f3b3","🎴":"1f3b4","🤥":"1f925","🎵":"1f3b5","🎶":"1f3b6","🎷":"1f3b7","🤤":"1f924","🎸":"1f3b8","🎹":"1f3b9","🎺":"1f3ba","🤣":"1f923","🎻":"1f3bb","🎼":"1f3bc","🎽":"1f3bd","🤢":"1f922","🎾":"1f3be","🎿":"1f3bf","🏀":"1f3c0","🏁":"1f3c1","🤡":"1f921","🏂":"1f3c2","🏃":"1f3c3","🏄":"1f3c4","🏆":"1f3c6","🏈":"1f3c8","🏊":"1f3ca","🏠":"1f3e0","🏡":"1f3e1","🏢":"1f3e2","🏣":"1f3e3","🏥":"1f3e5","🏦":"1f3e6","🏧":"1f3e7","🏨":"1f3e8","🏩":"1f3e9","🏪":"1f3ea","🏫":"1f3eb","🏬":"1f3ec","🤠":"1f920","🏭":"1f3ed","🏮":"1f3ee","🏯":"1f3ef","🏰":"1f3f0","🐌":"1f40c","🐍":"1f40d","🐎":"1f40e","🐑":"1f411","🐒":"1f412","🐔":"1f414","🐗":"1f417","🐘":"1f418","🐙":"1f419","🐚":"1f41a","🐛":"1f41b","🐜":"1f41c","🐝":"1f41d","🐞":"1f41e","🐟":"1f41f","🐠":"1f420","🐡":"1f421","🐢":"1f422","🐣":"1f423","🐤":"1f424","🐥":"1f425","🐦":"1f426","🐧":"1f427","🐨":"1f428","🐩":"1f429","🐫":"1f42b","🐬":"1f42c","🐭":"1f42d","🐮":"1f42e","🐯":"1f42f","🐰":"1f430","🐱":"1f431","🐲":"1f432","🐳":"1f433","🐴":"1f434","🐵":"1f435","🐶":"1f436","🐷":"1f437","🐸":"1f438","🐹":"1f439","🐺":"1f43a","🐻":"1f43b","🐼":"1f43c","🐽":"1f43d","🐾":"1f43e","👀":"1f440","👂":"1f442","👃":"1f443","👄":"1f444","👅":"1f445","👆":"1f446","👇":"1f447","👈":"1f448","👉":"1f449","👊":"1f44a","👋":"1f44b","👌":"1f44c","👍":"1f44d","👎":"1f44e","👏":"1f44f","👐":"1f450","👑":"1f451","👒":"1f452","👓":"1f453","👔":"1f454","👕":"1f455","👖":"1f456","👗":"1f457","👘":"1f458","👙":"1f459","👚":"1f45a","👛":"1f45b","👜":"1f45c","👝":"1f45d","👞":"1f45e","👟":"1f45f","👠":"1f460","👡":"1f461","👢":"1f462","👣":"1f463","👤":"1f464","👦":"1f466","👧":"1f467","👨":"1f468","👩":"1f469","👪":"1f46a","👫":"1f46b","👮":"1f46e","👯":"1f46f","👰":"1f470","👱":"1f471","👲":"1f472","👳":"1f473","👴":"1f474","👵":"1f475","👶":"1f476","👷":"1f477","👸":"1f478","👹":"1f479","👺":"1f47a","👻":"1f47b","👼":"1f47c","👽":"1f47d","👾":"1f47e","👿":"1f47f","💀":"1f480","📇":"1f4c7","💁":"1f481","💂":"1f482","💃":"1f483","💄":"1f484","💅":"1f485","📒":"1f4d2","💆":"1f486","📓":"1f4d3","💇":"1f487","📔":"1f4d4","💈":"1f488","📕":"1f4d5","💉":"1f489","📖":"1f4d6","💊":"1f48a","📗":"1f4d7","💋":"1f48b","📘":"1f4d8","💌":"1f48c","📙":"1f4d9","💍":"1f48d","📚":"1f4da","💎":"1f48e","📛":"1f4db","💏":"1f48f","📜":"1f4dc","💐":"1f490","📝":"1f4dd","💑":"1f491","📞":"1f4de","💒":"1f492","📟":"1f4df","📠":"1f4e0","💓":"1f493","📡":"1f4e1","📢":"1f4e2","💔":"1f494","📣":"1f4e3","📤":"1f4e4","💕":"1f495","📥":"1f4e5","📦":"1f4e6","💖":"1f496","📧":"1f4e7","📨":"1f4e8","💗":"1f497","📩":"1f4e9","📪":"1f4ea","💘":"1f498","📫":"1f4eb","📮":"1f4ee","💙":"1f499","📰":"1f4f0","📱":"1f4f1","💚":"1f49a","📲":"1f4f2","📳":"1f4f3","💛":"1f49b","📴":"1f4f4","📶":"1f4f6","💜":"1f49c","📷":"1f4f7","📹":"1f4f9","💝":"1f49d","📺":"1f4fa","📻":"1f4fb","💞":"1f49e","📼":"1f4fc","🔃":"1f503","💟":"1f49f","🔊":"1f50a","🔋":"1f50b","💠":"1f4a0","🔌":"1f50c","🔍":"1f50d","💡":"1f4a1","🔎":"1f50e","🔏":"1f50f","💢":"1f4a2","🔐":"1f510","🔑":"1f511","💣":"1f4a3","🔒":"1f512","🔓":"1f513","💤":"1f4a4","🔔":"1f514","🔖":"1f516","💥":"1f4a5","🔗":"1f517","🔘":"1f518","💦":"1f4a6","🔙":"1f519","🔚":"1f51a","💧":"1f4a7","🔛":"1f51b","🔜":"1f51c","💨":"1f4a8","🔝":"1f51d","🔞":"1f51e","💩":"1f4a9","🔟":"1f51f","💪":"1f4aa","🔠":"1f520","🔡":"1f521","💫":"1f4ab","🔢":"1f522","🔣":"1f523","💬":"1f4ac","🔤":"1f524","🔥":"1f525","💮":"1f4ae","🔦":"1f526","🔧":"1f527","💯":"1f4af","🔨":"1f528","🔩":"1f529","💰":"1f4b0","🔪":"1f52a","🔫":"1f52b","💱":"1f4b1","🔮":"1f52e","💲":"1f4b2","🔯":"1f52f","💳":"1f4b3","🔰":"1f530","🔱":"1f531","💴":"1f4b4","🔲":"1f532","🔳":"1f533","💵":"1f4b5","🔴":"1f534","🔵":"1f535","💸":"1f4b8","🔶":"1f536","🔷":"1f537","💹":"1f4b9","🔸":"1f538","🔹":"1f539","💺":"1f4ba","🔺":"1f53a","🔻":"1f53b","💻":"1f4bb","🔼":"1f53c","💼":"1f4bc","🔽":"1f53d","🕐":"1f550","💽":"1f4bd","🕑":"1f551","💾":"1f4be","🕒":"1f552","💿":"1f4bf","🕓":"1f553","📀":"1f4c0","🕔":"1f554","🕕":"1f555","📁":"1f4c1","🕖":"1f556","🕗":"1f557","📂":"1f4c2","🕘":"1f558","🕙":"1f559","📃":"1f4c3","🕚":"1f55a","🕛":"1f55b","📄":"1f4c4","🗻":"1f5fb","🗼":"1f5fc","📅":"1f4c5","🗽":"1f5fd","🗾":"1f5fe","📆":"1f4c6","🗿":"1f5ff","😁":"1f601","😂":"1f602","😃":"1f603","📈":"1f4c8","😄":"1f604","😅":"1f605","📉":"1f4c9","😆":"1f606","😉":"1f609","📊":"1f4ca","😊":"1f60a","😋":"1f60b","📋":"1f4cb","😌":"1f60c","😍":"1f60d","📌":"1f4cc","😏":"1f60f","😒":"1f612","📍":"1f4cd","😓":"1f613","😔":"1f614","📎":"1f4ce","😖":"1f616","😘":"1f618","📏":"1f4cf","😚":"1f61a","😜":"1f61c","📐":"1f4d0","😝":"1f61d","😞":"1f61e","📑":"1f4d1","😠":"1f620","😡":"1f621","😢":"1f622","😣":"1f623","😤":"1f624","😥":"1f625","😨":"1f628","😩":"1f629","😪":"1f62a","😫":"1f62b","😭":"1f62d","😰":"1f630","😱":"1f631","😲":"1f632","😳":"1f633","😵":"1f635","😷":"1f637","😸":"1f638","😹":"1f639","😺":"1f63a","😻":"1f63b","😼":"1f63c","😽":"1f63d","😾":"1f63e","😿":"1f63f","🙀":"1f640","🙅":"1f645","🙆":"1f646","🙇":"1f647","🙈":"1f648","🙉":"1f649","🙊":"1f64a","🙋":"1f64b","🙌":"1f64c","🙍":"1f64d","🙎":"1f64e","🙏":"1f64f","🚀":"1f680","🚃":"1f683","🚄":"1f684","🚅":"1f685","🚇":"1f687","🚉":"1f689","🚌":"1f68c","🚏":"1f68f","🚑":"1f691","🚒":"1f692","🚓":"1f693","🚕":"1f695","🚗":"1f697","🚙":"1f699","🚚":"1f69a","🚢":"1f6a2","🚤":"1f6a4","🚥":"1f6a5","🚧":"1f6a7","🚨":"1f6a8","🚩":"1f6a9","🚪":"1f6aa","🚫":"1f6ab","🚬":"1f6ac","🚭":"1f6ad","🚲":"1f6b2","🚶":"1f6b6","🚹":"1f6b9","🚺":"1f6ba","🚻":"1f6bb","🚼":"1f6bc","🚽":"1f6bd","🚾":"1f6be","🛀":"1f6c0","🤘":"1f918","😀":"1f600","😇":"1f607","😈":"1f608","😎":"1f60e","😐":"1f610","😑":"1f611","😕":"1f615","😗":"1f617","😙":"1f619","😛":"1f61b","😟":"1f61f","😦":"1f626","😧":"1f627","😬":"1f62c","😮":"1f62e","😯":"1f62f","😴":"1f634","😶":"1f636","🚁":"1f681","🚂":"1f682","🚆":"1f686","🚈":"1f688","🚊":"1f68a","🚍":"1f68d","🚎":"1f68e","🚐":"1f690","🚔":"1f694","🚖":"1f696","🚘":"1f698","🚛":"1f69b","🚜":"1f69c","🚝":"1f69d","🚞":"1f69e","🚟":"1f69f","🚠":"1f6a0","🚡":"1f6a1","🚣":"1f6a3","🚦":"1f6a6","🚮":"1f6ae","🚯":"1f6af","🚰":"1f6b0","🚱":"1f6b1","🚳":"1f6b3","🚴":"1f6b4","🚵":"1f6b5","🚷":"1f6b7","🚸":"1f6b8","🚿":"1f6bf","🛁":"1f6c1","🛂":"1f6c2","🛃":"1f6c3","🛄":"1f6c4","🛅":"1f6c5","🌍":"1f30d","🌎":"1f30e","🌐":"1f310","🌒":"1f312","🌖":"1f316","🌗":"1f317","🌘":"1f318","🌚":"1f31a","🌜":"1f31c","🌝":"1f31d","🌞":"1f31e","🌲":"1f332","🌳":"1f333","🍋":"1f34b","🍐":"1f350","🍼":"1f37c","🏇":"1f3c7","🏉":"1f3c9","🏤":"1f3e4","🐀":"1f400","🐁":"1f401","🐂":"1f402","🐃":"1f403","🐄":"1f404","🐅":"1f405","🐆":"1f406","🐇":"1f407","🐈":"1f408","🐉":"1f409","🐊":"1f40a","🐋":"1f40b","🐏":"1f40f","🐐":"1f410","🐓":"1f413","🐕":"1f415","🐖":"1f416","🐪":"1f42a","👥":"1f465","👬":"1f46c","👭":"1f46d","💭":"1f4ad","💶":"1f4b6","💷":"1f4b7","📬":"1f4ec","📭":"1f4ed","📯":"1f4ef","📵":"1f4f5","🔀":"1f500","🔁":"1f501","🔂":"1f502","🔄":"1f504","🔅":"1f505","🔆":"1f506","🔇":"1f507","🔉":"1f509","🔕":"1f515","🔬":"1f52c","🔭":"1f52d","🕜":"1f55c","🕝":"1f55d","🕞":"1f55e","🕟":"1f55f","🕠":"1f560","🕡":"1f561","🕢":"1f562","🕣":"1f563","🕤":"1f564","🕥":"1f565","🕦":"1f566","🕧":"1f567","🔈":"1f508","🚋":"1f68b","🎞":"1f39e","🎟":"1f39f","🏅":"1f3c5","🏋":"1f3cb","🏌":"1f3cc","🏍":"1f3cd","🏎":"1f3ce","🎖":"1f396","🎗":"1f397","🌶":"1f336","🌧":"1f327","🌨":"1f328","🌩":"1f329","🌪":"1f32a","🌫":"1f32b","🌬":"1f32c","🐿":"1f43f","🕷":"1f577","🕸":"1f578","🌡":"1f321","🎙":"1f399","🎚":"1f39a","🎛":"1f39b","🏳":"1f3f3","🏴":"1f3f4","🏵":"1f3f5","🏷":"1f3f7","📸":"1f4f8","📽":"1f4fd","🕊":"1f54a","🕯":"1f56f","🕰":"1f570","🕳":"1f573","🕶":"1f576","🕹":"1f579","🖇":"1f587","🖊":"1f58a","🖋":"1f58b","🖌":"1f58c","🖍":"1f58d","🖥":"1f5a5","🖨":"1f5a8","🖲":"1f5b2","🖼":"1f5bc","🗂":"1f5c2","🗃":"1f5c3","🗄":"1f5c4","🗑":"1f5d1","🗒":"1f5d2","🗓":"1f5d3","🗜":"1f5dc","🗞":"1f5de","🗡":"1f5e1","🗣":"1f5e3","🗨":"1f5e8","🗯":"1f5ef","🗳":"1f5f3","🗺":"1f5fa","🛌":"1f6cc","🛠":"1f6e0","🛡":"1f6e1","🛢":"1f6e2","🛰":"1f6f0","🍽":"1f37d","👁":"1f441","🕴":"1f574","🕵":"1f575","🖐":"1f590","🖕":"1f595","🖖":"1f596","🙁":"1f641","🙂":"1f642","🏔":"1f3d4","🏕":"1f3d5","🏖":"1f3d6","🏗":"1f3d7","🏘":"1f3d8","🏙":"1f3d9","🏚":"1f3da","🏛":"1f3db","🏜":"1f3dc","🏝":"1f3dd","🏞":"1f3de","🏟":"1f3df","🛋":"1f6cb","🛍":"1f6cd","🛎":"1f6ce","🛏":"1f6cf","🛣":"1f6e3","🛤":"1f6e4","🛥":"1f6e5","🛩":"1f6e9","🛫":"1f6eb","🛬":"1f6ec","🛳":"1f6f3","🏻":"1f3fb","🏼":"1f3fc","🏽":"1f3fd","🏾":"1f3fe","🏿":"1f3ff","🌤":"1f324","🌥":"1f325","🌦":"1f326","🖱":"1f5b1","🙃":"1f643","🤑":"1f911","🤓":"1f913","🤗":"1f917","🙄":"1f644","🤔":"1f914","🤐":"1f910","🤒":"1f912","🤕":"1f915","🤖":"1f916","🦁":"1f981","🦄":"1f984","🦂":"1f982","🦀":"1f980","🦃":"1f983","🧀":"1f9c0","🌭":"1f32d","🌮":"1f32e","🌯":"1f32f","🍿":"1f37f","🍾":"1f37e","🏹":"1f3f9","🏺":"1f3fa","🛐":"1f6d0","🕋":"1f54b","🕌":"1f54c","🕍":"1f54d","🕎":"1f54e","📿":"1f4ff","🏏":"1f3cf","🏐":"1f3d0","🏑":"1f3d1","🏒":"1f3d2","🏓":"1f3d3","🏸":"1f3f8","🥁":"1f941","🦐":"1f990","🦑":"1f991","🥚":"1f95a","🥛":"1f95b","🥜":"1f95c","🥝":"1f95d","🥞":"1f95e","🇼":"1f1fc","🇻":"1f1fb","🇺":"1f1fa","🇹":"1f1f9","🇸":"1f1f8","🇷":"1f1f7","🇶":"1f1f6","🇵":"1f1f5","🇴":"1f1f4","🇳":"1f1f3","🇲":"1f1f2","🇱":"1f1f1","🇰":"1f1f0","🇯":"1f1ef","🇮":"1f1ee","🇭":"1f1ed","🇬":"1f1ec","🇫":"1f1eb","🇪":"1f1ea","🇩":"1f1e9","🇨":"1f1e8","🇧":"1f1e7","🇦":"1f1e6","🛷":"1f6f7","🛸":"1f6f8","🤟":"1f91f","🤨":"1f928","🤩":"1f929","🤪":"1f92a","🤫":"1f92b","🤬":"1f92c","🤭":"1f92d","🤮":"1f92e","🤯":"1f92f","🤱":"1f931","🤲":"1f932","🥌":"1f94c","🥟":"1f95f","🥠":"1f960","🥡":"1f961","🥢":"1f962","🥣":"1f963","🥤":"1f964","🥥":"1f965","🥦":"1f966","🥧":"1f967","🥨":"1f968","🥩":"1f969","🥪":"1f96a","🥫":"1f96b","🦒":"1f992","🦓":"1f993","🦔":"1f994","🦕":"1f995","🦖":"1f996","🦗":"1f997","🧐":"1f9d0","🧑":"1f9d1","🧒":"1f9d2","🧓":"1f9d3","🧔":"1f9d4","🧕":"1f9d5","🧖":"1f9d6","🧗":"1f9d7","🧘":"1f9d8","🧙":"1f9d9","🧚":"1f9da","🧛":"1f9db","🧜":"1f9dc","🧝":"1f9dd","🧞":"1f9de","🧟":"1f9df","🧠":"1f9e0","🧡":"1f9e1","🧢":"1f9e2","🧣":"1f9e3","🧤":"1f9e4","🧥":"1f9e5","🧦":"1f9e6","🛹":"1f6f9","🥍":"1f94d","🥎":"1f94e","🥏":"1f94f","🥬":"1f96c","🥭":"1f96d","🥮":"1f96e","🥯":"1f96f","🥰":"1f970","🥳":"1f973","🥴":"1f974","🥵":"1f975","🥶":"1f976","🥺":"1f97a","🥼":"1f97c","🥽":"1f97d","🥾":"1f97e","🥿":"1f97f","🦘":"1f998","🦙":"1f999","🦚":"1f99a","🦛":"1f99b","🦜":"1f99c","🦝":"1f99d","🦞":"1f99e","🦟":"1f99f","🦠":"1f9a0","🦡":"1f9a1","🦢":"1f9a2","🦰":"1f9b0","🦱":"1f9b1","🦲":"1f9b2","🦳":"1f9b3","🦴":"1f9b4","🦵":"1f9b5","🦶":"1f9b6","🦷":"1f9b7","🦸":"1f9b8","🦹":"1f9b9","🧁":"1f9c1","🧂":"1f9c2","🧧":"1f9e7","🧨":"1f9e8","🧩":"1f9e9","🧪":"1f9ea","🧫":"1f9eb","🧬":"1f9ec","🧭":"1f9ed","🧮":"1f9ee","🧯":"1f9ef","🧰":"1f9f0","🧱":"1f9f1","🧲":"1f9f2","🧳":"1f9f3","🧴":"1f9f4","🧵":"1f9f5","🧶":"1f9f6","🧷":"1f9f7","🧸":"1f9f8","🧹":"1f9f9","🧺":"1f9fa","🧻":"1f9fb","🧼":"1f9fc","🧽":"1f9fd","🧾":"1f9fe","🧿":"1f9ff","⌚":"231a","⌛":"231b","⏩":"23e9","⏪":"23ea","⏫":"23eb","⏬":"23ec","⏰":"23f0","⏳":"23f3","Ⓜ":"24c2","◽":"25fd","◾":"25fe","☀":"2600","☁":"2601","☎":"260e","☔":"2614","☕":"2615","☝":"261d","☺":"263a","♈":"2648","♉":"2649","♊":"264a","♋":"264b","♌":"264c","♍":"264d","♎":"264e","♏":"264f","♐":"2650","♑":"2651","♒":"2652","♓":"2653","♠":"2660","♣":"2663","♥":"2665","♦":"2666","♨":"2668","♻":"267b","♿":"267f","⚓":"2693","⚡":"26a1","⚪":"26aa","⚫":"26ab","⚽":"26bd","⚾":"26be","⛄":"26c4","⛅":"26c5","⛎":"26ce","⛔":"26d4","⛪":"26ea","⛲":"26f2","⛳":"26f3","⛵":"26f5","⛺":"26fa","⛽":"26fd","✂":"2702","✅":"2705","✈":"2708","✉":"2709","✊":"270a","✋":"270b","✌":"270c","✏":"270f","✒":"2712","✨":"2728","✳":"2733","✴":"2734","❄":"2744","❇":"2747","❌":"274c","❎":"274e","❓":"2753","❔":"2754","❕":"2755","❗":"2757","❤":"2764","➕":"2795","➖":"2796","➗":"2797","➰":"27b0","⬛":"2b1b","⬜":"2b1c","⭐":"2b50","⭕":"2b55","〽":"303d","㊗":"3297","㊙":"3299","➿":"27bf","⌨":"2328","✍":"270d","⏱":"23f1","⏲":"23f2","☂":"2602","☃":"2603","☄":"2604","☘":"2618","☠":"2620","☹":"2639","⚒":"2692","⚔":"2694","⚖":"2696","⚗":"2697","⚙":"2699","⚜":"269c","⚰":"26b0","⚱":"26b1","⛈":"26c8","⛏":"26cf","⛑":"26d1","⛓":"26d3","⛩":"26e9","⛰":"26f0","⛱":"26f1","⛴":"26f4","⛷":"26f7","⛸":"26f8","⛹":"26f9","❣":"2763","♟":"265f","♾":"267e"},f.jsEscapeMapGreedy={"👩❤💋👩":"1f469-2764-1f48b-1f469","👨❤💋👨":"1f468-2764-1f48b-1f468","👩❤💋👨":"1f469-2764-1f48b-1f468","👩❤👩":"1f469-2764-1f469","👨❤👨":"1f468-2764-1f468","🏌🏻♂":"1f3cc-1f3fb-2642","🏌🏼♂":"1f3cc-1f3fc-2642","🏌🏽♂":"1f3cc-1f3fd-2642","🏌🏾♂":"1f3cc-1f3fe-2642","🏌🏿♂":"1f3cc-1f3ff-2642","🏌🏻♀":"1f3cc-1f3fb-2640","🏌🏼♀":"1f3cc-1f3fc-2640","🏌🏽♀":"1f3cc-1f3fd-2640","🏌🏾♀":"1f3cc-1f3fe-2640","🏌🏿♀":"1f3cc-1f3ff-2640","👨🏻⚖":"1f468-1f3fb-2696","👨🏼⚖":"1f468-1f3fc-2696","👨🏽⚖":"1f468-1f3fd-2696","👨🏾⚖":"1f468-1f3fe-2696","👨🏿⚖":"1f468-1f3ff-2696","👩🏻⚖":"1f469-1f3fb-2696","👩🏼⚖":"1f469-1f3fc-2696","👩🏽⚖":"1f469-1f3fd-2696","👩🏾⚖":"1f469-1f3fe-2696","👩🏿⚖":"1f469-1f3ff-2696","👨🏻✈":"1f468-1f3fb-2708","👨🏼✈":"1f468-1f3fc-2708","👨🏽✈":"1f468-1f3fd-2708","👨🏾✈":"1f468-1f3fe-2708","👨🏿✈":"1f468-1f3ff-2708","👩🏻✈":"1f469-1f3fb-2708","👩🏼✈":"1f469-1f3fc-2708","👩🏽✈":"1f469-1f3fd-2708","👩🏾✈":"1f469-1f3fe-2708","👩🏿✈":"1f469-1f3ff-2708","👩❤👨":"1f469-2764-1f468","👨🏻⚕":"1f468-1f3fb-2695","👨🏼⚕":"1f468-1f3fc-2695","👨🏽⚕":"1f468-1f3fd-2695","👨🏾⚕":"1f468-1f3fe-2695","👨🏿⚕":"1f468-1f3ff-2695","👩🏻⚕":"1f469-1f3fb-2695","👩🏼⚕":"1f469-1f3fc-2695","👩🏽⚕":"1f469-1f3fd-2695","👩🏾⚕":"1f469-1f3fe-2695","👩🏿⚕":"1f469-1f3ff-2695","👮🏻♀":"1f46e-1f3fb-2640","👮🏻♂":"1f46e-1f3fb-2642","👮🏼♀":"1f46e-1f3fc-2640","👮🏼♂":"1f46e-1f3fc-2642","👮🏽♀":"1f46e-1f3fd-2640","👮🏽♂":"1f46e-1f3fd-2642","👮🏾♀":"1f46e-1f3fe-2640","👮🏾♂":"1f46e-1f3fe-2642","👮🏿♀":"1f46e-1f3ff-2640","👮🏿♂":"1f46e-1f3ff-2642","👱🏻♀":"1f471-1f3fb-2640","👱🏻♂":"1f471-1f3fb-2642","👱🏼♀":"1f471-1f3fc-2640","👱🏼♂":"1f471-1f3fc-2642","👱🏽♀":"1f471-1f3fd-2640","👱🏽♂":"1f471-1f3fd-2642","👱🏾♀":"1f471-1f3fe-2640","👱🏾♂":"1f471-1f3fe-2642","👱🏿♀":"1f471-1f3ff-2640","👱🏿♂":"1f471-1f3ff-2642","👳🏻♀":"1f473-1f3fb-2640","👳🏻♂":"1f473-1f3fb-2642","👳🏼♀":"1f473-1f3fc-2640","👳🏼♂":"1f473-1f3fc-2642","👳🏽♀":"1f473-1f3fd-2640","👳🏽♂":"1f473-1f3fd-2642","👳🏾♀":"1f473-1f3fe-2640","👳🏾♂":"1f473-1f3fe-2642","👳🏿♀":"1f473-1f3ff-2640","👳🏿♂":"1f473-1f3ff-2642","👷🏻♀":"1f477-1f3fb-2640","👷🏻♂":"1f477-1f3fb-2642","👷🏼♀":"1f477-1f3fc-2640","👷🏼♂":"1f477-1f3fc-2642","👷🏽♀":"1f477-1f3fd-2640","👷🏽♂":"1f477-1f3fd-2642","👷🏾♀":"1f477-1f3fe-2640","👷🏾♂":"1f477-1f3fe-2642","👷🏿♀":"1f477-1f3ff-2640","👷🏿♂":"1f477-1f3ff-2642","💂🏻♀":"1f482-1f3fb-2640","💂🏻♂":"1f482-1f3fb-2642","💂🏼♀":"1f482-1f3fc-2640","💂🏼♂":"1f482-1f3fc-2642","💂🏽♀":"1f482-1f3fd-2640","💂🏽♂":"1f482-1f3fd-2642","💂🏾♀":"1f482-1f3fe-2640","💂🏾♂":"1f482-1f3fe-2642","💂🏿♀":"1f482-1f3ff-2640","💂🏿♂":"1f482-1f3ff-2642","🕵🏻♀":"1f575-1f3fb-2640","🕵🏻♂":"1f575-1f3fb-2642","🕵🏼♀":"1f575-1f3fc-2640","🕵🏼♂":"1f575-1f3fc-2642","🕵🏽♀":"1f575-1f3fd-2640","🕵🏽♂":"1f575-1f3fd-2642","🕵🏾♀":"1f575-1f3fe-2640","🕵🏾♂":"1f575-1f3fe-2642","🕵🏿♀":"1f575-1f3ff-2640","🕵🏿♂":"1f575-1f3ff-2642","🏃🏻♀":"1f3c3-1f3fb-2640","🏃🏻♂":"1f3c3-1f3fb-2642","🏃🏼♀":"1f3c3-1f3fc-2640","🏃🏼♂":"1f3c3-1f3fc-2642","🏃🏽♀":"1f3c3-1f3fd-2640","🏃🏽♂":"1f3c3-1f3fd-2642","🏃🏾♀":"1f3c3-1f3fe-2640","🏃🏾♂":"1f3c3-1f3fe-2642","🏃🏿♀":"1f3c3-1f3ff-2640","🏃🏿♂":"1f3c3-1f3ff-2642","🏄🏻♀":"1f3c4-1f3fb-2640","🏄🏻♂":"1f3c4-1f3fb-2642","🏄🏼♀":"1f3c4-1f3fc-2640","🏄🏼♂":"1f3c4-1f3fc-2642","🏄🏽♀":"1f3c4-1f3fd-2640","🏄🏽♂":"1f3c4-1f3fd-2642","🏄🏾♀":"1f3c4-1f3fe-2640","🏄🏾♂":"1f3c4-1f3fe-2642","🏄🏿♀":"1f3c4-1f3ff-2640","🏄🏿♂":"1f3c4-1f3ff-2642","🏊🏻♀":"1f3ca-1f3fb-2640","🏊🏻♂":"1f3ca-1f3fb-2642","🏊🏼♀":"1f3ca-1f3fc-2640","🏊🏼♂":"1f3ca-1f3fc-2642","🏊🏽♀":"1f3ca-1f3fd-2640","🏊🏽♂":"1f3ca-1f3fd-2642","🏊🏾♀":"1f3ca-1f3fe-2640","🏊🏾♂":"1f3ca-1f3fe-2642","🏊🏿♀":"1f3ca-1f3ff-2640","🏊🏿♂":"1f3ca-1f3ff-2642","🏋🏻♀":"1f3cb-1f3fb-2640","🏋🏻♂":"1f3cb-1f3fb-2642","🏋🏼♀":"1f3cb-1f3fc-2640","🏋🏼♂":"1f3cb-1f3fc-2642","🏋🏽♀":"1f3cb-1f3fd-2640","🏋🏽♂":"1f3cb-1f3fd-2642","🏋🏾♀":"1f3cb-1f3fe-2640","🏋🏾♂":"1f3cb-1f3fe-2642","🏋🏿♀":"1f3cb-1f3ff-2640","🏋🏿♂":"1f3cb-1f3ff-2642","💆🏻♀":"1f486-1f3fb-2640","💆🏻♂":"1f486-1f3fb-2642","💆🏼♀":"1f486-1f3fc-2640","💆🏼♂":"1f486-1f3fc-2642","💆🏽♀":"1f486-1f3fd-2640","💆🏽♂":"1f486-1f3fd-2642","💆🏾♀":"1f486-1f3fe-2640","💆🏾♂":"1f486-1f3fe-2642","💆🏿♀":"1f486-1f3ff-2640","💆🏿♂":"1f486-1f3ff-2642","💇🏻♀":"1f487-1f3fb-2640","💇🏻♂":"1f487-1f3fb-2642","💇🏼♀":"1f487-1f3fc-2640","💇🏼♂":"1f487-1f3fc-2642","💇🏽♀":"1f487-1f3fd-2640","💇🏽♂":"1f487-1f3fd-2642","💇🏾♀":"1f487-1f3fe-2640","💇🏾♂":"1f487-1f3fe-2642","💇🏿♀":"1f487-1f3ff-2640","💇🏿♂":"1f487-1f3ff-2642","🚣🏻♀":"1f6a3-1f3fb-2640","🚣🏻♂":"1f6a3-1f3fb-2642","🚣🏼♀":"1f6a3-1f3fc-2640","🚣🏼♂":"1f6a3-1f3fc-2642","🚣🏽♀":"1f6a3-1f3fd-2640","🚣🏽♂":"1f6a3-1f3fd-2642","🚣🏾♀":"1f6a3-1f3fe-2640","🚣🏾♂":"1f6a3-1f3fe-2642","🚣🏿♀":"1f6a3-1f3ff-2640","🚣🏿♂":"1f6a3-1f3ff-2642","🚴🏻♀":"1f6b4-1f3fb-2640","🚴🏻♂":"1f6b4-1f3fb-2642","🚴🏼♀":"1f6b4-1f3fc-2640","🚴🏼♂":"1f6b4-1f3fc-2642","🚴🏽♀":"1f6b4-1f3fd-2640","🚴🏽♂":"1f6b4-1f3fd-2642","🚴🏾♀":"1f6b4-1f3fe-2640","🚴🏾♂":"1f6b4-1f3fe-2642","🚴🏿♀":"1f6b4-1f3ff-2640","🚴🏿♂":"1f6b4-1f3ff-2642","🚵🏻♀":"1f6b5-1f3fb-2640","🚵🏻♂":"1f6b5-1f3fb-2642","🚵🏼♀":"1f6b5-1f3fc-2640","🚵🏼♂":"1f6b5-1f3fc-2642","🚵🏽♀":"1f6b5-1f3fd-2640","🚵🏽♂":"1f6b5-1f3fd-2642","🚵🏾♀":"1f6b5-1f3fe-2640","🚵🏾♂":"1f6b5-1f3fe-2642","🚵🏿♀":"1f6b5-1f3ff-2640","🚵🏿♂":"1f6b5-1f3ff-2642","🚶🏻♀":"1f6b6-1f3fb-2640","🚶🏻♂":"1f6b6-1f3fb-2642","🚶🏼♀":"1f6b6-1f3fc-2640","🚶🏼♂":"1f6b6-1f3fc-2642","🚶🏽♀":"1f6b6-1f3fd-2640","🚶🏽♂":"1f6b6-1f3fd-2642","🚶🏾♀":"1f6b6-1f3fe-2640","🚶🏾♂":"1f6b6-1f3fe-2642","🚶🏿♀":"1f6b6-1f3ff-2640","🚶🏿♂":"1f6b6-1f3ff-2642","🤸🏻♀":"1f938-1f3fb-2640","🤸🏻♂":"1f938-1f3fb-2642","🤸🏼♀":"1f938-1f3fc-2640","🤸🏼♂":"1f938-1f3fc-2642","🤸🏽♀":"1f938-1f3fd-2640","🤸🏽♂":"1f938-1f3fd-2642","🤸🏾♀":"1f938-1f3fe-2640","🤸🏾♂":"1f938-1f3fe-2642","🤸🏿♀":"1f938-1f3ff-2640","🤸🏿♂":"1f938-1f3ff-2642","🤹🏻♀":"1f939-1f3fb-2640","🤹🏻♂":"1f939-1f3fb-2642","🤹🏼♀":"1f939-1f3fc-2640","🤹🏼♂":"1f939-1f3fc-2642","🤹🏽♀":"1f939-1f3fd-2640","🤹🏽♂":"1f939-1f3fd-2642","🤹🏾♀":"1f939-1f3fe-2640","🤹🏾♂":"1f939-1f3fe-2642","🤹🏿♀":"1f939-1f3ff-2640","🤹🏿♂":"1f939-1f3ff-2642","🤽🏻♀":"1f93d-1f3fb-2640","🤽🏻♂":"1f93d-1f3fb-2642","🤽🏼♀":"1f93d-1f3fc-2640","🤽🏼♂":"1f93d-1f3fc-2642","🤽🏽♀":"1f93d-1f3fd-2640","🤽🏽♂":"1f93d-1f3fd-2642","🤽🏾♀":"1f93d-1f3fe-2640","🤽🏾♂":"1f93d-1f3fe-2642","🤽🏿♀":"1f93d-1f3ff-2640","🤽🏿♂":"1f93d-1f3ff-2642","🤾🏻♀":"1f93e-1f3fb-2640","🤾🏻♂":"1f93e-1f3fb-2642","🤾🏼♀":"1f93e-1f3fc-2640","🤾🏼♂":"1f93e-1f3fc-2642","🤾🏽♀":"1f93e-1f3fd-2640","🤾🏽♂":"1f93e-1f3fd-2642","🤾🏾♀":"1f93e-1f3fe-2640","🤾🏾♂":"1f93e-1f3fe-2642","🤾🏿♀":"1f93e-1f3ff-2640","🤾🏿♂":"1f93e-1f3ff-2642","💁🏻♀":"1f481-1f3fb-2640","💁🏻♂":"1f481-1f3fb-2642","💁🏼♀":"1f481-1f3fc-2640","💁🏼♂":"1f481-1f3fc-2642","💁🏽♀":"1f481-1f3fd-2640","💁🏽♂":"1f481-1f3fd-2642","💁🏾♀":"1f481-1f3fe-2640","💁🏾♂":"1f481-1f3fe-2642","💁🏿♀":"1f481-1f3ff-2640","💁🏿♂":"1f481-1f3ff-2642","🙅🏻♀":"1f645-1f3fb-2640","🙅🏻♂":"1f645-1f3fb-2642","🙅🏼♀":"1f645-1f3fc-2640","🙅🏼♂":"1f645-1f3fc-2642","🙅🏽♀":"1f645-1f3fd-2640","🙅🏽♂":"1f645-1f3fd-2642","🙅🏾♀":"1f645-1f3fe-2640","🙅🏾♂":"1f645-1f3fe-2642","🙅🏿♀":"1f645-1f3ff-2640","🙅🏿♂":"1f645-1f3ff-2642","🙆🏻♀":"1f646-1f3fb-2640","🙆🏻♂":"1f646-1f3fb-2642","🙆🏼♀":"1f646-1f3fc-2640","🙆🏼♂":"1f646-1f3fc-2642","🙆🏽♀":"1f646-1f3fd-2640","🙆🏽♂":"1f646-1f3fd-2642","🙆🏾♀":"1f646-1f3fe-2640","🙆🏾♂":"1f646-1f3fe-2642","🙆🏿♀":"1f646-1f3ff-2640","🙆🏿♂":"1f646-1f3ff-2642","🙇🏻♀":"1f647-1f3fb-2640","🙇🏻♂":"1f647-1f3fb-2642","🙇🏼♀":"1f647-1f3fc-2640","🙇🏼♂":"1f647-1f3fc-2642","🙇🏽♀":"1f647-1f3fd-2640","🙇🏽♂":"1f647-1f3fd-2642","🙇🏾♀":"1f647-1f3fe-2640","🙇🏾♂":"1f647-1f3fe-2642","🙇🏿♀":"1f647-1f3ff-2640","🙇🏿♂":"1f647-1f3ff-2642","🙋🏻♀":"1f64b-1f3fb-2640","🙋🏻♂":"1f64b-1f3fb-2642","🙋🏼♀":"1f64b-1f3fc-2640","🙋🏼♂":"1f64b-1f3fc-2642","🙋🏽♀":"1f64b-1f3fd-2640","🙋🏽♂":"1f64b-1f3fd-2642","🙋🏾♀":"1f64b-1f3fe-2640","🙋🏾♂":"1f64b-1f3fe-2642","🙋🏿♀":"1f64b-1f3ff-2640","🙋🏿♂":"1f64b-1f3ff-2642","🙍🏻♀":"1f64d-1f3fb-2640","🙍🏻♂":"1f64d-1f3fb-2642","🙍🏼♀":"1f64d-1f3fc-2640","🙍🏼♂":"1f64d-1f3fc-2642","🙍🏽♀":"1f64d-1f3fd-2640","🙍🏽♂":"1f64d-1f3fd-2642","🙍🏾♀":"1f64d-1f3fe-2640","🙍🏾♂":"1f64d-1f3fe-2642","🙍🏿♀":"1f64d-1f3ff-2640","🙍🏿♂":"1f64d-1f3ff-2642","🙎🏻♀":"1f64e-1f3fb-2640","🙎🏻♂":"1f64e-1f3fb-2642","🙎🏼♀":"1f64e-1f3fc-2640","🙎🏼♂":"1f64e-1f3fc-2642","🙎🏽♀":"1f64e-1f3fd-2640","🙎🏽♂":"1f64e-1f3fd-2642","🙎🏾♀":"1f64e-1f3fe-2640","🙎🏾♂":"1f64e-1f3fe-2642","🙎🏿♀":"1f64e-1f3ff-2640","🙎🏿♂":"1f64e-1f3ff-2642","🤦🏻♀":"1f926-1f3fb-2640","🤦🏻♂":"1f926-1f3fb-2642","🤦🏼♀":"1f926-1f3fc-2640","🤦🏼♂":"1f926-1f3fc-2642","🤦🏽♀":"1f926-1f3fd-2640","🤦🏽♂":"1f926-1f3fd-2642","🤦🏾♀":"1f926-1f3fe-2640","🤦🏾♂":"1f926-1f3fe-2642","🤦🏿♀":"1f926-1f3ff-2640","🤦🏿♂":"1f926-1f3ff-2642","🤷🏻♀":"1f937-1f3fb-2640","🤷🏻♂":"1f937-1f3fb-2642","🤷🏼♀":"1f937-1f3fc-2640","🤷🏼♂":"1f937-1f3fc-2642","🤷🏽♀":"1f937-1f3fd-2640","🤷🏽♂":"1f937-1f3fd-2642","🤷🏾♀":"1f937-1f3fe-2640","🤷🏾♂":"1f937-1f3fe-2642","🤷🏿♀":"1f937-1f3ff-2640","🤷🏿♂":"1f937-1f3ff-2642","🧙🏻♀":"1f9d9-1f3fb-2640","🧙🏻♂":"1f9d9-1f3fb-2642","🧙🏼♀":"1f9d9-1f3fc-2640","🧙🏼♂":"1f9d9-1f3fc-2642","🧙🏽♀":"1f9d9-1f3fd-2640","🧙🏽♂":"1f9d9-1f3fd-2642","🧙🏾♀":"1f9d9-1f3fe-2640","🧙🏾♂":"1f9d9-1f3fe-2642","🧙🏿♀":"1f9d9-1f3ff-2640","🧙🏿♂":"1f9d9-1f3ff-2642","🧚🏻♀":"1f9da-1f3fb-2640","🧚🏻♂":"1f9da-1f3fb-2642","🧚🏼♀":"1f9da-1f3fc-2640","🧚🏼♂":"1f9da-1f3fc-2642","🧚🏽♀":"1f9da-1f3fd-2640","🧚🏽♂":"1f9da-1f3fd-2642","🧚🏾♀":"1f9da-1f3fe-2640","🧚🏾♂":"1f9da-1f3fe-2642","🧚🏿♀":"1f9da-1f3ff-2640","🧚🏿♂":"1f9da-1f3ff-2642","🧛🏻♀":"1f9db-1f3fb-2640","🧛🏻♂":"1f9db-1f3fb-2642","🧛🏼♀":"1f9db-1f3fc-2640","🧛🏼♂":"1f9db-1f3fc-2642","🧛🏽♀":"1f9db-1f3fd-2640","🧛🏽♂":"1f9db-1f3fd-2642","🧛🏾♀":"1f9db-1f3fe-2640","🧛🏾♂":"1f9db-1f3fe-2642","🧛🏿♀":"1f9db-1f3ff-2640","🧛🏿♂":"1f9db-1f3ff-2642","🧜🏻♀":"1f9dc-1f3fb-2640","🧜🏻♂":"1f9dc-1f3fb-2642","🧜🏼♀":"1f9dc-1f3fc-2640","🧜🏼♂":"1f9dc-1f3fc-2642","🧜🏽♀":"1f9dc-1f3fd-2640","🧜🏽♂":"1f9dc-1f3fd-2642","🧜🏾♀":"1f9dc-1f3fe-2640","🧜🏾♂":"1f9dc-1f3fe-2642","🧜🏿♀":"1f9dc-1f3ff-2640","🧜🏿♂":"1f9dc-1f3ff-2642","🧝🏻♀":"1f9dd-1f3fb-2640","🧝🏻♂":"1f9dd-1f3fb-2642","🧝🏼♀":"1f9dd-1f3fc-2640","🧝🏼♂":"1f9dd-1f3fc-2642","🧝🏽♀":"1f9dd-1f3fd-2640","🧝🏽♂":"1f9dd-1f3fd-2642","🧝🏾♀":"1f9dd-1f3fe-2640","🧝🏾♂":"1f9dd-1f3fe-2642","🧝🏿♀":"1f9dd-1f3ff-2640","🧝🏿♂":"1f9dd-1f3ff-2642","🧖🏻♀":"1f9d6-1f3fb-2640","🧖🏻♂":"1f9d6-1f3fb-2642","🧖🏼♀":"1f9d6-1f3fc-2640","🧖🏼♂":"1f9d6-1f3fc-2642","🧖🏽♀":"1f9d6-1f3fd-2640","🧖🏽♂":"1f9d6-1f3fd-2642","🧖🏾♀":"1f9d6-1f3fe-2640","🧖🏾♂":"1f9d6-1f3fe-2642","🧖🏿♀":"1f9d6-1f3ff-2640","🧖🏿♂":"1f9d6-1f3ff-2642","🧗🏻♀":"1f9d7-1f3fb-2640","🧗🏻♂":"1f9d7-1f3fb-2642","🧗🏼♀":"1f9d7-1f3fc-2640","🧗🏼♂":"1f9d7-1f3fc-2642","🧗🏽♀":"1f9d7-1f3fd-2640","🧗🏽♂":"1f9d7-1f3fd-2642","🧗🏾♀":"1f9d7-1f3fe-2640","🧗🏾♂":"1f9d7-1f3fe-2642","🧗🏿♀":"1f9d7-1f3ff-2640","🧗🏿♂":"1f9d7-1f3ff-2642","🧘🏻♀":"1f9d8-1f3fb-2640","🧘🏻♂":"1f9d8-1f3fb-2642","🧘🏼♀":"1f9d8-1f3fc-2640","🧘🏼♂":"1f9d8-1f3fc-2642","🧘🏽♀":"1f9d8-1f3fd-2640","🧘🏽♂":"1f9d8-1f3fd-2642","🧘🏾♀":"1f9d8-1f3fe-2640","🧘🏾♂":"1f9d8-1f3fe-2642","🧘🏿♀":"1f9d8-1f3ff-2640","🧘🏿♂":"1f9d8-1f3ff-2642","🦸🏻♀":"1f9b8-1f3fb-2640","🦸🏻♂":"1f9b8-1f3fb-2642","🦸🏼♀":"1f9b8-1f3fc-2640","🦸🏼♂":"1f9b8-1f3fc-2642","🦸🏽♀":"1f9b8-1f3fd-2640","🦸🏽♂":"1f9b8-1f3fd-2642","🦸🏾♀":"1f9b8-1f3fe-2640","🦸🏾♂":"1f9b8-1f3fe-2642","🦸🏿♀":"1f9b8-1f3ff-2640","🦸🏿♂":"1f9b8-1f3ff-2642","🦹🏻♀":"1f9b9-1f3fb-2640","🦹🏻♂":"1f9b9-1f3fb-2642","🦹🏼♀":"1f9b9-1f3fc-2640","🦹🏼♂":"1f9b9-1f3fc-2642","🦹🏽♀":"1f9b9-1f3fd-2640","🦹🏽♂":"1f9b9-1f3fd-2642","🦹🏾♀":"1f9b9-1f3fe-2640","🦹🏾♂":"1f9b9-1f3fe-2642","🦹🏿♀":"1f9b9-1f3ff-2640","🦹🏿♂":"1f9b9-1f3ff-2642","⛹🏻♀":"26f9-1f3fb-2640","⛹🏻♂":"26f9-1f3fb-2642","⛹🏼♀":"26f9-1f3fc-2640","⛹🏼♂":"26f9-1f3fc-2642","⛹🏽♀":"26f9-1f3fd-2640","⛹🏽♂":"26f9-1f3fd-2642","⛹🏾♀":"26f9-1f3fe-2640","⛹🏾♂":"26f9-1f3fe-2642","⛹🏿♀":"26f9-1f3ff-2640","⛹🏿♂":"26f9-1f3ff-2642","🏳🌈":"1f3f3-1f308","👁🗨":"1f441-1f5e8","👯♂":"1f46f-2642","👯♀":"1f46f-2640","🏌♂":"1f3cc-2642","🏌♀":"1f3cc-2640","🤼♂":"1f93c-2642","🤼♀":"1f93c-2640","🤹♂":"1f939-2642","🤹♀":"1f939-2640","🤾♂":"1f93e-2642","🤾♀":"1f93e-2640","🤽♂":"1f93d-2642","🤽♀":"1f93d-2640","🤸♂":"1f938-2642","🤸♀":"1f938-2640","🚶♂":"1f6b6-2642","🚶♀":"1f6b6-2640","🚵♂":"1f6b5-2642","🚵♀":"1f6b5-2640","🚴♂":"1f6b4-2642","🚴♀":"1f6b4-2640","🚣♂":"1f6a3-2642","🚣♀":"1f6a3-2640","🏋♂":"1f3cb-2642","🏋♀":"1f3cb-2640","🏊♂":"1f3ca-2642","🏊♀":"1f3ca-2640","🏄♂":"1f3c4-2642","🏄♀":"1f3c4-2640","🏃♂":"1f3c3-2642","🏃♀":"1f3c3-2640","🤷♂":"1f937-2642","🤷♀":"1f937-2640","🤦♂":"1f926-2642","🤦♀":"1f926-2640","🙎♂":"1f64e-2642","🙎♀":"1f64e-2640","🙍♂":"1f64d-2642","🙍♀":"1f64d-2640","🙋♂":"1f64b-2642","🙋♀":"1f64b-2640","🙇♂":"1f647-2642","🙇♀":"1f647-2640","🙆♂":"1f646-2642","🙆♀":"1f646-2640","🙅♂":"1f645-2642","🙅♀":"1f645-2640","💇♂":"1f487-2642","💇♀":"1f487-2640","💆♂":"1f486-2642","💆♀":"1f486-2640","💁♂":"1f481-2642","💁♀":"1f481-2640","👱♂":"1f471-2642","👱♀":"1f471-2640","👳♂":"1f473-2642","👳♀":"1f473-2640","💂♂":"1f482-2642","💂♀":"1f482-2640","🕵♂":"1f575-2642","🕵♀":"1f575-2640","👷♂":"1f477-2642","👷♀":"1f477-2640","👮♂":"1f46e-2642","👮♀":"1f46e-2640","👨⚕":"1f468-2695","👩⚕":"1f469-2695","👨⚖":"1f468-2696","👩⚖":"1f469-2696","👨✈":"1f468-2708","👩✈":"1f469-2708","🧙♀":"1f9d9-2640","🧙♂":"1f9d9-2642","🧚♀":"1f9da-2640","🧚♂":"1f9da-2642","🧛♀":"1f9db-2640","🧛♂":"1f9db-2642","🧜♀":"1f9dc-2640","🧜♂":"1f9dc-2642","🧝♀":"1f9dd-2640","🧝♂":"1f9dd-2642","🧞♀":"1f9de-2640","🧞♂":"1f9de-2642","🧟♀":"1f9df-2640","🧟♂":"1f9df-2642","🧖♀":"1f9d6-2640","🧖♂":"1f9d6-2642","🧗♀":"1f9d7-2640","🧗♂":"1f9d7-2642","🧘♀":"1f9d8-2640","🧘♂":"1f9d8-2642","🦸♀":"1f9b8-2640","🦸♂":"1f9b8-2642","🦹♀":"1f9b9-2640","🦹♂":"1f9b9-2642","🏴☠":"1f3f4-2620","⛹♂":"26f9-2642","⛹♀":"26f9-2640","🕉":"1f549","🗝":"1f5dd","‼":"203c","⁉":"2049","ℹ":"2139","↔":"2194","↕":"2195","↖":"2196","↗":"2197","↘":"2198","↙":"2199","↩":"21a9","↪":"21aa","▪":"25aa","▫":"25ab","▶":"25b6","◀":"25c0","◻":"25fb","◼":"25fc","☑":"2611","⚠":"26a0","✔":"2714","✖":"2716","➡":"27a1","⤴":"2934","⤵":"2935","⬅":"2b05","⬆":"2b06","⬇":"2b07","〰":"3030","✝":"271d","⏏":"23cf","⏭":"23ed","⏮":"23ee","⏯":"23ef","⏸":"23f8","⏹":"23f9","⏺":"23fa","☢":"2622","☣":"2623","☦":"2626","☪":"262a","☮":"262e","☯":"262f","☸":"2638","⚛":"269b","✡":"2721","♀":"2640","♂":"2642","⚕":"2695"},f.asciiList={"*\\0/*":"1f646","*\\O/*":"1f646","-___-":"1f611",":'-)":"1f602","':-)":"1f605","':-D":"1f605",">:-)":"1f606","':-(":"1f613",">:-(":"1f620",":'-(":"1f622","O:-)":"1f607","0:-3":"1f607","0:-)":"1f607","0;^)":"1f607","O;-)":"1f607","0;-)":"1f607","O:-3":"1f607","-__-":"1f611",":-Þ":"1f61b","</3":"1f494",":')":"1f602",":-D":"1f603","':)":"1f605","'=)":"1f605","':D":"1f605","'=D":"1f605",">:)":"1f606",">;)":"1f606",">=)":"1f606",";-)":"1f609","*-)":"1f609",";-]":"1f609",";^)":"1f609","':(":"1f613","'=(":"1f613",":-*":"1f618",":^*":"1f618",">:P":"1f61c","X-P":"1f61c",">:[":"1f61e",":-(":"1f61e",":-[":"1f61e",">:(":"1f620",":'(":"1f622",";-(":"1f622",">.<":"1f623","#-)":"1f635","%-)":"1f635","X-)":"1f635","\\0/":"1f646","\\O/":"1f646","0:3":"1f607","0:)":"1f607","O:)":"1f607","O=)":"1f607","O:3":"1f607","B-)":"1f60e","8-)":"1f60e","B-D":"1f60e","8-D":"1f60e","-_-":"1f611",">:\\":"1f615",">:/":"1f615",":-/":"1f615",":-.":"1f615",":-P":"1f61b",":Þ":"1f61b",":-b":"1f61b",":-O":"1f62e",O_O:"1f62e",">:O":"1f62e",":-X":"1f636",":-#":"1f636",":-)":"1f642","(y)":"1f44d","<3":"2764",":D":"1f603","=D":"1f603",";)":"1f609","*)":"1f609",";]":"1f609",";D":"1f609",":*":"1f618","=*":"1f618",":(":"1f61e",":[":"1f61e","=(":"1f61e",":@":"1f620",";(":"1f622","D:":"1f628",":$":"1f633","=$":"1f633","#)":"1f635","%)":"1f635","X)":"1f635","B)":"1f60e","8)":"1f60e",":/":"1f615",":\\":"1f615","=/":"1f615","=\\":"1f615",":L":"1f615","=L":"1f615",":P":"1f61b","=P":"1f61b",":b":"1f61b",":O":"1f62e",":X":"1f636",":#":"1f636","=X":"1f636","=#":"1f636",":)":"1f642","=]":"1f642","=)":"1f642",":]":"1f642"},f.asciiRegexp="(\\*\\\\0\\/\\*|\\*\\\\O\\/\\*|\\-___\\-|\\:'\\-\\)|'\\:\\-\\)|'\\:\\-D|\\>\\:\\-\\)|>\\:\\-\\)|'\\:\\-\\(|\\>\\:\\-\\(|>\\:\\-\\(|\\:'\\-\\(|O\\:\\-\\)|0\\:\\-3|0\\:\\-\\)|0;\\^\\)|O;\\-\\)|0;\\-\\)|O\\:\\-3|\\-__\\-|\\:\\-Þ|\\:\\-Þ|\\<\\/3|<\\/3|\\:'\\)|\\:\\-D|'\\:\\)|'\\=\\)|'\\:D|'\\=D|\\>\\:\\)|>\\:\\)|\\>;\\)|>;\\)|\\>\\=\\)|>\\=\\)|;\\-\\)|\\*\\-\\)|;\\-\\]|;\\^\\)|'\\:\\(|'\\=\\(|\\:\\-\\*|\\:\\^\\*|\\>\\:P|>\\:P|X\\-P|\\>\\:\\[|>\\:\\[|\\:\\-\\(|\\:\\-\\[|\\>\\:\\(|>\\:\\(|\\:'\\(|;\\-\\(|\\>\\.\\<|>\\.<|#\\-\\)|%\\-\\)|X\\-\\)|\\\\0\\/|\\\\O\\/|0\\:3|0\\:\\)|O\\:\\)|O\\=\\)|O\\:3|B\\-\\)|8\\-\\)|B\\-D|8\\-D|\\-_\\-|\\>\\:\\\\|>\\:\\\\|\\>\\:\\/|>\\:\\/|\\:\\-\\/|\\:\\-\\.|\\:\\-P|\\:Þ|\\:Þ|\\:\\-b|\\:\\-O|O_O|\\>\\:O|>\\:O|\\:\\-X|\\:\\-#|\\:\\-\\)|\\(y\\)|\\<3|<3|\\:D|\\=D|;\\)|\\*\\)|;\\]|;D|\\:\\*|\\=\\*|\\:\\(|\\:\\[|\\=\\(|\\:@|;\\(|D\\:|\\:\\$|\\=\\$|#\\)|%\\)|X\\)|B\\)|8\\)|\\:\\/|\\:\\\\|\\=\\/|\\=\\\\|\\:L|\\=L|\\:P|\\=P|\\:b|\\:O|\\:X|\\:#|\\=X|\\=#|\\:\\)|\\=\\]|\\=\\)|\\:\\])",f.emojiVersion="4.5",f.emojiSize="32",f.greedyMatch=!1,f.blacklistChars="",f.imagePathPNG="https://cdn.jsdelivr.net/emojione/assets/"+f.emojiVersion+"/png/",f.defaultPathPNG=f.imagePathPNG,f.fileExtension=".png",f.imageTitleTag=!0,f.sprites=!1,f.unicodeAlt=!0,f.ascii=!1,f.riskyMatchAscii=!1,f.regShortNames=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|("+f.shortnames+")","gi"),f.regAscii=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|((\\s|^)"+f.asciiRegexp+"(?=\\s|$|[!,.?]))","gi"),f.regAsciiRisky=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|(()"+f.asciiRegexp+"())","gi"),f.regUnicode=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|(?:🏳)️?‍?(?:🌈)|(?:👁)️?‍?(?:🗨)️?|[#-9]️?⃣|(?:(?:🏴)(?:\udb40[\udc60-\udcff]){1,6})|(?:\ud83c[\udde0-\uddff]){2}|(?:(?:\ud83d[\udc68\udc69]))️?(?:\ud83c[\udffa-\udfff])?‍?(?:[⚕⚖✈]|\ud83c[\udf3e-\udfed]|\ud83d[\udcbb\udcbc\udd27\udd2c\ude80\ude92])|(?:\ud83d[\udc68\udc69]|\ud83e[\uddd0-\udddf])(?:\ud83c[\udffa-\udfff])?‍?[♀♂⚕⚖✈]?️?|(?:(?:❤|\ud83d[\udc66-\udc69\udc8b])[‍️]{0,2}){1,3}(?:❤|\ud83d[\udc66-\udc69\udc8b])|(?:(?:❤|\ud83d[\udc66-\udc69\udc8b])️?){2,4}|(?:\ud83d[\udc68\udc69\udc6e\udc71-\udc87\udd75\ude45-\ude4e]|\ud83e[\udd26\udd37]|\ud83c[\udfc3-\udfcc]|\ud83e[\udd38-\udd3e]|\ud83d[\udea3-\udeb6]|⛹|👯)️?(?:\ud83c[\udffb-\udfff])?‍?[♀♂]?️?|(?:[☝⛹✊-✍]|\ud83c[\udf85-\udfcc]|\ud83d[\udc42-\udcaa\udd74-\udd96\ude45-\ude4f\udea3-\udecc]|\ud83e[\udd18-\udd3e])️?(?:\ud83c[\udffb-\udfff])|(?:[↔-↙↩-↪]️?|[#*]|[〰〽]️?|(?:\ud83c[\udd70-\udd71]|🆎|\ud83c[\udd91-\udd9a])️?|Ⓜ️?|[㊗㊙]️?|(?:\ud83c[\ude01-\ude02]|🈚|🈯|\ud83c[\ude32-\ude3a]|\ud83c[\ude50-\ude51])️?|[‼⁉]️?|[▪-▫▶◀◻-◾]️?|[©®]️?|[™ℹ]️?|🀄️?|[⬅-⬇⬛-⬜⭐⭕]️?|[⌚-⌛⌨⏏⏩-⏳⏸-⏺]️?|🃏|[⤴⤵]️?)|[✀-➿]️?|[\ud800-\udbff][\udc00-\udfff]️?|[☀-⛿]️?|[0-9]️","g"),f.toImage=function(e){return e=f.toShort(e),e=f.shortnameToImage(e),e=f.wipeVS16(e)},f.unicodeToImage=function(f){return f},f.wipeVS16=function(e){var t=f.vs16Regex();return f.replaceAllVS16(e,t)},f.unifyUnicode=function(e){return e=f.toShort(e),e=f.shortnameToUnicode(e)},f.shortnameToAscii=function(e){var t,c=f.objectFlip(f.asciiList);return e=e.replace(f.regShortNames,(function(e){return void 0!==e&&""!==e&&e in f.emojioneList?(t=f.emojioneList[e].uc_output,void 0!==c[t]?c[t]:e):e}))},f.shortnameToUnicode=function(e){var t;if(e=e.replace(f.regShortNames,(function(e){return void 0!==e&&""!==e&&e in f.emojioneList?(t=f.emojioneList[e].uc_output.toUpperCase(),f.emojioneList[e].uc_base,f.convert(t)):e})),f.ascii){var c=f.riskyMatchAscii?f.regAsciiRisky:f.regAscii;e=e.replace(c,(function(e,c,a,u){return void 0!==u&&""!==u&&f.unescapeHTML(u)in f.asciiList?(u=f.unescapeHTML(u),t=f.asciiList[u].toUpperCase(),a+f.convert(t)):e}))}return e},f.shortnameToImage=function(e){var t,c,a,u,o,_,r,n,s=f.mapUnicodeToShort();if(e=e.replace(f.regShortNames,(function(e){if(void 0===e||""===e||-1===f.shortnames.indexOf(e))return e;if(!f.emojioneList[e])for(var t in f.emojioneList)if(f.emojioneList.hasOwnProperty(t)&&""!==t&&-1!==f.emojioneList[t].shortnames.indexOf(e)){e=t;break}return c=f.emojioneList[e].uc_output,a=f.emojioneList[e].uc_base,o=a.indexOf("-1f3f")>=0?"diversity":f.emojioneList[e].category,_=f.imageTitleTag?'title="'+e+'"':"",r="32"==f.spriteSize||"64"==f.spriteSize?f.spriteSize:"32",n=f.defaultPathPNG!==f.imagePathPNG?f.imagePathPNG:f.defaultPathPNG+f.emojiSize+"/",u=f.unicodeAlt?f.convert(c.toUpperCase()):e,f.sprites?'<span class="emojione emojione-'+r+"-"+o+" _"+a+'" '+_+">"+u+"</span>":'<img class="emojione" alt="'+u+'" '+_+' src="'+n+a+f.fileExtension+'"/>'})),f.ascii){var d=f.riskyMatchAscii?f.regAsciiRisky:f.regAscii;e=e.replace(d,(function(e,a,d,i){return void 0!==i&&""!==i&&f.unescapeHTML(i)in f.asciiList?(i=f.unescapeHTML(i),c=f.asciiList[i],t=s[c],o=c.indexOf("-1f3f")>=0?"diversity":f.emojioneList[t].category,_=f.imageTitleTag?'title="'+f.escapeHTML(i)+'"':"",r="32"==f.spriteSize||"64"==f.spriteSize?f.spriteSize:"32",n=f.defaultPathPNG!==f.imagePathPNG?f.imagePathPNG:f.defaultPathPNG+f.emojiSize+"/",u=f.unicodeAlt?f.convert(c.toUpperCase()):f.escapeHTML(i),f.sprites?d+'<span class="emojione emojione-'+r+"-"+o+" _"+c+'"  '+_+">"+u+"</span>":d+'<img class="emojione" alt="'+u+'" '+_+' src="'+n+c+f.fileExtension+'"/>'):e}))}return e},f.toShort=function(e){var t=f.unicodeCharRegex();return e=f.replaceAll(e,t)},f.convert=function(f){if(f.indexOf("-")>-1){for(var e=[],t=f.split("-"),c=0;c<t.length;c++){var a=parseInt(t[c],16);if(a>=65536&&a<=1114111){var u=Math.floor((a-65536)/1024)+55296,o=(a-65536)%1024+56320;a=String.fromCharCode(u)+String.fromCharCode(o)}else a=String.fromCharCode(a);e.push(a)}return e.join("")}if((t=parseInt(f,16))>=65536&&t<=1114111){u=Math.floor((t-65536)/1024)+55296,o=(t-65536)%1024+56320;return String.fromCharCode(u)+String.fromCharCode(o)}return String.fromCharCode(t)},f.escapeHTML=function(f){var e={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"};return f.replace(/[&<>"']/g,(function(f){return e[f]}))},f.unescapeHTML=function(f){var e={"&amp;":"&","&#38;":"&","&#x26;":"&","&lt;":"<","&#60;":"<","&#x3C;":"<","&gt;":">","&#62;":">","&#x3E;":">","&quot;":'"',"&#34;":'"',"&#x22;":'"',"&apos;":"'","&#39;":"'","&#x27;":"'"};return f.replace(/&(?:amp|#38|#x26|lt|#60|#x3C|gt|#62|#x3E|apos|#39|#x27|quot|#34|#x22);/gi,(function(f){return e[f]}))},f.shortnameConversionMap=function(){var e,t=[];for(e in f.emojioneList)f.emojioneList.hasOwnProperty(e)&&""!==e&&(t[f.convert(f.emojioneList[e].uc_output)]=e);return t},f.unicodeCharRegex=function(){var t=[];for(e in f.emojioneList)f.emojioneList.hasOwnProperty(e)&&""!==e&&t.push(f.convert(f.emojioneList[e].uc_output));return t.join("|")},f.vs16Regex=function(){return f.convert("fe0f")},f.mapEmojioneList=function(e){for(var t in f.emojioneList){if(f.emojioneList.hasOwnProperty(t))e(f.emojioneList[t].uc_base,t)}},f.mapUnicodeToShort=function(){return f.memMapShortToUnicode||(f.memMapShortToUnicode={},f.mapEmojioneList((function(e,t){f.memMapShortToUnicode[e]=t}))),f.memMapShortToUnicode},f.memorizeReplacement=function(){if(!f.unicodeReplacementRegEx||!f.memMapShortToUnicodeCharacters){var e=[];f.memMapShortToUnicodeCharacters={},f.mapEmojioneList((function(t,c){var a=f.convert(t);f.memMapShortToUnicodeCharacters[a]=c,e.push(a)})),f.unicodeReplacementRegEx=e.join("|")}},f.mapUnicodeCharactersToShort=function(){return f.memorizeReplacement(),f.memMapShortToUnicodeCharacters},f.objectFlip=function(f){var e,t={};for(e in f)f.hasOwnProperty(e)&&(t[f[e]]=e);return t},f.escapeRegExp=function(f){return f.replace(/[-[\]{}()*+?.,;:&\\^$#\s]/g,"\\$&")},f.replaceAll=function(e,t){var c=f.escapeRegExp(t),a=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|("+c+")","gi");return e.replace(a,(function(e,t){return void 0===t||""===t?e:f.shortnameConversionMap()[t]}))},f.replaceAllVS16=function(e,t){var c=f.escapeRegExp(t),a=new RegExp("<object[^>]*>.*?</object>|<span[^>]*>.*?</span>|<(?:object|embed|svg|img|div|span|p|a)[^>]*>|("+c+")","gi");return e.replace(a,(function(f,e){return void 0===e||""===e?f:""}))}}(this.emojione=this.emojione||{}),f.exports=this.emojione},function(f,e,t){var c;!function(){var t="1.11.1",a={};!function(){var f=a,e=(f.KEY_LABEL="label",f.KEY_NAME="name",f.KEY_TYPE="type",f.KEY_CATEGORY="category",f.KEY_OS="os",f.KEY_OS_VERSION="os_version",f.KEY_VENDOR="vendor",f.KEY_VERSION="version",f.CATEGORY_PC="pc"),t=f.CATEGORY_SMARTPHONE="smartphone",c=f.CATEGORY_MOBILEPHONE="mobilephone",u=f.CATEGORY_CRAWLER="crawler",o=f.CATEGORY_APPLIANCE="appliance",_=f.CATEGORY_MISC="misc",r=f.ATTRIBUTE_NAME="name",n=f.ATTRIBUTE_CATEGORY="category",s=f.ATTRIBUTE_OS="os",d=f.ATTRIBUTE_OS_VERSION="os_version",i=f.ATTRIBUTE_VENDOR="vendor",m=f.ATTRIBUTE_VERSION="version",p=f.VALUE_UNKNOWN="UNKNOWN",g=(f.CATEGORY_LIST=[e,t,c,u,o,_,p],f.ATTRIBUTE_LIST=[r,n,s,i,m,d],{MSIE:{label:"MSIE",name:"Internet Explorer",type:"browser",vendor:"Microsoft"},Edge:{label:"Edge",name:"Edge",type:"browser",vendor:"Microsoft"},Chrome:{label:"Chrome",name:"Chrome",type:"browser",vendor:"Google"},Safari:{label:"Safari",name:"Safari",type:"browser",vendor:"Apple"},Firefox:{label:"Firefox",name:"Firefox",type:"browser",vendor:"Mozilla"},Opera:{label:"Opera",name:"Opera",type:"browser",vendor:"Opera"},Vivaldi:{label:"Vivaldi",name:"Vivaldi",type:"browser",vendor:"Vivaldi Technologies"},Sleipnir:{label:"Sleipnir",name:"Sleipnir",type:"browser",vendor:"Fenrir Inc."},GSA:{label:"GSA",name:"Google Search App",type:"browser",vendor:"Google"},Webview:{label:"Webview",name:"Webview",type:"browser",vendor:"OS vendor"},YaBrowser:{label:"YaBrowser",name:"Yandex Browser",type:"browser",vendor:"Yandex"},Win:{label:"Win",name:"Windows UNKNOWN Ver",type:"os",category:"pc"},Win10:{label:"Win10",name:"Windows 10",type:"os",category:"pc"},"Win8.1":{label:"Win8.1",name:"Windows 8.1",type:"os",category:"pc"},Win8:{label:"Win8",name:"Windows 8",type:"os",category:"pc"},Win7:{label:"Win7",name:"Windows 7",type:"os",category:"pc"},WinVista:{label:"WinVista",name:"Windows Vista",type:"os",category:"pc"},WinXP:{label:"WinXP",name:"Windows XP",type:"os",category:"pc"},Win2000:{label:"Win2000",name:"Windows 2000",type:"os",category:"pc"},WinNT4:{label:"WinNT4",name:"Windows NT 4.0",type:"os",category:"pc"},WinMe:{label:"WinMe",name:"Windows Me",type:"os",category:"pc"},Win98:{label:"Win98",name:"Windows 98",type:"os",category:"pc"},Win95:{label:"Win95",name:"Windows 95",type:"os",category:"pc"},WinPhone:{label:"WinPhone",name:"Windows Phone OS",type:"os",category:"smartphone"},WinCE:{label:"WinCE",name:"Windows CE",type:"os",category:"smartphone"},OSX:{label:"OSX",name:"Mac OSX",type:"os",category:"pc"},MacOS:{label:"MacOS",name:"Mac OS Classic",type:"os",category:"pc"},Linux:{label:"Linux",name:"Linux",type:"os",category:"pc"},BSD:{label:"BSD",name:"BSD",type:"os",category:"pc"},ChromeOS:{label:"ChromeOS",name:"ChromeOS",type:"os",category:"pc"},Android:{label:"Android",name:"Android",type:"os",category:"smartphone"},iPhone:{label:"iPhone",name:"iPhone",type:"os",category:"smartphone"},iPad:{label:"iPad",name:"iPad",type:"os",category:"smartphone"},iPod:{label:"iPod",name:"iPod",type:"os",category:"smartphone"},iOS:{label:"iOS",name:"iOS",type:"os",category:"smartphone"},FirefoxOS:{label:"FirefoxOS",name:"Firefox OS",type:"os",category:"smartphone"},BlackBerry:{label:"BlackBerry",name:"BlackBerry",type:"os",category:"smartphone"},BlackBerry10:{label:"BlackBerry10",name:"BlackBerry 10",type:"os",category:"smartphone"},docomo:{label:"docomo",name:"docomo",type:"full",vendor:"docomo",category:"mobilephone",os:"docomo"},au:{label:"au",name:"au by KDDI",type:"full",vendor:"au",category:"mobilephone",os:"au"},SoftBank:{label:"SoftBank",name:"SoftBank Mobile",type:"full",vendor:"SoftBank",category:"mobilephone",os:"SoftBank"},willcom:{label:"willcom",name:"WILLCOM",type:"full",vendor:"WILLCOM",category:"mobilephone",os:"WILLCOM"},jig:{label:"jig",name:"jig browser",type:"full",vendor:"",category:"mobilephone",os:"jig"},emobile:{label:"emobile",name:"emobile",type:"full",vendor:"",category:"mobilephone",os:"emobile"},SymbianOS:{label:"SymbianOS",name:"SymbianOS",type:"full",vendor:"",category:"mobilephone",os:"SymbianOS"},MobileTranscoder:{label:"MobileTranscoder",name:"Mobile Transcoder",type:"full",vendor:"",category:"mobilephone",os:"Mobile Transcoder"},Nintendo3DS:{label:"Nintendo3DS",name:"Nintendo 3DS",type:"full",vendor:"Nintendo",category:"appliance",os:"Nintendo 3DS"},NintendoDSi:{label:"NintendoDSi",name:"Nintendo DSi",type:"full",vendor:"Nintendo",category:"appliance",os:"Nintendo DSi"},NintendoWii:{label:"NintendoWii",name:"Nintendo Wii",type:"full",vendor:"Nintendo",category:"appliance",os:"Nintendo Wii"},NintendoWiiU:{label:"NintendoWiiU",name:"Nintendo Wii U",type:"full",vendor:"Nintendo",category:"appliance",os:"Nintendo Wii U"},PSP:{label:"PSP",name:"PlayStation Portable",type:"full",vendor:"Sony",category:"appliance",os:"PlayStation Portable"},PSVita:{label:"PSVita",name:"PlayStation Vita",type:"full",vendor:"Sony",category:"appliance",os:"PlayStation Vita"},PS3:{label:"PS3",name:"PlayStation 3",type:"full",vendor:"Sony",category:"appliance",os:"PlayStation 3"},PS4:{label:"PS4",name:"PlayStation 4",type:"full",vendor:"Sony",category:"appliance",os:"PlayStation 4"},Xbox360:{label:"Xbox360",name:"Xbox 360",type:"full",vendor:"Microsoft",category:"appliance",os:"Xbox 360"},XboxOne:{label:"XboxOne",name:"Xbox One",type:"full",vendor:"Microsoft",category:"appliance",os:"Xbox One"},DigitalTV:{label:"DigitalTV",name:"InternetTVBrowser",type:"full",vendor:"",category:"appliance",os:"DigitalTV"},SafariRSSReader:{label:"SafariRSSReader",name:"Safari RSSReader",type:"full",vendor:"Apple",category:"misc"},GoogleDesktop:{label:"GoogleDesktop",name:"Google Desktop",type:"full",vendor:"Google",category:"misc"},WindowsRSSReader:{label:"WindowsRSSReader",name:"Windows RSSReader",type:"full",vendor:"Microsoft",category:"misc"},VariousRSSReader:{label:"VariousRSSReader",name:"RSSReader",type:"full",vendor:"",category:"misc"},HTTPLibrary:{label:"HTTPLibrary",name:"HTTP Library",type:"full",vendor:"",category:"misc"},GoogleBot:{label:"GoogleBot",name:"Googlebot",type:"full",vendor:"",category:"crawler"},GoogleBotMobile:{label:"GoogleBotMobile",name:"Googlebot Mobile",type:"full",vendor:"",category:"crawler"},GoogleMediaPartners:{label:"GoogleMediaPartners",name:"Google Mediapartners",type:"full",vendor:"",category:"crawler"},GoogleFeedFetcher:{label:"GoogleFeedFetcher",name:"Google Feedfetcher",type:"full",vendor:"",category:"crawler"},GoogleAppEngine:{label:"GoogleAppEngine",name:"Google AppEngine",type:"full",vendor:"",category:"crawler"},GoogleWebPreview:{label:"GoogleWebPreview",name:"Google Web Preview",type:"full",vendor:"",category:"crawler"},YahooSlurp:{label:"YahooSlurp",name:"Yahoo! Slurp",type:"full",vendor:"",category:"crawler"},YahooJP:{label:"YahooJP",name:"Yahoo! Japan",type:"full",vendor:"",category:"crawler"},YahooPipes:{label:"YahooPipes",name:"Yahoo! Pipes",type:"full",vendor:"",category:"crawler"},Baiduspider:{label:"Baiduspider",name:"Baiduspider",type:"full",vendor:"",category:"crawler"},msnbot:{label:"msnbot",name:"msnbot",type:"full",vendor:"",category:"crawler"},bingbot:{label:"bingbot",name:"bingbot",type:"full",vendor:"",category:"crawler"},BingPreview:{label:"BingPreview",name:"BingPreview",type:"full",vendor:"",category:"crawler"},Yeti:{label:"Yeti",name:"Naver Yeti",type:"full",vendor:"",category:"crawler"},FeedBurner:{label:"FeedBurner",name:"Google FeedBurner",type:"full",vendor:"",category:"crawler"},facebook:{label:"facebook",name:"facebook",type:"full",vendor:"",category:"crawler"},twitter:{label:"twitter",name:"twitter",type:"full",vendor:"",category:"crawler"},trendictionbot:{label:"trendictionbot",name:"trendiction",type:"full",vendor:"",category:"crawler"},mixi:{label:"mixi",name:"mixi",type:"full",vendor:"",category:"crawler"},IndyLibrary:{label:"IndyLibrary",name:"Indy Library",type:"full",vendor:"",category:"crawler"},ApplePubSub:{label:"ApplePubSub",name:"Apple iCloud",type:"full",vendor:"",category:"crawler"},Genieo:{label:"Genieo",name:"Genieo Web Filter",type:"full",vendor:"",category:"crawler"},topsyButterfly:{label:"topsyButterfly",name:"topsy Butterfly",type:"full",vendor:"",category:"crawler"},rogerbot:{label:"rogerbot",name:"SeoMoz rogerbot",type:"full",vendor:"",category:"crawler"},AhrefsBot:{label:"AhrefsBot",name:"ahref AhrefsBot",type:"full",vendor:"",category:"crawler"},radian6:{label:"radian6",name:"salesforce radian6",type:"full",vendor:"",category:"crawler"},Hatena:{label:"Hatena",name:"Hatena",type:"full",vendor:"",category:"crawler"},goo:{label:"goo",name:"goo",type:"full",vendor:"",category:"crawler"},livedoorFeedFetcher:{label:"livedoorFeedFetcher",name:"livedoor FeedFetcher",type:"full",vendor:"",category:"crawler"},VariousCrawler:{label:"VariousCrawler",name:"misc crawler",type:"full",vendor:"",category:"crawler"}});f.get=function(f){return g[f]}}();var u={};!function(){var f=u;f.updateMap=function(f,e){for(var t in e)t!==a.KEY_LABEL&&t!==a.KEY_TYPE&&e[t]&&e[t].length>0&&(f[t]=e[t])},f.updateCategory=function(f,e){f[a.ATTRIBUTE_CATEGORY]=e},f.updateVersion=function(f,e){f[a.ATTRIBUTE_VERSION]=e},f.updateOs=function(f,e){f[a.ATTRIBUTE_OS]=e},f.updateOsVersion=function(f,e){f[a.ATTRIBUTE_OS_VERSION]=e}}();var o={};!function(){var f=o,e=/MSIE ([.0-9]+);/,t=/Trident\/[.0-9]+;/,c=/ rv:([.0-9]+)/,u=/IEMobile\/([.0-9]+);/,_=(f.challengeMSIE=function(f,o){if(f.indexOf("compatible; MSIE")<0&&f.indexOf("Trident/")<0&&f.indexOf("IEMobile/"))return!1;var _,r=e.exec(f);return r||t.exec(f)&&(r=c.exec(f)),r||(r=u.exec(f)),_=r?r[1]:a.VALUE_UNKNOWN,m(o,a.get("MSIE")),h(o,_),!0},/YaBrowser\/([.0-9]+)/),r=(f.challengeYandexBrowser=function(f,e){if(f.indexOf("YaBrowser/")<0)return!1;var t,c=_.exec(f);return t=c?c[1]:a.VALUE_UNKNOWN,m(e,a.get("YaBrowser")),h(e,t),!0},/(?:Edge|Edg|EdgiOS|EdgA)\/([.0-9]+)/),n=/FxiOS\/([.0-9]+)/,s=/(?:Chrome|CrMo|CriOS)\/([.0-9]+)/,d=/OPR\/([.0-9]+)/,i=/GSA\/([.0-9]+)/,b=/Version\/([.0-9]+)/,l=(f.challengeSafariChrome=function(f,e){if(f.indexOf("Safari/")<0)return!1;if(f.indexOf("Chrome")>=0&&f.indexOf("wv")>=0)return!1;var t,c,u=a.VALUE_UNKNOWN;return(t=r.exec(f))?(u=t[1],m(e,a.get("Edge")),h(e,u),!0):(t=n.exec(f))?(u=t[1],m(e,a.get("Firefox")),h(e,u),!0):(t=s.exec(f))?(c=d.exec(f))?(u=c[1],m(e,a.get("Opera")),h(e,u),!0):(u=t[1],m(e,a.get("Chrome")),h(e,u),!0):(t=i.exec(f))?(u=t[1],m(e,a.get("GSA")),h(e,u),!0):((t=b.exec(f))&&(u=t[1]),m(e,a.get("Safari")),h(e,u),!0)},/Firefox\/([.0-9]+)/),y=(f.challengeFirefox=function(f,e){if(f.indexOf("Firefox/")<0)return!1;var t=a.VALUE_UNKNOWN,c=l.exec(f);return c&&(t=c[1]),m(e,a.get("Firefox")),h(e,t),!0},/Version\/([.0-9]+)/),v=/Opera[\/ ]([.0-9]+)/,w=(f.challengeOpera=function(f,e){if(f.indexOf("Opera")<0)return!1;var t=a.VALUE_UNKNOWN,c=y.exec(f);return(c||(c=v.exec(f)))&&(t=c[1]),m(e,a.get("Opera")),h(e,t),!0},/iP(hone;|ad;|od) .*like Mac OS X/),k=/Version\/([.0-9]+)/,E=(f.challengeWebview=function(f,e){var t,c=a.VALUE_UNKNOWN;return f.indexOf("Chrome")>=0&&f.indexOf("wv")>=0?((t=k.exec(f))&&(c=t[1]),m(e,a.get("Webview")),h(e,c),!0):!!w.exec(f)&&(!(f.indexOf("Safari/")>-1)&&((t=k.exec(f))&&(c=t[1]),m(e,a.get("Webview")),h(e,c),!0))},/Sleipnir\/([.0-9]+)/),x=(f.challengeSleipnir=function(f,e){if(f.indexOf("Sleipnir/")<0)return!1;var t=a.VALUE_UNKNOWN,c=E.exec(f);c&&(t=c[1]),m(e,a.get("Sleipnir")),h(e,t);var u=a.get("Win");return p(e,u[a.KEY_CATEGORY]),g(e,u[a.KEY_NAME]),!0},/Vivaldi\/([.0-9]+)/);f.challengeVivaldi=function(f,e){if(f.indexOf("Vivaldi/")<0)return!1;var t=a.VALUE_UNKNOWN,c=x.exec(f);return c&&(t=c[1]),m(e,a.get("Vivaldi")),h(e,t),!0}}();var _={};!function(){var f=_,e=/Windows ([ .a-zA-Z0-9]+)[;\\)]/,t=/^Phone(?: OS)? ([.0-9]+)/;f.challengeWindows=function(f,c){if(f.indexOf("Windows")<0)return!1;var u;if(f.indexOf("Xbox")>-1)return u=f.indexOf("Xbox; Xbox One)")>-1?a.get("XboxOne"):a.get("Xbox360"),m(c,u),!0;var o=a.get("Win"),_=e.exec(f);if(!_)return p(c,o[a.KEY_CATEGORY]),g(c,o[a.KEY_NAME]),!0;var r=_[1];return"NT 10.0"===r?o=a.get("Win10"):"NT 6.3"===r?o=a.get("Win8.1"):"NT 6.2"===r?o=a.get("Win8"):"NT 6.1"===r?o=a.get("Win7"):"NT 6.0"===r?o=a.get("WinVista"):"NT 5.1"===r?o=a.get("WinXP"):(_=t.exec(r))?(o=a.get("WinPhone"),r=_[1]):"NT 5.0"===r?o=a.get("Win2000"):"NT 4.0"===r?o=a.get("WinNT4"):"98"===r?o=a.get("Win98"):"95"===r?o=a.get("Win95"):"CE"===r&&(o=a.get("WinCE")),p(c,o[a.KEY_CATEGORY]),g(c,o[a.KEY_NAME]),b(c,r),!0},f.challengeOSX=function(f,e){if(f.indexOf("Mac OS X")<0)return!1;var t,c,u=a.get("OSX");return f.indexOf("like Mac OS X")>=0?(f.indexOf("iPhone;")>=0?u=a.get("iPhone"):f.indexOf("iPad;")>=0?u=a.get("iPad"):f.indexOf("iPod")>=0&&(u=a.get("iPod")),(c=/; CPU(?: iPhone)? OS (\d+_\d+(?:_\d+)?) like Mac OS X/.exec(f))&&(t=c[1].replace(/_/g,"."))):(c=/Mac OS X (10[._]\d+(?:[._]\d+)?)(?:\)|;)/.exec(f))&&(t=c[1].replace(/_/g,".")),p(e,u[a.KEY_CATEGORY]),g(e,u[a.KEY_NAME]),t&&b(e,t),!0},f.challengeLinux=function(f,e){if(f.indexOf("Linux")<0)return!1;var t,c,u=a.get("Linux");return f.indexOf("Android")>=0&&(u=a.get("Android"),(c=/Android[- ](\d+(?:\.\d+(?:\.\d+)?)?)/.exec(f))&&(t=c[1])),p(e,u[a.KEY_CATEGORY]),g(e,u[a.KEY_NAME]),t&&b(e,t),!0},f.challengeSmartPhone=function(f,e){var t,c=null,u=null;return f.indexOf("iPhone")>=0?c=a.get("iPhone"):f.indexOf("iPad")>=0?c=a.get("iPad"):f.indexOf("iPod")>=0?c=a.get("iPod"):f.indexOf("Android")>=0?c=a.get("Android"):f.indexOf("CFNetwork")>=0?c=a.get("iOS"):f.indexOf("BB10")>=0?(c=a.get("BlackBerry10"),(t=/BB10(?:.+)Version\/([.0-9]+)/.exec(f))&&(u=t[1])):f.indexOf("BlackBerry")>=0&&(c=a.get("BlackBerry"),(t=/BlackBerry(?:\d+)\/([.0-9]+) /.exec(f))&&(u=t[1])),e[a.KEY_NAME]&&e[a.KEY_NAME]===a.get("Firefox")[a.KEY_NAME]&&(t=/^Mozilla\/[.0-9]+ \((?:Mobile|Tablet);(?:.*;)? rv:([.0-9]+)\) Gecko\/[.0-9]+ Firefox\/[.0-9]+$/.exec(f))&&(c=a.get("FirefoxOS"),u=t[1]),!!c&&(p(e,c[a.KEY_CATEGORY]),g(e,c[a.KEY_NAME]),u&&b(e,u),!0)},f.challengeMobilePhone=function(f,e){var t,c;if(f.indexOf("KDDI-")>=0&&(c=/KDDI-([^- \/;()"']+)/.exec(f))){var u=c[1];return t=a.get("au"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_OS]),h(e,u),!0}return(f.indexOf("WILLCOM")>=0||f.indexOf("DDIPOCKET")>=0)&&(c=/(?:WILLCOM|DDIPOCKET);[^\/]+\/([^ \/;()]+)/.exec(f))?(u=c[1],t=a.get("willcom"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_OS]),h(e,u),!0):f.indexOf("SymbianOS")>=0?(t=a.get("SymbianOS"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_OS]),!0):f.indexOf("Google Wireless Transcoder")>=0?(m(e,a.get("MobileTranscoder")),h(e,"Google"),!0):f.indexOf("Naver Transcoder")>=0&&(m(e,a.get("MobileTranscoder")),h(e,"Naver"),!0)},f.challengeAppliance=function(f,e){var t;return f.indexOf("Nintendo DSi;")>=0?(t=a.get("NintendoDSi"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_OS]),!0):f.indexOf("Nintendo Wii;")>=0&&(t=a.get("NintendoWii"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_OS]),!0)},f.challengeMisc=function(f,e){var t,c,u;return f.indexOf("(Win98;")>=0?(t=a.get("Win98"),c="98"):f.indexOf("Macintosh; U; PPC;")>=0?(t=a.get("MacOS"),(u=/rv:(\d+\.\d+\.\d+)/.exec(f))&&(c=u[1])):f.indexOf("Mac_PowerPC")>=0?t=a.get("MacOS"):f.indexOf("X11; FreeBSD ")>=0?(t=a.get("BSD"),(u=/FreeBSD ([^;\)]+);/.exec(f))&&(c=u[1])):f.indexOf("X11; CrOS ")>=0&&(t=a.get("ChromeOS"),(u=/CrOS ([^\)]+)\)/.exec(f))&&(c=u[1])),!!t&&(p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_NAME]),c&&b(e,c),!0)}}();var r={};!function(){var f=r,e=/DoCoMo\/[.0-9]+[ \/]([^- \/;()"']+)/,t=/\(([^;)]+);FOMA;/,c=(f.challengeDocomo=function(f,c){if(f.indexOf("DoCoMo")<0&&f.indexOf(";FOMA;")<0)return!1;var u,o=a.VALUE_UNKNOWN;return((u=e.exec(f))||(u=t.exec(f)))&&(o=u[1]),m(c,a.get("docomo")),h(c,o),!0},/KDDI-([^- \/;()"']+)/),u=(f.challengeAu=function(f,e){if(f.indexOf("KDDI-")<0)return!1;var t=a.VALUE_UNKNOWN,u=c.exec(f);return u&&(t=u[1]),m(e,a.get("au")),h(e,t),!0},/(?:SoftBank|Vodafone|J-PHONE)\/[.0-9]+\/([^ \/;()]+)/),o=(f.challengeSoftbank=function(f,e){if(f.indexOf("SoftBank")<0&&f.indexOf("Vodafone")<0&&f.indexOf("J-PHONE")<0)return!1;var t=a.VALUE_UNKNOWN,c=u.exec(f);return c&&(t=c[1]),m(e,a.get("SoftBank")),h(e,t),!0},/(?:WILLCOM|DDIPOCKET);[^\/]+\/([^ \/;()]+)/);f.challengeWillcom=function(f,e){if(f.indexOf("WILLCOM")<0&&f.indexOf("DDIPOCKET")<0)return!1;var t=a.VALUE_UNKNOWN,c=o.exec(f);return c&&(t=c[1]),m(e,a.get("willcom")),h(e,t),!0},f.challengeMisc=function(f,e){var t;return f.indexOf("jig browser")>=0?(m(e,a.get("jig")),(t=/jig browser[^;]+; ([^);]+)/.exec(f))&&h(e,t[1]),!0):f.indexOf("emobile/")>=0||f.indexOf("OpenBrowser")>=0||f.indexOf("Browser/Obigo-Browser")>=0?(m(e,a.get("emobile")),!0):f.indexOf("SymbianOS")>=0?(m(e,a.get("SymbianOS")),!0):f.indexOf("Hatena-Mobile-Gateway/")>=0?(m(e,a.get("MobileTranscoder")),h(e,"Hatena"),!0):f.indexOf("livedoor-Mobile-Gateway/")>=0&&(m(e,a.get("MobileTranscoder")),h(e,"livedoor"),!0)}}();var n={};!function(){var f=n;f.challengeGoogle=function(f,e){return!(f.indexOf("Google")<0)&&(f.indexOf("compatible; Googlebot")>=0?f.indexOf("compatible; Googlebot-Mobile")>=0?(m(e,a.get("GoogleBotMobile")),!0):(m(e,a.get("GoogleBot")),!0):f.indexOf("Googlebot-Image/")>=0?(m(e,a.get("GoogleBot")),!0):f.indexOf("Mediapartners-Google")>=0&&(f.indexOf("compatible; Mediapartners-Google")>=0||"Mediapartners-Google"===f)?(m(e,a.get("GoogleMediaPartners")),!0):f.indexOf("Feedfetcher-Google;")>=0?(m(e,a.get("GoogleFeedFetcher")),!0):f.indexOf("AppEngine-Google")>=0?(m(e,a.get("GoogleAppEngine")),!0):f.indexOf("Google Web Preview")>=0&&(m(e,a.get("GoogleWebPreview")),!0))},f.challengeCrawlers=function(f,e){if(f.indexOf("Yahoo")>=0||f.indexOf("help.yahoo.co.jp/help/jp/")>=0||f.indexOf("listing.yahoo.co.jp/support/faq/")>=0){if(f.indexOf("compatible; Yahoo! Slurp")>=0)return m(e,a.get("YahooSlurp")),!0;if(f.indexOf("YahooFeedSeekerJp")>=0||f.indexOf("YahooFeedSeekerBetaJp")>=0)return m(e,a.get("YahooJP")),!0;if(f.indexOf("crawler (http://listing.yahoo.co.jp/support/faq/")>=0||f.indexOf("crawler (http://help.yahoo.co.jp/help/jp/")>=0)return m(e,a.get("YahooJP")),!0;if(f.indexOf("Y!J-BRZ/YATSHA crawler")>=0||f.indexOf("Y!J-BRY/YATSH crawler")>=0)return m(e,a.get("YahooJP")),!0;if(f.indexOf("Yahoo Pipes")>=0)return m(e,a.get("YahooPipes")),!0}return f.indexOf("msnbot")>=0?(m(e,a.get("msnbot")),!0):f.indexOf("bingbot")>=0&&f.indexOf("compatible; bingbot")>=0?(m(e,a.get("bingbot")),!0):f.indexOf("BingPreview")>=0?(m(e,a.get("BingPreview")),!0):f.indexOf("Baidu")>=0&&(f.indexOf("compatible; Baiduspider")>=0||f.indexOf("Baiduspider+")>=0||f.indexOf("Baiduspider-image+")>=0)?(m(e,a.get("Baiduspider")),!0):f.indexOf("Yeti")>=0&&(f.indexOf("http://help.naver.com/robots")>=0||f.indexOf("http://help.naver.com/support/robots.html")>=0||f.indexOf("http://naver.me/bot")>=0)?(m(e,a.get("Yeti")),!0):f.indexOf("FeedBurner/")>=0?(m(e,a.get("FeedBurner")),!0):f.indexOf("facebookexternalhit")>=0?(m(e,a.get("facebook")),!0):f.indexOf("Twitterbot/")>=0?(m(e,a.get("twitter")),!0):f.indexOf("ichiro")>=0&&(f.indexOf("http://help.goo.ne.jp/door/crawler.html")>=0||f.indexOf("compatible; ichiro/mobile goo;")>=0)||f.indexOf("gooblogsearch/")>=0?(m(e,a.get("goo")),!0):f.indexOf("Apple-PubSub")>=0?(m(e,a.get("ApplePubSub")),!0):f.indexOf("(www.radian6.com/crawler)")>=0?(m(e,a.get("radian6")),!0):f.indexOf("Genieo/")>=0?(m(e,a.get("Genieo")),!0):f.indexOf("labs.topsy.com/butterfly/")>=0?(m(e,a.get("topsyButterfly")),!0):f.indexOf("rogerbot/1.0 (http://www.seomoz.org/dp/rogerbot")>=0?(m(e,a.get("rogerbot")),!0):f.indexOf("compatible; AhrefsBot/")>=0?(m(e,a.get("AhrefsBot")),!0):f.indexOf("livedoor FeedFetcher")>=0||f.indexOf("Fastladder FeedFetcher")>=0?(m(e,a.get("livedoorFeedFetcher")),!0):f.indexOf("Hatena ")>=0&&(f.indexOf("Hatena Antenna")>=0||f.indexOf("Hatena Pagetitle Agent")>=0||f.indexOf("Hatena Diary RSS")>=0)?(m(e,a.get("Hatena")),!0):f.indexOf("mixi-check")>=0||f.indexOf("mixi-crawler")>=0||f.indexOf("mixi-news-crawler")>=0?(m(e,a.get("mixi")),!0):f.indexOf("Indy Library")>=0&&f.indexOf("compatible; Indy Library")>=0?(m(e,a.get("IndyLibrary")),!0):f.indexOf("trendictionbot")>=0&&(m(e,a.get("trendictionbot")),!0)},f.challengeMaybeCrawler=function(f,e){return(/(bot|crawler|spider)(?:[-_ .\/;@()]|$)/i.exec(f)||/(?:Rome Client |UnwindFetchor\/|ia_archiver |Summify |PostRank\/)/.exec(f)||f.indexOf("ASP-Ranker Feed Crawler")>=0||/(feed|web) ?parser/i.exec(f)||!!/watch ?dog/i.exec(f))&&(m(e,a.get("VariousCrawler")),!0)}}();var s={};!function(){var f=s;f.challengePlaystation=function(f,e){var t,c=null,u=null;return f.indexOf("PSP (PlayStation Portable);")>=0?(c=a.get("PSP"),(t=/PSP \(PlayStation Portable\); ([.0-9]+)\)/.exec(f))&&(u=t[1])):f.indexOf("PlayStation Vita")>=0?(c=a.get("PSVita"),(t=/PlayStation Vita ([.0-9]+)\)/.exec(f))&&(u=t[1])):f.indexOf("PLAYSTATION 3 ")>=0||f.indexOf("PLAYSTATION 3;")>=0?(c=a.get("PS3"),(t=/PLAYSTATION 3;? ([.0-9]+)\)/.exec(f))&&(u=t[1])):f.indexOf("PlayStation 4 ")>=0&&(c=a.get("PS4"),(t=/PlayStation 4 ([.0-9]+)\)/.exec(f))&&(u=t[1])),!!c&&(m(e,c),u&&b(e,u),!0)},f.challengeNintendo=function(f,e){var t=null;return f.indexOf("Nintendo 3DS;")>=0?t=a.get("Nintendo3DS"):f.indexOf("Nintendo DSi;")>=0?t=a.get("NintendoDSi"):f.indexOf("Nintendo Wii;")>=0?t=a.get("NintendoWii"):f.indexOf("(Nintendo WiiU)")>=0&&(t=a.get("NintendoWiiU")),!!t&&(m(e,t),!0)},f.challengeDigitalTV=function(f,e){var t=null;return f.indexOf("InettvBrowser/")>=0&&(t=a.get("DigitalTV")),!!t&&(m(e,t),!0)}}();var d={};!function(){var f=d;f.challengeDesktopTools=function(f,e){var t=null;return f.indexOf("AppleSyndication/")>=0?t=a.get("SafariRSSReader"):f.indexOf("compatible; Google Desktop/")>=0?t=a.get("GoogleDesktop"):f.indexOf("Windows-RSS-Platform")>=0&&(t=a.get("WindowsRSSReader")),!!t&&(m(e,t),!0)},f.challengeSmartPhonePatterns=function(f,e){var t;return f.indexOf("CFNetwork/")>=0&&(t=a.get("iOS"),p(e,t[a.KEY_CATEGORY]),g(e,t[a.KEY_NAME]),!0)},f.challengeHTTPLibrary=function(f,e){var t,c;return/^(?:Apache-HttpClient\/|Jakarta Commons-HttpClient\/|Java\/)/.exec(f)||/[- ]HttpClient(\/|$)/.exec(f)||f.indexOf("Java(TM) 2 Runtime Environment,")>=0?(t=a.get("HTTPLibrary"),c="Java"):/^Wget/.exec(f)?(t=a.get("HTTPLibrary"),c="wget"):/^(?:libwww-perl|WWW-Mechanize|LWP::Simple|LWP |lwp-trivial)/.exec(f)?(t=a.get("HTTPLibrary"),c="perl"):/^(?:Ruby|feedzirra|Typhoeus)/.exec(f)?(t=a.get("HTTPLibrary"),c="ruby"):/^(?:Python-urllib\/|Twisted )/.exec(f)?(t=a.get("HTTPLibrary"),c="python"):/^(:?PHP|WordPress|CakePHP|PukiWiki|PECL::HTTP)(?:\/| |$)/.exec(f)||/(?:PEAR |)HTTP_Request(?: class|2)/.exec(f)||f.indexOf("PEAR HTTP_Request class;")>=0?(t=a.get("HTTPLibrary"),c="php"):f.indexOf("curl/")>=0&&(t=a.get("HTTPLibrary"),c="curl"),!!t&&(m(e,t),h(e,c),!0)},f.challengeMaybeRSSReader=function(f,e){var t=null;return(/rss(?:reader|bar|[-_ \/;()]|[ +]*\/)/i.exec(f)||/headline-reader/i.exec(f)||f.indexOf("cococ/")>=0)&&(t=a.get("VariousRSSReader")),!!t&&(m(e,t),!0)}}();var i={};!function(){var f=i;f.VERSION=t,f.parse=function(f){return function(f){f[a.ATTRIBUTE_NAME]||(f[a.ATTRIBUTE_NAME]=a.VALUE_UNKNOWN);f[a.ATTRIBUTE_CATEGORY]||(f[a.ATTRIBUTE_CATEGORY]=a.VALUE_UNKNOWN);f[a.ATTRIBUTE_OS]||(f[a.ATTRIBUTE_OS]=a.VALUE_UNKNOWN);f[a.ATTRIBUTE_OS_VERSION]||(f[a.ATTRIBUTE_OS_VERSION]=a.VALUE_UNKNOWN);f[a.ATTRIBUTE_VERSION]||(f[a.ATTRIBUTE_VERSION]=a.VALUE_UNKNOWN);f[a.ATTRIBUTE_VENDOR]||(f[a.ATTRIBUTE_VENDOR]=a.VALUE_UNKNOWN);return f}(function(f){var t={};if(!f||"-"===f)return t;if(e(f,t))return t;if(function(f,e){return!!o.challengeMSIE(f,e)||(!!o.challengeVivaldi(f,e)||(!!o.challengeYandexBrowser(f,e)||(!!o.challengeSafariChrome(f,e)||(!!o.challengeFirefox(f,e)||(!!o.challengeOpera(f,e)||!!o.challengeWebview(f,e))))))}(f,t))return c(f,t),t;return function(f,e){return!!r.challengeDocomo(f,e)||(!!r.challengeAu(f,e)||(!!r.challengeSoftbank(f,e)||(!!r.challengeWillcom(f,e)||!!r.challengeMisc(f,e))))}(f,t)||function(f,e){return!!s.challengePlaystation(f,e)||(!!s.challengeNintendo(f,e)||!!s.challengeDigitalTV(f,e))}(f,t)||function(f,e){return!!d.challengeDesktopTools(f,e)}(f,t)||c(f,t)||function(f,e){!!d.challengeSmartPhonePatterns(f,e)||(!!o.challengeSleipnir(f,e)||(!!d.challengeHTTPLibrary(f,e)||(!!d.challengeMaybeRSSReader(f,e)||n.challengeMaybeCrawler(f,e))))}(f,t),t}(f))},f.isCrawler=function(f){return!!f&&"-"!==f&&e(f,{})};function e(f,e){return!!n.challengeGoogle(f,e)||!!n.challengeCrawlers(f,e)}function c(f,e){return!!_.challengeWindows(f,e)||(!!_.challengeOSX(f,e)||(!!_.challengeLinux(f,e)||(!!_.challengeSmartPhone(f,e)||(!!_.challengeMobilePhone(f,e)||(!!_.challengeAppliance(f,e)||!!_.challengeMisc(f,e))))))}var u={};u[a.ATTRIBUTE_NAME]=a.VALUE_UNKNOWN,u[a.ATTRIBUTE_CATEGORY]=a.VALUE_UNKNOWN,u[a.ATTRIBUTE_OS]=a.VALUE_UNKNOWN,u[a.ATTRIBUTE_OS_VERSION]=a.VALUE_UNKNOWN,u[a.ATTRIBUTE_VERSION]=a.VALUE_UNKNOWN,u[a.ATTRIBUTE_VENDOR]=a.VALUE_UNKNOWN}();var m=u.updateMap,p=u.updateCategory,g=u.updateOs,b=u.updateOsVersion,h=u.updateVersion;void 0===(c=function(){return i}.apply(e,[]))||(f.exports=c)}()},function(f,e,t){var c;
 /** @license
  * JS Signals <http://millermedeiros.github.com/js-signals/>

@@ -23,7 +23,7 @@ $(document).ready(function() {
   });
 
   // 点击列表中的国旗，跳转到对应语言的URL
-  $('.language-switcher .flag-list img').click(function() {
+  $('.language-switcher .flag-list span').click(function() {
     var selectedLang = $(this).data('lang');
     var url = window.location.href;
 
