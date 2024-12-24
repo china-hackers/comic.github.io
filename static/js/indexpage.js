@@ -85,7 +85,7 @@ function resetWidth(){
 		html += "<div class='container hidden-md hidden-lg "+divName+"' style='background:#000;position:relative;margin-top:10px;width:100%;padding-left:10px;padding-right:15px;'>"
 			+	"<ul class='HuabenListUL' style='padding-top:0;padding-bottom:5px;margin:0;' onclick='javascript:AppDownload(\"网站首页\");'>"
 			+		"<li style='margin-top:5px;padding:0;vertical-align:top;'>"
-			+			"<a href='javascript:;'><img src='../img/logo.png' alt='iManga' style='width:50px;height:50px;'/></a>"
+			+			"<a href='javascript:;'><img src='https://static.imanga.net/static/img/logo.png' alt='iManga' style='width:50px;height:50px;'/></a>"
 			+		"</li>"
 			+		"<li style='vertical-align:top;color:#fff;'>"
 			+			"<h3 style='font-size:16px;font-weight:500;margin:8px 0 0 0;padding:0;'>More comics being updated</h3>"
