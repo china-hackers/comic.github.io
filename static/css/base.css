@@ -1838,7 +1838,7 @@ h1,h2{
 .lang{
 	width: 30px;
 	height: 30px;
-	background: url('/static/img/lang/all.png') no-repeat;
+	background: url('../img/lang/all.png') no-repeat;
 	overflow: hidden;
 	display: inline-block;
 	background-size: 30px 270px;
