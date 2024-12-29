@@ -1,0 +1,283 @@
+.pay h3{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.pay input[type="number"]{
+	width:100px;
+	display:inline-block;
+	margin-right:10px;
+}
+.payTip{
+	font-size:14px;
+	vertical-align:middle;
+	margin-top:20px;
+	height:40px;
+}
+.postMsg{
+	margin-left:20px;
+}
+#customValue{
+	display:none;
+}
+.listMenu{
+	display:inline-block;
+	margin-top:30px;
+	vertical-align:top;
+}
+.userModify{
+	display:inline-block;
+	margin-left:50px;
+	margin-top:30px;
+	vertical-align:top;
+}
+.listButtons{
+	margin-top:30px;
+	min-height:20px;
+}
+.input-inline{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.input-inline span{
+	min-width:124px;
+	display:inline-block;
+}
+.input-inline .form-control{
+	width:300px;
+	max-width:100%;
+	display:inline-block;
+}
+.accountInfo{
+	margin-top:20px;
+	font-size:16px;
+}
+.accountInfo h1{
+	display:inline-block;
+	margin-right:20px;
+	font-size:46px;
+	font-weight:bold;
+	vertical-align:middle;
+	margin-top:10px;
+}
+.accountInfo .table td{
+	padding-left:0;
+	font-size:14px;
+}
+#makecash .cashform{
+	display:inline-block;
+}
+#allcount{
+	position:absolute;
+	right:45px;
+	top:7px;
+}
+#makecash{
+	text-align:center;
+}
+
+#user_nav_setting_pc .active a,#user_nav_setting_pc .active a:focus,#user_nav_setting_pc .active a:hover{
+	color:#fff;
+}
+
+@media screen and (max-width: 991px){
+	.subnavigator li{
+		margin-left:5px;
+	}
+	.subnavigator li a{
+		padding-left:8px;
+		padding-right:8px;
+	}
+	.paychannel{
+		margin-bottom:0;
+	}
+	.paynum .btn-lg,.paychannel .btn-lg{
+		font-size:14px;
+		padding:5px;
+	}
+	.pay .list-inline li{
+		padding-right:0;
+	}
+	.paySubmitButton{
+		padding:5px 25px 5px 25px;
+		font-size:14px;
+	}
+	.userModify{
+		display:block;
+		margin-left:0;
+	}
+	.input-inline .form-control{
+		width:100%;
+	}
+	#allcount{
+		position:absolute;
+		right:45px;
+		top:27px;
+	}
+	#makecash{
+		text-align:left;
+	}
+	#user_nav_bar{
+		margin-left:-15px;
+		margin-right:-15px;
+	}
+}
+
+.vip{
+	margin-top:40px;
+}
+.vip h3{
+	font-size: 20px;
+	height: 24px;
+	line-height: 24px;
+}
+.vip ul li a div{
+	display:table-cell;
+	vertical-align:middle;
+}
+.vip h3 strong{
+	color:#ff6e1e;
+	font-weight:normal;
+}
+.vip ul li{
+	vertical-align:top;
+	position:relative;
+}
+.vip ul li a{
+	display:table;
+	width: 205px;
+	height: 120px;
+	color: #333;
+	text-align:center;
+	border: 1px solid #e9e9e9;
+	cursor:pointer;
+	margin-right:15px;
+	padding:1px;
+}
+.vip ul li a p{
+	color:#999;
+}
+.vip ul li>.active{
+	border: 2px solid #56a900;
+	padding:0;
+}
+.vip .vp_tip{
+	position: absolute;
+	top: 5px;
+	left:0;
+	margin: 0 4px;
+	padding: 0 5px 0 2px;
+	height: 18px;
+	line-height: 18px;
+	background: #ff6e1e;
+	color: #fff;
+	font-style:normal;
+}
+.vip .vp_tip-left {
+	display: block;
+	width: 4px;
+	height: 22px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: -3px;
+	background: url(//imgcn.ihuaben.com/images/vip_pay.png) no-repeat;
+	background-position: -120px 0;
+}
+.vip .vp_tip-right {
+	display: block;
+	width: 4px;
+	height: 18px;
+	overflow: hidden;
+	background: url(//imgcn.ihuaben.com/images/vip_pay.png) no-repeat;
+	background-position: -140px 0;
+	position: absolute;
+	top: 0;
+	right: -4px;
+}
+.adTextBanner {
+	margin: 0;
+	margin-top: 30px;
+	background-color: #f5f4ef;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 16px;
+}
+.adTextBanner strong{
+	color:#ff6e1e;
+	font-weight:normal;	
+}
+.vipmobile{
+	padding:0;
+}
+.vipmobile_header{
+	margin-top:20px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:10px;
+}
+.vipmobile_header img{
+	width:36px;
+	height:36px;
+	border-radius:18px;
+	vertical-align:top;
+	padding:0;
+	margin:0;
+	display:inline-block;
+}
+.vipmobile_header>div{
+	display:inline-block;
+	vertical-align:top;
+	padding-left:5px;
+
+}
+.vipmobile_header h3{
+	margin:0;
+	font-size:18px;
+	line-height:20px;
+}
+.vipmobile_header p{
+	color:#999;
+	margin-bottom:0;
+}
+.vipmobile strong{
+	color:#ff6e1e;
+	font-weight:normal;
+}
+.vipmobile ul{
+	border-top:10px solid #f0f0f0;
+}
+.vipmobile ul li{
+	display:block;
+	margin-top:5px;
+	border-bottom:1px solid #f0f0f0;
+}
+.vipmobile ul li a{
+	display:block;
+	padding:10px 15px 15px 15px;
+	color:#333;
+}
+.vipmobile ul li .hot{
+	background:url(//imgcn.ihuaben.com/images/vip_hot.png) no-repeat;
+	background-size:20px;
+	background-position:top right;
+}
+.vipmobile ul li a span{
+	font-size:12px;
+	color:#999;
+}
+.vipmobile ul li a i{
+	float:right;
+	vertical-align:top;
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	background:url(//imgcn.ihuaben.com/images/vip_btn_nomal.png) no-repeat;
+	background-size:cover;
+}
+.vipmobile ul li .active i{
+	background:url(//imgcn.ihuaben.com/images/vip_btn_select.png) no-repeat;
+	background-size:cover;
+}
+.vipmobile .active,.vipmobile .active strong,.vipmobile .active span{
+	color:#72d6df;
+}

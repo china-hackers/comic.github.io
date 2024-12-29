@@ -17,6 +17,15 @@ function checkLanguage(url,lang){
   return urlList.join('/');
 }
 $(document).ready(function() {
+  if ($('#nav_usercenter_bar').length > 0) {
+    var src = $('#avator').text();
+    if(src.startsWith("http")){
+      $('#user_head_bar').attr("src",src);
+    }else{
+      var currentSrc = $('#user_head_bar').attr('src');
+      $('#user_head_bar').attr("src",currentSrc+src);
+    }
+  }
   // 点击当前国旗，显示/隐藏国旗列表
   $('.language-switcher .current-flag').click(function() {
     $('.flag-list').toggle();

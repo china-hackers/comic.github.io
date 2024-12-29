@@ -3029,6 +3029,7 @@
 		border:1px solid #337ab7;
 	}
 	.infodetail label:nth-child(2){
+		display: none;
 		color: #f0ad4e;
 		background-color: #fff;
 		border:1px solid #f0ad4e;
