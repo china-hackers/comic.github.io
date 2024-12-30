@@ -22,7 +22,7 @@ $(document).ready(function() {
     if(src.startsWith("http")){
       $('#user_head_bar').attr("src",src);
     }else{
-      var currentSrc = $('#user_head_bar').attr('src');
+      var currentSrc = $('#user_head_bar').attr('static');
       $('#user_head_bar').attr("src",currentSrc+src);
     }
   }
